@@ -1,2 +1,2 @@
 # tesi_FOOT
-Material used for FOOt thesis project
+Material used for FOOT thesis project
