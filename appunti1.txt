@@ -1,0 +1,167 @@
+Adroterapia: metodo per curare i tumori, metodo del SSN (sistema già attivo nella sanità statale).
+- 2 per mille della popolazione contrae un tumore. + del 50% delle persone muore, ma la distribuzione della percentuale di morti non è assolutamente uniforme.
+- nel 2020: dal 2020 505 è curato con radioterapia.
+- aumento età popolazione (entro 10 anni ...65 + 80 anni) avere età pù avanzata -> non poter operare più
+
+5 metodi di cura tumore:
+- chirurgia
+- chemioterapia
+- immunoterapia: instruire il sistema immunitario nel riconoscimento delle cellule tumorali
+- radioterapia: raggi X o \gamma
+- adroterapia: spariamo delle particelle cariche, protoni o nuclei di carbonio
+
+storia della radioterapia
+Scoperti per caso da rongtenm con surriscaldamento metallo pesante, che emette elettroni che venivano attratti da un anodo. Attorno c'era un contenitore, che usciva, c'era qualcosa che fuoriusciva dalla scatola (erano raggi X)
+radioattività: esistonomateriali molto peanti che non sono stabili, ed emettonopariclele \alpha, \beta, \gamma.
+
+Marie Curie si distrusse le mani, senza protezioni maneggiava l'uranio. La radiazione ebbe effetti sulla pelle
+- lupus herimatotus era molto forte (infezioni frequenti tani anni fa) che vennero trattate con raggi \gamma
+- le duee bombe atoniche portarono grossa conoscenza di teoria atomica. si capì che la fisica nucleare potrebbe essere usata per curare malattie. Vedi slide con Robert Wilson.
+
+- per avere accelerare cariche servono avcceleratori, macchine molto grandi con grandi magneti che servono ad accelerarli, servono pareti coibentate. dal 2009: 3 luoghi per fare adroterapia: catania (tumore dell'occhio, ormai chiuso), pavia (uno dei sei che usa carbonio, diventerà presto quello mondiale in quanto presto sarà disponibile un trattamento coi neutroni), trento.
+pavia e treno sono nati dopo. a catania fu studiato il tumore all'occhio: stesse percentuali di risoluzione tumore (togliendo chirurgicamente gli occhi) solo che non ne uscivi cieco (stessa percentuale del 98% di cura).
+
+perché esce fuori il tumore? non lo sappiamo. l'unica cosa chepossiamo fare è oltre alla questione statistica, curarlo.
+uccido la cellula tumorale. è difficile: pochi micrometri decine di micrometri.
+sconfiggere tumore significa impedire alla cellula di riprodursi (esistono persone che vivono con cellule tumorali , caso chiamato in gergo "under control"). questo perché le cellule tumorali non riescono più a gestire la riproduzione, crescono molto velocemente. noi dobbiamo impedire la loro crescita (quella tumorale o muore di vita sua oppure il paziente ci vive tenuto sotto controllo).
+fermare la riproduzione significa distruggere il DNA. il DNA sta nel nucleo della cellula, quanto è grande il nucleo rispetto alla cellula? 2/3%. sparare il fascio siginifica sparare non sul nucleo. nel 2/3% dei casi colpisce il DNA, negli altri casi colpisce in un altro punt. possiamo creare danni comunque anche non colpendo direttamente il DNA
+- in maniera diretta: il raggio X interafisce con un atomo del DNA e lo ionizza, o per fotoelettrico, o per compton. ionizzare significa-> rompere un legame chimico.ECCO IL DANNO.
+questo processo avviene per esempio quando prendiamo il SOLE: il DNA ha due catene identiche, quindi se facciamo un danno il DNA si accorge il pezzo che manca e lo ripara. un danno di grande portata non permette la riparazione del DNa. quella cellula non riuscirà mai più a riprodursi.
+
+in modo diretto e indiretto facciamo comunque danni alla cellula che contiene il DNA.
+
+DIRETTO: ionizzazione di un atomo del dna: in pratica il raggio X o radiazione gamma o particelle cariche che viene sparato intergaisce con atomo del DNA e lo ionizza (ossia per fotoelettrico, compton, creando coppie) -> si toglie un elettrone, andando a rompere un legame chimico -> creare un danno. questi danni vengono creati spesso anhe nelle persone non malate, ma il DNA ha molti meccanismi di correzione (vedi libri di chimica). invece l'effetto di una particella arica sul DNA è troppo grande pure per i meccanismi di riparazione del DNA, quindi la  cellula con un danno così ingente sul DNA non è più in grado di riprodursi (abbiamo raggiunto il nostro obiettivo).
+
+se colpisco un altra parte della cellula senza il DNA cosa succede? siamo fatti prevalentemente molto di acqua: la maggior parte delle interazioni si ha con idrogeno e ossigeno (acqua). si genera la radiolisi: rimane un'acqua ionizzata positivamente (poiché gli abbiamo tolto un elettrone). Poi l'elettrone viene catturato da un'altra molecola d'acqua e diventa un altro ione negativo. queste due coppie diventano instabili e si scindono, diventano radicali liberi (vedi slide, si formano un H e un gruppo OH-)-> cosa sono? idrogeno e idrossido di idrogeno: radicali liberi atomo o molecola neutra (potenzualmente stabile) che però avrebbe una gran voglia per completare un orbitale di mettersi insieme per essere più stabili.
+
+in alcuni casi si torna all'acqua, in altri casi si forma il perossido di idrogeno: acqua ossigenata = veleno per il dna. il perossido di idrogeno danneggia la cellula. Per questo l'urto indiretto danneggia comunque il DNA -> impedisce la riproduzione della cellula.
+
+Quando si spara, però, non si sa se si coplisce una cellula sana o una cellula malata. quando spariamo facciamo del male alla persona. TCP deve essere nettamente superiore alla probabilità di creare del danno in un tessuto sano (NTCP). tutte queste cure si fanno perché? dose: quantità di fascio che mandate.
+verde: probabilità di guarire un tumore. a 0 dose la probabilità di curare tumore è 1. più dose date più probabilità è alta.
+la riga rossa è probabilità di creare danno.
+- perché a parità di dose abbiamo probabilità più alta di cura che di danno? perché una cellula sana è maggiormente in grado di recuperare il danno. danno in cellula tumorale -> non recupera danno - danno cellula buona-> recupera danno.
+
+la dose giusta è quella che massimizza la differenza. le curve dipendono dal tipo di radiazione dalla persona, dal tipo di tumore etc.
+
+differenza tra terapia convenzionale (raggi gamma e X) e adroterapia.
+
+le energie che usiamo: più energia diamo a un raggio gamma più va nel profondo del corpo del paziente. Il range va da qualche kMev a qualche MeV.
+
+
+RAGGI GAMMA
+i raggi gamma fanno varie interazioni, quelle che ci interesano son 3 (le altre si trascurano perché trascurabili alle energie che usiamo).
+
+effetto fotoelettrico->nobel einstein. un fotone che colpisce l'elettrone di un atomo (in particolare l'elettrone più energetico, quello maggiormente legato, quello più vicino al nucleo dell'atomo)-> il gamma dà l'energia all'elettrone e poi sparisce, una parte di eneergia slega l'elettrone dall'atomo (che è ionizzato) ed emette un fotoelettrone con un'energia cinetica legata all'energia della radiazione gamma stessa. il gamma sparisce!! e l'elettrone parte. è un'unica interazione. effetto compton -> il gamma può anche andare con un elettrone più esterno, meno legato (meno energetico) -> abbiamo ancora il gamma, con meno energia in quanto una parte è stata trasmessa all'elettrone che va via come nell'altro caso. il gamma, tipicamente, perde metà della sue energia -> in due interazioni compton il fotone è già finito.
+-> creazione di coppia: il gamma arriva vicino al nucleo, sente la forza elettromagnetica fortissima del nucleo e annichila in positrone e elettrone. qui pure sparisce il gamma.
+
+- quindi, visto che tutti questi meccanismi fanno un solo danno (nel senso che daneggiano il singolo legame), il danno non riparabile che stiamo cercando di ottenere per impedire la riproduzione della cellula lo si fa sparando tanti di questi fasci (gamma, in questo caso).
+
+VEDI SLIDE PER ANDARE NELLO SPECIFICO SULLE RADIAZIONI
+
+
+COSA SUCCEDE CON LA PARTICELLA CARICA
+
+se invece ci va una particella carica, che cosa succede?
+per un paziente, un uomo, la materia è idrogeno, carbonio e ossigeno; vediamo come si interagisce con questi atomi. Per particelle cariche intendiamo soprattutto protoni e ioni di carbonio, ossia quelli correntemente utilizzati, ma ci sono studi ora anche per particelle neutroniche (mi sa che al CNAO stavano costruendo un acceleratore di neutroni, vedi anche la rivista Asimmetrie in merito).
+
+cosa fa il PROTONE quando entra nella materia? trova un atomo, e può interagire con un o degli elettroni di questi atomi, oppure può interagire con il nucleo sempre per interazione EM, oppure può interagire tramite bremsstrahlung (emettendo un raggio gamma) che però risulta trascurabile, in quanto va come 1/m^2 quindi trascurabile (massa protonica molto più grande di quella elettronica); ci può essere anche la possibilità che la particella faccia effetto cherenkov, ma risulta sempre trascurabile (perché??).
+
+Quindi EM: o con elettrone, e in tal caso si passa per la bethe bloch, o con nucleo, e in caso si parla di scattering multiplo di coulomb o di rutherford
+
+Abbiamo anche la possibilità di effettuare interazione nucleare. interazioni a raggio molto piccolo. se ha tanta energia il p accende interazioni nucleari. (gli altri erano processi elettromagnetici).
+
+la probabilità che il protone ineragisca con l'atomo è molto maggiore rispetto a quella secondo cui può interagire con il solo nucleo; in termini di sezione d'urto, si ha che: atomo è 10^4 volte più grande (linearmente) del nucleo (NOTA: non 10^-15 perché stiamo considerando il raggio del nucleo, non del nucleone), che in termini di superficie va a 10^8-> la probabilità di interagire con nube elettronica è 10^8 volte maggiore rispetto alla probabilità di interagire col nucleo. Pertanto la sezione d'urto della nube elettronica (che è un processo anelastico) si aggira sul Mbarn. la sezione d'urto  piccola nel caso di interazioni nicleari (è solo una frazione di Barn).
+
+bethe bloch:
+descrive la perdita di energia lungo il cammino, dx è il cammino della particella. il meno sta per spiegare il fatto che se va avanti la particella perde energia.
+- Z maiuscolo \rho A è relativo al bersaglio (il corpo umano). Z/A nel nostro casoè un numero vicino a 0.5, visto che il numero di protoni è sempre circa la metà di quello dei nucleoni; rho è la densità del materiale.
+- le quantità blu dipendono dal nosto fascio, z sarebbe la carica del fascio, beta è la velocità del fascio. (dipendenze quadratiche -> molto importanti.). NOTA BENE: quando la velocità è piccola, ossia l'energia cinetica è piccola, dE/dx è piccolo; vi sono centinaua di interazioni che la particella fa, in ciascuna delle quali la particella rilascia energia poco per volta, fin quando alla fine del cammino c'è il massimo del rlascio di energia. Inoltre vi è anche un termine col logaritmo è legato al potenziale di ionizzazione. poi ci sono dei termini di correzione, quelli per alte e base energie. siamo legati molto al coefficiente C, quello importante per basse energie.
+
+questa è una legge statistica (vedi relaitivtà, è un dE/dx medio)
+esempio: 1 mld di particelle protoniche non si generano tutte allo stesso punto, ma ci sarà una variazione statistica. abbiamo una distribuzione di landau, una gaussiana con una coda (vedi slides).
+
+la distribuzione della bethe bloch (con segno invertito) plottata rispetto all'energia. per energia molto alta, dE/dx è circa costante, (il range rosso è legato al nostro caso, quello di bassa energia). quando l'energia inizia a calare, abbiamo una salita che va cmoe 1/beta^2. apparenrtemente c'è un problema: quando la particella del fascio ha energia 0, ci aspettiamo che anche il de/dx sia 0, cosa che non sembra accadere in questo caso guardando il grafico. proprio per questo motivo vanno inserite delle correzioni (shell correction col fattore C): la formula iniziale senza il fattore di correzione è stata scritta pensando al fatto che quando il protone va a incidere sull'elettrone, quest'ultimo stia fermo; ma il problema è che se l'energia cinetica della particella incidente è molto bassa, non si può più trascurare il moto dell'elettrone attorno al nucleo, per questo motivo viene agginuto il termine di correzione C.
+
+- poi dalle slide si vede che aumentando lo z aumenta il dE/dx perché va come z^2.
+
+- Anziché metterci l'energia mettiamoci lo spazio percorso dal fascio nel corpo umano. Per esempio i protoni, che sono verdi, per esempio. Entrando, i protoni perdono sostanzialmente tutta l'energia che hanno entro un breve tratto spaziale. Nelle slide vediamo che la normalizzazione avviene rispetto alla stessa area. NOTA: il carbonio, rispetto al protone, ha un z chiaramente più alto, e visto che la BB dipende quadraticamente da z^2, il carbonio avrà bisono di un'energia maggiore per arrivare nello stesso punto del carbonio. Comunque le loro curve sono sostanzialmente simili; queste curve sono molto importanti, perché la gran parte dell'effetto viene concentrata in un punto "abbastanza ristretta". I raggi gamma, rilasciano all'inizio molta energia e poi calano esponenzialmente. da un punto di vista fisico, tra usare particelle cariche o gamma è più efficace utilizzare particelle carice. la gran parte del danno, ossia di ionizzazione, viene rilasciata dove vogliamo noi, poiché il picco, chiamato picco di Bragg, dipende dall'energia del fascio e quindi lo possiamo spostare dove si rende più necessario. questa è la diffrenza tra adroterapia e radioterapia.
+
+Torniamo a pagina 29: essendo la BB una legge statistica, non tute le particelle avranno lo stesso range, ossia la profondità alla quale penetra il fascio (nello specifico il range è definito come la pronfodità alla quale il fascio ha la metà della sua energia iniziale. ora vogliamo quantificare quanto è variabile lo spread. In generale, sappiamo che un tumore in una persona può essere profondo circa 20/30 cm. supponiamo di prendere un protone di 200 Mev, dotato di range di 25.8 cm-> la fluttuazione del range (RMS) è di circa 2.5mm ossia l'1% (di che?). Quindi lo spread è molto piccolo ma va considerato, perché magari voglio risparmiare una certa zona sana vicina al tumore.
+
+SEZIONE D'URTO RUTHERFORD
+Anche questa va come 1/energia al quadrato (l'altra era il beta al quadrato), ma in più dell'altra c'è una deflessione testimoniata dalla presenza dell'angolo theta. Prima la deflessione era pochissima, poiché un protone o un carbonio o quello che è bello grosso contro un piccolo elettrone, non fa cambiare la direzione del fascio incidente. Invece ora abbiamo un nucleo, quindi il protone o il carbonio viene deviato, e perde poca energia ma cambia la sia direzione.
+RECAPPINO: possiamo andare più in profondità o meno, con l'intereazione con in nuclei c'è invece uno spread laterale, conun range  di circa 5mm
+
+se il tumore è la zona rossa, e abbiamo 5mm di spread, andiamo a capire anche delle one limitrofe.
+
+pag 33
+sezione d'urto rutherford nel caso in cui abbiamo un protone come fascio e un protone come nucleo. quella blu a sinistra è quella che ci si aspetta dalle relazioni teoriche. il risultato sperimentale è differente. quello cheaccade sono le interazioni nucleari subito a destra dove c'è il minimo. ho delle interazioni nucleari nella parte di interesse. quindi vanno considerate le interazioni nucleari.
+
+ci sono differenze tra protoni e carbonio (va come Z^2) ma in grande in profondità cosa accade, il carbnio ha energia sufficiente per andare oltre il picco di BRagg, e soprattuto perché non c'è nei protoni. quello che succede è che quando entriamo con un fascio, abbiamo che il fascio può fare interaaione nucleare come a pag 51. spossono spaccare il nucleo, ma possono spaccare il protone? n, a queste energie no non possono spaccarlo. possiamo spaccare solo iul nucleo. cosa succede  se lo spacchiamo? a queste energie si consserva il numero di neutroni e il numero di protoni.  spaccando il carbonio che cosa otteniamo? altri nuclei che hanno una carica inferiore. se abbiamo altri  nuclei con carica inferiore al nostro carbonio-> abbiamo un minore dE/dX secondo la bethe bloch, se perdono meno energia significa chevanno più avanti
+
+Quindi, spaccando il bersaglio ho creato particelle più piccole-> teoricamente vano più avanti, ma hanno talmente poca energia che si fermano subito. i nuclei del corpo unumano, una volta spaccati, non fanno strada.
+
+invece di usare un orotone utilizziamo il carbonio. allora, il protone si spacca in oggetti che hanno meno carica di lui, ma questi oggetti hanno la stessa su energia, circa, quindi questi frammenti vanno più avanti e creano una dose maggiore a profondità maggiore. quindi se frammentiamo i nuclei del corpo umanio con protoni, questi frammenti stanno fermi, se utilizziamo il carboni, questi frammenti vanno più avanti.
+
+pag 39: range intorno a 37 cm. man mano che il fascio a carbonio entra, le partielle del fascio diminuiscono e aumentano i frammenti prodotti dal carbonio. l'oggetto in nero è la soma delle due curve. i frammenti secondari sono quelli che vanno oltre il punto che avevamo stabilito per il carbonio. questo è un problema.
+se la bethe bloch va come z^2, perché non prendo derro, puimbio? perché le reazioni nucleari diventano predominani (rilascio tanta energia all'inizio. oltre l'ossigeno non ha senso andare.
+
+a queste energie i processi più frequenti sono quelli della frammenteazione, ossia quello che succede è un'interazione periferic; si ha una sovrapposizione perifferica di corpoi, cc'è una fireball eccitatissima che si diseccita mettendo particelle, e produce due frammenti, uno simile al bersagli e l'altro simile al fascio che era entrato + altri frammenti. abrasione è la creazione della fireball, poi c'è ablazione.
+
+di queste interazioni possiamo crearne quante ne vogliamo, pa 48. cosa buol dire: quando facciamo un trattamento adroterapico, le conosciamo bene, mentre a queste energie le interazioni nucleari non sono completamente misurabili. lo scopo di FOOT è quello di usrsare di fasci di adroterapia e vedere la probabilità di produtre qualsiasi canale si abbia. una volta che sappiamo la sezione d'urto di tutte queste processi, abbiamo una completa conoscenza di ciò che succederà alla ersona. al momento questo onn è ancora completo. per tornare al discorso di prima, quello che succede è che possiamo frammentare un bersaglio del orpo umano, oppure frammentare il proiettile oppure entrambi. una volta che frammentiamo la targhetta, il range di cammino nella mataeria va da 2 micrometri a 70 micrometri nel caso si produca deutoerio. siamo ben sotto il millimetro, di fatto stanno femi. se frammentiamo il proiettile invece abbiamo che questi frammenti vanno molto più avanti.
+
+esistono formule empiriche per il calcolo della sezione d'urto-> possiamo avere un indieme di sezioni d'urto
+
+ma a noi servono calcoli ben più precisi. partireda quela protone protone, protone nucleo etc. utilizziamo le sezioni d'urto in funzione alle varie energia. otteniamo dei risultati approssimati piuttosto buoni.
+
+perché bisogna studiare queste frammentazioni nucleari? i risutlati sono questi di un protone contro un carbionio
+i grafici ce li dicono i dati sperimentali, i dati sperientali sono quelli neri. degli altri non si sa praticamente nulla. qualche risultato c'è. i risultati sono copmpletament inutili. perché sull'asse è stato fatto rispetto all'energia del protone, rispetto a quella deli frammenti. perché quella delp protone. la da il fascio.
+
+se vedaimo l'opposto? frammentazione del proiettile, il carbonio contro idrogeno. che produce tutt questi frammenti . qui ci sono dei risultati. ma perché quando studio la frammentazioen del proiettile ho tuti questi risultati, mentre la fframmentazione del bersaglio non c'è niente las trda che percorreva il bersaglio era quello d viaggare per pochi metri. 
+
+PMMA targhette del corpo umano? qual è lo spessore della targhetta che posso usare? in pratica il prodotto rimane dentro la targhetta. un esperimento convenzionale fallisce, non vede niente. altro problema: latarghetta deve essere di qualche mm. se la faccio di pochi micrometri, ok, però se la facvciamo di pochi micrometri non misuraiamo l'energia di produzione, io voglio sapere l'energia l'energia di produzione, 
+
+FOOT usa tecniche non convenzionali. per studiare le interazioni di prouettile contro un bersaglio, usancambiando il sistema di riferimento. il bersaglio lo gacciamo andare con il bersaglio. dobbiamo rifare le stesse trasformazioni
+
+da un punto di vista fisivo è difficile, perché aggiungere togliere il fascio hanno una certa precisione. prima di arrivare al detectoer, dobbiamo 
+
+l'effetto di queste particelle iterazioni nucleari sulle cellul equante è? nel canale di ingresso vengono uccise il 3 percento delle cellule. da interazione nucleare meno del 10 percento muore per interazione nucleare. se ho un effetto nucleare  dove ho tumore non è un problema
+
+pag 58 percentuale di fascio che riane, man mano cala perche il protne fa interazioni nucleari epò sparire (può essere riassorbito dal bersaglio)
+a oltre 20 cm il 20 percento dei protoni può essere assorbito con in carboni questi numeri aumentnao. il cammino del carbonio non è modificato troppo, magari diventa carbonio 11. non è che succede il disastro.
+
+quanto è largo il picco di bragg: mm. non basta un picco di braggo, pouché il tumore è molto grande iin quella zona. forniamo non un fascio con un energia ben precisa, diamo un fasico dove ogni qualche secondo cambio un po' l'energia e faccio una convoluzione la cui dose da questi pacchetti qua. più è largo il tumore, più si alza la zon aprima del tumire. metodo: spread out bragg peak
+
+è meglio usare protoni o carbonio? i carboni sono più precisi, ma hanno la coda. quali sono i migliori? dipende dai casi.
+
+pag 66 curato con la radioteraoua a sette campi, con 7 direzioni differenti.girano attorno al paziente perché voglio che il danno nella prima parte è piccola. l'adroteraoia: protoni  depositato la stessa quantità didose, e abbiamo risparmiato degli orani sani, possiamo irradiare molto di più laza zon. altro esempio, il cervello.
+tutti i tumori vicini a organi a rischio hann percnetuali di soluzione molto molto elevate.
+
+lavoro del fisico: gestire la macchina che produce il fascio il biologo produce i danni.
+
+DOSE:  quanittà di energia assorbita dal corpo (creata da una particella di fascia, va moltiplicata per N particelle del fascio) per unità di massa. de/dx è quella di prima, diviso la densità del fascio, la fluenza è numero di particelle delfascio per unità di area. La dose dipende dal fascio, da come queste interagiscono, e va diviso per la densià del bersaglio. per creari danni al dna bisiogna lasciare molta energia in un puccolo danno. i biologi la chiamo no linear energy transfer. le particelle con alto a let sono quele ctipo i carboni , quelle che hanno tante interazioni rispetto al dx.
+
+
+nella catena di ingressola catena diei danni è riparabile, non ci sono danni permanentei.
+
+per valutare l'effetto vero e proprio, si va a vedere la sopravvivenzacellulare, dopo l'irradiazione quante cellule sono sopravvisust? tipicamente in batteri hanno un decadmento esponenziale , mentre le cellule dei mammiferi hanno una curva che pè un po' differente, a basse dosi le cellule dei mammiferi sopravvivono di più rispetto a quelle di un batterio, ad alte dosi hanno meno sopravvianza. un batterio infatti non è capace di recuperare i danni, la regola statistica è qiella della distribuzione di poisson, mentre quella dei mammiferi riesce a ripararle. poi dopo si inverte la cosa. per trattare la dose è meglio fare poche dosi con poca dose, piuttosto che dare un unico shot con tnta dose.
+
+la totalità dei trattaenti  oncologici è fatto frazionando la cura. di solito sono 5 trattamenti alla settimna, nell e24 ore lle cellule sane riparano le cellule.
+
+RBE: è un rapporto di dosi: ioo voglio dare una dose di x-ray (presi come riferimento) per avere un effetti du sioravvivenza al 10%, che ammazza il 90 % delle cellule. quanta dose devo dare per uccidere 90% delle cellule se non uso raggio X ma uso altre particelle? se questo oggetto vale 2, vuol dire che cu vuole il doppio di dose, quindi quella di protoni è più efficace.
+
+RBE: radioterapia: vale 1
+protne:1,1 più efficace dei gamma ? NO. perché il rptone è molto più efficace. il 10 % è l'effetto globalem su tutto il trattamenteo. mentre il gamma uccide in tutte queste zone, la gran parte dell'effetto del protone è su unpiccolo spazio!!, mentre i gamma lo fanno in tutto il corpo. 
+
+il 10% è un effetto integrale! non guarda la distribuzione del fascio!!
+
+
+survival: sopravvivenza cellulare: la finestra di infresso è intorno al 30 40 50 %. invce lnella zona tumorale va a qualche percento. òa scala è ogratimica. l'R Be cambia, va da 1,1 a 2.5!
+
+OER : altro metodo per amplificare l'effetto: il danno indiretto era quello della radiolisi dell'acqua. quel processo, se mettiamo artificalmentedentro dell0ossigeno, quella reazione è più frequente, pertanto la reazione viene meglio! se mettiamo nel corpo umano, nella zona tumorale de''ossigeno facilitiamo quell'effetto indiretto.
+
+adroterapia in italia
+catania: ormai è chiuso
+a rtento c'è ciclotrone e non sincrotrone
+
+berti ichat in auoa 4 venerdì 14 alle 4
