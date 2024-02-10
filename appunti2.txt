@@ -1,0 +1,68 @@
+FOOT: Esperimento sulla frammentazione del target.
+
+I risultati sono utili nell'adroterapia (protoni e carbonio). Sappiamo bene cosa succede a livello coulombiano, non cosa succede a livello nucleare. Energie: Protoni (50Mev-200Mev) per nucleone, carbonio fino a 400 Mev per nucleone. 4800 Mev totali per 12 nucleoni (del carbonio). I risultati delle sezioni d'urto nel caso di energie maggiori sono utili per la ricerca sui raggi cosmici.
+
+Sia in adroterapia sia nella radioprotezione: vogliamo molta precisione nelle misure -> la NASA vuole mandare le persione nello spazio se il rischio di contrarre un tumore è inferiore al 2% (sono raggi cosmici! fanno male).
+
+Raggi \gamma sostituiti con particelle cariche. Cosa succede nel corpo umano? Per fascio utilizziamo protoni o carboni. Il bersaglio (corpo umano) è una targhetta che contiene carbonio, idrogeno o ossigeno.
+
+La differenza tra radioterapia e adroterapia è nel profilo di dose che si lascia nel corpo umano: nell'adroterapia è più precisa.
+
+- ionizzazione eccitazione e frammentazione sono le interazioni che funzionano a questi range. Le prime due sono legate all'interazione elettromanetica, l'ultima non la conosciamo.
+
+FASCIO DI PROTONI: interazione o protone protone, oppure protone contro carbonio o ossigeno. Il protone a queste energie non si frammenta, non si spacca. Nel caso dell'idrogeno non si frammenta nulla, nel secondo caso si frammenta solo il target. Visto che il target è fermo, ha poca energia -> i frammenti di questo target fanno pochissima strada (2 micrometri circa, praticamente nulla nel corpo umano). i frammenti dove vengono prodotti rimangono. Al contrario, se facciamo terapia con dei carboni, se va a sbattere contro un idrogeno non lo frammenta, e  l'unica frammentazione è quella del nostro proiettile e in questo caso sono frammenti con molta energia iniziale (all'idrogeno gli lasciano poco). Quello che succede è che i frammenti hanno carica elettrica sicuramente minore del carbonio -> -dE/dx~z^2/\beta^2 --> i frammenti hanno circa la stessa \beta, ma la carica è minore, quindi il dE/dx è minore (per i frammenti) -> interagiscono meno e quindi vanno oltre il picco di Bragg. I frammenti del proiettile popolano una zona successiva al picco di Bragg. Questo spiega il fatto che l'uso del carbonio lascia una bella coda a differenza del protone. Il carbonio lascia più energia, ma se dopo abbiamo un organo a rischio è melgio l'uso del protone. Se abbiamo carbonio o ossigeno come bersaglio, possiamo frammentare qualsiasi cosa.
+
+Facciamo un apparato che spara protoni, e va a a trovare tutti i prodotti della frammentazione. Abbiamo tanti modelli ma pochi dati sperimentali. Cambiando i modelli cambia di parecchio la sezione d'urto. Il dato sperimentale è poverissimo, purtroppo. Il dato sperimentale è anche povero, ma non serve nemmeno a nulla -> perché noi vogliamo la probabilità che sia prodotto una certa sostanza X non rispetto all'energia del fascio, ma rispetto all'energia della particelle stessa X.
+
+Il panorama sperimentale della frammentazione del target è davvero poverissimo.
+
+Lo stesso abbiamo nel caso in cui spariamo il Carbonio.
+
+Se, invece, studiamo la frammentazione del proiettile -> abbiamo molti risultati, ma non ne abbiamo in alcuni casi molto -> C+H produce boro 11, però è necessario conoscere solo quella del boro 10 etc.
+
+Ma per quale motivo i fisici hanno studiato la frammentazione del proiettile e non quella del target? sull'asse x nel caso del proiettile abbiamo l'angolo di emissione. Perché quindi non is fa quella de target? perché i frammenti del carbonio e dell'idrogeno sono talmente deboli energeticamente che non si riesce a rivelarli
+
+Allora che facciamo: piccola targhetta. Due problemi 1) presa dati che impiegherebbe MESI, impossibile.
+
+Se comunque mettiamo targhetta sottile -> comunque i frammenti perdono energia, noi misuriamo un'energia che è diminuita, noi vogliamo ottenere quella "vera", non quella diminuita dopo che viene attraversato il materiale
+
+allora che si fa? non usiamo il protone come fascio, na usiamo carboni e ossigeni e li andiamo a sbattere contro i protoni. non è la stessa cosa, bisogna fare poi un altro cambiamento di variabile (un boost di lorentz). Va applicata una certa matrice di trasformazione. il \beta è quello del protone originario -> possiamo tornare indietro solo che il carbonio ha lo stesso \beta del protone (carbonio ha lo stesso beta del protone equivale a dire che il carbonio ha la stessa energia cinetica del protone (si ragiona tutto in "per nucleone")). Applicando nuovamente un boost di lorentz -> torno indietro. Matematicamente è "semplice", solo che il problema è: misurare la velocità del fascio, sommare e sottrarre valori. il problema è che ra l'errore si propaga. non abbiamo difficoltà matematiche, dobbiamo tenere conto di difficoltà di propagazione dell'errore. -> la misura finale è meno precisa.
+
+Quindi abbiamo detto: targhetta carbonio-idrogeno che va su protone. solo che l'idrogeno è altamente infiammabile -> alcuni tipi di targhette esistono, ma non si possono utilizzare bene. allora la faccio scontrare con del carbonio (grafite) e poi con del polietilene. la presa dati va fatta anche in periodi molto vicini -> dipendono da umidità, temperatura.
+
+la sezione d'urto viene data come differenza di sezioni d'urto. altro errore che si aggiunge.
+
+com'è fatto l'apparato? quando abbiamo un fascio, quelli leggeri vengono emessi a tutti gli angoli, grandi e piccoli. invece quelli più pesanti vengono emessi entro un angolo abbastanza piccolo. però siccome l'accettanza angolare grande unica costa, ne facciamo 2, uno grande e uno piccolo. camera a emulsione: è fatta di strati di bersaglio, e intervallati a questi bersagli ci sono dei film che cattura un pallino bianco al passaggi odelle particelle. permette di capire quali particelle sono prodotte e le loro caratteristiche cinematiche. è ovvio che i frammenti leggeri a piccolo angolo finiscono nell'altro e viceversa,
+
+l'analisi va fattp con il setup elettronico. -> regione pre target, perché c'è un apparato? dobbiamo studiare le caratteristiche del fascio per la sua dinamica, per applicare la cinematica inversa. poi c'è una regione che traccia le particelle cariche.
+
+Start counter: nel momento in cui c'è un segnale qui, una particella è entrata -> segna il tempo 0. beam monitor: serve a localizzare il fascio.
+
+Se l'acceleratore ci dice gia le info sul fasico perché dobbiamo misurarlo noi? perché quando il fascio passa sullo start counter (è uno strato molto piccolo di scintillatore plastico (ha la caratteristica fondamentale di emettere fotoni nella radiazione del visibile mentre è attraversato da particella carica)). prima le scintille si usavano con un un fotomoltiplicatore, oggi si usano dei pezzettini di silicio, molto piccoli -> i fotoni li raggiunge, ognuon dà un segnale, mettendo insieme il segnale otteniamo il segnale di ingresso. purtroppo, anche se questo oggetto è molto sottile, potrebbe far deviare il fascio, se lui la devìa, biusogna rimisurare la sua posizione. la andiamo a misurare con una camera a drift, una camera che dentro ha del gas. il gaso viene ionizzato, la ionizzazione va sui gfili e rilascia un segnale. in base a quello sappiamo deov'è passata la particella. quindi il primo da il trigger iniziale, avvisa che qualcosa è arrivato (dice a tutti gli apparati occhio che tra poco succede qualcosa, dà il tempo) e quello dopo ne misura la direizone.
+
+Quando si parla di trigger -> tutti li apparati hanno un sistema di acquisizione per cui tutti devono essere sincronizzati. ogni quanto avviene questi? kHz.
+
+l'ultimo start counter usato-> i silicon fotomultiplyer per capire esattamente il punto in cui la particella è passata.
+
+ quello che abbiamo dopo è un sistema di tracciamento, che serve a 2 cosa: per ogni traccia prodotta dobbiamo costruire la traiettoria di questa traccia. Le partielle cariche vengono deflesse (per misurare una caratteristica cinematica, ossia l'impulso). abbiamo due campi magnetici per avere misure più percisa.
+
+il sistema di tracciaamento è dato da un vertex, 4 piani costituiti dai fotomultiplyer (2 cm*2 cm). la particella quando entra in una di quella capiamo che la particella è entrata. Abbiamo, pertato, 4 di questi oggetti e per ogni traccia abbiamo almeno 4 punti per ricostruire la parte iniziale della traccia. La particella va nel campo magnetico, viene curvata (e lì non abbiamo rivelatori) e poi ve ne sono altri 2, in cui si studia la direzione di uscita. da queste direzioni , pre e dopo campo magnetico riusciamo a capire il raggio di cruvatura. possiamo utilizzare un MSD, non fatto a pixel come gli altri due ma a strisce orizzontali e verticali sovrapposte, su cui si capisce il punto. FONDO COMBINATORIALE, è il modo per capire come fare detectir. in pratica gli ultimi citati sono a strip e non a pixel.
+
+KALMAN FILTER: di solito si parte dall'ultimo rivelatore e si tornai indietro in maniera iterativa.
+
+abbiamo traiettoria e impulso dei frammenti-> cosa vogliamo in più da questi rivelatori? vogliamo identificare questi frammenti. uno è tofwal, scintillatore: studia la bethe bloch: se abbiamo uno strmento che misura il de/dx, ossia la qantità di energia rilasciata dal frammento in un piccollo dx di materiale->se abbiamo questa misura, possiamo risalire al z^2/\beta^2-> per capire il frammento dobbiamo conoscere Z e A -> abbiamo univocamente determinato il tipo di frammento. quindi abbiamo il nostro de/dx. il fotomoltiplicatore mi dice anche a che tempo è arrivato il segnale: misuriamo pertanto il beta! perché se abbiamo il tempo iniziale e il tempo finale e già conosco la traccia - otteniamo la elocità. lo start counter unito al tof wall, barre di scintillatore, danno la carica della particella. ANCORA NON è FINITA: dobbiamo calcolare la massa.
+com'è fatto lo scintillatore: barre di plastica scintillate, con spessore di 3 mm. ai lati delle barre per misurare il segnale ci sono i silicon fotomultiplyer.
+
+come misuro l'energia cinetica? se ho barra sottile la particella lo attraversa: per misurare tutta la sua energia abbiamo un oggetto molto più profondo, molto pioù pesante -> affinché ci sia rilasciata un'energia più importante che possa essere misurata. il materiale è il bismuto, è pesante: abbiamo che viene rilasciata tutat l'energia all'interno. il segnale che si prende è proporzionale a tutta l'energia cinetica della particella. il tof wall cattura tutta la luce che viene emessa dalla particella.
+
+a seconda dell'energia che gli arriva -> più l'energia che arriva è alta più siamo precisi nella misurazione. siccome la particella ha preso un po di energia nello scintilllatore -> va aggiunta nel computo finale. sappiamo quando inizia eq quando finisce con precisione di 40/50 picosecondi
+
+ultima presa dati al CNAO.
+
+tramit4 lo scintillatore abbiamo il de/dx e dal tempo di volo che dà il β abbiamo il 5% delle volte il fascio non interagisce mai.
+
+ORA DOBBIAMO IDENTIFICARE LA MASSA: si parla di numero di massa. pssia la massima diviso il numero di massa atomica. la massa la otteniamo dalle formule relaitivistiche. la possimao ricavare dall'impulso, oppure dall'energia cinetica, oppire dalla relazione fondamentale energia impulso. otteniamo tre modi DIPENDENTI p er trovare la massa. qulasiasi scelta perdiamo un oggetto che abbiamo costruiti. allora li utilizzuamo tutti e tre sapendo che sono correlati. si fa un bel fit. con matrice di correlazione. e poi dopo aver fatto questo bel fit -> facciamo un uso di tutte e tre le quantità -> al momento ancora la misura della massa sui dati reali perché l'apparato è stato completato solo di recente. ercentuali: attorno al 4%.
+
+Delle volte la massa non viene ricostruita bene. quando il frammento passa nel caorimetro ci sono interaazioni EM (che rilasciano luce) ma ci sono anche interazioni nucleari!(produzione neutroni, che scappano via -> rilascio ulteriore di energia. Nel caso non tutta l'energia venga rilasciata nel calorimetro perche si perde coi neutroni, abbiamo una sottostima o sovrastima dellla massa, infatti in A_3 sovrastimiamp la massa nel secondo caso la sottostimiamo (per la presenza dell'energia cinetica).
+
+fare il fit serve soprattutto a questo: il fit, restituisce i chi quadro che dice quanto è buono il fit: allora abbiamo riportato il valore di \chi quadro: a un talio di chi quadro buttiuamo via un sacco di eventi-> fare un fit è un aiuto per buttare via tutti gli eventi mal ricostruiti. sezione d'urto significa: quanti carboni 10, 11, 12 ci sono? riusciamo anche a seperare le sezioni d'urto. se c'è la precisione inferiore, abbiamo  più difficoltà a ricostruirli. èmolto importante fare le cose nel modo preciso. possiamo andare a contare i frammenti prodotti.

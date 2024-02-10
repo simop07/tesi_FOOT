@@ -1,0 +1,111 @@
+CNAO: presa dati di ottobre -> centro per pazienti non trattabili con metodi tradizionali di trattamento.
+si usano fasci di particelle anziché radiazioni di raggi gamma. La macchina è un sincrotrone, ha un diametro molto grande ed è la macchina sia usata per i trattamenti che per lo studio di presa dati.
+
+ -> link alberto angela
+
+O ioni o protoni di carboniio vengono accelerati fino a un'energia richiesta per dati o per paziente. Mediante magneti viene deviato o nella sala trattamenti o nell'esperimento foot.
+
+Da una parte ci  sono gli acellatoristi, che si occupano delle caratteristiche del fascio.
+
+Bologna si iccupa del sistema di acquisizione dei rivelatori.
+
+Ricavare la sezione d'urto: sono i dati che mancano per sfruttare i piani di trattamento. In più servono anche per la radioprotezione spaziale.
+
+zona di tracciamernto: due magneti permanenti (che permettono di deviare le particelle cariche) e due ... e delle strip dopo i due magneti... vari rivelatori con cui costruire il momento.
+
+ToF wall: qui la particella arriva e lascia energia (qui si ricava la sua carica). Il calorimetro permette di ricavare l'energia cinetica, poiché qui viene rallentato.
+
+
+I dati reali vengono confrontati con i dati simulati. Mettendo insieme i dati sperimentali e quelli ottenuti dal modello simulato si capisce se ci sono delle discrepanze. Nel caso di FOOT, trovare discrepanze significa poter raffinare il nostro modello, visto che per la maggior parte delle robe che si fanno sono conosciute (a differenza di LHC).
+
+Una variazione del modello (un miglioramento anche 'banale' del 2/3%) consegue in una gran differenza per i trattamenti del paziente.
+
+La simulazione avviene in un software chiamato FLUKA. è importante avere una simulazione di questo tipo perché permette di capure fin dove ci si può spingere.
+
+Se il fascio raggiunge il rivelatore finale, si può ricostruire la traccia della particella. Se invcece il frammento creato 'non lo vedo' perché magari esce dall'angolo solido che collega il beam con il rivelatore finale, la simulazione lo tiene conto. le simulazioni sono tanto importanti quanto i dati reali, avere simulazioni accurate è davvero molto importante.
+
+PRESA DATI
+
+16O, non li abbiamo al CNAO. Prenderemo in considerazione solo i Vertex e i Tof Wall.
+Target: composto di carbonio e idrogeno e va incontro a frammentazione, per esempio formando carbonio 12 o 4He. in questa fase non ci sono magneti, quindi non ci sono motivi per cui devino, se non fare scattering con le molecole d'aria, ma ipotizziamo ora che non c'è nemmeno questo effetto.
+
+Vertex -> rivelatore a pixel di silicio, 4 piani, con larghezza di 100um; quando la particella interagisce col rivelatore, vi rilascia energia; il rilascio di energia si converte in accenzione del pixel. è gestito da un'elettronica digitale (pixel acceso o spento, se è acceso significa che qualcosa è attraversato). Più pixel sono accesi e questi pixel creano un "cluster". in generale, non abbiamo che il passaggio della particella accende un solo pixel, ma piu di uno -> questo si chiama cluster, nu gruppo di pixel vicini. se due tracce attraversano lo stesso piano, è sicuramente possibile che ci siano due spot diversi. in ogni piano posso avere più di un cluster. il primo pixel del piano 1 può essere parte della stessa traccia del pixel del piano 2? se questo è possibile allora si vanno a vedere tutti gli strati successivi del rivelatore. un insieme di cluster dà una traccia. dalla sua inclinazione, si può ricostruire dove c'è stata l'interaziobne (punto chiamato vertice di interazione). siccome nel nostro esperimento l'interazione avviene nel target, la maggior parte delle volte accade che il vertice di interazione è interno alla posizione del target. le informazioni che servno del rivelatore vertex sono: i vrtx point (punto di interazione del vertice: da dove nasce l'interazione). da questo dato ricaviamo la posizione in xyz.
+la z indica la profondità dell'esperimento (a 0 il target a 2 metri il tof). 
+quindi 1punto di interazione al vertice, le 2 tracce. nota ogni cluster ha un certo numero di pixel accesi.  una volta che la particella ha attraversato il vertex, poi alla fine raggiunge il tof wall.
+
+tof wall: barre scintillanti (no rivelatori al silicio), di larghezza 2 cm. Ce ne sono 20 in un piano 20 nell'altro. nel piano davanti sono orizzontali e nel piano dietro sono verticali. la graularità è molto minore. qui la precisione è minore, infatti l'errore è di 2 cm. il crossing delle barre danno la posizione in xy (ricoridiamo che qui abbiamo barre larghe 2 cm, quindi l'errore è maggiore).
+
+le due particelle hanno attraversato il piano davanti e il piano dietro del rivelatore tof wall e mi hanno acceso entrambe le barre orizzontale e verticale (hit). Si ricavano 2 info, l'energia che ha rilasciato al suo interno e il tempo di volo (tempo in prima approssimazione per arrivare dal target al rivelatore). è un'info teporale importante, infatti sapendo la distanza e il tof posso ottenere la velocità della particella e dall'energia ho la carica della particella (formula di bethe block).
+
+solo il 10% degli eventi vanno incontro a frammentazione. nella maggior parte dei casi l'ossigeno non frammenta. molti eventi saranno composti da una singola traccia.
+
+Uso dei TTree: ha strumenti specifici per il nostro tipo di analisi. Il Tree pesa meno rispetto ad altri tipi di database, inoltre ci sono molte funzioni (tipo pescare informazioni da un contenitore all'altro).
+
+aprire il primo dei due Tree. un Tree è un albero e gli alberi contengono dei rami e delle foglie. è un megacontenitore intelligente che contiene altri contenitori. Ogni foglia è una grandezza associata al rivelatore. per esempio, cliccando su ev-> si aprono degli istogrammi (in asse x c'è a grandezza che vogliamo studiare e su y il numero di conteggi).
+
+1 evento cosa è? è un processo fisico per cui una traccia arriva nel target fa qualcosa e arriva alla fine del tof wall. ogni particella di ossigeno sparata è un evento di ossigeno differente. ogni evento ha un singolo ossigeno che si spacca e frammenta contro il target. in ognuna di queste volte l'ossigeno può frammentare o non frammentare, può avere un certo angolo di inclinazione o altro. più il dataset è grande, più si hanno informazioni statisticamente rilevanti.
+
+il numero di vertici rappresenta il numero di vertici di interazione: il punto da cui si originano i frammenti. in un evento è molto prob abile che ci sia un solo ossigeno , che generi un vertice di frammentazione, nel senso che può rompersi in frammenti solo in un punto. la maggior parte degli eventi ha un solo numero di certici di interazioni. ci sono dei casi in cui si hanno 0 vertici di interazione. questo è dovuto al fatto che il mio rivelatore, per vari motivi, non ha ricostruit nessuna traccia e quindi non ha costruito nessun vertex point. in questo caso c'entra lefficienza (la sua capacità di poter effettivamente vedere un segnale) qui entra in gioco la simulazione. è qualcosa che è da sapere prima che si va a fare raccolta dati il fatto che un certo rivelatore abbia efficienza maggiore o minore.
+
+ogni vertex point ha sue coordinate in xyz. la maggior parte dei punti di vertice nasce al centro del mio rivelatore. l'ossigeno spesso può non essere erogato al centro 0,0, perché mahgariraggiunge il target nelle coordinate 0,5 0,5.
+
+la coordinata z è fortemente piccata nello spazio. e infatti abbiamo un picco attorno a 0. c'è, facendo uno zoom, una particolare sorta di distrubuzione uniforme accanto al picco della z in 0. questo è dovuto allo spesore del target. (-300,300)um è la dimensione del target., e infatti tutto cio che si trova in questa reginoe è da contare, non è trascurabile il suo spessore.
+
+Anche la posizione del vertice è sostanzialmente centrata in 0. In z abbiamo 4 picchi perché abbiamo 4 piani del vertex.
+
+nella maggior parte degli eventi ho un solo tofwall point. il rivelatore ha un'efficienza non alta data dal fatto che a volte il rivelatore non rileva nessun evento.
+
+nel caso di TWXpoint abbiamo delle coordinate discrete. ogni barra è grande 2 c,, e infatti abbiamo che la particella centrale per dire se ha coordinata x=0, abbiamo che quella successiiva si trova a circa 2 cm. l'estensione infatti è di 40 cm, per la cooridinata y uguale per la coordinata z un unico picco.
+
+di ogni tofwall point abbiamo l0informazione del tempo di volo, e il tempo medio è di 10ns
+
+energia rilasciata attorno ai 300/400keV.
+
+quindi queste sono le info principali dietro il processo fisico del problema.
+
+nota: graficando vertex_vertex_y possiamo studiare le caratteristiche del fascio, il fatto che è collimato al netto di 0.5 cm
+
+ISTANZIAMENTO DI UN FILE QUALSIASI. inserendo i nomi di outre posso ritornare la cella di memoria 
+
+Compression: fattore di compressione degli oggetti.
+
+Scan con due varaibili: Scan("vertex_x:vertex_y") ma anche più di uno.
+
+si possono anche filtrare i risultati e poi inserire delle opzioni di visualizzazione
+
+MakeClass -> serve a fare vera e propria analisi. Si usano cicli for e dei contenitori, vettori della standard library etc.
+
+al vertex_x è associato un array di posizioni x (un vettore che dipende dal tipo che stiamo studiando).
+
+anche se abbiamo un'informazione di conteggi, abbiamo che le tracce sono tutte associate a un punto di vertice. anche se l'interazione solitamente è un vertice. è comunque un vettore per tenere conto di tutte le eentuali combinazioni possibili.
+
+in praica un make class è fattibile per ogni file loop. nel .h le istanze che si possono fare, nel .c il loop.
+
+va usata la classe implementata dal tutor
+
+la funzione MyAnalysis ha tre funzioni
+1) beforeLoop: istanzia tutti gli oggetti che servono nell'analisi. in pratica qui si crea l'istrogramma
+2) PrepareLoop: si chiede di inserire dentro l'istogramma di inserire le posizioni xyz del vertex point. Faccio un ciclo per tutti i vertici differenti che posso avere. in pratica qui si riempie l'istogramma.
+3) in pratica qui si salva o analizza l'istogramma
+
+POWERCYCLE
+
+un esempio che si può fare è creare un algoritmo di funzinoe di traccia che funzioni per davvero.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
