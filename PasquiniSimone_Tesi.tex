@@ -1,0 +1,169 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[italian]{babel}
+\usepackage{newlfont}
+\usepackage{color}
+\textwidth=450pt\oddsidemargin=0pt
+
+% INIZIO HEADER INSERITI DA ME, DA CUI HO TOLTO GLI HEADER CHE SI RIPETONO
+
+%\documentclass[12pt,a4paper]{article}
+%\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage[backend=bibtex,
+			style=numeric,
+			sorting=none
+			]{biblatex}
+\addbibresource{bibliography.bib} %Import the bibliography file
+%\setlength{\droptitle}{-2cm}% change title position
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage[T1]{fontenc}
+%\usepackage{multirow}
+%\usepackage{array}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+%\usepackage{graphicx}
+%\usepackage{siunitx}
+\usepackage{hyperref}
+%\usepackage{float}
+%\usepackage[margin=2cm]{geometry}
+%\usepackage{listings}
+%\usepackage{circuitikz}
+%\usepackage{subcaption}
+%\usepackage{tabularx}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+%\renewcommand{\lstlistingname}{Code}
+%\renewcommand{\lstlistlistingname}{List of Code}
+%\lstdefinestyle{chstyle}{
+	%	backgroundcolor=\color{gray!12},
+	%	basicstyle=\ttfamily\small,
+	%	commentstyle=\color{green!60!black},
+	%	keywordstyle=\color{magenta},
+	%	stringstyle=\color{blue!50!red},
+	%	showstringspaces=false,
+	%	%captionpos=b,
+	%	numbers=left,
+	%	numberstyle=\footnotesize\color{gray},
+	%	numbersep=10pt,
+	%	%stepnumber=2,
+	%	tabsize=2,
+	%	frame=L,
+	%	framerule=1pt,
+	%	rulecolor=\color{red},
+	%	breaklines=true,
+	%	inputpath=code
+	%}
+%\renewmenumacro{\directory}{pathswithfolder} % default: path
+%\renewmenumacro{\keys}{shadowedroundedkeys} % default: roundedkeys
+%\setlength{\arrayrulewidth}{1.0pt}
+%\renewcommand{\arraystretch}{1}
+
+%\usepackage{fontspec}
+%\setmainfont{Calibri}
+
+% è già di default interlinea singola
+%\usepackage{setspace}
+%\singlespacing
+
+%\usepackage[font=it]{caption}
+%\usepackage{indentfirst}
+
+% FINE HEADER INSERITI DA ME
+
+\begin{document}
+	\begin{titlepage}
+		%
+		%
+		% UNA VOLTA FATTE LE DOVUTE MODIFICHE SOSTITUIRE "RED" CON "BLACK" NEI COMANDI \textcolor
+		%
+		%
+		\begin{center}
+			{{\Large{\textsc{Alma Mater Studiorum $\cdot$ Universit\`a di Bologna}}}} 
+			\rule[0.1cm]{15.8cm}{0.1mm}
+			\rule[0.5cm]{15.8cm}{0.6mm}
+			\\\vspace{3mm}
+			
+			{\small{\bf Scuola di Scienze \\ 
+					Dipartimento di Fisica e Astronomia\\
+					Corso di Laurea in Fisica}}
+			
+		\end{center}
+		
+		\vspace{23mm}
+		
+		\begin{center}\textcolor{red}{
+				%
+				% INSERIRE IL TITOLO DELLA TESI
+				%
+				{\LARGE{\bf TITOLO TESI}}\\
+		}\end{center}
+		
+		\vspace{50mm} \par \noindent
+		
+		\begin{minipage}[t]{0.47\textwidth}
+			%
+			% INSERIRE IL NOME DEL RELATORE CON IL RELATIVO TITOLO DI DOTTORE O PROFESSORE
+			%
+			{\large{\bf Relatore: \vspace{2mm}\\\textcolor{red}{
+						Prof./Dott. Nome Cognome}\\\\
+					%
+					% INSERIRE IL NOME DEL CORRELATORE CON IL RELATIVO TITOLO DI DOTTORE O PROFESSORE
+					%
+					% SE NON AVETE UN CORRELATORE CANCELLATE LE PROSSIME 3 RIGHE
+					%
+					\textcolor{red}{
+						\bf Correlatore: (eventuale)
+						\vspace{2mm}\\
+						Prof./Dott. Nome Cognome\\\\}}}
+		\end{minipage}
+		%
+		\hfill
+		%
+		\begin{minipage}[t]{0.47\textwidth}\raggedleft {
+				{\large{\bf Presentata da:
+						\vspace{2mm}\\
+						Simone Pasquini}}}
+		\end{minipage}
+		
+		\vspace{40mm}
+		
+		\begin{center}
+			%
+			% INSERIRE L'ANNO ACCADEMICO
+			%
+			Anno Accademico \textcolor{red}{ 201*/201*}
+		\end{center}
+		
+	\end{titlepage}
+	\newpage
+	
+	\chapter*{Sommario}
+		Questo è l'inizio del sommario.
+	\newpage
+	\tableofcontents
+	\newpage
+	\addcontentsline{toc}{chapter}{Introduzione}
+	\chapter*{Introduzione}
+		Questo è l'inizio dell'introduzione.
+	\newpage
+	\addcontentsline{toc}{chapter}{Conclusioni}
+	
+	\chapter{Primo capitolo}
+	
+	\chapter*{Conclusioni}
+		Let's cite! Einstein's journal paper \cite{einstein} and Dirac's book \cite{dirac} are physics-related items.
+	\newpage	
+	\printbibliography[
+		heading=bibintoc,
+		title={Bibliografia}
+		]
+		 	
+\end{document}
+
