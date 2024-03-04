@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,twoside]{report}
 \usepackage[italian]{babel}
 \usepackage{newlfont}
 \usepackage{color}
@@ -27,7 +27,7 @@
 %\usepackage{siunitx}
 \usepackage{hyperref}
 %\usepackage{float}
-%\usepackage[margin=2cm]{geometry}
+\usepackage[top=1.7in,left=1in,right=1in]{geometry}
 %\usepackage{listings}
 %\usepackage{circuitikz}
 %\usepackage{subcaption}
@@ -69,12 +69,23 @@
 %\usepackage{fontspec}
 %\setmainfont{Calibri}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{CAP.\ \thechapter\ --\ #1}}{}}
+\setlength{\headwidth}{13cm}
+\fancyhead{} % clear all header fields
+\fancyhead[LO]{\footnotesize \textsl{\rightmark}}
+\fancyhead[RE]{\footnotesize \textsl{\leftmark}}
+\fancyhead[LE,RO]{\footnotesize \thepage}
+\fancyfoot{} % clear all footer fields
+\renewcommand{\headrulewidth}{0.3pt}
+
 % è già di default interlinea singola
 \usepackage{setspace}
-\doublespacing
 
 %\usepackage[font=it]{caption}
-\usepackage{indentfirst}
+%\usepackage{indentfirst}
 
 % FINE HEADER INSERITI DA ME
 
@@ -141,7 +152,8 @@
 		
 	\end{titlepage}
 	\newpage
-	
+	\newgeometry{top=4cm,bottom=4cm,left=4cm,right=4cm}
+	\doublespacing % Also singlespacing, onehalfspacing 
 	\chapter*{Sommario}
 		Questo è l'inizio del sommario.
 	\newpage
@@ -185,7 +197,7 @@
 	\section{Terapie oncologiche}
 	Il trattamento di un tumore avviene in molti modi differenti e varia in base al tipo di cancro, il suo stadio di avanzamento e dagli obiettivi che si intendono raggiungere al termine dei trattamenti. Oggigiorno, le terapie oncologiche si distinguono in locali (o regionali) e generali (o sistemiche), in base all'estensione del tumore che colpisce il paziente. Al primo gruppo appartengono terapie come la chirurgia, la radioterapia e l'adroterapia, mentre al secondo afferiscono la chemioterapia e l'immunoterapia. Tali tecniche, proprio per la loro diversità, sono spesso utilizzate in maniera complementare per aumentare l'efficacia dei trattamenti clinici.
 	
-	Per pianificare il trattamento più adeguato rispetto a una certa patologia oncologica, si introduce il concetto di stadiazione, che è un modo di descrivere in maniera schematica, rigorosa e standardizzata quanto è grande un tumore e quanto si è diffuso dalla sede originale (cita
+	Per pianificare il trattamento più adeguato rispetto a una certa patologia oncologica, si introduce il concetto di stadiazione, che è un modo di descrivere in maniera schematica, rigorosa e standardizzata la grandezza di un tumore e la sua diffusione al di fuori della sede originale (cita
 	%https://www.airc.it/cancro/affronta-la-malattia/la-fase-della-diagnosi/stadiazione
 	). Le informazioni tipiche della stadiazione includono la collocazione del tumore, la sua estensione e se si è diffuso in parti del corpo differenti. Infatti, come già accennato, le cellule tumorali si moltiplicano in modo incontrollato andando a occupare (per mezzo del sistema linfatico o sanguigno) organi e tessuti distanti dalla sede di sviluppo originaria, in un fenomeno chiamato metastasi.
 	
