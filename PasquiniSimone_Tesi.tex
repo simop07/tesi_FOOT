@@ -15,9 +15,9 @@
 			]{biblatex}
 \addbibresource{bibliography.bib} %Import the bibliography file
 %\setlength{\droptitle}{-2cm}% change title position
-%\usepackage{amsmath}
+\usepackage{amsmath}
 %\usepackage{amsfonts}
-%\usepackage{amssymb}
+\usepackage{amssymb}
 %\usepackage[T1]{fontenc}
 %\usepackage{multirow}
 %\usepackage{array}
@@ -64,16 +64,17 @@
 %\renewmenumacro{\keys}{shadowedroundedkeys} % default: roundedkeys
 %\setlength{\arrayrulewidth}{1.0pt}
 %\renewcommand{\arraystretch}{1}
+\usepackage{mathcomp}
 
 %\usepackage{fontspec}
 %\setmainfont{Calibri}
 
 % è già di default interlinea singola
-%\usepackage{setspace}
-%\singlespacing
+\usepackage{setspace}
+\doublespacing
 
 %\usepackage[font=it]{caption}
-%\usepackage{indentfirst}
+\usepackage{indentfirst}
 
 % FINE HEADER INSERITI DA ME
 
@@ -135,10 +136,7 @@
 		\vspace{40mm}
 		
 		\begin{center}
-			%
-			% INSERIRE L'ANNO ACCADEMICO
-			%
-			Anno Accademico \textcolor{red}{ 201*/201*}
+			Anno Accademico { 2023/2024}
 		\end{center}
 		
 	\end{titlepage}
@@ -155,7 +153,46 @@
 	\newpage
 	\addcontentsline{toc}{chapter}{Conclusioni}
 	
-	\chapter{Primo capitolo}
+	\chapter{Terapie oncologiche e radiazione ionizzanti}
+	Una delle maggiori cause di morte per la popolazione mondiale risiede nella contrazione di neoplasie. Una neoplasia o tumore è una patologia legata al mancato funzionamento del ciclo cellulare. Le cellule tumorali, per via di mutazioni genetiche che sfuggono ai meccanismi di controllo che regolano la proliferazione cellulare, iniziano a dividersi in modo eccessivo formando delle masse anomale, chiamate tumori, che talvolta possono invadere altri tessuti dell'organismo ostacolandone le funzioni vitali, in un processo chiamato metastasi. In quest'ultimo caso si parla di tumore maligno o cancro.
+		
+	Attualmente, è possibile prevenire fino al $50\%$ di tumori evitando fattori di rischio e implementando strategie di prevenzione già esistenti (cita
+	%https://www.who.int/news-room/fact-sheets/detail/c+ancer
+	), anche se ciò dipende dalla tempestività delle diagnosi, dalla tipologia delle cure e dal tipo di tumore. Si stima che nei Paesi industrializzati\footnote{Si fa riferimento ai Paesi OCSE (Organizzazione per la Cooperazione e lo Sviluppo Economico).}, nel $2021$, il cancro è la seconda causa di morte (causando il $21\%$ dei decessi totali), preceduto dalle malattie cardiovascolari (cita %https://www.oecd-ilibrary.org/docserver/7a7afb35-en.pdf?expires=1709230714&id=id&accname=guest&checksum=FBEABF3EDA6F2040465BB27356B8D68B
+	). Sebbene il tasso di mortalità sia sceso sin dal $2000$, a livello mondiale il numero di casi diagnosticati di cancro (nel $2022$) attesta a quasi $20.0$ milioni\footnote{Negli ultimi dieci anni il numero di casi di tumore è aumentato di anno in anno, soprattutto a causa dell'invecchiamento progressivo della popolazione (cita
+	%https://www.iss.it/-/tumori-in-aumento-le-diagnosi-in-europa-anche-per-effetto-dell-invecchiamento-demografico
+	), ma nel biennio $2020$-$2021$ il trend è cambiato a causa della pandemia di COVID-$19$, che ha precluso l'accesso a screening oncologici (nel periodo gennaio--ottobre $2020$ vi è stato un calo del $37.3\%$ di test diagnostici rispetto al periodo pre-pandemico) (cita
+	%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9807424/
+	). Ciò potrebbe rivelarsi fatale nel medio-lungo termine causando un aumento dei tassi di incidenza e mortalità (cita
+	%https://doi.org/10.1787/ae3016b9-en
+	).} (pari al $2.5\tcperthousand$ della popolazione totale (citare %https://data.unicef.org/resources/data_explorer/unicef_f/?ag=UNICEF&df=GLOBAL_DATAFLOW&ver=1.0&dq=WORLD.DM_POP_TOT.&startPeriod=2022&endPeriod=2022
+	)), di cui il $48.8\%$ hanno portato alla morte del paziente (citare
+	%https://gco.iarc.who.int/en
+	). Inoltre, i tassi di mortalità dovuti alle patologie tumorali sono strettamente dipendenti dall'indice di sviluppo dei Paesi (ISU), infatti da un tasso di mortalità del $39.2\%$ dei Paesi con ISU molto alto, si sale sino al $67.1\%$ dei Paesi con basso ISU (cita
+	%https://gco.iarc.who.int/today/en/dataviz/bars?mode=population&key=total&group_populations=0&types=0_1&sort_by=value1&populations=900_981_982_983_984&multiple_populations=1&values_position=out&cancers_h=39&include_nmsc=1&age_end=17
+	).
+	
+	Altri fattori rendono i tassi di incidenza e mortalità per patologie tumorali ulteriormente disuniformi, quali il sesso e l'età. A livello globale, l'incidenza di cancro negli uomini è più alta rispetto a quella delle donne dell'$8.0\%$ (cita
+	%https://gco.iarc.who.int/media/globocan/factsheets/cancers/39-all-cancers-fact-sheet.pdf
+	), dovuta anche al fatto che i primi si espongono maggiormente a fattori di rischio quali fumo e consumo di alcol. Inoltre, il $58\%$ di tumori viene diagnosticato nelle persone con più di 65 anni (cita
+	%https://www.cdc.gov/cancer/uscs/about/data-briefs/no29-USCS-highlights-2019-incidence.htm
+	).
+	
+	Sebbene i dati sopra citati testimonino la gravità delle patologie oncologiche, è indubbio che il progresso della scienza degli ultimi anni abbia permesso un notevole sviluppo nell'efficacia dei trattamenti oncologici: nel decennio $2010$--$2020$, il numero di persone che sopravvive dopo una diagnosi di cancro aumenta approssimativamente del $3\%$ in Paesi come l'Italia, gli Stati Uniti d'America, il Regno Unito e la Svizzera (cita
+	%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5807846/pdf/12885_2018_Article_4053.pdf
+	).
+	
+	\section{Terapie oncologiche}
+	Il trattamento di un tumore avviene in molti modi differenti e varia in base al tipo di cancro, il suo stadio di avanzamento e dagli obiettivi che si intendono raggiungere al termine dei trattamenti. Oggigiorno, le terapie oncologiche si distinguono in locali (o regionali) e generali (o sistemiche), in base all'estensione del tumore che colpisce il paziente. Al primo gruppo appartengono terapie come la chirurgia, la radioterapia e l'adroterapia, mentre al secondo afferiscono la chemioterapia e l'immunoterapia. Tali tecniche, proprio per la loro diversità, sono spesso utilizzate in maniera complementare per aumentare l'efficacia dei trattamenti clinici.
+	
+	Per pianificare il trattamento più adeguato rispetto a una certa patologia oncologica, si introduce il concetto di stadiazione, che è un modo di descrivere in maniera schematica, rigorosa e standardizzata quanto è grande un tumore e quanto si è diffuso dalla sede originale (cita
+	%https://www.airc.it/cancro/affronta-la-malattia/la-fase-della-diagnosi/stadiazione
+	). Le informazioni tipiche della stadiazione includono la collocazione del tumore, la sua estensione e se si è diffuso in parti del corpo differenti. Infatti, come già accennato, le cellule tumorali si moltiplicano in modo incontrollato andando a occupare (per mezzo del sistema linfatico o sanguigno) organi e tessuti distanti dalla sede di sviluppo originaria, in un fenomeno chiamato metastasi.
+	
+	
+	
+	
+			
 	
 	\chapter*{Conclusioni}
 		Let's cite! Einstein's journal paper \cite{einstein} and Dirac's book \cite{dirac} are physics-related items.
