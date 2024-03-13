@@ -23,10 +23,10 @@
 %\usepackage{array}
 %\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 %\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
-%\usepackage{graphicx}
+\usepackage{graphicx}
 %\usepackage{siunitx}
 \usepackage{hyperref}
-%\usepackage{float}
+\usepackage{float}
 \usepackage[top=1.7in,left=1in,right=1in]{geometry}
 %\usepackage{listings}
 %\usepackage{circuitikz}
@@ -91,11 +91,6 @@
 
 \begin{document}
 	\begin{titlepage}
-		%
-		%
-		% UNA VOLTA FATTE LE DOVUTE MODIFICHE SOSTITUIRE "RED" CON "BLACK" NEI COMANDI \textcolor
-		%
-		%
 		\begin{center}
 			{{\Large{\textsc{Alma Mater Studiorum $\cdot$ Universit\`a di Bologna}}}} 
 			\rule[0.1cm]{15.8cm}{0.1mm}
@@ -210,21 +205,41 @@
 	
 	Nel caso in la massa tumorale non sia rimovibile attraverso un'operazione chirurgica a causa della sua localizzazione anatomica (è il caso di neoplasie legate a organi la cui rimozione sarebbe troppo invalidante per il paziente (cita
 	%https://web.infn.it/foot/
-	)), si preferisce ricorrere alla radioterapia e all'adroterapia. Pur non essendo invasive come la chirurgia, tali tecniche permettono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante, composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia. In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia (detta "dose") capace di provocare un danno biologico tale da inibire la crescita del tumore con effetti collaterali minimi (cita
+	)), si preferisce ricorrere alla radioterapia e all'adroterapia. Pur non essendo invasive come la chirurgia, tali tecniche permettono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante, composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia (si veda \hyperref[fig:simulation]{Fig. 1.1}). In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia (detta "dose") capace di provocare un danno biologico tale da inibire la crescita del tumore con effetti collaterali minimi (cita
 	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
-	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane, le particelle adroniche irradiano una grande quantità di energia in uno spazio molto limitato, attraverso il caratteristico picco di Bragg (BP). Pertanto, l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
+	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche irradiano una grande quantità di energia in uno spazio molto limitato, attraverso il caratteristico picco di Bragg (BP). Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
 	%https://web.infn.it/foot/
-	) ed è non solo più efficace nel distruggere porzioni di cellule tumorali, ma anche nel salvaguardare i tessuti sani prossimi alla regione malata.
+	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
+	%https://fondazionecnao.it/adroterapia/cos-e-l-adroterapia
+	), al fine di qualità della vita del paziente.
 	
-	Sebbene l'adroterapia sia complessivamente più efficiente rispetto alla radioterapia, è un trattamento relativamente recente (1946) e per è molto meno sviluppato (e molto più costoso) rispetto alla radioterapia (staistica delle persone che effettuano radioterapia o adroterapia). Inoltre, lo studio ddell'adroterapia è compl,esso percha ancora non si conoscbo nen gli effetti degli ioni sul corpo umano. per questo motivo il settore adroterapico (e, se vogliamo, anche radioterapico), è un settore molto ricco, molto attivo e sorattutto intedisciplinare, perché coinvogìlge fisici, medici biologi.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/simulation.jpg}
+		\caption{Simulazione di un irraggiamento radioterapico o adroterapico sul corpo di un paziente (cita
+			%https://www.youtube.com/watch?v=Uu261OEf3Pg
+			).}
+		\label{fig:simulation}
+	\end{figure}
 	
-	L'esperimento FOOT, quindi mira a sviluppare le tecniche di studio e ricerca etc.
-%	L'impiego di radioterapia e adroterapia coinvolge una preparazione molto ricca e interdisciplinare, composta da prevede una preparazione Lo studio di radio e adroterapia è interdisciplinare poiché coinvolge biologi, fisici e medici sia nella cura del pa.
+	Sebbene l'adroterapia sia complessivamente più efficace rispetto alla radioterapia nella distruzione di cellule tumorali e nella salvaguardia dei tessuti sani, è un trattamento relativamente recente (si veda \hyperref[storia_adroterapia]{Sez. 1.2}), dunque meno sviluppato e più costoso rispetto alla radioterapia. Infatti, oggi non esiste una teoria analitica che sia in grado di spiegare i processi nucleari che intercorrono tra le particelle adroniche e i nuclei del corpo umano (cita
+	%FOOT CDR
+	), quindi, prima di poter applicare trattamenti medici efficaci e sicuri, si rendono necessarie numerosissime misure sperimentali (una buona parte delle quali sono tuttora fornite dall'esperimento FOOT) in grado di colmare tali lacune (cita
+	%https://web.infn.it/foot/
+	). Per questo motivo, il settore di ricerca adroterapico è molto attivo e coinvolge un crogiolo culturale di fisici, medici, biologi che studiano gli effetti della frammentazione nucleare sulle cellule umane, analizzabili solo mediante un approccio interdisciplinare.
 	
+	L'adroterapia, però, non appartiene esclusivamente all'ambito della sperimentazione, ma costituisce una realtà interazionale nella cura dei tumori a tutti gli effetti. Infatti, alla fine del $2023$ quasi $410000$ pazienti hanno effettuato trattamenti adroterapici a livello globale (di cui $350000$ con protoni, $56000$ con ioni carbonio e $3500$ con elio, pioni e altre particelle), un numero tre volte maggiore di quello emerso a fine $2014$ (cita
+	%https://ptcog.site/
+	). Pur essendo tali numeri incoraggianti, è necessario continuare a investire risorse nella ricerca in modo che esperimenti della caratura di FOOT possano rendere l'adroterapia un trattamento più diffuso e accessibile a tutti.
+	
+
 %	l’idea di usare i protoni per il trattamento del cancro fu proposta per la prima volta nel 1946 L’adroterapia è un forma molto avanzata di radioterapia. La radioterapia, da sola o associata a chirurgia e/o a chemioterapia, migliora il controllo locale in diverse patologie tumorali. Inoltre, la natura non invasiva delle radiazioni rappresenta una valida alternativa per quei tumori non aggredibili chirurgicamente perché localizzati in sedi anatomiche complicate da organi vitali o deputati a funzioni la cui asportazione sarebbe troppo invalidante per il paziente.
 	
 %	La forza dell’adroterapia è nelle proprietà fisiche e radiobiologiche uniche delle particelle cariche (adroni): esse possono penetrare nei tessuti con poca diffusione e depositare la massima energia appena prima di fermarsi. Ciò consente di definire in modo molto preciso la region da irradiare. La caratteristica forma a picco del deposito di energia è chiamata picco di Bragg ed è diventata il simbolo dell’adroterapia.
-	
+
+% dire che FOOT L'esperimento FOOT unisce laboratori giapponesi, tedeschi e italiani al ne di raccogliere dati fondamentali per migliorare la conoscenza delle interazioni tra i fasci adronici e il materiale
+
+	\section{Storia dell'adroterapia}\label{storia_adroterapia}
 	
 	
 	
