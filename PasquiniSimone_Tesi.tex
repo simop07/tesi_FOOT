@@ -24,6 +24,7 @@
 %\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 %\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{graphicx}
+\usepackage[version=4]{mhchem}
 %\usepackage{siunitx}
 \usepackage{hyperref}
 \usepackage{float}
@@ -156,17 +157,17 @@
 	\newpage
 	\addcontentsline{toc}{chapter}{Introduzione}
 	\chapter*{Introduzione}
-		Questo è l'inizio dell'introduzione.
+		Questo è l'inizio dell'introduzione. metodo del SSN (sistema già attivo nella sanità statale).https://scienzapertutti.infn.it/4-adroterapia-dalla-fisica-alla-terapia
 	\newpage
 	\addcontentsline{toc}{chapter}{Conclusioni}
 	
 	\chapter{Terapie oncologiche e radiazioni ionizzanti}
 	\section{Incidenza tumorale nel mondo}
-	Tra le principali cause di morte per la popolazione mondiale emerge la contrazione di neoplasie (o tumori). Un tumore è una patologia legata al mancato funzionamento del ciclo cellulare. Le cellule tumorali, per via di mutazioni genetiche che sfuggono ai meccanismi di controllo che regolano la proliferazione cellulare, iniziano a dividersi in modo eccessivo formando delle masse anomale, chiamate tumori, che talvolta possono invadere altri tessuti dell'organismo ostacolandone le funzioni vitali, in un processo chiamato metastasi. In quest'ultimo caso si parla di tumore maligno o cancro.
+	Le neoplasie sono tra le principali cause di morte per la popolazione mondiale. Un tumore è una patologia legata al mancato funzionamento del ciclo cellulare. Le cellule tumorali, per via di mutazioni genetiche che sfuggono ai meccanismi di controllo che regolano la proliferazione cellulare, iniziano a dividersi in modo eccessivo formando delle masse anomale, chiamate tumori, che talvolta possono invadere altri tessuti dell'organismo ostacolandone le funzioni vitali, in un processo chiamato metastasi. In quest'ultimo caso si parla di tumore maligno o cancro.
 		
 	Attualmente, è possibile prevenire fino al $50\%$ di tumori evitando fattori di rischio e implementando strategie di prevenzione già esistenti (cita
 	%https://www.who.int/news-room/fact-sheets/detail/c+ancer
-	), anche se ciò dipende dalla tempestività delle diagnosi, dalla tipologia delle cure e dal tipo di tumore. Si stima che nei Paesi industrializzati\footnote{Si fa riferimento ai Paesi OCSE (Organizzazione per la Cooperazione e lo Sviluppo Economico).}, nel $2021$, il cancro è la seconda causa di morte (causando il $21\%$ dei decessi totali), preceduto dalle malattie cardiovascolari (cita %https://www.oecd-ilibrary.org/docserver/7a7afb35-en.pdf?expires=1709230714&id=id&accname=guest&checksum=FBEABF3EDA6F2040465BB27356B8D68B
+	), anche se ciò dipende dalla tempestività delle diagnosi, dalla tipologia delle cure e dal tipo di tumore. Si stima che nei Paesi industrializzati,\footnote{Si fa riferimento ai Paesi OCSE (Organizzazione per la Cooperazione e lo Sviluppo Economico).} nel $2021$, il cancro è la seconda causa di morte (causando il $21\%$ dei decessi totali), preceduto dalle malattie cardiovascolari (cita %https://www.oecd-ilibrary.org/docserver/7a7afb35-en.pdf?expires=1709230714&id=id&accname=guest&checksum=FBEABF3EDA6F2040465BB27356B8D68B
 	). Sebbene il tasso di mortalità sia sceso sin dal $2000$, a livello mondiale il numero di casi diagnosticati di cancro (nel $2022$) attesta a quasi $20.0$ milioni\footnote{Negli ultimi dieci anni il numero di casi di tumore è aumentato di anno in anno, soprattutto a causa dell'invecchiamento progressivo della popolazione (cita
 	%https://www.iss.it/-/tumori-in-aumento-le-diagnosi-in-europa-anche-per-effetto-dell-invecchiamento-demografico
 	), ma nel biennio $2020$-$2021$ il trend è cambiato a causa della pandemia di COVID-$19$, che ha precluso l'accesso a screening oncologici (nel periodo gennaio--ottobre $2020$ vi è stato un calo del $37.3\%$ di test diagnostici rispetto al periodo pre-pandemico) (cita
@@ -200,14 +201,14 @@
 	), mentre nell'immunoterapia si tenta di istruire il sistema immunitario affinché riconosca ed elimini gli oncogeni, i geni modificati che causano il cancro.
 	
 	Qualora il tumore fosse localizzato, ben raggiungibile dall'esterno e sufficientemente lontano da organi vitali, si ricorre a operazioni chirurgiche, con le quali si asporta la massa tumorale dal corpo del paziente. Prima o dopo l'operazione chirurgica, si procede con tecniche radioterapiche, adroterapiche o chemioterapiche in base alle necessità. Ad esempio, nella radioterapia neoadiuvante il trattamento radioterapico viene effettuato prima dell'intervento chirurgico, mentre nella radiochemioterapia concomitante si eseguono sessioni di chemioterapia e radioterapia a seguito dell'operazione chirurgica (cita
-	%https://www.aimac.it/libretti-tumore/radioterapia/perche-si-attua-la-radioterapia
+	%https://www.aimac.it/libretti-tumore//perche-si-attua-la-radioterapia
 	). In generale, la commistione di suddette tecniche consente di rimuovere tracce di cellule tumorali, evitandone eventuali proliferazioni successive.
 	
 	Nel caso in la massa tumorale non sia rimovibile attraverso un'operazione chirurgica a causa della sua localizzazione anatomica (è il caso di neoplasie legate a organi la cui rimozione sarebbe troppo invalidante per il paziente (cita
 	%https://web.infn.it/foot/
-	)), si preferisce ricorrere alla radioterapia e all'adroterapia. Pur non essendo invasive come la chirurgia, tali tecniche permettono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante, composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia (si veda \hyperref[fig:simulation]{Fig. 1.1}). In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia (detta "dose") capace di provocare un danno biologico tale da inibire la crescita del tumore con effetti collaterali minimi (cita
+	)), si preferisce ricorrere alla radioterapia e all'adroterapia, ove quest'ultima è una forma avanzata di radioterapia. Pur non essendo invasive come la chirurgia, tali tecniche permettono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante, composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia (si veda \hyperref[fig:simulation]{Fig. 1.1}). In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia (detta "dose") capace di provocare un danno biologico tale da inibire la crescita del tumore con effetti collaterali minimi (cita
 	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
-	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche irradiano una grande quantità di energia in uno spazio molto limitato, attraverso il caratteristico picco di Bragg (BP). Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
+	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche irradiano una grande quantità di energia in uno spazio molto limitato, attraverso il caratteristico picco di Bragg. Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
 	%https://web.infn.it/foot/
 	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
 	%https://fondazionecnao.it/adroterapia/cos-e-l-adroterapia
@@ -222,7 +223,7 @@
 		\label{fig:simulation}
 	\end{figure}
 	
-	Sebbene l'adroterapia sia complessivamente più efficace rispetto alla radioterapia nella distruzione di cellule tumorali e nella salvaguardia dei tessuti sani, è un trattamento relativamente recente (si veda \hyperref[storia_adroterapia]{Sez. 1.2}), dunque meno sviluppato e più costoso rispetto alla radioterapia. Infatti, oggi non esiste una teoria analitica che sia in grado di spiegare i processi nucleari che intercorrono tra le particelle adroniche e i nuclei del corpo umano (cita
+	Sebbene l'adroterapia sia complessivamente più efficace rispetto alla radioterapia nella distruzione di cellule tumorali e nella salvaguardia dei tessuti sani, è un trattamento relativamente recente (si veda \hyperref[storia_adroterapia]{Sez. ??}) che ha bisogno, tra le varie e complesse strutture, di acceleratori di particelle; ciò rende l'adroterapia meno sviluppata e più costosa della radioterapia. Inoltre, oggi non esiste una teoria analitica che sia in grado di spiegare i processi nucleari che intercorrono tra le particelle adroniche e i nuclei del corpo umano (cita
 	%FOOT CDR
 	), quindi, prima di poter applicare trattamenti medici efficaci e sicuri, si rendono necessarie numerosissime misure sperimentali (una buona parte delle quali sono tuttora fornite dall'esperimento FOOT) in grado di colmare tali lacune (cita
 	%https://web.infn.it/foot/
@@ -233,13 +234,80 @@
 	). Pur essendo tali numeri incoraggianti, è necessario continuare a investire risorse nella ricerca in modo che esperimenti della caratura di FOOT possano rendere l'adroterapia un trattamento più diffuso e accessibile a tutti.
 	
 
+	\section{Storia della radioterapia}
+	La storia della radioterapia inizia nel novembre del $1895$ con un episodio di serendipità, il cui protagonista è il fisico tedesco Wilhelm C. von Röntgen, scopritore dei raggi X. Durante lo studio dei raggi catodici prodotti da un tubo di Crookes, Röntgen si accorse che della radiazione sconosciuta (denominata da lui stesso "X", poiché incognita sino ad allora) oltrepassava la lastra di vetro che ricopre lo strumento. Röntgen comprese sin da allora le grandi potenzialità dei neonati raggi X, utilizzabili per proiettare su uno schermo il materiale che attraversano delineandone le specificità. Fu proprio il fisico a effettuare la prima radiografia alla mano di sua moglie (\hyperref[fig:rongten]{Fig. 1.2}), esponendo tuttavia quest'ultima a non pochi rischi, essendo i raggi X un tipo di radiazione ionizzante.\footnote{Una radiazione si dice ionizzante quando ha energia sufficiente a liberare gli elettroni legati agli atomi della materia in cui penetra. Per questo motivo la radiazione ionizzante è capace di provocare danni biologici ai tessuti del corpo umano.} Le immediate applicazioni della scoperta di Röntgen in campo medico gli valsero il premio Nobel per la fisica nel $1901$(cita
+	%https://www.nobelprize.org/prizes/physics/1901/rontgen/facts/
+	).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/rongten.jpg}
+		\caption{La prima lastra a raggi X della mano di Anna Bertha Ludwig, moglie di Ron, dopo 15 minuti di esposizione (cita
+			%https://www.dailymail.co.uk/news/article-6491287/Roentgens-human-X-ray-wifes-hand-1895.html
+			).}
+		\label{fig:rongten}
+	\end{figure}
+	
+	Solamente un anno dopo la scoperta di Röntgen, Antoine H. Becquerel, studiando la fosforescenza dei sali di uranio, notò che alcuni materiali emettevano raggi elettromagnetici senza essere eccitati dalla luce solare. Becquerel scoprì così la radioattività spontanea dell'uranio che gli valse il premio Nobel per la fisica nel $1903$ condiviso con i coniugi Pierre Curie e Maria Sklodowska per la scoperta del radio \ce{^{226}_{88}Ra}. Da quel momento in avanti, la sperimentazione degli effetti terapeutici dei raggi X e della radioterapia portò a svariati successi, per esempio legati alla cura del \textit{lupus vulgaris} e del \textit{lupus eritematoso}.
+	
+	\subsection{Storia dell'adroterapia}\label{storia_adroterapia}
+	
+	L'avvento delle due Guerre Mondiali da un lato rallentò il progresso della comunità scientifica, dall'altro rappresentò un'occasione utile ai popoli per sfoggiare il proprio avanzamento tecnico-scientifico perché, riportando una sciagurata dichiarazione del "generale in camice bianco" Fritz Haber, la scienza "serve all’umanità in pace e alla patria in guerra"(cita
+	%James, Steinhauser, Hoffmann, Friedrich OneHundredYearsOfChemicalWarfare
+	). In particolare, la corsa agli armamenti atomici favorì un forte sviluppo della teoria atomica e nucleare, la cui conoscenza approfondita fu sfruttata inizialmente come arma e poi come risorsa, impiegabile ad esempio nella cura di malattie. Un caso esemplare della dicotomia scientifica di quegli anni è rappresentato da Robert R. Wilson che dopo aver lavorato ai laboratori di Los Alamos per il Progetto Manhattan\footnote{Il progetto Manhattan fu un programma di ricerca attivo dal $1942$ al $1946$ per la produzione della prima arma nucleare. Viene tragicamente ricordato per la costruzione degli ordigni \textit{Little Boy} e \textit{Fat Man} con cui furono bombardate rispettivamente Hiroshima e Nagasaki.} propose per primo l'utilizzo di protoni come terapia oncologica bel $1946$ notandone le potenzialità rispetto alla radioterapia convenzionale (cita
+	%https://inspirehep.net/files/d86d8a0dc5736a2298f58f84efc8dc81
+	) e nel $1967$ fondò il Fermilab, uno dei maggiori centri di ricerca per la fisica delle particelle elementari. Wilson, misurando la dose rilasciata dai fasci di protoni prodotti dal ciclotrone dei Lawrence Berkeley National Laboratory (LBL), notò l'efficienza superiore del picco di Bragg protonico rispetto alla radioterapia convenzionale. Nel suo articolo (cita
+	%https://inspirehep.net/files/d86d8a0dc5736a2298f58f84efc8dc81, ripetizione
+	), lo scienziato fa anche rifermento a un possibile uso futuro degli ioni più pesanti, come gli ioni di carbonio, che "potrebbero diventare terapeuticamente pratici". Infatti, nel $1954$, nei LBL fu trattato il primo paziente con i protoni, a cui seguirono i primi trattamenti con elio nel $1957$ e con ioni di neon nel $1975$ (cita
+	%https://indico.cern.ch/event/24728/attachments/424989/590019/RIVISTA_MEDICA_2008-14_1.pdf
+	). Si sottolinea che in questi primi trattamenti, e in una buona parte dei successivi, le particelle venivano collimate senza sfruttare la loro carica elettrica, proprietà che sarebbe diventata fondamentale per la loro detezione e per il loro controllo attraverso campi magnetici. Un grande sviluppo della terapia protonica ci fu con la costruzione del ciclotrone di Harvard del $1949$ (in sostituzione del ciclotrone del $1937$ trasferito a Los Alamos per il Progetto Manhattan (cita
+	%https://cerncourier.com/a/synchrocyclotron-survivor-to-bow-out-after-50-years/
+	)) col quale si ottennero numerosi successi, specialmente per il melanoma oculare e per i tumori ossei della base del cranio, che convinsero in molti sulla superiorità dei protoni rispetto ai raggi X per i tumori vicini agli organi a rischio (cita
+	%Wilson R.: A brief history of the Harvard University Cyclotron. Harvard University Press, 2003.
+	).
+	
+	Gli studi del ciclotrone di Harvard spinsero anche i laboratori russi e giapponesi ad avviare programmi di ricerca nella terapia adronica. Di particolare importanza è l'apertura del centro HIMAC (Heavy Ion Medical Accelerator in Chiba, si veda \hyperref[fig:himac]{Fig. 1.3}himac.png) (cita
+	%Hirao Y., Ogawa H. et al.: Heavy ion synchrotron for medical use. Nucl Phys 1992; A 538: 541c-550c.
+	) a Chiba (Giappone) che, nel $1994$, trattò per primo un paziente con un fascio di ioni carbonio, il cui rilascio di dose è nettamente superiore a quello di fotoni e protoni ed è per questo più efficace nel controllo di tumori radioresistenti e di neoplasie più comuni (per esempio ai polmoni o al fegato).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/himac.png}
+		\caption{Panoramica delle strutture di ricerca HIMAC presso l'Istituto Nazionale di Scienze Radiologiche a Chiba (cita
+			%https://www.mdpi.com/2072-6694/10/3/66
+			).}
+		\label{fig:himac}
+	\end{figure}
+	
+	La prima iniziativa completamente europea di un centro terapico agli ioni arrivò solo nel $1987$ con EULIMA (EUropean Light Ion Medical Accelerator). Il progetto prevedeva la costruzione di un sincrotrone\footnote{I ciclotroni, con diametro di circa $5\mbox{ m}$, si utilizzano per produrre fasci di protoni, mentre i sincrotroni, con diametro di oltre $10\mbox{ m}$, si usano principalmente per generare ioni carbonio (cita
+		%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
+	).} che, purtroppo, non fu mai costruito; si dovettero attendere progetti esclusivamente nazionali per un decisivo cambio di passo della terapia agli ioni, soprattutto nel decennio $1994$--$2004$, in cui iniziò la costruzione di due centri fondamentali per i trattamenti con protoni e ioni carbonio. Il primo è l'Heidelberg Ionenstrahl Therapy (HIT), aperto a Heidelberg (Germania) nel 2009, il secondo, italiano, è il Centro Nazionale di Adroterapia Oncologica (CNAO) di Pavia, attivo sin dal 2011 (cita
+	%https://indico.cern.ch/event/24728/attachments/424989/590019/RIVISTA_MEDICA_2008-14_1.pdf ripetizione
+	).
+	
+	\subsection{L'adroterapia in Italia}
+	Una delle figure più importanti per lo sviluppo dell'adroterapia in Italia è sicuramente il fisico italiano Ugo Amaldi. La sua lungimiranza ha portato l'Italia a essere la seconda nazione europea ad avere un centro adroterapico (il CNAO) capace di effettuare trattamenti con protoni e ioni carbonio (si pensi che attualmente ne esistono solo sei in tutto il mondo (cita
+	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
+	)). Nel $1991$, assieme al fisico medico Giampiero Tosi, Amaldi scrisse un articolo pionieristico in cui si proponeva un centro nazionale di terapia con particelle (cita
+	
+	), idea accolta con entusiasmo dal noto oncologo Umberto Veronesi e dall'allora Presidente dell'Istituto Nazionale di Fisica Nucleare (INFN) Nicola Cabibbo. Un anno dopo, fu istituita la fondazione TERA (TErapia con Radiazioni Adroniche) con il duplice scopo di dare impiego a fisici e ingegneri interessati al progetto e di costruire centri adroterapici in Italia ed Europa (cita
+	%https://indico.cern.ch/event/24728/attachments/424989/590019/RIVISTA_MEDICA_2008-14_1.pdf ripetizione
+	). AttauAlla fine del $1995$ ai Laboratori Nazionali del Sud (LNS) di Catania fu creata una struttura protonterapica che sfrutta sul ciclotrone superconduttore già attivo nei LNS. gli scienziati INFN dei del laboratori
+	
+	
+	
+	
+	
+	
+	
+	
 %	l’idea di usare i protoni per il trattamento del cancro fu proposta per la prima volta nel 1946 L’adroterapia è un forma molto avanzata di radioterapia. La radioterapia, da sola o associata a chirurgia e/o a chemioterapia, migliora il controllo locale in diverse patologie tumorali. Inoltre, la natura non invasiva delle radiazioni rappresenta una valida alternativa per quei tumori non aggredibili chirurgicamente perché localizzati in sedi anatomiche complicate da organi vitali o deputati a funzioni la cui asportazione sarebbe troppo invalidante per il paziente.
 	
 %	La forza dell’adroterapia è nelle proprietà fisiche e radiobiologiche uniche delle particelle cariche (adroni): esse possono penetrare nei tessuti con poca diffusione e depositare la massima energia appena prima di fermarsi. Ciò consente di definire in modo molto preciso la region da irradiare. La caratteristica forma a picco del deposito di energia è chiamata picco di Bragg ed è diventata il simbolo dell’adroterapia.
 
 % dire che FOOT L'esperimento FOOT unisce laboratori giapponesi, tedeschi e italiani al ne di raccogliere dati fondamentali per migliorare la conoscenza delle interazioni tra i fasci adronici e il materiale
 
-	\section{Storia dell'adroterapia}\label{storia_adroterapia}
+	
 	
 	
 	
