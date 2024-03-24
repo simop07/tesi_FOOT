@@ -81,6 +81,7 @@
 
 %\usepackage[font=it]{caption}
 %\usepackage{indentfirst}
+%\interfootnotelinepenalty=\@M
 
 \usepackage{hyperref}
 \hypersetup{
@@ -94,6 +95,7 @@
 % FINE HEADER INSERITI DA ME
 
 \begin{document}
+	\pagenumbering{roman}
 	\begin{titlepage}
 		\begin{center}
 			{{\Large{\textsc{Alma Mater Studiorum $\cdot$ Universit\`a di Bologna}}}} 
@@ -153,21 +155,22 @@
 	\newpage
 	\newgeometry{top=4cm,bottom=4cm,left=4cm,right=4cm}
 	\doublespacing % Also singlespacing, onehalfspacing 
-	\chapter*{Sommario}
+	\chapter*{Sommario (TBD)}
 		Questo è l'inizio del sommario.
 	\newpage
 	\tableofcontents
 	\newpage
-	\addcontentsline{toc}{chapter}{Introduzione}
-	\chapter*{Introduzione}
+	\addcontentsline{toc}{chapter}{Introduzione (TBD)}
+	\chapter*{Introduzione (TBD)}
 		Questo è l'inizio dell'introduzione. metodo del SSN (sistema già attivo nella sanità+Questo percorso ha portato alla marcatura CE del centro e nel 2017 l'adroterapia è stata inserita nei Livelli Essenziali di Assistenza.
 		
 		 statale).https://scienzapertutti.infn.it/4-adroterapia-dalla-fisica-alla-terapia
 	\newpage
-	\addcontentsline{toc}{chapter}{Conclusioni}
+	
+	\pagenumbering{arabic}
 	
 	\chapter{Terapie oncologiche e radiazioni ionizzanti}
-	\section{Incidenza tumorale nel mondo}
+	\section{Incidenza tumorale nel mondo}\label{sec:1.1}
 	Le neoplasie sono tra le principali cause di morte per la popolazione mondiale. Un tumore è una patologia legata al mancato funzionamento del ciclo cellulare. Le cellule tumorali, per via di mutazioni genetiche che sfuggono ai meccanismi di controllo che regolano la proliferazione cellulare, iniziano a dividersi in modo eccessivo formando delle masse anomale, chiamate tumori, che talvolta possono invadere altri tessuti dell'organismo ostacolandone le funzioni vitali, in un processo chiamato metastasi. In quest'ultimo caso si parla di tumore maligno o cancro.
 		
 	Attualmente, è possibile prevenire fino al $50\%$ di tumori evitando fattori di rischio e implementando strategie di prevenzione già esistenti (cita
@@ -196,14 +199,14 @@
 	%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5807846/pdf/12885_2018_Article_4053.pdf
 	).
 	
-	\section{Terapie oncologiche}
+	\section{Terapie oncologiche}\label{sec:1.2}
 	Il trattamento di un tumore avviene in molti modi differenti e varia in base al tipo di cancro, il suo stadio di avanzamento e dagli obiettivi che si intendono raggiungere al termine dei trattamenti. Oggigiorno, le terapie oncologiche si distinguono in locali (o regionali) e generali (o sistemiche), in base all'estensione del tumore che colpisce il paziente. Al primo gruppo appartengono terapie come la chirurgia, la radioterapia e l'adroterapia, mentre al secondo afferiscono la chemioterapia e l'immunoterapia. Tali tecniche, proprio per la loro diversità, sono spesso utilizzate in maniera complementare per aumentare l'efficacia dei trattamenti clinici. Per pianificare il trattamento più adeguato al fronte di una certa patologia oncologica, si introduce il concetto di stadiazione, che è un modo di descrivere in maniera schematica, rigorosa e standardizzata la grandezza di un tumore e la sua diffusione al di fuori della sede originale (cita
 	%https://www.airc.it/cancro/affronta-la-malattia/la-fase-della-diagnosi/stadiazione
 	). Le informazioni tipiche della stadiazione includono la collocazione del tumore, la sua estensione e se si è diffuso in parti del corpo differenti. Infatti, come già accennato, le cellule tumorali si moltiplicano in modo incontrollato andando a occupare (per mezzo del sistema linfatico o sanguigno) organi e tessuti distanti dalla sede di sviluppo originaria, attraverso un fenomeno chiamato metastatizzazione. Chiaramente, ciascuna terapia possiede effetti collaterali correlati all'azione distruttiva che si impiega per debellare la malattia oncologica.
 	
 	Se il tumore ha raggiunto un'estensione tale da formare metastasi, si scelgono trattamenti sistemici in modo che si possa debellare o, quantomeno, contenere la malattia oncologica. La chemioterapia consiste nella somministrazione di uno o più farmaci citotossici (o antiblastici) capaci di aggredire le cellule cancerose (cita
 	%https://www.aimac.it/libretti-tumore/chemioterapia/che-cos-e-la-chemioterapia
-	), mentre nell'immunoterapia si tenta di istruire il sistema immunitario affinché riconosca ed elimini gli oncogeni, i geni modificati che causano il cancro.
+	), mentre nell'immunoterapia si tenta di istruire il sistema immunitario affinché riconosca ed elimini le cellule malate che, in assenza di trattamento clinico, appaiono "nascoste" al sistema immunitario stesso.
 	
 	Qualora il tumore fosse localizzato, ben raggiungibile dall'esterno e sufficientemente lontano da organi vitali, si ricorre a operazioni chirurgiche, con le quali si asporta la massa tumorale dal corpo del paziente. Prima o dopo l'operazione chirurgica, si procede con tecniche radioterapiche, adroterapiche o chemioterapiche in base alle necessità. Ad esempio, nella radioterapia neoadiuvante il trattamento radioterapico viene effettuato prima dell'intervento chirurgico, mentre nella radiochemioterapia concomitante si eseguono sessioni di chemioterapia e radioterapia a seguito dell'operazione chirurgica (cita
 	%https://www.aimac.it/libretti-tumore//perche-si-attua-la-radioterapia
@@ -238,7 +241,6 @@
 	%https://ptcog.site/
 	). Pur essendo tali numeri incoraggianti, è necessario continuare a investire risorse nella ricerca in modo che esperimenti della caratura di FOOT possano rendere l'adroterapia un trattamento più diffuso e accessibile a tutti.
 	
-
 	\section{Storia della radioterapia}
 	La storia della radioterapia inizia nel novembre del $1895$ con un episodio di serendipità, il cui protagonista è il fisico tedesco Wilhelm C. von Röntgen, scopritore dei raggi X. Durante lo studio dei raggi catodici prodotti da un tubo di Crookes, Röntgen si accorse che della radiazione sconosciuta (denominata da lui stesso "X", poiché incognita sino ad allora) oltrepassava la lastra di vetro che ricopre lo strumento. Röntgen comprese sin da allora le grandi potenzialità dei neonati raggi X, utilizzabili per proiettare su uno schermo il materiale che attraversano delineandone le specificità. Fu proprio il fisico a effettuare la prima radiografia alla mano di sua moglie (\hyperref[fig:rongten]{Fig. 1.2}), esponendo tuttavia quest'ultima a non pochi rischi, essendo i raggi X un tipo di radiazione ionizzante.\footnote{Una radiazione si dice ionizzante quando ha energia sufficiente a liberare gli elettroni legati agli atomi della materia in cui penetra. Per questo motivo la radiazione ionizzante è capace di provocare danni biologici ai tessuti del corpo umano.} Le immediate applicazioni della scoperta di Röntgen in campo medico gli valsero il premio Nobel per la fisica nel $1901$(cita
 	%https://www.nobelprize.org/prizes/physics/1901/rontgen/facts/
@@ -301,7 +303,7 @@
 	%https://indico.cern.ch/event/24728/attachments/424989/590019/RIVISTA_MEDICA_2008-14_1.pdf ripetizione
 	).
 	
-	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS), sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Avanzate), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range adatto soprattutto per i tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ si trattò il primo paziente affetto da melanoma uveale e da allora oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza del $98\%$ (cita
+	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS), sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Avanzate, \hyperref[fig:catana]{Fig. 1.4}), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range adatto soprattutto per i tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ si trattò il primo paziente affetto da melanoma uveale e da allora oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza del $98\%$ (cita
 	%https://agenda.infn.it/event/8475/contributions/73755/attachments/53706/63315/1.Frascaticuttone.pdf
 	), percentuale pur sempre comparabile con la terapia chirurgica e fotonica, sebbene queste ultime compromettano maggiormente la capacità visiva essendo statisticamente più invalidanti dell'adroterapia.}
 	
@@ -376,8 +378,8 @@
 	%https://protonterapia.provincia.tn.it/Per-i-ricercatori?/eng/switchlanguage/to/protonterapia_frontend/researchers
 	). 
 	
-	\subsubsection{R\&D nel percorso radioterapico}
-	Prima di ogni trattamento, i moderni centri radio e adroterapici compiono un attento percorso di pianificazione del trattamento (TP), l'anello iniziale di ogni percorso radioterapico. La TP  include numerosi passaggi fondamentali tra cui la topologia del volume tumorale tramite tecniche di imaging diagnostico morfologico e funzionale come TAC (Tomografia Assiale Computerizzata), RMN (Risonanza Magnetica Nucleare), PET (Tomografia a Emissione di Positroni) e SPECT (Tomografia a Emissione di Singolo Fotone), strumenti che con lo sviluppo tecnologico hanno acquisito una sensibilità sempre maggiore fornendo mappe tridimensionali dei tessuti del corpo umano ancora più dettagliate. Compito del TP è anche quello di pianificare la dose totale a cui sottoporre il paziente, congiuntamente al suo rateo e al suo frazionamento; ad esempio, al CNAO per i protoni in media sono necessarie 35 sedute mentre per gli ioni carbonio 16 sedute (cita
+	\subsubsection{Tecniche e R\&S nel percorso radioterapico}
+	Prima di ogni trattamento, i moderni centri radio e adroterapici compiono un attento percorso di pianificazione del trattamento (TP), l'anello iniziale di ogni percorso radioterapico. La TP  include numerosi passaggi fondamentali tra cui la topologia del volume tumorale tramite tecniche di imaging diagnostico morfologico e funzionale come TAC (Tomografia Assiale Computerizzata), RMN (Risonanza Magnetica Nucleare), PET (Tomografia a Emissione di Positroni) e SPECT (Tomografia a Emissione di Singolo Fotone), strumenti che con lo sviluppo tecnologico hanno acquisito una sensibilità sempre maggiore fornendo mappe tridimensionali dei tessuti del corpo umano ancora più dettagliate. Compito del TP è anche quello di pianificare la dose totale a cui sottoporre il paziente, congiuntamente al suo rateo e al suo frazionamento; ad esempio, al CNAO per i protoni in media sono necessarie 35 sedute mentre per gli ioni carbonio 16 (cita
 	%https://fondazionecnao.it/adroterapia/sincrotrone
 	).
 	
@@ -389,6 +391,60 @@
 	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
 	).
 	
+	\section{Parametri fisici ed effetti biologici della radiazione}
+	Come descritto nella \hyperref[sec:1.1]{Sez. 1.1}, le cellule tumorali generano un disequilibrio dell'omeostasi dell'organismo umano poiché, a differenza delle cellule sane, sfuggono a meccanismi di controllo che limitano la loro proliferazione, una regolazione che avviene automaticamente nelle in condizioni normali. Infatti, molte cellule malate possiedono sistemi di controllo difettosi che non permettono di arrestare il ciclo cellulare nei punti di controllo\footnote{I punti di controllo sono stadi del ciclo cellulare in cui quest'ultimo subisce automaticamente un arresto, in attesa che arrivi un segnale che permetta la sua prosecuzione.} nemmeno quando sono assenti i fattori di crescita\footnote{I fattori di crescita sono proteine che stimolano la divisione di alcune cellule} (cita
+	% libro biologia III anno
+	).
+	
+	Le alterazioni del ciclo cellulare sono generalmente causate da disfunzioni dell'espressione genica (\hyperref[fig:mutazioni_genetiche]{Fig. 1.7}), che è il processo con cui l'informazione contenuta nei geni fluisce alle proteine (le macromolecole funzionali del nostro corpo) per mezzo di meccanismi di trascrizione e traduzione del DNA. I geni modificati capaci di generare cellule tumorali sono denominati oncogeni. Generalmente le cellule sane acquisiscono un oncogene a partire da una mutazione di uno dei propri geni, chiamato proto-oncogene. Il cromosoma degli esseri umani contiene proto-oncogeni, la cui funzione in condizioni ordinarie è quella di codificare per fattori di crescita o per altre funzioni del ciclo cellulare, che potenzialmente possono tramutarsi in oncogeni tramite mutazioni, errori di duplicazione o ricombinazione del DNA e traslocazioni in \textit{loci} genici soggetti a fattori di controllo che ne inducono la trascrizione a ritmi più elevati del normale (\hyperref[fig:oncogene]{Fig. 1.7a}). Oltre ai proto-oncogeni, che stimolano la divisione cellulare, esistono gli oncosoppressori, geni che codificano per proteine che inibiscono la proliferazione cellulare incontrollata. Per questo motivo le mutazioni che riducono le attività delle proteine codificate dai geni oncosoppressori possono portare all'insorgenza di un tumore (\hyperref[fig:oncosoppressore]{Fig. 1.7b}). Il fatto che le neoplasie siano originate da danni genetici è un'ipotesi ampiamente accettata che si basa su considerazioni come il riconoscimento di una predisposizione ereditaria al cancro, il ritrovamento di cromosomi danneggiati in cellule cancerose e il rapporto fra suscettibilità al cancro e incapacità delle cellule a riparare il DNA danneggiato (cita
+	%https://www.treccani.it/enciclopedia/oncogeni_(Enciclopedia-Italiana)/
+	). Per esempio, si pensi che le mutazioni di due noti geni \textit{ras} (proto-oncogene) e \textit{p53} (gene oncosoppressore) sono rilevate rispettivamente nel $30\%$ e in più del $50\%$ dei casi di cancro umano (cita
+	% libro biologia III anno
+	).
+	
+	\begin{figure}[H]
+		\centering
+		\savebox{\largestimage}{\includegraphics[width=0.49\textwidth]{images/oncogene.png}}
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.5]{images/oncogene.png}
+			\caption{Modalità con cui un proto-oncogene può mutare in un oncogene.}
+			\label{fig:oncogene}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.49\textwidth}
+			\centering
+			\raisebox{\dimexpr.5\ht\largestimage-.5\height}{\includegraphics[width=\textwidth, scale=0.45]{images/oncosoppressore.jpg}}
+			\caption{Effetto della mutazione di un gene oncosoppressore.}
+			\label{fig:oncosoppressore}
+		\end{subfigure}
+		\caption{Esempi di mutazioni subite da geni che controllano la divisione cellulare (cita
+			%II anno libro biologia
+			).}
+		\label{fig:mutazioni_genetiche}
+	\end{figure}
+	
+	\subsection{Danni biologici delle radiazioni ionizzanti}
+	La radioterapia e l'adroterapia, come descritto in \hyperref[sec:1.2]{Sez. 1.2}, sfruttano la radiazione ionizzante per danneggiare i tessuti biologici cancerosi al fine di causare la morte delle cellule malate che li costituiscono. La ionizzazione può essere generata direttamente o indirettamente: se vi è un'interazione diretta tra la radiazione incidente e gli elettroni dell'atomo irradiato allora si parla di radiazione direttamente ionizzante, altrimenti se vi è un'interazione tra gli atomi irradiati e particelle secondarie (generate dal passaggio della radiazione primaria) allora si ha radiazione indirettamente ionizzante. Tra le radiazioni direttamente ionizzanti si riconoscono le particelle $\alpha$ e $\beta$, mentre del secondo caso fanno parte raggi $\gamma$ X e particelle neutre come i neutroni. La radiazione ionizzante produce vari effetti sui tessuti biologici (si veda \hyperref[qualcosa]{???}) che dipendono da svariati fattori, tra cui l'energia del fascio incidente, la sua composizione e le caratteristiche del tessuto irradiato. Per comprendere i danni biologici che la radiazione provoca sui tessuti cancerosi è opportuno analizzare ciò che accade a livello cellulare.
+	
+	Per le cellule tumorali si parla di morte riproduttiva nel momento in cui la cellula perde la sua capacità di riprodursi indefinitamente (cita
+	%https://www.unife.it/medicina/radiologiamedica/insegnamenti/scienze-biologiche-nella-radiologia/modulo-di-radiobiologia/cittanti-2018-19-colori/rb-2018-19-lezione-6
+	). Per sconfiggere una neoplasia non occorre eliminare tutte le cellule tumorali, piuttosto è necessario impedire alla cellula di riprodursi per mitosi (o meiosi se si tratta di una cellula deputata alla riproduzione (cita
+	%libro biologia II anno
+	)) mediante la distruzione del DNA contenuto nel suo nucleo. Per uccidere il DNA cellulare tramite radiazione ionizzante vi sono due modi, diretto e indiretto.
+	
+	Il metodo diretto consiste nel colpire precisamente il DNA, evento poco probabile dato che il DNA costituisce solo il $2$--$3\%$ della cellula.
+	
+	Nel metodo indiretto la radiazione non colpisce il DNA ma l'acqua contenuta nella cellula che lo contiene\footnote{Il $75\%$ del corpo umano è costituito da acqua, per questo irraggiando la cellula si colpisce acqua.} producendo radicali liberi (atomi o molecole molto reattivi poiché dotati di un elettrone spaiato), entità molecolari che reagendo con la cellula danneggiano fortemente il DNA. danneggianocon le molecole cellulare danneggiando e danneggiano facilmente con danneggiano viene distrutto poiché la radiazione non colpendolo direttamente, ma danneggiando la cellula che lo contieneentro cui Il metodo indiretto, la probabilità che le radiazioni ionizzanti colpiscano il DNA in modo diretto sono molto basse. Il fatto che il corpo umano è composto per il $75\%$ da acqua garantisce una seconda modalità con cui poter uccidere il DNA: quando la radiazione ionizzante colpisce la cellula si genera un'interazione tra l'acqua ivi contenuta e la radiazione stessa, causa della produzione di radicali liberi ()interagisce con l'acqua ivi contenuta abbondantemente in maniera indiretta: cellulare tramite radiazione, vale a dire dradiasolo una minima parte dei per questo è molto difficile generare danni diretti al DNA
+	
+	Quando 
+	
+	
+	
+	
+	(cita
+	%[14] S. Chiarella, Note dal corso di Elementi di Fisica Biomedica-Sanitaria 2021
+	)
 	
 	
 	
@@ -396,7 +452,10 @@
 	
 	
 	
-	\section{Effetti biologici della radiazione}
+	
+	
+	
+	
 	
 	
 	
@@ -414,8 +473,8 @@
 	
 	
 			
-	
-	\chapter*{Conclusioni}
+	\addcontentsline{toc}{chapter}{Conclusioni (TBD)}
+	\chapter*{Conclusioni (TBD)}
 		Let's cite! Einstein's journal paper \cite{einstein} and Dirac's book \cite{dirac} are physics-related items.
 	\newpage	
 	\printbibliography[
