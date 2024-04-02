@@ -31,7 +31,7 @@
 %\usepackage{listings}
 %\usepackage{circuitikz}
 \usepackage{subcaption}
-%\usepackage{tabularx}
+\usepackage{tabularx}
 %\renewcommand{\lstlistingname}{Code}
 %\renewcommand{\lstlistlistingname}{List of Code}
 %\lstdefinestyle{chstyle}{
@@ -55,8 +55,8 @@
 	%}
 %\renewmenumacro{\directory}{pathswithfolder} % default: path
 %\renewmenumacro{\keys}{shadowedroundedkeys} % default: roundedkeys
-%\setlength{\arrayrulewidth}{1.0pt}
-%\renewcommand{\arraystretch}{1}
+\setlength{\arrayrulewidth}{1.0pt}
+\renewcommand{\arraystretch}{1.1}
 \usepackage{mathcomp}
 
 %\usepackage{fontspec}
@@ -220,7 +220,7 @@
 	%https://web.infn.it/foot/
 	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
 	%https://fondazionecnao.it/adroterapia/cos-e-l-adroterapia
-	), al fine di qualità della vita del paziente.
+	), al fine di migliorare la qualità della vita del paziente.
 	
 	\begin{figure}[H]
 		\centering
@@ -379,7 +379,7 @@
 	). 
 	
 	\subsubsection{Tecniche e R\&S nel percorso radioterapico}
-	Prima di ogni trattamento, i moderni centri radio e adroterapici compiono un attento percorso di pianificazione del trattamento (TP), l'anello iniziale di ogni percorso radioterapico. La TP  include numerosi passaggi fondamentali tra cui la topologia del volume tumorale tramite tecniche di imaging diagnostico morfologico e funzionale come TAC (Tomografia Assiale Computerizzata), RMN (Risonanza Magnetica Nucleare), PET (Tomografia a Emissione di Positroni) e SPECT (Tomografia a Emissione di Singolo Fotone), strumenti che con lo sviluppo tecnologico hanno acquisito una sensibilità sempre maggiore fornendo mappe tridimensionali dei tessuti del corpo umano ancora più dettagliate. Compito del TP è anche quello di pianificare la dose totale a cui sottoporre il paziente, congiuntamente al suo rateo e al suo frazionamento; ad esempio, al CNAO per i protoni in media sono necessarie 35 sedute mentre per gli ioni carbonio 16 (cita
+	Prima di ogni trattamento, i moderni centri radio e adroterapici compiono un attento percorso di pianificazione del trattamento (TP, Treatment Planning), l'anello iniziale di ogni percorso radioterapico. La TP  include numerosi passaggi fondamentali tra cui la topologia del volume tumorale tramite tecniche di imaging diagnostico morfologico e funzionale come TAC (Tomografia Assiale Computerizzata), RMN (Risonanza Magnetica Nucleare), PET (Tomografia a Emissione di Positroni) e SPECT (Tomografia a Emissione di Singolo Fotone), strumenti che con lo sviluppo tecnologico hanno acquisito una sensibilità sempre maggiore fornendo mappe tridimensionali dei tessuti del corpo umano ancora più dettagliate. Compito del TP è anche quello di pianificare la dose totale a cui sottoporre il paziente, congiuntamente al suo rateo e al suo frazionamento; ad esempio, al CNAO per i protoni in media sono necessarie 35 sedute mentre per gli ioni carbonio 16 (cita
 	%https://fondazionecnao.it/adroterapia/sincrotrone
 	).
 	
@@ -487,8 +487,7 @@
 	
 	Come già anticipato, il DNA è localizzato nel nucleo della cellula\footnote{In realtà esiste il DNA mitocondriale, un particolare tipo di DNA che contiene informazioni genetiche ereditato solo per linea materna (cita
 	%libro 2 anno campbell biologia
-	), che è situato all'interno dei mitocondri, organuli cellulari in cui avviene la respirazione cellulare.} ed è legato a particolari proteine che formano una struttura fibrosa chiamata cromatina, che al momento della duplicazione cellulare si addensa formando i cromosomi. Dalla \hyperref[fig:cell]{Fig. 1.11} si comprende che il DNA occupa solo una minima parte della cellula: solamente il $2$--$3\%$ del volume cellulare è occupato da DNA. Per questo motivo arrecare danni diretti al DNA da parte di radiazione ionizzante è un evento piuttosto raro, ma non trascurabile.
-	
+	), che è situato all'interno dei mitocondri, organuli cellulari in cui avviene la respirazione cellulare.} ed è legato a particolari proteine che formano una struttura fibrosa chiamata cromatina, che al momento della duplicazione cellulare si addensa formando i cromosomi. Dalle considerazioni precedenti, riassunte nella \hyperref[fig:cell]{Fig. 1.11}, si comprende che il DNA occupa solo una minima parte della cellula: solamente il $2$--$3\%$ del volume cellulare è occupato da DNA. Per questo motivo arrecare danni diretti al DNA da parte di radiazione ionizzante è un evento piuttosto raro, ma non trascurabile.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/cell.jpg}
@@ -496,57 +495,178 @@
 			%https://mydbook.giuntitvp.it/app/books/GIAC90_G9076812D/html/21
 			).}
 		\label{fig:cell}
-	\end{figure}	
+	\end{figure}
 	
-	Quando la radiazione ionizzante colpisce direttamente il DNA, quest'ultimo può subire vari tipi di danni la cui distribuzione dipende dal tipo di radiazione e dall'energia del fascio incidente. In generale, è possibile suddividere i danni in Single Strand Break (SSB) e Double Strand Breaks (DSB) in quanto nei SSB si genera la rottura di un solo filamento nucleotidico della doppia elica del DNA, mentre nei DSB si ha un danneggiamento in entrambe le catene nucleotidiche, come rappresentato in \hyperref[fig:danni_dna]{Fig. 1.12}. Grazie al meccanismo di correzione di bozze enzimi specifici come DNA polimerasi, DNA ligasi e nucleasi riconoscono i nucleotidi fuori posto e li sostituiscono (mediante un meccanismo chiamato riparazione delle anomalie di appaiamento) prima che possano portare a mutazioni genetiche.\footnote{Ricerche hanno dimostrato che difetti ereditari negli enzimi sopra citati sono associati a una forma di cancro al colon, in quanto gli errori che portano al cancro si accumulano nel DNA più velocemente (cita
+	Quando la radiazione ionizzante colpisce direttamente il DNA, quest'ultimo può subire danni differenti la cui distribuzione dipende dal tipo di radiazione e dall'energia del fascio incidente. In generale, è possibile suddividere i danni in Single Strand Break (SSB) e Double Strand Breaks (DSB) in quanto nei SSB si genera la rottura di un solo filamento nucleotidico della doppia elica del DNA, mentre nei DSB si ha un danneggiamento in entrambe le catene nucleotidiche, come rappresentato in \hyperref[fig:danni_dna]{Fig. 1.12}. Grazie al meccanismo di correzione di bozze enzimi specifici come DNA polimerasi, DNA ligasi e nucleasi riconoscono i nucleotidi fuori posto e li sostituiscono (mediante un meccanismo chiamato riparazione delle anomalie di appaiamento) prima che possano portare a mutazioni genetiche.\footnote{Ricerche hanno dimostrato che difetti ereditari negli enzimi sopra citati sono associati a una forma di cancro al colon, in quanto gli errori che portano al cancro si accumulano nel DNA più velocemente (cita
 	%libro campbell II anno biologia
-	).} L'efficacia dei metodi di riparazione dipende dalla complessità del danno iniziale: nei SSB la catena danneggiata viene sostituita dagli enzimi osservando le informazioni della catena integra (sfruttando la complementarietà delle basi azotate), mentre nei DSB si hanno danni che non consentono una ricostruzione della doppia elica; in quest'ultimo caso la cellula potrebbe andare incontro o a morte cellulare (un tipo di danno deterministico voluto in radio e adroterapia per ottenere l'eliminazione di cellule tumorali) o a carcinogenesi (un tipo di danno stocastico da limitare in radio e adroterapia, la cui insorgenza è legata alle conseguenze a lungo termine dell'esposizione alla radiazione) (cita
+	).} L'efficacia dei metodi di riparazione dipende dalla complessità del danno iniziale: nei SSB la catena danneggiata viene sostituita dagli enzimi osservando le informazioni della catena integra (sfruttando la complementarietà delle basi azotate), mentre nei DSB si hanno danni che non consentono una ricostruzione della doppia elica; in quest'ultimo caso la cellula potrebbe andare incontro o a morte cellulare (danno deterministico voluto in radio e adroterapia per ottenere l'eliminazione di cellule tumorali) o a carcinogenesi (danno stocastico da limitare in radio e adroterapia, la cui insorgenza è legata alle conseguenze a lungo termine dell'esposizione alla radiazione), perdendo in ambo i casi la sua capacità riproduttiva (cita
 	%https://fisica.unipv.it/Eventi/Incontri-fisica-moderna/2017-12-12-Baiocco-Babini-slides.pdf
 	).
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/danni_dna.jpg}
-		\caption{Schematizzazione dei SSB (a sinistra) e dei DSB (a destra) (cita
+		\caption{Schematizzazione dei SSB (a sinistra), dei DSB (al centro) e di cluster di DSB (a destra) (cita
 			%https://fisica.unipv.it/Eventi/Incontri-fisica-moderna/2017-12-12-Baiocco-Babini-slides.pdf
 			).}
 		\label{fig:danni_dna}
 	\end{figure}
 	
 	\subsubsection{Danno indiretto}
-	Nel metodo indiretto la radiazione non colpisce il DNA ma l'acqua contenuta nella cellula che lo contiene\footnote{Il $75\%$ del corpo umano è costituito da acqua, per questo irraggiando la cellula si colpisce acqua.} producendo radicali liberi (atomi o molecole molto reattivi poiché dotati di un elettrone spaiato), entità molecolari che reagendo con la cellula danneggiano fortemente il DNA. danneggianocon le molecole cellulare danneggiando e danneggiano facilmente con danneggiano viene distrutto poiché la radiazione non colpendolo direttamente, ma danneggiando la cellula che lo contieneentro cui Il metodo indiretto, la probabilità che le radiazioni ionizzanti colpiscano il DNA in modo diretto sono molto basse. Il fatto che il corpo umano è composto per il $75\%$ da acqua garantisce una seconda modalità con cui poter uccidere il DNA: quando la radiazione ionizzante colpisce la cellula si genera un'interazione tra l'acqua ivi contenuta e la radiazione stessa, causa della produzione di radicali liberi ()interagisce con l'acqua ivi contenuta abbondantemente in maniera indiretta: cellulare tramite radiazione, vale a dire dradiasolo una minima parte dei per questo è molto difficile generare danni diretti al DNA
+	Per i motivi esposti nel paragrafo precedente, circa i $2/3$ dei danni cellulari si generano utilizzando radiazione ionizzante che non colpisce direttamente il DNA (cita
+	%https://www.dkfz.de/en/medizinische-physik-radioonkologie/Teaching/10_LEM_Models_Carbon_RadiobiologicalModeling.pdf
+	). Uno dei danni indiretti più frequenti si ha quando la radiazione colpisce l'acqua contenuta nelle cellule cancerose\footnote{Dato che il corpo umano è costituito per il $75\%$ da acqua, irradiare la cellula equivale, di fatto, a irradiare acqua.} producendo radicali liberi\footnote{I radicali liberi sono atomi neutri o molecole che possiedono un unico elettrone spaiato nel loro orbitale più esterno, caratteristica che è fonte di grande instabilità chimica; ciò rende i radicali liberi particolarmente reattivi e in grado sia di legarsi ad altri radicali sia di sottrarre elettroni a molecole vicine (cita
+	%Paolo Silvestroni, Fondamenti di chimica, Bologna, Zanichelli, 1996
+	).} tramite processi di radiolisi\footnote{Per radiolisi chimica si intende la scissione di uno o più legami causata da radiazioni ionizzanti (cita
+	%https://goldbook.iupac.org/terms/view/R05112
+	).} dell'acqua. La radiolisi dell'acqua consiste in una serie di reazioni chimiche (alcune delle quali riportate di seguito) che producono elettroni, atomi, molecole e ioni che, diffondendo, danneggiano indirettamente il DNA portando alla morte cellulare. La ionizzazione di una molecola d'acqua (\ce{H2O}) viene riassunta nella \hyperref[eq:radiolisi1]{Eq. 1.1}:
+	\begin{equation}
+		\ce{H2O ->[Radiazione ionizzante] H2O^{+} + e^-}
+		\label{eq:radiolisi1}
+	\end{equation}
+	da cui si producono uno ione positivo \ce{H2O^{+}} e un elettrone \ce{e^-}. Trascorso un certo intervallo di tempo, alcuni elettroni perdono una buona parte di energia cinetica che rende possibile la cattura elettronica da parte di un'altra molecola d'acqua con conseguente formazione di uno ione negativo \ce{H2O^{-}}, come descritto nella \hyperref[eq:radiolisi2]{Eq. 1.2}:
+	\begin{equation}
+		\ce{H2O + e^{-} ->[Cattura elettronica] H2O^{-}}
+		\label{eq:radiolisi2}
+	\end{equation}
+	In seguito i prodotti delle \hyperref[eq:radiolisi1]{Eq. 1.1} e \hyperref[eq:radiolisi2]{Eq. 1.2} si dissociano nei seguenti modi:
+	\begin{subequations}
+		\begin{align}
+			\label{eq:dissociazione1}
+			\ce{H2O^{+} ->[Dissociazione] H^{+} + OH^{.}}\\
+			\label{eq:dissociazione2}
+			\ce{H2O^{-} ->[Dissociazione] OH^{-} + H^{.}}
+		\end{align}
+	\end{subequations}
+	i cui prodotti sono gli ioni idrogeno \ce{H^{+}} e ossidrile \ce{OH^{-}} e i radicali liberi ossidrile \ce{OH^{.}} e idrogeno \ce{H^{.}}. Tra le varie reazioni chimiche che possono avvenire successivamente, i cui reagenti sono i prodotti delle \hyperref[eq:dissociazione1]{Eq. 1.3a} e \hyperref[eq:dissociazione2]{Eq. 1.3b}, si riportano le seguenti:
+	\begin{subequations}
+		\begin{align}
+			\label{eq:prodotto1}
+			\ce{H^{.} + OH^{.} &-> H2O}\\
+			\label{eq:prodotto2}
+			\ce{H^{+} + OH^{-} &-> H2O}\\
+			\label{eq:prodotto3}
+			\ce{2OH^{.} &-> H2O2}
+		\end{align}
+	\end{subequations}
+	Le \hyperref[eq:dissociazione1]{Eq. 1.4a} e \hyperref[eq:dissociazione2]{Eq. 1.4b} sono reazioni innocue in quanto generano molecole d'acqua mentre la \hyperref[eq:dissociazione3]{Eq. 1.4c} porta alla formazione di perossido di idrogeno (acqua ossigenata, \ce{H2O2}), una sostanza nociva per la cellula in quanto capace di modificare la struttura e le funzioni delle proteine, di mutare le basi nucleotidiche e di generare SSB nel DNA (cita
+	%https://www.rndsystems.com/resources/articles/reactive-oxygen-species-ros
+	). Ciò spiega il motivo per cui i danni indiretti al DNA, per mezzo della catena di radiolisi dell'acqua, portino la cellula alla morte riproduttiva (cita
+	%https://www.mdpi.com/2073-4441/3/1/235
+	).
 	
-	Quando 
+	Il corpo umano attua una catena di meccanismi di difesa in presenza di \ce{H2O2} (e altre specie chimiche come i due radicali anione superossido \ce{O2^{-.}} e ossidrile \ce{OH^{.}}, generalmente denominate ROS (Specie Reattive all'Ossigeno)) che si attivano in maniera naturale durante le reazioni di riduzione dell'ossigeno ad acqua, da cui i mitocondri cellulari ricavano energia per il corpo umano. Il primo meccanismo di difesa è quello di disattivare il radicale \ce{O2^{-.}} tramite l'enzima superossido dismutasi (SOD), che catalizza la reazione \hyperref[eq:sod]{Eq. 1.5}:
+	\begin{equation}
+		\ce{2O2^{-.} + 2H^+ ->[SOD] H2O2 + O2}
+		\label{eq:sod}
+	\end{equation}
+	in cui l'anione superossido viene trasformato in perossido di idrogeno. Successivamente, per disattivare il perossido di idrogeno, intervengono gli enzimi glutatione perossidasi e catalasi che catalizzano rispettivamente le reazioni \hyperref[eq:gsh]{Eq. 1.6a} e \hyperref[eq:catalasi]{Eq. 1.6b}:
+	\begin{subequations}
+		\begin{align}
+			\label{eq:gsh}
+			\ce{2GSH + H2O2 &->[Glutatione perossidasi] 2H2O + GSSG}\\
+			\label{eq:catalasi}
+			\ce{2H2O2 &->[Catalasi] 2H2O + O2}
+		\end{align}
+	\end{subequations}
+	dove \ce{GSH} e \ce{GSSG} sono rispettivamente la forma ridotta e la forma ossidata del glutatione (il substrato\footnote{Il substrato di un enzima è un reagente specifico su cui agisce l'enzima stesso al fine di catalizzare una certa reazione chimica (cita
+		%libro campbell 2 anno biologia
+		).} della glutatione perossidasi) e \ce{O2} è una molecola di ossigeno.
 	
-	RADICALI
-	che
-	diffondono
-	e
-	raggiungono
-	il
-	DNA
-	(danno
-	INDIRETTO)
-	possono
-	causare
-	DANNO
-	al
-	DNA
+	Anche le sostanze antiossidanti, come la vitamina E, consentono di catturare i radicali liberi diminuendo la loro azione dannosa. In generale, gli enzimi glutatione perossidasi e catalasi e la vitamina E hanno una concentrazione maggiore nei luoghi in cui il danno da ROS tende a essere maggiore, per esempio nei siti più ossigenati. Infatti, osservando l'\hyperref[eq:sod]{Eq. 1.5}, l'eccesso di ossigeno nei tessuti amplifica i danni dovuti all'\ce{H2O2} (si veda \hyperref[??]{oxygen enhancement ratio??}) (cita
+	%https://www.rndsystems.com/resources/articles/reactive-oxygen-species-ros
+	,
+	%Ugo Leuzzi, Ersilia Bellocco e Davide Barreca, Biochimica della nutrizione, ISBN 978-88-08-17926-5.
+	).
+	
+	\subsection{Grandezze dosimetriche}
+	In radiobiologia la dosimetria definisce e quantifica le grandezze che descrivono l'interazione delle radiazioni ionizzanti con la materia e gli effetti biologici dell'assorbimento radiativo da parte dei tessuti del corpo umano. Nel TP dei pazienti affetti da neoplasie gli studi dosimetrici sono fondamentali in quanto consentono di misurare la quantità di radiazione necessaria all'eliminazione del tumore e i danni biologici arrecati all'organismo. Nei prossimi paragrafi si espongono le principali grandezze fisico-biologiche utilizzate in dosimetria.
+	
+	\subsubsection{Dose assorbita, equivalente ed efficace}
+	Tra le grandezze dosimetriche caratteristiche della sorgente si trova la fluenza di particelle $\phi$, definita come il numero di particelle $dN$ (ad esempio i protoni all'interno di un fascio) per unità di superficie perpendicolare alla direzione del fascio $dS$. La fluenza è espressa nella sua forma differenziale nella \hyperref[eq:fluence]{Eq. 1.7}:
+	\begin{equation}
+		\phi=\frac{dN}{dA}
+		\label{eq:fluence}
+	\end{equation}
+	Dalla fluenza di particelle è definibile la dose assorbita $D_{as}$ ossia l'energia assorbita $dE$ assorbita per unità di massa $dm$:
+	\begin{equation}
+		D_{as}=\frac{dE}{dm}=\frac{\left(\frac{dE}{dx}\right)\Delta x N}{\rho \Delta x A}=\phi\frac{\left(\frac{dE}{dx}\right)}{\rho}
+		\label{eq:dose_as}
+	\end{equation}
+	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[??]{??}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (OER, si veda \hyperref[??]{??}) (cita
+	%note dal corso di fisica biomedica a.a. 2022-2023
+	). Pertanto, per includere i diversi effetti biologici dovuti a tutti i possibili tipi di radiazione $R$, si introduce la dose equivalente $D_{eq}$ definita dalla \hyperref[eq:dose_eq]{Eq. 1.9}:
+	\begin{equation}
+		D{eq}=\sum_{R}w_RD_{as,R}
+		\label{eq:dose_eq}
+	\end{equation}
+	dove $D_{as,R}$ è la dose assorbita relativa alla radiazione $R$-esima e $w_R$ pondera la pericolosità della radiazione. $w_R$, denominato fattore di qualità, è il rapporto tra il danno biologico prodotto dall'assorbimento di $1\mbox{ Gy}$ della radiazione $R$ e il danno biologico prodotto da $1\mbox{ Gy}$ di raggi $\gamma$. La prima unità di misura della dose equivalente fu il rem (röntgen equivalent man), oggi sostituito dal Sievert (Sv), tale che $1\mbox{ Sv}=100\mbox{ rem}$. La $D{eq}$ è una grandezza ancora incompleta in quanto non quantifica gli effetti biologici in relazione al tipo di organo o tessuto irradiato. Pertanto si definisce la dose efficace $D_{eff}$ che comprende sia gli effetti biologici dovuti al tipo di radiazione $R$ sia quelli legati a tutti i tessuti e organi irradiati $T$. La dose efficace è definita dalla \hyperref[eq:dose_eff]{Eq. 1.10}:
+	\begin{equation}
+		D_{eff}=\sum_{T}w_TD_{eq}=\sum_{T}w_T\sum_{R}w_RD
+		\label{eq:dose_eff}
+	\end{equation}
+	dove $w_T$ è un fattore di ponderazione per il tessuto $T$-esimo tale che $\sum_{T}w_T=1$, dove la somma avviene su tutti gli organi e i tessuti del corpo umano considerati sensibili all'induzione di effetti stocastici provocati dalla radiazione. In particolare, $w_T$ è maggiore per i tessuti più sensibili alla radiazione. Anche la $D_{eff}$ si misura in Sievert, in modo che gli effetti biologici di $1\mbox{ Sv}$ di una data radiazione siano uguali a quelli di $1\mbox{ Gy}$ dei raggi $\gamma$, presi come riferimento. Si riportano alcuni valori di $w_R$ e $w_T$ in \hyperref[tab:w_factor]{Tab. 1.1}.
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ |m{0.5\textwidth}||m{0.5\textwidth}| }
+			\hline
+			Tipo di radiazione & $w_R$ \\
+			\hline
+			Fotoni & 1\\
+			\hline
+			Elettroni e muoni & 1\\
+			\hline
+			Protoni e pioni carichi & 2\\
+			\hline
+			Particelle alfa, frammenti di fissione, nuclei pesanti & 20\\
+			\hline
+			Neutroni & Funzione dell'energia del neutrone\\
+			\hline\hline
+			Organi o tessuti & $w_T$\\
+			\hline
+			Gonadi & 0.08 \\
+			\hline
+			Midollo osseo (rosso) & 0.12\\
+			\hline
+			Colon & 0.12\\
+			\hline
+			Polmone (vie respiratorie toraciche) & 0.12\\
+			\hline
+			Stomaco & 0.12\\
+			\hline
+			Mammelle & 0.12\\
+			\hline
+			Vescica & 0.04\\
+			\hline
+			Fegato & 0.04\\
+			\hline
+			Esofago & 0.04\\
+			\hline
+			Tiroide & 0.04\\
+			\hline
+			Pelle & 0.01\\
+			\hline
+			Superficie ossea & 0.01\\
+			\hline
+			Cervello & 0.01\\
+			\hline
+			Ghiandole salivari & 0.01\\
+			\hline
+			Rimanenti organi o tessuti\footnote{ghiandole surrenali, regione extratoracica, vescichetta biliare, cuore, reni, linfonodi, muscolo, mucosa orale, pancreas, prostata (uomini), intestino tenue, milza, timo, utero/collo dell'utero (donne).} & 0.12\\
+			\hline
+		\end{tabular}
+		\caption{Tabella riassuntiva dei valori di alcuni fattori di ponderazione per la radiazione $w_R$ e per organi e tessuti $w_T$ (cita
+			%pdf D.Lgs. 101-2020 in \Tesi\FOOT\Materiale
+			).}
+		\label{tab:w_factor}
+	\end{table}
 	
 	
-	(cita
-	%[14] S. Chiarella, Note dal corso di Elementi di Fisica Biomedica-Sanitaria 2021
-	)
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	effetti radiazione sulle cellule, inserisci anche la roba sui danni deterministici e sui danni stocastici
+	%While mean stopping power refers to the energy lost by the particle beam traversing the surrounding media, linear energy transfer (LET) refers to the energy absorbed by the media per unit of distance travelled by the ionizing radiation.
+	%https://physics.stackexchange.com/questions/676966/stopping-power-vs-linear-energy-transfer-let
 	
 	
 	
@@ -560,6 +680,7 @@
 
 % dire che FOOT L'esperimento FOOT unisce laboratori giapponesi, tedeschi e italiani al ne di raccogliere dati fondamentali per migliorare la conoscenza delle interazioni tra i fasci adronici e il materiale
 
+% NOTA: end point è il goal che voglio raggiungere. tutti i tumori vicini a organi a rischio hanno percnetuali di soluzione molto molto elevate rispetto alla radioterapia.
 	
 	
 	
