@@ -19,10 +19,11 @@
 %\usepackage{amsfonts}
 \usepackage{amssymb}
 %\usepackage[T1]{fontenc}
-%\usepackage{multirow}
-%\usepackage{array}
-%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-%\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{tablefootnote}
+\usepackage{multirow}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{graphicx}
 \usepackage[version=4]{mhchem}
 %\usepackage{siunitx}
@@ -55,8 +56,8 @@
 	%}
 %\renewmenumacro{\directory}{pathswithfolder} % default: path
 %\renewmenumacro{\keys}{shadowedroundedkeys} % default: roundedkeys
-\setlength{\arrayrulewidth}{1.0pt}
-\renewcommand{\arraystretch}{1.1}
+\setlength{\arrayrulewidth}{0.9pt}
+\renewcommand{\arraystretch}{1.3}
 \usepackage{mathcomp}
 
 %\usepackage{fontspec}
@@ -593,7 +594,7 @@
 		D_{as}=\frac{dE}{dm}=\frac{\left(\frac{dE}{dx}\right)\Delta x N}{\rho \Delta x A}=\phi\frac{\left(\frac{dE}{dx}\right)}{\rho}
 		\label{eq:dose_as}
 	\end{equation}
-	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[??]{??}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (OER, si veda \hyperref[??]{??}) (cita
+	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[par:let]{Linear Energy Transfer}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (OER, si veda \hyperref[??]{??}) (cita
 	%note dal corso di fisica biomedica a.a. 2022-2023
 	). Pertanto, per includere i diversi effetti biologici dovuti a tutti i possibili tipi di radiazione $R$, si introduce la dose equivalente $D_{eq}$ definita dalla \hyperref[eq:dose_eq]{Eq. 1.9}:
 	\begin{equation}
@@ -605,68 +606,136 @@
 		D_{eff}=\sum_{T}w_TD_{eq}=\sum_{T}w_T\sum_{R}w_RD
 		\label{eq:dose_eff}
 	\end{equation}
-	dove $w_T$ è un fattore di ponderazione per il tessuto $T$-esimo tale che $\sum_{T}w_T=1$, dove la somma avviene su tutti gli organi e i tessuti del corpo umano considerati sensibili all'induzione di effetti stocastici provocati dalla radiazione. In particolare, $w_T$ è maggiore per i tessuti più sensibili alla radiazione. Anche la $D_{eff}$ si misura in Sievert, in modo che gli effetti biologici di $1\mbox{ Sv}$ di una data radiazione siano uguali a quelli di $1\mbox{ Gy}$ dei raggi $\gamma$, presi come riferimento. Si riportano alcuni valori di $w_R$ e $w_T$ in \hyperref[tab:w_factor]{Tab. 1.1}.
+	dove $w_T$ è un fattore di ponderazione per il tessuto $T$-esimo tale che $\sum_{T}w_T=1$, dove la somma avviene su tutti gli organi e i tessuti del corpo umano considerati sensibili all'induzione di effetti stocastici provocati dalla radiazione. In particolare, $w_T$ è maggiore per i tessuti più sensibili alla radiazione\footnote{I tessuti più sensibili alla radiazione sono quelli in cui è più facile rimuovere le cellule neoplastiche, ma sono anche i tessuti più soggetti all'insorgenza di effetti collaterali dovuti all'applicazione di radiazione ionizzante.} come quelli caratterizzati da un'elevata riproduzione cellulare, in cui l'eliminazione del cancro ha una maggiore riuscita. Anche la $D_{eff}$ si misura in Sievert, in modo che gli effetti biologici di $1\mbox{ Sv}$ di una data radiazione siano uguali a quelli di $1\mbox{ Gy}$ dei raggi $\gamma$, presi come riferimento. Si riportano alcuni valori di $w_R$ e $w_T$ in \hyperref[tab:w_factor]{Tab. 1.1}.
 	
 	\begin{table}[H]
-		\centering
-		\begin{tabular}{ |m{0.5\textwidth}||m{0.5\textwidth}| }
-			\hline
-			Tipo di radiazione & $w_R$ \\
-			\hline
-			Fotoni & 1\\
-			\hline
-			Elettroni e muoni & 1\\
-			\hline
-			Protoni e pioni carichi & 2\\
-			\hline
-			Particelle alfa, frammenti di fissione, nuclei pesanti & 20\\
-			\hline
-			Neutroni & Funzione dell'energia del neutrone\\
-			\hline\hline
-			Organi o tessuti & $w_T$\\
-			\hline
-			Gonadi & 0.08 \\
-			\hline
-			Midollo osseo (rosso) & 0.12\\
-			\hline
-			Colon & 0.12\\
-			\hline
-			Polmone (vie respiratorie toraciche) & 0.12\\
-			\hline
-			Stomaco & 0.12\\
-			\hline
-			Mammelle & 0.12\\
-			\hline
-			Vescica & 0.04\\
-			\hline
-			Fegato & 0.04\\
-			\hline
-			Esofago & 0.04\\
-			\hline
-			Tiroide & 0.04\\
-			\hline
-			Pelle & 0.01\\
-			\hline
-			Superficie ossea & 0.01\\
-			\hline
-			Cervello & 0.01\\
-			\hline
-			Ghiandole salivari & 0.01\\
-			\hline
-			Rimanenti organi o tessuti\footnote{ghiandole surrenali, regione extratoracica, vescichetta biliare, cuore, reni, linfonodi, muscolo, mucosa orale, pancreas, prostata (uomini), intestino tenue, milza, timo, utero/collo dell'utero (donne).} & 0.12\\
-			\hline
-		\end{tabular}
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |m{0.5\textwidth}||m{0.5\textwidth}| }
+				\hline
+				Tipo di radiazione & $w_R$ \\
+				\hline\hline
+				Fotoni & 1\\
+				\hline
+				Elettroni e muoni & 1\\
+				\hline
+				Protoni e pioni carichi & 2\\
+				\hline
+				Particelle alfa, frammenti di fissione, nuclei pesanti & 20\\
+				\hline
+				Neutroni & Funzione dell'energia del neutrone\\
+				\hline\hline
+				Organi o tessuti & $w_T$\\
+				\hline\hline
+				Gonadi & 0.08 \\
+				\hline
+				Midollo osseo (rosso) & 0.12\\
+				\hline
+				Colon & 0.12\\
+				\hline
+				Polmone (vie respiratorie toraciche) & 0.12\\
+				\hline
+				Stomaco & 0.12\\
+				\hline
+				Mammelle & 0.12\\
+				\hline
+				Vescica & 0.04\\
+				\hline
+				Fegato & 0.04\\
+				\hline
+				Esofago & 0.04\\
+				\hline
+				Tiroide & 0.04\\
+				\hline
+				Pelle & 0.01\\
+				\hline
+				Superficie ossea & 0.01\\
+				\hline
+				Cervello & 0.01\\
+				\hline
+				Ghiandole salivari & 0.01\\
+				\hline
+				Rimanenti organi o tessuti\footnote{Ghiandole surrenali, regione extratoracica, vescichetta biliare, cuore, reni, linfonodi, muscolo, mucosa orale, pancreas, prostata (uomini), intestino tenue, milza, timo, utero/collo dell'utero (donne).} & 0.12\\
+				\hline
+			\end{tabular}
+		\end{minipage}
 		\caption{Tabella riassuntiva dei valori di alcuni fattori di ponderazione per la radiazione $w_R$ e per organi e tessuti $w_T$ (cita
-			%pdf D.Lgs. 101-2020 in \Tesi\FOOT\Materiale
-			).}
+				%pdf D.Lgs. 101-2020 in \Tesi\FOOT\Materiale
+				).}
 		\label{tab:w_factor}
 	\end{table}
 	
+	\subsubsection{Linear Energy Transfer}\label{par:let}
+	Il Linear Energy Transfer (LET) di una radiazione ionizzante è la quantità di energia $dE$ trasferita al materiale a causa delle collisioni per unità di distanza $dx$:
+	\begin{equation}
+		LET=\frac{dE_\Delta}{dx}
+		\label{eq:let}
+	\end{equation}
+	Già nella \hyperref[eq:dose_as]{Eq. 1.8} viene utilizzato il potere frenante $\left(\frac{dE}{dx}\right)$, simile alla definizione di LET. Il motivo per cui tali termini si trattano separatamente risiede in una loro differenza: mentre il potere frenante è legato all'energia persa dal fascio di particelle nel mezzo che attraversa (per unità di distanza), il LET si riferisce all'energia assorbita dal mezzo (per unità di distanza). Nella \hyperref[eq:let]{Eq. 1.11} compare il pedice $\Delta$ in quanto nella definizione di LET si tengono conto dei trasferimenti di energia localizzati vicino alla traiettoria della particella, escludendo le ionizzazioni degli elettroni a lungo raggio più energetici la cui energia è maggiore di una soglia $\Delta$ come mostrato in \hyperref[fig:let]{Fig. 1.13}. Nel limite $\Delta\rightarrow+\infty$\footnote{Tale condizione limite non si raggiunge fisicamente, ma corrisponde al caso in cui vengono inclusi tutti i trasferimenti di energia della \hyperref[eq:let]{Eq. 1.11}, per quanto grandi possano essere.} non esisterebbero più elettroni con $E>\Delta$ in quanto l'energia persa dalla particella del fascio corrisponderebbe eguaglierebbe l'energia assorbita dal materiale (il che renderebbe equivalenti il potere frenante e il LET). Tali considerazioni consentono di ricavare la relazione che lega il potere frenante e il LET:
+	\begin{equation}
+		LET=\frac{dE_\Delta}{dx}-K_{E>\Delta}
+		\label{eq:let&stoppingpower}
+	\end{equation}
+	dove $K_{E>\Delta}$ è l'energia cinetica degli elettroni che possiedono un'energia $E>\Delta$.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/let.jpg}
+		\caption{Il cilindro schematizza la traiettoria di una particella del fascio. Gli elettroni $e_1$ ed $e_2$ possiedono energie rispettivamente $E_1>\Delta$ ed $E_2<\Delta$. Nella definizione di LET si considerano solo gli elettroni a corto raggio come $e_2$.}
+		\label{fig:let}
+	\end{figure}
+	
+	In base al LET è possibile distinguere due tipi di radiazione, quelle ad alto e basso LET. Le radiazioni a basso LET, disperdendo poca energia nei tessuti per unità di percorso, penetrano più in profondità rispetto alle radiazioni ad alto LET in quanto impiegano più tempo a esaurire l'energia che possiedono. Inoltre le radiazioni ad alto LET arrecano danni biologici maggiori ai tessuti in quanto generano eventi di ionizzazione più frequenti e ravvicinati. La \hyperref[fig:damage_let]{Fig. 1.14} mostra che le radiazioni a basso LET, per esempio raggi X o $\gamma$, inducono prevalentemente danni isolati al DNA come le SSB mentre radiazioni ad alto LET, tra cui si trovano le particelle $\alpha$ o gli ioni pesanti, generano danni più distruttivi al DNA come le DSB (cita
+	%https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7555951/	
+	).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/damage_let.png}
+		\caption{Danni tipici del DNA in scala nanometrica delle radiazioni a basso LET (in alto) e ad alto LET (in basso) (cita
+			%https://www.cambridge.org/core/journals/expert-reviews-in-molecular-medicine/article/cell-death-mechanisms-in-head-and-neck-cancer-cells-in-response-to-low-and-highlet-radiation/5D81C15D79DA4C3B485D4367D5C7CBD3
+			).}
+		\label{fig:damage_let}
+	\end{figure}
+	
+	In tabella \hyperref[tab:w_factor]{Tab. 1.2} si riassumono 
+	(cita
+	%
+	)
+	per creare danni al dna bisiogna lasciare molta energia in un piccolo spazio, che i biologi chiamano linear energy transfer (c'è una piccola differenza con de/dx). le particelle con alto let sono quelle che hanno un alto de/dx tipo i carboni, poiché fanno tante interazioni rispetto al dx.
+	
+	andando avanti, analizziamo una scala nanometrica. man mano che il protone entra, fa un danno ogni circa 90 nm (ma il dna è molto più piccolo quindi colpisce zone in cui non c'è il dna, almeno all'inizio); poi penetrando di più il protone fa un danno ogni 50 nm, e alla fine ogni 4 nm il che ci va bene perché il dna è dell'ordine del nm -> il carbonio, quando entra fa lo stesso effetto del protone alla fine, quindi crea danni grandi al dna sin da subito, e poi dopo fa danni "catastrofici". nella catena di ingresso la gran parte dei danni è riparabile, mentre dopo no ci sono danni permenenti, questa è una cosa importante.
 	
 	
 	
-	%While mean stopping power refers to the energy lost by the particle beam traversing the surrounding media, linear energy transfer (LET) refers to the energy absorbed by the media per unit of distance travelled by the ionizing radiation.
-	%https://physics.stackexchange.com/questions/676966/stopping-power-vs-linear-energy-transfer-let
+	
+	\subsubsection{RBE}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ |m{0.7\textwidth}||m{0.23\textwidth}|m{0.07\textwidth}| }
+			\hline
+			Tipo di radiazione & LET $\left[\mbox{keV/}\mu\mbox{m}\right]$ & RBE\\
+			\hline\hline
+			Raggi X ($6$--$15 \mbox{ MeV}$) & $0.3$ &	$\approx$0.8\\
+			\hline
+			Particella $\beta$ ($1 \mbox{ MeV}$) & 0.3 & 0.9\\
+			\hline
+			Protoni a energie terapiche ($150 \mbox{ MeV}$) & 0.5 & $\approx$1.1\\
+			\hline
+			Neutroni & $0.5$--$100$ & $1$--$2$\\
+			\hline
+			Particella $\alpha$ & $50$--$200$ & $5$--$10$\\
+			\hline
+			Ioni carbonio nella regione vicina al picco di Bragg & $40$--$90$ & $2$--$5$\\
+			\hline
+		\end{tabular}
+		\caption{Valori approssimati di LET e RBE di alcuni tipi di radiazione (cita
+			%Hasan Murshed M.D., M.S, in Fundamentals of Radiation Oncology (Third Edition), 2019
+			).}
+		\label{tab:let_rbe}
+	\end{table}
+	
 	
 	
 	
