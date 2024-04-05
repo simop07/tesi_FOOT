@@ -67,7 +67,7 @@
 \pagestyle{fancy}
 %\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{CAP.\ \thechapter\ --\ #1}}{}}
-\setlength{\headwidth}{13cm}
+\setlength{\headwidth}{13cm} % larghezza tabelle 12cm
 \fancyhead{} % clear all header fields
 \fancyhead[LO]{\footnotesize \textsl{\rightmark}}
 \fancyhead[RE]{\footnotesize \textsl{\leftmark}}
@@ -304,7 +304,7 @@
 	%https://indico.cern.ch/event/24728/attachments/424989/590019/RIVISTA_MEDICA_2008-14_1.pdf ripetizione
 	).
 	
-	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS), sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Avanzate, \hyperref[fig:catana]{Fig. 1.4}), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range adatto soprattutto per i tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ si trattò il primo paziente affetto da melanoma uveale e da allora oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza del $98\%$ (cita
+	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS), sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Nucleari Avanzate, \hyperref[fig:catana]{Fig. 1.4}), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range adatto soprattutto per i tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ si trattò il primo paziente affetto da melanoma uveale e da allora oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza del $98\%$ (cita
 	%https://agenda.infn.it/event/8475/contributions/73755/attachments/53706/63315/1.Frascaticuttone.pdf
 	), percentuale pur sempre comparabile con la terapia chirurgica e fotonica, sebbene queste ultime compromettano maggiormente la capacità visiva essendo statisticamente più invalidanti dell'adroterapia.}
 	
@@ -357,9 +357,9 @@
 	
 	Il centro adroterapico italiano più recente è il Proton Therapy Center (PTC) di Trento, la cui attività clinica ha avuto inizio nell'ottobre del 2014 (cita
 	%https://protonterapia.provincia.tn.it/eng
-	). Il PCT, che è una delle unità operative del Dipartimento di Oncologia dell'Ospedale di Trento, utilizza solo fasci di protoni accelerati da un ciclotrone a un'energia di $70$--$226 \mbox{ MeV}$ (cita
-	%trentoPCT.pdf
-	). Uno dei punti di forza del PCT è la sua capacità di erogare protoni per mezzo di sistemi rotanti (gantry, \hyperref[fig:gantry]{Fig. 1.6}), garantendo un trattamento del paziente full-body a $360^\circ$ per patologie come tumori cerebrali e della base cranica, del distretto cervico-cefalico, della colonna vertebrale, sarcomi dei tessuti molli e tumori pediatrici (cita
+	). Il PTC, che è una delle unità operative del Dipartimento di Oncologia dell'Ospedale di Trento, utilizza solo fasci di protoni accelerati da un ciclotrone a un'energia di $70$--$226 \mbox{ MeV}$ (cita
+	%trentoPTC.pdf
+	). Uno dei punti di forza del PTC è la sua capacità di erogare protoni per mezzo di sistemi rotanti (gantry, \hyperref[fig:gantry]{Fig. 1.6}), garantendo un trattamento del paziente full-body a $360^\circ$ per patologie come tumori cerebrali e della base cranica, del distretto cervico-cefalico, della colonna vertebrale, sarcomi dei tessuti molli e tumori pediatrici (cita
 	%https://www.apss.tn.it/Azienda/Unita-operative-e-strutture-organizzative/Unita-operativa-protonterapia-Trento#cosa_fa
 	). Inoltre il centro adroterapico trentino è il primo in Italia a erogare un fascio di protoni in modalità attiva; quest'ultima, a differenza delle modalità uniforme e passiva, utilizza campi magnetici per deviare il percorso di ciascun fascio di protoni verso la posizione target, determinata subito prima che la dose venga erogata (cita	%https://www.radioterapiaitalia.it/wp-content/uploads/2017/03/Amichetti-Proton-parte-1.pdf
 	,
@@ -375,7 +375,7 @@
 		\label{fig:gantry}
 	\end{figure}
 	
-	Il PCT possiede due linee protoniche dedicate ai trattamenti clinici dotate di gantry e una linea fissa utilizzata per attività sperimentali di ricerca e sviluppo (R\&D). Le attività di R\&D non sono legate esclusivamente alla protonterapia ma anche a contesti lontani dall'ambito medico, per esempio gli ambiti aerospaziale con la radioprotezione (si veda \hyperref[label]{radioprotezione}) ed elettronico con lo studio di componenti elettroniche radioresistenti, l'analisi dei materiali e lo sviluppo di rivelatori (cita
+	Il PTC possiede due linee protoniche dedicate ai trattamenti clinici dotate di gantry e una linea fissa utilizzata per attività sperimentali di ricerca e sviluppo (R\&D). Le attività di R\&D non sono legate esclusivamente alla protonterapia ma anche a contesti lontani dall'ambito medico, per esempio gli ambiti aerospaziale con la radioprotezione (si veda \hyperref[label]{radioprotezione}) ed elettronico con lo studio di componenti elettroniche radioresistenti, l'analisi dei materiali e lo sviluppo di rivelatori (cita
 	%https://protonterapia.provincia.tn.it/Per-i-ricercatori?/eng/switchlanguage/to/protonterapia_frontend/researchers
 	). 
 	
@@ -513,7 +513,7 @@
 		\label{fig:danni_dna}
 	\end{figure}
 	
-	\subsubsection{Danno indiretto}
+	\subsubsection{Danno indiretto}\label{par:danno_indiretto}
 	Per i motivi esposti nel paragrafo precedente, circa i $2/3$ dei danni cellulari si generano utilizzando radiazione ionizzante che non colpisce direttamente il DNA (cita
 	%https://www.dkfz.de/en/medizinische-physik-radioonkologie/Teaching/10_LEM_Models_Carbon_RadiobiologicalModeling.pdf
 	). Uno dei danni indiretti più frequenti si ha quando la radiazione colpisce l'acqua contenuta nelle cellule cancerose\footnote{Dato che il corpo umano è costituito per il $75\%$ da acqua, irradiare la cellula equivale, di fatto, a irradiare acqua.} producendo radicali liberi\footnote{I radicali liberi sono atomi neutri o molecole che possiedono un unico elettrone spaiato nel loro orbitale più esterno, caratteristica che è fonte di grande instabilità chimica; ciò rende i radicali liberi particolarmente reattivi e in grado sia di legarsi ad altri radicali sia di sottrarre elettroni a molecole vicine (cita
@@ -550,7 +550,7 @@
 			\ce{2OH^{.} &-> H2O2}
 		\end{align}
 	\end{subequations}
-	Le \hyperref[eq:dissociazione1]{Eq. 1.4a} e \hyperref[eq:dissociazione2]{Eq. 1.4b} sono reazioni innocue in quanto generano molecole d'acqua mentre la \hyperref[eq:dissociazione3]{Eq. 1.4c} porta alla formazione di perossido di idrogeno (acqua ossigenata, \ce{H2O2}), una sostanza nociva per la cellula in quanto capace di modificare la struttura e le funzioni delle proteine, di mutare le basi nucleotidiche e di generare SSB nel DNA (cita
+	Le \hyperref[eq:prodotto1]{Eq. 1.4a} e \hyperref[eq:prodotto2]{Eq. 1.4b} sono reazioni innocue in quanto generano molecole d'acqua mentre la \hyperref[eq:prodotto3]{Eq. 1.4c} porta alla formazione di perossido di idrogeno (acqua ossigenata, \ce{H2O2}), una sostanza nociva per la cellula in quanto capace di modificare la struttura e le funzioni delle proteine, di mutare le basi nucleotidiche e di generare SSB nel DNA (cita
 	%https://www.rndsystems.com/resources/articles/reactive-oxygen-species-ros
 	). Ciò spiega il motivo per cui i danni indiretti al DNA, per mezzo della catena di radiolisi dell'acqua, portino la cellula alla morte riproduttiva (cita
 	%https://www.mdpi.com/2073-4441/3/1/235
@@ -574,11 +574,11 @@
 		%libro campbell 2 anno biologia
 		).} della glutatione perossidasi) e \ce{O2} è una molecola di ossigeno.
 	
-	Anche le sostanze antiossidanti, come la vitamina E, consentono di catturare i radicali liberi diminuendo la loro azione dannosa. In generale, gli enzimi glutatione perossidasi e catalasi e la vitamina E hanno una concentrazione maggiore nei luoghi in cui il danno da ROS tende a essere maggiore, per esempio nei siti più ossigenati. Infatti, osservando l'\hyperref[eq:sod]{Eq. 1.5}, l'eccesso di ossigeno nei tessuti amplifica i danni dovuti all'\ce{H2O2} (si veda \hyperref[??]{oxygen enhancement ratio??}) (cita
+	Anche le sostanze antiossidanti, come la vitamina E, consentono di catturare i radicali liberi diminuendo la loro azione dannosa. In generale, gli enzimi glutatione perossidasi e catalasi e la vitamina E hanno una concentrazione maggiore nei luoghi in cui il danno da ROS tende a essere maggiore, per esempio nei siti più ossigenati. Infatti, osservando l'\hyperref[eq:sod]{Eq. 1.5}, l'eccesso di ossigeno nei tessuti amplifica i danni dovuti all'\ce{H2O2} (si veda \hyperref[par:oer]{OER}) (cita
 	%https://www.rndsystems.com/resources/articles/reactive-oxygen-species-ros
 	,
 	%Ugo Leuzzi, Ersilia Bellocco e Davide Barreca, Biochimica della nutrizione, ISBN 978-88-08-17926-5.
-	).
+	). In conclusione, meccanismi di difesa come quelli sopra citati riescono a mantenere un equilibrio tra la produzione e la distruzione di radicali liberi dell'organismo umano, ma l'applicazione di una radiazione ionizzante esterna è in grado di generare un disequilibrio che, eventualmente, porta alla morte della cellula.
 	
 	\subsection{Grandezze dosimetriche}
 	In radiobiologia la dosimetria definisce e quantifica le grandezze che descrivono l'interazione delle radiazioni ionizzanti con la materia e gli effetti biologici dell'assorbimento radiativo da parte dei tessuti del corpo umano. Nel TP dei pazienti affetti da neoplasie gli studi dosimetrici sono fondamentali in quanto consentono di misurare la quantità di radiazione necessaria all'eliminazione del tumore e i danni biologici arrecati all'organismo. Nei prossimi paragrafi si espongono le principali grandezze fisico-biologiche utilizzate in dosimetria, molte delle quali sono definite dall'ICRU (International Commission on Radiation Units and Measurements) (cita
@@ -596,7 +596,7 @@
 		D_{as}=\frac{dE}{dm}=\frac{\left(\frac{dE}{dx}\right)\Delta x N}{\rho \Delta x A}=\phi\frac{\left(\frac{dE}{dx}\right)}{\rho}
 		\label{eq:dose_as}
 	\end{equation}
-	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[par:let]{Linear Energy Transfer}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (OER, si veda \hyperref[??]{??}) (cita
+	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[par:let]{Linear Energy Transfer}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (si veda \hyperref[par:oer]{OER}) (cita
 	%note dal corso di fisica biomedica a.a. 2022-2023
 	). Pertanto, per includere i diversi effetti biologici dovuti a tutti i possibili tipi di radiazione $R$, si introduce la dose equivalente $D_{eq}$ definita dalla \hyperref[eq:dose_eq]{Eq. 1.9}:
 	\begin{equation}
@@ -613,7 +613,7 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |m{0.5\textwidth}||m{0.5\textwidth}| }
+			\begin{tabular}{ |m{9cm}||m{3cm}| }
 				\hline
 				Tipo di radiazione & $w_R$ \\
 				\hline\hline
@@ -624,8 +624,6 @@
 				Protoni e pioni carichi & 2\\
 				\hline
 				Particelle alfa, frammenti di fissione, nuclei pesanti & 20\\
-				\hline
-				Neutroni & Funzione dell'energia del neutrone\\
 				\hline\hline
 				Organi o tessuti & $w_T$\\
 				\hline\hline
@@ -714,7 +712,7 @@
 	In \hyperref[fig:proton_carbon_let]{Fig. 1.15} si nota che nel canale di ingresso, dove il rilascio di dose è minore, i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $90 \mbox{ nm}$ (insufficiente a colpire la doppia catena del DNA, il cui diametro è di $2 \mbox{ nm}$) e ogni $4 \mbox{ nm}$ (sufficiente a generare SSB), mentre in corrispondenza del BP i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $4 \mbox{ nm}$ e ogni $0.3 \mbox{ nm}$ (sufficienti a generare rispettivamente SSB e DSB). Pertanto gli ioni carbonio sono più dannosi dei protoni in prossimità del BP, ma nel canale di ingresso causano molti più danni dei protoni; tale discordanza va tenuta conto in fase di TP affinché si selezioni il fascio adroterapico più adeguato alle specificità tessutali del paziente.
 	
 	\subsubsection{Relative Biological Effectiveness}
-	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il rateo di sopravvivenza delle cellule:
+	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il tasso di sopravvivenza delle cellule:
 	\begin{equation}
 		RBE=\frac{D_\gamma}{D_R}
 		\label{eq:rbe}
@@ -723,29 +721,29 @@
 	
 	\begin{figure}[H]
 		\centering
-		\begin{subfigure}[b]{0.9\textwidth}
+		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.45]{images/let_rbe1.png}
+ 			\includegraphics[width=\textwidth, scale=0.5]{images/let_rbe1.png}
 			\caption{RBE in funzione dell'LET per cellule T1 renali umane irradiate con particelle pesanti cariche mono-energetiche. Le curve $1$, $2$ e $3$ corrispondono all'RBE misurato con frazioni di sopravvivenza cellulare di $0.8$, $0.1$, $0.01$ (cita
 				%https://www.mdpi.com/2073-4468/1/2/124
 				).}
 			\label{fig:let_rbe}
 		\end{subfigure}
-		\par
-		\begin{subfigure}[b]{0.9\textwidth}
+		\hfill
+		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.45]{images/survival_dose.jpg}
+			\includegraphics[width=\textwidth, scale=0.5]{images/survival_dose.jpg}
 			\caption{Curve di sopravvivenza cellulare per fotoni e ioni in funzione della dose rilasciata e determinazione dell'RBE fissati i livelli di sopravvivenza del $10\%$ e dell'$1\%$ (cita
 				%https://radiologykey.com/radiation-therapy-with-protons-and-heavy-ions/
 				).}
 			\label{fig:survival_dose}
 		\end{subfigure}
-		\caption{Dipendenze dell'RBE dall'LET e dal rateo di sopravvivenza della cellula.}
+		\caption{Andamento dell'RBE in funzione dell'LET e del tasso di sopravvivenza della cellula.}
 	\end{figure}
 		
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{ |m{0.7\textwidth}||m{0.22\textwidth}|m{0.08\textwidth}| }
+		\begin{tabular}{ |m{8cm}||m{3cm}|m{1cm}| }
 			\hline
 			Tipo di radiazione & LET $\left[\mbox{keV/}\mu\mbox{m}\right]$ & RBE\\
 			\hline\hline
@@ -772,9 +770,7 @@
 		\label{tab:let_rbe}
 	\end{table}
 	
-	Dalla \hyperref[tab:let_rbe]{Tab. 1.2} si nota che i fasci adroterapici di ioni carbonio sono molto più efficienti dei fasci radioterapici fotonici (raggi $\gamma$). I protoni, invece, possiedono un RBE solo del $10\%$ più grande rispetto ai fotoni; tale somiglianza non sembrerebbe coadiuvare le riflessioni esposte nella \hyperref[sec:1.2]{Sez. 1.2}, in cui si sono evidenziati i grandi vantaggi della protonterapia sulla radioterapia in relazione alla cure dei tumori più profondi. In realtà l'efficienza protonterapica vince su quella radioterapica se si tengono conto degli effetti globali di entrambe le radiazioni: mentre i protoni (così come gli ioni carbonio) rilasciano la maggior parte della dose in una zona ristretta situata in prossimità del picco di Bragg, i fotoni rilasciano la dose in una regione molto più ampia come evidenziato nella \hyperref[fig:photon]{Fig. 1.17}. dire della questione della frammentazione che aument a l'reb
-	
-	dire del rapporto reb e let
+	Dalla \hyperref[tab:let_rbe]{Tab. 1.2} si nota che i fasci adroterapici di ioni carbonio sono molto più efficienti dei fasci radioterapici fotonici (raggi $\gamma$). I protoni, invece, possiedono un RBE solo del $10\%$ più grande rispetto ai fotoni; tale somiglianza non sembrerebbe coadiuvare le riflessioni esposte nella \hyperref[sec:1.2]{Sez. 1.2}, in cui si sono evidenziati i grandi vantaggi della protonterapia sulla radioterapia in relazione alla cure dei tumori più profondi. In realtà l'efficienza protonterapica vince su quella radioterapica se si tengono conto degli effetti globali di entrambe le radiazioni: mentre i protoni (così come gli ioni carbonio) rilasciano la maggior parte della dose in una zona ristretta situata in prossimità del picco di Bragg, i fotoni rilasciano la dose in una regione molto più ampia, come evidenziato nella \hyperref[fig:photon]{Fig. 1.17}.
 	
 	\begin{figure}[H]
 		\centering
@@ -785,9 +781,117 @@
 		\label{fig:photon}
 	\end{figure}
 	
-	RBE: radioterapia (raggi gamma): vale chiaramente 1.
-	il protone: vale 1.1, ma questo non significa che l'adroterapia con protoni è 1.1 volte più efficace dei gamma, ossia solo un 10% più efficace, altrimenti sarebbe minima la differenza con la radioterapia. il punto è che il protone è davvero più efficace del 10 % in più circa, ma il trucco sta nella diapositiva 81 -> il 10% è l'effetto globale su tutto il trattamento. mentre il gamma uccide in tutte quelle zone, la gran parte dell'effetto del protone è concentrata su un piccolo spazio!!, mentre i raggi gamma lo fanno in tutto il corpo, non in maniera concentrata.
-	- il 10% è un effetto integrale!, non locale; lo stesso nel caso del 3/4 del carbonio.
+	Negli ultimi anni la variabilità dell'RBE protonico è stata ampiamente dibattuta in quanto vi sono misure radiobiologiche che attestano valori superiori rispetto all'$1.1$ riportato in \hyperref[tab:let_rbe]{Tab. 1.2} (cita
+	%J. Tang et al., “Comparison of radiobiological effective depths in 65-MeV modulated proton beams.,” 1992 Brit. J. Cancer, vol. 76, no. 2, p. 220, 1997.
+	). Nella ref. (cita
+	%F. Tommasino and M. Durante, “Proton radiobiology,” Cancers, vol. 7, no. 1, pp. 353–381, 2015.
+	) si propone che l'aumento dell' RBE protonico sia causato dalle particelle prodotte nella frammentazione del target\footnote{In fisica nucleare e subnucleare il target (o targhetta) è una porzione di materia che funge da bersaglio di un fascio di particelle inviato per studiare la materia, il fascio e le loro interazioni (cita
+		%https://www.treccani.it/enciclopedia/target/
+		).}: nell'attraversare il paziente, le interazioni nucleari che intercorrono tra il fascio protonico e i tessuti del paziente stesso generano dei frammenti, particelle secondarie caratterizzate da un corto raggio ($10$--$100\mu\mbox{ m}$), alto LET e conseguentemente alto RBE. Uno degli obiettivi primari dell'esperimento FOOT (si veda \hyperref[ref a capitolo 2]{?ref a capitolo 2?}) è proprio quello di migliorare l'accuratezza dell'RBE protonico a partire da misure di sezioni d'urto differenziali, energie e direzioni dei frammenti; conoscere minuziosamente tali grandezze porterebbe a valutazioni più precise degli effetti biologici protonterapici che ridurrebbero i margini di errore in fase di TP.
+		
+	Nel corso del tempo molti studi si sono incentrati sul legame tra RBE e LET, fortemente dipendente dalla natura del materiale biologico e dalla scelta dell'endpoint utilizzato per definire l'efficacia radioterapica. Pur fissando tali parametri, alcuni risultati mostrano che radiazioni differenti aventi stessi LET possiedono diversi RBE (cita
+	%International Commission on Radiation Units and Measurements (1970). Linear Energy Transfer. Washington D.C. doi:10.1093/jicru/os9.1.Report16. ISBN 978-0913394090. ICRU report 16.
+	). Nonostante ciò, la \hyperref[fig:let_rbe]{Fig. 1.16a} riporta un tipico andamento di RBE e LET in cui si osserva che l'RBE aumenta al crescere dell'LET fino a raggiungere un massimo intorno ai $100\mbox{keV}/\mu\mbox{m}$, dopo il quale si verifica una forte diminuzione. La spiegazione del primo tratto è ovvia, in quanto più energia assorbe il materiale attraversato da radiazione più danni biologici saranno arrecati allo stesso, mentre nel secondo tratto si verifica un fenomeno di saturazione denominato overkill cellulare in cui la quantità di energia che viene depositata è così elevata che si produce una quantità di danni al DNA maggiore di quella richiesta per la morte cellulare, da cui consegue la riduzione dell'efficacia biologica del trattamento (
+	%Linz U, editor. Ion beam therapy: fundamentals, technology. In: Clinical applications. Berlin: Springer; 2012.
+	).
+	
+	\subsubsection{Oxygen Enhancement Ratio}\label{par:oer}
+	L'Oxygen Enhancement Ratio (OER) è un numero puro che misura l'efficacia biologica della radiazione in relazione alla concentrazione di ossigeno presente nei tessuti. Infatti, come già riportato nell'analisi del \hyperref[par:danno_indiretto]{Danno indiretto} della radiolisi dell'acqua, se il tessuto colpito con radiazione ionizzante presenta un'abbondanza di ossigeno (iperossia) si genera un numero maggiore di radicali liberi e aumentano le possibilità di danno al DNA del tessuto irradiato, come mostrato in \hyperref[fig:oer_survival]{Fig. 1.18}. L'OER è definito come il rapporto tra la dose di una certa radiazione in condizioni di mancanza di ossigeno (anossia) e la dose della stessa radiazione in normali concentrazioni di ossigeno:
+	\begin{equation}
+		OER=\frac{D_{anossia}}{D_{normale}}
+		\label{eq:oer}
+	\end{equation}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/oer_survival.png}
+		\caption{A parità di percentuale di cellule sopravvissute, per arrecare danni biologici in condizioni aerobiche (presenza di ossigeno) è necessaria una dose inferiore rispetto alle condizioni di anossia; maggiore è la concentrazione di ossigeno, maggiore è la probabilità di effettuare dei danni (cita
+			%https://en.wikipedia.org/wiki/Oxygen_effect
+			).}
+		\label{fig:oer_survival}
+	\end{figure}
+	
+	L'OER decresce all'aumentare dell'LET della radiazione ionizzante, come evidenziato in \hyperref[fig:let_oer]{Fig. 1.19a}. Nelle radiazioni a basso LET si verificano eventi di ionizzazione isolati che favoriscono la \hyperref[eq:prodotto1]{Eq. 1.4a}, da cui si ottiene un'innocua molecola d'acqua (\ce{H2O}); per questo motivo l'aggiunta di atomi di ossigeno aumenta notevolmente i danni biologici arrecati ai tessuti e il valore dell'OER si attesta attorno a $2$--$4$. Al contrario, nelle radiazioni ad alto LET si verificano eventi di ionizzazione frequenti che favoriscono la \hyperref[eq:prodotto2]{Eq. 1.4b}, da cui si ottiene una dannosa molecola di perossido di idrogeno (\ce{H2O2}); per questo motivo l'aggiunta di atomi di ossigeno risulta superflua per l'amplificazione dei danni biologici, dato che l'ambiente è già ricco di \ce{H2O2}, e il valore dell'OER si attesta attorno all'unità (cita
+	%Elaine M. Zeman, in Clinical Radiation Oncology (Fourth Edition), 2016
+	,
+	%Barendsen GW. The relationships between RBE and LET for different types of lethal damage in mammalian cells: biophysical and molecular mechanisms. Radiation Res. 1994; 139:257-270.
+	). In \hyperref[fig:reaction_let]{Fig. 1.19b} si riassumono le reazioni chimiche favorite in regime di alto e basso LET.
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{images/let_rbe2.png}
+			\caption{Andamento dell'OER in funzione dell'LET per particelle $\alpha$ mono-energetiche (cita
+				%https://www.mdpi.com/2073-4468/1/2/124
+				,
+				%https://www.uio.no/studier/emner/matnat/fys/FYS4730/v12/undervisningsmateriale/Syllabus.pdf
+				).}
+			\label{fig:let_oer}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{images/reaction_let.jpg}
+			\caption{Schematizzazione delle reazioni più comuni per radiazioni ad alto LET (in alto) e a basso LET (in basso) (cita
+				%https://www.mun.ca/biology/scarr/Specific_Ionization_&_LET.html
+				).}
+			\label{fig:reaction_let}
+		\end{subfigure}
+		\caption{Rapporto tra l'OER e le radiazioni ad alto e basso LET.}
+	\end{figure}
+		
+	 Spesso accade che la proliferazione di un tumore diventa talmente rapida che il suo apporto di sangue non è sufficiente a ossigenare alcune sue parti, generando microambienti ipossici che rendono il tumore stesso più radioresistente (cita
+	 %https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4283800/
+	 ) e più incline alla formazione di metastasi (cita
+	 %https://pubmed.ncbi.nlm.nih.gov/21593862/
+	 ). Per risolvere tale problematica si sono effettuati numerosi approcci sistemici, dal posizionare i pazienti in camere iperbariche prima di procedere con le sedute radioterapiche all'uso di farmaci in grado di incrementare il flusso sanguigno o l'emoglobina\footnote{L'emoglobina è una proteina deputata per il trasporto di ossigeno nel sangue.}, che sono risultati insoddisfacenti in quanto l'omeostasi del corpo umano riesce a mantenere i livelli di ossigeno stabili. Recentemente si sono sviluppati nuovi metodi più efficaci in grado di aumentare localmente la concentrazione di ossigeno, come l'iniezione di "microbolle" nel flusso sanguigno umano (cita
+	 %https://www.cancer.gov/news-events/cancer-currents-blog/2018/microbubbles-radiation-breast-cancer
+	 ). In generale, tutte le metodiche sopra citate risulterebbero sicuramente utili ad amplificare i danni indiretti al DNA, dall'altra renderebbero più ossigenate anche aree popolate da organi sani, che verrebbero resi più sensibili alla radiazione (cita
+	 %https://www.kva.se/en/event/workshop-the-role-of-oxygen-in-radiation-therapy-2/#:~:text=Oxygen%2C%20thus%2C%20is%20one%20of,oxygen%20enhancement%20ratio%20(OER).
+	 ).
+	
+	\subsection{Sopravvivenza cellulare}
+	Dopo aver discusso delle principali grandezze fisico-mediche con cui si valutano gli effetti biologici della radiazione ionizzante è necessario analizzare i modelli che descrivono la sopravvivenza cellulare. Innanzitutto, gli eventi di ionizzazione prodotti dalla radiazione sono processi stocastici. Pertanto la morte cellulare segue leggi probabilistiche dettate dalla statistica di Poisson. Per esempio, consideriamo una dose che, rilasciata una prima volta, riduce la sopravvivenza cellulare del $50\%$; un secondo rilascio ridurrebbe la sopravvivenza al $25\%$, un terzo al $12.5\%$ e così via. Seguendo tale ragionamento, in prima approssimazione è possibile considerare la seguente legge della sopravvivenza cellulare $S$ in funzione della dose rilasciata $D$, mostrata in :
+	\begin{equation}
+		S=e^{-0.69D}
+		\label{eq:survival}
+	\end{equation}
+	In realtà una legge esponenziale come \hyperref[eq:survival]{Eq. 1.15}, rappresentata in \hyperref[fig:survival1]{Fig. 1.20a} dove la costante $-0.69$ ,  ,  dalla  Pertanto, un modello di morte cellulare segue le leggi della probabilità e della statistica,  stocasticicomprendere i modelli che stugrandezze dosimetriche e degli effetti biologici
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{images/survival1.png}
+			\caption{Sopravvivenza cellulare di un batterio Escherichia coli (cita
+				%
+				).}
+			\label{fig:survival1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{images/survival2.jpg}
+			\caption{Sopravvivenza cellulare di una cellula di mammifero (cita
+				%
+				).}
+			\label{fig:survival2}
+		\end{subfigure}
+		\caption{Andamenti della sopravvivenza cellulare in funzione della dose .}
+	\end{figure}
+	
+	
+	Dose, survival, RBE	
+	survival: sopravvivenza cellulare: nella finestra di ingresso abbiamo percentuali intorno al 30/40% (scala seilogaritmica), di cui la maggior parte dei danni si ripara. invece nella zona tumorale va a qualche percento. invece l'RBE cambia, va da 1,1 a 2.5 nella parte più interna!
+	
+	per valutare l'effetto vero e proprio, si va a vedere la sopravvivenza cellulare. la domanda è: dopo l'irradiazione, quante cellule sono sopravvissute? se s=1, allora significa che le cellule sono tutte sopravvissute. tipiamente nei batteri abbiamo una s che segue un decadmento esponenziale (occhio la scala è semilogaritmica), mentre le cellule dei mammiferi hanno una curva che è un po' differente. a basse dosi le cellule dei mammiferi sopravvivono di più rispetto a quelle di un batterio, ad alte dosi invece le cellule dei mammiferi hanno meno sopravvivenza (NOTA: guarda i meccanismi di riparazione negli eucarioti e nei procarioti nei libri di chimica). un batterio ha questa distribuzione perché non è capace di recuperare i danni. le leggi stocastiche del danno si tramutano in leggi di poisson, secondo le quali se io ho la probabilità di fare un danno del 30%, nel momento in cui sparo una seconda volta, faccio un danno al 30% del 30%; invece, nei mammiferi, le cellule riescono a ripararsi -> questo si ha per basse energie. ad alte energie, invece, si inverte la cosa. questo suggerisce che è meglio che per i trattamenti si facciano più dosi con una dose bassa piuttosto che un'unica dose con una dose molto alta.
+	
+	la totalità dei trattaenti  oncologici è fatta con questo metodo, chiamato frazionamento. di solito si effettuano 5 trattamenti alla settimana. nelle 24 ore di attesa le cellule sane riparano molti danni a differenza di quelle tumorali che ne riparano di meno, e così via per un nnumero di settimane variabile in base al tumore.
+	
+	
+	
+	
 	
 	
 	
@@ -796,9 +900,9 @@
 	
 %Linear energy transfer is best defined for monoenergetic ions, i.e. protons, alpha particles, and the heavier nuclei called HZE ions found in cosmic rays or produced by particle accelerators. These particles cause frequent direct ionizations within a narrow diameter around a relatively straight track, thus approximating continuous deceleration. As they slow down, the changing particle cross section modifies their LET, generally increasing it to a Bragg peak just before achieving thermal equilibrium with the absorber, i.e., before the end of range. At equilibrium, the incident particle essentially comes to rest or is absorbed, at which point LET is undefined.	
 	
-%	l’idea di usare i protoni per il trattamento del cancro fu proposta per la prima volta nel 1946 L’adroterapia è un forma molto avanzata di radioterapia. La radioterapia, da sola o associata a chirurgia e/o a chemioterapia, migliora il controllo locale in diverse patologie tumorali. Inoltre, la natura non invasiva delle radiazioni rappresenta una valida alternativa per quei tumori non aggredibili chirurgicamente perché localizzati in sedi anatomiche complicate da organi vitali o deputati a funzioni la cui asportazione sarebbe troppo invalidante per il paziente.
+% l’idea di usare i protoni per il trattamento del cancro fu proposta per la prima volta nel 1946 L’adroterapia è un forma molto avanzata di radioterapia. La radioterapia, da sola o associata a chirurgia e/o a chemioterapia, migliora il controllo locale in diverse patologie tumorali. Inoltre, la natura non invasiva delle radiazioni rappresenta una valida alternativa per quei tumori non aggredibili chirurgicamente perché localizzati in sedi anatomiche complicate da organi vitali o deputati a funzioni la cui asportazione sarebbe troppo invalidante per il paziente.
 	
-%	La forza dell’adroterapia è nelle proprietà fisiche e radiobiologiche uniche delle particelle cariche (adroni): esse possono penetrare nei tessuti con poca diffusione e depositare la massima energia appena prima di fermarsi. Ciò consente di definire in modo molto preciso la region da irradiare. La caratteristica forma a picco del deposito di energia è chiamata picco di Bragg ed è diventata il simbolo dell’adroterapia.
+% La forza dell’adroterapia è nelle proprietà fisiche e radiobiologiche uniche delle particelle cariche (adroni): esse possono penetrare nei tessuti con poca diffusione e depositare la massima energia appena prima di fermarsi. Ciò consente di definire in modo molto preciso la region da irradiare. La caratteristica forma a picco del deposito di energia è chiamata picco di Bragg ed è diventata il simbolo dell’adroterapia.
 
 % dire che FOOT L'esperimento FOOT unisce laboratori giapponesi, tedeschi e italiani al ne di raccogliere dati fondamentali per migliorare la conoscenza delle interazioni tra i fasci adronici e il materiale
 
