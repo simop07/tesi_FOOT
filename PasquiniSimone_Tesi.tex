@@ -433,7 +433,7 @@
 	%libro biologia II anno
 	)) mediante la distruzione del DNA contenuto nel suo nucleo. Per uccidere il DNA cellulare tramite radiazione ionizzante vi sono due modi, diretto e indiretto, descritti nei prossimi paragrafi.
 	
-	\subsubsection{Danno diretto}
+	\subsubsection{Danno diretto}\label{par:danno_diretto}
 	Prima di analizzare il danno diretto che la radiazione può arrecare al DNA, è opportuno descrivere la struttura e le funzioni di quest'ultimo. Il DNA (acido desossiribonucleico) è un polimero costituito da monomeri chiamati nucleotidi, molecole a loro volta composte da una base azotata, uno zucchero e un gruppo fosfato, esaminate in \hyperref[fig:nucleotide]{Fig. 1.8}. Esistono quattro tipi di nucleotidi, la cui specificità è data dal tipo di base azotata: adenina (A), citosina (C), timina (T) o guanina (G).
 	
 	\begin{figure}[H]
@@ -500,7 +500,7 @@
 	
 	Quando la radiazione ionizzante colpisce direttamente il DNA, quest'ultimo può subire danni differenti la cui distribuzione dipende dal tipo di radiazione e dall'energia del fascio incidente. In generale, è possibile suddividere i danni in Single Strand Break (SSB) e Double Strand Breaks (DSB) in quanto nei SSB si genera la rottura di un solo filamento nucleotidico della doppia elica del DNA, mentre nei DSB si ha un danneggiamento in entrambe le catene nucleotidiche, come rappresentato in \hyperref[fig:danni_dna]{Fig. 1.12}. Grazie al meccanismo di correzione di bozze enzimi specifici come DNA polimerasi, DNA ligasi e nucleasi riconoscono i nucleotidi fuori posto e li sostituiscono (mediante un meccanismo chiamato riparazione delle anomalie di appaiamento) prima che possano portare a mutazioni genetiche.\footnote{Ricerche hanno dimostrato che difetti ereditari negli enzimi sopra citati sono associati a una forma di cancro al colon, in quanto gli errori che portano al cancro si accumulano nel DNA più velocemente (cita
 	%libro campbell II anno biologia
-	).} L'efficacia dei metodi di riparazione dipende dalla complessità del danno iniziale: nei SSB la catena danneggiata viene sostituita dagli enzimi osservando le informazioni della catena integra (sfruttando la complementarietà delle basi azotate), mentre nei DSB si hanno danni che non consentono una ricostruzione della doppia elica; in quest'ultimo caso la cellula potrebbe andare incontro o a morte cellulare (danno deterministico voluto in radio e adroterapia per ottenere l'eliminazione di cellule tumorali) o a carcinogenesi (danno stocastico da limitare in radio e adroterapia, la cui insorgenza è legata alle conseguenze a lungo termine dell'esposizione alla radiazione), perdendo in ambo i casi la sua capacità riproduttiva (cita
+	).} L'efficacia dei metodi di riparazione dipende dalla complessità del danno iniziale: nei SSB la catena danneggiata viene sostituita dagli enzimi osservando le informazioni della catena integra (sfruttando la complementarietà delle basi azotate), mentre nei DSB si hanno danni che non consentono una ricostruzione della doppia elica; infatti, solo in quest'ultimo caso la cellula potrebbe andare incontro o a morte cellulare (danno deterministico voluto in radio e adroterapia per ottenere l'eliminazione di cellule tumorali) o a carcinogenesi (danno stocastico da limitare in radio e adroterapia, la cui insorgenza è legata alle conseguenze a lungo termine dell'esposizione alla radiazione), perdendo in ambo i casi la sua capacità riproduttiva (cita
 	%https://fisica.unipv.it/Eventi/Incontri-fisica-moderna/2017-12-12-Baiocco-Babini-slides.pdf
 	).
 	
@@ -712,9 +712,9 @@
 	In \hyperref[fig:proton_carbon_let]{Fig. 1.15} si nota che nel canale di ingresso, dove il rilascio di dose è minore, i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $90 \mbox{ nm}$ (insufficiente a colpire la doppia catena del DNA, il cui diametro è di $2 \mbox{ nm}$) e ogni $4 \mbox{ nm}$ (sufficiente a generare SSB), mentre in corrispondenza del BP i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $4 \mbox{ nm}$ e ogni $0.3 \mbox{ nm}$ (sufficienti a generare rispettivamente SSB e DSB). Pertanto gli ioni carbonio sono più dannosi dei protoni in prossimità del BP, ma nel canale di ingresso causano molti più danni dei protoni; tale discordanza va tenuta conto in fase di TP affinché si selezioni il fascio adroterapico più adeguato alle specificità tessutali del paziente.
 	
 	\subsubsection{Relative Biological Effectiveness}
-	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il tasso di sopravvivenza delle cellule:
+	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il tasso di sopravvivenza delle cellule $S$:
 	\begin{equation}
-		RBE=\frac{D_\gamma}{D_R}
+		RBE=\frac{D^S_\gamma}{D^S_R}
 		\label{eq:rbe}
 	\end{equation}
 	Ad esempio, se una radiazione $R$ ha $RBE>1$ significa che è necessaria una dose minore di $R$ per ottenere gli stessi danni biologici dei raggi $\gamma$ (in altre parole la radiazione $R$ è più efficace dei raggi $\gamma$). La valutazione dell'RBE è piuttosto complessa in quanto dipende dal tipo di radiazione, dall'energia della radiazione, dall'LET (\hyperref[fig:let_rbe]{Fig. 1.16a}), dal tipo di cellula e dal rateo di sopravvivenza della cellula (\hyperref[fig:survival_dose]{Fig. 1.16b}); in \hyperref[tab:let_rbe]{Tab. 1.2} vengono riportati valori di RBE per alcuni tipi di radiazione.
@@ -795,8 +795,21 @@
 	%Linz U, editor. Ion beam therapy: fundamentals, technology. In: Clinical applications. Berlin: Springer; 2012.
 	).
 	
+	Comprendere quale sia il range di dose più efficace nei trattamenti radio e adroterapici è molto complesso in quanto gli effetti radiobiologici dipendono da molti parametri, alcuni dei quali vengono analizzati nei paragrafi successivi. In generale, durante il TP dei pazienti affetti da tumore, sono due i fattori che influenzano la scelta della dose: il TCP (Tumor Control Probability) e l'NTCP (Normal Tissue Complication Probability). Lo scopo di radio e adroterapia è quello di raggiungere un'elevata probabilità di controllare localmente un tumore (che corrisponde a un alto valore di TCP) mantenendo bassa la probabilità di sviluppare complicazioni nei tessuti sani (che corrisponde all'NTCP) (cita
+	%Baumann M, Petersen C. TCP and NTCP: a basic introduction. Rays. 2005 Apr-Jun;30(2):99-104. PMID: 16294901.
+	). Teoricamente, il range di dose più efficiente è quello che massimizza il TCP e minimizza l'NTPC (in altre parole il range di dose ottimale è quello che massimizza la differenza tra TCP e NTCP). Dato che le cellule sane sono in grado di riparare i danni radiativi meglio delle cellule cancerose, tale range esiste (pur essendo fortemente dipendente dal tipo di tumore e dal suo stadio) e si attesta intorno a $20$--$80\mbox{ Gy}$, valori letali se rilasciati in un'unica seduta (questo è uno dei motivi per cui si effettua il frazionamento, si veda \hyperref[sec:sopravvivenza_cellulare]{Sez. 1.4.3}). Chiaramente, si fornisce un intervallo di valori in quanto la dose dipende dal tipo di tumore e dal suo stadio. Tali considerazioni sono riassunte in \hyperref[fig:tcp]{Fig. 1.18} .
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/tcp.jpg}
+		\caption{Andamenti del TCP (in verde), dell'NTCP (in rosso), della loro differenza (in blu) e dell'assenza di complicazioni nei tessuti sani (in nero) in funzione della dose rilasciata nei tessuti. Il range di dose ottimale nei trattamenti si trova in corrispondenza della curva blu (cita
+			%https://link.springer.com/chapter/10.1007/978-3-030-02958-6_12
+			).}
+		\label{fig:tcp}
+	\end{figure}
+
 	\subsubsection{Oxygen Enhancement Ratio}\label{par:oer}
-	L'Oxygen Enhancement Ratio (OER) è un numero puro che misura l'efficacia biologica della radiazione in relazione alla concentrazione di ossigeno presente nei tessuti. Infatti, come già riportato nell'analisi del \hyperref[par:danno_indiretto]{Danno indiretto} della radiolisi dell'acqua, se il tessuto colpito con radiazione ionizzante presenta un'abbondanza di ossigeno (iperossia) si genera un numero maggiore di radicali liberi e aumentano le possibilità di danno al DNA del tessuto irradiato, come mostrato in \hyperref[fig:oer_survival]{Fig. 1.18}. L'OER è definito come il rapporto tra la dose di una certa radiazione in condizioni di mancanza di ossigeno (anossia) e la dose della stessa radiazione in normali concentrazioni di ossigeno:
+	L'Oxygen Enhancement Ratio (OER) è un numero puro che misura l'efficacia biologica della radiazione in relazione alla concentrazione di ossigeno presente nei tessuti. Infatti, come già riportato nell'analisi del \hyperref[par:danno_indiretto]{Danno indiretto} della radiolisi dell'acqua, se il tessuto colpito con radiazione ionizzante presenta un'abbondanza di ossigeno (iperossia) si genera un numero maggiore di radicali liberi e aumentano le possibilità di danno al DNA del tessuto irradiato, come mostrato in \hyperref[fig:oer_survival]{Fig. 1.19}. L'OER è definito come il rapporto tra la dose di una certa radiazione in condizioni di mancanza di ossigeno (anossia) e la dose della stessa radiazione in normali concentrazioni di ossigeno:
 	\begin{equation}
 		OER=\frac{D_{anossia}}{D_{normale}}
 		\label{eq:oer}
@@ -811,11 +824,11 @@
 		\label{fig:oer_survival}
 	\end{figure}
 	
-	L'OER decresce all'aumentare dell'LET della radiazione ionizzante, come evidenziato in \hyperref[fig:let_oer]{Fig. 1.19a}. Nelle radiazioni a basso LET si verificano eventi di ionizzazione isolati che favoriscono la \hyperref[eq:prodotto1]{Eq. 1.4a}, da cui si ottiene un'innocua molecola d'acqua (\ce{H2O}); per questo motivo l'aggiunta di atomi di ossigeno aumenta notevolmente i danni biologici arrecati ai tessuti e il valore dell'OER si attesta attorno a $2$--$4$. Al contrario, nelle radiazioni ad alto LET si verificano eventi di ionizzazione frequenti che favoriscono la \hyperref[eq:prodotto2]{Eq. 1.4b}, da cui si ottiene una dannosa molecola di perossido di idrogeno (\ce{H2O2}); per questo motivo l'aggiunta di atomi di ossigeno risulta superflua per l'amplificazione dei danni biologici, dato che l'ambiente è già ricco di \ce{H2O2}, e il valore dell'OER si attesta attorno all'unità (cita
+	L'OER decresce all'aumentare dell'LET della radiazione ionizzante, come evidenziato in \hyperref[fig:let_oer]{Fig. 1.20a}. Nelle radiazioni a basso LET si verificano eventi di ionizzazione isolati che favoriscono la \hyperref[eq:prodotto1]{Eq. 1.4a}, da cui si ottiene un'innocua molecola d'acqua (\ce{H2O}); per questo motivo l'aggiunta di atomi di ossigeno aumenta notevolmente i danni biologici arrecati ai tessuti e il valore dell'OER si attesta attorno a $2$--$4$. Al contrario, nelle radiazioni ad alto LET si verificano eventi di ionizzazione frequenti che favoriscono la \hyperref[eq:prodotto2]{Eq. 1.4b}, da cui si ottiene una dannosa molecola di perossido di idrogeno (\ce{H2O2}); per questo motivo l'aggiunta di atomi di ossigeno risulta superflua per l'amplificazione dei danni biologici, dato che l'ambiente è già ricco di \ce{H2O2}, e il valore dell'OER si attesta attorno all'unità (cita
 	%Elaine M. Zeman, in Clinical Radiation Oncology (Fourth Edition), 2016
 	,
 	%Barendsen GW. The relationships between RBE and LET for different types of lethal damage in mammalian cells: biophysical and molecular mechanisms. Radiation Res. 1994; 139:257-270.
-	). In \hyperref[fig:reaction_let]{Fig. 1.19b} si riassumono le reazioni chimiche favorite in regime di alto e basso LET.
+	). In \hyperref[fig:reaction_let]{Fig. 1.20b} si riassumono le reazioni chimiche favorite in regime di alto e basso LET.
 	
 	\begin{figure}[H]
 		\centering
@@ -851,43 +864,148 @@
 	 %https://www.kva.se/en/event/workshop-the-role-of-oxygen-in-radiation-therapy-2/#:~:text=Oxygen%2C%20thus%2C%20is%20one%20of,oxygen%20enhancement%20ratio%20(OER).
 	 ).
 	
-	\subsection{Sopravvivenza cellulare}
-	Dopo aver discusso delle principali grandezze fisico-mediche con cui si valutano gli effetti biologici della radiazione ionizzante è necessario analizzare i modelli che descrivono la sopravvivenza cellulare. Innanzitutto, gli eventi di ionizzazione prodotti dalla radiazione sono processi stocastici. Pertanto la morte cellulare segue leggi probabilistiche dettate dalla statistica di Poisson. Per esempio, consideriamo una dose che, rilasciata una prima volta, riduce la sopravvivenza cellulare del $50\%$; un secondo rilascio ridurrebbe la sopravvivenza al $25\%$, un terzo al $12.5\%$ e così via. Seguendo tale ragionamento, in prima approssimazione è possibile considerare la seguente legge della sopravvivenza cellulare $S$ in funzione della dose rilasciata $D$, mostrata in :
+	\subsection{Sopravvivenza cellulare}\label{sec:sopravvivenza_cellulare}
+	Dopo aver discusso delle principali grandezze fisico-mediche con cui si valutano gli effetti biologici della radiazione ionizzante è necessario analizzare i modelli che descrivono la sopravvivenza cellulare. Innanzitutto, gli eventi di ionizzazione prodotti dalla radiazione sono processi stocastici. Pertanto la morte cellulare segue leggi probabilistiche dettate dalla statistica di Poisson. Per esempio, consideriamo una dose che, rilasciata una prima volta, riduce la sopravvivenza cellulare del $50\%$; un secondo rilascio ridurrebbe la sopravvivenza al $25\%$, un terzo al $12.5\%$ e così via. Seguendo tale ragionamento, in prima approssimazione è possibile considerare la seguente legge che descrive la frazione di cellule sopravvissute $S$ in funzione della dose rilasciata $D$, mostrata in \hyperref[eq:survival1]{Eq. 1.15}:
 	\begin{equation}
 		S=e^{-0.69D}
-		\label{eq:survival}
+		\label{eq:survival1}
 	\end{equation}
-	In realtà una legge esponenziale come \hyperref[eq:survival]{Eq. 1.15}, rappresentata in \hyperref[fig:survival1]{Fig. 1.20a} dove la costante $-0.69$ ,  ,  dalla  Pertanto, un modello di morte cellulare segue le leggi della probabilità e della statistica,  stocasticicomprendere i modelli che stugrandezze dosimetriche e degli effetti biologici
+	In realtà l'\hyperref[eq:survival1]{Eq. 1.15}, il cui andamento è rappresentato in \hyperref[fig:survival1]{Fig. 1.21a}, descrive il tasso di sopravvivenza per cellule procarioti (come quelle dei batteri), le quali non sono sostanzialmente in grado di riparare i danni radiativi attivando sistemi di riparazione. Al contrario, le cellule degli esseri umani (in generale le cellule eucarioti dei mammiferi) possiedono complessi meccanismi di riparazione del DNA (accennati in \hyperref[par:danno_diretto]{Danno diretto}) che consentono di recuperare i danni dovuti a radiazioni ionizzanti. Suddetti meccanismi, però, sono efficaci solo in presenza di un basso rilascio di dose (basso LET), mentre per alte energie (alto LET) non sono sufficienti a riparare i danni radiativi che risultano addirittura maggiori rispetto a quelli arrecati a cellule batteriche. Pertanto gli effetti dei meccanismi di riparazione incidono nell'andamento della sopravvivenza cellulare solo in un regime di basso LET, come mostrato in \hyperref[fig:survival2]{Fig. 1.21b}.
 	
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/survival1.png}
-			\caption{Sopravvivenza cellulare di un batterio Escherichia coli (cita
-				%
+			\includegraphics[width=\textwidth, scale=0.50]{images/survival1.jpg}
+			\caption{Sopravvivenza cellulare di un batterio Escherichia coli. $D_0$ è la dose che riduce la sopravvivenza di un fattore $\frac{1}{e}$ (cita
+				%https://radiologykey.com/5-cell-survival-curves/
 				).}
 			\label{fig:survival1}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/survival2.jpg}
-			\caption{Sopravvivenza cellulare di una cellula di mammifero (cita
-				%
+			\includegraphics[width=\textwidth, scale=0.50]{images/survival2.png}
+			\caption{Sopravvivenza cellulare di una cellula di mammifero dopo un irraggiamento ad alto e basso LET. Un rilascio a basso LET arrecano un numero minore di danni che consegue in un appiattimento della pendenza della curva di sopravvivenza indotto dai meccanismi di riparazione del DNA (cita
+				%https://www.researchgate.net/publication/23133166_Therapeutic_Radionuclides_Biophysical_and_Radiobiologic_Principles
 				).}
 			\label{fig:survival2}
 		\end{subfigure}
-		\caption{Andamenti della sopravvivenza cellulare in funzione della dose .}
+		\caption{Decadimenti esponenziali della sopravvivenza cellulare in funzione della dose in scala semilogaritmica.}
 	\end{figure}
 	
+	In considerazione dell'analisi di cui sopra, l'ICRP (International Commission on Radiological Protection) approvò nel $1991$ un accurato modello radiobiologico in grado di descrivere accuratamente la sopravvivenza cellulare in seguito al rilascio di radiazione ionizzante (cita
+	%https://www.icrp.org/publication.asp?id=ICRP%20Publication%2060
+	). Tale modello, chiamato LQ (Lineare Quadratico), prevede che la frazione di cellule sopravvissute $S$ in funzione della dose rilasciata $D$ sia descritta dalla \hyperref[eq:survival2]{Eq. 1.16}:
+	\begin{equation}
+		S=e^{-\alpha D-\beta D^2}
+		\label{eq:survival2}
+	\end{equation}
+	dove $\alpha$ e $\beta$ sono due parametri dipendenti dal tessuto, dalla radiazione e dallo stato di salute cellulare tali che $\left[\alpha\right]\mbox{Gy}^-1$ e $\left[\beta\right]\mbox{Gy}^-2$. In particolare, il fattore lineare $\alpha D$ rappresenta gli eventi di "single hit" in cui il danno cellulare viene provocato da una singola particella incidente, mentre il fattore quadratico $\beta D^2$ rappresenta gli eventi di "multiple hit" in cui il danno cellulare deriva dall'azione di una doppia traccia di particelle (si veda \hyperref[fig:survival_cell]{Fig. 1.22}). In sostanza, $\alpha$ misura la parte dei danni letali non riparabili e rappresenta principalmente gli eventi di DSB, mentre $\beta$ misura la parte dei danni sub-letali\footnote{Un danno sub-letale è un tipo di danno non letali di per sé, ma che combinandosi con ulteriori danni indotti dalle radiazioni può uccidere la cellula (cita
+		%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
+		).} riparabili e rappresenta maggiormente gli eventi di SSB.
 	
-	Dose, survival, RBE	
-	survival: sopravvivenza cellulare: nella finestra di ingresso abbiamo percentuali intorno al 30/40% (scala seilogaritmica), di cui la maggior parte dei danni si ripara. invece nella zona tumorale va a qualche percento. invece l'RBE cambia, va da 1,1 a 2.5 nella parte più interna!
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/survival_cell.jpg}
+		\caption{Andamento della sopravvivenza cellulare in funzione della dose rilasciata. Sinistra: risposte cellulari differenti corrispondenti a diversi valori di $\frac{\alpha}{\beta}$. Le curve con alto $\frac{\alpha}{\beta}=10\mbox{ Gy}$ possiedono tassi quasi costanti di morte cellulare mentre le curve con basso $\frac{\alpha}{\beta}=3\mbox{ Gy}$ mostrano una curvatura pronunciata, con una morte cellulare che aumenta al crescere della dose rilasciata. Destra: separazione della curva di sopravvivenza cellulare in cinetica a singola e a doppia hit. Per basse dosi la cinetica prevalente è quella a singola hit ($S\approx e^{-\alpha}$), mentre a dosi più alte domina la cinetica a hit multipla. Gli effetti di cinetica a singola e a doppia hit sono equivalenti quando $D=\frac{\alpha}{\beta}=5\mbox{ Gy}$ (cita
+			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
+			).}
+		\label{fig:survival_cell}
+	\end{figure}
+		
+	I modelli di sopravvivenza cellulare per le cellule mammifere e il fatto che le cellule sane recuperano danni più facilmente di quelle cancerose suggeriscono che per eliminare una neoplasia è opportuno effettuare più dosi a bassa energia piuttosto che un'unica dose ad alte energie, in un processo chiamato frazionamento. Tale meccanismo avviene per sfruttare al massimo la capacità riparatrice delle cellule sane, al fine di risparmiare tessuti e organi non malati che, inevitabilmente, vengono colpiti in minima parte nei trattamenti radio e adroterapici (in radioterapia ciò è più frequente che in adroterapia, come mostrano i profili di dose in \hyperref[fig:photon]{Fig. 1.17}). L'intervallo temporale che intercorre tra un rilascio di dose e l'altro non deve essere né troppo breve (si deve evitare che le cellule danneggiate dei tessuti sani vengano uccise dando i giusti tempi di recupero\footnote{Solitamente le cellule sane riparano i danni biologici dopo almeno sei ore (cita
+		%https://link.springer.com/chapter/10.1007/978-3-030-61899-5_23
+		).}), né troppo lungo (altrimenti l'effetto combinato delle sedute radioterapiche risulterebbe vano rispetto a un unico rilascio di dose). Tipicamente il trattamento radioterapico viene frazionato in $30$--$35$ sedute effettuate giornalmente, in modo che le $24$ ore di attesa tra una seduta e l'altra consentano alle cellule sane di riparare molti più danni rispetto a quelle tumorali, portando lentamente a una riduzione della regione tumorale. Considerando che dosi radiative superiori a $100 \mbox{ Gy}$ potrebbero portare il paziente alla morte e che una dose letale media per una cellula si attesta attorno ai $2 \mbox{ Gy}$, vengono rilasciati circa $1$--$2\mbox{ Gy}$ di dose al volume tumorale per ogni frazione. Per comprendere l'ingenza degli effetti radiativi si pensi che se $1$--$2\mbox{ Gy}$ venissero irradiati sull'intero corpo umano, il paziente impiegherebbe qualche settimana per recuperare appieno le sue condizioni fisiche, mentre un'applicazione di $2$--$6\mbox{ Gy}$ sull'intero corpo umano si rivelerebbe fatale entro due mesi e i pochi sopravvissuti necessiterebbero di circa un anno di recupero.
+		
+	\subsubsection{Il frazionamento nel modello LQ}
+	Il modello LQ risulta particolarmente efficace nell'analizzare il frazionamento. Come analizzato in \hyperref[fig:survival_cell]{Fig. 1.22}, il grado di curvatura della \hyperref[eq:survival2]{Eq. 1.16} è definito in termini del rapporto $\frac{\alpha}{\beta}$. Tipicamente gli organi che contengono cellule che proliferano velocemente (come quelle di pelle, mucosa orale e midollo osseo), denominati early responding, mostrano risposte immediate al trattamento radioterapico e possiedono alti valori di $\frac{\alpha}{\beta}$ (pari a $7$--$10\mbox{ Gy}$) mentre tessuti contenenti cellule che si riproducono più lentamente (come quelle di cuore, polmoni e reni), chiamati late responding, risentono del trattamento radioterapico dopo scale temporali più lunghe (mesi o anni) e possiedono bassi valori di $\frac{\alpha}{\beta}$ (pari a $3$--$5\mbox{ Gy}$). Visto che le neoplasie sono proliferazioni incontrollate di cellule, i tumori appartengono alla classe degli early responding e gli si attribuisce un $\frac{\alpha}{\beta}=10\mbox{ Gy}$. Al contrario, le cellule dei tessuti sani tendono a dividersi più lentamente e, in confronto alle cellule cancerose, possiedono un valore di $\frac{\alpha}{\beta}$ minore, come mostrato in \hyperref[fig:sparing]{Fig. 1.23}.
 	
-	per valutare l'effetto vero e proprio, si va a vedere la sopravvivenza cellulare. la domanda è: dopo l'irradiazione, quante cellule sono sopravvissute? se s=1, allora significa che le cellule sono tutte sopravvissute. tipiamente nei batteri abbiamo una s che segue un decadmento esponenziale (occhio la scala è semilogaritmica), mentre le cellule dei mammiferi hanno una curva che è un po' differente. a basse dosi le cellule dei mammiferi sopravvivono di più rispetto a quelle di un batterio, ad alte dosi invece le cellule dei mammiferi hanno meno sopravvivenza (NOTA: guarda i meccanismi di riparazione negli eucarioti e nei procarioti nei libri di chimica). un batterio ha questa distribuzione perché non è capace di recuperare i danni. le leggi stocastiche del danno si tramutano in leggi di poisson, secondo le quali se io ho la probabilità di fare un danno del 30%, nel momento in cui sparo una seconda volta, faccio un danno al 30% del 30%; invece, nei mammiferi, le cellule riescono a ripararsi -> questo si ha per basse energie. ad alte energie, invece, si inverte la cosa. questo suggerisce che è meglio che per i trattamenti si facciano più dosi con una dose bassa piuttosto che un'unica dose con una dose molto alta.
+	La curvatura della sopravvivenza cellulare assume un'importanza strategica nel frazionamento. Se una dose viene divisa in piccole frazioni il danno sub-letale provocato dalla prima esposizione verrebbe completamente riparato tra una seduta e l'altra e le cellule risponderebbero come se non fossero state mai irradiate; pertanto, dopo ogni dose rilasciata, l'andamento della sopravvivenza cellulare riproporrebbe il suo appiattimento caratteristico, come quello mostrato in \hyperref[fig:survival_cell]{Fig. 1.22}. Immaginiamo di esporre un certo volume tumorale con una dose $d$ per un numero $n$ di frazionamenti ben separati. Dalla \hyperref[eq:survival2]{Eq. 1.16} otterremmo:
+	\begin{equation}
+		S=\left(e^{-\alpha d-\beta d^2}\right)^n=e^{-n\left(\alpha d+\beta d^2\right)}=e^{-\alpha D-\beta Dd}
+		\label{eq:survival3}
+	\end{equation}
+	dove $D$ è la dose rilasciata totale data da $D=nd$. Dato che $Dd<D^2$, confrontando gli esponenti delle \hyperref[eq:survival2]{Eq. 1.16} e \hyperref[eq:survival3]{Eq. 1.17}, si conclude che il frazionamento porta a una sopravvivenza cellulare maggiore in quanto riduce il contributo quadratico di uccisione cellulare. Tale effetto è limitato per le cellule caratterizzate da un elevato $\frac{\alpha}{\beta}$ (come quelle tumorali) che non saranno risparmiate dal frazionamento, mentre è significativo per le cellule caratterizzate da un basso $\frac{\alpha}{\beta}$ (come quelle sane) che saranno risparmiate dal frazionamento (cita
+	%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
+	,
+	%Williams M V, Denekamp J and Fowler J F 1985 A review of α/β ratios for experimental tumors: implications for clinical studies of altered	fractionation Int. J. Radiat. Oncol. Biol. Phys. 11 87–96
+	).
 	
-	la totalità dei trattaenti  oncologici è fatta con questo metodo, chiamato frazionamento. di solito si effettuano 5 trattamenti alla settimana. nelle 24 ore di attesa le cellule sane riparano molti danni a differenza di quelle tumorali che ne riparano di meno, e così via per un nnumero di settimane variabile in base al tumore.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/sparing.jpg}
+		\caption{Impatto del frazionamento. Nelle cellule con $\frac{\alpha}{\beta}=5\mbox{ Gy}$ dividere il trattamento in due frazioni da $2\mbox{ Gy}$ consente di risparmiare danni cellulari (sparing) modulando il contributo riparatore del fattore $\beta$: i danni cellulari vengono fortemente risparmiati nelle cellule caratterizzate da bassi $\frac{\alpha}{\beta}$ (cellule sane) mentre ciò non avviene nelle cellule con alti $\frac{\alpha}{\beta}$ (cellule tumorali) (cita
+			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
+			).}
+		\label{fig:sparing}
+	\end{figure}
+	
+	\section{Interazione della radiazione con la materia}
+	Gli effetti biologici che la radiazione ionizzante induce sui tessuti e gli organi del corpo sono una manifestazione delle interazioni elettromagnetiche e nucleari che avvengono a livello microscopico. Prima di descrivere le principali caratteristiche delle interazioni che interessano le cure radio e adroterapiche, si introduce il concetto di sezione d'urto che, in fisica nucleare e subnucleare, descrive la probabilità che avvenga o meno un determinato processo di interazione.
+	
+	\subsection{Sezione d'urto}
+	I fenomeni di interazione radiazione-materia, in cui onde o particelle\footnote{A livello quantistico sia la materia che la radiazione possiedono una duplice natura ondulatoria e corpuscolare, regolata dal principio di complementarità di Niels Bohr ($1885$--$1962$).} variano la loro traiettoria a seguito di processi di interazione e collisione, vengono descritti dagli esperimenti di diffusione (o scattering). Senza perdita di generalità, si utilizzerà un approccio classico per esporre lo schema tipico di un esperimento di diffusione, trattando le particelle come oggetti puntiformi.
+	
+	In un esperimento di scattering un fascio collimato di particelle proiettile $a$ di velocità $\vec{v_a}$ e sezione trasversale $A$ viene inviato da un acceleratore contro un bersaglio (o target) costituito da oggetti $b$ tutti uguali tra loro e distribuiti all'interno del volume del bersaglio. Si suppone che le densità volumetriche del fascio $n_a$ e del bersaglio $n_b$ siano uniformi e costanti e che il bersaglio si presenti macroscopicamente come una lastra di spessore costante $\Delta z$ e che tutte le particelle proiettile, procedendo verso il bersaglio parallelamente alla direzione dell'asse $z$, lo colpiscano ortogonalmente (su una faccia di superficie $A$), come mostrato in \hyperref[fig:scattering]{Fig. 1.24}. Tali condizioni consentono di ricavare il numero di particelle incidenti sul bersaglio nell'unità di tempo:
+	\begin{equation}
+		\frac{dN_a}{dt}=\phi_a=n_av_aA
+		\label{eq:scattering1}
+	\end{equation}
+	Inoltre, il numero di centri diffusori $N_b$ distribuiti nel volume $V=A\Delta z$ del bersaglio intersecato dal fascio con cui ogni particella proiettile può interagire è dato da:
+	\begin{equation}
+		N_b=n_bA\Delta z
+		\label{eq:scattering2}
+	\end{equation}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/scattering.jpg}
+		\caption{Schema di un esperimento di scattering (cita
+			%https://moodle2.units.it/ corso di fisica nucleare e subnucleare anno 2019 uni trieste
+			).}
+		\label{fig:scattering}
+	\end{figure}
+	
+	Dato che ogni centro diffusore è caratterizzato da una sezione trasversale $\sigma_b$ (denominata sezione d'urto totale, indicata con dei cerchi pieni in \hyperref[fig:scattering]{Fig. 1.24}), la particella incidente effettua un'interazione con il bersaglio se la sua traiettoria interseca $\sigma_b$. Pertanto, la probabilità che una singola particella proiettile interagisca con una singola particella del bersaglio vale $\frac{sigma_b}{A}$ che, unita alle \hyperref[eq:scattering1]{Eq. 1.18} e \hyperref[eq:scattering2]{Eq. 1.19}, consente di ricavare il numero di particelle del fascio $\frac{dN}{dt}$ che, attraversando il bersaglio, interagiscono con esso nell'unità di tempo:
+	\begin{equation}
+		\frac{dN}{dt}=\frac{dN_a}{dt}\frac{sigma_bN_b}{A}=n_an_bv_aA\sigma_b\Delta z
+		\label{eq:scattering3}
+	\end{equation}
+	da cui, differenziando rispetto all'angolo solido $\Omega$, si ottiene la sezione d'urto differenziale $\frac{dsigma_b}{d\Omega}$:
+	\begin{equation}
+		\frac{dsigma_b}{d\Omega}=\frac{1}{\left(n_av_a\right)\left(n_bA\Delta x\right)}\frac{d}{d\Omega}\frac{dN_{\Delta\Omega}}{dt}
+		\label{eq:scattering4}
+	\end{equation}
+	dove $\frac{dsigma_b}{d\Omega}\Delta \Omega$ rappresenta la misura della probabilità che una particella venga diffusa entro l'angolo solido $\Delta \Omega$ e $\frac{dN_{\Delta\Omega}}{dt}$ è il numero di particelle deflesse dal bersaglio entro l'angolo $\Delta \Omega$ nell'unità di tempo (si veda \hyperref[fig:solid_angle]{Fig. 1.25}). Differenziando nuovamente la \hyperref[eq:scattering2]{Eq. 1.20} si ottiene la sezione d'urto doppiamente differenziale $\frac{d^2sigma_b}{d\Omega dE}$:
+	\begin{equation}
+		\frac{d^2sigma_b}{d\Omega dE}=\frac{1}{\left(n_av_a\right)\left(n_bA\Delta x\right)}\frac{d^2}{d\Omega dE}\frac{dN_{\Omega,\Delta E}}{dt}
+		\label{eq:scattering5}
+	\end{equation}
+	dove $\frac{dN_{\Delta\Omega,\Delta E}}{dt}$ è il numero di particelle deflesse dal bersaglio entro l'angolo $\Delta \Omega$ con energia entro l'intervallo $\Delta E$ nell'unità di tempo.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/solid_angle.png}
+		\caption{Schema di un esperimento di scattering (cita
+			%https://moodle2.units.it/ corso di fisica nucleare e subnucleare anno 2019 uni trieste
+			).}
+		\label{fig:solid_angle}
+	\end{figure}
+	
+	Riassumendo, la sezione d'urto è una quantità che misura la probabilità che una particella subisca un processo di scattering, con conseguente deflessione e eventuale perdita di energia. La sua importanza risiede nel fatto che riesce a collegare quantità microscopiche (come la sezione trasversale $\sigma_b$ della particella bersaglio) con quantità macroscopiche direttamente misurabili (come i parametri $n_a$, $n_b$, $A$, $\Delta z$ e $\frac{dN}{dt}$) (cita
+	%note corso semprini fisica nucleare aa 2023-24
+	).
+	
+	\subsection{Interazione dei fotoni con la materia}	
+	I fotoni (raggi $\gamma$) interagiscono con la materia i raggi gamma fanno varie interazioni, quelle che ci interesano son 3 (le altre si trascurano perché trascurabili alle energie che usiamo).
+	
+	effetto fotoelettrico->nobel einstein. un fotone che colpisce l'elettrone di un atomo (in particolare l'elettrone più energetico, quello maggiormente legato, quello più vicino al nucleo dell'atomo)-> il gamma dà l'energia all'elettrone e poi sparisce, una parte di eneergia slega l'elettrone dall'atomo (che è ionizzato) ed emette un fotoelettrone con un'energia cinetica legata all'energia della radiazione gamma stessa. il gamma sparisce!! e l'elettrone parte. è un'unica interazione. effetto compton -> il gamma può anche andare con un elettrone più esterno, meno legato (meno energetico) -> abbiamo ancora il gamma, con meno energia in quanto una parte è stata trasmessa all'elettrone che va via come nell'altro caso. il gamma, tipicamente, perde metà della sue energia -> in due interazioni compton il fotone è già finito.
+	-> creazione di coppia: il gamma arriva vicino al nucleo, sente la forza elettromagnetica fortissima del nucleo e annichila in positrone e elettrone. qui pure sparisce il gamma.
+	
+	- quindi, visto che tutti questi meccanismi fanno un solo danno (nel senso che daneggiano il singolo legame), il danno non riparabile che stiamo cercando di ottenere per impedire la riproduzione della cellula lo si fa sparando tanti di questi fasci (gamma, in questo caso).
+	
+	VEDI SLIDE PER ANDARE NELLO SPECIFICO SULLE RADIAZIONI
 	
 	
 	
