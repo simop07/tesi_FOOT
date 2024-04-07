@@ -25,12 +25,14 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{graphicx}
+\graphicspath{{images/}}
 \usepackage[version=4]{mhchem}
 %\usepackage{siunitx}
 \usepackage{float}
 \usepackage[top=1.7in,left=1in,right=1in]{geometry}
 %\usepackage{listings}
 %\usepackage{circuitikz}
+\usepackage{tikz-feynman}
 \usepackage{subcaption}
 \usepackage{tabularx}
 %\renewcommand{\lstlistingname}{Code}
@@ -225,7 +227,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/simulation.jpg}
+		\includegraphics[width=0.9\linewidth]{simulation.jpg}
 		\caption{Simulazione di un irraggiamento radioterapico o adroterapico sul corpo di un paziente (cita
 			%https://www.youtube.com/watch?v=Uu261OEf3Pg
 			).}
@@ -249,7 +251,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.5\linewidth]{images/rongten.jpg}
+		\includegraphics[width=0.5\linewidth]{rongten.jpg}
 		\caption{La prima lastra a raggi X della mano di Anna Bertha Ludwig, moglie di Ron, dopo 15 minuti di esposizione (cita
 			%https://www.dailymail.co.uk/news/article-6491287/Roentgens-human-X-ray-wifes-hand-1895.html
 			).}
@@ -280,7 +282,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/himac.png}
+		\includegraphics[width=0.9\linewidth]{himac.png}
 		\caption{Panoramica delle strutture di ricerca HIMAC presso l'Istituto Nazionale di Scienze Radiologiche a Chiba (cita
 			%https://www.mdpi.com/2072-6694/10/3/66
 			).}
@@ -310,10 +312,10 @@
 	
 	\begin{figure}[H]
 		\centering
-		\savebox{\largestimage}{\includegraphics[width=0.49\textwidth]{images/catana1.jpg}}
+		\savebox{\largestimage}{\includegraphics[width=0.49\textwidth]{catana1.jpg}}
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.5]{images/catana1.jpg}
+			\includegraphics[width=\textwidth, scale=0.5]{catana1.jpg}
 			\caption{Particolare interno del ciclotrone del CATANA (cita
 				%rivista asimmetrie n.6 gli acceleratori
 				).}
@@ -322,7 +324,7 @@
 		\hfill
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\raisebox{\dimexpr.5\ht\largestimage-.5\height}{\includegraphics[width=\textwidth, scale=0.45]{images/catana2.jpg}}
+			\raisebox{\dimexpr.5\ht\largestimage-.5\height}{\includegraphics[width=\textwidth, scale=0.45]{catana2.jpg}}
 			\caption{Attrezzatura presso la sala di trattamento del CATANA (cita
 				%rivista asimmetrie, DOI: 10.23801/asimmetrie.2023.35.01
 				).}
@@ -336,21 +338,23 @@
 	%https://fondazionecnao.it/storia
 	). Proprio nel $2000$ il neoministro della Salute Umberto Veronesi autorizzò il finanziamento per la realizzazione del Centro Nazionale di Adroterapia (CNAO) e, nel maggio $2001$, istituì la Fondazione CNAO (cita
 	%https://www.fondazioneveronesi.it/magazine/articoli/oncologia/potenzialita-e-limiti-delladroterapia
-	). Dopo una prima fase di costruzione che ha coinvolto ben $500$ aziende italiane, Istituti ed Enti di Ricerca nazionali e internazionali, il CNAO si è attivato ufficialmente nel $2011$ (\hyperref[fig:edificio_cnao]{Fig. 1.5a}). La terapia adroterapica del CNAO, come già accennato, avviene accelerando protoni e ioni carbonio rispettivamente fino a un'energia cinetica di $250 \mbox{ MeV}$ e $4800\mbox{ MeV}$ (circa $400\mbox{ MeV/u}$\footnote{$\mbox{ MeV/u}$ è l'unità di misura dell'energia per unità di massa atomica.}). I trattamenti si svolgono in tre sale, due delle quali richiedono un fascio orizzontale mentre la terza consente un irraggiamento sia orizzontale che verticale (\hyperref[fig:sala_cnao]{Fig. 1.5b}). Protoni e ioni carbonio vengono accelerati a circa $30000\mbox{km/s}$ da un sincrotrone a forma di anello avente $25\mbox{ m}$ di diametro e $80\mbox{ m}$ di circonferenza (\hyperref[fig:sincrotrone_cnao]{Fig. 1.5c}). Gli attuali obiettivi del CNAO non sono solo quelli di arrivare a trattare circa $700$ pazienti all’anno, ma anche di diventare l’unico centro di adroterapia al mondo a disporre di protoni, ioni carbonio, altre specie ioniche e BNCT (Boron Neutron Capture Therapy) ?aggiungere riferimento alla BNCT? (cita
-	https://fondazionecnao.it/futuro-scopri-progetto-espansione-cnao/gianluca-vago
+	). Dopo una prima fase di costruzione che ha coinvolto ben $500$ aziende italiane, Istituti ed Enti di Ricerca nazionali e internazionali, il CNAO si è attivato ufficialmente nel $2011$ (\hyperref[fig:edificio_cnao]{Fig. 1.5a}). La terapia adroterapica del CNAO, come già accennato, avviene accelerando protoni e ioni carbonio rispettivamente fino a un'energia cinetica di $250 \mbox{ MeV}$ e $4800\mbox{ MeV}$ (circa $400\mbox{ MeV/u}$\footnote{$\mbox{ MeV/u}$ è l'unità di misura dell'energia per unità di massa atomica.}). I trattamenti si svolgono in tre sale, due delle quali richiedono un fascio orizzontale mentre la terza consente un irraggiamento sia orizzontale che verticale (\hyperref[fig:sala_cnao]{Fig. 1.5b}). Protoni e ioni carbonio vengono accelerati a circa $30000\mbox{km/s}$ da un sincrotrone a forma di anello avente $25\mbox{ m}$ di diametro e $80\mbox{ m}$ di circonferenza (\hyperref[fig:sincrotrone_cnao]{Fig. 1.5c}). Gli attuali obiettivi del CNAO non sono solo quelli di arrivare a trattare circa $700$ pazienti all’anno, ma anche di diventare l’unico centro di adroterapia al mondo a disporre di protoni, ioni carbonio (e altre specie ioniche) e neutroni attraverso la Boron Neutron Capture Therapy (BNCT) ?aggiungere riferimento alla BNCT? (cita
+	%https://fondazionecnao.it/futuro-scopri-progetto-espansione-cnao/gianluca-vago
+	,
+	%https://fondazionecnao.it/news/nuova-terapia-sperimentale-con-i-neutroni
 	).
 	
 	\begin{figure}[H]
 		\centering
 		\subfloat[Edificio sanitario del complesso edilizio del CNAO contenente servizi sanitari, amministrativi e di alta tecnologia come il sincrotrone (cita
 		%https://www.bimportale.com/cnao-centro-nazionale-adroterapia-oncologica/
-		).]{\label{fig:edificio_cnao}\includegraphics[width=.49\linewidth]{images/edificio_cnao.jpg}}\hfill
+		).]{\label{fig:edificio_cnao}\includegraphics[width=.49\linewidth]{edificio_cnao.jpg}}\hfill
 		\subfloat[Una delle sale di trattamento del CNAO. Il fascio è in grado di raggiungere il paziente sia dall'alto che da sinistra (cita
 		%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
-		).]{\label{fig:sala_cnao}\includegraphics[width=.49\linewidth]{images/sala_cnao.jpg}}\par 
+		).]{\label{fig:sala_cnao}\includegraphics[width=.49\linewidth]{sala_cnao.jpg}}\par 
 		\subfloat[Il sincrotrone del CNAO, situato in un bunker di $1600\mbox{ m}^2$ isolato dal resto della struttura con spesse pareti in cermento armato (cita
 		%https://www.facebook.com/photo/?fbid=2533501746969553&set=a.1378679705785102
-		).]{\label{fig:sincrotrone_cnao}\includegraphics[width=.49\linewidth]{images/sincrotrone_cnao.jpg}}
+		).]{\label{fig:sincrotrone_cnao}\includegraphics[width=.49\linewidth]{sincrotrone_cnao.jpg}}
 		\caption{Immagini relative al CNAO di Pavia.}
 		\label{fig:cnao}
 	\end{figure}
@@ -368,7 +372,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/gantry.jpg}
+		\includegraphics[width=0.9\linewidth]{gantry.jpg}
 		\caption{Gantry Blu del Centro di Protonterapia di Trento (cita
 			%https://it.wikipedia.org/wiki/Protonterapia
 			).}
@@ -407,14 +411,14 @@
 		\centering
 		\begin{subfigure}[b]{0.9\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.5]{images/oncogene.png}
+			\includegraphics[width=\textwidth, scale=0.5]{oncogene.png}
 			\caption{Modalità con cui un proto-oncogene può mutare in un oncogene.}
 			\label{fig:oncogene}
 		\end{subfigure}
 		\par
 		\begin{subfigure}[b]{0.9\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.5]{images/oncosoppressore.jpg}
+			\includegraphics[width=\textwidth, scale=0.5]{oncosoppressore.jpg}
 			\caption{Effetto della mutazione di un gene oncosoppressore.}
 			\label{fig:oncosoppressore}
 		\end{subfigure}
@@ -438,7 +442,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/nucleotide.pdf}
+		\includegraphics[width=0.9\linewidth]{nucleotide.pdf}
 		\caption{Nucleotide formato a sinistra da un gruppo fosfato contenente un atomo di fosforo \ce{P} (che determina il carattere acido degli acidi nucleici), al centro da uno zucchero (desossiribosio) formato da cinque atomi di carbonio e in alto a destra da una base azotata contenente un gruppo \ce{\bond{-}NH} (che conferisce loro un carattere basico) legata con lo zucchero per mezzo di un legame glicosidico.(a sinistra)o zucchero cinque (cita
 			%https://en.wikipedia.org/wiki/Nucleotide
 			).}
@@ -462,7 +466,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/dna_structure.pdf}
+		\includegraphics[width=0.9\linewidth]{dna_structure.pdf}
 		\caption{Struttura a singola elica dell'RNA e a doppia elica del DNA con relativi accoppiamenti delle basi azotate (cita
 		%https://it.wikipedia.org/wiki/Acidi_nucleici
 		).}
@@ -477,7 +481,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/dna_rna.jpg}
+		\includegraphics[width=0.9\linewidth]{dna_rna.jpg}
 		\caption{Meccanismi di trascrizione e traduzione grazie ai quali il genotipo (l'insieme delle informazioni ereditarie di un organismo) controlla il fenotipo (le caratteristiche fisiche di un organismo) (cita
 			%https://ms-mms.hubscuola.it/public/4207663/cdi-4207813/01_infog/index.html
 			,
@@ -491,7 +495,7 @@
 	), che è situato all'interno dei mitocondri, organuli cellulari in cui avviene la respirazione cellulare.} ed è legato a particolari proteine che formano una struttura fibrosa chiamata cromatina, che al momento della duplicazione cellulare si addensa formando i cromosomi. Dalle considerazioni precedenti, riassunte nella \hyperref[fig:cell]{Fig. 1.11}, si comprende che il DNA occupa solo una minima parte della cellula: solamente il $2$--$3\%$ del volume cellulare è occupato da DNA. Per questo motivo arrecare danni diretti al DNA da parte di radiazione ionizzante è un evento piuttosto raro, ma non trascurabile.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/cell.jpg}
+		\includegraphics[width=0.9\linewidth]{cell.jpg}
 		\caption{Particolari della struttura della cellula eucariote umana (cita
 			%https://mydbook.giuntitvp.it/app/books/GIAC90_G9076812D/html/21
 			).}
@@ -506,7 +510,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/danni_dna.jpg}
+		\includegraphics[width=0.9\linewidth]{danni_dna.jpg}
 		\caption{Schematizzazione dei SSB (a sinistra), dei DSB (al centro) e di cluster di DSB (a destra) (cita
 			%https://fisica.unipv.it/Eventi/Incontri-fisica-moderna/2017-12-12-Baiocco-Babini-slides.pdf
 			).}
@@ -582,7 +586,7 @@
 	
 	\subsection{Grandezze dosimetriche}
 	In radiobiologia la dosimetria definisce e quantifica le grandezze che descrivono l'interazione delle radiazioni ionizzanti con la materia e gli effetti biologici dell'assorbimento radiativo da parte dei tessuti del corpo umano. Nel TP dei pazienti affetti da neoplasie gli studi dosimetrici sono fondamentali in quanto consentono di misurare la quantità di radiazione necessaria all'eliminazione del tumore e i danni biologici arrecati all'organismo. Nei prossimi paragrafi si espongono le principali grandezze fisico-biologiche utilizzate in dosimetria, molte delle quali sono definite dall'ICRU (International Commission on Radiation Units and Measurements) (cita
-	%https://web.archive.org/web/20130929015325/http://icru.org/images/pdf/icru_poster.pdf
+	%https://web.archive.org/web/20130929015325/http://icru.org/pdf/icru_poster.pdf
 	).
 	
 	\subsubsection{Dose assorbita, equivalente ed efficace}
@@ -596,7 +600,7 @@
 		D_{as}=\frac{dE}{dm}=\frac{\left(\frac{dE}{dx}\right)\Delta x N}{\rho \Delta x A}=\phi\frac{\left(\frac{dE}{dx}\right)}{\rho}
 		\label{eq:dose_as}
 	\end{equation}
-	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[par:let]{Linear Energy Transfer}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (si veda \hyperref[par:oer]{OER}) (cita
+	dove $\left(\frac{dE}{dx}\right)$ è il potere frenante (energia persa dal fascio di particelle per unità di distanza percorsa nel mezzo irradiato, si veda \hyperref[eq:bethe_bloch]{Eq. 1.35}), $N$ è il numero di particelle del fascio e $\rho$ è la densità di massa volumetrica del materiale irradiato. L'unità di misura della dose nel SI (Sistema Internazionale) è il Gray (Gy), tale che $1\mbox{ Gy}=1\frac{J}{kg}$. La dose assorbita è la grandezza dosimetrica per antonomasia in quanto consente di rappresentare la distribuzione della quantità di energia radiativa ricevuta dal paziente durante la terapia per unità di massa del tessuto; nonostante ciò, la $D_{as}$ non tiene conto dei diversi effetti biologici che possono essere indotti da fasci radiativi di tipo differente. Infatti, a parità di dose assorbita, il danno biologico può variare in base all'energia assorbita dal mezzo irradiato per unità di percorso (LET, si veda \hyperref[par:let]{Linear Energy Transfer}), all'Efficacia Biologica Relativa (RBE, si veda \hyperref[??]{??}) che quantifica la variabilità degli effetti biologici dovuta a radiazioni con differente LET e all'abbondanza di ossigeno nei tessuti (si veda \hyperref[par:oer]{OER}) (cita
 	%note dal corso di fisica biomedica a.a. 2022-2023
 	). Pertanto, per includere i diversi effetti biologici dovuti a tutti i possibili tipi di radiazione $R$, si introduce la dose equivalente $D_{eq}$ definita dalla \hyperref[eq:dose_eq]{Eq. 1.9}:
 	\begin{equation}
@@ -613,7 +617,7 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |m{9cm}||m{3cm}| }
+			\begin{tabular}{ |m{9cm}||M{3cm}| }
 				\hline
 				Tipo di radiazione & $w_R$ \\
 				\hline\hline
@@ -680,7 +684,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/let.jpg}
+		\includegraphics[width=0.9\linewidth]{let.jpg}
 		\caption{Il cilindro schematizza la traiettoria di una particella del fascio. Gli elettroni $e_1$ ed $e_2$ possiedono energie rispettivamente $E_1>\Delta$ ed $E_2<\Delta$. Nella definizione di LET si considerano solo gli elettroni a corto raggio come $e_2$.}
 		\label{fig:let}
 	\end{figure}
@@ -691,7 +695,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/damage_let.png}
+		\includegraphics[width=0.9\linewidth]{damage_let.png}
 		\caption{Danni tipici del DNA da parte di radiazioni a basso LET (in alto) e ad alto LET (in basso) (cita
 			%https://www.cambridge.org/core/journals/expert-reviews-in-molecular-medicine/article/cell-death-mechanisms-in-head-and-neck-cancer-cells-in-response-to-low-and-highlet-radiation/5D81C15D79DA4C3B485D4367D5C7CBD3
 			).}
@@ -702,7 +706,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/proton_carbon_let.jpg}
+		\includegraphics[width=0.9\linewidth]{proton_carbon_let.jpg}
 		\caption{Distribuzione microscopica delle ionizzazioni adroniche in scala nanometrica con relativo LET, profondità raggiunta, energia cinetica e distanza media della creazione del danno (cita
 			%Slide Spighi L01
 			).}
@@ -723,7 +727,7 @@
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
- 			\includegraphics[width=\textwidth, scale=0.5]{images/let_rbe1.png}
+ 			\includegraphics[width=\textwidth, scale=0.5]{let_rbe1.png}
 			\caption{RBE in funzione dell'LET per cellule T1 renali umane irradiate con particelle pesanti cariche mono-energetiche. Le curve $1$, $2$ e $3$ corrispondono all'RBE misurato con frazioni di sopravvivenza cellulare di $0.8$, $0.1$, $0.01$ (cita
 				%https://www.mdpi.com/2073-4468/1/2/124
 				).}
@@ -732,7 +736,7 @@
 		\hfill
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.5]{images/survival_dose.jpg}
+			\includegraphics[width=\textwidth, scale=0.5]{survival_dose.jpg}
 			\caption{Curve di sopravvivenza cellulare per fotoni e ioni in funzione della dose rilasciata e determinazione dell'RBE fissati i livelli di sopravvivenza del $10\%$ e dell'$1\%$ (cita
 				%https://radiologykey.com/radiation-therapy-with-protons-and-heavy-ions/
 				).}
@@ -743,7 +747,7 @@
 		
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{ |m{8cm}||m{3cm}|m{1cm}| }
+		\begin{tabular}{ |m{8cm}||M{3cm}|M{1cm}| }
 			\hline
 			Tipo di radiazione & LET $\left[\mbox{keV/}\mu\mbox{m}\right]$ & RBE\\
 			\hline\hline
@@ -774,7 +778,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/photon.jpg}
+		\includegraphics[width=0.9\linewidth]{photon.jpg}
 		\caption{Rilascio di dose relativa in funzione della profondità del tessuto per fotoni, elettroni, ioni carbonio e protoni. Si notino i picchi di Bragg sia per gli ioni carbonio che per i protoni (particelle usate in adroterapia), assenti per elettroni e fotoni (particelle usate in radioterapia) (cita
 			%https://www.mdpi.com/2227-9059/9/1/31
 			).}
@@ -801,7 +805,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/tcp.jpg}
+		\includegraphics[width=0.9\linewidth]{tcp.jpg}
 		\caption{Andamenti del TCP (in verde), dell'NTCP (in rosso), della loro differenza (in blu) e dell'assenza di complicazioni nei tessuti sani (in nero) in funzione della dose rilasciata nei tessuti. Il range di dose ottimale nei trattamenti si trova in corrispondenza della curva blu (cita
 			%https://link.springer.com/chapter/10.1007/978-3-030-02958-6_12
 			).}
@@ -817,7 +821,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/oer_survival.png}
+		\includegraphics[width=0.9\linewidth]{oer_survival.png}
 		\caption{A parità di percentuale di cellule sopravvissute, per arrecare danni biologici in condizioni aerobiche (presenza di ossigeno) è necessaria una dose inferiore rispetto alle condizioni di anossia; maggiore è la concentrazione di ossigeno, maggiore è la probabilità di effettuare dei danni (cita
 			%https://en.wikipedia.org/wiki/Oxygen_effect
 			).}
@@ -834,7 +838,7 @@
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/let_rbe2.png}
+			\includegraphics[width=\textwidth, scale=0.50]{let_rbe2.png}
 			\caption{Andamento dell'OER in funzione dell'LET per particelle $\alpha$ mono-energetiche (cita
 				%https://www.mdpi.com/2073-4468/1/2/124
 				,
@@ -845,7 +849,7 @@
 		\hfill
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/reaction_let.jpg}
+			\includegraphics[width=\textwidth, scale=0.50]{reaction_let.jpg}
 			\caption{Schematizzazione delle reazioni più comuni per radiazioni ad alto LET (in alto) e a basso LET (in basso) (cita
 				%https://www.mun.ca/biology/scarr/Specific_Ionization_&_LET.html
 				).}
@@ -876,7 +880,7 @@
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/survival1.jpg}
+			\includegraphics[width=\textwidth, scale=0.50]{survival1.jpg}
 			\caption{Sopravvivenza cellulare di un batterio Escherichia coli. $D_0$ è la dose che riduce la sopravvivenza di un fattore $\frac{1}{e}$ (cita
 				%https://radiologykey.com/5-cell-survival-curves/
 				).}
@@ -885,7 +889,7 @@
 		\hfill
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{images/survival2.png}
+			\includegraphics[width=\textwidth, scale=0.50]{survival2.png}
 			\caption{Sopravvivenza cellulare di una cellula di mammifero dopo un irraggiamento ad alto e basso LET. Un rilascio a basso LET arrecano un numero minore di danni che consegue in un appiattimento della pendenza della curva di sopravvivenza indotto dai meccanismi di riparazione del DNA (cita
 				%https://www.researchgate.net/publication/23133166_Therapeutic_Radionuclides_Biophysical_and_Radiobiologic_Principles
 				).}
@@ -907,7 +911,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/survival_cell.jpg}
+		\includegraphics[width=0.9\linewidth]{survival_cell.jpg}
 		\caption{Andamento della sopravvivenza cellulare in funzione della dose rilasciata. Sinistra: risposte cellulari differenti corrispondenti a diversi valori di $\frac{\alpha}{\beta}$. Le curve con alto $\frac{\alpha}{\beta}=10\mbox{ Gy}$ possiedono tassi quasi costanti di morte cellulare mentre le curve con basso $\frac{\alpha}{\beta}=3\mbox{ Gy}$ mostrano una curvatura pronunciata, con una morte cellulare che aumenta al crescere della dose rilasciata. Destra: separazione della curva di sopravvivenza cellulare in cinetica a singola e a doppia hit. Per basse dosi la cinetica prevalente è quella a singola hit ($S\approx e^{-\alpha}$), mentre a dosi più alte domina la cinetica a hit multipla. Gli effetti di cinetica a singola e a doppia hit sono equivalenti quando $D=\frac{\alpha}{\beta}=5\mbox{ Gy}$ (cita
 			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
 			).}
@@ -934,7 +938,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/sparing.jpg}
+		\includegraphics[width=0.9\linewidth]{sparing.jpg}
 		\caption{Impatto del frazionamento. Nelle cellule con $\frac{\alpha}{\beta}=5\mbox{ Gy}$ dividere il trattamento in due frazioni da $2\mbox{ Gy}$ consente di risparmiare danni cellulari (sparing) modulando il contributo riparatore del fattore $\beta$: i danni cellulari vengono fortemente risparmiati nelle cellule caratterizzate da bassi $\frac{\alpha}{\beta}$ (cellule sane) mentre ciò non avviene nelle cellule con alti $\frac{\alpha}{\beta}$ (cellule tumorali) (cita
 			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
 			).}
@@ -942,7 +946,7 @@
 	\end{figure}
 	
 	\section{Interazione della radiazione con la materia}
-	Gli effetti biologici che la radiazione ionizzante induce sui tessuti e gli organi del corpo sono una manifestazione delle interazioni elettromagnetiche e nucleari che avvengono a livello microscopico. Prima di descrivere le principali caratteristiche delle interazioni che interessano le cure radio e adroterapiche, si introduce il concetto di sezione d'urto che, in fisica nucleare e subnucleare, descrive la probabilità che avvenga o meno un determinato processo di interazione.
+	Gli effetti biologici che la radiazione ionizzante induce sui tessuti e gli organi del corpo sono una manifestazione delle interazioni elettromagnetiche e nucleari che avvengono a livello microscopico. Da una parte, visto che in radioterapia e in adroterapia si utilizzano rispettivamente fotoni e adroni (protoni, ioni carbonio, neutroni e, in fase sperimentale, anche elio e ossigeno), si studierà il comportamento di tali particelle con la materia; dall'altra, essendo il corpo umano costituito dal $65\%$ da \ce{H}, dal $24\%$ da \ce{O} e dal $10\%$ da \ce{C}, la materia che interagisce con le suddette particelle sarà prevalentemente costituita da \ce{H}, \ce{O} e \ce{C}. Prima di descrivere le principali caratteristiche delle interazioni che interessano le cure radio e adroterapiche, si introduce pertanto il concetto di sezione d'urto che, in fisica nucleare e subnucleare, è un concetto indispensabile per la descrizione delle interazioni radiazione-materia.
 	
 	\subsection{Sezione d'urto}
 	I fenomeni di interazione radiazione-materia, in cui onde o particelle\footnote{A livello quantistico sia la materia che la radiazione possiedono una duplice natura ondulatoria e corpuscolare, regolata dal principio di complementarità di Niels Bohr ($1885$--$1962$).} variano la loro traiettoria a seguito di processi di interazione e collisione, vengono descritti dagli esperimenti di diffusione (o scattering). Senza perdita di generalità, si utilizzerà un approccio classico per esporre lo schema tipico di un esperimento di diffusione, trattando le particelle come oggetti puntiformi.
@@ -960,7 +964,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/scattering.jpg}
+		\includegraphics[width=0.9\linewidth]{scattering.jpg}
 		\caption{Schema di un esperimento di scattering (cita
 			%https://moodle2.units.it/ corso di fisica nucleare e subnucleare anno 2019 uni trieste
 			).}
@@ -986,7 +990,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{images/solid_angle.png}
+		\includegraphics[width=0.9\linewidth]{solid_angle.png}
 		\caption{Schema di un esperimento di scattering (cita
 			%https://moodle2.units.it/ corso di fisica nucleare e subnucleare anno 2019 uni trieste
 			).}
@@ -997,7 +1001,7 @@
 	%note corso semprini fisica nucleare aa 2023-24
 	).
 	
-	\subsection{Interazione dei fotoni con la materia}	
+	\subsection{Interazione dei fotoni con la materia}
 	I fotoni (raggi $\gamma$) possono interagire con la materia nei seguenti modi:
 	\begin{itemize}
 		\item effetto fotoelettrico;
@@ -1006,39 +1010,255 @@
 		\item scattering Thomson and Rayleigh;
 		\item reazioni fotonucleari.
 	\end{itemize}
-	Nei range energetici terapeutici (che vanno dal $\mbox{keV}$ al $\mbox{MeV}$) sia lo scattering Thomson and Rayleigh (in cui si verifica una diffusione elastica\footnote{Una diffusione è elastica se conserva l'energia cinetica prima e dopo il processo.} a energie molto basse) che le reazioni fotonucleari (dove un raggio $\gamma$ con energia maggiore di $10\mbox{ MeV}$ colpisce un nucleo atomico emettendo protoni, neutroni e ioni) si possono trascurare. Le altre interazioni vengono analizzate nei paragrafi successivi.
+	Nei range energetici terapeutici (che vanno dal $\mbox{keV}$ al $\mbox{MeV}$) sia lo scattering Thomson and Rayleigh (in cui si verifica una diffusione elastica\footnote{Un processo di diffusione si definisce elastico se conserva l'energia cinetica del sistema.} a energie molto basse) che le reazioni fotonucleari (dove un raggio $\gamma$ con energia maggiore di $10\mbox{ MeV}$ colpisce un nucleo atomico emettendo protoni, neutroni e ioni) si possono trascurare. Le altre tre interazioni vengono analizzate nei paragrafi seguenti.
 	
-	Quando i fotoni attraversano la materia subiscono un processo di assorbimento\footnote{L'assorbimento del numero di fotoni $N$ coincide con un'attenuazione dell'intensità $I$ del fascio essendo quest'ultima pari al numero di fotoni per unità di superficie $A$ per unità di tempo $t$: $I=\frac{N}{At}$.} descritto dalla legge di attenuazione di Lambert:
+	Quando i fotoni attraversano la materia subiscono un processo di assorbimento\footnote{L'assorbimento del numero di fotoni $N(x)$ alla profondità $x$ coincide con un'attenuazione dell'intensità $I(x)$ del fascio essendo quest'ultima pari al numero di fotoni per unità di superficie $A$ per unità di tempo $t$: $I(x)=\frac{N(x)}{At}$.} descritto dalla legge di attenuazione di Lambert:
 	\begin{equation}
 		N(x)=N_0e^{-\mu x}
 		\label{eq:lambert}
 	\end{equation}
 	dove $N_0$ è il numero di fotoni iniziali, $N(x)$ è il numero di fotoni alla profondità $x$ e $\mu$ è il coefficiente di attenuazione lineare, tale che $\left[\mu\right]=m^{-1}$. Chiaramente l'attenuazione del mezzo attraversato dal fotone risulta maggiore per alti valori di $\mu$. In generale il coefficiente di attenuazione dipende sia dall'energia $E$ dei fotoni che dalla profondità $x$ (in quanto variando quest'ultima possono cambiare sia il tipo di materiale che il suo stato fisico), ma spesso è possibile ricavare un'espressione esplicita per $\mu$, riportata nella \hyperref[eq:attenuazione]{Eq. 1.24}:
 	\begin{equation}
-		\mu=n\sigma_{tot}=\frac{\rho N_a}{M_{mol}}\sigma_{tot}
+		\mu=n\sigma_{tot}=\frac{\rho N_A}{M_{mol}}\sigma_{tot}
 		\label{eq:attenuazione}
 	\end{equation}
-	dove $n$ rappresenta il numero di centri di diffusione per unità di volume e dipende dal numero di Avogadro $N_A$, dalla massa molecolare $M_{mol}$ e dalla densità del materiale attraversato $\rho$ e $\sigma_{tot}$ rappresenta la sezione d'urto totale, data dal contributo delle tre interazioni che il fotone effettua con la materia $\sigma_{tot}$ è data dal contributo 
+	dove $n$ rappresenta il numero di centri di diffusione per unità di volume e dipende dal numero di Avogadro $N_A$, dalla massa molecolare $M_{mol}$ e dalla densità del materiale attraversato $\rho$ e $\sigma_{tot}$ rappresenta la sezione d'urto totale che fornisce la probabilità totale di interazione del fotone con la materia e tiene conto dell'effetto cumulativo di effetto fotoelettrico, scattering Compton e produzione di coppia (cita
+	%appunti corso fisica biomedica ?2021?
+	):
+	\begin{equation}
+		\sigma_{tot}=\sigma_{fe}+\sigma_{C}+\sigma_{pc}
+		\label{eq:sum_cross_section}
+	\end{equation}
+	dove $\sigma_{fe}$, $\sigma_{C}$ e $\sigma_{pc}$ sono rispettivamente le sezioni d'urto relative all'effetto fotoelettrico, allo scattering Compton e alla produzione di coppa. Pertanto, dalle \hyperref[eq:lambert]{Eq. 1.23}, \hyperref[eq:attenuazione]{Eq. 1.24} e \hyperref[eq:sum_cross_section]{Eq. 1.25} si ottiene la \hyperref[eq:photon_absorption]{Eq. 1.26} che riassume l'effetto di assorbimento che subisce un fotone nell'attraversare la materia:
+	\begin{equation}
+		N(x)=N_0e^{\frac{\rho N_A}{M_{mol}}}\cdot e^{-\sigma_{fe}x}\cdot e^{-\sigma_{C}x}\cdot e^{-\sigma_{pc}x}
+		\label{eq:photon_absorption}
+	\end{equation}
 	
+	\subsubsection{Effetto fotoelettrico}\label{par:effetto_fotoelettrico}
+	L'interpretazione corretta dell'effetto fotoelettrico fu fornita da Albert Einstein ($1879$--$1955$) in uno dei suoi quattro articoli dell'\textit{Annus mirabilis}, pubblicato nel $1905$ (cita
+	%https://myweb.rz.uni-augsburg.de/~eckern/adp/history/einstein-papers/1905_17_132-148.pdf
+	); tale scoperta gli valse il premio Nobel per la fisica nel $1921$.
 	
+	Nell'esperimento dell'effetto fotoelettrico proposto da Philipp von Lenard ($1862$--$1947$) si osserva che i metalli alcalini (come sodio (\ce{Na}), litio (\ce{Li}) e potassio (\ce{K})) acquistano una carica positiva quando vengono irradiati da fotoni (caratterizzati da una bassa lunghezza d'onda) nel vuoto. Dato che la materia è normalmente neutra, i metalli generano un'emissione di elettroni essendo questi portatori di carica negativa. \`E possibile spiegare l'effetto fotoelettrico osservando che i fotoni, colpendo gli elettroni appartenenti generalmente agli orbitali (o shell) più interni degli atomi metallici, vengono assorbiti; l'assorbimento dei fotoni comporta un processo anelastico\footnote{Un processo di diffusione si definisce anelastico se non conserva l'energia cinetica del sistema.} in cui l'energia trasportata dai fotoni viene trasformata in energia cinetica degli elettroni, che vengono dunque emessi dal metallo. Tale processo prende il nome di fotoemissione e gli elettroni emessi vengono denominati fotoelettroni (cita
+	%appunti meccanica quantistica zucchini unibo 2023-24
+	). L'energia del fotoelettrone $E_{e^-}$ è pari a:
+	\begin{equation}
+		E_{e^-}=E_\gamma-E_b=h\nu-E_b
+		\label{eq:fotoelettrico}
+	\end{equation}
+	dove $E_\gamma$ e $\nu$ sono rispettivamente l'energia e la frequenza del fotone incidente, $h=6.626\cdot 10^{-34}\mbox{ Js}$ è la costante di Planck (cita
+	%https://physics.nist.gov/cgi-bin/cuu/Value?h|search_for=planck
+	), e $E_b$ è l'energia di legame del fotoelettrone, che corrisponde all'energia che occorre fornire all'elettrone per slegarlo dall'atomo di metallo entro cui è contenuto (infatti $E_b$ è anche chiamato lavoro di estrazione). Il fotoelettrone, avendo liberato un delle shell più interne agli atomi di metallo, genera una lacuna. Tale "posto vacante" viene successivamente riempito dagli elettroni che appartengono agli orbitali più esterni: a tale salto orbitale corrisponde una grande emissione di energia che in alcuni casi viene assorbita da altri elettroni (è il caso degli elettroni di Auger\footnote{Un elettrone di Auger, appartenendo all'orbitale più esterno dell'atomo, grazie all'energia ricevuta riesce ad essere liberato completamente.}), in altri può generare un raggio X, come mostrato in \hyperref[fig:fotoelettrico]{Fig. 1.26}.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{fotoelettrico.pdf}
+		\caption{Schema dell'effetto fotoelettrico e della conseguente emissione di raggi X o elettroni di Auger. Gli orbitali, indicati con notazione spettroscopica M, L e K, producono raggi X con le linee di emissione $K_\alpha$, $K_\beta$ e $L_\alpha$ (cita
+			%https://oncologymedicalphysics.com/radiation-interactions/
+			).}
+		\label{fig:fotoelettrico}
+	\end{figure}
 	
+	\`E possibile ricavare l'andamento approssimativo della sezione d'urto dell'effetto fotoelettrico $\sigma_{fe}$ sia in funzione dell'energia del fotone $E_\gamma$ e del numero atomico $Z$ del bersaglio:
+	\begin{equation}
+		\sigma_{fe}\propto \frac{Z^4}{E^{\frac{7}{2}}_\gamma}
+		\label{eq:sigma_fe1}
+	\end{equation}
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	\begin{equation}
+		\sigma_{fe}\propto \frac{Z^5}{A}
+		\label{eq:sigma_fe2}
+	\end{equation}
+	Dalla \hyperref[eq:sigma_fe1]{Eq. 1.28} si osserva che il contributo di $\sigma_{fe}$ diviene particolarmente importante per materiali dotati di atomi pesanti (con alto $Z$) e per basse $E_\gamma$.
+	
+	\subsubsection{Scattering Compton}
+	L'interpretazione corretta dello scattering Compton valse al fisico statunitense Arthur Compton ($1892$--$1962$) il premio Nobel per la fisica nel $1927$.
+	
+	Nell'esperimento dello scattering Compton proposto dallo stesso scienziato un fascio collimato di fotoni, caratterizzato da una frequenza approssimativamente monocromatica (che corrisponde a una lunghezza d'onda $\lambda_i$), irradia un elettrone appartenente agli orbitali più esterni degli atomi di un blocco di grafite, attuando il processo di diffusione elastica mostrato in \hyperref[fig:compton]{Fig. 1.27}. A differenza dell'\hyperref[par:effetto_fotoelettrico]{effetto fotoelettrico}, si hanno due fotoni prima e dopo l'interazione: il fotone incidente trasferisce quasi tutta la sua energia all'elettrone irradiato mentre il fotone diffuso, a causa del trasferimento di energia all'elettrone, possiede una minore frequenza del primo (che corrisponde a una maggiore lunghezza d'onda $\lambda_f$). Analizzando l'intensità della radiazione diffusa, Compton osservò lo shift in lunghezza d'onda $\Delta \lambda=\lambda_f-\lambda_i$ di raggi X diffusi e incidenti (chiamato Compton shift) e riuscì a spiegare tale fenomeno imponendo la conservazione dell'energia e della quantità di moto dei fotoni e degli elettroni interagenti, ottenendo la \hyperref[eq:compton]{Eq. 1.30}:
+	\begin{equation}
+		\Delta \lambda=\frac{4\pi\hbar}{m_ec^2}\sin^2{\left(\frac{\theta}{2}\right)}
+		\label{eq:compton}
+	\end{equation}
+	dove $\hbar=\frac{h}{2\pi}$ è la costante di Planck ridotta, $m_e=9.109\cdot^{-31}\mbox{ kg}$ è la massa dell'elettrone (cita
+	%https://physics.nist.gov/cgi-bin/cuu/Value?me
+	), $c=3.00\cdot10^{8}\mbox{ m/s}$ è la velocità della luce nel vuoto (cita
+	%https://physics.nist.gov/cgi-bin/cuu/Value?c|search_for=light
+	) e $\theta$ è l'angolo che intercorre tra la direzione del fotone incidente e quella del fotone diffuso.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{compton.pdf}
+		\caption{Schema dello scattering Compton (cita
+			%https://commons.wikimedia.org/wiki/File:Compton_scattering-it.svg
+			).}
+		\label{fig:compton}
+	\end{figure}
+	
+	\`E possibile ricavare l'andamento approssimativo della sezione d'urto dello scattering Compton $\sigma_{C}$ sia in funzione dell'energia del fotone $E_\gamma$ e del numero atomico $Z$ del bersaglio:
+	\begin{equation}
+		\sigma_{C}\propto \frac{Z}{E_\gamma}
+		\label{eq:sigma_c1}
+	\end{equation}
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	\begin{equation}
+		\sigma_{C}\propto \frac{Z}{A}
+		\label{eq:sigma_c2}
+	\end{equation}
+	Dalla \hyperref[eq:sigma_c1]{Eq. 1.31} si osserva che $\sigma_{C}$ viene attenuata linearmente all'aumentare di $E_\gamma$.
+	
+	\subsubsection{Produzione di coppia}
+	La produzione di coppia è un processo di interazione elettromagnetica in cui un fotone, dotato di sufficiente energia ($E_\gamma>2m_e=1.022\mbox{ MeV}$), trasforma tutta la sua energia in massa producendo un elettrone e un positrone secondo il diagramma di Feynman mostrato in \hyperref[fig:feynman]{Fig. 1.28}:
+	\begin{figure}
+		\centering
+		\begin{tikzpicture}
+			\begin{feynman}[large]
+				\vertex (a);
+				\vertex [right=of a] (b);
+				\vertex [above right=of b] (f1) {$e^-$};
+				\vertex [below right=of b] (f2) {$e^+$};
+				\diagram* {
+					(a) -- [photon, edge label'=$\gamma$] (b) -- [fermion] (f1),
+					(b) -- [anti fermion] (f2),
+				};
+			\end{feynman}
+		\end{tikzpicture}
+		\caption{Diagramma di Feynman della produzione di coppia elettrone-positrone.}
+		\label{fig:feynman}
+	\end{figure}
+	Non è possibile giustificare tale interazione con le leggi dell'elettromagnetismo classico, ma è necessario il supporto di teorie di campo quantizzato (in questo caso si fa riferimento all'elettrodinamica quantistica o QED) con le quali si può interpretare la trasformazione di energia in materia (e antimateria) che ha luogo durante il processo. La produzione di coppia elettrone-positrone da parte di un fotone avviene solo se quest'ultimo interagisce con un altro corpo (in questo caso o il nucleo atomico o un elettrone, che interagiscono con il fotone per interazione coulombiana; la presenza di un forte campo elettrico è infatti necessaria per consentire la conversione di energia in massa), altrimenti si violerebbe la conservazione del quadrimpulso.\footnote{Nel contesto relativistico la conservazione del quadrimpulso è una generalizzazione della conservazione di energia e quantità di moto.}
+	
+	Durante la produzione di coppia, l'energia del fotone si ripartisce equamente nell'elettrone e nel positrone ma, successivamente, gli esiti delle due particelle materiali sono differenti: l'elettrone perde energia cinetica generando eventi di ionizzazione mentre il positrone si annichila\footnote{L'annichilazione è il processo inverso alla produzione di coppia in cui un elettrone e un positrone si trasformano in due raggi $\gamma$, convertendo totalmente la loro massa in energia.} con un alto elettrone, producendo due raggi $\gamma$ in direzioni antiparallele (la produzione di un solo raggio $\gamma$ sarebbe impedita dalla conservazione del quadrimpulso) come mostrato in \hyperref[fig:pair_production]{Fig. 1.29}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{compton.pdf}
+		\caption{Schema della produzione di coppia e successiva annichilazione elettrone-positrone (cita
+			%https://upload.wikimedia.org/wikipedia/commons/b/b5/Pairproduction.svg
+			).}
+		\label{fig:pair_production}
+	\end{figure}
+	
+	Dai diagrammi di Feynman è possibile ricavare l'andamento approssimativo della sezione d'urto della produzione di coppia $\sigma_{pc}$ sia in funzione dell'energia del fotone $E_\gamma$ e del numero atomico $Z$ del bersaglio:
+	\begin{equation}
+		\sigma_{pc}\propto \frac{Z^2}{\ln{E_\gamma}}
+		\label{eq:sigma_pc1}
+	\end{equation}
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	\begin{equation}
+		\sigma_{pc}\propto \frac{Z^2}{A}
+		\label{eq:sigma_pc2}
+	\end{equation}
+	Dalla \hyperref[eq:sigma_pc1]{Eq. 1.33} si osserva che $\sigma_{pc}$ è sostanzialmente costante per alte $E_\gamma$.	
+	
+	La \hyperref[fig:attenuation]{Fig. 1.30} riassume l'andamento della sezione d'urto totale per unità di massa dell'interazione fotone-materia. Si osserva che per basse energie domina l'effetto fotoelettrico, per energie dell'ordine di $1\mbox{ MeV}$ prevale lo scattering Compton e per energie dell'ordine di $10\mbox{ MeV}$ (e maggiori) dominano lo scattering Compton e la produzione di coppia.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{attenuation.pdf}
+		\caption{Andamento della sezione d'urto totale (attenuazione) per unità di massa in funzione dell'energia del fotone incidente in un materiale di ferro e di idrogeno, rappresentati in una scala doppio-logaritmica. Per scattering coerente si intende un tipo di scattering in cui il fotone incidente e quello diffuso possiedono la stessa lunghezza d'onda. Al centro del grafico si evidenzia il range energetico radioterapico (cita
+			%https://upload.wikimedia.org/wikipedia/commons/3/3d/Attenuation_Coefficient_Iron-H.svg
+			,
+			%Maged Marghany, in Nonlinear Ocean Dynamics, 2021
+			).}
+		\label{fig:attenuation}
+	\end{figure}
+	
+	Essendo il corpo umano principalmente formato da acqua, l'analisi della sezione d'urto totale dell'interazione fotone-acqua risulta essere una buona approssimazione delle interazioni che intercorrono tra i raggi $\gamma$ e il corpo umano durante la radioterapia. Tale situazione viene mostrata in \hyperref[fig:attenuation_water]{Fig. 1.31}, dove è evidente la diminuzione esponenziale della sezione d'urto all'aumentare dell'energia. Ciò avviene perché aumentando l'energia dei raggi $\gamma$ incidenti diminuisce l'attenuazione da parte dell'acqua e quindi si abbassa la probabilità che il fotone interagisca con gli atomi d'acqua e aumenta la sua penetrazione all'interno del bersaglio.
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{attenuation_water.png}
+		\caption{Andamento della sezione d'urto efficace in funzione dell'energia del fotone incidente in acqua. Si ricorda che il barn (b) è un'unità di misura di superficie tale che $1\mbox{ b}=10^{-24}\mbox{ cm}^{2}$.  (cita
+			%https://www.researchgate.net/publication/259002963_Photon_buildup_factors_in_some_dosimetric_materials_for_heterogeneous_radiation_sources
+			).}
+		\label{fig:attenuation_water}
+	\end{figure}
 	
+	\subsection{Interazione delle particelle cariche con la materia}
+	Le particelle cariche interagiscono con la materia in modo più complesso rispetto ai fotoni. Ad esempio, quando le particelle cariche attraversano la materia perdono la loro energia fino ad arrestarsi, un fenomeno che non riguarda i fotoni che quando interagiscono possono essere solamente emessi o assorbiti. Inoltre, le interazioni effettuate dalle particelle cariche sono sia di tipo elettromagnetico che nucleare. In particolare, i processi elettromagnetici sono descritti dalle seguenti interazioni:
+	\begin{itemize}
+		\item Bethe-Bloch, che avviene con gli elettroni atomici del bersaglio attraverso processi di diffusione anelastici;
+		\item scattering Rutherford (o scattering multiplo coulombiano), che avviene con il nucleo del bersaglio attraverso processi di diffusione elastici;
+		\item bremsstrahlung (o radiazione di frenamento), che avviene con il nucleo del bersaglio;
+		\item effetto Cherenkov, che avviene con gli elettroni atomici e con il nucleo del bersaglio.
+	\end{itemize}
+	L'interazione elettromagnetica delle particelle cariche con gli elettroni atomici domina rispetto alle interazioni nucleari per via delle dimensioni lineari dell'atomo e del suo nucleo. Infatti, essendo l'atomo è $10^4$ volte più grande (linearmente) del nucleo, si ha che la sezione d'urto dei processi atomici $\sigma_{atom}$ è più grande di un fattore $10^8$ rispetto alla sezione d'urto che descrive le interazioni nucleari $\sigma_{nucl}$; in particolare, i valori delle sezioni d'urto sono pari a $\sigma_{atom}=100\mbox{ Mb}$ e $\sigma_{nucl}=1\mbox{ b}$. A causa del grande valore di $\sigma_{atom}$ le particelle cariche effettuano moltissime collisioni con gli elettroni atomici, che renderebbe vana una trattazione analitica basata sul calcolo delle sezioni d'urto. Si procede quindi con un approccio energetico in cui si analizza la quantità di energia ceduta dalle particelle cariche durante il loro moto all'interno della materia.
 	
-	effetto fotoelettrico->nobel einstein. un fotone che colpisce l'elettrone di un atomo (in particolare l'elettrone più energetico, quello maggiormente legato, quello più vicino al nucleo dell'atomo)-> il gamma dà l'energia all'elettrone e poi sparisce, una parte di eneergia slega l'elettrone dall'atomo (che è ionizzato) ed emette un fotoelettrone con un'energia cinetica legata all'energia della radiazione gamma stessa. il gamma sparisce!! e l'elettrone parte. è un'unica interazione. effetto compton -> il gamma può anche andare con un elettrone più esterno, meno legato (meno energetico) -> abbiamo ancora il gamma, con meno energia in quanto una parte è stata trasmessa all'elettrone che va via come nell'altro caso. il gamma, tipicamente, perde metà della sue energia -> in due interazioni compton il fotone è già finito.
-	-> creazione di coppia: il gamma arriva vicino al nucleo, sente la forza elettromagnetica fortissima del nucleo e annichila in positrone e elettrone. qui pure sparisce il gamma.
+	Quando una particella carica si muove in un mezzo materiale causa processi di ionizzazione dei suoi atomi dovuti alla forza che esercita sui loro elettroni (cita
+	%christoduides libro relatività
+	). Il tasso di energia media persa\footnote{A causa degli eventi di ionizzazione.} per unità di lunghezza lungo il percorso da una particella carica è dato dalla formula relativistica di Bethe-Bloch (o del potere frenante), riportata in \hyperref[eq:bethe_bloch]{Eq. 1.35}:
+	\begin{equation}
+		\begin{split}
+			-\langle \frac{dE}{dx} \rangle=\frac{\rho Z}{A}\frac{4\pi N_Am_ec^2}{M_U}&\left(\frac{e^2}{4\pi\epsilon_0m_ec^2}\right)^2\cdot\\
+			&\cdot\frac{z^2}{\beta^2}\left[\ln{\left(\frac{2m_ec^2\beta^2}{I\left(1-\beta^2\right)}\right)}-\beta^2-\frac{\delta}{2}-\frac{C}{Z}\right]
+		\end{split}
+		\label{eq:bethe_bloch}
+	\end{equation}
+	i cui parametri sono descritti in \hyperref[tab:bethe_bloch]{Tab. 1.3}. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) (cita
+	%https://indico.cern.ch/event/387976/attachments/1124401/1605557/daniela_l2.pdf
+	,
+	%https://it.wikipedia.org/wiki/Formula_di_Bethe
+	)delle fluttuazioni intorno al valore medio sono descritte dalla distribuzione di Landau, riportata in \hyperref[fig:landau]{Fig. 1.32}.
 	
-	- quindi, visto che tutti questi meccanismi fanno un solo danno (nel senso che daneggiano il singolo legame), il danno non riparabile che stiamo cercando di ottenere per impedire la riproduzione della cellula lo si fa sparando tanti di questi fasci (gamma, in questo caso).
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{1cm}||m{11cm}| }
+				\hline
+				\multicolumn{2}{|c|}{Proprietà del mezzo}\\
+				\hline\hline
+				$\rho$ & Densità del materiale \\
+				\hline
+				$Z$ & Numero atomico\\
+				\hline
+				$A$ & Numero di massa\\
+				\hline
+				$I$ & Potenziale di ionizzazione\\
+				\hline\hline
+				\multicolumn{2}{|c|}{Costanti}\\
+				\hline\hline
+				$N_A$ & Numero di Avogadro\\
+				\hline\hline
+				$m_e$ & Massa dell'elettrone\\
+				\hline
+				$M_U$ & Massa molare ($\frac{1}{12}$ della massa di \ce{^{12}C}) \\
+				\hline
+				$\epsilon_0$ & Costante dielettrica nel vuoto\\
+				\hline
+				$e$ & Carica dell'elettrone\\
+				\hline\hline
+				\multicolumn{2}{|c|}{Caratteristiche del fascio}\\
+				\hline\hline
+				$z$ & Numero atomico delle particelle del fascio\\
+				\hline
+				$\beta$ & Velocità del fascio\\
+				\hline\hline
+				\multicolumn{2}{|c|}{Correzioni}\\
+				\hline\hline
+				$\delta$ & Correzione di densità, importante ad alte energie\\
+				\hline
+				$C$ & Correzione di shell, importante a basse energie\\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Tabella riassuntiva dei parametri della Bethe-Bloch suddivisi in proprietà del mezzo, costanti, caratteristiche del fascio e correzioni.}
+		\label{tab:bethe_bloch}
+	\end{table}
 	
-	VEDI SLIDE PER ANDARE NELLO SPECIFICO SULLE RADIAZIONI
-	
-	Along beam direction: photons do not loose energy: or absorption or no interaction (≠ charged particles)
-	
-	
-	
-	
-	
+%	bethe bloch:
+%	descrive la perdita di energia lungo il cammino, dx è il cammino della particella. il meno sta per spiegare il fatto che se va avanti la particella perde energia.
+%	- Z maiuscolo \rho A è relativo al bersaglio (il corpo umano). Z/A nel nostro casoè un numero vicino a 0.5, visto che il numero di protoni è sempre circa la metà di quello dei nucleoni; rho è la densità del materiale.
+%	- le quantità blu dipendono dal nosto fascio, z sarebbe la carica del fascio, beta è la velocità del fascio. (dipendenze quadratiche -> molto importanti.). NOTA BENE: quando la velocità è piccola, ossia l'energia cinetica è piccola, dE/dx è piccolo; vi sono centinaua di interazioni che la particella fa, in ciascuna delle quali la particella rilascia energia poco per volta, fin quando alla fine del cammino c'è il massimo del rlascio di energia. Inoltre vi è anche un termine col logaritmo è legato al potenziale di ionizzazione. poi ci sono dei termini di correzione, quelli per alte e base energie. siamo legati molto al coefficiente C, quello importante per basse energie.
+%	
+%	questa è una legge statistica (vedi relaitivtà, è un dE/dx medio)
+%	esempio: 1 mld di particelle protoniche non si generano tutte allo stesso punto, ma ci sarà una variazione statistica. abbiamo una distribuzione di landau, una gaussiana con una coda (vedi slides).
+%	
+%	la distribuzione della bethe bloch (con segno invertito) plottata rispetto all'energia. per energia molto alta, dE/dx è circa costante, (il range rosso è legato al nostro caso, quello di bassa energia). quando l'energia inizia a calare, abbiamo una salita che va cmoe 1/beta^2. apparenrtemente c'è un problema: quando la particella del fascio ha energia 0, ci aspettiamo che anche il de/dx sia 0, cosa che non sembra accadere in questo caso guardando il grafico. proprio per questo motivo vanno inserite delle correzioni (shell correction col fattore C): la formula iniziale senza il fattore di correzione è stata scritta pensando al fatto che quando il protone va a incidere sull'elettrone, quest'ultimo stia fermo; ma il problema è che se l'energia cinetica della particella incidente è molto bassa, non si può più trascurare il moto dell'elettrone attorno al nucleo, per questo motivo viene agginuto il termine di correzione C.
+%	
+%	- poi dalle slide si vede che aumentando lo z aumenta il dE/dx perché va come z^2.
+%	
+%	
 	
 	
 	
