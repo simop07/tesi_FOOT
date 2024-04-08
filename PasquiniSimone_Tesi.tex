@@ -69,7 +69,7 @@
 \pagestyle{fancy}
 %\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{CAP.\ \thechapter\ --\ #1}}{}}
-\setlength{\headwidth}{13cm} % larghezza tabelle 12cm
+\setlength{\headwidth}{15cm} % la larghezza delle tabelle è di 1 cm inferiore (14cm)
 \fancyhead{} % clear all header fields
 \fancyhead[LO]{\footnotesize \textsl{\rightmark}}
 \fancyhead[RE]{\footnotesize \textsl{\leftmark}}
@@ -156,7 +156,7 @@
 		
 	\end{titlepage}
 	\newpage
-	\newgeometry{top=4cm,bottom=4cm,left=4cm,right=4cm}
+	\newgeometry{top=4cm,bottom=4cm,left=3cm,right=3cm}
 	\doublespacing % Also singlespacing, onehalfspacing 
 	\chapter*{Sommario (TBD)}
 		Questo è l'inizio del sommario.
@@ -617,7 +617,7 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |m{9cm}||M{3cm}| }
+			\begin{tabular}{ |m{10.5cm}||M{3.5cm}| }
 				\hline
 				Tipo di radiazione & $w_R$ \\
 				\hline\hline
@@ -747,7 +747,7 @@
 		
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{ |m{8cm}||M{3cm}|M{1cm}| }
+		\begin{tabular}{ |m{10cm}||M{3cm}|M{1cm}| }
 			\hline
 			Tipo di radiazione & LET $\left[\mbox{keV/}\mu\mbox{m}\right]$ & RBE\\
 			\hline\hline
@@ -881,7 +881,7 @@
 		\begin{subfigure}[t]{0.49\textwidth}
 			\centering
 			\includegraphics[width=\textwidth, scale=0.50]{survival1.jpg}
-			\caption{Sopravvivenza cellulare di un batterio Escherichia coli. $D_0$ è la dose che riduce la sopravvivenza di un fattore $\frac{1}{e}$ (cita
+			\caption{Sopravvivenza cellulare di un batterio Escherichia coli. $D_0$ è la dose che riduce la sopravvivenza di un fattore $1/e$ (cita
 				%https://radiologykey.com/5-cell-survival-curves/
 				).}
 			\label{fig:survival1}
@@ -912,7 +912,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{survival_cell.jpg}
-		\caption{Andamento della sopravvivenza cellulare in funzione della dose rilasciata. Sinistra: risposte cellulari differenti corrispondenti a diversi valori di $\frac{\alpha}{\beta}$. Le curve con alto $\frac{\alpha}{\beta}=10\mbox{ Gy}$ possiedono tassi quasi costanti di morte cellulare mentre le curve con basso $\frac{\alpha}{\beta}=3\mbox{ Gy}$ mostrano una curvatura pronunciata, con una morte cellulare che aumenta al crescere della dose rilasciata. Destra: separazione della curva di sopravvivenza cellulare in cinetica a singola e a doppia hit. Per basse dosi la cinetica prevalente è quella a singola hit ($S\approx e^{-\alpha}$), mentre a dosi più alte domina la cinetica a hit multipla. Gli effetti di cinetica a singola e a doppia hit sono equivalenti quando $D=\frac{\alpha}{\beta}=5\mbox{ Gy}$ (cita
+		\caption{Andamento della sopravvivenza cellulare in funzione della dose rilasciata. Sinistra: risposte cellulari differenti corrispondenti a diversi valori di $\alpha/\beta$. Le curve con alto $\alpha/\beta=10\mbox{ Gy}$ possiedono tassi quasi costanti di morte cellulare mentre le curve con basso $\alpha/\beta=3\mbox{ Gy}$ mostrano una curvatura pronunciata, con una morte cellulare che aumenta al crescere della dose rilasciata. Destra: separazione della curva di sopravvivenza cellulare in cinetica a singola e a doppia hit. Per basse dosi la cinetica prevalente è quella a singola hit ($S\approx e^{-\alpha}$), mentre a dosi più alte domina la cinetica a hit multipla. Gli effetti di cinetica a singola e a doppia hit sono equivalenti quando $D=\alpha/\beta=5\mbox{ Gy}$ (cita
 			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
 			).}
 		\label{fig:survival_cell}
@@ -939,7 +939,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{sparing.jpg}
-		\caption{Impatto del frazionamento. Nelle cellule con $\frac{\alpha}{\beta}=5\mbox{ Gy}$ dividere il trattamento in due frazioni da $2\mbox{ Gy}$ consente di risparmiare danni cellulari (sparing) modulando il contributo riparatore del fattore $\beta$: i danni cellulari vengono fortemente risparmiati nelle cellule caratterizzate da bassi $\frac{\alpha}{\beta}$ (cellule sane) mentre ciò non avviene nelle cellule con alti $\frac{\alpha}{\beta}$ (cellule tumorali) (cita
+		\caption{Impatto del frazionamento. Nelle cellule con $\alpha/\beta=5\mbox{ Gy}$ dividere il trattamento in due frazioni da $2\mbox{ Gy}$ consente di risparmiare danni cellulari (sparing) modulando il contributo riparatore del fattore $\beta$: i danni cellulari vengono fortemente risparmiati nelle cellule caratterizzate da bassi $\alpha/\beta$ (cellule sane) mentre ciò non avviene nelle cellule con alti $\alpha/\beta$ (cellule tumorali) (cita
 			%https://iopscience.iop.org/article/10.1088/1361-6560/aaf26a/pdf
 			).}
 		\label{fig:sparing}
@@ -991,8 +991,8 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{solid_angle.png}
-		\caption{Schema di un esperimento di scattering (cita
-			%https://moodle2.units.it/ corso di fisica nucleare e subnucleare anno 2019 uni trieste
+		\caption{Processo di scattering tridimensionale in cui le particelle passanti per la corona circolare (a sinistra) vengono diffuse da un centro scatteratore e indirizzate nella corona sferica descritta da un angolo solido (cita
+			%http://hep.physics.wayne.edu/~harr/courses/5210/w15/lecture29.htm
 			).}
 		\label{fig:solid_angle}
 	\end{figure}
@@ -1012,7 +1012,7 @@
 	\end{itemize}
 	Nei range energetici terapeutici (che vanno dal $\mbox{keV}$ al $\mbox{MeV}$) sia lo scattering Thomson and Rayleigh (in cui si verifica una diffusione elastica\footnote{Un processo di diffusione si definisce elastico se conserva l'energia cinetica del sistema.} a energie molto basse) che le reazioni fotonucleari (dove un raggio $\gamma$ con energia maggiore di $10\mbox{ MeV}$ colpisce un nucleo atomico emettendo protoni, neutroni e ioni) si possono trascurare. Le altre tre interazioni vengono analizzate nei paragrafi seguenti.
 	
-	Quando i fotoni attraversano la materia subiscono un processo di assorbimento\footnote{L'assorbimento del numero di fotoni $N(x)$ alla profondità $x$ coincide con un'attenuazione dell'intensità $I(x)$ del fascio essendo quest'ultima pari al numero di fotoni per unità di superficie $A$ per unità di tempo $t$: $I(x)=\frac{N(x)}{At}$.} descritto dalla legge di attenuazione di Lambert:
+	Quando i fotoni attraversano la materia subiscono un processo di assorbimento\footnote{L'assorbimento del numero di fotoni $N(x)$ alla profondità $x$ coincide con un'attenuazione dell'intensità $I(x)$ del fascio essendo quest'ultima pari al numero di fotoni per unità di superficie $A$ per unità di tempo $t$: $I(x)=N(x)/(At)$.} descritto dalla legge di attenuazione di Lambert:
 	\begin{equation}
 		N(x)=N_0e^{-\mu x}
 		\label{eq:lambert}
@@ -1186,25 +1186,25 @@
 	L'interazione elettromagnetica delle particelle cariche con gli elettroni atomici domina rispetto alle interazioni nucleari per via delle dimensioni lineari dell'atomo e del suo nucleo. Infatti, essendo l'atomo è $10^4$ volte più grande (linearmente) del nucleo, si ha che la sezione d'urto dei processi atomici $\sigma_{atom}$ è più grande di un fattore $10^8$ rispetto alla sezione d'urto che descrive le interazioni nucleari $\sigma_{nucl}$; in particolare, i valori delle sezioni d'urto sono pari a $\sigma_{atom}=100\mbox{ Mb}$ e $\sigma_{nucl}=1\mbox{ b}$. A causa del grande valore di $\sigma_{atom}$ le particelle cariche effettuano moltissime collisioni con gli elettroni atomici, che renderebbe vana una trattazione analitica basata sul calcolo delle sezioni d'urto. Si procede quindi con un approccio energetico in cui si analizza la quantità di energia ceduta dalle particelle cariche durante il loro moto all'interno della materia.
 	
 	Quando una particella carica si muove in un mezzo materiale causa processi di ionizzazione dei suoi atomi dovuti alla forza che esercita sui loro elettroni (cita
-	%christoduides libro relatività
+	%christoduides libro relatività, capitolo eletromagnetismo
 	). Il tasso di energia media persa\footnote{A causa degli eventi di ionizzazione.} per unità di lunghezza lungo il percorso da una particella carica è dato dalla formula relativistica di Bethe-Bloch (o del potere frenante), riportata in \hyperref[eq:bethe_bloch]{Eq. 1.35}:
 	\begin{equation}
 		\begin{split}
-			-\langle \frac{dE}{dx} \rangle=\frac{\rho Z}{A}\frac{4\pi N_Am_ec^2}{M_U}&\left(\frac{e^2}{4\pi\epsilon_0m_ec^2}\right)^2\cdot\\
+			\left\langle-\frac{dE}{dx} \right\rangle=\frac{\rho Z}{A}\frac{4\pi N_Am_ec^2}{M_U}&\left(\frac{e^2}{4\pi\epsilon_0m_ec^2}\right)^2\cdot\\
 			&\cdot\frac{z^2}{\beta^2}\left[\ln{\left(\frac{2m_ec^2\beta^2}{I\left(1-\beta^2\right)}\right)}-\beta^2-\frac{\delta}{2}-\frac{C}{Z}\right]
 		\end{split}
 		\label{eq:bethe_bloch}
 	\end{equation}
-	i cui parametri sono descritti in \hyperref[tab:bethe_bloch]{Tab. 1.3}. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) (cita
+	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3}; si noti che il segno negativo in $\left\langle-\frac{dE}{dx} \right\rangle$ rappresenta perdite di energia. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) (cita
 	%https://indico.cern.ch/event/387976/attachments/1124401/1605557/daniela_l2.pdf
 	,
 	%https://it.wikipedia.org/wiki/Formula_di_Bethe
-	)delle fluttuazioni intorno al valore medio sono descritte dalla distribuzione di Landau, riportata in \hyperref[fig:landau]{Fig. 1.32}.
+	).
 	
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{1cm}||m{11cm}| }
+			\begin{tabular}{ |M{2cm}||m{12cm}| }
 				\hline
 				\multicolumn{2}{|c|}{Proprietà del mezzo}\\
 				\hline\hline
@@ -1227,12 +1227,14 @@
 				$\epsilon_0$ & Costante dielettrica nel vuoto\\
 				\hline
 				$e$ & Carica dell'elettrone\\
+				\hline
+				$c$ & Velocità della luce nel vuoto\\
 				\hline\hline
 				\multicolumn{2}{|c|}{Caratteristiche del fascio}\\
 				\hline\hline
 				$z$ & Numero atomico delle particelle del fascio\\
 				\hline
-				$\beta$ & Velocità del fascio\\
+				$\beta$ & Velocità del fascio in unità di $c$\\
 				\hline\hline
 				\multicolumn{2}{|c|}{Correzioni}\\
 				\hline\hline
@@ -1245,6 +1247,29 @@
 		\caption{Tabella riassuntiva dei parametri della Bethe-Bloch suddivisi in proprietà del mezzo, costanti, caratteristiche del fascio e correzioni.}
 		\label{tab:bethe_bloch}
 	\end{table}
+	
+	\`E possibile suddividere l'andamento della Bethe-Bloch (mostrato in \hyperref[fig:bethe_bloch]{Fig. 1.32}) in varie regioni.
+	\begin{itemize}
+		\item Regione classica: per basse energie ($\beta\gamma<1$)\footnote{$\gamma=1/\sqrt{1-\beta^2}$ è denominato fattore di Lorentz.} il potere frenante diminuisce come $\frac{1}{\beta^2}$ in quanto le particelle cariche più veloci passano meno tempo nelle vicinanze degli atomi della materia, pertanto generano meno processi di ionizzazione.
+		\item Regione di minima ionizzazione: per energie più alte ($\beta\gamma\approx3$) si osserva un minimo di ionizzazione dipendente da $\beta$ e (quasi) indipendente dalla massa della particella carica.
+		\item Regione relativistica: ad alte energie ($\beta\gamma>4$) si osserva una risalita logaritmica del potere frenante dovuta alla concentrazione delle linee di campo elettrico nella direzione ortogonale alla sua velocità, un effetto puramente relativistico espresso dal termine logaritmico in \hyperref[eq:bethe_bloch]{Eq. 1.35} (cita
+		%christoduides libro relatività, capitolo eletromagnetismo
+		).
+	\end{itemize}
+	
+	Suddette regioni non includono l'andamento della Bethe-Bloch per energie molto alte ed energie molto basse
+	+ barkas effect
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{bethe_bloch.png}
+		\caption{Valore assoluto del potere frenante per $\mu^+$ in rame in funzione di $\beta\gamma=p/Mc$ dove $p$ è il modulo della quantità di moto relativistica del $\mu^+$. Le bande verticali delimitano varie regioni di approssimazione dovute a successivi miglioramenti della Bethe-Bloch (cita
+			%https://pdg.lbl.gov/2022/reviews/rpp2022-rev-passage-particles-matter.pdf
+			).}
+		\label{fig:bethe_bloch}
+	\end{figure}
+	
+	
 	
 %	bethe bloch:
 %	descrive la perdita di energia lungo il cammino, dx è il cammino della particella. il meno sta per spiegare il fatto che se va avanti la particella perde energia.
