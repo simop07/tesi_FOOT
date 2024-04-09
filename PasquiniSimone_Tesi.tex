@@ -219,7 +219,7 @@
 	%https://web.infn.it/foot/
 	)), si preferisce ricorrere alla radioterapia e all'adroterapia, ove quest'ultima è una forma avanzata di radioterapia. Pur non essendo invasive come la chirurgia, tali tecniche permettono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante, composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia (si veda \hyperref[fig:simulation]{Fig. 1.1}). In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia (detta "dose") capace di provocare un danno biologico tale da inibire la crescita del tumore con effetti collaterali minimi (cita
 	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
-	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche penetrano nei tessuti in grande profondità irradiando una grande quantità di energia in uno spazio molto limitato attraverso il caratteristico picco di Bragg (Bragg Peak, BP). Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
+	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche penetrano nei tessuti in grande profondità irradiando una grande quantità di energia in uno spazio molto limitato attraverso il caratteristico picco di Bragg (BP, Bragg Peak). Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
 	%https://web.infn.it/foot/
 	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali situate in profondità, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
 	%https://fondazionecnao.it/adroterapia/cos-e-l-adroterapia
@@ -450,7 +450,6 @@
 	\end{figure}
 	
 	Oltre al DNA esiste anche l'RNA (acido ribonucleico), un acido nucleico fondamentale per la biosintesi delle proteine. Nonostante DNA e RNA siano entrambi costituiti da una lunga catena nucleotidica, presentano varie differenze strutturali e funzionali:
-	
 	\begin{itemize}
 		\item il DNA ha una struttura di doppia elica (caratterizzata dal diametro costante di $2\mbox{ nm}$ (cita
 		%libro 3 anno CAMPBELL
@@ -459,7 +458,6 @@
 		\item nelle cellule eucariote, il DNA è collocato nel nucleo mentre l'RNA si trova sia nel nucleo che nel citoplasma;
 		\item il DNA è depositario dell'informazione genetica mentre l'RNA è l'intermediario tra il DNA e la sintesi di proteine specifiche.
 	\end{itemize}
-	
 	La scoperta delle strutture degli acidi nucleici DNA e RNA (\hyperref[fig:dna_structure]{Fig. 1.9}) viene attribuita agli scienziati James D. Watson ($1928$--), Francis H. C.Crick ($1916$--$2004$) e Maurice H. F. Wilkins ($1916$--$2004$) che per il loro contributo alla biologia molecolare ricevettero il premio Nobel per la fisiologia o la medicina nel $1958$. In realtà la prima immagine cristallografica del DNA fu quella della chimica Rosalind E. Franklin ($1920$--$1958$), anche se per molto tempo non gli fu riconosciuta la paternità della scoperta. Purtroppo la sua morte precoce non le consentì nemmeno di essere candidata al premio Nobel (cita
 	%libro 3 anno CAMPBELL
 	).
@@ -675,7 +673,7 @@
 		LET=\frac{dE_\Delta}{dx}
 		\label{eq:let}
 	\end{equation}
-	Già nella \hyperref[eq:dose_as]{Eq. 1.8} viene utilizzato il potere frenante $\left(\frac{dE}{dx}\right)$, simile alla definizione di LET. Il motivo per cui tali termini si trattano separatamente risiede in una loro differenza: mentre il potere frenante è legato all'energia persa dal fascio di particelle nel mezzo che attraversa (per unità di distanza), il LET si riferisce all'energia assorbita dal mezzo (per unità di distanza). Nella \hyperref[eq:let]{Eq. 1.11} compare il pedice $\Delta$ in quanto nella definizione di LET si tengono conto dei trasferimenti di energia localizzati vicino alla traiettoria della particella, escludendo le ionizzazioni degli elettroni a lungo raggio più energetici la cui energia è maggiore di una soglia $\Delta$ come mostrato in \hyperref[fig:let]{Fig. 1.13}. Nel limite $\Delta\rightarrow+\infty$\footnote{Tale condizione limite non si raggiunge fisicamente, ma corrisponde al caso in cui vengono inclusi tutti i trasferimenti di energia della \hyperref[eq:let]{Eq. 1.11}, per quanto grandi possano essere.} non esisterebbero più elettroni con $E>\Delta$ in quanto l'energia persa dalla particella del fascio corrisponderebbe eguaglierebbe l'energia assorbita dal materiale (il che renderebbe equivalenti il potere frenante e il LET). Tali considerazioni consentono di ricavare la relazione che lega il potere frenante e il LET:
+	Già nella \hyperref[eq:dose_as]{Eq. 1.8} viene utilizzato il potere frenante $\left(\frac{dE}{dx}\right)$, simile alla definizione di LET. Il motivo per cui tali termini si trattano separatamente risiede in una loro differenza: mentre il potere frenante è legato all'energia persa dal fascio di particelle nel mezzo che attraversa (per unità di distanza), il LET si riferisce all'energia assorbita dal mezzo (per unità di distanza). Nella \hyperref[eq:let]{Eq. 1.11} compare il pedice $\Delta$ in quanto nella definizione di LET si tengono conto dei trasferimenti di energia localizzati vicino alla traiettoria della particella, escludendo le ionizzazioni degli elettroni a lungo raggio più energetici la cui energia è maggiore di una soglia $\Delta$ come illustrato in \hyperref[fig:let]{Fig. 1.13}. Nel limite $\Delta\rightarrow+\infty$\footnote{Tale condizione limite non si raggiunge fisicamente, ma corrisponde al caso in cui vengono inclusi tutti i trasferimenti di energia della \hyperref[eq:let]{Eq. 1.11}, per quanto grandi possano essere.} non esisterebbero più elettroni con $E>\Delta$ in quanto l'energia persa dalla particella del fascio corrisponderebbe eguaglierebbe l'energia assorbita dal materiale (il che renderebbe equivalenti il potere frenante e il LET). Tali considerazioni consentono di ricavare la relazione che lega il potere frenante e il LET:
 	\begin{equation}
 		LET=\frac{dE_\Delta}{dx}-K_{E>\Delta}
 		\label{eq:let&stoppingpower}
@@ -713,7 +711,7 @@
 		\label{fig:proton_carbon_let}
 	\end{figure}
 	
-	In \hyperref[fig:proton_carbon_let]{Fig. 1.15} si nota che nel canale di ingresso, dove il rilascio di dose è minore, i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $90 \mbox{ nm}$ (insufficiente a colpire la doppia catena del DNA, il cui diametro è di $2 \mbox{ nm}$) e ogni $4 \mbox{ nm}$ (sufficiente a generare SSB), mentre in corrispondenza del BP i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $4 \mbox{ nm}$ e ogni $0.3 \mbox{ nm}$ (sufficienti a generare rispettivamente SSB e DSB). Pertanto gli ioni carbonio sono più dannosi dei protoni in prossimità del BP, ma nel canale di ingresso causano molti più danni dei protoni; tale discordanza va tenuta conto in fase di TP affinché si selezioni il fascio adroterapico più adeguato alle specificità tessutali del paziente.
+	In \hyperref[fig:proton_carbon_let]{Fig. 1.15} si nota che nel canale di ingresso, che corrisponde alla prima parte della penetrazione dove il rilascio di dose è minore, i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $90 \mbox{ nm}$ (insufficiente a colpire la doppia catena del DNA, il cui diametro è di $2 \mbox{ nm}$) e ogni $4 \mbox{ nm}$ (sufficiente a generare SSB), mentre in corrispondenza del BP i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $4 \mbox{ nm}$ e ogni $0.3 \mbox{ nm}$ (sufficienti a generare rispettivamente SSB e DSB). Pertanto gli ioni carbonio sono più dannosi dei protoni in prossimità del BP, ma nel canale di ingresso causano molti più danni dei protoni; tale discordanza va tenuta conto in fase di TP affinché si selezioni il fascio adroterapico più adeguato alle specificità tessutali del paziente.
 	
 	\subsubsection{Relative Biological Effectiveness}
 	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il tasso di sopravvivenza delle cellule $S$:
@@ -874,7 +872,7 @@
 		S=e^{-0.69D}
 		\label{eq:survival1}
 	\end{equation}
-	In realtà l'\hyperref[eq:survival1]{Eq. 1.15}, il cui andamento è rappresentato in \hyperref[fig:survival1]{Fig. 1.21a}, descrive il tasso di sopravvivenza per cellule procarioti (come quelle dei batteri), le quali non sono sostanzialmente in grado di riparare i danni radiativi attivando sistemi di riparazione. Al contrario, le cellule degli esseri umani (in generale le cellule eucarioti dei mammiferi) possiedono complessi meccanismi di riparazione del DNA (accennati in \hyperref[par:danno_diretto]{Danno diretto}) che consentono di recuperare i danni dovuti a radiazioni ionizzanti. Suddetti meccanismi, però, sono efficaci solo in presenza di un basso rilascio di dose (basso LET), mentre per alte energie (alto LET) non sono sufficienti a riparare i danni radiativi che risultano addirittura maggiori rispetto a quelli arrecati a cellule batteriche. Pertanto gli effetti dei meccanismi di riparazione incidono nell'andamento della sopravvivenza cellulare solo in un regime di basso LET, come mostrato in \hyperref[fig:survival2]{Fig. 1.21b}.
+	In realtà l'\hyperref[eq:survival1]{Eq. 1.15}, il cui andamento è rappresentato in \hyperref[fig:survival1]{Fig. 1.21a}, descrive il tasso di sopravvivenza per cellule procarioti (come quelle dei batteri), le quali non sono sostanzialmente in grado di riparare i danni radiativi attivando sistemi di riparazione. Al contrario, le cellule degli esseri umani (in generale le cellule eucarioti dei mammiferi) possiedono complessi meccanismi di riparazione del DNA (accennati in \hyperref[par:danno_diretto]{Danno diretto}) che consentono di recuperare i danni dovuti a radiazioni ionizzanti. Suddetti meccanismi, però, sono efficaci solo in presenza di un basso rilascio di dose (basso LET), mentre per alte energie (alto LET) non sono sufficienti a riparare i danni radiativi che risultano addirittura maggiori rispetto a quelli arrecati a cellule batteriche. Pertanto gli effetti dei meccanismi di riparazione incidono nell'andamento della sopravvivenza cellulare solo in un regime di basso LET, come illustrato in \hyperref[fig:survival2]{Fig. 1.21b}.
 	
 	\begin{figure}[H]
 		\centering
@@ -925,7 +923,7 @@
 	\subsubsection{Il frazionamento nel modello LQ}
 	Il modello LQ risulta particolarmente efficace nell'analizzare il frazionamento. Come analizzato in \hyperref[fig:survival_cell]{Fig. 1.22}, il grado di curvatura della \hyperref[eq:survival2]{Eq. 1.16} è definito in termini del rapporto $\frac{\alpha}{\beta}$. Tipicamente gli organi che contengono cellule che proliferano velocemente (come quelle di pelle, mucosa orale e midollo osseo), denominati early responding, mostrano risposte immediate al trattamento radioterapico e possiedono alti valori di $\frac{\alpha}{\beta}$ (pari a $7$--$10\mbox{ Gy}$) mentre tessuti contenenti cellule che si riproducono più lentamente (come quelle di cuore, polmoni e reni), chiamati late responding, risentono del trattamento radioterapico dopo scale temporali più lunghe (mesi o anni) e possiedono bassi valori di $\frac{\alpha}{\beta}$ (pari a $3$--$5\mbox{ Gy}$). Visto che le neoplasie sono proliferazioni incontrollate di cellule, i tumori appartengono alla classe degli early responding e gli si attribuisce un $\frac{\alpha}{\beta}=10\mbox{ Gy}$. Al contrario, le cellule dei tessuti sani tendono a dividersi più lentamente e, in confronto alle cellule cancerose, possiedono un valore di $\frac{\alpha}{\beta}$ minore, come mostrato in \hyperref[fig:sparing]{Fig. 1.23}.
 	
-	La curvatura della sopravvivenza cellulare assume un'importanza strategica nel frazionamento. Se una dose viene divisa in piccole frazioni il danno sub-letale provocato dalla prima esposizione verrebbe completamente riparato tra una seduta e l'altra e le cellule risponderebbero come se non fossero state mai irradiate; pertanto, dopo ogni dose rilasciata, l'andamento della sopravvivenza cellulare riproporrebbe il suo appiattimento caratteristico, come quello mostrato in \hyperref[fig:survival_cell]{Fig. 1.22}. Immaginiamo di esporre un certo volume tumorale con una dose $d$ per un numero $n$ di frazionamenti ben separati. Dalla \hyperref[eq:survival2]{Eq. 1.16} otterremmo:
+	La curvatura della sopravvivenza cellulare assume un'importanza strategica nel frazionamento. Se una dose viene divisa in piccole frazioni il danno sub-letale provocato dalla prima esposizione verrebbe completamente riparato tra una seduta e l'altra e le cellule risponderebbero come se non fossero state mai irradiate; pertanto, dopo ogni dose rilasciata, l'andamento della sopravvivenza cellulare riproporrebbe il suo appiattimento caratteristico, come quello illustrato in \hyperref[fig:survival_cell]{Fig. 1.22}. Immaginiamo di esporre un certo volume tumorale con una dose $d$ per un numero $n$ di frazionamenti ben separati. Dalla \hyperref[eq:survival2]{Eq. 1.16} otterremmo:
 	\begin{equation}
 		S=\left(e^{-\alpha d-\beta d^2}\right)^n=e^{-n\left(\alpha d+\beta d^2\right)}=e^{-\alpha D-\beta Dd}
 		\label{eq:survival3}
@@ -951,7 +949,7 @@
 	\subsection{Sezione d'urto}
 	I fenomeni di interazione radiazione-materia, in cui onde o particelle\footnote{A livello quantistico sia la materia che la radiazione possiedono una duplice natura ondulatoria e corpuscolare, regolata dal principio di complementarità di Niels Bohr ($1885$--$1962$).} variano la loro traiettoria a seguito di processi di interazione e collisione, vengono descritti dagli esperimenti di diffusione (o scattering). Senza perdita di generalità, si utilizzerà un approccio classico per esporre lo schema tipico di un esperimento di diffusione, trattando le particelle come oggetti puntiformi.
 	
-	In un esperimento di scattering un fascio collimato di particelle proiettile $a$ di velocità $\vec{v_a}$ e sezione trasversale $A$ viene inviato da un acceleratore contro un bersaglio (o target) costituito da oggetti $b$ tutti uguali tra loro e distribuiti all'interno del volume del bersaglio. Si suppone che le densità volumetriche del fascio $n_a$ e del bersaglio $n_b$ siano uniformi e costanti e che il bersaglio si presenti macroscopicamente come una lastra di spessore costante $\Delta z$ e che tutte le particelle proiettile, procedendo verso il bersaglio parallelamente alla direzione dell'asse $z$, lo colpiscano ortogonalmente (su una faccia di superficie $A$), come mostrato in \hyperref[fig:scattering]{Fig. 1.24}. Tali condizioni consentono di ricavare il numero di particelle incidenti sul bersaglio nell'unità di tempo:
+	In un esperimento di scattering un fascio collimato di particelle proiettile $a$ di velocità $\vec{v_a}$ e sezione trasversale $A$ viene inviato da un acceleratore contro un bersaglio (o target) costituito da oggetti $b$ tutti uguali tra loro e distribuiti all'interno del volume del bersaglio. Si suppone che le densità volumetriche del fascio $n_a$ e del bersaglio $n_b$ siano uniformi e costanti e che il target si presenti macroscopicamente come una lastra di spessore costante $\Delta z$ e che tutte le particelle proiettile, procedendo verso il bersaglio parallelamente alla direzione dell'asse $z$, lo colpiscano ortogonalmente (su una faccia di superficie $A$), come mostrato in \hyperref[fig:scattering]{Fig. 1.24}. Tali condizioni consentono di ricavare il numero di particelle incidenti sul target nell'unità di tempo:
 	\begin{equation}
 		\frac{dN_a}{dt}=\phi_a=n_av_aA
 		\label{eq:scattering1}
@@ -971,7 +969,7 @@
 		\label{fig:scattering}
 	\end{figure}
 	
-	Dato che ogni centro diffusore è caratterizzato da una sezione trasversale $\sigma_b$ (denominata sezione d'urto totale, indicata con dei cerchi pieni in \hyperref[fig:scattering]{Fig. 1.24}), la particella incidente effettua un'interazione con il bersaglio se la sua traiettoria interseca $\sigma_b$. Pertanto, la probabilità che una singola particella proiettile interagisca con una singola particella del bersaglio vale $\frac{sigma_b}{A}$ che, unita alle \hyperref[eq:scattering1]{Eq. 1.18} e \hyperref[eq:scattering2]{Eq. 1.19}, consente di ricavare il numero di particelle del fascio $\frac{dN}{dt}$ che, attraversando il bersaglio, interagiscono con esso nell'unità di tempo:
+	Dato che ogni centro diffusore è caratterizzato da una sezione trasversale $\sigma_b$ (denominata sezione d'urto totale, indicata con dei cerchi pieni in \hyperref[fig:scattering]{Fig. 1.24}), la particella incidente effettua un'interazione con il bersaglio se la sua traiettoria interseca $\sigma_b$. Pertanto, la probabilità che una singola particella proiettile interagisca con una singola particella del bersaglio vale $\frac{sigma_b}{A}$ che, unita alle \hyperref[eq:scattering1]{Eq. 1.18} e \hyperref[eq:scattering2]{Eq. 1.19}, consente di ricavare il numero di particelle del fascio $\frac{dN}{dt}$ che, attraversando il target, interagiscono con esso nell'unità di tempo:
 	\begin{equation}
 		\frac{dN}{dt}=\frac{dN_a}{dt}\frac{sigma_bN_b}{A}=n_an_bv_aA\sigma_b\Delta z
 		\label{eq:scattering3}
@@ -981,7 +979,7 @@
 		\frac{dsigma_b}{d\Omega}=\frac{1}{\left(n_av_a\right)\left(n_bA\Delta x\right)}\frac{d}{d\Omega}\frac{dN_{\Delta\Omega}}{dt}
 		\label{eq:scattering4}
 	\end{equation}
-	dove $\frac{dsigma_b}{d\Omega}\Delta \Omega$ rappresenta la misura della probabilità che una particella venga diffusa entro l'angolo solido $\Delta \Omega$ e $\frac{dN_{\Delta\Omega}}{dt}$ è il numero di particelle deflesse dal bersaglio entro l'angolo $\Delta \Omega$ nell'unità di tempo (si veda \hyperref[fig:solid_angle]{Fig. 1.25}). Differenziando nuovamente la \hyperref[eq:scattering2]{Eq. 1.20} si ottiene la sezione d'urto doppiamente differenziale $\frac{d^2sigma_b}{d\Omega dE}$:
+	dove $\frac{dsigma_b}{d\Omega}\Delta \Omega$ rappresenta la misura della probabilità che una particella venga diffusa entro l'angolo solido $\Delta \Omega$ e $\frac{dN_{\Delta\Omega}}{dt}$ è il numero di particelle deflesse dal target entro l'angolo $\Delta \Omega$ nell'unità di tempo (si veda \hyperref[fig:solid_angle]{Fig. 1.25}). Differenziando nuovamente la \hyperref[eq:scattering2]{Eq. 1.20} si ottiene la sezione d'urto doppiamente differenziale $\frac{d^2sigma_b}{d\Omega dE}$:
 	\begin{equation}
 		\frac{d^2sigma_b}{d\Omega dE}=\frac{1}{\left(n_av_a\right)\left(n_bA\Delta x\right)}\frac{d^2}{d\Omega dE}\frac{dN_{\Omega,\Delta E}}{dt}
 		\label{eq:scattering5}
@@ -997,7 +995,7 @@
 		\label{fig:solid_angle}
 	\end{figure}
 	
-	Riassumendo, la sezione d'urto è una quantità che misura la probabilità che una particella subisca un processo di scattering, con conseguente deflessione e eventuale perdita di energia. La sua importanza risiede nel fatto che riesce a collegare quantità microscopiche (come la sezione trasversale $\sigma_b$ della particella bersaglio) con quantità macroscopiche direttamente misurabili (come i parametri $n_a$, $n_b$, $A$, $\Delta z$ e $\frac{dN}{dt}$) (cita
+	Riassumendo, la sezione d'urto è una quantità che misura la probabilità che una particella subisca un processo di scattering, con conseguente deflessione e eventuale perdita di energia. La sua importanza risiede nel fatto che riesce a collegare quantità microscopiche (come la sezione trasversale $\sigma_b$ della particella target) con quantità macroscopiche direttamente misurabili (come i parametri $n_a$, $n_b$, $A$, $\Delta z$ e $\frac{dN}{dt}$) (cita
 	%note corso semprini fisica nucleare aa 2023-24
 	).
 	
@@ -1049,7 +1047,7 @@
 	\end{equation}
 	dove $E_\gamma$ e $\nu$ sono rispettivamente l'energia e la frequenza del fotone incidente, $h=6.626\cdot 10^{-34}\mbox{ Js}$ è la costante di Planck (cita
 	%https://physics.nist.gov/cgi-bin/cuu/Value?h|search_for=planck
-	), e $E_b$ è l'energia di legame del fotoelettrone, che corrisponde all'energia che occorre fornire all'elettrone per slegarlo dall'atomo di metallo entro cui è contenuto (infatti $E_b$ è anche chiamato lavoro di estrazione). Il fotoelettrone, avendo liberato un delle shell più interne agli atomi di metallo, genera una lacuna. Tale "posto vacante" viene successivamente riempito dagli elettroni che appartengono agli orbitali più esterni: a tale salto orbitale corrisponde una grande emissione di energia che in alcuni casi viene assorbita da altri elettroni (è il caso degli elettroni di Auger\footnote{Un elettrone di Auger, appartenendo all'orbitale più esterno dell'atomo, grazie all'energia ricevuta riesce ad essere liberato completamente.}), in altri può generare un raggio X, come mostrato in \hyperref[fig:fotoelettrico]{Fig. 1.26}.
+	), e $E_b$ è l'energia di legame del fotoelettrone, che corrisponde all'energia che occorre fornire all'elettrone per slegarlo dall'atomo di metallo entro cui è contenuto (infatti $E_b$ è anche chiamato lavoro di estrazione). Il fotoelettrone, avendo liberato un delle shell più interne agli atomi di metallo, genera una lacuna. Tale "posto vacante" viene successivamente riempito dagli elettroni che appartengono agli orbitali più esterni: a tale salto orbitale corrisponde una grande emissione di energia che in alcuni casi viene assorbita da altri elettroni (è il caso degli elettroni di Auger\footnote{Un elettrone di Auger, appartenendo all'orbitale più esterno dell'atomo, grazie all'energia ricevuta riesce ad essere liberato completamente.}), in altri può generare un raggio X, come illustrato in \hyperref[fig:fotoelettrico]{Fig. 1.26}.
 	
 	\begin{figure}[H]
 		\centering
@@ -1065,7 +1063,7 @@
 		\sigma_{fe}\propto \frac{Z^4}{E^{\frac{7}{2}}_\gamma}
 		\label{eq:sigma_fe1}
 	\end{equation}
-	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del target:
 	\begin{equation}
 		\sigma_{fe}\propto \frac{Z^5}{A}
 		\label{eq:sigma_fe2}
@@ -1100,7 +1098,7 @@
 		\sigma_{C}\propto \frac{Z}{E_\gamma}
 		\label{eq:sigma_c1}
 	\end{equation}
-	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del target:
 	\begin{equation}
 		\sigma_{C}\propto \frac{Z}{A}
 		\label{eq:sigma_c2}
@@ -1108,7 +1106,7 @@
 	Dalla \hyperref[eq:sigma_c1]{Eq. 1.31} si osserva che $\sigma_{C}$ viene attenuata linearmente all'aumentare di $E_\gamma$.
 	
 	\subsubsection{Produzione di coppia}
-	La produzione di coppia è un processo di interazione elettromagnetica in cui un fotone, dotato di sufficiente energia ($E_\gamma>2m_e=1.022\mbox{ MeV}$), trasforma tutta la sua energia in massa producendo un elettrone e un positrone secondo il diagramma di Feynman mostrato in \hyperref[fig:feynman]{Fig. 1.28}:
+	La produzione di coppia è un processo di interazione elettromagnetica in cui un fotone, dotato di sufficiente energia ($E_\gamma>2m_e=1.022\mbox{ MeV}$), trasforma tutta la sua energia in massa producendo un elettrone e un positrone secondo il diagramma di Feynman riportato in \hyperref[fig:feynman]{Fig. 1.28}:
 	\begin{figure}
 		\centering
 		\begin{tikzpicture}
@@ -1144,7 +1142,7 @@
 		\sigma_{pc}\propto \frac{Z^2}{\ln{E_\gamma}}
 		\label{eq:sigma_pc1}
 	\end{equation}
-	sia in funzione dei numeri atomico $Z$ e di massa $A$ del bersaglio:
+	sia in funzione dei numeri atomico $Z$ e di massa $A$ del target:
 	\begin{equation}
 		\sigma_{pc}\propto \frac{Z^2}{A}
 		\label{eq:sigma_pc2}
@@ -1183,9 +1181,10 @@
 		\item bremsstrahlung (o radiazione di frenamento), che avviene con il nucleo del bersaglio;
 		\item effetto Cherenkov, che avviene con gli elettroni atomici e con il nucleo del bersaglio.
 	\end{itemize}
-	L'interazione elettromagnetica delle particelle cariche con gli elettroni atomici domina rispetto alle interazioni nucleari per via delle dimensioni lineari dell'atomo e del suo nucleo. Infatti, essendo l'atomo è $10^4$ volte più grande (linearmente) del nucleo, si ha che la sezione d'urto dei processi atomici $\sigma_{atom}$ è più grande di un fattore $10^8$ rispetto alla sezione d'urto che descrive le interazioni nucleari $\sigma_{nucl}$; in particolare, i valori delle sezioni d'urto sono pari a $\sigma_{atom}=100\mbox{ Mb}$ e $\sigma_{nucl}=1\mbox{ b}$. A causa del grande valore di $\sigma_{atom}$ le particelle cariche effettuano moltissime collisioni con gli elettroni atomici, che renderebbe vana una trattazione analitica basata sul calcolo delle sezioni d'urto. Si procede quindi con un approccio energetico in cui si analizza la quantità di energia ceduta dalle particelle cariche durante il loro moto all'interno della materia.
+	L'interazione elettromagnetica delle particelle cariche con gli elettroni atomici domina sia rispetto alle interazioni nucleari sia rispetto all'interazione elettromagnetica con in nuclei per via delle dimensioni lineari dell'atomo e del suo nucleo. Infatti, essendo l'atomo $10^4$ volte più grande (linearmente) del nucleo, si ha che la sezione d'urto dei processi atomici $\sigma_{atom}$ è più grande di un fattore $10^8$ rispetto alla sezione d'urto che descrive le interazioni nucleari $\sigma_{nucl}$; in particolare, i valori delle sezioni d'urto sono $\sigma_{atom}=100\mbox{ Mb}$ e $\sigma_{nucl}=1\mbox{ b}$. A causa del grande valore di $\sigma_{atom}$ le particelle cariche effettuano moltissime collisioni con gli elettroni atomici, che renderebbe vana una trattazione analitica basata sul calcolo delle sezioni d'urto. Si procede quindi con un approccio energetico in cui si analizza la quantità di energia ceduta dalle particelle cariche durante il loro moto all'interno della materia.
 	
-	Quando una particella carica si muove in un mezzo materiale causa processi di ionizzazione dei suoi atomi dovuti alla forza che esercita sui loro elettroni (cita
+	\subsubsection{Bethe-Bloch}\label{par:bethe_bloch}
+	Quando una particella carica si muove in un mezzo materiale genera processi di ionizzazione dei suoi atomi dovuti alla forza che esercita sui loro elettroni (cita
 	%christoduides libro relatività, capitolo eletromagnetismo
 	). Il tasso di energia media persa\footnote{A causa degli eventi di ionizzazione.} per unità di lunghezza lungo il percorso da una particella carica è dato dalla formula relativistica di Bethe-Bloch (o del potere frenante), riportata in \hyperref[eq:bethe_bloch]{Eq. 1.35}:
 	\begin{equation}
@@ -1195,7 +1194,7 @@
 		\end{split}
 		\label{eq:bethe_bloch}
 	\end{equation}
-	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3}; si noti che il segno negativo in $\left\langle-\frac{dE}{dx} \right\rangle$ rappresenta perdite di energia. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) (cita
+	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3}; si notino sia il segno negativo in $\left\langle-\frac{dE}{dx} \right\rangle$ (che rappresenta perdite di energia) sia l'andamento quadratico rispetto al numero atomico delle particelle del fascio $z$. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) (cita
 	%https://indico.cern.ch/event/387976/attachments/1124401/1605557/daniela_l2.pdf
 	,
 	%https://it.wikipedia.org/wiki/Formula_di_Bethe
@@ -1244,45 +1243,127 @@
 				\hline
 			\end{tabular}
 		\end{minipage}
-		\caption{Tabella riassuntiva dei parametri della Bethe-Bloch suddivisi in proprietà del mezzo, costanti, caratteristiche del fascio e correzioni.}
+		\caption{Tabella riassuntiva dei parametri della Bethe-Bloch suddivisi in proprietà del mezzo, costanti, caratteristiche del fascio e correzioni. Solitamente si ha $Z/A$$\approx0.42$--$0.5$ e $I\approx19$--$820\mbox{ eV}$.}
 		\label{tab:bethe_bloch}
 	\end{table}
 	
-	\`E possibile suddividere l'andamento della Bethe-Bloch (mostrato in \hyperref[fig:bethe_bloch]{Fig. 1.32}) in varie regioni.
+	\`E possibile suddividere l'andamento della Bethe-Bloch (mostrato in \hyperref[fig:bethe_bloch]{Fig. 1.32}) in varie regioni (cita
+	%christoduides libro relatività, capitolo eletromagnetismo
+	):
 	\begin{itemize}
+		\item Per energie molto basse l'energia cinetica della particella incidente viene corretta dal fattore $C$ in \hyperref[eq:bethe_bloch]{Eq. 1.35} che include effetti energetici dovuti al moto dell'elettrone attorno al nucleo. In questa regione ci sono anche altre correzioni minori come l'effetto Barkas che tiene conto degli effetti coulombiani causati dalla particella proiettile.
 		\item Regione classica: per basse energie ($\beta\gamma<1$)\footnote{$\gamma=1/\sqrt{1-\beta^2}$ è denominato fattore di Lorentz.} il potere frenante diminuisce come $\frac{1}{\beta^2}$ in quanto le particelle cariche più veloci passano meno tempo nelle vicinanze degli atomi della materia, pertanto generano meno processi di ionizzazione.
 		\item Regione di minima ionizzazione: per energie più alte ($\beta\gamma\approx3$) si osserva un minimo di ionizzazione dipendente da $\beta$ e (quasi) indipendente dalla massa della particella carica.
-		\item Regione relativistica: ad alte energie ($\beta\gamma>4$) si osserva una risalita logaritmica del potere frenante dovuta alla concentrazione delle linee di campo elettrico nella direzione ortogonale alla sua velocità, un effetto puramente relativistico espresso dal termine logaritmico in \hyperref[eq:bethe_bloch]{Eq. 1.35} (cita
-		%christoduides libro relatività, capitolo eletromagnetismo
-		).
+		\item Regione relativistica: ad alte energie ($\beta\gamma>4$) si osserva una risalita logaritmica del potere frenante dovuta alla concentrazione delle linee di campo elettrico nella direzione ortogonale alla sua velocità, un effetto puramente relativistico espresso dal termine logaritmico in \hyperref[eq:bethe_bloch]{Eq. 1.35}.
+		\item Per energie molto alte la concentrazione delle linee di campo elettrico induce eventi di ionizzazione anche su atomi molto distanti dalla sua traiettoria; ciò induce una polarizzazione negli atomi più distanti che provoca un effetto di schermatura del campo elettrico stesso, inducendo un troncamento nella salita relativistica definito effetto densità. L'effetto di densità è controllato dal fattore $\delta$ in \hyperref[eq:bethe_bloch]{Eq. 1.35}.
 	\end{itemize}
-	
-	Suddette regioni non includono l'andamento della Bethe-Bloch per energie molto alte ed energie molto basse
-	+ barkas effect
-	
+
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{bethe_bloch.png}
-		\caption{Valore assoluto del potere frenante per $\mu^+$ in rame in funzione di $\beta\gamma=p/Mc$ dove $p$ è il modulo della quantità di moto relativistica del $\mu^+$. Le bande verticali delimitano varie regioni di approssimazione dovute a successivi miglioramenti della Bethe-Bloch (cita
+		\includegraphics[width=0.9\linewidth]{bethe_bloch.pdf}
+		\caption{Valore assoluto del potere frenante per $\mu^+$ in rame in funzione di $\beta\gamma=p/Mc$ dove $p$ è il modulo della quantità di moto relativistica del $\mu^+$. Le bande verticali delimitano varie regioni di approssimazione discusse nel testo. In particolare, la linea verde tratteggiata indicata con $\mu^+$ tiene conto dell'effetto Barkas mentre la linea rossa tratteggiata rappresenta l'azione dell'effetto densità (cita
 			%https://pdg.lbl.gov/2022/reviews/rpp2022-rev-passage-particles-matter.pdf
 			).}
 		\label{fig:bethe_bloch}
 	\end{figure}
 	
+	In \hyperref[fig:adroterapic_range]{Fig. 1.33} viene riportato il potere frenante di un protone per energie molto basse corrispondenti al range utilizzato in adroterapia. Entrambe le \hyperref[fig:bethe_bloch]{Fig. 1.32} e \hyperref[fig:adroterapic_range]{Fig. 1.33} mostrano che il maggior rilascio di energia della particella carica si ha per basse velocità. In altre parole, le particelle cariche rilasciano la quasi totalità della loro energia al termine del loro percorso in uno spazio lineare piuttosto ristretto; è proprio tale peculiarità ha incoraggiato il loro impiego in adroterapia. A tale scopo si definisce il range $R$, ossia la profondità in cui la metà delle particelle cariche penetrate si fermano, definito come:
+	\begin{equation}
+		R(E_{tot})=\int_{m_0c^2}^{E_{tot}}\frac{dE}{\left(\frac{dE}{dx}\right)}
+		\label{eq:range}
+	\end{equation}
+	dove $m_0$ e $E_{tot}$ sono rispettivamente la massa a riposo e l'energia totale della particella incidente e gli altri parametri sono costanti descritte in \hyperref[tab:bethe_bloch]{Tab. 1.3}. Il range si ottiene integrando il potere frenante fornito dalla \hyperref[eq:bethe_bloch]{Eq. 1.35} su tutto il range energetico rilasciato, calcolo molto complicato vista la complessità della Bethe-Bloch. In generale è possibile approssimare la \hyperref[eq:range]{Eq. 1.36} con una relazione molto utile in adroterapia:
+	\begin{equation}
+		R(E_{tot})=\alpha E_{tot}^p
+		\label{eq:range_approx}
+	\end{equation}
+	dove $\alpha$ e $p$ sono parametri dipendenti rispettivamente dal bersaglio e dall'energia. Essendo la Bethe-Bloch una legge statistica, le particelle appartenenti a un certo fascio possono potrebbero possedere valori di range caratterizzati da piccole fluttuazioni, conosciute come "range straggling"; ciò risulterebbe problematico in adroterapia nel momento in cui si volessero risparmiare delle regioni tissutali sane nelle vicinanze di un tumore. \`E possibile ricavare che l'incidenza delle fluttuazioni nel range è piuttosto ridotta: ad esempio, irradiando un protone a $200\mbox{ MeV}$ in acqua si ha $R=25.8\mbox{ cm}$ con fluttuazioni di $2.5\mbox{ mm}$ (pari all $1\%$ circa).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{adroterapic_range.png}
+		\caption{Andamento del potere frenante e del range in funzione dell'energia di un protone in acqua (cita
+			%https://www.researchgate.net/figure/Mass-stopping-power-S-versus-ion-energy-E-for-protons-in-liquid-water-The_fig2_274087651
+			).}
+		\label{fig:adroterapic_range}
+	\end{figure}
+	
+	\subsubsection{Scattering Rutherford, Bremsstrahlung ed effetto Cherenkov}\label{par:scattering_Rutherford}
+	Nello scattering Rutherford una particella carica viene deflessa a causa delle interazioni elettromagnetiche multiple indotte dai campi coulombiani dei nuclei del bersaglio. Per via dell'elasticità del processo, ciò che contraddistingue lo scattering Rutherford non è la variazione di energia della particella incidente ma il suo angolo di deflessione a valle dei processi di diffusione multipli, come illustrato in \hyperref[fig:rutherford_scattering]{Fig. 1.34}. Pertanto se l'interazione delle particelle cariche con gli elettroni portava a un range straggling longitudinale\footnote{Per longitudinale si intende parallelo alla direzione del fascio incidente.}, l'interazione delle stesse con i nuclei atomici induce fluttuazioni laterali da considerare nel TP del paziente. Riportando l'esempio dell'irradiazione di un protone a $200\mbox{ MeV}$ in acqua, si hanno fluttuazioni laterali di di $5\mbox{ mm}$ (pari all $2\%$ circa).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{rutherford_scattering.pdf}
+		\caption{Schema dello scattering Rutherford di una particella carica in un mezzo di spessore $L$ (cita
+			%http://www2.ing.unipi.it/~a008137/fis_3_materialedidattico/2017_materiale_didattico/GB-11.1-scattering%20multiplo.pdf
+			).}
+		\label{fig:rutherford_scattering}
+	\end{figure}
+
+	Per determinare la probabilità di interazione per scattering Rutherford si utilizza la sezione d'urto differenziale del processo, riportata in \hyperref[eq:rutherford_scattering]{Eq. 1.38}:
+	\begin{equation}
+		\frac{d\sigma}{d\Omega}\left(\frac{1}{4\pi\epsilon_0}\frac{Z_1Z_2e^2}{4E_0}\right)^2\frac{1}{\sin^4{\frac{\theta}{2}}}
+		\label{eq:rutherford_scattering}
+	\end{equation}
+	dove $\theta$ è l'angolo di deflessione della particella incidente, $E_0$ è la sua energia, $Z_1$ e $Z_2$ sono rispettivamente il numero atomico della particella e del bersaglio e gli altri parametri sono costanti descritte in \hyperref[tab:bethe_bloch]{Tab. 1.3}.
+	
+	I contributi apportati dalla Bremsstrahlung ("radiazione di frenamento")\footnote{Nella Bremsstrahlung le particelle cariche decelerano a causa dell'interazione con il campo elettrico coulombiano del nucleo, perdendo energia ed emettendo una distribuzione continua di radiazione (cita
+		%note dal corso di fisica biomedica a.a. 2022-2023
+		).} e dall'effetto Cherenkov\footnote{Quando una particella carica si muove in un mezzo con una velocità maggiore della velocità della luce in quel mezzo emette radiazione elettromagnetica} risultano trascurabili rispetto alle interazioni descritte nei paragrafi precedenti. In particolare, la Bremsstrahlung risulta trascurabile per le particelle pesanti (come ioni, particelle $\alpha$ e ioni pesanti) in quanto a basse energie $\left(-\frac{dE}{dx}\right)_{Brem}\propto\frac{Z^2}{m^2}$ (dove $Z$ è il numero atomico del target e $m$ è la massa delle particelle proiettile) e l'effetto Cherenkov risulta trascurabile in quanto si verifica per indici di rifrazione del bersaglio $n>0.75$, mentre l'indice di rifrazione del corpo umano (paragonabile a quello dell'acqua) è $n_{acqua}=1.33$.
+	
+	Riassumendo, le particelle cariche effettuano interazioni elettromagnetiche principalmente con gli atomi elettronici del bersaglio nelle modalità descritte dalla \hyperref[par:bethe_bloch]{Bethe-Bloch} e, in secondo luogo, con i nuclei degli atomi del target tramite \hyperref[par:scattering_Rutherford]{scattering Rutherford}. Come già anticipato nell'analisi della \hyperref[fig:bethe_bloch]{Fig. 1.32}, le particelle cariche perdono la maggior parte della loro energia a bassa velocità, negli istanti di tempo precedenti al loro arresto all'interno del materiale; ciò genera il già citato picco di Bragg, a cui corrisponde un massimo dell'energia rilasciata durante la penetrazione nel bersaglio. Mentre il profilo di dose di particelle cariche pesanti come protoni e ioni carbonio è caratterizzato dal BP, ciò non avviene nel caso dei fotoni (la cui energia viene rilasciata tramite un'attenuazione esponenziale) a causa dei suoi differenti processi di interazione con la materia. Come evidenziato in \hyperref[fig:photon]{Fig. 1.17}, la presenza del BP nel profilo di dose permette un migliore controllo dell'energia depositata nei tessuti del corpo umano, garantendo un'efficienza migliore nella cura dei tumori.
+	
+	La forte dipendenza della posizione del picco di Bragg dall'energia del fascio incidente (si veda \hyperref[fig:bragg_peak_energies]{Fig. 1.35a}) suggerisce che una corretta scelta di quest'ultima possa far combaciare il volume tumorale presente nel tessuto del paziente con il picco di Bragg, in modo che il maggiore rilascio di dose avvenga nella regione cancerosa. Talvolta la larghezza del BP (pari a $2.5\mbox{ mm}$ per un fascio di protoni a $200\mbox{ MeV}$ in acqua) non è sufficiente a ricoprire l'intero volume tumorale,\footnote{In generale un solo BP non è in grado di ricoprire la struttura tridimensionale di un tumore.} per questo si procede con il SOBP (Spread Out Bragg Peak), tecnica in cui si forniscono più fasci di particelle a diverse energie per generare un picco di Bragg "allargato" (si veda \hyperref[fig:sobp]{Fig. 1.35b}). Chiaramente l'inviluppo degli effetti si ha non solo in corrispondenza della regione tumorale ma anche nel canale di ingresso o subito dopo il BP; nonostante ciò, dalla \hyperref[fig:critical_organ]{Fig. 1.35c} si osserva come l'adroterapia consenta un risparmio maggiore dei tessuti sani rispetto alla radioterapia convenzionale.
+	
+%	\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.9\linewidth]{bragg_peak_energies.jpg}
+%		\caption{La curva nera individua il rilascio di energia in funzione della profondità per fasci protonici la cui energia varia da $60\mbox{ MeV}$ a $200\mbox{ MeV}$ (cita
+%			%Literature Review: Characterisation of proton Bragg peak using novel scintillating fibre design for use in proton beam therapy facility (LhARA) Anthea E. MacIntosh-LaRocque Student’s CID: 01507986 Project code: HEPH-Long-1 Supervisor: Prof. Kenneth Long Assessor: Dr. Jaroslaw Pasternak	Word count: 2492
+%			).}
+%		\label{fig:bragg_peak_energies}
+%	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{bragg_peak_energies.jpg}
+			\caption{Andamento del rilascio di dose di fasci protonici in funzione della profondità al variare dell'energia ($60$--$200\mbox{ MeV}$) (cita
+				%Literature Review: Characterisation of proton Bragg peak using novel scintillating fibre design for use in proton beam therapy facility (LhARA) Anthea E. MacIntosh-LaRocque Student’s CID: 01507986 Project code: HEPH-Long-1 Supervisor: Prof. Kenneth Long Assessor: Dr. Jaroslaw Pasternak	Word count: 2492
+				).}
+			\label{fig:bragg_peak_energies}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{sobp.pdf}
+			\caption{Crazione di SOBP per un fascio singolo di protoni. La curva spessa rappresenta la dose rilasciata nel target (individuato dal cerchio grigio), ottenuta dalla somma dei singoli BP a differenti energie indicati con una linea tratteggiata (cita
+				%Walter and Miller's Textbook of Radiotherapy- Radiation Physics Therapy and Oncology
+				).}
+			\label{fig:sobp}
+		\end{subfigure}
+		\par
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{critical_organ.jpg}
+			\caption{Profili di dose di raggi X, protoni e atomi di carbonio in funzione della profondità. La presenza del BP consente di risparmiare l'organo a rischio, colpito invece dal fascio di raggi X (cita
+				%https://fisica.unipv.it/Eventi/Incontri-fisica-moderna/2017-11-28-Tamborini-slides.pdf
+				).}
+			\label{fig:critical_organ}
+		\end{subfigure}
+		\caption{Proprietà e applicazioni del picco di Bragg.}
+	\end{figure}
+	
+	Tornando alla \hyperref[fig:photon]{Fig. 1.17} è evidente che il rilascio di energia per il fascio di atomi di carbonio ($C$), a differenza del caso dei protoni ($p$), prosegue anche dopo il BP. Osservando l'andamento quadratico $\propto\frac{z^2}{\beta^2}$ della \hyperref[eq:bethe_bloch]{Eq. 1.35}, pur essendo $z_p<z_C$, si ha che $\frac{dE_p}{dx}>\frac{dE_C}{dx}$ in quanto le energie cinetiche dei carboni sono maggiori di quelle dei protoni.\footnote{Solitamente le energie cinetiche $K$ sono $K_p=250 \mbox{ MeV}$ e $K_C=4800\mbox{ MeV}=12\mbox{ u}\cdot400\mbox{ MeV/u}$.} In effetti il profilo di dose rilasciato dai fasci di $C$ è maggiore di quello dei $p$, ma ciò non spiegherebbe comunque il rilascio di energia dopo il BP. Tale effetto si può comprendere solo analizzando le interazioni nucleari delle due particelle.
+	
+	\subsection{Interazioni nucleari}
 	
 	
-%	bethe bloch:
-%	descrive la perdita di energia lungo il cammino, dx è il cammino della particella. il meno sta per spiegare il fatto che se va avanti la particella perde energia.
-%	- Z maiuscolo \rho A è relativo al bersaglio (il corpo umano). Z/A nel nostro casoè un numero vicino a 0.5, visto che il numero di protoni è sempre circa la metà di quello dei nucleoni; rho è la densità del materiale.
-%	- le quantità blu dipendono dal nosto fascio, z sarebbe la carica del fascio, beta è la velocità del fascio. (dipendenze quadratiche -> molto importanti.). NOTA BENE: quando la velocità è piccola, ossia l'energia cinetica è piccola, dE/dx è piccolo; vi sono centinaua di interazioni che la particella fa, in ciascuna delle quali la particella rilascia energia poco per volta, fin quando alla fine del cammino c'è il massimo del rlascio di energia. Inoltre vi è anche un termine col logaritmo è legato al potenziale di ionizzazione. poi ci sono dei termini di correzione, quelli per alte e base energie. siamo legati molto al coefficiente C, quello importante per basse energie.
-%	
-%	questa è una legge statistica (vedi relaitivtà, è un dE/dx medio)
-%	esempio: 1 mld di particelle protoniche non si generano tutte allo stesso punto, ma ci sarà una variazione statistica. abbiamo una distribuzione di landau, una gaussiana con una coda (vedi slides).
-%	
-%	la distribuzione della bethe bloch (con segno invertito) plottata rispetto all'energia. per energia molto alta, dE/dx è circa costante, (il range rosso è legato al nostro caso, quello di bassa energia). quando l'energia inizia a calare, abbiamo una salita che va cmoe 1/beta^2. apparenrtemente c'è un problema: quando la particella del fascio ha energia 0, ci aspettiamo che anche il de/dx sia 0, cosa che non sembra accadere in questo caso guardando il grafico. proprio per questo motivo vanno inserite delle correzioni (shell correction col fattore C): la formula iniziale senza il fattore di correzione è stata scritta pensando al fatto che quando il protone va a incidere sull'elettrone, quest'ultimo stia fermo; ma il problema è che se l'energia cinetica della particella incidente è molto bassa, non si può più trascurare il moto dell'elettrone attorno al nucleo, per questo motivo viene agginuto il termine di correzione C.
-%	
-%	- poi dalle slide si vede che aumentando lo z aumenta il dE/dx perché va come z^2.
-%	
+%	ci sono differenze tra protoni e carbonio (la BB va come Z^2); la differenza maggiore forse risiede quando si va in profondità: il carbnio ha energia sufficiente per andare oltre il picco di Bragg, cosa che non accade nei protoni. Non c'è effetto che è possibile spiegare con le consocenze che abbiamo studiato fin ora: risiedono nelle interazioni nucleari. quello che succede è che quando entriamo con un fascio, abbiamo che il fascio può fare interazione nucleare come a pag 51. le interazioni possono spaccare il nucleo, ma possono spaccare il protone? no, almeno non a queste energie. possiamo spaccare solo il nucleo. cosa succede se lo spacchiamo? a queste energie si conserva il numero di neutroni e il numero di protoni. spaccando il carbonio (ad esempio) che cosa otteniamo? altri nuclei che hanno una carica inferiore. se abbiamo altri  nuclei con carica inferiore (z minore) al nostro carbonio -> abbiamo un minore dE/dX secondo la bethe bloch, ossia questi prodotti perdono meno energia -> significa che questi prodotti vanno più avanti. c'è un però: il carbonio e l'idrogeno, ossia i bersagli più comuni del nostro corpo, che possiamo considerare fermi, sono molto più grandi del protone che ci sbatte contro, per questo l'energia acquisita dal bersaglio è pochissima se non nulla, per questo nel caso in cui il proiettile è il protone, abbiamo che l'energia rilasciata dopo la BB è sostanzialmente nulla. Cosa diversa avviene nel caso in cui il proiettile è un carbonio. se si spacca, si creano nuclei più piccoli con z^2 minore, e quindi capaci di disperdere meno energia (questo come prima); laa differenza qui sta nel fatto che la frammentazione del proiettile fa si che i frammenti vengono prodotti alla stessa beta del fascio, circa, quindi la loro corsa non ferma, anche se magari è rallentata dal fatto che z dei prodotti è comunque minore di quello dei reagenti. in sostanza, i nuclei del corpo umano, una volta spaccati, non fanno strada, a differenza dei frammenti dei proiettili.
+%		
+%		pag 39: il grafico nero rappresenta i dati sperimentali con fascio di carbonio a 400 MeV. il picco si ha attorno a 27 cm. man mano che il fascio a carbonio entra, le partielle del fascio diminuiscono perché il carbonio va incontro a frammentazione, quindi sostanzialmente è come se il fascio si stesse trasformando in frammenti diversi dalle particelle primarie iniziali (carbonio). l'oggetto in nero è la soma delle due curve rossa e blu. i frammenti secondari sono quelli che vanno oltre il punto che avevamo stabilito per il carbonio. questo è un problema.
+%		se la bethe bloch va come z^2, perché non prendo ferro, piombo? perché le reazioni nucleari diventano predominanti e vi sarebbe un rilascio di energia troppo eccessivo a basse profondità tanta energia all'inizio. si pensa che oltre l'ossigeno non ha più senso andare.
 %	
 	
 	
