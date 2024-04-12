@@ -157,7 +157,7 @@
 	\end{titlepage}
 	\newpage
 	\newgeometry{top=4cm,bottom=4cm,left=3cm,right=3cm}
-	\doublespacing % Also singlespacing, onehalfspacing 
+	\onehalfspacing % Also singlespacing, doublespacing 
 	\chapter*{Sommario (TBD)}
 		Questo è l'inizio del sommario.
 	\newpage
@@ -221,7 +221,7 @@
 	%rivista asimmetrie, DOI 10.23801/asimmetrie.2023.35.03
 	). Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto differenti, i cui dettagli verranno evidenziati nel prosieguo. Mentre un fascio radioterapico rilascia la dose in una regione piuttosto ampia, aumentando il rischio di distruggere cellule sane situate prima e dopo il tumore, le particelle adroniche penetrano nei tessuti in grande profondità irradiando una grande quantità di energia in uno spazio molto limitato attraverso il caratteristico picco di Bragg (BP, Bragg Peak). Pertanto, visto che l'adroterapia permette di definire in modo molto più preciso la regione da irradiare (cita
 	%https://web.infn.it/foot/
-	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali situate in profondità, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
+	), il suo obiettivo non è solo quello di distruggere più efficacemente porzioni di cellule tumorali situate in profondità attraverso una migliore concentrazione della dose rilasciata, ma anche quello di minimizzare i danni a carico dei tessuti sani circostanti (cita
 	%https://fondazionecnao.it/adroterapia/cos-e-l-adroterapia
 	), al fine di migliorare la qualità della vita del paziente.
 	
@@ -234,7 +234,7 @@
 		\label{fig:simulation}
 	\end{figure}
 	
-	Sebbene l'adroterapia sia complessivamente più efficace rispetto alla radioterapia nella distruzione di cellule tumorali e nella salvaguardia dei tessuti sani, è un trattamento relativamente recente (si veda \hyperref[storia_adroterapia]{Sez. ??}) che ha bisogno, tra le varie e complesse strutture, di acceleratori di particelle; ciò rende l'adroterapia meno sviluppata e più costosa della radioterapia. Inoltre, oggi non esiste una teoria analitica che sia in grado di spiegare i processi nucleari che intercorrono tra le particelle adroniche e i nuclei del corpo umano (cita
+	Sebbene l'adroterapia sia complessivamente più efficace rispetto alla radioterapia nella distruzione di cellule tumorali e nella salvaguardia dei tessuti sani, è un trattamento relativamente recente (si veda \hyperref[storia_adroterapia]{Sez. ??}) che ha bisogno, tra le varie e complesse strutture, di acceleratori di particelle (il cui costo varia tra $15$--$250$ milioni di euro, molto di più della strumentazione radioterapica il cui costo generalmente non supera i $10$ milioni di euro); ciò rende l'adroterapia meno sviluppata e più costosa della radioterapia. Inoltre, oggi non esiste una teoria analitica che sia in grado di spiegare i processi nucleari che intercorrono tra le particelle adroniche e i nuclei del corpo umano (cita
 	%FOOT CDR
 	), quindi, prima di poter applicare trattamenti medici efficaci e sicuri, si rendono necessarie numerosissime misure sperimentali (una buona parte delle quali sono tuttora fornite dall'esperimento FOOT) in grado di colmare tali lacune (cita
 	%https://web.infn.it/foot/
@@ -713,7 +713,7 @@
 	
 	In \hyperref[fig:proton_carbon_let]{Fig. 1.15} si nota che nel canale di ingresso, che corrisponde alla prima parte della penetrazione dove il rilascio di dose è minore, i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $90 \mbox{ nm}$ (insufficiente a colpire la doppia catena del DNA, il cui diametro è di $2 \mbox{ nm}$) e ogni $4 \mbox{ nm}$ (sufficiente a generare SSB), mentre in corrispondenza del BP i protoni e gli ioni carbonio effettuano un danno rispettivamente ogni $4 \mbox{ nm}$ e ogni $0.3 \mbox{ nm}$ (sufficienti a generare rispettivamente SSB e DSB). Pertanto gli ioni carbonio sono più dannosi dei protoni in prossimità del BP, ma nel canale di ingresso causano molti più danni dei protoni; tale discordanza va tenuta conto in fase di TP affinché si selezioni il fascio adroterapico più adeguato alle specificità tessutali del paziente.
 	
-	\subsubsection{Relative Biological Effectiveness}
+	\subsubsection{Relative Biological Effectiveness}\label{par:rbe}
 	La Relative Biological Effectiveness (RBE) di una radiazione ionizzante $R$ è un numero puro dato dal rapporto tra la dose $D_\gamma$ rilasciata dai raggi $\gamma$ e la dose $D_R$ rilasciata da $R$ al fine di ottenere lo stesso effetto biologico, fissato il tasso di sopravvivenza delle cellule $S$:
 	\begin{equation}
 		RBE=\frac{D^S_\gamma}{D^S_R}
@@ -789,7 +789,7 @@
 	%F. Tommasino and M. Durante, “Proton radiobiology,” Cancers, vol. 7, no. 1, pp. 353–381, 2015.
 	) si propone che l'aumento dell' RBE protonico sia causato dalle particelle prodotte nella frammentazione del target\footnote{In fisica nucleare e subnucleare il target (o targhetta) è una porzione di materia che funge da bersaglio di un fascio di particelle inviato per studiare la materia, il fascio e le loro interazioni (cita
 		%https://www.treccani.it/enciclopedia/target/
-		).}: nell'attraversare il paziente, le interazioni nucleari che intercorrono tra il fascio protonico e i tessuti del paziente stesso generano dei frammenti, particelle secondarie caratterizzate da un corto raggio ($10$--$100\mu\mbox{ m}$), alto LET e conseguentemente alto RBE. Uno degli obiettivi primari dell'esperimento FOOT (si veda \hyperref[ref a capitolo 2]{?ref a capitolo 2?}) è proprio quello di migliorare l'accuratezza dell'RBE protonico a partire da misure di sezioni d'urto differenziali, energie e direzioni dei frammenti; conoscere minuziosamente tali grandezze porterebbe a valutazioni più precise degli effetti biologici protonterapici che ridurrebbero i margini di errore in fase di TP.
+		).}: nell'attraversare il paziente, le interazioni nucleari che intercorrono tra il fascio protonico e i tessuti del paziente stesso generano dei frammenti, particelle secondarie caratterizzate da un corto raggio ($10$--$100\mu\mbox{ m}$), alto LET e conseguentemente alto RBE. Uno degli obiettivi primari dell'esperimento FOOT (si veda \hyperref[ref a capitolo 2]{?ref a capitolo 2?}) è proprio quello di migliorare l'accuratezza dell'RBE protonico (in funzione di profondità e tipo di tessuto) a partire da misure di sezioni d'urto differenziali, energie e direzioni dei frammenti; conoscere minuziosamente tali grandezze porterebbe a valutazioni più precise degli effetti biologici protonterapici che ridurrebbero i margini di errore in fase di TP.
 		
 	Nel corso del tempo molti studi si sono incentrati sul legame tra RBE e LET, fortemente dipendente dalla natura del materiale biologico e dalla scelta dell'endpoint utilizzato per definire l'efficacia radioterapica. Pur fissando tali parametri, alcuni risultati mostrano che radiazioni differenti aventi stessi LET possiedono diversi RBE (cita
 	%International Commission on Radiation Units and Measurements (1970). Linear Energy Transfer. Washington D.C. doi:10.1093/jicru/os9.1.Report16. ISBN 978-0913394090. ICRU report 16.
@@ -1314,16 +1314,7 @@
 	Riassumendo, le particelle cariche effettuano interazioni elettromagnetiche principalmente con gli atomi elettronici del bersaglio nelle modalità descritte dalla \hyperref[par:bethe_bloch]{Bethe-Bloch} e, in secondo luogo, con i nuclei degli atomi del target tramite \hyperref[par:scattering_Rutherford]{scattering Rutherford}. Come già anticipato nell'analisi della \hyperref[fig:bethe_bloch]{Fig. 1.32}, le particelle cariche perdono la maggior parte della loro energia a bassa velocità, negli istanti di tempo precedenti al loro arresto all'interno del materiale; ciò genera il già citato picco di Bragg, a cui corrisponde un massimo dell'energia rilasciata durante la penetrazione nel bersaglio. Mentre il profilo di dose di particelle cariche pesanti come protoni e ioni carbonio è caratterizzato dal BP, ciò non avviene nel caso dei fotoni (la cui energia viene rilasciata tramite un'attenuazione esponenziale) a causa dei suoi differenti processi di interazione con la materia. Come evidenziato in \hyperref[fig:photon]{Fig. 1.17}, la presenza del BP nel profilo di dose permette un migliore controllo dell'energia depositata nei tessuti del corpo umano, garantendo un'efficienza migliore nella cura dei tumori.
 	
 	La forte dipendenza della posizione del picco di Bragg dall'energia del fascio incidente (si veda \hyperref[fig:bragg_peak_energies]{Fig. 1.35a}) suggerisce che una corretta scelta di quest'ultima possa far combaciare il volume tumorale presente nel tessuto del paziente con il picco di Bragg, in modo che il maggiore rilascio di dose avvenga nella regione cancerosa. Talvolta la larghezza del BP (pari a $2.5\mbox{ mm}$ per un fascio di protoni a $200\mbox{ MeV}$ in acqua) non è sufficiente a ricoprire l'intero volume tumorale,\footnote{In generale un solo BP non è in grado di ricoprire la struttura tridimensionale di un tumore.} per questo si procede con il SOBP (Spread Out Bragg Peak), tecnica in cui si forniscono più fasci di particelle a diverse energie per generare un picco di Bragg "allargato" (si veda \hyperref[fig:sobp]{Fig. 1.35b}). Chiaramente l'inviluppo degli effetti si ha non solo in corrispondenza della regione tumorale ma anche nel canale di ingresso o subito dopo il BP; nonostante ciò, dalla \hyperref[fig:critical_organ]{Fig. 1.35c} si osserva come l'adroterapia consenta un risparmio maggiore dei tessuti sani rispetto alla radioterapia convenzionale.
-	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[width=0.9\linewidth]{bragg_peak_energies.jpg}
-%		\caption{La curva nera individua il rilascio di energia in funzione della profondità per fasci protonici la cui energia varia da $60\mbox{ MeV}$ a $200\mbox{ MeV}$ (cita
-%			%Literature Review: Characterisation of proton Bragg peak using novel scintillating fibre design for use in proton beam therapy facility (LhARA) Anthea E. MacIntosh-LaRocque Student’s CID: 01507986 Project code: HEPH-Long-1 Supervisor: Prof. Kenneth Long Assessor: Dr. Jaroslaw Pasternak	Word count: 2492
-%			).}
-%		\label{fig:bragg_peak_energies}
-%	\end{figure}
-	
+		
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
@@ -1355,16 +1346,100 @@
 		\caption{Proprietà e applicazioni del picco di Bragg.}
 	\end{figure}
 	
-	Tornando alla \hyperref[fig:photon]{Fig. 1.17} è evidente che il rilascio di energia per il fascio di atomi di carbonio ($C$), a differenza del caso dei protoni ($p$), prosegue anche dopo il BP. Osservando l'andamento quadratico $\propto\frac{z^2}{\beta^2}$ della \hyperref[eq:bethe_bloch]{Eq. 1.35}, pur essendo $z_p<z_C$, si ha che $\frac{dE_p}{dx}>\frac{dE_C}{dx}$ in quanto le energie cinetiche dei carboni sono maggiori di quelle dei protoni.\footnote{Solitamente le energie cinetiche $K$ sono $K_p=250 \mbox{ MeV}$ e $K_C=4800\mbox{ MeV}=12\mbox{ u}\cdot400\mbox{ MeV/u}$.} In effetti il profilo di dose rilasciato dai fasci di $C$ è maggiore di quello dei $p$, ma ciò non spiegherebbe comunque il rilascio di energia dopo il BP. Tale effetto si può comprendere solo analizzando le interazioni nucleari delle due particelle.
+	Tornando alla \hyperref[fig:photon]{Fig. 1.17} è evidente che il rilascio di energia per il fascio di atomi di carbonio (\ce{C}), a differenza del caso dei protoni (\ce{p}), prosegue anche dopo il BP.\footnote{Un rilascio energetico dopo il BP potrebbe ledere regioni sane situate dopo il volume tumorale, pertanto è necessario comprendere la sua cagione.} Osservando l'andamento quadratico $\propto\frac{z^2}{\beta^2}$ della \hyperref[eq:bethe_bloch]{Eq. 1.35}, pur essendo $z_p<z_C$, si ha che $\frac{dE_p}{dx}>\frac{dE_C}{dx}$ in quanto le energie cinetiche dei carboni sono maggiori di quelle dei protoni.\footnote{Solitamente le energie cinetiche $K$ sono $K_p=250 \mbox{ MeV}$ e $K_C=4800\mbox{ MeV}=12\mbox{ u}\cdot400\mbox{ MeV/u}$.} In effetti il profilo di dose rilasciato dai fasci di $C$ è generalmente maggiore di quello dei $p$ (ciò spiegherebbe i maggiori valori di \hyperref[par:let]{LET} e \hyperref[par:rbe]{RBE} per il carbonio della \hyperref[tab:let_rbe]{Tab. 1.2}), ma ciò non spiega comunque il rilascio di energia dopo il BP. \'E possibile comprendere tale effetto solo analizzando le interazioni nucleari delle due particelle.
 	
-	\subsection{Interazioni nucleari}
+	\subsubsection{Interazioni nucleari}
+	Pur essendo le interazioni elettromagnetiche più frequenti di quelle nucleari, gli effetti di queste ultime risultano fondamentali nelle applicazioni adroterapiche. Per poter effettuare interazioni nucleari con la materia, le particelle cariche devono possedere un'energia sufficientemente elevata da consentire un superamento della barriera di potenziale coulombiana dovuta alle cariche di elettroni e protoni, in modo che i nuclei del proiettile e del bersaglio siano molto vicini tra di loro. Infatti le forze nucleari (come la forza forte che lega i nucleoni\footnote{Protoni e neutroni.} all'interno del nucleo atomico), a differenza della forza elettromagnetica, possiedono una natura a corto raggio d'azione (dell'ordine del raggio dei nucleoni, pari a $\approx1\mbox{ fm}$). Tra i vari effetti delle interazioni nucleari si possono citare il grazing (in cui il nucleo proiettile effettua un "passaggio radente" al nucleo bersaglio generando ad esempio il trasferimento di più nucleoni), collisioni anelastiche (dove i nuclei restano sostanzialmente intatti ma vi è una grande dissipazione di energia) e fusioni nucleari (in cui si genera un nucleo composto che decade dopo $10^{-18}$--$10^{-19}\mbox{ s}$ emettendo raggi $\gamma$, protoni, neutroni, particele $\alpha$ oppure per fissione in frammenti più piccoli) (cita
+	%https://www.treccani.it/enciclopedia/reazioni-nucleari-con-ioni-pesanti_%28Enciclopedia-Italiana%29/
+	). Nei range energetici utilizzati in adroterapia ($\approx100\mbox{ MeV/u}$) l'interazione nucleare più comune è la frammentazione.
+	
+	La frammentazione nucleare si suddivide in collisioni periferiche e centrali. Le prime, essendo caratterizzate da bassi scambi di energia e quantità di moto (che avvengono tra i cosiddetti nuclei partecipanti), sono caratterizzate da una bassa molteplicità\footnote{In altre parole generano poche particelle e frammenti del target secondari.}; durante tali eventi si hanno anche nuclei spettatori (sia del proiettile che del target) che si disintegrano mediante processi di frammentazione o evaporazione. Nelle collisioni centrali (meno frequenti delle precedenti) si ha una grande molteplicità di particelle e frammenti generati e vi sono solo nuclei partecipanti, nessun nucleo proiettile (cita
+	%https://www.lnf.infn.it/sis/preprint/getfilepdf.php?filename=LNF_81_003(P).pdf
+	). La \hyperref[fig:fragmentation]{Fig. 1.36} illustra la dinamica più frequente delle collisioni periferiche suddivisa secondo il modello di Serber (cita
+	%Serber, R., 1947, “Nuclear reactions at high energies,” Phys. Rev. 72, 1114–1115.
+	) in una fase di abrasione (in cui i nuclei coinvolti interagiscono formando frammenti e uno stato eccitato denominato fireball nucleare) che avviene in tempi di $10^{-22}$--$10^{-23}\mbox{ s}$, e in una di ablazione (dove processi di termalizzazione diseccitano la fireball e producono frammenti secondari sia del proiettile che del bersaglio) che avviene in tempi di $10^{-16}$--$10^{-18}\mbox{ s}$.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{fragmentation.png}
+		\caption{Schema dei processi di abrasione e ablazione (per evaporazione) nel modello di interazione periferica della frammentazione (cita
+			%https://www.academia.edu/57450018/Heavy_ion_tumor_therapy_Physical_and_radiobiological_benefits
+			).}
+		\label{fig:fragmentation}
+	\end{figure}
+	
+	Come già accennato, quando particelle proiettile come \ce{p} o ioni pesanti come \ce{C} colpiscono il corpo umano si può generare una frammentazione sia del proiettile che del target. Sebbene entrambe siano caratterizzati dall'emissione di frammenti leggeri, a seguito della prima si produce anche un quasi-proiettile dotato di un'energia (circa) pari a quella del proiettile incidente mentre a seguito della seconda si genera un quasi-target (circa) a riposo. Le possibilità di frammentazione di un proiettile che interagisce con un target a riposo sono riassunte nella \hyperref[tab:fragmentation]{Tab. 1.4}.
+	
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.5cm}|M{2.5cm}||m{9cm}| }
+				\hline
+				Proiettile & Target & Processo\\
+				\hline\hline
+				Protone & Protone & Non avviene frammentazione\\
+				\hline
+				Protone & Ione pesante & Frammentazione del target\\
+				\hline
+				Ione pesante & Protone & Frammentazione del proiettile\\
+				\hline
+				Ione pesante & Ione pesante & Frammentazione del target e del proiettile\\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Tabella riassuntiva della frammentazione del target ($\approx200\mbox{ MeV/u}$) e del proiettile (a riposo) in adroterapia per protoni e ioni pesanti.}
+		\label{tab:fragmentation}
+	\end{table}
+	
+	 Da un punto di vista pratico è molto complesso studiare i frammenti del target in quanto possiedono un range molto piccolo che va dai $2.3\mbox{ }\mu\mbox{m}$ dell'\ce{^{15}O} al $68.9\mbox{ }\mu\mbox{m}$ dell'\ce{^{2}H} (cita
+	 %https://agenda.infn.it/event/11649/attachments/6995/7849/FOOT_Bisogni_220616_PISA.pdf
+	 ); in pratica, è come se i frammenti del target venissero prodotti a riposo. Pertanto le proprietà dei frammenti del target non possono essere misurate tramite tecniche di rilevazione convenzionale ma sono necessari approcci differenti come quello della \hyperref[?ref a secondo cap?]{cinematica inversa}, utilizzato nell'esperimento FOOT. D'altra parte, misurare le proprietà dei frammenti del proiettile è più semplice in quanto il loro elevato range consente di applicare metodi di rilevazione convenzionali.
+	 
+	 Riprendendo la \hyperref[fig:photon]{Fig. 1.17}, ora è possibile comprendere il motivo per cui si verifica un rilascio di dose dopo il BP per particelle cariche pesanti. Tale contributo è dovuto al lungo range dei frammenti del proiettile che, avendo un numero atomico $z$ inferiore al fascio incidente primario, per la \hyperref[eq:bethe_bloch]{Eq. 1.35} possiedono un minore potere frenante;\footnote{Secondo tale considerazione, per penetrare più in profondità basterebbe scegliere fasci formati da particelle con $z$; ciò non è possibile in quanto i processi di frammentazione sarebbero così elevati da rilasciare energie troppo alte nel canale di ingresso, dove si vuole avere un basso dosaggio per risparmiare i tessuti sani. Pertanto ioni più pesanti dell'ossigeno non vengono ritenuti efficaci.} perdendo meno energia per unità di lunghezza i frammenti del proiettile dissipano la loro energia più in profondità rispetto alle particelle proiettile primarie (queste ultime infatti si bloccano generalmente in corrispondenza del picco di Bragg,\footnote{In realtà la sopravvivenza di proiettili primari è fortemente legata alla loro energia e al loro numero atomico (più è grande più interazioni compiono durante il percorso). Ad esempio, un fascio di \ce{^{12}C} a $400\mbox{ MeV}$ ha un range di $28\mbox{ cm}$. A tale profondità il $70\%$ dei \ce{^{12}C} ha già effettuato processi di frammentazione del proiettile prima di giungere al BP; nonostante ciò, nel BP si verifica comunque un grande rilascio di dose generato dalle poche particelle primarie rimanenti e da quelle secondarie.} come mostrato in \hyperref[fig:late_release]{Fig. 1.37}).
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.9\linewidth]{late_release.jpg}
+	 	\caption{Dati sperimentali della dose totale in funzione della profondità per un fascio di \ce{C} a $400\mbox{ MeV/u}$ in acqua. La diminuzione di energia del fascio primario (curva rossa) nel canale di ingresso è dovuta alla frammentazione che genera frammenti secondari (curva blu) il cui contributo è particolarmente evidente dopo il BP. I due contributi si sommano fornendo la dose totale (curva nera) (cita
+	 		%https://indico.cern.ch/event/656460/contributions/2750599/attachments/1685397/2709955/FLUKA_tutorial.pdf
+	 		).}
+	 	\label{fig:late_release}
+	 \end{figure}
+	 
+	 Dalla \hyperref[fig:biol_effect_nuclear]{Fig. 1.38} è interessante valutare l'effetto delle interazioni nucleari sulle cellule. In particolare si osserva che la frammentazione del target per un fascio di protoni è molto più rilevante nel canale di ingresso che nella regione del picco di Bragg sebbene la ionizzazione nelle due zone sia molto differente. Infatti la ionizzazione uccide rispettivamente il $3\%$ e il $40\%$ delle cellule nel canale di ingresso e nel BP ma l'interazione nucleare è responsabile rispettivamente solo dell'$8\%$ e del $2\%$ delle morti cellulari totali.
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.9\linewidth]{biol_effect_nuclear.jpg}
+	 	\caption{Impatto dei frammenti di target per un fascio protonico a $250\mbox{ MeV}$ in acqua nel canale di ingresso e nella regione di picco e relativa ionizzazione (cita
+	 		%https://www.mdpi.com/2072-6694/7/1/353#
+	 		).}
+	 	\label{fig:biol_effect_nuclear}
+	 \end{figure}
+		
+	A differenza delle interazioni elettromagnetiche, i processi di frammentazione nucleare non sono solamente più difficili da modellizzare con le teorie di cui disponiamo attualmente, ma anche più complessi da misurare sperimentalmente. Per usufruire delle peculiarità delle particelle cariche (una tra tutte il picco di Bragg) al fine di poter ottimizzare il trattamento clinico dei tumori è necessario giungere a una completa conoscenza dei processi di interazione delle particelle con il corpo umano, in particolare dei processi di frammentazione nucleare, al momento non compresi del tutto. Esistono infatti modelli semiempirici (come la legge di Bradt-Peters) che consentono di ricavare con ottimi risultati le sezioni d'urto di alcune interazioni nucleari conoscendo la struttura dei nuclei del target e del proiettile, ma ciò non è abbastanza: bisognerebbe includere nei modelli la totalità dei contributi forniti dai frammenti nucleari (la cui numerosità è elevatissima). Come verrà esposto nel \hyperref[cap:2]{Cap. 2}, l'obiettivo principale dell'esperimento FOOT (FragmentatiOn Of Target) è proprio quello di arricchire la quantità di dati attualmente a disposizione misurando la sezione d'urto e l'energia di produzione dei frammenti secondari generati a partire dalle interazioni nucleari tra particelle cariche e corpo umano, in modo da migliorare la descrizione di parametri dosimetrici fondamentali nel TP come l'RBE. In particolare, oltre ai fasci di protoni e atomi di carbonio, FOOT intende misurare i frammenti nucleari dei fasci di ossigeno ed elio visto che il loro uso in adroterapia è in fase di sperimentazione.
 	
 	
-%	ci sono differenze tra protoni e carbonio (la BB va come Z^2); la differenza maggiore forse risiede quando si va in profondità: il carbnio ha energia sufficiente per andare oltre il picco di Bragg, cosa che non accade nei protoni. Non c'è effetto che è possibile spiegare con le consocenze che abbiamo studiato fin ora: risiedono nelle interazioni nucleari. quello che succede è che quando entriamo con un fascio, abbiamo che il fascio può fare interazione nucleare come a pag 51. le interazioni possono spaccare il nucleo, ma possono spaccare il protone? no, almeno non a queste energie. possiamo spaccare solo il nucleo. cosa succede se lo spacchiamo? a queste energie si conserva il numero di neutroni e il numero di protoni. spaccando il carbonio (ad esempio) che cosa otteniamo? altri nuclei che hanno una carica inferiore. se abbiamo altri  nuclei con carica inferiore (z minore) al nostro carbonio -> abbiamo un minore dE/dX secondo la bethe bloch, ossia questi prodotti perdono meno energia -> significa che questi prodotti vanno più avanti. c'è un però: il carbonio e l'idrogeno, ossia i bersagli più comuni del nostro corpo, che possiamo considerare fermi, sono molto più grandi del protone che ci sbatte contro, per questo l'energia acquisita dal bersaglio è pochissima se non nulla, per questo nel caso in cui il proiettile è il protone, abbiamo che l'energia rilasciata dopo la BB è sostanzialmente nulla. Cosa diversa avviene nel caso in cui il proiettile è un carbonio. se si spacca, si creano nuclei più piccoli con z^2 minore, e quindi capaci di disperdere meno energia (questo come prima); laa differenza qui sta nel fatto che la frammentazione del proiettile fa si che i frammenti vengono prodotti alla stessa beta del fascio, circa, quindi la loro corsa non ferma, anche se magari è rallentata dal fatto che z dei prodotti è comunque minore di quello dei reagenti. in sostanza, i nuclei del corpo umano, una volta spaccati, non fanno strada, a differenza dei frammenti dei proiettili.
-%		
-%		pag 39: il grafico nero rappresenta i dati sperimentali con fascio di carbonio a 400 MeV. il picco si ha attorno a 27 cm. man mano che il fascio a carbonio entra, le partielle del fascio diminuiscono perché il carbonio va incontro a frammentazione, quindi sostanzialmente è come se il fascio si stesse trasformando in frammenti diversi dalle particelle primarie iniziali (carbonio). l'oggetto in nero è la soma delle due curve rossa e blu. i frammenti secondari sono quelli che vanno oltre il punto che avevamo stabilito per il carbonio. questo è un problema.
-%		se la bethe bloch va come z^2, perché non prendo ferro, piombo? perché le reazioni nucleari diventano predominanti e vi sarebbe un rilascio di energia troppo eccessivo a basse profondità tanta energia all'inizio. si pensa che oltre l'ossigeno non ha più senso andare.
-%	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	%- se vedaimo l'opposto? non la frammentazione del bersaglio, ma la frammentazione del proiettile, ad esempio carbonio contro idrogeno. qui ci sono dei risultati. ma perché quando studio la frammentazione del proiettile ho tuti questi risultati, mentre la frammentazione del bersaglio non c'è niente? il problema è che c'entra la strada che faceva il bersaglio quando veniva frammentato.
+	%Ricorda: nel caso di frammentazione del target, avevamo che i frammenti non facevano strada praticamente (pochi micrometri); al contrario, nella frammentazione del proiettile, avevamo che i frammenti percorrono eccome una certa strada.
+	%Perché c'entra tutto questo? Immaginiamo di progettare un esperimento di framentazione del bersaglio; abbiamo bisogno di PMNA, ossia targhette del corpo umano con carbonio, idrogeno, ossigeno. qual è lo spessore della targhetta che posso usare? una targhetta sarà di qualche mm, ma sappiamo che nel caso di frammentazione del bersaglio, la strada che fanno i frammenti è di qualche micrometro, per questo i frammenti rimangono bloccati nella targhetta e non è possibile analizzarli: un esperimento "convenzionale" non vedrebbe nulla; allora immaginiamo di ridurre lo spessore della targhetta, per esempio portandolo a qualche micrometro. già un primo problema sarebbe il fatto che con una targhetta così sottile, per avere della buona statistica si dovrebbero aspettare anni, nel senso che gli eventi di diffusione del fascio contro il bersaglio sarebbero pochissimi. Ma mettiamo anche che questo esperimento possa essere fatto, c'è un altro problema: nel momento in cui il frammento fuoriesce dalla targhetta, che è stata fatta molto sottile in modo che i frammenti non rimangano intrappolati nella targhetta stessa, non misuraiamo l'energia di produzione dei frammenti, cioè l'energia che hanno nel momento in cui sono stati prodotti, ma l'energia che hanno dopo che hanno attraversato la targhetta, che sicuramente è un'energia inferiore a quella di produzione visto che dentro la targhetta i frammenti perderebbero energia.
+	%Se invece procediamo con la frammentazione del proiettile, questo ha molta energia, oltrepassa la targhetta e li vediamo dai rilevatori, etc.
+	%Quindi le tecniche convenzionali funzionano nel caso della frammentazione del proiettile, non funzionano nel caso della frammentazione del bersaglio.
+	%
+	%- Per questo in FOOT si usano tecniche "non convenzionali". l'idea è che si sfruttano delle trasformazioni di lorentz per "ribaltare" l'esperimento a nostro favore: il bersaglio diventa il proiettile e il proiettile diventa il bersaglio - poi per ripristinare i ruoli in maniera corretta si riapplicano le trasformazioni di lorentz. matematicamenteon è difficile applicare queste trasformazioni, sono matrici sostanzialmente, ma da un punto di vista fisico è difficile, perché ogni trasformazione in più porta con sé delle incertezze maggiori.
+	
+	
+	
 	
 	
 	
