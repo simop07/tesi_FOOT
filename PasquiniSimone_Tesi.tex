@@ -1341,7 +1341,7 @@
 	\end{table}
 	Da un punto di vista pratico è molto complesso studiare i frammenti del target in quanto possiedono un range molto piccolo che va dai $2.3\mbox{ }\mu\mbox{m}$ di \ce{^{15}O} al $68.9\mbox{ }\mu\mbox{m}$ di \ce{^{2}H} (cita
 	%https://agenda.infn.it/event/11649/attachments/6995/7849/FOOT_Bisogni_220616_PISA.pdf
-	); in sostanza, è come se i frammenti del target venissero prodotti a riposo. Pertanto, le proprietà dei frammenti del target non possono essere misurate tramite tecniche di rilevazione convenzionale ma sono necessari approcci differenti come quello della \hyperref[?ref a secondo cap?]{cinematica inversa}, utilizzato nell'esperimento FOOT. D'altra parte, misurare le proprietà dei frammenti del proiettile è più semplice in quanto il loro elevato range consente di applicare metodi di rilevazione convenzionali.
+	); in sostanza, è come se i frammenti del target venissero prodotti a riposo. Pertanto, le proprietà dei frammenti del target non possono essere misurate tramite tecniche di rilevazione convenzionale ma sono necessari approcci differenti come quello della \hyperref[sec:cinematica_inversa]{cinematica inversa}, utilizzato nell'esperimento FOOT. D'altra parte, misurare le proprietà dei frammenti del proiettile è più semplice in quanto il loro elevato range consente di applicare metodi di rilevazione convenzionali.
 	 
 	Riprendendo la \hyperref[fig:photon]{Fig. 1.17}, ora è possibile comprendere il motivo per cui si verifica un rilascio di dose dopo il BP per particelle cariche pesanti. Tale contributo è dovuto al lungo range dei frammenti del proiettile che, avendo un numero atomico $z$ inferiore al fascio incidente primario,\footnote{Poiché i frammenti si originano dalla fissione del nucleo primario.} per la \hyperref[eq:bethe_bloch]{Eq. 1.35} possiedono un minore potere frenante;\footnote{Secondo tale considerazione, per penetrare più in profondità basterebbe scegliere fasci formati da particelle con qualsiasi valore di $z$, purché sia elevato; in pratica, ciò non è possibile in quanto i processi di frammentazione sarebbero così elevati da rilasciare energie troppo alte nel canale di ingresso, dove si vuole avere un basso dosaggio per risparmiare i tessuti sani. Pertanto, ioni più pesanti dell'ossigeno non vengono ritenuti efficaci in adroterapia.} perdendo meno energia per unità di lunghezza, i frammenti del proiettile dissipano la loro energia più in profondità rispetto alle particelle proiettile primarie (queste ultime, infatti, si bloccano generalmente in corrispondenza del picco di Bragg,\footnote{In realtà la sopravvivenza di proiettili primari è fortemente legata alla loro energia e al loro numero atomico (più è grande e più interazioni compiono durante il percorso, essendo la \hyperref[eq:bethe_bloch]{Eq. 1.35} $\propto z^2$). Ad esempio, un fascio di \ce{^{12}C} a $400\mbox{ MeV}$ ha un range di $28\mbox{ cm}$. A tale profondità il $70\%$ dei \ce{^{12}C} ha già effettuato processi di frammentazione del proiettile prima di giungere al BP; nonostante ciò, nel BP si verifica comunque un grande rilascio di dose in quanto vi contribuiscono non solo le poche particelle primarie rimanenti, ma anche quelle secondarie (che nella maggior parte dei casi sono isotopi, isotoni o isobari delle primarie).} come mostrato in \hyperref[fig:late_release]{Fig. 1.37}).
 	\begin{figure}[H]
@@ -1364,26 +1364,39 @@
 	A differenza delle interazioni elettromagnetiche, i processi di frammentazione nucleare non sono solamente più difficili da modellizzare con le teorie di cui disponiamo attualmente, ma anche più complessi da misurare sperimentalmente. Per usufruire delle peculiarità delle particelle cariche (una tra tutte il picco di Bragg), sfruttandole ad esempio nell'ottimizzazione del trattamento clinico dei tumori, è necessario giungere a una completa conoscenza dei processi di interazione delle particelle con il corpo umano, in particolare dei processi di frammentazione nucleare, al momento non compresi del tutto. Esistono modelli semiempirici (come la legge di Bradt-Peters) che consentono di ricavare, con ottimi risultati, le sezioni d'urto di alcune interazioni nucleari, conoscendo la struttura dei nuclei del target e del proiettile, ma ciò non è abbastanza: bisognerebbe includere nei modelli la totalità dei contributi forniti dai frammenti nucleari, la cui numerosità è elevatissima. Come verrà esposto nel \hyperref[cap:2]{Cap. 2}, l'obiettivo principale dell'esperimento FOOT è proprio quello di arricchire la quantità di dati attualmente a disposizione misurando la sezione d'urto, l'energia e la direzione di produzione dei frammenti secondari generati a partire dalle interazioni nucleari tra particelle cariche e corpo umano, in modo da migliorare la descrizione di parametri dosimetrici fondamentali nel TP, come l'RBE. In particolare, oltre ai fasci di protoni e atomi di carbonio, FOOT intende misurare con più precisione i frammenti nucleari dei fasci di ossigeno ed elio, visto che il loro uso in adroterapia è ancora in fase di sperimentazione.
 	
 	\chapter{Esperimento FOOT}
-	I processi di frammentazione nucleare tipici dei range energetici delle applicazioni adroterapiche ($50$--$250\mbox{ MeV}$ per i protoni e $50$--$400\mbox{ MeV/u}$ per gli ioni carbonio) presentano evidenti lacune sperimentali. Ciò ha obbligato gli scienziati a sviluppare modelli di frammentazione nucleare basati su simulazioni che, in assenza di una precisa teoria capace di descriverli, sono caratterizzati da numerose incertezze. Recentemente, lo studio alcuni esperimenti hanno analizzato la frammentazione del proiettile degli ioni di \ce{^{12}C}, sebbene tali studi abbiano coperto solo la parte più bassa dei range sopra citati; altrsiano avvenuti per energie  tentato di studiare la frammenta
-	(cita
+	I processi di frammentazione nucleare tipici dei range energetici delle applicazioni adroterapiche ($50$--$250\mbox{ MeV}$ per i protoni e $50$--$400\mbox{ MeV/u}$ per gli ioni carbonio) presentano evidenti lacune sperimentali. Ciò ha obbligato gli scienziati a sviluppare modelli di frammentazione nucleare basati su simulazioni che, in assenza di una precisa teoria della frammentazione, sono caratterizzate da numerose incertezze. Recentemente in alcuni esperimenti si è misurata la frammentazione del proiettile degli ioni di \ce{^{12}C}, tuttavia tali misure coprono solo la parte inferiore dei range energetici sopra citati (cita
 	%J. Dudouet et al., “Double-differential fragmentation cross-sections measurements of 95 MeV/u 12C 1995 beams on thin targets for hadrontherapy,” Phys. Rev. C, vol. 88, no. 2, p. 024606, 2013.
 	,
 	%M. Toppi et al., “Measurement of fragmentation cross sections of 12C ions on a thin gold target with 1997 the FIRST apparatus,” Phys. Rev. C, vol. 93, no. 6, p. 064601, 2016.
-	)
-	Uno dei problemi aperti in adroterapia è 
+	). Inoltre, esistono alcune misure dei processi di frammentazione del target, sebbene queste si limitino a frammenti molto leggeri ($Z<3$) e abbiano poca accuratezza, dovuta soprattutto al corto raggio ($\approx\mu\mbox{m}$) dei frammenti del target che non consente di misurare le loro proprietà con tecniche di rilevazione convenzionali; tali problematiche hanno portato a un progressivo abbandono degli studi afferenti alla frammentazione del target, specialmente quella indotta da fasci protonici. Sempre per tali motivi, vi è una grande scarsità di dati anche per i frammenti generati da bersagli più pesanti, dotati di maggiori $A$ e $Z$ (cita
+	%foot cdr
+	).
 	
-	L'esperimento FOOT (FragmentatiOn Of Target) nasce con lo scopo di misurare 
-	Lo studio dell'interazione nucleare nuclei del corpo umano tra a frammentazione del target 
+	Per supplire a tali mancanze è nato l'esperimento FOOT (FragmentatiOn Of Target), il cui scopo principale è quello di misurare (con un'incertezza massima del $5\%$) le sezioni d'urto dei processi di frammentazione nucleare nel range energetico $100$--$800\mbox{ MeV/u}$, che coinvolgono frammenti caratterizzati da $2<Z<10$ (cita
+	%articolo Ubaldi
+	). Oltre a misurare la frammentazione del target indotta da fasci protonici, FOOT si impegna a completare le misure di frammentazione del proiettile generate da fasci di \ce{C}, \ce{O}\footnote{I fasci di \ce{O} risultano particolarmente efficaci contro tumori ipossici (per i motivi esposti in \hyperref[par:oer]{OER} (cita
+		%F. Tommasino et al., “New ions for therapy,” Int. J. Part. Ther., vol. 2, no. 3, pp. 428–438, 2015.
+		)), sebbene in condizioni aerobiche producano più danni nel canale di ingresso (a causa del loro elevato $Z$) comparati a ioni più leggeri come i \ce{C}.} ed \ce{He}.\footnote{I fasci di \ce{He} possiedono un rilascio di dose più preciso rispetto a quello dei protoni (essendo i primi caratterizzati da meno eventi di \hyperref[par:scattering_Rutherford]{scattering Rutherford} (rispetto ai protoni) e di \hyperref[par:interazioni_nucleari]{frammentazione nucleare} (rispetto ai \ce{C}) (cita
+		%R. Grün et al., “Assessment of potential advantages of relevant ions for particle therapy: A model based study,” Med. Phys., vol. 42, no. 2, pp. 1037–1047, 2015.
+		,
+		%D. Indelicato et al., “Consensus Report From the Stockholm Pediatric Proton Therapy Conference,” Int. J. Radiat. Oncol., vol. 96, no. 2, pp. 387–392, 2016.
+		). Inoltre, rispetto agli altri ioni ad alto LET come i \ce{C}, l'uso di \ce{He} prevede costi più contenuti.}
+		
+	Misure più accurate degli spettri energetici e delle sezioni d'urto dei frammenti nucleari risulterebbero di fondamentale importanza per la progettazione di nuovi sistemi di TP adroterapici, come i BioTPS, in cui avviene una valutazione minuziosa\footnote{Esistono algoritmi (cita
+		%O. Steinsträter et al., “Integration of a model-independent interface for RBE predictions in a treatment planning system for active particle beam scanning,” Phys. Med. Biol., vol. 60, no. 17, p. 6811, 2015.
+		) che consentono di ottenere una proiezione voxel-by-voxel del profilo di dose efficace (pesata attraverso l'RBE) prima del rilascio in una regione tissutale.} di tutti i possibili effetti biologici indotti dal fascio radiativo, inclusi i contributi dovuti ai frammenti nucleari (che sono molto complicati da valutare, in quanto dipendenti dai differenti tipi di particelle in gioco e dalle loro singole energie).
+	
+	I risultati di FOOT sarebbero interessanti anche per applicazioni legate alla radioprotezione spaziale, un tema che desta interesse ad agenzie spaziali come la NASA, che da alcuni anni svolge programmi di ricerca in cui si valutano i rischi radiativi a cui si potrebbero sottoporre gli astronauti nelle missioni spaziali di lunga durata (come in eventuali viaggi su Marte) (cita
+	%M. Durante and F. Cucinotta, “Physical basis of radiation protection in space travel,” Rev. Mod. Phys., vol. 83, no. 4, p. 1245, 2011.
+	). Infatti, al di fuori dell'atmosfera, vi è una grande quantità di radiazione cosmica che rappresenta un vero rischio non solo per l'equipaggio, ma anche per la componentistica elettronica in orbita (cita
+	%https://web.infn.it/foot/
+	). Pertanto, una dettagliata conoscenza dei processi di frammentazione nucleare risulterebbe utile ai programmi di radioprotezione spaziale per la progettazione di materiali radioresistenti in grado di schermare gli effetti nocivi della radiazione cosmica, migliorando i sistemi di protezione delle navicelle spaziali (cita
+	%FOOT CDR
+	).
+	
+	\section{Cinematica inversa}\label{sec:cinematica_inversa}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	% dire che FOOT L'esperimento FOOT unisce laboratori giapponesi, tedeschi e italiani al fine di raccogliere dati fondamentali per migliorare la conoscenza delle interazioni tra i fasci adronici e il materiale
 	
 	
 	
