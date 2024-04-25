@@ -33,3 +33,6 @@
 
 # Zone Identifier
 *.Identifier
+
+# ROOT files
+*.root
