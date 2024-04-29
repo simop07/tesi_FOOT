@@ -1,17 +1,17 @@
 CNAO: presa dati di ottobre -> centro per pazienti non trattabili con metodi tradizionali di trattamento.
 si usano fasci di particelle anziché radiazioni di raggi gamma. La macchina è un sincrotrone, ha un diametro molto grande ed è la macchina sia usata per i trattamenti che per lo studio di presa dati.
 
- -> link alberto angela
+ -> link Alberto angela
 
 O ioni o protoni di carbonio vengono accelerati fino a un'energia richiesta per dati o per paziente. Mediante magneti viene deviato o nella sala trattamenti o nell'esperimento foot.
 
-Da una parte ci  sono gli acellatoristi, che si occupano delle caratteristiche del fascio.
+Da una parte ci sono gli acellatoristi, che si occupano delle caratteristiche del fascio.
 
 Bologna si occupa del sistema di acquisizione dei rilevatori.
 
 Ricavare la sezione d'urto: sono i dati che mancano per sfruttare i piani di trattamento. In più servono anche per la radioprotezione spaziale.
 
-zona di tracciamernto: due magneti permanenti (che permettono di deviare le particelle cariche) e due ... e delle strip dopo i due magneti... vari rivelatori con cui costruire il momento.
+zona di tracciamento: due magneti permanenti (che permettono di deviare le particelle cariche) e due ... e delle strip dopo i due magneti... vari rivelatori con cui costruire il momento.
 
 ToF wall: qui la particella arriva e lascia energia (qui si ricava la sua carica). Il calorimetro permette di ricavare l'energia cinetica, poiché qui viene rallentato.
 
@@ -27,46 +27,46 @@ Se il fascio raggiunge il rivelatore finale, si può ricostruire la traccia dell
 PRESA DATI
 
 ^{16}O, non li abbiamo al CNAO. Prenderemo in considerazione solo i Vertex e i Tof Wall.
-Target: composto di carbonio e idrogeno e va incontro a frammentazione, per esempio formando carbonio 12 o 4He. in questa fase non ci sono magneti, quindi non ci sono motivi per cui devino, se non fare scattering con le molecole d'aria, ma ipotizziamo ora che non c'è nemmeno questo effetto.
+Target: composto di carbonio e idrogeno e va incontro a frammentazione, per esempio formando carbonio 12 o 4He. in questa fase non ci sono magneti, quindi non ci sono motivi per cui deviino, se non fare scattering con le molecole d'aria, ma ipotizziamo ora che non c'è nemmeno questo effetto.
 
-Vertex -> rivelatore a pixel di silicio, 4 piani, con larghezza di 100um; quando la particella interagisce col rivelatore, vi rilascia energia; il rilascio di energia si converte in accenzione del pixel. è gestito da un'elettronica digitale (pixel acceso o spento, se è acceso significa che qualcosa è attraversato). Più pixel sono accesi e questi pixel creano un "cluster". in generale, non abbiamo che il passaggio della particella accende un solo pixel, ma piu di uno -> questo si chiama cluster, un gruppo di pixel vicini. se due tracce attraversano lo stesso piano, è sicuramente possibile che ci siano due spot diversi. in ogni piano posso avere più di un cluster. il primo pixel del piano 1 può essere parte della stessa traccia del pixel del piano 2? se questo è possibile allora si vanno a vedere tutti gli strati successivi del rivelatore. un insieme di cluster dà una traccia. dalla sua inclinazione, si può ricostruire dove c'è stata l'interazione (punto chiamato vertice di interazione). siccome nel nostro esperimento l'interazione avviene nel target, la maggior parte delle volte accade che il vertice di interazione è interno alla posizione del target. le informazioni che servno del rivelatore vertex sono: i vrtx point (punto di interazione del vertice: da dove nasce l'interazione). da questo dato ricaviamo la posizione in xyz.
+Vertex -> rivelatore a pixel di silicio, 4 piani, con larghezza di 100um; quando la particella interagisce col rivelatore, vi rilascia energia; il rilascio di energia si converte in accensione del pixel. è gestito da un'elettronica digitale (pixel acceso o spento, se è acceso significa che qualcosa è attraversato). Più pixel sono accesi e questi pixel creano un "cluster". in generale, non abbiamo che il passaggio della particella accende un solo pixel, ma piu di uno -> questo si chiama cluster, un gruppo di pixel vicini. se due tracce attraversano lo stesso piano, è sicuramente possibile che ci siano due spot diversi. in ogni piano posso avere più di un cluster. il primo pixel del piano 1 può essere parte della stessa traccia del pixel del piano 2? se questo è possibile allora si vanno a vedere tutti gli strati successivi del rivelatore. un insieme di cluster dà una traccia. dalla sua inclinazione, si può ricostruire dove c'è stata l'interazione (punto chiamato vertice di interazione). siccome nel nostro esperimento l'interazione avviene nel target, la maggior parte delle volte accade che il vertice di interazione è interno alla posizione del target. le informazioni che servono del rivelatore vertex sono: i vrtx point (punto di interazione del vertice: da dove nasce l'interazione). da questo dato ricaviamo la posizione in xyz.
 la z indica la profondità dell'esperimento (a 0 il target a 2 metri il tof). 
 quindi il primo punto di interazione del vertice è l'inizio delle tracce che poi confluiscono nel TW. nota: ogni cluster ha un certo numero di pixel accesi.  una volta che la particella ha attraversato il vertex, poi alla fine raggiunge il tof wall.
 
-tof wall: barre scintillanti (no rivelatori al silicio), di larghezza 2 cm. Ce ne sono 20 in un piano 20 nell'altro. nel piano davanti sono orizzontali e nel piano dietro sono verticali. la graularità è molto minore. qui la precisione è minore, infatti l'errore è di 2 cm. il crossing delle barre danno la posizione in xy (ricoridiamo che qui abbiamo barre larghe 2 cm, quindi l'errore è maggiore).
+tof wall: barre scintillanti (no rivelatori al silicio), di larghezza 2 cm. Ce ne sono 20 in un piano 20 nell'altro. nel piano davanti sono orizzontali e nel piano dietro sono verticali. la granularità è molto minore. qui la precisione è minore, infatti l'errore è di 2 cm. il crossing delle barre dà la posizione in xy (ricordiamo che qui abbiamo barre larghe 2 cm, quindi l'errore è maggiore).
 
-le due particelle hanno attraversato il piano davanti e il piano dietro del rivelatore tof wall e mi hanno acceso entrambe le barre orizzontale e verticale (hit). Si ricavano 2 info, l'energia che ha rilasciato al suo interno e il tempo di volo (tempo in prima approssimazione per arrivare dal target al rivelatore). è un'info teporale importante, infatti sapendo la distanza e il tof posso ottenere la velocità della particella e dall'energia ho la carica della particella (formula di bethe block).
+le due particelle hanno attraversato il piano davanti e il piano dietro del rivelatore tof wall e mi hanno acceso entrambe le barre orizzontale e verticale (hit). Si ricavano 2 info, l'energia che ha rilasciato al suo interno e il tempo di volo (tempo in prima approssimazione per arrivare dal target al rivelatore). è un'info temporale importante, infatti sapendo la distanza e il tof posso ottenere la velocità della particella e dall'energia ho la carica della particella (formula di Bethe Block).
 
 solo il 10% degli eventi vanno incontro a frammentazione. nella maggior parte dei casi l'ossigeno non frammenta. molti eventi saranno composti da una singola traccia.
 
 Uso dei TTree: ha strumenti specifici per il nostro tipo di analisi. Il Tree pesa meno rispetto ad altri tipi di database, inoltre ci sono molte funzioni (tipo pescare informazioni da un contenitore all'altro).
 
-aprire il primo dei due Tree. un Tree è un albero e gli alberi contengono dei rami e delle foglie. è un megacontenitore intelligente che contiene altri contenitori. Ogni foglia è una grandezza associata al rivelatore. per esempio, cliccando su ev-> si aprono degli istogrammi (in asse x c'è a grandezza che vogliamo studiare e su y il numero di conteggi).
+aprire il primo dei due Tree. un Tree è un albero e gli alberi contengono dei rami e delle foglie. è un mega contenitore intelligente che contiene altri contenitori. Ogni foglia è una grandezza associata al rivelatore. per esempio, cliccando su ev-> si aprono degli istogrammi (in asse x c'è a grandezza che vogliamo studiare e su y il numero di conteggi).
 
 1 evento cosa è? è un processo fisico per cui una traccia arriva nel target, fa qualcosa e arriva alla fine del tof wall. ogni particella di ossigeno sparata è un evento di ossigeno differente (un evento è un ossigeno che arriva al target e poi genera tracce che arrivano al TW). ogni evento ha un singolo ossigeno che si spacca e frammenta contro il target. in ognuna di queste volte l'ossigeno può frammentare o non frammentare, può avere un certo angolo di inclinazione o altro. più il dataset è grande, più si hanno informazioni statisticamente rilevanti.
 
 il numero di vertici rappresenta il numero di vertici di interazione: il punto da cui si originano i frammenti. in un evento è molto probabile che ci sia un solo ossigeno, che generi un solo vertice di frammentazione, nel senso che può rompersi in frammenti solo in un punto. la maggior parte degli eventi ha un solo numero di vertici di interazione. ci sono dei casi in cui si hanno 0 vertici di interazione. questo è dovuto al fatto che il mio rivelatore, per vari motivi, non ha ricostruito nessuna traccia e quindi non ha costruito nessun vertex point. in questo caso c'entra l'efficienza (la sua capacità di poter effettivamente vedere un segnale) qui entra in gioco la simulazione. è qualcosa che è da sapere prima che si va a fare raccolta dati il fatto che un certo rivelatore abbia efficienza maggiore o minore. nell'esempio in OuTree;86, troviamo che di tutti gli eventi che abbiamo simulato sono caratterizzati da un unico vertice di interazione (vertex point).
 
-ogni vertex point ha sue coordinate in xyz. la maggior parte dei punti di vertice nasce al centro del mio rivelatore. l'ossigeno spesso può non essere erogato al centro 0,0, perché mahgariraggiunge il target nelle coordinate 0,5 0,5.
+ogni vertex point ha sue coordinate in xyz. la maggior parte dei punti di vertice nasce al centro del mio rivelatore. l'ossigeno spesso può non essere erogato al centro 0,0, perché magari raggiunge il target nelle coordinate 0,5 0,5.
 
-la coordinata z è fortemente piccata nello spazio. e infatti abbiamo un picco attorno a 0. c'è, facendo uno zoom, una particolare sorta di distrubuzione uniforme accanto al picco della z in 0. questo è dovuto allo spesore del target. (-300,300)um è la dimensione del target., e infatti tutto cio che si trova in questa regione è da contare, il suo spessore non è trascurabile.
+la coordinata z è fortemente piccata nello spazio. e infatti abbiamo un picco attorno a 0. c'è, facendo uno zoom, una particolare sorta di distribuzione uniforme accanto al picco della z in 0. questo è dovuto allo spessore del target. (-300,300)um è la dimensione del target., e infatti tutto ciò che si trova in questa regione è da contare, il suo spessore non è trascurabile.
 
 Anche la posizione del vertice è sostanzialmente centrata in 0. In z abbiamo 4 picchi perché abbiamo 4 piani del vertex.
 
-nella maggior parte degli eventi ho un solo tofwall point (ciò, secondo me, significa che la maggior parte degli ossigeni entranti non va incontro a frammentazione e raggiunge la parte finale del TW. cioè, su 1e6 eventi, la maggior parte del numero di punti del towfall generati è pari a 1). il rivelatore ha un'efficienza non alta data dal fatto che a volte il rivelatore non rileva nessun evento (in pratica è come se per alcuni ossigeni incidenti, alcuni di questi non raggiungono la parte finale dell'apparato sperimentale).
+nella maggior parte degli eventi ho un solo tofwall point (ciò, secondo me, significa che la maggior parte degli ossigeni entranti non va incontro a frammentazione e raggiunge la parte finale del TW. cioè, su 1e6 eventi, la maggior parte del numero di punti del towfall generati è pari a 1. Nota la differenza tra TWPoint e TWHit: nel secondo caso abbiamo il numero di volte in cui vengono colpiti i 2 piani del TW. Per esempio, un evento in cui non avviene frammentazione è associato a 2 Hits, a cui corrisponde un solo TW Point). il rivelatore ha un'efficienza non alta data dal fatto che a volte il rivelatore non rileva nessun evento (in pratica è come se per alcuni ossigeni incidenti, alcuni di questi non raggiungono la parte finale dell'apparato sperimentale).
 
-nel caso di TWXpoint abbiamo delle coordinate discrete. ogni barra è grande 2 cm, e infatti abbiamo che la particella centrale per dire se ha coordinata x=0, abbiamo che quella successiiva si trova a circa 2 cm (in pratica i 2 cm si leggono sulla parte in cui non ci sono eventi). l'estensione infatti è di 40 cm (\pm 20 cm); per la cooridinata y è uguale alla x, mentre per la coordinata z abbiamo un unico picco.
+nel caso di TWXpoint abbiamo delle coordinate discrete. ogni barra è grande 2 cm, e infatti abbiamo che la particella centrale per dire se ha coordinata x=0, abbiamo che quella successiva si trova a circa 2 cm (in pratica i 2 cm si leggono sulla parte in cui non ci sono eventi). l’estensione, infatti, è di 40 cm (\pm 20 cm); per la coordinata y è uguale alla x, mentre per la coordinata z abbiamo un unico picco.
 
 di ogni tofwall point abbiamo l'informazione del tempo di volo (TWTOF), e il tempo di volo medio è di 10ns.
 
-energia rilasciata attorno ai 300/400keV (non capisco da dove abbia preso il valore).
+energia rilasciata attorno ai 300/400keV (dal grafico non si vede - perché secondo Ubaldi l'energia è stata inizializzata a un valore di default (di solito -99) e, se i dati non vanno bene, tale valore non viene modificato - pertanto se alla fine ritrovo tale valore di default significa che i rilevatori non sono riusciti a misurare l'energia (o qualsiasi altra grandezza)).
 
 quindi queste sono le info principali dietro il processo fisico del problema.
 
 nota: graficando vertex_vertex_y possiamo studiare le caratteristiche del fascio, il fatto che è collimato al netto di 0.5 cm (vedi slide per capire come fare)
 
 
-ISTANZIAMENTO DI UN FILE QUALSIASI. inserendo i nomi di outre posso ritornare la cella di memoria 
+ISTANZIAMENTO DI UN FILE QUALSIASI. inserendo il nome di un oggetto istanziato, tipo OuTree, e premendo invio, si ritorna la cella di memoria entro cui quell'oggetto si trova.
 
 Compression: fattore di compressione degli oggetti.
 
@@ -78,9 +78,9 @@ MakeClass -> serve a fare vera e propria analisi. Si usano cicli for e dei conte
 
 al vertex_x è associato un array di posizioni x (un vettore che dipende dal tipo che stiamo studiando).
 
-anche se abbiamo un'informazione di conteggi, abbiamo che le tracce sono tutte associate a un punto di vertice. anche se l'interazione solitamente è un vertice. è comunque un vettore per tenere conto di tutte le eentuali combinazioni possibili.
+anche se abbiamo un'informazione di conteggi, abbiamo che le tracce sono tutte associate a un punto di vertice. anche se l'interazione solitamente è un vertice. è comunque un vettore per tenere conto di tutte le eventuali combinazioni possibili.
 
-in praica un make class è fattibile per ogni file loop. nel .h le istanze che si possono fare, nel .c il loop.
+in pratica un make class è fattibile per ogni file loop. nel .h le istanze che si possono fare, nel .c il loop.
 
 va usata la classe implementata dal tutor
 
@@ -91,4 +91,4 @@ la funzione MyAnalysis ha tre funzioni
 
 POWERCYCLE
 
-un esempio che si può fare è creare un algoritmo di funzinoe di traccia che funzioni per davvero.
+un esempio che si può fare è creare un algoritmo di funzione di traccia che funzioni per davvero.
