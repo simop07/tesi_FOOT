@@ -15,7 +15,8 @@
 			url=false,
 			isbn=false,
 			doi=false,
-			firstinits=true
+			eprint=false,
+			giveninits=true
 			]{biblatex}
 \newbibmacro{string+doiurlisbn}[1]{%
 	\iffieldundef{doi}{%
@@ -44,6 +45,7 @@
 %\setlength{\droptitle}{-2cm}% change title position
 \usepackage{amsmath}
 %\usepackage{amsfonts}
+\usepackage[style=american]{csquotes}
 \usepackage{amssymb}
 \usepackage{siunitx}
 %\usepackage[T1]{fontenc}
@@ -61,6 +63,8 @@
 %\usepackage{listings}
 %\usepackage{circuitikz}
 \usepackage{tikz-feynman}
+\tikzfeynmanset{warn luatex=false,%disable warn for not using luatex
+	compat=1.1.0}
 \usepackage{subcaption}
 \usepackage{tabularx}
 %\renewcommand{\lstlistingname}{Code}
@@ -111,7 +115,7 @@
 
 %\usepackage[font=it]{caption}
 %\usepackage{indentfirst}
-%\interfootnotelinepenalty=\@M
+%\interfootnotelinepenalty=10000
 
 \usepackage{hyperref}
 \hypersetup{
@@ -141,12 +145,9 @@
 		
 		\vspace{23mm}
 		
-		\begin{center}\textcolor{red}{
-				%
-				% INSERIRE IL TITOLO DELLA TESI
-				%
-				{\LARGE{\bf TITOLO TESI}}\\
-		}\end{center}
+		\begin{center}
+			{\LARGE{\bf TITOLO TESI}}\\
+		\end{center}
 		
 		\vspace{50mm} \par \noindent
 		
@@ -154,17 +155,9 @@
 			%
 			% INSERIRE IL NOME DEL RELATORE CON IL RELATIVO TITOLO DI DOTTORE O PROFESSORE
 			%
-			{\large{\bf Relatore: \vspace{2mm}\\\textcolor{red}{
-						Prof./Dott. Nome Cognome}\\\\
-					%
-					% INSERIRE IL NOME DEL CORRELATORE CON IL RELATIVO TITOLO DI DOTTORE O PROFESSORE
-					%
-					% SE NON AVETE UN CORRELATORE CANCELLATE LE PROSSIME 3 RIGHE
-					%
-					\textcolor{red}{
-						\bf Correlatore: (eventuale)
-						\vspace{2mm}\\
-						Prof./Dott. Nome Cognome\\\\}}}
+			{\large{\bf Relatore: \vspace{2mm}
+					
+					Prof./Dott. Nome Cognome}}
 		\end{minipage}
 		%
 		\hfill
@@ -175,7 +168,19 @@
 						Simone Pasquini}}}
 		\end{minipage}
 		
-		\vspace{40mm}
+		\par
+		\vspace{\baselineskip}
+		
+		\begin{minipage}[t]{0.47\textwidth}
+			%
+			% INSERIRE IL NOME DEL RELATORE CON IL RELATIVO TITOLO DI DOTTORE O PROFESSORE
+			%
+			{\large{\bf Correlatore: \vspace{2mm}
+					
+					Prof./Dott. Nome Cognome}}
+		\end{minipage}
+		
+		\vspace{45mm}
 		
 		\begin{center}
 			Anno Accademico { 2023/2024}
@@ -204,7 +209,7 @@
 	\section{Incidenza tumorale nel mondo}\label{sec:1.1}
 	Tra le principali cause di morte della popolazione mondiale è possibile annoverare le neoplasie (o tumori) ovvero neoformazioni che, a causa di mutazioni genetiche che sfuggono ai meccanismi di controllo della proliferazione cellulare, iniziano a crescere, senza alcuna finalità, in maniera incontrollata e scoordinata rispetto al tessuto sano. \`E possibile distinguere due tipi di neoplasie: benigne e maligne. Mentre le prime si limitano alla sede di origine, le seconde generano metastasi, un processo in cui le cellule neoplastiche si spostano dalla sede originaria e danno origine a masse anomale che invadono altri tessuti dell'organismo, ostacolandone le funzioni vitali. In quest'ultimo caso si parla di tumore maligno o cancro.
 	
-	Sebbene sia possibile prevenire fino al $50\%$\footnote{Tale percentuale varia fortemente in base al tipo di tumore e alla tempestività della diagnosi.} dei tumori evitando fattori di rischio e implementando strategie di profilassi già esistenti \cite{who}, si stima che nei Paesi industrializzati\footnote{Si fa riferimento ai Paesi OCSE (Organizzazione per la Cooperazione e lo Sviluppo Economico).} il cancro è la seconda causa di morte (causando il $21\%$ dei decessi totali nel $2021$), preceduto solo dalle malattie cardiovascolari \cite{oecd2023}. Nonostante il tasso di mortalità dovuto alle patologie tumorali sia sceso sin dal $2000$, nel $2022$ i casi diagnosticati di cancro a livello mondiale si sono attestati a quasi $20.0$ milioni\footnote{Negli ultimi dieci anni il numero di casi di tumore è aumentato di anno in anno, soprattutto a causa dell'invecchiamento progressivo della popolazione \cite{De_Angelis2024-no}, ma nel biennio $2020$-$2021$ il trend è cambiato a causa della pandemia di COVID-$19$ che ha precluso l'accesso a screening oncologici (nel periodo gennaio--ottobre $2020$ vi è stato un calo del $37.3\%$ di test diagnostici rispetto al periodo pre-pandemico) \cite{Angelini2023-xc}. Ciò potrebbe aumentare i tassi di incidenza e mortalità dei tumori, rivelandosi fatale nel medio-lungo termine \cite{oecd2021}.} (pari al $2.5\tcperthousand$ della popolazione totale \cite{unicef2022}), il $48.8\%$ dei quali ha portato alla morte del paziente \cite{gco}. Inoltre, il tasso di mortalità dovuto alle patologie tumorali è strettamente legato all'ISU (Indice di Sviluppo Umano) dei Paesi, variando dal $39.2\%$ per i Paesi con ISU molto alto al $67.1\%$ per quelli con basso ISU \cite{gco}.
+	Sebbene sia possibile prevenire fino al $50\%$\footnote{Tale percentuale varia fortemente in base al tipo di tumore e alla tempestività della diagnosi.} dei tumori evitando fattori di rischio e implementando strategie di profilassi già esistenti \cite{who}, si stima che nei Paesi industrializzati\footnote{Si fa riferimento ai Paesi OCSE (Organizzazione per la Cooperazione e lo Sviluppo Economico).} il cancro è la seconda causa di morte (causando il $21\%$ dei decessi totali nel $2021$), preceduto solo dalle malattie cardiovascolari \cite{oecd2023}. Nonostante il tasso di mortalità dovuto alle patologie tumorali sia sceso sin dal $2000$, nel $2022$ i casi diagnosticati di cancro a livello mondiale si sono attestati a quasi $20.0$ milioni (pari al $2.5\tcperthousand$ della popolazione totale \cite{unicef2022}), il $48.8\%$ dei quali ha portato alla morte del paziente\footnote{Negli ultimi dieci anni il numero di casi di tumore è aumentato di anno in anno, soprattutto a causa dell'invecchiamento progressivo della popolazione \cite{De_Angelis2024-no}, ma nel biennio $2020$-$2021$ il trend è cambiato a causa della pandemia di COVID-$19$ che ha precluso l'accesso a screening oncologici (nel periodo gennaio--ottobre $2020$ vi è stato un calo del $37.3\%$ di test diagnostici rispetto al periodo pre-pandemico) \cite{Angelini2023-xc}. Ciò potrebbe aumentare i tassi di incidenza e mortalità dei tumori, rivelandosi fatale nel medio-lungo termine \cite{oecd2021}.} \cite{gco}. Inoltre, il tasso di mortalità dovuto alle patologie tumorali è strettamente legato all'ISU (Indice di Sviluppo Umano) dei Paesi, variando dal $39.2\%$ per i Paesi con ISU molto alto al $67.1\%$ per quelli con basso ISU \cite{gco}.
 	
 	Altri fattori, quali il sesso e l'età, riducono ulteriormente l'uniformità dei tassi di incidenza e mortalità delle malattie tumorali. Infatti, a livello globale, l'incidenza di cancro negli uomini risulta più alta dell'$8.0\%$ rispetto a quella delle donne \cite{gco2}, divario dovuto anche alla maggiore esposizione dei primi a fattori di rischio, come fumo e consumo di alcol. Inoltre, il $58\%$ delle diagnosi di tumore riguarda persone con più di $65$ anni di età \cite{uscs}.
 	
@@ -220,7 +225,7 @@
 	Nel caso in cui la massa tumorale non risulti rimovibile attraverso un'operazione chirurgica, per esempio a causa della sua localizzazione anatomica,\footnote{\`E il caso di neoplasie che colpiscono organi o tessuti la cui rimozione sarebbe troppo invalidante per il paziente \cite{foot_site}.} si preferisce ricorrere alla radioterapia e all'adroterapia, ove quest'ultima è una tecnica avanzata di radioterapia. Pur non essendo invasive come la chirurgia, tali terapie consentono di danneggiare specifici tessuti biologici malati utilizzando radiazione ionizzante\footnote{Una radiazione si dice ionizzante quando ha energia sufficiente a liberare gli elettroni legati agli atomi della materia in cui penetra. La ionizzazione provoca danni biologici ai tessuti del corpo umano.} composta da fasci di fotoni ed elettroni in radioterapia e da particelle adroniche (come protoni, neutroni e ioni) in adroterapia (si veda \hyperref[fig:simulation]{Fig. 1.1}). In particolare, lo scopo di entrambi i trattamenti è quello di depositare una quantità di energia per unità di massa (detta dose) sufficiente a provocare un danno biologico che inibisca la crescita del tumore con effetti collaterali minimi \cite{asimmetrie_curareCLP}. Sebbene sembrino molto simili, la radioterapia e l'adroterapia presentano caratteristiche fisiche e radiobiologiche molto dissimili, i cui dettagli verranno evidenziati nel prosieguo della trattazione. Una delle differenze più evidenti è che la dose di un fascio radioterapico viene rilasciata in una regione piuttosto ampia, non concentrata, mentre le particelle adroniche, penetrando nei tessuti in grande profondità, irradiano un'ingente quantità di energia in uno spazio molto limitato definito picco di Bragg. In altre parole, le tecniche adroterapiche riducono il rischio di distruggere cellule sane situate prima e dopo il tumore in quanto permettono di definire in modo molto più preciso la regione da irradiare \cite{foot_site}. In definitiva, l'adroterapia consente sia di distruggere più efficacemente porzioni di cellule tumorali situate in profondità sia di minimizzare i danni a carico dei tessuti sani circostanti \cite{cnao1}, una duplice funzione in grado di migliorare la qualità della vita del paziente.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{simulation.jpg}
+		\includegraphics[width=0.95\linewidth]{simulation.jpg}
 		\caption{Simulazione di un irraggiamento radioterapico o adroterapico sul corpo di un paziente \cite{treatment_photo}.}
 		\label{fig:simulation}
 	\end{figure}
@@ -232,7 +237,7 @@
 	La storia della radioterapia ha inizio nel novembre del $1895$ con un singolare episodio di serendipità, il cui protagonista è il fisico tedesco Wilhelm C. von Röntgen ($1845$--$1923$), scopritore dei raggi X. Durante lo studio dei raggi catodici prodotti da un tubo di Crookes, Röntgen si accorse che della radiazione sconosciuta (denominata da lui stesso ``X'' poiché incognita fino a quel momento) riusciva a oltrepassare la lastra di vetro che ricopre lo strumento. Röntgen comprese sin da subito le grandi potenzialità dei neonati raggi X, osservando che tale radiazione era in grado di delineare la struttura interna dei materiali attraversati. Fu proprio il fisico tedesco a effettuare la prima radiografia alla mano di sua moglie (illustrata in \hyperref[fig:rongten]{Fig. 1.2}) dopo un'esposizione di $15$ minuti, un tempo molto lungo e rischioso essendo i raggi X un tipo di radiazione ionizzante. Le immediate applicazioni della scoperta di Röntgen in campo medico gli valsero il premio Nobel per la fisica nel $1901$ \cite{rontgen}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.5\linewidth]{rongten.jpg}
+		\includegraphics[width=0.4\linewidth]{rongten.jpg}
 		\caption{Lastra a raggi X della mano di Anna B. Ludwig ($1839$--$1919$), moglie di Röntgen, avvenuta dopo $15$ minuti di esposizione \cite{hand_rongt_wife}.}
 		\label{fig:rongten}
 	\end{figure}
@@ -248,7 +253,7 @@
 	Gli studi del ciclotrone di Harvard spinsero anche i laboratori russi e giapponesi ad avviare programmi di ricerca nella terapia adronica. Risulta di particolare importanza l'apertura del centro HIMAC (Heavy Ion Medical Accelerator in Chiba, si veda \hyperref[fig:himac]{Fig. 1.3}) \cite{hirao1992heavy} a Chiba (Giappone) che, nel $1994$, trattò per primo un paziente con un fascio di ioni carbonio, il cui rilascio di dose è nettamente superiore a quello di fotoni e protoni (si veda \hyperref[fig:photon]{Fig. 1.17}) e, per tale ragione, risulta più efficace nel controllo di tumori radioresistenti e di neoplasie più comuni (per esempio ai polmoni o al fegato).
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{himac.png}
+		\includegraphics[width=0.7\linewidth]{himac.png}
 		\caption{Panoramica delle strutture di ricerca HIMAC presso l'Istituto Nazionale di Scienze Radiologiche a Chiba \cite{cancers10030066}.}
 		\label{fig:himac}
 	\end{figure}
@@ -258,8 +263,6 @@
 	Una delle figure più importanti per lo sviluppo dell'adroterapia in Italia è sicuramente il fisico italiano Ugo Amaldi ($1934$--). La sua lungimiranza ha portato l'Italia a essere la seconda nazione europea ad avere un centro adroterapico (il CNAO) capace di effettuare trattamenti con protoni e ioni carbonio (si pensi che attualmente ne esistono solo sei in tutto il mondo \cite{asimmetrie_curareCLP}). Nei paragrafi successivi si ripercorrono le principali tappe della storia dell'adroterapia in Italia.
 	
 	Nel $1991$, assieme al fisico medico Giampiero Tosi ($1937$--), Amaldi scrisse un articolo pionieristico in cui si proponeva un centro nazionale di terapia con particelle \cite{amaldi1991per}, idea accolta con entusiasmo dal noto oncologo Umberto Veronesi ($1925$--$2016$) e dall'allora Presidente dell'Istituto Nazionale di Fisica Nucleare (INFN) Nicola Cabibbo ($1935$--$2010$). Un anno dopo, fu istituita la fondazione TERA (TErapia con Radiazioni Adroniche) il cui duplice scopo era quello di costruire centri adroterapici in Italia e in Europa \cite{amaldi_article}.
-	
-	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS) sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Nucleari Avanzate, \hyperref[fig:catana]{Fig. 1.4}), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose rilasciata entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range energetico adatto soprattutto alla cura dei tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ il CATANA trattò il primo paziente affetto da melanoma uveale e, da allora, oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza dei pazienti trattati del $98\%$ \cite{catana_conference}, percentuale pur sempre comparabile con la terapia chirurgica e fotonica, sebbene queste ultime compromettano maggiormente la capacità visiva essendo statisticamente più invalidanti dell'adroterapia.} Con l'arrivo degli altri centri adroterapici italiani, CATANA ha finito di operare.
 	\begin{figure}[H]
 		\centering
 		\savebox{\largestimage}{\includegraphics[width=0.49\textwidth]{catana1.jpg}}
@@ -272,14 +275,16 @@
 		\hfill
 		\begin{subfigure}[b]{0.49\textwidth}
 			\centering
-			\raisebox{\dimexpr.5\ht\largestimage-.5\height}{\includegraphics[width=\textwidth, scale=0.45]{catana2.jpg}}
+			\raisebox{\dimexpr.5\ht\largestimage-.5\height}{\includegraphics[width=\textwidth, scale=0.5]{catana2.jpg}}
 			\caption{Attrezzatura presso la sala di trattamento del CATANA \cite{asimmetrie_DLAS}.}
 			\label{fig:catana2}
 		\end{subfigure}
 		\caption{Immagini relative al CATANA dei LNS, primo centro di protonterapia in Italia.}
 		\label{fig:catana}
 	\end{figure}
-	Nel $1995$ Ugo Amaldi, con l'aiuto di Meinhard Regler (membro del progetto adroterapico austriaco Med-Austron), propose al direttivo del CERN (Conseil Européen pour la Recherche Nucléaire) di dare vita a PIMMS (Proton Ion Medical Machine Study) per la progettazione di un sincrotrone ottimizzato per il trattamento di tumori profondi attraverso ioni carbonio, protoni e altri ioni leggeri. PIMMS durò solo dal $1996$ al $2000$ ma fu un progetto talmente paradigmatico che, dopo ottimizzazioni successive, permise di sviluppare una versione più contenuta in termini di spazi e costi denominata PIMMS/TERA, evolutasi nella versione CNAO definitivamente realizzata a Pavia \cite{cnao2}. Proprio nel $2000$ il neoministro della Salute Umberto Veronesi autorizzò un finanziamento per la realizzazione del Centro Nazionale di Adroterapia (CNAO) e, nel maggio $2001$, istituì la Fondazione CNAO \cite{veronesi}. Dopo una prima fase di costruzione che ha coinvolto ben $500$ aziende italiane, Istituti ed Enti di Ricerca nazionali e internazionali, il CNAO si è attivato ufficialmente nel $2011$ (\hyperref[fig:edificio_cnao]{Fig. 1.5a}). La terapia adroterapica del CNAO, come già accennato, avviene accelerando protoni e ioni carbonio rispettivamente fino a un'energia cinetica di $250 \mbox{ MeV}$ e $4800\mbox{ MeV}$ (circa $400\mbox{ MeV/u}$\footnote{$\mbox{ MeV/u}$ è un'unità di misura dell'energia per unità di massa atomica $u$.}). I trattamenti si svolgono in tre sale, due delle quali usufruiscono di un fascio orizzontale mentre la terza consente un irraggiamento sia orizzontale che verticale (\hyperref[fig:sala_cnao]{Fig. 1.5b}). Protoni e ioni carbonio vengono accelerati fino a raggiungere una velocità di circa \num{30000}$\mbox{ km/s}$ ($\beta\approx0.1$)\footnote{$\beta$ è la velocità del fascio in unità di $c$, velocità della luce nel vuoto.} da un sincrotrone a forma di anello avente $25\mbox{ m}$ di diametro e $80\mbox{ m}$ di circonferenza (\hyperref[fig:sincrotrone_cnao]{Fig. 1.5c}). Gli attuali obiettivi del CNAO non sono solo quelli di arrivare a trattare circa $700$ pazienti all’anno, ma anche di diventare l’unico centro di adroterapia al mondo a disporre di protoni, ioni carbonio (e altre specie ioniche) e neutroni attraverso la Boron Neutron Capture Therapy (BNCT)\footnote{Nella BNCT si iniettano farmaci arricchiti con \ce{^{10}B} nel sito tumorale; quest'ultimo viene irradiato con neutroni di bassa energia in modo da sfruttare la loro reazione nucleare con i nuclei di \ce{^{10}B}, che produce nuclei radioattivi il cui decadimento libera radiazioni ionizzanti ad alta energia \cite{asimmetrie_curareCLP}.} \cite{cnao3,cnao4}.
+	Alla fine del $1995$ si decise finalmente di creare una struttura protonterapica ai Laboratori Nazionali del Sud (LNS) sfruttando il ciclotrone superconduttore già attivo nei LNS. Il progetto, chiamato CATANA (Centro di AdroTerapia ed Applicazioni Nucleari Avanzate, \hyperref[fig:catana]{Fig. 1.4}), prevedeva la collaborazione di INFN-LNS, Dipartimento di Fisica, Istituto di Oftalmologia e Radiologia dell'Università di Catania e il Centro Siciliano di Fisica Nucleare. Il ciclotrone catanese (\hyperref[fig:catana1]{Fig. 1.4a}), dotato di un complesso sistema dosimetrico in grado di misurare la dose rilasciata entro un errore del $3\%$, accelerava fasci protonici a un'energia massima di $62 \mbox{ MeV}$, range energetico adatto soprattutto alla cura dei tumori oculari (\hyperref[fig:catana2]{Fig. 1.4b}). Nel $2002$ il CATANA trattò il primo paziente affetto da melanoma uveale e, da allora, oltre $500$ pazienti hanno ricevuto trattamenti con successo per tumori intraoculari, melanomi congiuntivali e linfomi non Hodgkin.\footnote{I dati del $2014$, su un numero totale di $293$ pazienti, attestano un tasso di sopravvivenza dei pazienti trattati del $98\%$ \cite{catana_conference}, percentuale pur sempre comparabile con la terapia chirurgica e fotonica, sebbene queste ultime compromettano maggiormente la capacità visiva essendo statisticamente più invalidanti dell'adroterapia.} Con l'arrivo degli altri centri adroterapici italiani, CATANA ha finito di operare.
+	
+	Nel $1995$ Ugo Amaldi, con l'aiuto di Meinhard Regler (membro del progetto adroterapico austriaco Med-Austron), propose al direttivo del CERN (Conseil Européen pour la Recherche Nucléaire) di dare vita a PIMMS (Proton Ion Medical Machine Study) per la progettazione di un sincrotrone ottimizzato per il trattamento di tumori profondi attraverso ioni carbonio, protoni e altri ioni leggeri. PIMMS durò solo dal $1996$ al $2000$ ma fu un progetto talmente paradigmatico che, dopo ottimizzazioni successive, permise di sviluppare una versione più contenuta in termini di spazi e costi denominata PIMMS/TERA, evolutasi nella versione CNAO definitivamente realizzata a Pavia \cite{cnao2}. Proprio nel $2000$ il neoministro della Salute Umberto Veronesi autorizzò un finanziamento per la realizzazione del Centro Nazionale di Adroterapia Oncologica (CNAO) e, nel maggio $2001$, istituì la Fondazione CNAO \cite{veronesi}. Dopo una prima fase di costruzione che ha coinvolto ben $500$ aziende italiane, Istituti ed Enti di Ricerca nazionali e internazionali, il CNAO si è attivato ufficialmente nel $2011$ (\hyperref[fig:edificio_cnao]{Fig. 1.5a}). La terapia adroterapica del CNAO, come già accennato, avviene accelerando protoni e ioni carbonio rispettivamente fino a un'energia cinetica di $250 \mbox{ MeV}$ e $4800\mbox{ MeV}$ (circa $400\mbox{ MeV/u}$\footnote{$\mbox{ MeV/u}$ è un'unità di misura dell'energia per unità di massa atomica $u$.}). I trattamenti si svolgono in tre sale, due delle quali usufruiscono di un fascio orizzontale mentre la terza consente un irraggiamento sia orizzontale che verticale (\hyperref[fig:sala_cnao]{Fig. 1.5b}). Protoni e ioni carbonio vengono accelerati fino a raggiungere una velocità di circa \num{30000}$\mbox{ km/s}$ ($\beta\approx0.1$)\footnote{$\beta$ è la velocità del fascio in unità di $c$, velocità della luce nel vuoto.} da un sincrotrone a forma di anello avente $25\mbox{ m}$ di diametro e $80\mbox{ m}$ di circonferenza (\hyperref[fig:sincrotrone_cnao]{Fig. 1.5c}).
 	\begin{figure}[H]
 		\centering
 		\subfloat[Edificio del complesso edilizio del CNAO contenente servizi sanitari, amministrativi e di alta tecnologia come il sincrotrone \cite{cnao5}.]{\label{fig:edificio_cnao}\includegraphics[width=.49\linewidth]{edificio_cnao.jpg}}\hfill
@@ -288,14 +293,14 @@
 		\caption{Immagini relative al CNAO di Pavia.}
 		\label{fig:cnao}
 	\end{figure}
-	Il centro adroterapico italiano più recente è il Proton Therapy Center (PTC) di Trento, la cui attività clinica ha avuto inizio nell'ottobre del $2014$ \cite{trento_pt}. Il PTC, che è una delle unità operative del Dipartimento di Oncologia dell'Ospedale di Trento, utilizza solo fasci di protoni accelerati da un ciclotrone a un'energia di $70$--$226 \mbox{ MeV}$ \cite{FRACCHIOLLA2019215}. Uno dei punti di forza del PTC è la sua capacità di erogare protoni per mezzo di sistemi rotanti (gantry, \hyperref[fig:gantry]{Fig. 1.6}), garantendo un trattamento del paziente full-body a $360^\circ$ necessario per patologie come tumori cerebrali e della base cranica, del distretto cervico-cefalico, della colonna vertebrale, sarcomi dei tessuti molli e tumori pediatrici \cite{trento_servSan}. Inoltre, il centro adroterapico trentino è il primo in Italia capace di erogare un fascio di protoni in modalità attiva; quest'ultima, a differenza delle modalità uniforme e passiva, utilizza campi magnetici per deviare il percorso di ciascun fascio protonico verso la posizione che deve colpire, determinata subito prima che la dose venga erogata \cite{LILT,McGowan2013-pl}.
+	Gli attuali obiettivi del CNAO non sono solo quelli di arrivare a trattare circa $700$ pazienti all’anno, ma anche di diventare l’unico centro di adroterapia al mondo a disporre di protoni, ioni carbonio (e altre specie ioniche) e neutroni attraverso la Boron Neutron Capture Therapy (BNCT)\footnote{Nella BNCT si iniettano farmaci arricchiti con \ce{^{10}B} nel sito tumorale; quest'ultimo viene irradiato con neutroni di bassa energia in modo da sfruttare la loro reazione nucleare con i nuclei di \ce{^{10}B}, che produce nuclei radioattivi il cui decadimento libera radiazioni ionizzanti ad alta energia \cite{asimmetrie_curareCLP}.} \cite{cnao3,cnao4}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{gantry.jpg}
 		\caption{Sistema gantry ``Blu'' del Centro di Protonterapia di Trento \cite{protonterapia_wiki}.}
 		\label{fig:gantry}
 	\end{figure}
-	Il PTC possiede due linee protoniche dedicate ai trattamenti clinici dotate di gantry e una linea fissa utilizzata per attività sperimentali di ricerca e sviluppo (R\&D). Le attività di R\&D non sono legate esclusivamente alla protonterapia ma anche a contesti lontani dall'ambito medico, per esempio appartenenti all'ambito aerospaziale (come la radioprotezione) ed elettronico (come lo studio di componenti elettroniche radioresistenti) o legati all'analisi dei materiali e lo sviluppo di rivelatori \cite{trento_pt2}.
+	Il centro adroterapico italiano più recente è il Proton Therapy Center (PTC) di Trento, la cui attività clinica ha avuto inizio nell'ottobre del $2014$ \cite{trento_pt}. Il PTC, che è una delle unità operative del Dipartimento di Oncologia dell'Ospedale di Trento, utilizza solo fasci di protoni accelerati da un ciclotrone a un'energia di $70$--$226 \mbox{ MeV}$ \cite{FRACCHIOLLA2019215}. Uno dei punti di forza del PTC è la sua capacità di erogare protoni per mezzo di sistemi rotanti (gantry, \hyperref[fig:gantry]{Fig. 1.6}), garantendo un trattamento del paziente full-body a $360^\circ$ necessario per patologie come tumori cerebrali e della base cranica, del distretto cervico-cefalico, della colonna vertebrale, sarcomi dei tessuti molli e tumori pediatrici \cite{trento_servSan}. Inoltre, il centro adroterapico trentino è il primo in Italia capace di erogare un fascio di protoni in modalità attiva; quest'ultima, a differenza delle modalità uniforme e passiva, utilizza campi magnetici per deviare il percorso di ciascun fascio protonico verso la posizione che deve colpire, determinata subito prima che la dose venga erogata \cite{LILT,McGowan2013-pl}. Il PTC possiede due linee protoniche dedicate ai trattamenti clinici dotate di gantry e una linea fissa utilizzata per attività sperimentali di ricerca e sviluppo (R\&D). Le attività di R\&D non sono legate esclusivamente alla protonterapia ma anche a contesti lontani dall'ambito medico, per esempio appartenenti all'ambito aerospaziale (come la radioprotezione) ed elettronico (come lo studio di componenti elettroniche radioresistenti) o legati all'analisi dei materiali e lo sviluppo di rivelatori \cite{trento_pt2}.
 	
 	\subsubsection{Tecniche e R\&D nel percorso radioterapico}
 	Nei moderni centri radio e adroterapici, prima di ogni trattamento, i pazienti compiono un attento percorso di pianificazione del trattamento (TP, Treatment Planning) che include numerosi passaggi fondamentali. Uno di questi è lo studio della topologia del volume tumorale, che avviene tramite tecniche di imaging diagnostico morfologico e funzionale come TAC (Tomografia Assiale Computerizzata), RMN (Risonanza Magnetica Nucleare), PET (Tomografia a Emissione di Positroni) e SPECT (Tomografia a Emissione di Singolo Fotone), metodi che con lo sviluppo tecnologico forniscono mappe tridimensionali dei tessuti del corpo umano sempre più dettagliate. Un altro compito del TP è anche quello di pianificare la dose totale a cui sottoporre il paziente e il suo frazionamento; ad esempio, al CNAO i trattamenti con fasci di protoni e di ioni carbonio richiedono in media rispettivamente $35$ e $16$ sedute \cite{cnao7}.
@@ -309,17 +314,17 @@
 	\section{Parametri fisici ed effetti biologici della radiazione}
 	Come descritto nella \hyperref[sec:1.1]{Sez. 1.1}, le cellule tumorali generano un disequilibrio dell'omeostasi dell'organismo umano poiché, a differenza delle cellule sane, sfuggono ai meccanismi di controllo che limitano la loro proliferazione (una regolazione che avviene automaticamente in condizioni normali). Infatti, molte cellule malate non sono capaci di arrestare il ciclo cellulare nei punti di controllo,\footnote{I punti di controllo sono stadi del ciclo cellulare in cui quest'ultimo subisce automaticamente un arresto, in attesa che arrivi un segnale che permetta la sua prosecuzione.} nemmeno quando sono assenti i fattori di crescita\footnote{I fattori di crescita sono proteine che stimolano la divisione di alcune cellule. Una loro assenza inibirebbe la divisione cellulare.} \cite{campbell3anno}.
 	
-	Le alterazioni del ciclo cellulare sono generalmente causate da disfunzioni dell'espressione genica (\hyperref[fig:mutazioni_genetiche]{Fig. 1.7}), che è il processo con cui l'informazione contenuta nei geni fluisce alle proteine (le macromolecole funzionali del nostro corpo) tramite meccanismi di trascrizione e traduzione del DNA. I geni modificati capaci di generare cellule tumorali sono denominati oncogeni. Di solito le cellule sane acquisiscono un oncogene a partire da una mutazione di uno dei propri geni, chiamato proto-oncogene. Il cromosoma degli esseri umani contiene naturalmente proto-oncogeni, molti dei quali (in condizioni ordinarie) svolgono ruoli essenziali per il ciclo cellulare, come codificare per i fattori di crescita; tuttavia, tali proto-oncogeni possono convertire in oncogeni nelle modalità descritte nella \hyperref[fig:oncogene]{Fig. 1.7a}. Oltre ai proto-oncogeni, che stimolano la divisione cellulare, esistono gli oncosoppressori, geni che codificano per proteine che inibiscono la proliferazione cellulare incontrollata. Per questo motivo, mutazioni che riducono le attività delle proteine codificate dai geni oncosoppressori possono portare all'insorgenza di un tumore (\hyperref[fig:oncosoppressore]{Fig. 1.7b}). Il fatto che le neoplasie siano originate da danni genetici è un'ipotesi ampiamente acclarata, che si basa su osservazioni come il ritrovamento di cromosomi danneggiati in cellule cancerose, il riconoscimento di una predisposizione ereditaria al cancro e il rapporto fra suscettibilità al cancro e incapacità delle cellule a riparare il DNA danneggiato \cite{treccani_oncogeni}. Per esempio, si pensi che le mutazioni di due noti geni \textit{ras} (proto-oncogene) e \textit{p53} (oncosoppressore) sono rilevate rispettivamente nel $30\%$ e in più del $50\%$ dei casi di cancro umano \cite{campbell3anno}.
+	Le alterazioni del ciclo cellulare sono generalmente causate da disfunzioni dell'espressione genica (\hyperref[fig:mutazioni_genetiche]{Fig. 1.7}), che è il processo con cui l'informazione contenuta nei geni fluisce alle proteine (le macromolecole funzionali del nostro corpo) tramite meccanismi di trascrizione e traduzione del DNA. I geni modificati capaci di generare cellule tumorali sono denominati oncogeni. Di solito le cellule sane acquisiscono un oncogene a partire da una mutazione di uno dei propri geni, chiamato proto-oncogene. Il cromosoma degli esseri umani contiene naturalmente proto-oncogeni, molti dei quali (in condizioni ordinarie) svolgono ruoli essenziali per il ciclo cellulare, come codificare per i fattori di crescita; tuttavia, tali proto-oncogeni possono convertire in oncogeni nelle modalità descritte nella \hyperref[fig:oncogene]{Fig. 1.7a}. Oltre ai proto-oncogeni, che stimolano la divisione cellulare, esistono gli oncosoppressori, geni che codificano per proteine che inibiscono la proliferazione cellulare incontrollata. Per questo motivo, mutazioni che riducono le attività delle proteine codificate dai geni oncosoppressori possono portare all'insorgenza di un tumore (\hyperref[fig:oncosoppressore]{Fig. 1.7b}).
 	\begin{figure}[H]
 		\centering
-		\begin{subfigure}[b]{0.9\textwidth}
+		\begin{subfigure}[b]{0.85\textwidth}
 			\centering
 			\includegraphics[width=\textwidth, scale=0.5]{oncogene.png}
 			\caption{Schematizzazione dei tre modi con cui un proto-oncogene codificante per fattori di controllo può mutare in un oncogene.}
 			\label{fig:oncogene}
 		\end{subfigure}
 		\par
-		\begin{subfigure}[b]{0.9\textwidth}
+		\begin{subfigure}[b]{0.85\textwidth}
 			\centering
 			\includegraphics[width=\textwidth, scale=0.5]{oncosoppressore.jpg}
 			\caption{Effetto della mutazione di un gene oncosoppressore.}
@@ -328,6 +333,7 @@
 		\caption{Esempi di mutazioni subite da geni che controllano la divisione cellulare \cite{campbell2anno}.}
 		\label{fig:mutazioni_genetiche}
 	\end{figure}
+	Il fatto che le neoplasie siano originate da danni genetici è un'ipotesi ampiamente acclarata, che si basa su osservazioni come il ritrovamento di cromosomi danneggiati in cellule cancerose, il riconoscimento di una predisposizione ereditaria al cancro e il rapporto fra suscettibilità al cancro e incapacità delle cellule a riparare il DNA danneggiato \cite{treccani_oncogeni}. Per esempio, si pensi che le mutazioni di due noti geni \textit{ras} (proto-oncogene) e \textit{p53} (oncosoppressore) sono rilevate rispettivamente nel $30\%$ e in più del $50\%$ dei casi di cancro umano \cite{campbell3anno}.
 	
 	\subsection{Danni biologici delle radiazioni ionizzanti}
 	La radioterapia e l'adroterapia, come descritto in \hyperref[sec:1.2]{Sez. 1.2}, sfruttano la radiazione ionizzante per danneggiare i tessuti biologici cancerosi al fine di causare la morte delle cellule malate che li costituiscono. La radiazione ionizzante produce vari effetti sui tessuti biologici che dipendono da svariati fattori, tra cui l'energia del fascio incidente, la sua composizione e le caratteristiche del tessuto irradiato. Per comprendere i danni biologici che la radiazione provoca sui tessuti cancerosi, è opportuno analizzare ciò che accade a livello cellulare.
@@ -335,20 +341,19 @@
 	Per le cellule tumorali si parla di morte riproduttiva nel momento in cui la cellula perde la sua capacità di riprodursi indefinitamente. Per sconfiggere una neoplasia non occorre eliminare tutte le cellule tumorali, piuttosto è necessario impedire alla cellula di riprodursi per mitosi (o meiosi se si tratta di una cellula deputata alla riproduzione \cite{campbell2anno}) mediante la distruzione del DNA contenuto nel suo nucleo. Per uccidere il DNA cellulare tramite radiazione ionizzante vi sono due modi, diretto e indiretto, descritti nei paragrafi seguenti.
 	
 	\subsubsection{Danno diretto}\label{par:danno_diretto}
-	Prima di analizzare il danno diretto che la radiazione può arrecare al DNA, è opportuno descrivere la struttura e le funzioni di quest'ultimo. Il DNA (acido desossiribonucleico) è un polimero costituito da monomeri chiamati nucleotidi, molecole a loro volta composte da una base azotata, uno zucchero e un gruppo fosfato (si veda \hyperref[fig:nucleotide]{Fig. 1.8}). Esistono quattro tipi di nucleotidi, la cui specificità è data dal tipo di base azotata: adenina (A), citosina (C), timina (T) o guanina (G).
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\linewidth]{nucleotide.pdf}
-		\caption{Nucleotide formato a sinistra da un gruppo fosfato contenente un atomo di fosforo \ce{P} (che determina il carattere acido degli acidi nucleici), al centro da uno zucchero (desossiribosio) formato da cinque atomi di carbonio e in alto a destra da una base azotata contenente un gruppo \ce{\bond{-}NH} (che conferisce loro un carattere basico) legata con lo zucchero per mezzo di un legame glicosidico \cite{nucleotidi_wiki}.}
-		\label{fig:nucleotide}
-	\end{figure}
-	Oltre al DNA esiste anche l'RNA (acido ribonucleico), un acido nucleico fondamentale per la biosintesi delle proteine. Nonostante DNA e RNA siano entrambi costituiti da una lunga catena nucleotidica, presentano varie differenze strutturali e funzionali:
+	Prima di analizzare il danno diretto che la radiazione può arrecare al DNA, è opportuno descrivere la struttura e le funzioni di quest'ultimo. Il DNA (acido desossiribonucleico) è un polimero costituito da monomeri chiamati nucleotidi, molecole a loro volta composte da una base azotata, uno zucchero e un gruppo fosfato (si veda \hyperref[fig:nucleotide]{Fig. 1.8}). Esistono quattro tipi di nucleotidi, la cui specificità è data dal tipo di base azotata: adenina (A), citosina (C), timina (T) o guanina (G). Oltre al DNA esiste anche l'RNA (acido ribonucleico), un acido nucleico fondamentale per la biosintesi delle proteine. Nonostante DNA e RNA siano entrambi costituiti da una lunga catena nucleotidica, presentano varie differenze strutturali e funzionali:
 	\begin{itemize}
 		\item il DNA possiede una struttura a doppia elica (caratterizzata dal diametro costante di $2\mbox{ nm}$ \cite{campbell3anno}) costituita da due catene nucleotidiche antiparallele (unite tramite legami idrogeno tra A e T oppure tra C e G), mente l'RNA è formato da una singola elica in cui T viene sostituita dall'uracile (U) (\hyperref[fig:dna_structure]{Fig. 1.9});
 		\item lo zucchero del DNA (desossiribosio) possiede un atomo di ossigeno in meno rispetto a quello dell'RNA (ribosio);
 		\item nelle cellule eucariote, il DNA è collocato nel nucleo mentre l'RNA si trova sia nel nucleo che nel citoplasma;
 		\item il DNA è depositario dell'informazione genetica mentre l'RNA è l'intermediario tra il DNA e la sintesi delle proteine.
 	\end{itemize}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\linewidth]{nucleotide.pdf}
+		\caption{Nucleotide formato a sinistra da un gruppo fosfato contenente un atomo di fosforo \ce{P} (che determina il carattere acido degli acidi nucleici), al centro da uno zucchero (desossiribosio) formato da cinque atomi di carbonio e in alto a destra da una base azotata contenente un gruppo \ce{\bond{-}NH} (che conferisce loro un carattere basico) legata con lo zucchero per mezzo di un legame glicosidico \cite{nucleotidi_wiki}.}
+		\label{fig:nucleotide}
+	\end{figure}
 	La scoperta delle strutture degli acidi nucleici DNA e RNA (\hyperref[fig:dna_structure]{Fig. 1.9}) viene attribuita agli scienziati James D. Watson ($1928$--), Francis H. C.Crick ($1916$--$2004$) e Maurice H. F. Wilkins ($1916$--$2004$), che per il loro contributo alla biologia molecolare ricevettero il premio Nobel per la fisiologia o medicina nel $1958$. In realtà la prima immagine cristallografica del DNA fu quella della chimica Rosalind E. Franklin ($1920$--$1958$), anche se per molto tempo non gli fu riconosciuta la paternità della scoperta. Purtroppo la sua morte precoce non le consentì nemmeno di essere candidata al premio Nobel \cite{campbell3anno}.
 	\begin{figure}[H]
 		\centering
@@ -359,7 +364,7 @@
 	Come accennato in precedenza, le funzioni del DNA sono quelle di regolare la riproduzione delle cellule (mediante la sua duplicazione che favorisce la trasmissione delle informazioni ereditarie) e di controllare l'espressione genica. In particolare, il dogma centrale della biologia molecolare (proposto nel $1956$ dallo stesso Francis Crick \cite{campbell3anno}) prevede che le fasi principali della sintesi proteica siano la trascrizione e la traduzione, illustrate in \hyperref[fig:dna_rna]{Fig. 1.10}. Durante la trascrizione si genera un filamento di mRNA (RNA messaggero) le cui basi azotate sono complementari a quelle della molecola di DNA che è utilizzata come stampo (con l'U al posto della T). Durante la traduzione avviene un ``cambiamento di linguaggio'': l'informazione genica contenuta nel DNA (per mezzo dell'mRNA, dell'tRNA (RNA di trasporto) e dei ribosomi) viene tradotta da una sequenza di nucleotidi in una sequenza di amminoacidi, i ``mattoni'' che costituiscono le proteine; nello specifico, ad ogni tripletta di basi azotate (denominata codone) corrisponde un amminoacido (la totalità delle $4^3=64$ combinazioni possibili consente di codificare per tutti i $20$ amminoacidi esistenti in natura). Eventuali variazioni della sequenza nucleotidica (come la sostituzione, l'inserzione o la delezione di una base azotata) generano le mutazioni che, in mancanza dei meccanismi di controllo cellulare, sono la causa di molti disturbi e malattie ereditarie \cite{campbell3anno}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{dna_rna.jpg}
+		\includegraphics[width=0.85\linewidth]{dna_rna.jpg}
 		\caption{Meccanismi di trascrizione e traduzione grazie ai quali il genotipo (l'insieme delle informazioni ereditarie di un organismo) controlla il fenotipo (le caratteristiche fisiche di un organismo) \cite{hub_scuola,campbell3anno}.}
 		\label{fig:dna_rna}
 	\end{figure}
@@ -459,7 +464,7 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |m{10.5cm}||M{3.5cm}| }
+			\begin{tabular}{ |m{10.5cm}||M{3.3cm}| }
 				\hline
 				Tipo di radiazione & $w_R$ \\
 				\hline\hline
@@ -515,7 +520,7 @@
 		LET=\frac{dE_\Delta}{dx}
 		\label{eq:let}
 	\end{equation}
-	Nella \hyperref[eq:dose_as]{Eq. 1.8} viene utilizzato il potere frenante $\left(\frac{dE}{dx}\right)$, simile alla definizione di LET presente in \hyperref[eq:let]{Eq. 1.11}. Il motivo per cui tali termini si trattano separatamente risiede in una loro differenza: mentre il potere frenante è legato all'energia persa dal fascio di particelle nel mezzo che attraversa (per unità di distanza), il LET si riferisce all'energia assorbita dal mezzo (per unità di distanza). Inoltre, nella \hyperref[eq:let]{Eq. 1.11} compare il pedice $\Delta$ in quanto nella definizione di LET si tengono conto dei trasferimenti di energia localizzati vicino alla traiettoria della particella, escludendo le ionizzazioni più energetiche degli elettroni a lungo raggio (la cui energia è maggiore di una soglia $\Delta$, si veda \hyperref[fig:let]{Fig. 1.13}). Nel limite $\Delta\rightarrow+\infty$\footnote{Tale condizione limite non si raggiunge fisicamente, ma corrisponde al caso in cui vengono inclusi tutti i trasferimenti di energia della \hyperref[eq:let]{Eq. 1.11}, per quanto grandi possano essere.} non esisterebbero più elettroni con $E>\Delta$ e l'energia persa dalla particella del fascio eguaglierebbe l'energia assorbita dal materiale; ciò renderebbe equivalenti il potere frenante e il LET. Tale considerazioni consente di ricavare la relazione che lega il potere frenante e il LET:
+	Nella \hyperref[eq:dose_as]{Eq. 1.8} viene utilizzato il potere frenante $\left(\frac{dE}{dx}\right)$, simile alla definizione di LET presente in \hyperref[eq:let]{Eq. 1.11}. Il motivo per cui tali termini si trattano separatamente risiede in una loro differenza: mentre il potere frenante è legato all'energia persa dal fascio di particelle nel mezzo che attraversa (per unità di distanza), il LET si riferisce all'energia assorbita dal mezzo (per unità di distanza). Inoltre, nella \hyperref[eq:let]{Eq. 1.11} compare il pedice $\Delta$ in quanto nella definizione di LET si tengono conto dei trasferimenti di energia localizzati vicino alla traiettoria della particella, escludendo le ionizzazioni più energetiche degli elettroni a lungo raggio (la cui energia è maggiore di una soglia $\Delta$, si veda \hyperref[fig:let]{Fig. 1.13}). Nel limite $\Delta\rightarrow+\infty$\footnote{Tale condizione limite non si raggiunge fisicamente, ma corrisponde al caso in cui vengono inclusi tutti i trasferimenti di energia della \hyperref[eq:let]{Eq. 1.11}, per quanto grandi possano essere.} non esisterebbero più elettroni con $E>\Delta$ e l'energia persa dalla particella del fascio eguaglierebbe l'energia assorbita dal materiale; ciò renderebbe equivalenti il potere frenante e il LET. Tali considerazioni consentono di ricavare la relazione che lega il potere frenante e il LET:
 	\begin{equation}
 		LET=\frac{dE_\Delta}{dx}-K_{E>\Delta}
 		\label{eq:let&stoppingpower}
@@ -523,14 +528,14 @@
 	dove $K_{E>\Delta}$ è l'energia cinetica degli elettroni che possiedono un'energia $E>\Delta$.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{let.jpg}
+		\includegraphics[width=0.72\linewidth]{let.jpg}
 		\caption{Il cilindro schematizza la traiettoria di una particella del fascio. Gli elettroni $e_1$ ed $e_2$ possiedono energie rispettivamente $E_1>\Delta$ ed $E_2<\Delta$. Nella definizione di LET si considerano solo gli elettroni a corto raggio come $e_2$.}
 		\label{fig:let}
 	\end{figure}
 	In base al valore di LET, è possibile distinguere due tipi di radiazione, quelle ad alto e basso LET. Le radiazioni a basso LET, disperdendo poca energia nei tessuti per unità di percorso, penetrano più in profondità rispetto alle radiazioni ad alto LET in quanto impiegano più tempo a esaurire l'energia che possiedono. Invece, le radiazioni ad alto LET arrecano danni biologici maggiori ai tessuti in quanto generano eventi di ionizzazione più frequenti e ravvicinati. La \hyperref[fig:damage_let]{Fig. 1.14} mostra che le radiazioni a basso LET, per esempio raggi X o $\gamma$, inducono prevalentemente danni isolati al DNA come le SSB mentre radiazioni ad alto LET, tra cui si trovano le particelle $\alpha$ o gli ioni pesanti, generano danni più distruttivi al DNA come le DSB \cite{Roobol2020-fp}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{damage_let.png}
+		\includegraphics[width=0.6\linewidth]{damage_let.png}
 		\caption{Danni tipici del DNA da parte di radiazioni a basso LET (in alto) e ad alto LET (in basso) \cite{Fabbrizi_Parsons_2022}.}
 		\label{fig:damage_let}
 	\end{figure}
@@ -569,7 +574,7 @@
 	\end{figure}
 	\begin{table}[H]
 		\centering
-		\begin{tabular}{ |m{10cm}||M{3cm}|M{1cm}| }
+		\begin{tabular}{ |m{9.4cm}||M{3cm}|M{1cm}| }
 			\hline
 			Tipo di radiazione & LET $\left[\mbox{keV/}\mu\mbox{m}\right]$ & RBE\\
 			\hline\hline
@@ -591,24 +596,24 @@
 		\caption{Valori approssimati di LET e RBE di alcuni tipi di radiazione \cite{MURSHED201957}.}
 		\label{tab:let_rbe}
 	\end{table}
-	Dalla \hyperref[tab:let_rbe]{Tab. 1.2} si nota che i fasci adroterapici di ioni carbonio sono molto più efficienti dei fasci radioterapici fotonici (raggi $\gamma$). I protoni, invece, possiedono un RBE solo del $10\%$ più grande rispetto ai fotoni; tale somiglianza non sembrerebbe coadiuvare le riflessioni esposte nella \hyperref[sec:1.2]{Sez. 1.2}, in cui si sono evidenziati i grandi vantaggi della protonterapia sulla radioterapia in relazione al rilascio di dose più potente della prima sulla seconda. In realtà l'efficienza protonterapica vince su quella radioterapica se si tengono conto degli effetti globali di entrambe le radiazioni: mentre i protoni (così come gli ioni carbonio) rilasciano la maggior parte della dose in una zona ristretta situata in prossimità del BP, i fotoni rilasciano la dose in una regione molto più ampia (aumentando il rischio di colpire organi sani), come evidenziato nella \hyperref[fig:photon]{Fig. 1.17}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{photon.jpg}
 		\caption{Rilascio di dose relativa in funzione della profondità del tessuto per fotoni, elettroni, ioni carbonio e protoni (normalizzati allo stesso massimo). Si notino i picchi di Bragg sia per gli ioni carbonio che per i protoni (particelle usate in adroterapia), assenti per elettroni e fotoni (particelle usate in radioterapia) \cite{biomedicines9010031}.}
 		\label{fig:photon}
 	\end{figure}
+	Dalla \hyperref[tab:let_rbe]{Tab. 1.2} si nota che i fasci adroterapici di ioni carbonio sono molto più efficienti dei fasci radioterapici fotonici (raggi $\gamma$). I protoni, invece, possiedono un RBE solo del $10\%$ più grande rispetto ai fotoni; tale somiglianza non sembrerebbe coadiuvare le riflessioni esposte nella \hyperref[sec:1.2]{Sez. 1.2}, in cui si sono evidenziati i grandi vantaggi della protonterapia sulla radioterapia in relazione al rilascio di dose più potente della prima sulla seconda. In realtà l'efficienza protonterapica vince su quella radioterapica se si tengono conto degli effetti globali di entrambe le radiazioni: mentre i protoni (così come gli ioni carbonio) rilasciano la maggior parte della dose in una zona ristretta situata in prossimità del BP, i fotoni rilasciano la dose in una regione molto più ampia (aumentando il rischio di colpire organi sani), come evidenziato nella \hyperref[fig:photon]{Fig. 1.17}.
+	
 	Per i motivi sopra citati, negli ultimi anni la variabilità dell'RBE protonico è stata ampiamente dibattuta; alcuni studi riportano misure radiobiologiche che attestano valori superiori rispetto all'$1.1$ riportato in \hyperref[tab:let_rbe]{Tab. 1.2} \cite{Tang1997-wb}. In particolare, nella ref. \cite{cancers7010353} si propone che l'aumento dell' RBE protonico sia causato dalle particelle prodotte nella frammentazione nucleare del target\footnote{In fisica nucleare e subnucleare il target (o targhetta) è una porzione di materia che funge da bersaglio di un fascio di particelle inviato per studiare la materia, il fascio e le loro interazioni \cite{treccani_target}.} (quest'ultimo corrispondente ai nuclei del corpo umano): nell'attraversare il paziente, le \hyperref[par:interazioni_nucleari]{interazioni nucleari} che intercorrono tra il fascio protonico e i tessuti del paziente stesso generano dei frammenti, particelle secondarie caratterizzate da un corto raggio ($10$--$100\mu\mbox{ m}$), alto LET e alto RBE. Uno degli obiettivi primari dell'esperimento FOOT è proprio quello di migliorare l'accuratezza dell'RBE protonico (in funzione di profondità e tipo di tessuto) a partire dalla misura di sezioni d'urto differenziali, energie e direzioni dei frammenti; conoscere minuziosamente tali grandezze porterebbe a valutazioni più precise degli effetti biologici protonterapici e a una conseguente riduzione dei margini di errore in fase di TP.
 		
 	Nel corso del tempo molti studi si sono incentrati sul legame tra RBE e LET, fortemente dipendente dalla natura del materiale biologico e dalla scelta dell'endpoint utilizzato per definire l'efficacia radioterapica. Pur fissando tali parametri, alcuni risultati mostrano che radiazioni differenti aventi stessi LET possiedono diversi RBE \cite{jicru}. Nonostante tali difficoltà, la \hyperref[fig:let_rbe]{Fig. 1.16a} riporta un tipico andamento di RBE e LET in cui si osserva che l'RBE aumenta al crescere dell'LET fino a raggiungere un massimo intorno ai $100\mbox{keV}/\mu\mbox{m}$, dopo il quale si verifica una forte diminuzione. La spiegazione del primo tratto è ovvia, in quanto più energia assorbe il materiale attraversato da radiazione più danni biologici saranno arrecati allo stesso, mentre nel secondo tratto si verifica un fenomeno di saturazione denominato overkill cellulare in cui la quantità di energia che viene depositata è così elevata che si produce una quantità di danni al DNA maggiore di quella richiesta per la morte cellulare, da cui consegue la riduzione dell'efficacia biologica del trattamento \cite{linz2011ion}.
-	
-	Comprendere quale sia il range di dose più efficace nei trattamenti radio e adroterapici è molto complesso in quanto gli effetti radiobiologici dipendono da molti parametri, alcuni dei quali vengono analizzati nei paragrafi successivi. In generale, durante il TP dei pazienti affetti da tumore, sono due i fattori che influenzano la scelta della dose: il TCP (Tumor Control Probability) e l'NTCP (Normal Tissue Complication Probability). Lo scopo di radio e adroterapia è quello di raggiungere un'elevata probabilità di controllare localmente un tumore (che corrisponde a un alto valore di TCP) mantenendo bassa la probabilità di sviluppare complicazioni nei tessuti sani (che corrisponde all'NTCP) \cite{Baumann2005-kp}. Teoricamente, il range di dose più efficiente è quello che massimizza il TCP e minimizza l'NTPC (in altre parole il range di dose ottimale è quello che massimizza la differenza tra TCP e NTCP). Dato che le cellule sane sono in grado di riparare i danni radiativi meglio delle cellule cancerose, tale range esiste (pur essendo fortemente dipendente dal tipo di tumore e dal suo stadio) e si attesta intorno a $20$--$80\mbox{ Gy}$, valori letali se rilasciati in un'unica seduta (questo è uno dei motivi per cui si effettua il frazionamento, si veda \hyperref[sec:sopravvivenza_cellulare]{Sez. 1.4.3}). Tali considerazioni sono riassunte in \hyperref[fig:tcp]{Fig. 1.18}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{tcp.jpg}
 		\caption{Andamenti del TCP (in verde), dell'NTCP (in rosso), della loro differenza (in blu) e dell'assenza di complicazioni nei tessuti sani (in nero) in funzione della dose rilasciata nei tessuti. Il range di dose ottimale nei trattamenti si trova in corrispondenza della curva blu \cite{Jensen2019}.}
 		\label{fig:tcp}
 	\end{figure}
+	Comprendere quale sia il range di dose più efficace nei trattamenti radio e adroterapici è molto complesso in quanto gli effetti radiobiologici dipendono da molti parametri, alcuni dei quali vengono analizzati nei paragrafi successivi. In generale, durante il TP dei pazienti affetti da tumore, sono due i fattori che influenzano la scelta della dose: il TCP (Tumor Control Probability) e l'NTCP (Normal Tissue Complication Probability). Lo scopo di radio e adroterapia è quello di raggiungere un'elevata probabilità di controllare localmente un tumore (che corrisponde a un alto valore di TCP) mantenendo bassa la probabilità di sviluppare complicazioni nei tessuti sani (che corrisponde all'NTCP) \cite{Baumann2005-kp}. Teoricamente, il range di dose più efficiente è quello che massimizza il TCP e minimizza l'NTPC (in altre parole il range di dose ottimale è quello che massimizza la differenza tra TCP e NTCP). Dato che le cellule sane sono in grado di riparare i danni radiativi meglio delle cellule cancerose, tale range esiste (pur essendo fortemente dipendente dal tipo di tumore e dal suo stadio) e si attesta intorno a $20$--$80\mbox{ Gy}$, valori letali se rilasciati in un'unica seduta (questo è uno dei motivi per cui si effettua il frazionamento, si veda \hyperref[sec:sopravvivenza_cellulare]{Sez. 1.4.3}). Tali considerazioni sono riassunte in \hyperref[fig:tcp]{Fig. 1.18}.
 
 	\subsubsection{Oxygen Enhancement Ratio}\label{par:oer}
 	L'Oxygen Enhancement Ratio (OER) è un numero puro che misura l'efficacia biologica della radiazione in relazione alla concentrazione di ossigeno presente nei tessuti. Infatti, come già riportato nell'analisi del \hyperref[par:danno_indiretto]{danno indiretto} della radiolisi dell'acqua, se il tessuto colpito con radiazione ionizzante presenta un'abbondanza di ossigeno (iperossia) si genera un numero maggiore di radicali liberi e, di conseguenza, aumentano le probabilità di danno al DNA del tessuto irradiato, come mostrato in \hyperref[fig:oer_survival]{Fig. 1.19}. L'OER è definito come il rapporto tra la dose di una certa radiazione in condizioni di mancanza di ossigeno (anossia) $D_{anossia}$ e la dose della stessa radiazione in normali concentrazioni di ossigeno $D_{normale}$:
@@ -618,7 +623,7 @@
 	\end{equation}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{oer_survival.png}
+		\includegraphics[width=0.73\linewidth]{oer_survival.png}
 		\caption{A parità di percentuale di cellule sopravvissute, per arrecare danni biologici in normali condizioni aerobiche (presenza di ossigeno) è necessaria una dose inferiore rispetto alle condizioni di anossia; maggiore è la concentrazione di ossigeno, maggiore è la probabilità di effettuare dei danni \cite{ox_effect_wiki}.}
 		\label{fig:oer_survival}
 	\end{figure}
@@ -643,12 +648,6 @@
 	Spesso accade che la proliferazione di un tumore diventa talmente rapida che il suo apporto di sangue non è sufficiente a ossigenare alcune sue parti, generando microambienti ipossici che rendono il tumore stesso non solo più incline ad andare incontro a metastasi \cite{Carmeliet2011-ua}, ma anche più radioresistente \cite{Gilkes2014-rw}. Per risolvere tale problematica si sono effettuati numerosi approcci sistemici, dal posizionare i pazienti in camere iperbariche\footnote{La camera iperbarica è un luogo in cui il paziente respira un'aria ricca di ossigeno.} prima di procedere con le sedute radioterapiche all'uso di farmaci in grado di incrementare il flusso sanguigno o l'emoglobina\footnote{L'emoglobina è una proteina deputata per il trasporto di ossigeno nel sangue.}, risultati insoddisfacenti in quanto i meccanismi omeostatici del corpo umano riescono ugualmente a stabilizzare i livelli di ossigeno. Solo recentemente si sono sviluppati nuovi metodi più efficaci in grado di aumentare localmente la concentrazione di ossigeno, come l'iniezione di ``microbolle'' nel flusso sanguigno umano \cite{ox_microbubbles}. In generale, tutte le metodiche di incremento dell'ossigeno sopra citate risulterebbero potenzialmente utili ad amplificare i danni indiretti al DNA, ma dall'altra renderebbero più ossigenate anche aree popolate da organi sani, che verrebbero rese più sensibili ai danni provocati dalla radiazione \cite{ox_radiation_t}.
 	
 	\subsection{Sopravvivenza cellulare}\label{sec:sopravvivenza_cellulare}
-	Dopo aver discusso delle principali grandezze fisico-mediche con cui si valutano gli effetti biologici della radiazione ionizzante, è necessario analizzare i modelli che descrivono la sopravvivenza cellulare. Innanzitutto, gli eventi di ionizzazione prodotti dalla radiazione sono processi stocastici. Pertanto, la morte cellulare segue leggi probabilistiche dettate dalla statistica di Poisson. Per esempio, consideriamo una dose che, rilasciata una prima volta, riduce la sopravvivenza cellulare del $50\%$; un secondo rilascio ridurrebbe la sopravvivenza al $25\%$, un terzo al $12.5\%$ e così via. Seguendo tale ragionamento, in prima approssimazione è possibile considerare la legge mostrata in \hyperref[eq:survival1]{Eq. 1.15}, che descrive la frazione di cellule sopravvissute $S$ in funzione della dose rilasciata $D$:
-	\begin{equation}
-		S=e^{-0.69D}
-		\label{eq:survival1}
-	\end{equation}
-	In realtà l'\hyperref[eq:survival1]{Eq. 1.15}, il cui andamento è rappresentato in \hyperref[fig:survival1]{Fig. 1.21a}, descrive il tasso di sopravvivenza per cellule procarioti (come quelle dei batteri), le quali non sono sostanzialmente in grado di riparare i danni radiativi attivando sistemi di riparazione. Al contrario, le cellule degli esseri umani (in generale le cellule eucarioti dei mammiferi) possiedono complessi meccanismi di riparazione del DNA (accennati nell'analisi dei \hyperref[par:danno_diretto]{danni diretti}) che consentono di recuperare i danni dovuti a radiazioni ionizzanti. Suddetti meccanismi, però, sono efficaci solo in presenza di un basso rilascio di dose (basso LET), mentre per alte energie depositate (alto LET) non sono sufficienti a riparare i danni radiativi; questi ultimi, infatti, per alte energie depositate risultano addirittura maggiori rispetto a quelli arrecati a cellule batteriche. Quindi, gli effetti dei meccanismi di riparazione incidono nell'andamento della sopravvivenza cellulare solo in un regime di basso LET, come illustrato in \hyperref[fig:survival2]{Fig. 1.21b}.
 	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[t]{0.49\textwidth}
@@ -666,6 +665,13 @@
 		\end{subfigure}
 		\caption{Decadimenti esponenziali della sopravvivenza cellulare in funzione della dose in scala semilogaritmica.}
 	\end{figure}
+	Dopo aver discusso delle principali grandezze fisico-mediche con cui si valutano gli effetti biologici della radiazione ionizzante, è necessario analizzare i modelli che descrivono la sopravvivenza cellulare. Innanzitutto, gli eventi di ionizzazione prodotti dalla radiazione sono processi stocastici. Pertanto, la morte cellulare segue leggi probabilistiche dettate dalla statistica di Poisson. Per esempio, consideriamo una dose che, rilasciata una prima volta, riduce la sopravvivenza cellulare del $50\%$; un secondo rilascio ridurrebbe la sopravvivenza al $25\%$, un terzo al $12.5\%$ e così via. Seguendo tale ragionamento, in prima approssimazione è possibile considerare la legge mostrata in \hyperref[eq:survival1]{Eq. 1.15}, che descrive la frazione di cellule sopravvissute $S$ in funzione della dose rilasciata $D$:
+	\begin{equation}
+		S=e^{-0.69D}
+		\label{eq:survival1}
+	\end{equation}
+	In realtà l'\hyperref[eq:survival1]{Eq. 1.15}, il cui andamento è rappresentato in \hyperref[fig:survival1]{Fig. 1.21a}, descrive il tasso di sopravvivenza per cellule procarioti (come quelle dei batteri), le quali non sono sostanzialmente in grado di riparare i danni radiativi attivando sistemi di riparazione. Al contrario, le cellule degli esseri umani (in generale le cellule eucarioti dei mammiferi) possiedono complessi meccanismi di riparazione del DNA (accennati nell'analisi dei \hyperref[par:danno_diretto]{danni diretti}) che consentono di recuperare i danni dovuti a radiazioni ionizzanti. Suddetti meccanismi, però, sono efficaci solo in presenza di un basso rilascio di dose (basso LET), mentre per alte energie depositate (alto LET) non sono sufficienti a riparare i danni radiativi; questi ultimi, infatti, per alte energie depositate risultano addirittura maggiori rispetto a quelli arrecati a cellule batteriche. Quindi, gli effetti dei meccanismi di riparazione incidono nell'andamento della sopravvivenza cellulare solo in un regime di basso LET, come illustrato in \hyperref[fig:survival2]{Fig. 1.21b}.
+	
 	In considerazione dell'analisi di cui sopra, l'ICRP (International Commission on Radiological Protection) approvò nel $1991$ un accurato modello radiobiologico in grado di descrivere accuratamente la sopravvivenza cellulare in seguito al rilascio di radiazione ionizzante \cite{icrpAnn}. Tale modello, chiamato LQ (Lineare Quadratico), prevede che la frazione di cellule sopravvissute $S$ in funzione della dose rilasciata $D$ sia descritta dalla \hyperref[eq:survival2]{Eq. 1.16}:
 	\begin{equation}
 		S=e^{-\alpha D-\beta D^2}
@@ -785,7 +791,7 @@
 	dove $E_\gamma$ e $\nu$ sono rispettivamente l'energia e la frequenza del fotone incidente, $h=6.626\cdot 10^{-34}\mbox{ Js}$ è la costante di Planck \cite{planckConstant}, e $E_b$ è l'energia di legame del fotoelettrone, che corrisponde all'energia che occorre fornire all'elettrone per slegarlo dall'atomo di metallo entro cui è contenuto (infatti $E_b$ è anche chiamato lavoro di estrazione). Il fotoelettrone, avendo liberato un posto nelle shell più interne agli atomi di metallo, genera una lacuna. Tale ``posto vacante'' viene successivamente riempito dagli elettroni che appartengono agli orbitali più esterni: a tale salto orbitale corrisponde una grande emissione di energia che in alcuni casi viene assorbita da altri elettroni (è il caso degli elettroni di Auger\footnote{Un elettrone di Auger, appartenendo all'orbitale più esterno dell'atomo, grazie all'energia ricevuta riesce ad essere liberato completamente.}), in altri può generare un raggio X, come illustrato in \hyperref[fig:fotoelettrico]{Fig. 1.26}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{fotoelettrico.pdf}
+		\includegraphics[width=0.8\linewidth]{fotoelettrico.pdf}
 		\caption{Schema dell'effetto fotoelettrico e della conseguente emissione di raggi X o elettroni di Auger. Gli orbitali, indicati con notazione spettroscopica M, L e K, producono raggi X con le linee di emissione $K_\alpha$, $K_\beta$ e $L_\alpha$ \cite{ompInterations}.}
 		\label{fig:fotoelettrico}
 	\end{figure}
@@ -902,11 +908,11 @@
 		\end{split}
 		\label{eq:bethe_bloch}
 	\end{equation}
-	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3}; si notino sia il segno negativo in $\left\langle-\frac{dE}{dx} \right\rangle$ (che rappresenta la perdita di energia della particella carica) sia l'andamento quadratico rispetto al numero atomico delle particelle del fascio $z$. I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) \cite{bortolettoLecture,betheFormula}.
+	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3}; si notino sia il segno negativo in $\left\langle-\frac{dE}{dx} \right\rangle$ (che rappresenta la perdita di energia della particella carica) sia l'andamento quadratico rispetto al numero atomico delle particelle del fascio $z$.
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2cm}||m{12cm}| }
+			\begin{tabular}{ |M{2cm}||m{10cm}| }
 				\hline
 				\multicolumn{2}{|c|}{Proprietà del mezzo}\\
 				\hline\hline
@@ -949,6 +955,8 @@
 		\caption{Tabella riassuntiva dei parametri della Bethe-Bloch suddivisi in proprietà del mezzo, costanti, caratteristiche del fascio e correzioni. Solitamente nei range adroterapici si ha $Z/A$$\approx0.42$--$0.5$ e $I\approx19$--$820\mbox{ eV}$.}
 		\label{tab:bethe_bloch}
 	\end{table}
+	I processi di interazione descritti dalla Bethe-Bloch sono stocastici: se $n$ particelle identiche aventi tutte la stessa energia iniziale attraversassero un'identica porzione di materiale, in generale subirebbero perdite di energia differenti. La formula di Bethe-Bloch fornisce il valore medio di tali perdite di energia, ma la natura statistica delle stesse ne consente una descrizione più approfondita tramite distribuzioni di probabilità. Ad esempio, se le particelle attraversassero strati sottili di materiali a bassa densità le fluttuazioni delle perdite di energia per unità di lunghezza sarebbero ben descritte da una distribuzione di Landau, altrimenti per spessi strati di materia ad alta densità la distribuzione sarebbe sostanzialmente Gaussiana (a causa del maggiore numero di collisioni che consente l'applicazione del teorema del limite centrale) \cite{bortolettoLecture,betheFormula}.
+	
 	\`E possibile suddividere l'andamento della Bethe-Bloch (mostrato in \hyperref[fig:bethe_bloch]{Fig. 1.32}) in varie regioni \cite{Christodoulides2016}:
 	\begin{itemize}
 		\item per energie molto basse l'energia cinetica della particella incidente viene corretta dal fattore $C$ (correzione di shell) in \hyperref[eq:bethe_bloch]{Eq. 1.35} che include effetti energetici dovuti al moto dell'elettrone attorno al nucleo. In questa regione vi sono anche altre correzioni minori come l'effetto Barkas, che tiene conto degli effetti coulombiani causati dalla carica della particella proiettile.
@@ -957,7 +965,7 @@
 		\item Regione relativistica: per alte energie ($\beta\gamma>4$) si osserva una risalita logaritmica del potere frenante dovuta alla concentrazione delle linee di campo elettrico nella direzione ortogonale alla velocità della particella incidente, un effetto puramente relativistico. L'andamento di tale regione è dato dal termine logaritmico in \hyperref[eq:bethe_bloch]{Eq. 1.35}.
 		\item Per energie molto alte la concentrazione delle linee di campo elettrico induce eventi di ionizzazione anche su atomi molto distanti dalla sua traiettoria; ciò provoca una polarizzazione negli atomi più distanti che produce un effetto di schermatura del campo elettrico stesso (definito effetto densità), che a sua volta determina il troncamento della risalita relativistica. L'effetto densità è controllato dal fattore $\delta$ (correzione di densità) in \hyperref[eq:bethe_bloch]{Eq. 1.35}.
 	\end{itemize}
-\begin{figure}[H]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{bethe_bloch.pdf}
 		\caption{Valore assoluto del potere frenante per $\mu^+$ in rame in funzione di $\beta\gamma=p/Mc$, dove $p$ è il modulo della quantità di moto relativistica del $\mu^+$. Le bande verticali delimitano varie regioni di approssimazione, alcune delle quali sono discusse nel testo. In particolare, la linea verde tratteggiata indicata con $\mu^+$ tiene conto dell'effetto Barkas mentre la linea rossa tratteggiata rappresenta l'azione dell'effetto densità \cite{groomPassage}.}
@@ -1059,21 +1067,21 @@
 		\label{tab:fragmentation}
 	\end{table}
 	Da un punto di vista pratico è molto complesso studiare i frammenti del target in quanto possiedono un range molto piccolo che va dai $2.3\mbox{ }\mu\mbox{m}$ di \ce{^{15}O} al $68.9\mbox{ }\mu\mbox{m}$ di \ce{^{2}H} (si veda \hyperref[tab:range]{Tab. 2.1}); in sostanza, è come se i frammenti del target venissero prodotti a riposo. Pertanto, le proprietà dei frammenti del target non possono essere misurate tramite tecniche di rivelazione convenzionale ma sono necessari approcci differenti come quello della \hyperref[sec:cinematica_inversa]{cinematica inversa}, utilizzato nell'esperimento FOOT. D'altra parte, misurare le proprietà dei frammenti del proiettile è più semplice in quanto il loro elevato range consente di applicare metodi di rivelazione convenzionali.
-	 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.78\linewidth]{late_release.jpg}
+		\caption{Dati sperimentali della dose totale in funzione della profondità per un fascio di \ce{C} a $400\mbox{ MeV/u}$ in acqua. La diminuzione di energia del fascio primario (curva rossa) nel canale di ingresso è dovuta alla frammentazione che genera frammenti secondari (curva blu) il cui contributo è particolarmente evidente dopo il BP. I due contributi si sommano fornendo la dose totale (curva nera) \cite{mairani}.}
+		\label{fig:late_release}
+	\end{figure}
 	Riprendendo la \hyperref[fig:photon]{Fig. 1.17}, ora è possibile comprendere il motivo per cui si verifica un rilascio di dose dopo il BP per particelle cariche pesanti. Tale contributo è dovuto al lungo range dei frammenti del proiettile che, avendo un numero atomico $z$ inferiore al fascio incidente primario\footnote{Poiché i frammenti si originano dalla fissione del nucleo primario.} e circa lo stesso $\beta$, per la \hyperref[eq:bethe_bloch]{Eq. 1.35} possiedono un minore potere frenante;\footnote{Secondo tale considerazione, per penetrare più in profondità basterebbe scegliere fasci formati da particelle con qualsiasi valore di $z$, purché sia elevato; in pratica, ciò non è possibile in quanto i processi di frammentazione sarebbero così elevati da rilasciare energie troppo alte nel canale di ingresso, dove si vuole avere un basso dosaggio per risparmiare i tessuti sani. Pertanto, ioni più pesanti dell'ossigeno non vengono ritenuti efficaci in adroterapia.} perdendo meno energia per unità di lunghezza, i frammenti del proiettile dissipano la loro energia più in profondità rispetto alle particelle proiettile primarie (queste ultime, infatti, si bloccano generalmente in corrispondenza del picco di Bragg,\footnote{In realtà la sopravvivenza di proiettili primari è fortemente legata alla loro energia e al loro numero atomico (più è grande e più interazioni compiono durante il percorso, essendo la \hyperref[eq:bethe_bloch]{Eq. 1.35} $\propto z^2$). Ad esempio, un fascio di \ce{^{12}C} a $400\mbox{ MeV}$ ha un range di $28\mbox{ cm}$. A tale profondità il $70\%$ dei \ce{^{12}C} ha già effettuato processi di frammentazione del proiettile prima di giungere al BP; nonostante ciò, nel BP si verifica comunque un grande rilascio di dose in quanto vi contribuiscono non solo le poche particelle primarie rimanenti, ma anche quelle secondarie (che nella maggior parte dei casi sono isotopi, isotoni o isobari delle primarie).} come mostrato in \hyperref[fig:late_release]{Fig. 1.37}).
 	\begin{figure}[H]
 		\centering
-	 	\includegraphics[width=0.9\linewidth]{late_release.jpg}
-	 	\caption{Dati sperimentali della dose totale in funzione della profondità per un fascio di \ce{C} a $400\mbox{ MeV/u}$ in acqua. La diminuzione di energia del fascio primario (curva rossa) nel canale di ingresso è dovuta alla frammentazione che genera frammenti secondari (curva blu) il cui contributo è particolarmente evidente dopo il BP. I due contributi si sommano fornendo la dose totale (curva nera) \cite{mairani}.}
-	 	\label{fig:late_release}
+		\includegraphics[width=0.82\linewidth]{biol_effect_nuclear.png}
+		\caption{Impatto dei frammenti del target per un fascio protonico a $250\mbox{ MeV}$ in acqua nel canale di ingresso e nella regione di picco e relativa ionizzazione \cite{cancers7010353}.}
+		\label{fig:biol_effect_nuclear}
 	\end{figure}
 	Dalla \hyperref[fig:biol_effect_nuclear]{Fig. 1.38} è possibile valutare l'effetto delle interazioni nucleari sulle cellule. In particolare, si osserva che la frammentazione del target per un fascio di protoni è molto più rilevante nel canale di ingresso che nella regione del picco di Bragg, sebbene l'effetto della ionizzazione nelle due zone sia molto differente. Infatti, la ionizzazione uccide rispettivamente il $3\%$ e il $40\%$ delle cellule nel canale di ingresso e nel BP ma l'interazione nucleare è responsabile rispettivamente solo dell'$8\%$ e del $2\%$ delle morti cellulari totali.
-	\begin{figure}[H]
-	 	\centering
-	 	\includegraphics[width=0.9\linewidth]{biol_effect_nuclear.png}
-	 	\caption{Impatto dei frammenti del target per un fascio protonico a $250\mbox{ MeV}$ in acqua nel canale di ingresso e nella regione di picco e relativa ionizzazione \cite{cancers7010353}.}
-	 	\label{fig:biol_effect_nuclear}
-	\end{figure}
+	
 	A differenza delle interazioni elettromagnetiche, i processi di frammentazione nucleare non sono solamente più difficili da modellizzare con le teorie di cui disponiamo attualmente, ma anche più complessi da misurare sperimentalmente. Per usufruire delle peculiarità delle particelle cariche (una tra tutte il picco di Bragg), sfruttandole ad esempio nell'ottimizzazione del trattamento clinico dei tumori, è necessario giungere a una completa conoscenza dei processi di interazione delle particelle con il corpo umano, in particolare dei processi di frammentazione nucleare, al momento non compresi del tutto. Esistono modelli semiempirici (come la legge di Bradt-Peters) che consentono di ricavare, con ottimi risultati, le sezioni d'urto di alcune interazioni nucleari, conoscendo la struttura dei nuclei del target e del proiettile, ma ciò non è abbastanza: bisognerebbe includere nei modelli la totalità dei contributi forniti dai frammenti nucleari, la cui numerosità è elevatissima. Come verrà esposto nel \hyperref[cap:2]{Cap. 2}, l'obiettivo principale dell'esperimento FOOT è proprio quello di arricchire la quantità di dati attualmente a disposizione misurando la sezione d'urto, l'energia e la direzione di produzione dei frammenti secondari generati a partire dalle interazioni nucleari tra particelle cariche e corpo umano, in modo da migliorare la descrizione di parametri dosimetrici fondamentali nel TP, come l'RBE. In particolare, oltre ai fasci di protoni e atomi di carbonio, FOOT intende misurare con più precisione i frammenti nucleari dei fasci di ossigeno ed elio, visto che il loro uso in adroterapia è ancora in fase di sperimentazione.
 	
 	\chapter{Esperimento FOOT}\label{cap:2}
@@ -1154,19 +1162,18 @@
 		\end{align}
 	\end{subequations}
 	dove $\beta$ è la velocità del frammento in unità di $c$ (velocità della luce nel vuoto) e $\gamma$ è il fattore di Lorentz.
-	
-	Nel setup elettronico si possono individuare le seguenti regioni operative, esposte in dettaglio nel prosieguo:
-	\begin{itemize}
-		\item upstream region: qui il fascio incidente attraversa prima un sottile scintillatore\footnote{Uno scintillatore è un materiale in grado di generare scintille (proprietà detta luminescenza) quando viene eccitato da radiazione ionizzante \cite{RAJA2024101346}.} di plastica (lo Start Counter), che fornisce informazioni di trigger come l'istante di tempo iniziale da cui misurare il TOF, poi una camera a drift\footnote{Una camera a drift (o deriva) è una camera in grado di misurare la posizione delle particelle che la attraversano grazie al gas e al grande numero di fili ivi contenuti.} (Beam Monitor) che misura la direzione e la posizione del fascio (dopo eventuali deviazioni subite nello Start Counter) prima che quest'ultimo colpisca il target, l'elemento finale dell'upstream region.
-		\item tracking region: un sistema di tracciatori a pixel (Vertex) consente una prima ricostruzione della traccia dei frammenti prodotti. In seguito, i frammenti attraversano due magneti permanenti, tra i quali è situato l'Inner Tracker, uno strato addizionale di tracciatori a pixel. Dopo la regione magnetica un Micro Strip Detector traccia nuovamente i frammenti e misura una prima volta il loro $\frac{dE}{dx}$. Tale strumentazione consente di determinare la quantità di moto dei frammenti.
-		\item downstream region: dopo la regione magnetica i frammenti percorrono $\approx1\mbox{ m}$ per raggiungere il TOF Wall (precedentemente chiamato Scintillatore), in cui si misurano il TOF e il $\Delta E$, e un calorimetro, in cui si misura la loro energia cinetica.
-	\end{itemize}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{electronic_setup.png}
 		\caption{Schematizzazione del setup elettronico utilizzato in FOOT \cite{foot_site2}.}
 		\label{fig:electronic_setup}
 	\end{figure}
+	Nel setup elettronico si possono individuare le seguenti regioni operative, esposte in dettaglio nel prosieguo:
+	\begin{itemize}
+		\item upstream region: qui il fascio incidente attraversa prima un sottile scintillatore\footnote{Uno scintillatore è un materiale in grado di generare scintille (proprietà detta luminescenza) quando viene eccitato da radiazione ionizzante \cite{RAJA2024101346}.} di plastica (lo Start Counter), che fornisce informazioni di trigger come l'istante di tempo iniziale da cui misurare il TOF, poi una camera a drift\footnote{Una camera a drift (o deriva) è una camera in grado di misurare la posizione delle particelle che la attraversano grazie al gas e al grande numero di fili ivi contenuti.} (Beam Monitor) che misura la direzione e la posizione del fascio (dopo eventuali deviazioni subite nello Start Counter) prima che quest'ultimo colpisca il target, l'elemento finale dell'upstream region.
+		\item tracking region: un sistema di tracciatori a pixel (Vertex) consente una prima ricostruzione della traccia dei frammenti prodotti. In seguito, i frammenti attraversano due magneti permanenti, tra i quali è situato l'Inner Tracker, uno strato addizionale di tracciatori a pixel. Dopo la regione magnetica un Micro Strip Detector traccia nuovamente i frammenti e misura una prima volta il loro $\frac{dE}{dx}$. Tale strumentazione consente di determinare la quantità di moto dei frammenti.
+		\item downstream region: dopo la regione magnetica i frammenti percorrono $\approx1\mbox{ m}$ per raggiungere il TOF Wall (precedentemente chiamato Scintillatore), in cui si misurano il TOF e il $\Delta E$, e un calorimetro, in cui si misura la loro energia cinetica.
+	\end{itemize}
 	
 	\subsubsection{Upstream region}
 	Lo Start Counter (SC, \hyperref[fig:start_counter]{Fig. 2.2a}), situato a una distanza di $20$--$30\mbox{ cm}$ prima del target, è una piastra quadrata di scintillatore plastico spessa da $250\mbox{}\mu\mbox{m}$ a $1\mbox{ mm}$ e di superficie $50\times50\mbox{ mm}^2$, sufficiente a coprire la sezione trasversa del fascio incidente. Quando la plastica dello SC è attraversata da particelle cariche, vi è un'eccitazione degli atomi dello scintillatore, che consegue in un'emissione di fotoni (nello spettro di frequenze del visibile), successivamente trasformata in segnale elettrico (che registra la posizione della particella interagente) da una serie di $48$ fotomoltiplicatori al silicio (Silicon PhotoMultiplier, SiPM) di superficie $3\times3\mbox{ mm}^2$, situati ai lati della superficie dello SC. Dato che lo SC dà inizio al segnale di trigger di tutto l'apparato sperimentale (che corrisponde all'istante iniziale del TOF), è uno strumento fondamentale per la sincronizzazione del sistema di acquisizione dei rivelatori (che avviene a una frequenza di $\approx\mbox{kHz}$); per questo motivo, la risoluzione dello SC è molto bassa, dell'ordine di $50\mbox{ ps}$ per i frammenti più pesanti \cite{foot_cdr,ubaldiArticle}.
@@ -1192,8 +1199,13 @@
 	
 	\subsubsection{Tracking region}
 	Il Vertex (VTX, \hyperref[fig:vtx]{Fig. 2.4a}) viene posizionato subito dopo il target per ricostruire non solo la traiettoria dei frammenti, ma anche per determinare il punto di origine della frammentazione (VTX Point). Il VTX è costituito da quattro piani (di area attiva $8\times8\mbox{ cm}^2$) formati da uno strato di sensori basati sulla tecnologia MAPS.\footnote{Monolithic Active Pixel Sensors, gamma ampiamente usata in imaging ottico, a raggi X e nella detezione di particelle cariche pesanti.} Ciascun pannello è composto da un chip M$28$\footnote{Tali chip riescono a minimizzare ulteriori eventi di \hyperref[par:scattering_Rutherford]{multiple scattering} e frammentazione nucleare dovuti all'interazione delle particelle con l'apparato di misura.} della famiglia dei CMOS formato da una matrice $928\times960$ di pixel al silicio, questi ultimi aventi un passo di $20.7\mbox{ }\mu\mbox{m}$. Ogni pixel prevede un sistema di amplificazione e un circuito CDS (Correlated Double Sampling) di acquisizione con cui è possibile ottenere una risoluzione spaziale del VTX dell'ordine di $5\mbox{ }\mu\mbox{m}$ \cite{foot_cdr,ridolfiArticle}.
-	
-	Dopo il VTX i frammenti prodotti nel target vengono deviati grazie a uno spettrometro magnetico con cui è possibile valutare la loro quantità di moto. Sebbene la grandezza dello spettrometro sia limitata, il suo potere di deflessione è elevato grazie all'impiego di due magneti dipoli permanenti (di Samario-Cobalto \ce{SmCO}) in configurazione Halbach\footnote{Tale configurazione permette di avere un campo magnetico nullo e uniforme rispettivamente all'esterno e all'interno (nella cavità attraversata dalla traccia) dello spettrometro magnetico.} a geometria cilindrica cava (illustrata in \hyperref[fig:magnetic_spectrometer]{Fig. 2.4b}), grazie alla quale è possibile raggiungere valori massimi di campo magnetico pari a $1.4\mbox{ T}$. Per determinare il momento $p$ dei frammenti, si sfrutta l'espressione della forza di Lorentz $\vec{F_L}$ (\hyperref[eq:lorentz_force]{Eq. 2.3a}) esercitata dal campo magnetico uniforme $\vec{B}$ presente all'interno dello spettrometro magnetico sui frammenti di carica $q$, velocità $\vec{v}$ e massa $m$. Essendo la $\vec{F_L}$ centripeta, è possibile esplicitare la \hyperref[eq:lorentz_force]{Eq. 2.3b}:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{momentum_deflession.pdf}
+		\caption{Schematizzazione della deflessione subita da una particella carica in una regione di campo magnetico uniforme \cite{leoniS}.}
+		\label{fig:momentum_deflession}
+	\end{figure}
+	Dopo il VTX i frammenti prodotti nel target vengono deviati grazie a uno spettrometro magnetico con cui è possibile valutare la loro quantità di moto. Sebbene la grandezza dello spettrometro sia limitata, il suo potere di deflessione è elevato grazie all'impiego di due magneti dipoli permanenti di Samario-Cobalto (\ce{SmCO}) in configurazione Halbach\footnote{Tale configurazione permette di avere un campo magnetico nullo e uniforme rispettivamente all'esterno e all'interno (nella cavità attraversata dalla traccia) dello spettrometro magnetico.} a geometria cilindrica cava (illustrata in \hyperref[fig:magnetic_spectrometer]{Fig. 2.4b}), grazie alla quale è possibile raggiungere valori massimi di campo magnetico pari a $1.4\mbox{ T}$. Per determinare il momento $p$ dei frammenti, si sfrutta l'espressione della forza di Lorentz $\vec{F_L}$ (\hyperref[eq:lorentz_force]{Eq. 2.3a}) esercitata dal campo magnetico uniforme $\vec{B}$ presente all'interno dello spettrometro magnetico sui frammenti di carica $q$, velocità $\vec{v}$ e massa $m$. Essendo la $\vec{F_L}$ centripeta, è possibile esplicitare la \hyperref[eq:lorentz_force]{Eq. 2.3b}:
 	\begin{subequations}
 		\begin{align}
 			\label{eq:lorentz_force}
@@ -1208,12 +1220,7 @@
 		\label{eq:momentum_deflession}
 	\end{equation}
 	dove $L$ è la lunghezza della regione di campo magnetico attraversata. La geometria della deflessione, grazie alla quale è possibile determinare la \hyperref[eq:momentum_deflession]{Eq. 2.4}, è schematizzata in \hyperref[fig:momentum_deflession]{Fig. 2.3}.
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\linewidth]{momentum_deflession.pdf}
-		\caption{Schematizzazione della deflessione subita da una particella carica in una regione di campo magnetico uniforme \cite{leoniS}.}
-		\label{fig:momentum_deflession}
-	\end{figure}
+	
 	Come già proposto nel progetto PLUME \cite{articleNomerotski}, nell'intercapedine dei due magneti si trova l'Inner Tracker (ITR), un rivelatore caratterizzato dalla medesima tecnologia e struttura del VTX (ciò semplifica il sistema di acquisizione DAQ) ma dotato di soli due piani di sensori (pixel al silicio) ortogonali alla direzione del fascio entrante. Ciascun piano è formato da $16$ sensori M$28$ (ciascuno dei quali copre una superficie di $2\times2\mbox{ cm}^2$) tenuti da un'impalcatura metallica che prevede un modulo ogni quattro sensori; questi ultimi sono legati assieme su una FPC (Flexible Printed Cable) in Kapton dotata di uno spessore complessivo di $100\mbox{ }\mu\mbox{m}$ (si veda \hyperref[fig:itr]{Fig. 2.4c}). L'ITR è utile a misurare sia la posizione che la direzione della traccia dopo la deviazione prodotta dal primo magnete permanente \cite{foot_cdr,ridolfiArticle}.
 	
 	Per tracciare il passaggio de frammenti dopo la deflessione subita dal secondo magnete permanente, si utilizza il Microstrip Silicon Detector (MSD, \hyperref[fig:msd]{Fig. 2.4d}), un rivelatore formato da tre piani (di area attiva $9.6\times9.3\mbox{ cm}^2$), ciascuno dei quali è costruito da due strati di strisce ortogonali al silicio spesse $70\mbox{ }\mu\mbox{m}$ e tenute assieme da una lamina biadesiva in Kapton spessa $30\mbox{ }\mu\mbox{m}$. La soluzione a due strati è stata preferita rispetto a quella di un unico piano (spesso $150\mbox{ }\mu\mbox{m}$) poiché nel primo modo è possibile ottenere due misure di $\frac{dE}{dx}$ indipendenti e una rigidità meccanica del MSD maggiore. Nonostante ciò, a differenza dei pixel, le strisce al silicio potrebbero produrre ambiguità nell'identificazione della posizione dei frammenti, eventualmente sciolte attraverso un'analisi del fondo combinatoriale dei segnali prodotti dai frammenti.\footnote{Analizzando la potenza dei segnali elettrici rilasciati nel rivelatore, è possibile associare a questi ultimi la particella che li ha generati.} La risoluzione spaziale dell'MSD è di circa $40\mbox{ }\mu\mbox{m}$ \cite{foot_cdr,ubaldiArticle}.
@@ -1227,9 +1234,9 @@
 	\end{figure}
 	
 	\subsubsection{Downstream region}
-	Il TOF Wall (TW) è uno scintillatore (di area attiva $40\times40\mbox{ cm}^2$) formato da due strati ortogonali di $20$ barre ciascuno (\hyperref[fig:tw]{Fig. 2.5a}). Ogni barra è spessa $0.3\mbox{ cm}$ ed è accoppiata a ogni estremità con $4$ SiPM, grazie ai quali è possibile ricostruire l'energia depositata per unità di lunghezza $\frac{dE}{dx}$\footnote{Per misurare il $dE/dx$ dei frammenti, il TW assorbe una parte della loro energia $\Delta E$ che, in seguito, viene aggiunta al computo totale della loro energia cinetica.} con una precisione $\approx5\%$. Inoltre, quando i frammenti giungono al TW, viene fermato il TOF (il cui istante iniziale viene dato dallo SC). Grazie al TOF e alla traiettoria dei frammenti (ricostruita tramite VTX, ITR e MSD) si può ricavare la loro velocità $\beta$ che, unita al $\frac{dE}{dx}$, consente di ricostruire la carica dei frammenti ($z$) tramite la \hyperref[eq:bethe_bloch]{Eq. 1.35}.
+	Il TOF Wall (TW, \hyperref[fig:tw]{Fig. 2.5a}) è uno scintillatore (di area attiva $40\times40\mbox{ cm}^2$) formato da due strati ortogonali di $20$ barre ciascuno. Ogni barra è spessa $0.3\mbox{ cm}$ ed è accoppiata a ogni estremità con $4$ SiPM, grazie ai quali è possibile ricostruire l'energia depositata per unità di lunghezza $\frac{dE}{dx}$\footnote{Per misurare il $dE/dx$ dei frammenti, il TW assorbe una parte della loro energia $\Delta E$ che, in seguito, viene aggiunta al computo totale della loro energia cinetica.} con una precisione $\approx5\%$. Inoltre, quando i frammenti giungono al TW, viene fermato il TOF (il cui istante iniziale viene dato dallo SC). Grazie al TOF e alla traiettoria dei frammenti (ricostruita tramite VTX, ITR e MSD) si può ricavare la loro velocità $\beta$ che, unita al $\frac{dE}{dx}$, consente di ricostruire la carica dei frammenti ($z$) tramite la \hyperref[eq:bethe_bloch]{Eq. 1.35}.
 	
-	Il Calorimetro (CALO) è uno scintillatore inorganico costituito da BGO (bismuto \ce{Bi}, germanio \ce{Ge} e ossigeno \ce{O}), elementi caratterizzati da alta densità e elevati numeri atomici che rendono tale rivelatore molto pesante ($\approx330\mbox{ kg}$). Quando i frammenti penetrano nel CALO, data l'elevata densità atomica dei cristalli BGO, si producono principalmente interazioni elettromagnetiche che portano all'emissione di fotoni e alla perdita di energia $\Delta E$ dei frammenti stessi. La quantità di luce prodotta all'interno del CALO, misurata tramite dei SiPM posti nella parte terminale dei cristalli BGO, è proporzionale all'energia cinetica $E_k$ dei frammenti (misurata con una risoluzione dell'$1$--$2\%$). All'interno del CALO i frammenti possono andare incontro anche a interazioni nucleari, la cui presenza influenza notevolmente la misura del $\Delta E$ rilasciato nello strumento. Infatti, nel $10$--$20\%$ degli eventi, le interazioni nucleari portano alla formazioni di neutroni, i quali fuoriescono dal CALO senza essere rivelati dai SiPM. Ciò genera una sottostima sistematica dell'energia totale rilasciata (a cui consegue un'ulteriore sottostima della massa dei frammenti ricavata tramite le \hyperref[eq:kinetic_energy1]{Eq. 2.2b} ed \hyperref[eq:kinetic_energy2]{Eq. 2.2c}, uniche equazioni della massa in cui compare l'$E_k$ misurata dal CALO). Tale effetto, più pronunciato per i frammenti più leggeri, può essere limitato per mezzo di misurazioni multiple e indipendenti della massa dei frammenti prodotti \cite{foot_cdr}.
+	Il Calorimetro (CALO) è uno scintillatore inorganico costituito da cristalli di BGO (bismuto \ce{Bi}, germanio \ce{Ge} e ossigeno \ce{O}), oggetti caratterizzati da alta densità ed elevati numeri atomici, proprietà che rendono tale rivelatore molto pesante ($\approx330\mbox{ kg}$). Quando i frammenti penetrano nel CALO, data l'elevata densità atomica dei cristalli BGO, si producono principalmente interazioni elettromagnetiche che portano all'emissione di fotoni e alla perdita di energia $\Delta E$ dei frammenti stessi. La quantità di luce prodotta all'interno del CALO, misurata tramite dei SiPM posti nella parte terminale dei cristalli BGO, è proporzionale all'energia cinetica $E_k$ dei frammenti (misurata con una risoluzione dell'$1$--$2\%$). All'interno del CALO i frammenti possono andare incontro anche a interazioni nucleari, la cui presenza influenza notevolmente la misura del $\Delta E$ rilasciato nello strumento. Infatti, nel $10$--$20\%$ degli eventi, le interazioni nucleari portano alla formazioni di neutroni, i quali fuoriescono dal CALO senza essere rivelati dai SiPM. Ciò genera una sottostima sistematica dell'energia totale rilasciata (a cui consegue un'ulteriore sottostima della massa dei frammenti ricavata tramite le \hyperref[eq:kinetic_energy1]{Eq. 2.2b} ed \hyperref[eq:kinetic_energy2]{Eq. 2.2c}, uniche equazioni della massa in cui compare l'$E_k$ misurata dal CALO). Tale effetto, più pronunciato per i frammenti più leggeri, può essere limitato per mezzo di misurazioni multiple e indipendenti della massa dei frammenti prodotti \cite{foot_cdr}.
 	\begin{figure}[H]
 		\centering
 		\subfloat[Foto di una superificie del TW.]{\label{fig:tw}\includegraphics[width=.49\linewidth]{tw.jpg}}\hfill
@@ -1238,27 +1245,26 @@
 	\end{figure}
 	
 	\subsection{Camera a emulsione}
-	Sebbene le camere a emulsione siano state superate dai rivelatori elettronici sin dagli anni sessanta \cite{Ariga2020}, sono dispositivi ancora oggi utilizzati nella fisica delle particelle per svariati motivi, come la loro compattezza, l'elevata accuratezza e velocità con cui è possibile ricostruire le interazioni che avvengono nel target, la capacità di integrare bersaglio e rivelatori in un unico setup e, come già accennato, l'elevata accettanza angolare. Prima di FOOT un'esperienza delle camere a emulsione nel contesto della frammentazione nucleare si ebbe all'HIMAC di Chiba (si veda \hyperref[sec:storia_adroterapia]{Sez. 1.3.1}), dove per studiare la frammentazione di ioni \ce{^{12}C} a $400\mbox{ MeV/u}$ si impiegò un rivelatore composto da strati alternati di policarbonato (Lexan, per simulare i tessuti umani) e film a emulsione \cite{articleNakamura,articleLellis1,articleLellis2}.
-	
-	La camera a emulsione (o Spettrometro a Emulsione, ES) dell'esperimento FOOT è utilizzata per la rivelazione dei frammenti nucleari più leggeri, il cui angolo di diffusione ($\approx70^\circ$) risulta troppo elevato rispetto all'accettanza angolare del setup elettronico.\footnote{La scelta della camera a emulsione risiede nel fatto che calorimetri con accettanze angolari di $\approx70^\circ$ sono difficili da realizzare per problemi di portabilità e per questioni economiche.} L'ES è costituita da una stratificazione di film che fungono da bersaglio, formata da materiali passivi (come il \ce{C}), alternati a pellicole a emulsione nucleare di bromuro d'argento (\ce{AgBr}), con le quali è possibile tracciare il passaggio dei frammenti \cite{foot_cdr}.
+	Sebbene le camere a emulsione siano state superate dai rivelatori elettronici sin dagli anni sessanta \cite{Ariga2020}, sono dispositivi utilizzati ancora oggi nella fisica delle particelle per motivi quali la loro compattezza, l'elevata accuratezza e velocità con cui è possibile ricostruire le interazioni che avvengono nel target, la capacità di integrare bersaglio e rivelatori in un unico setup e, come già accennato, l'elevata accettanza angolare. Prima di FOOT, nel contesto della frammentazione nucleare, si ebbe un'esperienza delle camere a emulsione all'HIMAC di Chiba (si veda \hyperref[sec:storia_adroterapia]{Sez. 1.3.1}), dove per studiare la frammentazione di ioni \ce{^{12}C} a $400\mbox{ MeV/u}$ si impiegò un rivelatore composto da strati alternati di policarbonato (Lexan, per simulare i tessuti umani) e film a emulsione \cite{articleNakamura,articleLellis1,articleLellis2}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{position_es.jpg}
-		\caption{Localizzazione della ES all'interno dell'apparato sperimentale di FOOT \cite{foot_cdr}.}
+		\includegraphics[width=0.5\linewidth]{position_es.jpg}
+		\caption{Localizzazione dell'ES all'interno dell'apparato sperimentale di FOOT \cite{foot_cdr}.}
 		\label{fig:position_es}
 	\end{figure}
-	L'ES è composta da tre sezioni:
+	La camera a emulsione (o Spettrometro a Emulsione, ES) dell'esperimento FOOT è utilizzata per la rivelazione dei frammenti nucleari più leggeri, il cui angolo di diffusione ($\approx70^\circ$) risulta troppo elevato rispetto all'accettanza angolare del setup elettronico.\footnote{La scelta della camera a emulsione risiede nel fatto che calorimetri con accettanze angolari di $\approx70^\circ$ sono difficili da realizzare per problemi di portabilità e per questioni economiche.} L'ES di FOOT, posizionato dopo lo Start Counter e il Beam Monitor (si veda \hyperref[fig:position_es]{Fig. 2.6}), è costituito da una stratificazione di film che fungono da bersaglio, formati da materiali passivi (come il \ce{C}), alternati a pellicole a emulsione nucleare di bromuro d'argento (\ce{AgBr}), la cui eccitazione energetica (dovuta al rilascio di energia dei frammenti nucleari) consente di tracciare il passaggio delle particelle incidenti. L'analisi delle tracce avviene tramite un sistema di scanning automatico (basato su un microscopio ottico) già adottato nell'esperimento OPERA \cite{Armenise:2005yh,Arrabito:2006rv} e nel progetto FIRST\footnote{Fragmentation of Ions Relevant for Space and Therapy} \cite{PhysRevC.93.064601}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{structure_es.pdf}
+		\caption{Schema della struttura dell'ES dell'esperimento FOOT \cite{foot_cdr}.}
+		\label{fig:structure_es}
+	\end{figure}
+	L'ES è composta da tre sezioni, la cui struttura è schematizzata in \hyperref[fig:structure_es]{Fig. 2.7}:
 	\begin{itemize}
 		\item regione di vertexing: profonda $\approx4\mbox{ cm}$, è formata da strati di \ce{C} o \ce{C2H4} (il bersaglio dell'esperimento) profondi $\approx1\mbox{ mm}$ alternati a film a emulsione dello spessore di $300\mbox{ }\mu{m}$.
 		\item regione di ionizzazione: profonda $\approx1\mbox{ cm}$, è costituita da celle elementari, ciascuna contenente tre film a emulsione dotate di sensibilità particellari differenti. Grazie ai film a emulsione è possibile identificare la carica di frammenti leggeri (con un'efficienza molto alta, pari a $\approx99\%$) come \ce{H}, \ce{He} e \ce{Li} \cite{deLellisConference}.
 		\item regione di tracciamento: profonda $\approx4\mbox{ cm}$, è costituita da film a emulsione spessi $300\mbox{ }\mu{m}$ intervallati a strati di piombo (\ce{Pb}) di profondità $1\mbox{ mm}$. Misurando la lunghezza totale del range dei frammenti, è possibile determinare sia la loro energia cinetica che la loro quantità di moto.\footnote{Ciò avviene tramite una relazione tra range e quantità di moto prevista dal modello a Multiple Coulomb Scattering \cite{articleAgafonova,DESERIO2003539}.}
 	\end{itemize}
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\linewidth]{structure_es.pdf}
-		\caption{Schema della struttura della ES dell'esperimento FOOT \cite{foot_cdr}.}
-		\label{fig:structure_es}
-	\end{figure}
 	
 	\chapter{Terzo capitolo (TBD)}
 	
