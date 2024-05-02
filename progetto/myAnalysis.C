@@ -10,6 +10,8 @@
 #include "myAnalysis.h"
 
 static Long64_t default_value = -999;
+constexpr double c = {3e8};
+constexpr double u = {0.9315};
 
 void myAnalysis::PrepareLoop(Long64_t &init = default_value,
                              Long64_t &nentries = default_value) {
@@ -51,17 +53,98 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
     //------------------------------start the analysis here...
 
-    // INIZIO ESERCIZI
+    // A loop
+    double distanceFromHit{};
+    double distanceTW_vt{};
+    double p{};
+    double E_k{};
+    double E_kTOT{};
+    double beta{};
+    for (Long64_t i_twpoint{}; i_twpoint < TWPoints; i_twpoint++) {
+      for (Long64_t j_vtpoint{}; j_vtpoint < vertex_n; j_vtpoint++) {
+        for (Long64_t k_track{}; k_track < vt_trk_n->at(j_vtpoint); k_track++) {
+          distanceFromHit = sqrt(
+              (TWXPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).X()) *
+                  (TWXPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).X()) +
+              (TWYPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Y()) *
+                  (TWYPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Y()) +
+              (TWZPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Z()) *
+                  (TWZPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Z()));
+          if (distanceFromHit < 20. &&
+              (long long int)GLBtrackPx->size() == vt_trk_n->at(j_vtpoint) &&
+              (long long int)GLBtrackPx->size() == CAclusN) {
+            distanceTW_vt =
+                20. +
+                sqrt((TWXPoint->at(i_twpoint) - vertex_x->at(j_vtpoint)) *
+                         (TWXPoint->at(i_twpoint) - vertex_x->at(j_vtpoint)) +
+                     (TWYPoint->at(i_twpoint) - vertex_y->at(j_vtpoint)) *
+                         (TWYPoint->at(i_twpoint) - vertex_y->at(j_vtpoint)) +
+                     (TWZPoint->at(i_twpoint) - vertex_z->at(j_vtpoint)) *
+                         (TWZPoint->at(i_twpoint) - vertex_z->at(j_vtpoint)));
+            p = sqrt((GLBtrackPx->at(k_track)) * (GLBtrackPx->at(k_track)) +
+                     (GLBtrackPy->at(k_track)) * (GLBtrackPy->at(k_track)) +
+                     (GLBtrackPz->at(k_track)) * (GLBtrackPz->at(k_track)));
+            E_k =
+                CAenergy->at(k_track) +
+                (TWDe1Point->at(i_twpoint) + TWDe2Point->at(i_twpoint)) * 1e-3;
+            beta =
+                ((distanceTW_vt) * (1e-2) / (c * TWTOF->at(i_twpoint) * 1e-9));
+
+            h_A1->Fill(p / (u * beta * (1 / (sqrt(1. - beta * beta)))));
+            h_A2->Fill(E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1)));
+            h_A3->Fill((p * p - E_k * E_k) / (2 * E_k));
+
+            std::cout << "event n.: " << ientry << std::endl;
+            std::cout << "\tdistance TW-vtx_proj: " << distanceFromHit
+                      << std::endl;
+            std::cout << "\t\tdistance TW-vtx: " << distanceTW_vt << std::endl;
+            std::cout << "\t\t\tTOF: " << TWTOF->at(i_twpoint) << std::endl;
+            std::cout << "\t\t\t\tp: " << p << "\tbeta: " << beta
+                      << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
+                      << std::endl;
+            std::cout << "\t\t\t\t\tE_k: " << E_k << std::endl;
+            std::cout << "\t\t\t\t\t\tA1: "
+                      << p / (u * beta * (1 / (sqrt(1. - beta * beta))))
+                      << std::endl;
+            std::cout << "\t\t\t\t\t\t\tA2: "
+                      << E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1))
+                      << std::endl;
+            std::cout << "\t\t\t\t\t\t\t\tA3: "
+                      << (p * p - E_k * E_k) / (2 * E_k) << std::endl;
+          }
+        }
+      }
+    }
+
+    /* std::cout << "size momentum: " << (long long int)GLBtrackPx->size()
+              << std::endl;
+    std::cout << "size energy: " << (long long int)CAenergy->size()
+              << std::endl; */
+
+    /* for (Long64_t j_p = 0; j_p < (long long int)GLBtrackPx->size(); j_p++) {
+      double a1 = (sqrt((GLBtrackPx->at(j_p)) * (GLBtrackPx->at(j_p)) +
+                        (GLBtrackPy->at(j_p)) * (GLBtrackPy->at(j_p)) +
+                        (GLBtrackPz->at(j_p)) * (GLBtrackPz->at(j_p))) /
+                   (u * c));
+      std::cout << "event n°: " << ientry << std::endl;
+      std::cout << "\tj_p: " << j_p << std::endl;
+      std::cout << "\t\tmomentum: " << GLBtrackPx->at(j_p) << " "
+                << GLBtrackPy->at(j_p) << " " << GLBtrackPz->at(j_p)
+                << std::endl;
+    } */
+
+    /* // INIZIO ESERCIZI
 
     // EX 1-2
     for (Long64_t pentry = 0; pentry < (long long int)vt_clus_n->size();
          pentry++) {
       Long64_t clus_counter = 0;
       for (Long64_t clentry = clus_counter;
-           clentry < (clus_counter + vt_clus_n->at(pentry)); clentry++) {
-        histo_xy_clus->Fill(vt_clus_x->at(clentry), vt_clus_y->at(clentry));
-        histo_xyz_clus->Fill(vt_clus_x->at(clentry), vt_clus_y->at(clentry),
-                             vt_clus_z->at(clentry));
+           clentry < (clus_counter + vt_clus_n->at(pentry)); clentry++)
+    { histo_xy_clus->Fill(vt_clus_x->at(clentry),
+    vt_clus_y->at(clentry));
+    histo_xyz_clus->Fill(vt_clus_x->at(clentry), vt_clus_y->at(clentry),
+    vt_clus_z->at(clentry));
       }
       clus_counter += vt_clus_n->at(pentry);
     }
@@ -71,8 +154,8 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
       Long64_t clus_counter = 0;
       for (Long64_t track = 0; track < vt_trk_n->at(ventry); track++) {
         for (Long64_t centry = clus_counter;
-             centry < (clus_counter + vt_trk_clus_n->at(track)); centry++) {
-          if (vt_trk_n->at(ventry) == 1) {
+             centry < (clus_counter + vt_trk_clus_n->at(track));
+    centry++) { if (vt_trk_n->at(ventry) == 1) {
             histo_xyz_trk_clus->Fill(vt_trk_clus_x->at(centry),
                                      vt_trk_clus_y->at(centry),
                                      vt_trk_clus_z->at(centry));
@@ -87,12 +170,11 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
       double distanceFromHit = 0.;
       for (Long64_t ventry = 0; ventry < vertex_n; ventry++) {
         Long64_t clus_counter = 0;
-        for (Long64_t tentry = 0; tentry < vt_trk_n->at(ventry); tentry++) {
-          for (Long64_t centry = clus_counter;
-               centry < (clus_counter + vt_trk_clus_n->at(tentry)); centry++) {
-            if (vt_trk_n->at(ventry) == 1 &&
-                (distanceFromHit =
-                     sqrt((TWXPoint->at(twentry) -
+        for (Long64_t tentry = 0; tentry < vt_trk_n->at(ventry);
+    tentry++) { for (Long64_t centry = clus_counter; centry <
+    (clus_counter + vt_trk_clus_n->at(tentry)); centry++) { if
+    (vt_trk_n->at(ventry) == 1
+    && (distanceFromHit = sqrt((TWXPoint->at(twentry) -
                            vt_trk_projTW->at(ventry).X()) *
                               (TWXPoint->at(twentry) -
                                vt_trk_projTW->at(ventry).X()) +
@@ -114,10 +196,12 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
     // distribution of vtx points
     // filliamo tutti i punti di vertice dell'esperimento FOOT. per ogni
-    // evento, pesco tutti i vertex point che ci sono e all'interno dell'histo
+    // evento, pesco tutti i vertex point che ci sono e all'interno
+    dell'histo
     // li mettiamo tutti. il loop è un for che agisce per ogni evento.
     for (int i = 0; i < vertex_n; i++) {  // loop on every vtx point
-      histo_vtxpoint->Fill(vertex_x->at(i), vertex_y->at(i), vertex_z->at(i));
+      histo_vtxpoint->Fill(vertex_x->at(i), vertex_y->at(i),
+    vertex_z->at(i));
     }
 
     // distribution of TW points
@@ -130,19 +214,20 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
       histo_tw_3d->Fill(TWXPoint->at(twentry), TWYPoint->at(twentry),
                         TWZPoint->at(twentry));
       // rilascio di energia del primo strato di barre
-      histo_de_vs_tof->Fill(TWDe1Point->at(twentry), TWTOF->at(twentry));
+      histo_de_vs_tof->Fill(TWDe1Point->at(twentry),
+    TWTOF->at(twentry));
 
       for (Long64_t vtxentry = 0; vtxentry < vertex_n;
            vtxentry++) {  // loop on vtx points
         for (Long64_t vtentry = 0; vtentry < vt_trk_n->at(vtxentry);
              vtentry++)  // loop on tracks for every tw point
         {
-          // distance from the projection of the vtx track to TW and TWpoint
-          distanceFromHit = sqrt(
-              (TWXPoint->at(twentry) - vt_trk_projTW->at(vtentry).X()) *
-                  (TWXPoint->at(twentry) - vt_trk_projTW->at(vtentry).X()) +
-              (TWYPoint->at(twentry) - vt_trk_projTW->at(vtentry).Y()) *
-                  (TWYPoint->at(twentry) - vt_trk_projTW->at(vtentry).Y()));
+          // distance from the projection of the vtx track to TW and
+    TWpoint distanceFromHit = sqrt( (TWXPoint->at(twentry) -
+    vt_trk_projTW->at(vtentry).X()) * (TWXPoint->at(twentry) -
+    vt_trk_projTW->at(vtentry).X()) + (TWYPoint->at(twentry) -
+    vt_trk_projTW->at(vtentry).Y()) * (TWYPoint->at(twentry) -
+    vt_trk_projTW->at(vtentry).Y()));
 
           if (distanceFromHit <=
               4.)  // conservative threshold to match a twpoint
@@ -154,56 +239,60 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         }
       }
     }
-    // DA OGNI TRACCIA, che è l'oggetto vertex track, prendo la sua proiezione
-    // al tofwall e misuro la distanza. se la distanza è minore di 4, allora
-    // riempio l'istogramma poi magari posso anche fare un test di chi quadro
+    // DA OGNI TRACCIA, che è l'oggetto vertex track, prendo la sua
+    proiezione
+    // al tofwall e misuro la distanza. se la distanza è minore di 4,
+    allora
+    // riempio l'istogramma poi magari posso anche fare un test di chi
+    quadro
     //
 
-    //------------------ print chi2 of vtx tracks, taking care on how vector
+    //------------------ print chi2 of vtx tracks, taking care on how
+    vector
     // are
     // filled
     bool debug = true;
     if (debug) {
       std::cout << "event n: " << ev << std::endl;
-      std::cout << "total number of vtx point: " << vertex_n << std::endl;
-      Long64_t track_counter = 0;
-      for (int i = 0; i < vertex_n; i++) {  // loop on every vtx point
-        std::cout << "vertex point n: " << i << std::endl;
-        std::cout << "tracks n: " << vt_trk_n->at(i) << std::endl;
-        for (int j = 0; j < vt_trk_n->at(i); j++) {
-          std::cout << "track n: " << j << std::endl;
-          std::cout
+      std::cout << "total number of vtx point: " << vertex_n <<
+    std::endl; Long64_t track_counter = 0; for (int i = 0; i < vertex_n;
+    i++) {  // loop on every vtx point std::cout << "vertex point n: "
+    << i << std::endl; std::cout << "tracks n: " << vt_trk_n->at(i) <<
+    std::endl; for (int j = 0; j < vt_trk_n->at(i); j++) { std::cout <<
+    "track n: " << j << std::endl; std::cout
               << "chi square: " << vt_trk_chi2->at(track_counter + j)
-              << std::endl;  // trackcounter is an offset to take out track info
+              << std::endl;  // trackcounter is an offset to take out
+    track info
                              // not from the beginning of the vector
         }
         track_counter += vt_trk_n->at(i);
       }
-    }
+    } */
   }
 }
 
-// nella funzione qui sotto accade questo. ogni cluster è un blocco di pixel
-// accesi, ho più cluster per ogni piano. in questo caso il ragionamento è
-// questo: per ogni evento ho più piani del VTX che si accendono. per ogni
-// piano posso avere più cluster. con vt_clus_n->size() trovo quanti piani
-// ho per quell'evento. vt_clus_n è un vettore proprio perché (n, m) n è il
-// numero di cluster nel 1° piano, m è il numero di cluster nel 2° piano e
-// così via). quindi se per esempio ho che un evento ha acceso 4 piani, avrò
-// che la size del vettore sopra citato sarà pari a 4. poi ogni piano è
-// stato denominato con pentry, quindi parleremo del piano p-esimo. nel
-// piano p-esimo potremmo trovare il numero di cluster. per ogni cluster
-// posso trovare il numero di hit. vt_clus_tot_hits è proprio il vettore che
-// contiene il numero di hit per ogni cluster. ad esempio, vt_clus_n=(2,1,3)
-// sta a significare che nel primo piano ho 2 cluster, nel secondo 1 cluster
+// nella funzione qui sotto accade questo. ogni cluster è un blocco di
+// pixel accesi, ho più cluster per ogni piano. in questo caso il
+// ragionamento è questo: per ogni evento ho più piani del VTX che si
+// accendono. per ogni piano posso avere più cluster. con
+// vt_clus_n->size() trovo quanti piani ho per quell'evento. vt_clus_n è
+// un vettore proprio perché (n, m) n è il numero di cluster nel 1°
+// piano, m è il numero di cluster nel 2° piano e così via). quindi se
+// per esempio ho che un evento ha acceso 4 piani, avrò che la size del
+// vettore sopra citato sarà pari a 4. poi ogni piano è stato denominato
+// con pentry, quindi parleremo del piano p-esimo. nel piano p-esimo
+// potremmo trovare il numero di cluster. per ogni cluster posso trovare
+// il numero di hit. vt_clus_tot_hits è proprio il vettore che contiene
+// il numero di hit per ogni cluster. ad esempio, vt_clus_n=(2,1,3) sta
+// a significare che nel primo piano ho 2 cluster, nel secondo 1 cluster
 // e nel terzo 3 cluster. il vettore vt_clus_tot_hits potrebbe essere
-// vt_clus_tot_hits(11,2,  33,  12, 10, 7), ossia che il primo cluster ha
-// acceso 11 pixel, il secondo 2 pixel (e con questi due finiamo l'elenco
-// dei cluster nel primo piano), il terzo cluster (del secondo piano) ha
-// acceso 33 pixel e così via. allora, visto che il vettore vt_clus_tot_hits
-// possiede elementi che potrebbero far parte di piani differenti, per fare
-// in modo di selezionare solo gli elementi del piano p-esimo, si implementa
-// l'algoritmo in basso (vedi clus_counter)
+// vt_clus_tot_hits(11,2,  33,  12, 10, 7), ossia che il primo cluster
+// ha acceso 11 pixel, il secondo 2 pixel (e con questi due finiamo
+// l'elenco dei cluster nel primo piano), il terzo cluster (del secondo
+// piano) ha acceso 33 pixel e così via. allora, visto che il vettore
+// vt_clus_tot_hits possiede elementi che potrebbero far parte di piani
+// differenti, per fare in modo di selezionare solo gli elementi del
+// piano p-esimo, si implementa l'algoritmo in basso (vedi clus_counter)
 void myAnalysis::PrintVtTrackInfo(Long64_t init = -999,
                                   Long64_t nentries = -999) {
   if (fChain == 0) return;
@@ -304,8 +393,8 @@ void myAnalysis::PrintVtClusInfo(Long64_t init = -999,
       // pentry sarebbe la posizione p-esima nel vettore vt_clus_n. il
       // metodo vector::at restituisce una referenza all'elemento che si
       // trova nella posizione p-esima (pentry) all'interno del vettore
-      // vt_clus_n. in questo modo, quando facciamo il loop sopra, stiamo
-      // selezionando solo le hit appartenenti al piano p-esimo
+      // vt_clus_n. in questo modo, quando facciamo il loop sopra,
+      // stiamo selezionando solo le hit appartenenti al piano p-esimo
 
       // NOTA: chiaramente si conta da 0
 
@@ -350,43 +439,50 @@ void myAnalysis::PrintTwPointInfo(Long64_t init = -999,
 // qui vengono inizializzati alcuni istogrammi
 void myAnalysis::BeforeLoop() {
   // booking of the histograms
-  histo_xy_clus =
-      new TH2D("histo_xy_clus", "XY cluster distribution; X [cm]; Y [cm]", 10,
-               -20., 20., 10, -20., 20.);
-  histo_xyz_clus = new TH3D("histo_xyz_clus",
-                            "XYZ cluster distribution; X[cm]; Y[cm]; Z[cm]", 10,
-                            -20., 20., 10, -20, 20., 10, -20., 20.);
-  histo_xyz_trk_clus =
-      new TH3D("histo_xyz_trk_clus",
-               "XYZ cluster track distribution; X[cm]; Y[cm]; Z[cm]", 10, -20.,
-               20., 10, -20, 20., 10, -20., 20.);
-  histo_xyz_trk_clus_match =
-      new TH3D("histo_xyz_trk_clus_match",
-               "XYZ cluster track distribution match; X[cm]; Y[cm]; Z[cm]", 10,
-               -20., 20., 10, -20, 20., 10, -20., 20.);
-  histo_tw = new TH2D("TW points distribution",
-                      "TW points distribution; X [cm]; Y [cm]", 10, -20, 20.,
-                      10, -20, 20.);
-  histo_tw_matched =
-      new TH2D("TW points distribution - VTX matched",
-               "TW points distribution - VTX matched; X [cm]; Y [cm]", 10, -20,
-               20., 10, -20, 20.);
-  histo_de_vs_tof = new TH2D(
-      "TW dE vs tof", "TW dE vs tof points distribution; TOF [ns]; dE [MeV]",
-      100, 0., 20., 100, 0., 200.);
-  histo_tw_3d = new TH3D("TW points distribution 3d",
-                         "TW points distribution 3d; X [cm]; Y [cm]; Z[cm]", 10,
-                         -20, 20, 10, -20, 20, 10, 180, 190);
-  histo_vtxpoint = new TH3D("vtx point distribution 3d",
-                            "VTX point distributzion; X[cm]; Y[cm]; Z[cm]", 10,
-                            -2, 2, 10, -1, 1, 10, -1, 1);
+
+  h_A1 =
+      new TH1D("h_A1", "A_1 reconstruction cluster distribution; A_1; Entries",
+               100, 0., 40.);
+  h_A2 =
+      new TH1D("h_A2", "A_2 reconstruction cluster distribution; A_1; Entries",
+               100, 0., 40.);
+  h_A3 =
+      new TH1D("h_A3", "A_3 reconstruction cluster distribution; A_1; Entries",
+               100, 0., 40.);
+  /* histo_xy_clus =
+      new TH2D("histo_xy_clus", "XY cluster distribution; X [cm]; Y
+  [cm]", 10, -20., 20., 10, -20., 20.); histo_xyz_clus = new
+  TH3D("histo_xyz_clus", "XYZ cluster distribution; X[cm]; Y[cm];
+  Z[cm]", 10, -20., 20., 10, -20, 20., 10, -20., 20.);
+  histo_xyz_trk_clus = new TH3D("histo_xyz_trk_clus", "XYZ cluster track
+  distribution; X[cm]; Y[cm]; Z[cm]", 10, -20., 20., 10, -20, 20., 10,
+  -20., 20.); histo_xyz_trk_clus_match = new
+  TH3D("histo_xyz_trk_clus_match", "XYZ cluster track distribution
+  match; X[cm]; Y[cm]; Z[cm]", 10, -20., 20., 10, -20, 20., 10,
+  -20., 20.); histo_tw = new TH2D("TW points distribution", "TW points
+  distribution; X [cm]; Y [cm]", 10, -20, 20., 10, -20, 20.);
+  histo_tw_matched = new TH2D("TW points distribution - VTX matched",
+  "TW points distribution - VTX matched; X [cm]; Y [cm]", 10, -20, 20.,
+  10, -20, 20.); histo_de_vs_tof = new TH2D( "TW dE vs tof", "TW dE vs
+  tof points distribution; TOF [ns]; dE [MeV]", 100, 0., 20., 100, 0.,
+  200.); histo_tw_3d = new TH3D("TW points distribution 3d", "TW points
+  distribution 3d; X [cm]; Y [cm]; Z[cm]", 10, -20, 20, 10, -20, 20, 10,
+  180, 190); histo_vtxpoint = new TH3D("vtx point distribution 3d", "VTX
+  point distributzion; X[cm]; Y[cm]; Z[cm]", 10, -2, 2, 10, -1, 1, 10,
+  -1, 1); */
 }
 
 // nell'afterloop vogliamo stampare gli istogrammi fillati nel loop
 void myAnalysis::AfterLoop() {
   // plot histos on a canvas
+  TCanvas *c_A1 = new TCanvas("c_A1", "A_1", 1000, 600);
+  h_A1->Draw();
+  TCanvas *c_A2 = new TCanvas("c_A2", "A_2", 1000, 600);
+  h_A2->Draw();
+  TCanvas *c_A3 = new TCanvas("c_A3", "A_3", 1000, 600);
+  h_A3->Draw();
 
-  TCanvas *c = new TCanvas("c", "Exercises", 2000, 1000);
+  /* TCanvas *c = new TCanvas("c", "Exercises", 2000, 1000);
   c->Divide(2, 2);
   c->cd(1);
   histo_xy_clus->Draw("colz");
@@ -411,7 +507,7 @@ void myAnalysis::AfterLoop() {
   histo_vtxpoint->Draw();
 
   TCanvas *c4 = new TCanvas("c4", "TW dE vs TOF", 2000, 1000);
-  histo_de_vs_tof->Draw("colz");
+  histo_de_vs_tof->Draw("colz"); */
 
   // delete c1, histo_tw, histo_tw_matched;
 }
@@ -427,7 +523,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 10);
+  m.Analysis(142, 340);
 
   return EXIT_SUCCESS;
 }

@@ -12,6 +12,7 @@
 
 #include "TChain.h"
 #include "TFile.h"
+#include "TH1.h"
 #include "TH2.h"
 #include "TH3.h"
 #include "TROOT.h"
@@ -224,6 +225,9 @@ class myAnalysis {
   virtual void Loop(Long64_t init, Long64_t nentries);
 
   // histo declaration
+  TH1D *h_A1;                      // A_1
+  TH1D *h_A2;                      // A_2
+  TH1D *h_A3;                      // A_3
   TH2D *histo_xy_clus;             // XY cluster distribution
   TH3D *histo_xyz_clus;            // XYZ cluster distribution
   TH3D *histo_xyz_trk_clus;        // XYZ cluster track distribution
