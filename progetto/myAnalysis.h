@@ -89,6 +89,7 @@ class myAnalysis {
   std::vector<double> *GLBtrackPx;
   std::vector<double> *GLBtrackPy;
   std::vector<double> *GLBtrackPz;
+  std::vector<double> *GLBtrackLength;
   std::vector<int> *GLBtrackTWid;
   std::vector<int> *GLBtrackCAid;
   std::vector<int> *MC_Dead_region;
@@ -176,6 +177,7 @@ class myAnalysis {
   TBranch *b_GLBtrackPx;            //!
   TBranch *b_GLBtrackPy;            //!
   TBranch *b_GLBtrackPz;            //!
+  TBranch *b_GLBtrackLength;        //!
   TBranch *b_GLBtrackTWid;          //!
   TBranch *b_GLBtrackCAid;          //!
   TBranch *b_MC_Dead_region;        //!
@@ -342,6 +344,7 @@ void myAnalysis::Init(TTree *tree) {
   GLBtrackPx = 0;
   GLBtrackPy = 0;
   GLBtrackPz = 0;
+  GLBtrackLength = 0;
   GLBtrackTWid = 0;
   GLBtrackCAid = 0;
   MC_Dead_region = 0;
@@ -438,6 +441,8 @@ void myAnalysis::Init(TTree *tree) {
   fChain->SetBranchAddress("GLBtrackPx", &GLBtrackPx, &b_GLBtrackPx);
   fChain->SetBranchAddress("GLBtrackPy", &GLBtrackPy, &b_GLBtrackPy);
   fChain->SetBranchAddress("GLBtrackPz", &GLBtrackPz, &b_GLBtrackPz);
+  fChain->SetBranchAddress("GLBtrackLength", &GLBtrackLength,
+                           &b_GLBtrackLength);
   fChain->SetBranchAddress("GLBtrackTWid", &GLBtrackTWid, &b_GLBtrackTWid);
   fChain->SetBranchAddress("GLBtrackCAid", &GLBtrackCAid, &b_GLBtrackCAid);
   fChain->SetBranchAddress("MC_Dead_region", &MC_Dead_region,
