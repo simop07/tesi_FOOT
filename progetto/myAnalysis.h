@@ -5,8 +5,8 @@
 // found on file: Merge_12C_200_2023v2_1_ntu.root
 //////////////////////////////////////////////////////////
 
-#ifndef myAnalysis_h
-#define myAnalysis_h
+#ifndef MYANALYSIS_H
+#define MYANALYSIS_H
 
 #include <vector>
 
@@ -230,6 +230,9 @@ class myAnalysis {
   TH1D *h_A1;                      // A_1
   TH1D *h_A2;                      // A_2
   TH1D *h_A3;                      // A_3
+  TH1D *h_z1;                      // z_1
+  TH1D *h_z2;                      // z_2
+  TH1D *h_z3;                      // z_3
   TH2D *histo_xy_clus;             // XY cluster distribution
   TH3D *histo_xyz_clus;            // XYZ cluster distribution
   TH3D *histo_xyz_trk_clus;        // XYZ cluster track distribution

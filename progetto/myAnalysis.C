@@ -6,12 +6,12 @@
 
 #include "TCanvas.h"
 #include "TH2.h"
+#include "TMath.h"
 #include "TStyle.h"
+#include "constants.h"
 #include "myAnalysis.h"
 
 static Long64_t default_value = -999;
-constexpr double c = {3e8};     // in m/s
-constexpr double u = {0.9315};  // in GeV
 
 void myAnalysis::PrepareLoop(Long64_t &init = default_value,
                              Long64_t &nentries = default_value) {
@@ -45,6 +45,9 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
   PrepareLoop(init, nentries);
 
   for (Long64_t jentry = 0; jentry < nentries; jentry++) {
+    using namespace constants;
+    using namespace TMath;
+
     Long64_t ientry = LoadTree(jentry);
     if (ientry < 0) break;
     nb = fChain->GetEntry(jentry);
@@ -53,28 +56,31 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
     //------------------------------start the analysis here...
 
-    // A loop
-    double const number_mass_beam{12.};
-    double const k_energy_u_beam{0.200};  // in GeV
-    double const beta_beam = sqrt(1. - (1. / ((1. + (k_energy_u_beam / u)) *
-                                              (1. + (k_energy_u_beam / u)))));
-    double d_SC_TGT{30.};
-    double const t_SC_TGT{d_SC_TGT * (1e-2) / (c * beta_beam)};  // in m
+    // variables
+    double const beta_beam{sqrt(1. - (1. / ((1. + (k_energy_u_beam / u)) *
+                                            (1. + (k_energy_u_beam / u)))))};
+    double const t_SC_TGT{d_SC_TGT * (1e-2) / (c * beta_beam)};  // in s
     // double distanceFromHit{};
     double trackLength{};
     double p{};
     double E_k{};
     double beta{};
+    double A1{};
+    double A2{};
+    double A3{};
+    double z1{};
+    double z2{};
+    double z3{};
 
     // A loop
     for (Long64_t GLBtracks_i{}; GLBtracks_i < GLBtracks; GLBtracks_i++) {
-      // in GeV
       if ((GLBtrackPx->at(GLBtracks_i)) >= 0 &&
           (GLBtrackPy->at(GLBtracks_i)) >= 0 &&
           (GLBtrackPz->at(GLBtracks_i)) >= 0 &&
           GLBtrackLength->at(GLBtracks_i) >= 0 &&
           GLBtrackCAid->at(GLBtracks_i) >= 0 &&
           GLBtrackTWid->at(GLBtracks_i) >= 0) {
+        // in GeV
         p = sqrt((GLBtrackPx->at(GLBtracks_i)) * (GLBtrackPx->at(GLBtracks_i)) +
                  (GLBtrackPy->at(GLBtracks_i)) * (GLBtrackPy->at(GLBtracks_i)) +
                  (GLBtrackPz->at(GLBtracks_i)) * (GLBtrackPz->at(GLBtracks_i)));
@@ -88,26 +94,57 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
                 (c * ((TWTOF->at(GLBtrackTWid->at(GLBtracks_i))) * 1e-9 -
                       t_SC_TGT)));
 
-        h_A1->Fill(p / (u * beta * (1 / (sqrt(1. - beta * beta)))));
-        h_A2->Fill(E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1)));
-        h_A3->Fill((p * p - E_k * E_k) / (2 * E_k));
+        // A definitions
+        A1 = p / (u * beta * (1 / (sqrt(1. - beta * beta))));
+        A2 = E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1));
+        A3 = (p * p - E_k * E_k) / (2 * E_k);
 
+        // z definitions
+        z1 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
+             sqrt((beta * beta * U * A1 *
+                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
+                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
+                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
+                    beta * beta)));
+        z2 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
+             sqrt((beta * beta * U * A2 *
+                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
+                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
+                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
+                    beta * beta)));
+        z3 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
+             sqrt((beta * beta * U * A3 *
+                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
+                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
+                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
+                    beta * beta)));
+
+        // fill histos
+        h_A1->Fill(A1);
+        h_A2->Fill(A2);
+        h_A3->Fill(A3);
+        h_z1->Fill(z1);
+        h_z2->Fill(z2);
+        h_z3->Fill(z3);
+
+        // print some values
         std::cout << "event n.: " << ientry << std::endl;
-        std::cout << "\ttrack lenght: " << trackLength << std::endl;
-        std::cout << "\t\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
+        std::cout << "\ttrack lenght: " << trackLength
+                  << "\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
                   << std::endl;
-        std::cout << "\t\t\tp: " << p << "\tbeta: " << beta
+        std::cout << "\t\tp: " << p << "\tbeta: " << beta
                   << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
-                  << "\tbeta beam: " << beta_beam << std::endl;
-        std::cout << "\t\t\t\tE_k: " << E_k << std::endl;
-        std::cout << "\t\t\t\t\tA1: "
-                  << p / (u * beta * (1 / (sqrt(1. - beta * beta))))
-                  << std::endl;
-        std::cout << "\t\t\t\t\t\tA2: "
-                  << E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1))
-                  << std::endl;
-        std::cout << "\t\t\t\t\t\t\tA3: " << (p * p - E_k * E_k) / (2 * E_k)
-                  << std::endl;
+                  << "\tbeta_beam: " << beta_beam << std::endl;
+        std::cout << "\t\t\tE_k: " << E_k << std::endl;
+        std::cout << "\t\t\t\tA1: " << A1 << std::endl;
+        std::cout << "\t\t\t\tA2: " << A2 << std::endl;
+        std::cout << "\t\t\t\tA3: " << A3 << std::endl;
+        std::cout << "\t\t\t\t\tz1: " << z1 << std::endl;
+        std::cout << "\t\t\t\t\tz2: " << z2 << std::endl;
+        std::cout << "\t\t\t\t\tz3: " << z3 << std::endl;
       } else {
         continue;
       }
@@ -420,15 +457,12 @@ void myAnalysis::PrintTwPointInfo(Long64_t init = -999,
 void myAnalysis::BeforeLoop() {
   // booking of the histograms
 
-  h_A1 =
-      new TH1D("h_A1", "A_1 reconstruction cluster distribution; A_1; Entries",
-               100, 0., 40.);
-  h_A2 =
-      new TH1D("h_A2", "A_2 reconstruction cluster distribution; A_1; Entries",
-               100, 0., 40.);
-  h_A3 =
-      new TH1D("h_A3", "A_3 reconstruction cluster distribution; A_1; Entries",
-               100, 0., 40.);
+  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 100, 0., 40.);
+  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 100, 0., 40.);
+  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 100, 0., 40.);
+  h_z1 = new TH1D("h_z1", "z_1 reconstruction; z_1; Entries", 100, 0., 40.);
+  h_z2 = new TH1D("h_z2", "z_2 reconstruction; z_2; Entries", 100, 0., 40.);
+  h_z3 = new TH1D("h_z3", "z_3 reconstruction; z_3; Entries", 100, 0., 40.);
   /* histo_xy_clus =
       new TH2D("histo_xy_clus", "XY cluster distribution; X [cm]; Y
   [cm]", 10, -20., 20., 10, -20., 20.); histo_xyz_clus = new
@@ -461,6 +495,13 @@ void myAnalysis::AfterLoop() {
   h_A2->Draw();
   TCanvas *c_A3 = new TCanvas("c_A3", "A_3", 1000, 600);
   h_A3->Draw();
+
+  TCanvas *c_z1 = new TCanvas("c_z1", "z_1", 1000, 600);
+  h_z1->Draw();
+  TCanvas *c_z2 = new TCanvas("c_z2", "z_2", 1000, 600);
+  h_z2->Draw();
+  TCanvas *c_z3 = new TCanvas("c_z3", "z_3", 1000, 600);
+  h_z3->Draw();
 
   /* TCanvas *c = new TCanvas("c", "Exercises", 2000, 1000);
   c->Divide(2, 2);
