@@ -59,90 +59,59 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
     double const beta_beam = sqrt(1. - (1. / ((1. + (k_energy_u_beam / u)) *
                                               (1. + (k_energy_u_beam / u)))));
     double d_SC_TGT{30.};
-    double const t_SC_TGT{d_SC_TGT * (1e-2) / (c * beta_beam)};
-    double distanceFromHit{};
-    double distanceTW_vt{};
+    double const t_SC_TGT{d_SC_TGT * (1e-2) / (c * beta_beam)};  // in m
+    // double distanceFromHit{};
+    double trackLength{};
     double p{};
     double E_k{};
-    double E_kTOT{};
     double beta{};
-    for (Long64_t i_twpoint{}; i_twpoint < TWPoints; i_twpoint++) {
-      for (Long64_t j_vtpoint{}; j_vtpoint < vertex_n; j_vtpoint++) {
-        if (vertex_n == 1) {
-          for (Long64_t k_track{}; k_track < vt_trk_n->at(j_vtpoint);
-               k_track++) {
-            distanceFromHit = sqrt(
-                (TWXPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).X()) *
-                    (TWXPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).X()) +
-                (TWYPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Y()) *
-                    (TWYPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Y()) +
-                (TWZPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Z()) *
-                    (TWZPoint->at(i_twpoint) - vt_trk_projTW->at(k_track).Z()));
-            if (distanceFromHit < 20. &&
-                (long long int)GLBtrackPx->size() == vt_trk_n->at(j_vtpoint) &&
-                (long long int)GLBtrackPx->size() ==
-                    (long long int)CAenergy->size() &&
-                (long long int)CAenergy->size() == TWPoints) {
-              distanceTW_vt =
-                  sqrt((TWXPoint->at(i_twpoint) - vertex_x->at(j_vtpoint)) *
-                           (TWXPoint->at(i_twpoint) - vertex_x->at(j_vtpoint)) +
-                       (TWYPoint->at(i_twpoint) - vertex_y->at(j_vtpoint)) *
-                           (TWYPoint->at(i_twpoint) - vertex_y->at(j_vtpoint)) +
-                       (TWZPoint->at(i_twpoint) - vertex_z->at(j_vtpoint)) *
-                           (TWZPoint->at(i_twpoint) - vertex_z->at(j_vtpoint)));
-              p = sqrt((GLBtrackPx->at(k_track)) * (GLBtrackPx->at(k_track)) +
-                       (GLBtrackPy->at(k_track)) * (GLBtrackPy->at(k_track)) +
-                       (GLBtrackPz->at(k_track)) * (GLBtrackPz->at(k_track)));
-              E_k = CAenergy->at(k_track) +
-                    (TWDe1Point->at(i_twpoint) + TWDe2Point->at(i_twpoint)) *
-                        1e-3;
-              beta = ((distanceTW_vt) * (1e-2) /
-                      (c * ((TWTOF->at(i_twpoint)) * 1e-9 - t_SC_TGT)));
 
-              h_A1->Fill(p / (u * beta * (1 / (sqrt(1. - beta * beta)))));
-              h_A2->Fill(E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1)));
-              h_A3->Fill((p * p - E_k * E_k) / (2 * E_k));
+    // A loop
+    for (Long64_t GLBtracks_i{}; GLBtracks_i < GLBtracks; GLBtracks_i++) {
+      // in GeV
+      if ((GLBtrackPx->at(GLBtracks_i)) >= 0 &&
+          (GLBtrackPy->at(GLBtracks_i)) >= 0 &&
+          (GLBtrackPz->at(GLBtracks_i)) >= 0 &&
+          GLBtrackLength->at(GLBtracks_i) >= 0 &&
+          GLBtrackCAid->at(GLBtracks_i) >= 0 &&
+          GLBtrackTWid->at(GLBtracks_i) >= 0) {
+        p = sqrt((GLBtrackPx->at(GLBtracks_i)) * (GLBtrackPx->at(GLBtracks_i)) +
+                 (GLBtrackPy->at(GLBtracks_i)) * (GLBtrackPy->at(GLBtracks_i)) +
+                 (GLBtrackPz->at(GLBtracks_i)) * (GLBtrackPz->at(GLBtracks_i)));
+        trackLength = 1e-2 * GLBtrackLength->at(GLBtracks_i);  // in m
 
-              std::cout << "event n.: " << ientry << std::endl;
-              std::cout << "\tdistance TW-vtx_proj: " << distanceFromHit
-                        << std::endl;
-              std::cout << "\t\tdistance TW-vtx: " << distanceTW_vt
-                        << std::endl;
-              std::cout << "\t\t\tTOF: " << TWTOF->at(i_twpoint) << std::endl;
-              std::cout << "\t\t\t\tp: " << p << "\tbeta: " << beta
-                        << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
-                        << std::endl;
-              std::cout << "\t\t\t\t\tE_k: " << E_k << std::endl;
-              std::cout << "\t\t\t\t\t\tA1: "
-                        << p / (u * beta * (1 / (sqrt(1. - beta * beta))))
-                        << std::endl;
-              std::cout << "\t\t\t\t\t\t\tA2: "
-                        << E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1))
-                        << std::endl;
-              std::cout << "\t\t\t\t\t\t\t\tA3: "
-                        << (p * p - E_k * E_k) / (2 * E_k) << std::endl;
-            }
-          }
-        }
+        // in GeV
+        E_k = CAenergy->at(GLBtrackCAid->at(GLBtracks_i)) +
+              1e-3 * (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                      TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)));
+        beta = (trackLength /
+                (c * ((TWTOF->at(GLBtrackTWid->at(GLBtracks_i))) * 1e-9 -
+                      t_SC_TGT)));
+
+        h_A1->Fill(p / (u * beta * (1 / (sqrt(1. - beta * beta)))));
+        h_A2->Fill(E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1)));
+        h_A3->Fill((p * p - E_k * E_k) / (2 * E_k));
+
+        std::cout << "event n.: " << ientry << std::endl;
+        std::cout << "\ttrack lenght: " << trackLength << std::endl;
+        std::cout << "\t\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
+                  << std::endl;
+        std::cout << "\t\t\tp: " << p << "\tbeta: " << beta
+                  << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
+                  << "\tbeta beam: " << beta_beam << std::endl;
+        std::cout << "\t\t\t\tE_k: " << E_k << std::endl;
+        std::cout << "\t\t\t\t\tA1: "
+                  << p / (u * beta * (1 / (sqrt(1. - beta * beta))))
+                  << std::endl;
+        std::cout << "\t\t\t\t\t\tA2: "
+                  << E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1))
+                  << std::endl;
+        std::cout << "\t\t\t\t\t\t\tA3: " << (p * p - E_k * E_k) / (2 * E_k)
+                  << std::endl;
+      } else {
+        continue;
       }
     }
-
-    /* std::cout << "size momentum: " << (long long int)GLBtrackPx->size()
-              << std::endl;
-    std::cout << "size energy: " << (long long int)CAenergy->size()
-              << std::endl; */
-
-    /* for (Long64_t j_p = 0; j_p < (long long int)GLBtrackPx->size(); j_p++) {
-      double a1 = (sqrt((GLBtrackPx->at(j_p)) * (GLBtrackPx->at(j_p)) +
-                        (GLBtrackPy->at(j_p)) * (GLBtrackPy->at(j_p)) +
-                        (GLBtrackPz->at(j_p)) * (GLBtrackPz->at(j_p))) /
-                   (u * c));
-      std::cout << "event n°: " << ientry << std::endl;
-      std::cout << "\tj_p: " << j_p << std::endl;
-      std::cout << "\t\tmomentum: " << GLBtrackPx->at(j_p) << " "
-                << GLBtrackPy->at(j_p) << " " << GLBtrackPz->at(j_p)
-                << std::endl;
-    } */
 
     /* // INIZIO ESERCIZI
 
@@ -534,7 +503,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(142, 340);
+  m.Analysis(0, 1e3);
 
   return EXIT_SUCCESS;
 }
