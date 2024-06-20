@@ -101,21 +101,21 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
         // z definitions
         z1 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U * A1 *
+             sqrt((beta * beta * U *
                    (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
                     TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
                   (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
                    (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
                     beta * beta)));
         z2 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U * A2 *
+             sqrt((beta * beta * U *
                    (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
                     TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
                   (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
                    (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
                     beta * beta)));
         z3 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U * A3 *
+             sqrt((beta * beta * U *
                    (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
                     TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
                   (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *

@@ -7,7 +7,7 @@
 #define CONSTANTS_H
 
 namespace constants {
-inline constexpr int Z{6};
+inline constexpr double Z{0.54141};
 inline constexpr double I{64.7};                      // in eV
 inline constexpr double rho{1023.};                   // in kg*m^{-3}
 inline constexpr double N_a{6.02214076e23};           // in mol^{-1}
