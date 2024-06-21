@@ -203,22 +203,34 @@ class myAnalysis {
   TBranch *b_MC_FinalMom_y;         //!
   TBranch *b_MC_FinalMom_z;         //!
 
+  // constructor
   myAnalysis(TString filename = "Merge_12C_200_2023v2_1_ntu.root",
              TTree *tree = 0);
+
   virtual ~myAnalysis();
+
   virtual Int_t Cut(Long64_t entry);
+
   virtual Int_t GetEntry(Long64_t entry);
+
   virtual Long64_t LoadTree(Long64_t entry);
+
   virtual void Init(TTree *tree);
 
   virtual void PrepareLoop(Long64_t &init, Long64_t &nentries);
+
   virtual void PrintVtTrackInfo(Long64_t init, Long64_t nentries);
+
   virtual void PrintVtClusInfo(Long64_t init, Long64_t nentries);
+
   virtual void PrintTwPointInfo(Long64_t init, Long64_t nentries);
+
+  virtual void setStyle();
 
   virtual void Analysis(Long64_t init, Long64_t nentries);
 
   virtual Bool_t Notify();
+
   virtual void Show(Long64_t entry = -1);
 
  private:
@@ -226,13 +238,19 @@ class myAnalysis {
   virtual void AfterLoop();
   virtual void Loop(Long64_t init, Long64_t nentries);
 
-  // histo declaration
-  TH1D *h_A1;                      // A_1
-  TH1D *h_A2;                      // A_2
-  TH1D *h_A3;                      // A_3
-  TH1D *h_z1;                      // z_1
-  TH1D *h_z2;                      // z_2
-  TH1D *h_z3;                      // z_3
+  // total histo declaration fon analysis
+  TH1D *h_A1;       // A_1
+  TH1D *h_A2;       // A_2
+  TH1D *h_A3;       // A_3
+  TH1D *h_z_bethe;  // z_bethe
+  TH1D *h_z_TW;     // z_TW
+
+  // histo declaration for A_i fragment reconstruction
+  TH1 *h_A1_r[8];
+  TH1 *h_A2_r[8];
+  TH1 *h_A3_r[8];
+
+  // histo declaration for other methods
   TH2D *histo_xy_clus;             // XY cluster distribution
   TH3D *histo_xyz_clus;            // XYZ cluster distribution
   TH3D *histo_xyz_trk_clus;        // XYZ cluster track distribution
@@ -492,10 +510,12 @@ void myAnalysis::Show(Long64_t entry) {
   if (!fChain) return;
   fChain->Show(entry);
 }
+
 Int_t myAnalysis::Cut(Long64_t entry) {
   // This function may be called from Loop.
   // returns  1 if entry is accepted.
   // returns -1 otherwise.
   return 1;
 }
+
 #endif  // #ifdef myAnalysis_cxx

@@ -4,14 +4,36 @@
 
 #include <iostream>
 
+#include "TBenchmark.h"
 #include "TCanvas.h"
+#include "TF1.h"
 #include "TH2.h"
+#include "TLatex.h"
 #include "TMath.h"
+#include "TPad.h"
+#include "TROOT.h"
+#include "TString.h"
 #include "TStyle.h"
 #include "constants.h"
 #include "myAnalysis.h"
 
 static Long64_t default_value = -999;
+
+void myAnalysis::setStyle() {
+  gROOT->SetStyle("Plain");
+  gStyle->SetOptStat(0000000);
+  gStyle->SetOptFit(0000);
+  gStyle->SetPalette(57);
+  gStyle->SetOptTitle(1);
+  gStyle->SetPadLeftMargin(0.1);
+  gStyle->SetPadRightMargin(0.025);
+  gStyle->SetTitleX(-.1f);
+  gStyle->SetTitleY(0.97f);
+  gStyle->SetTitleW(1.2f);
+  gStyle->SetTitleBorderSize(0);
+  gStyle->SetTitleXOffset(1.2f);
+  // gStyle->SetTitleYOffset(0.8f);
+}
 
 void myAnalysis::PrepareLoop(Long64_t &init = default_value,
                              Long64_t &nentries = default_value) {
@@ -42,6 +64,7 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
   if (fChain == 0) return;
 
   Long64_t nbytes = 0, nb = 0;
+
   PrepareLoop(init, nentries);
 
   for (Long64_t jentry = 0; jentry < nentries; jentry++) {
@@ -68,9 +91,8 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
     double A1{};
     double A2{};
     double A3{};
-    double z1{};
-    double z2{};
-    double z3{};
+    double z_bethe{};
+    double z_TW{};
 
     // A loop
     for (Long64_t GLBtracks_i{}; GLBtracks_i < GLBtracks; GLBtracks_i++) {
@@ -99,36 +121,35 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         A2 = E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1));
         A3 = (p * p - E_k * E_k) / (2 * E_k);
 
-        // z definitions
-        z1 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U *
-                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
-                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
-                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
-                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
-                    beta * beta)));
-        z2 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U *
-                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
-                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
-                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
-                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
-                    beta * beta)));
-        z3 = ((4. * Pi() * epsilon_0 * m_e_kg * c * c) / (q_e * q_e)) *
-             sqrt((beta * beta * U *
-                   (TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
-                    TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)))) /
-                  (4. * Pi() * N_a * m_e_eV * 1e-6 * dx * rho * Z *
-                   (Log((2. * m_e_eV * beta * beta) / (I * (1 - beta * beta))) -
-                    beta * beta)));
+        // z_bethe reconstruction
+        z_bethe = sqrt(((TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                         TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i))) *
+                        1e6 * M_u * 4. * Pi() * m_e * epsilon_0 * epsilon_0 *
+                        beta * beta) /
+                       (dx *
+                        Log((2. * m_e * beta * beta) / (I * (1 - beta * beta)) -
+                            beta * beta) *
+                        q_e * q_e * N_a * rho * Z));
 
-        // fill histos
+        // z_TW reconstruction
+        z_TW = TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i));
+
+        // fill total histos
         h_A1->Fill(A1);
         h_A2->Fill(A2);
         h_A3->Fill(A3);
-        h_z1->Fill(z1);
-        h_z2->Fill(z2);
-        h_z3->Fill(z3);
+        h_z_bethe->Fill(z_bethe);
+        h_z_TW->Fill(z_TW);
+
+        // fill reconstruction histos
+        int z[8]{1, 2, 3, 4, 5, 6, 7, 8};
+        for (int i{}; i != 8; i++) {
+          if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == z[i]) {
+            h_A1_r[i]->Fill(A1);
+            h_A2_r[i]->Fill(A2);
+            h_A3_r[i]->Fill(A3);
+          }
+        }
 
         // print some values
         std::cout << "event n.: " << ientry << std::endl;
@@ -142,9 +163,8 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         std::cout << "\t\t\t\tA1: " << A1 << std::endl;
         std::cout << "\t\t\t\tA2: " << A2 << std::endl;
         std::cout << "\t\t\t\tA3: " << A3 << std::endl;
-        std::cout << "\t\t\t\t\tz1: " << z1 << std::endl;
-        std::cout << "\t\t\t\t\tz2: " << z2 << std::endl;
-        std::cout << "\t\t\t\t\tz3: " << z3 << std::endl;
+        std::cout << "\t\t\t\t\tz_bethe: " << z_bethe << std::endl;
+        std::cout << "\t\t\t\t\t\tz_TW: " << z_TW << std::endl;
       } else {
         continue;
       }
@@ -455,14 +475,53 @@ void myAnalysis::PrintTwPointInfo(Long64_t init = -999,
 
 // qui vengono inizializzati alcuni istogrammi
 void myAnalysis::BeforeLoop() {
-  // booking of the histograms
+  // creating total histos
+  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 1000, 0., 16.);
+  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 1000, 0., 16.);
+  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 1000, 0., 16.);
+  h_z_bethe = new TH1D("h_z_bethe", "z bethe; z; Entries", 1000, 0., 12.);
+  h_z_TW = new TH1D("h_z", "z TW reconstruction; z; Entries", 13, 0., 12.);
 
-  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 100, 0., 40.);
-  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 100, 0., 40.);
-  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 100, 0., 40.);
-  h_z1 = new TH1D("h_z1", "z_1 reconstruction; z_1; Entries", 100, 0., 40.);
-  h_z2 = new TH1D("h_z2", "z_2 reconstruction; z_2; Entries", 100, 0., 40.);
-  h_z3 = new TH1D("h_z3", "z_3 reconstruction; z_3; Entries", 100, 0., 40.);
+  // creating recostruction histos
+  TString const histname{"h"};
+  const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                            "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+                            "{}^{14}_{7}N", "{}^{16}_{8}O"};
+
+  for (int i{}; i != 8; i++) {
+    h_A1_r[i] = new TH1D(histname + i, element[i], 1000, 0., 16.);
+    h_A2_r[i] = new TH1D(histname + i + 8, element[i], 1000, 0., 16.);
+    h_A3_r[i] = new TH1D(histname + i + 16, element[i], 1000, 0., 16.);
+
+    // cosmetics
+    h_A1_r[i]->SetMarkerStyle(20);
+    h_A1_r[i]->SetMarkerSize(0.5);
+    h_A1_r[i]->SetLineColor(1);
+    h_A1_r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A1_r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A1_r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A1_r[i]->GetXaxis()->SetTitle("A_{1}");
+    h_A1_r[i]->GetYaxis()->SetTitle("Entries");
+
+    h_A2_r[i]->SetMarkerStyle(20);
+    h_A2_r[i]->SetMarkerSize(0.5);
+    h_A2_r[i]->SetLineColor(1);
+    h_A2_r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A2_r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A2_r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A2_r[i]->GetXaxis()->SetTitle("A_{2}");
+    h_A2_r[i]->GetYaxis()->SetTitle("Entries");
+
+    h_A3_r[i]->SetMarkerStyle(20);
+    h_A3_r[i]->SetMarkerSize(0.5);
+    h_A3_r[i]->SetLineColor(1);
+    h_A3_r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A3_r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A3_r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A3_r[i]->GetXaxis()->SetTitle("A_{3}");
+    h_A3_r[i]->GetYaxis()->SetTitle("Entries");
+  }
+
   /* histo_xy_clus =
       new TH2D("histo_xy_clus", "XY cluster distribution; X [cm]; Y
   [cm]", 10, -20., 20., 10, -20., 20.); histo_xyz_clus = new
@@ -488,20 +547,68 @@ void myAnalysis::BeforeLoop() {
 
 // nell'afterloop vogliamo stampare gli istogrammi fillati nel loop
 void myAnalysis::AfterLoop() {
-  // plot histos on a canvas
+  // creating TFile
+  TFile *file = new TFile("analisi/myAnalysis.root", "RECREATE");
+
+  // defining canvas
   TCanvas *c_A1 = new TCanvas("c_A1", "A_1", 1000, 600);
-  h_A1->Draw();
   TCanvas *c_A2 = new TCanvas("c_A2", "A_2", 1000, 600);
-  h_A2->Draw();
   TCanvas *c_A3 = new TCanvas("c_A3", "A_3", 1000, 600);
+  TCanvas *c_z = new TCanvas("c_z", "z", 1000, 600);
+  TCanvas *c_A1_r = new TCanvas("c_A1_r", "A_1_r", 1000, 600);
+  TCanvas *c_A2_r = new TCanvas("c_A2_r", "A_2_r", 1000, 600);
+  TCanvas *c_A3_r = new TCanvas("c_A3_r", "A_3_r", 1000, 600);
+
+  // defining fitting functions
+  TF1 *f1 = new TF1("f1", "gaus", 0., 1.5);
+
+  // setting parameters
+  f1->SetParNames("Constant", "Mean_value", "Sigma");
+
+  // fitting
+  h_z_bethe->Fit(f1, "R");
+
+  // drawing total histos on canvas
+  c_A1->cd();
+  h_A1->Draw();
+
+  c_A2->cd();
+  h_A2->Draw();
+
+  c_A3->cd();
   h_A3->Draw();
 
-  TCanvas *c_z1 = new TCanvas("c_z1", "z_1", 1000, 600);
-  h_z1->Draw();
-  TCanvas *c_z2 = new TCanvas("c_z2", "z_2", 1000, 600);
-  h_z2->Draw();
-  TCanvas *c_z3 = new TCanvas("c_z3", "z_3", 1000, 600);
-  h_z3->Draw();
+  c_z->cd();
+  h_z_bethe->Draw();
+  h_z_TW->Draw("SAME");
+
+  // dividing and filling reconstruction canvas
+  c_A1_r->Divide(4, 2);
+  c_A2_r->Divide(4, 2);
+  c_A3_r->Divide(4, 2);
+
+  for (int i{}; i != 8; i++) {
+    c_A1_r->cd(i + 1);
+    h_A1_r[i]->Draw();
+
+    c_A2_r->cd(i + 1);
+    h_A2_r[i]->Draw();
+
+    c_A3_r->cd(i + 1);
+    h_A3_r[i]->Draw();
+  }
+
+  // writing on TFile
+  file->cd();
+  c_A1->Write();
+  c_A2->Write();
+  c_A3->Write();
+  c_z->Write();
+  c_A1_r->Write();
+  c_A2_r->Write();
+  c_A3_r->Write();
+
+  file->Close();
 
   /* TCanvas *c = new TCanvas("c", "Exercises", 2000, 1000);
   c->Divide(2, 2);
@@ -535,16 +642,22 @@ void myAnalysis::AfterLoop() {
 
 // contiene beforeloop, loop e afterloop
 void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
+  TBenchmark *b = new TBenchmark();
+
+  setStyle();
+
+  b->Start("Analysis duration");
   std::cout << "Analysis starting..." << std::endl;
   BeforeLoop();
   Loop(init, nentries);
   AfterLoop();
   std::cout << "Analysis done" << std::endl;
+  b->Show("Analysis duration");
 }
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 1e3);
+  m.Analysis(0, 100000);
 
   return EXIT_SUCCESS;
 }
