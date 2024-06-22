@@ -22,8 +22,8 @@ static Long64_t default_value = -999;
 
 void myAnalysis::setStyle() {
   gROOT->SetStyle("Plain");
-  gStyle->SetOptStat(0000000);
-  gStyle->SetOptFit(0000);
+  gStyle->SetOptStat(1);
+  gStyle->SetOptFit(1111);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
   gStyle->SetPadLeftMargin(0.1);
@@ -231,6 +231,8 @@ void myAnalysis::AfterLoop() {
   // creating TFile
   TFile *file = new TFile("analisi/myAnalysis.root", "RECREATE");
 
+  setStyle();
+
   // defining canvas
   TCanvas *c_A1 = new TCanvas("c_A1", "A_1", 1000, 600);
   TCanvas *c_A2 = new TCanvas("c_A2", "A_2", 1000, 600);
@@ -390,9 +392,8 @@ void myAnalysis::AfterLoop() {
 }
 
 void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
+  // add benchmark to evaluate performances
   TBenchmark *b = new TBenchmark();
-
-  setStyle();
 
   b->Start("Analysis duration");
   std::cout << "Analysis starting..." << std::endl;
