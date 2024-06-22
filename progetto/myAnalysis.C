@@ -313,12 +313,7 @@ void myAnalysis::AfterLoop() {
     }
   }
 
-  // dividing reconstruction canvas
-  c_A1r->Divide(4, 2);
-  c_A2r->Divide(4, 2);
-  c_A3r->Divide(4, 2);
-
-  // drawing reconstruction histos on canvas
+  // drawing reconstruction histos on canvas and cosmetics
   for (int i{}; i != 6; i++) {
     // defining offset variables
     int j{i + 8};
@@ -370,16 +365,25 @@ void myAnalysis::AfterLoop() {
     h_A1r[i]->Fit(f_A1r[i]);
     h_A2r[i]->Fit(f_A2r[i]);
     h_A3r[i]->Fit(f_A3r[i]);
+  }
 
-    // filling reconstruction canvas
+  // dividing reconstruction canvas
+  c_A1r->Divide(4, 2);
+  c_A2r->Divide(4, 2);
+  c_A3r->Divide(4, 2);
+
+  // filling reconstruction canvas
+  for (int i{}; i != 6; i++) {
     c_A1r->cd();
     c_A1r->cd(i + 1);
     h_A1r[i]->Draw();
-
+  }
+  for (int i{}; i != 6; i++) {
     c_A2r->cd();
     c_A2r->cd(i + 1);
     h_A2r[i]->Draw();
-
+  }
+  for (int i{}; i != 6; i++) {
     c_A3r->cd();
     c_A3r->cd(i + 1);
     h_A3r[i]->Draw();
