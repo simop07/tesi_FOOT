@@ -2,6 +2,7 @@
 
 #define myAnalysis_cxx
 
+#include <cstdlib>
 #include <iostream>
 
 #include "TBenchmark.h"
@@ -50,12 +51,7 @@ void myAnalysis::PrepareLoop(Long64_t &init = default_value,
   } else {  // access to the function with both argument (with a range)
     if (nentries < init) exit(0);
 
-    nentries =
-        nentries +
-        1;  // secondo me questo non fa nulla perché non è che
-            // poi la funzione ritorna niente (è void). cioè quello che fa
-            // prepare loop è fondamentalmente controllare che il loop non
-            // avvenga in maniera errata in un range che è scritto male
+    nentries = nentries + 1;
   }
   return;
 }
@@ -229,28 +225,6 @@ void myAnalysis::BeforeLoop() {
     h_A3_r[i]->GetXaxis()->SetTitle("A_{3}");
     h_A3_r[i]->GetYaxis()->SetTitle("Entries");
   }
-
-  /* histo_xy_clus =
-      new TH2D("histo_xy_clus", "XY cluster distribution; X [cm]; Y
-  [cm]", 10, -20., 20., 10, -20., 20.); histo_xyz_clus = new
-  TH3D("histo_xyz_clus", "XYZ cluster distribution; X[cm]; Y[cm];
-  Z[cm]", 10, -20., 20., 10, -20, 20., 10, -20., 20.);
-  histo_xyz_trk_clus = new TH3D("histo_xyz_trk_clus", "XYZ cluster track
-  distribution; X[cm]; Y[cm]; Z[cm]", 10, -20., 20., 10, -20, 20., 10,
-  -20., 20.); histo_xyz_trk_clus_match = new
-  TH3D("histo_xyz_trk_clus_match", "XYZ cluster track distribution
-  match; X[cm]; Y[cm]; Z[cm]", 10, -20., 20., 10, -20, 20., 10,
-  -20., 20.); histo_tw = new TH2D("TW points distribution", "TW points
-  distribution; X [cm]; Y [cm]", 10, -20, 20., 10, -20, 20.);
-  histo_tw_matched = new TH2D("TW points distribution - VTX matched",
-  "TW points distribution - VTX matched; X [cm]; Y [cm]", 10, -20, 20.,
-  10, -20, 20.); histo_de_vs_tof = new TH2D( "TW dE vs tof", "TW dE vs
-  tof points distribution; TOF [ns]; dE [MeV]", 100, 0., 20., 100, 0.,
-  200.); histo_tw_3d = new TH3D("TW points distribution 3d", "TW points
-  distribution 3d; X [cm]; Y [cm]; Z[cm]", 10, -20, 20, 10, -20, 20, 10,
-  180, 190); histo_vtxpoint = new TH3D("vtx point distribution 3d", "VTX
-  point distributzion; X[cm]; Y[cm]; Z[cm]", 10, -2, 2, 10, -1, 1, 10,
-  -1, 1); */
 }
 
 void myAnalysis::AfterLoop() {
