@@ -20,3 +20,4 @@
 
 - Fare un'analisi dell'efficienza del metodo di ricostruzione? quindi prendere gli istogrammi di generazione e fare un Divide con gli istogrammi di ricostruzione?
 - Io ho ricostruito i frammenti del CDR, ho visto che in una tesi vengono ricostruiti altri isotopi, li aggiungo?
+- Solo a titolo di curiosità, per quale motivo a ROOT non piacciono le ottimizzazioni sui for loop? Esempio della necessità di inserire un grafico inutile per fare in modo che le canvas tornassero.
