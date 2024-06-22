@@ -240,9 +240,9 @@ class myAnalysis {
   TH1D *h_z_TW;     // z_TW
 
   // histo declaration for A_i fragment reconstruction
-  TH1D *h_A1_r[8];  // A_1_r
-  TH1D *h_A2_r[8];  // A_2_r
-  TH1D *h_A3_r[8];  // A_3_r
+  TH1D *h_A1r[8];  // A_1_r
+  TH1D *h_A2r[8];  // A_2_r
+  TH1D *h_A3r[8];  // A_3_r
 
   // histo declaration for other methods
   TH2D *histo_xy_clus;             // XY cluster distribution

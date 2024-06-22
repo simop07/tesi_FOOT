@@ -22,16 +22,23 @@ static Long64_t default_value = -999;
 
 void myAnalysis::setStyle() {
   gROOT->SetStyle("Plain");
-  gStyle->SetOptStat(1);
+  gStyle->SetOptStat(10);
   gStyle->SetOptFit(1111);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
-  gStyle->SetPadLeftMargin(0.1);
-  gStyle->SetPadRightMargin(0.025);
-  gStyle->SetTitleX(-.1f);
-  gStyle->SetTitleY(0.97f);
-  gStyle->SetTitleW(1.2f);
+  gStyle->SetStatY(0.9);
+  gStyle->SetStatX(0.9);
+  gStyle->SetStatW(0.2);
+  gStyle->SetStatH(0.2);
+  gStyle->SetTitleX(0.5);
+  gStyle->SetTitleY(0.98);
+  gStyle->SetTitleAlign(23);
   gStyle->SetTitleBorderSize(0);
+  // gStyle->SetPadTopMargin(-9.);
+  // gStyle->SetPadRightMargin(-9.);
+  // gStyle->SetPadBottomMargin(-9.);
+  // gStyle->SetPadLeftMargin(-9.);
+  // gStyle->SetTitleW(0.5f);
   // gStyle->SetTitleXOffset(1.2f);
   // gStyle->SetTitleYOffset(0.8f);
 }
@@ -73,13 +80,12 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
     nbytes += nb;
     // if (Cut(ientry) < 0) continue;
 
-    //------------------------------start the analysis here...
+    //------------------------------starting the analysis here...
 
     // variables
     double const beta_beam{sqrt(1. - (1. / ((1. + (k_energy_u_beam / u)) *
                                             (1. + (k_energy_u_beam / u)))))};
     double const t_SC_TGT{d_SC_TGT * (1e-2) / (c * beta_beam)};  // in s
-    // double distanceFromHit{};
     double trackLength{};
     double p{};
     double E_k{};
@@ -90,7 +96,7 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
     double z_bethe{};
     double z_TW{};
 
-    // A loop
+    // A_i loop
     for (Long64_t GLBtracks_i{}; GLBtracks_i < GLBtracks; GLBtracks_i++) {
       if ((GLBtrackPx->at(GLBtracks_i)) >= 0 &&
           (GLBtrackPy->at(GLBtracks_i)) >= 0 &&
@@ -142,9 +148,9 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         int zz[8]{1, 2, 3, 4, 5, 6, 7, 8};
         for (int i{}; i != 6; i++) {
           if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == zz[i]) {
-            h_A1_r[i]->Fill(A1);
-            h_A2_r[i]->Fill(A2);
-            h_A3_r[i]->Fill(A3);
+            h_A1r[i]->Fill(A1);
+            h_A2r[i]->Fill(A2);
+            h_A3r[i]->Fill(A3);
           }
         }
 
@@ -193,37 +199,37 @@ void myAnalysis::BeforeLoop() {
     int j{i + 8};
     int k{i + 16};
 
-    h_A1_r[i] = new TH1D(histname + i, element[i], 1000, xlow[i], xup[i]);
-    h_A2_r[i] = new TH1D(histname + j, element[i], 1000, xlow[i], xup[i]);
-    h_A3_r[i] = new TH1D(histname + k, element[i], 1000, xlow[i], xup[i]);
+    h_A1r[i] = new TH1D(histname + i, element[i], 1000, xlow[i], xup[i]);
+    h_A2r[i] = new TH1D(histname + j, element[i], 1000, xlow[i], xup[i]);
+    h_A3r[i] = new TH1D(histname + k, element[i], 1000, xlow[i], xup[i]);
 
     // cosmetics
-    h_A1_r[i]->SetMarkerStyle(20);
-    h_A1_r[i]->SetMarkerSize(0.5);
-    h_A1_r[i]->SetLineColor(kBlue);
-    h_A1_r[i]->GetYaxis()->SetTitleOffset(1.2);
-    h_A1_r[i]->GetXaxis()->SetTitleSize(0.04);
-    h_A1_r[i]->GetYaxis()->SetTitleSize(0.04);
-    h_A1_r[i]->GetXaxis()->SetTitle("A_{1}");
-    h_A1_r[i]->GetYaxis()->SetTitle("Entries");
+    h_A1r[i]->SetMarkerStyle(20);
+    h_A1r[i]->SetMarkerSize(0.5);
+    h_A1r[i]->SetLineColor(kBlue);
+    h_A1r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A1r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A1r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A1r[i]->GetXaxis()->SetTitle("A_{1}");
+    h_A1r[i]->GetYaxis()->SetTitle("Entries");
 
-    h_A2_r[i]->SetMarkerStyle(20);
-    h_A2_r[i]->SetMarkerSize(0.5);
-    h_A2_r[i]->SetLineColor(kBlue);
-    h_A2_r[i]->GetYaxis()->SetTitleOffset(1.2);
-    h_A2_r[i]->GetXaxis()->SetTitleSize(0.04);
-    h_A2_r[i]->GetYaxis()->SetTitleSize(0.04);
-    h_A2_r[i]->GetXaxis()->SetTitle("A_{2}");
-    h_A2_r[i]->GetYaxis()->SetTitle("Entries");
+    h_A2r[i]->SetMarkerStyle(20);
+    h_A2r[i]->SetMarkerSize(0.5);
+    h_A2r[i]->SetLineColor(kBlue);
+    h_A2r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A2r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A2r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A2r[i]->GetXaxis()->SetTitle("A_{2}");
+    h_A2r[i]->GetYaxis()->SetTitle("Entries");
 
-    h_A3_r[i]->SetMarkerStyle(20);
-    h_A3_r[i]->SetMarkerSize(0.5);
-    h_A3_r[i]->SetLineColor(kBlue);
-    h_A3_r[i]->GetYaxis()->SetTitleOffset(1.2);
-    h_A3_r[i]->GetXaxis()->SetTitleSize(0.04);
-    h_A3_r[i]->GetYaxis()->SetTitleSize(0.04);
-    h_A3_r[i]->GetXaxis()->SetTitle("A_{3}");
-    h_A3_r[i]->GetYaxis()->SetTitle("Entries");
+    h_A3r[i]->SetMarkerStyle(20);
+    h_A3r[i]->SetMarkerSize(0.5);
+    h_A3r[i]->SetLineColor(kBlue);
+    h_A3r[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_A3r[i]->GetXaxis()->SetTitleSize(0.04);
+    h_A3r[i]->GetYaxis()->SetTitleSize(0.04);
+    h_A3r[i]->GetXaxis()->SetTitle("A_{3}");
+    h_A3r[i]->GetYaxis()->SetTitle("Entries");
   }
 }
 
@@ -238,22 +244,17 @@ void myAnalysis::AfterLoop() {
   TCanvas *c_A2 = new TCanvas("c_A2", "A_2", 1000, 600);
   TCanvas *c_A3 = new TCanvas("c_A3", "A_3", 1000, 600);
   TCanvas *c_z = new TCanvas("c_z", "z", 1000, 600);
-  TCanvas *c_A1_r = new TCanvas("c_A1_r", "A_1_r", 1000, 600);
-  TCanvas *c_A2_r = new TCanvas("c_A2_r", "A_2_r", 1000, 600);
-  TCanvas *c_A3_r = new TCanvas("c_A3_r", "A_3_r", 1000, 600);
-
-  // dividing reconstruction canvas
-  c_A1_r->Divide(4, 2);
-  c_A2_r->Divide(4, 2);
-  c_A3_r->Divide(4, 2);
+  TCanvas *c_A1r = new TCanvas("c_A1r", "A_1r", 1000, 600);
+  TCanvas *c_A2r = new TCanvas("c_A2r", "A_2r", 1000, 600);
+  TCanvas *c_A3r = new TCanvas("c_A3r", "A_3r", 1000, 600);
 
   // defining fitting functions for total histos
   TF1 *f_z_bethe[8];
 
   // defining fitting functions for reconstruction histos
-  TF1 *f_A1_r[8];
-  TF1 *f_A2_r[8];
-  TF1 *f_A3_r[8];
+  TF1 *f_A1r[8];
+  TF1 *f_A2r[8];
+  TF1 *f_A3r[8];
 
   // for bethe function
   TString const funcname_bethe{"f_bethe"};
@@ -269,101 +270,6 @@ void myAnalysis::AfterLoop() {
   const int mean_value[8] = {1, 4, 7, 9, 11, 12, 14, 16};
   const Double_t sigma[8] = {0.1, 0.1, 1., 1., 1., 1., 1., 1.};
 
-  for (int i{}; i != 6; i++) {
-    // defining offset variables
-    int j{i + 8};
-    int k{i + 16};
-
-    f_z_bethe[i] =
-        new TF1(funcname_bethe + i, "gaus", xlow_bethe[i], xup_bethe[i]);
-
-    f_A1_r[i] = new TF1(funcname + i, "gaus", xlow[i], xup[i]);
-    f_A2_r[i] = new TF1(funcname + j, "gaus", xlow[i], xup[i]);
-    f_A3_r[i] = new TF1(funcname + k, "gaus", xlow[i], xup[i]);
-
-    // cosmetics
-    f_z_bethe[i]->SetLineColor(kRed);
-    f_z_bethe[i]->SetLineWidth(3);
-    f_z_bethe[i]->SetLineStyle(2);
-
-    f_A1_r[i]->SetLineColor(kRed);
-    f_A1_r[i]->SetLineWidth(3);
-    f_A1_r[i]->SetLineStyle(2);
-
-    f_A2_r[i]->SetLineColor(kRed);
-    f_A2_r[i]->SetLineWidth(3);
-    f_A2_r[i]->SetLineStyle(2);
-
-    f_A3_r[i]->SetLineColor(kRed);
-    f_A3_r[i]->SetLineWidth(3);
-    f_A3_r[i]->SetLineStyle(2);
-
-    // setting parameters' name
-    f_z_bethe[i]->SetParNames("Amplitude", "Mean value", "Sigma");
-    f_A1_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
-    f_A2_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
-    f_A3_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
-
-    // setting mean value and sigma
-    f_z_bethe[i]->SetParameter(1, mean_value_bethe[i]);
-    f_A1_r[i]->SetParameter(1, mean_value[i]);
-    f_A2_r[i]->SetParameter(1, mean_value[i]);
-    f_A3_r[i]->SetParameter(1, mean_value[i]);
-
-    f_z_bethe[i]->SetParameter(2, sigma_bethe[i]);
-    f_A1_r[i]->SetParameter(2, sigma[i]);
-    f_A2_r[i]->SetParameter(2, sigma[i]);
-    f_A3_r[i]->SetParameter(2, sigma[i]);
-
-    // fitting
-    h_z_bethe->Fit(f_z_bethe[i], "R+");
-    h_A1_r[i]->Fit(f_A1_r[i]);
-    h_A2_r[i]->Fit(f_A2_r[i]);
-    h_A3_r[i]->Fit(f_A3_r[i]);
-
-    // filling reconstruction canvas
-    c_A1_r->cd();
-    c_A1_r->cd(i + 1);
-    h_A1_r[i]->Draw();
-
-    c_A2_r->cd();
-    c_A2_r->cd(i + 1);
-    h_A2_r[i]->Draw();
-
-    c_A3_r->cd();
-    c_A3_r->cd(i + 1);
-    h_A3_r[i]->Draw();
-  }
-
-  // add for debugging
-  if (false) {
-    TCanvas *c_A1_rr[8];
-    TCanvas *c_A2_rr[8];
-    TCanvas *c_A3_rr[8];
-
-    TString const canvasname{"c"};
-    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
-    for (int i{}; i != 6; i++) {
-      int j{i + 8};
-      int k{i + 16};
-
-      c_A1_rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
-      c_A2_rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
-      c_A3_rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
-
-      c_A1_rr[i]->cd();
-      h_A1_r[i]->Draw();
-
-      c_A2_rr[i]->cd();
-      h_A2_r[i]->Draw();
-
-      c_A3_rr[i]->cd();
-      h_A3_r[i]->Draw();
-    }
-  }
-
   // drawing total histos on canvas
   c_A1->cd();
   h_A1->Draw();
@@ -378,15 +284,145 @@ void myAnalysis::AfterLoop() {
   h_z_bethe->Draw();
   h_z_TW->Draw("SAME");
 
+  // add for debugging
+  if (true) {
+    TCanvas *c_A1rr[8];
+    TCanvas *c_A2rr[8];
+    TCanvas *c_A3rr[8];
+
+    TString const canvasname{"c"};
+    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
+    for (int i{}; i != 6; i++) {
+      // int j{i + 8};
+      int k{i + 16};
+
+      // c_A1rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
+      // c_A2rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
+      c_A3rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
+
+      // c_A1rr[i]->cd();
+      // h_A1r[i]->Draw();
+
+      // c_A2rr[i]->cd();
+      // h_A2r[i]->Draw();
+
+      c_A3rr[i]->cd();
+      h_A3r[i]->Draw();
+    }
+  }
+
+  // dividing reconstruction canvas
+  c_A1r->Divide(4, 2);
+  c_A2r->Divide(4, 2);
+  c_A3r->Divide(4, 2);
+
+  // drawing reconstruction histos on canvas
+  for (int i{}; i != 6; i++) {
+    // defining offset variables
+    int j{i + 8};
+    int k{i + 16};
+
+    f_z_bethe[i] =
+        new TF1(funcname_bethe + i, "gaus", xlow_bethe[i], xup_bethe[i]);
+
+    f_A1r[i] = new TF1(funcname + i, "gaus", xlow[i], xup[i]);
+    f_A2r[i] = new TF1(funcname + j, "gaus", xlow[i], xup[i]);
+    f_A3r[i] = new TF1(funcname + k, "gaus", xlow[i], xup[i]);
+
+    // cosmetics
+    f_z_bethe[i]->SetLineColor(kRed);
+    f_z_bethe[i]->SetLineWidth(3);
+    f_z_bethe[i]->SetLineStyle(2);
+
+    f_A1r[i]->SetLineColor(kRed);
+    f_A1r[i]->SetLineWidth(3);
+    f_A1r[i]->SetLineStyle(2);
+
+    f_A2r[i]->SetLineColor(kRed);
+    f_A2r[i]->SetLineWidth(3);
+    f_A2r[i]->SetLineStyle(2);
+
+    f_A3r[i]->SetLineColor(kRed);
+    f_A3r[i]->SetLineWidth(3);
+    f_A3r[i]->SetLineStyle(2);
+
+    // setting parameters' name
+    f_z_bethe[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A1r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A2r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A3r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+
+    // setting mean value and sigma
+    f_z_bethe[i]->SetParameter(1, mean_value_bethe[i]);
+    f_A1r[i]->SetParameter(1, mean_value[i]);
+    f_A2r[i]->SetParameter(1, mean_value[i]);
+    f_A3r[i]->SetParameter(1, mean_value[i]);
+
+    f_z_bethe[i]->SetParameter(2, sigma_bethe[i]);
+    f_A1r[i]->SetParameter(2, sigma[i]);
+    f_A2r[i]->SetParameter(2, sigma[i]);
+    f_A3r[i]->SetParameter(2, sigma[i]);
+
+    // fitting
+    h_z_bethe->Fit(f_z_bethe[i], "R+");
+    h_A1r[i]->Fit(f_A1r[i]);
+    h_A2r[i]->Fit(f_A2r[i]);
+    h_A3r[i]->Fit(f_A3r[i]);
+
+    // filling reconstruction canvas
+    c_A1r->cd();
+    c_A1r->cd(i + 1);
+    h_A1r[i]->Draw();
+
+    c_A2r->cd();
+    c_A2r->cd(i + 1);
+    h_A2r[i]->Draw();
+
+    c_A3r->cd();
+    c_A3r->cd(i + 1);
+    h_A3r[i]->Draw();
+  }
+
+  // add for debugging
+  if (false) {
+    TCanvas *c_A1rr[8];
+    TCanvas *c_A2rr[8];
+    TCanvas *c_A3rr[8];
+
+    TString const canvasname{"c"};
+    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
+    for (int i{}; i != 6; i++) {
+      // int j{i + 8};
+      int k{i + 16};
+
+      // c_A1rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
+      // c_A2rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
+      c_A3rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
+
+      // c_A1rr[i]->cd();
+      // h_A1r[i]->Draw();
+
+      // c_A2rr[i]->cd();
+      // h_A2r[i]->Draw();
+
+      c_A3rr[i]->cd();
+      h_A3r[i]->Draw();
+    }
+  }
+
   // writing on TFile
   file->cd();
   c_A1->Write();
   c_A2->Write();
   c_A3->Write();
   c_z->Write();
-  c_A1_r->Write();
-  c_A2_r->Write();
-  c_A3_r->Write();
+  c_A1r->Write();
+  c_A2r->Write();
+  c_A3r->Write();
 
   file->Close();
 }
