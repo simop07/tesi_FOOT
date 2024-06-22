@@ -31,7 +31,7 @@ void myAnalysis::setStyle() {
   gStyle->SetTitleY(0.97f);
   gStyle->SetTitleW(1.2f);
   gStyle->SetTitleBorderSize(0);
-  gStyle->SetTitleXOffset(1.2f);
+  // gStyle->SetTitleXOffset(1.2f);
   // gStyle->SetTitleYOffset(0.8f);
 }
 
@@ -101,7 +101,8 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
           (GLBtrackPz->at(GLBtracks_i)) >= 0 &&
           GLBtrackLength->at(GLBtracks_i) >= 0 &&
           GLBtrackCAid->at(GLBtracks_i) >= 0 &&
-          GLBtrackTWid->at(GLBtracks_i) >= 0) {
+          GLBtrackTWid->at(GLBtracks_i) >= 0 &&
+          TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) >= 0) {
         // in GeV
         p = sqrt((GLBtrackPx->at(GLBtracks_i)) * (GLBtrackPx->at(GLBtracks_i)) +
                  (GLBtrackPy->at(GLBtracks_i)) * (GLBtrackPy->at(GLBtracks_i)) +
@@ -116,7 +117,7 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
                 (c * ((TWTOF->at(GLBtrackTWid->at(GLBtracks_i))) * 1e-9 -
                       t_SC_TGT)));
 
-        // A definitions
+        // A_i definitions
         A1 = p / (u * beta * (1 / (sqrt(1. - beta * beta))));
         A2 = E_k / (u * ((1 / (sqrt(1. - beta * beta))) - 1));
         A3 = (p * p - E_k * E_k) / (2 * E_k);
@@ -142,338 +143,38 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         h_z_TW->Fill(z_TW);
 
         // fill reconstruction histos
-        int z[8]{1, 2, 3, 4, 5, 6, 7, 8};
-        for (int i{}; i != 8; i++) {
-          if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == z[i]) {
+        int zz[8]{1, 2, 3, 4, 5, 6, 7, 8};
+        for (int i{}; i != 6; i++) {
+          if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == zz[i]) {
             h_A1_r[i]->Fill(A1);
             h_A2_r[i]->Fill(A2);
             h_A3_r[i]->Fill(A3);
           }
         }
 
-        // print some values
-        std::cout << "event n.: " << ientry << std::endl;
-        std::cout << "\ttrack lenght: " << trackLength
-                  << "\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
-                  << std::endl;
-        std::cout << "\t\tp: " << p << "\tbeta: " << beta
-                  << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
-                  << "\tbeta_beam: " << beta_beam << std::endl;
-        std::cout << "\t\t\tE_k: " << E_k << std::endl;
-        std::cout << "\t\t\t\tA1: " << A1 << std::endl;
-        std::cout << "\t\t\t\tA2: " << A2 << std::endl;
-        std::cout << "\t\t\t\tA3: " << A3 << std::endl;
-        std::cout << "\t\t\t\t\tz_bethe: " << z_bethe << std::endl;
-        std::cout << "\t\t\t\t\t\tz_TW: " << z_TW << std::endl;
+        // add for debugging
+        if (false) {
+          std::cout << "event n.: " << ientry << std::endl;
+          std::cout << "\ttrack lenght: " << trackLength
+                    << "\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
+                    << std::endl;
+          std::cout << "\t\tp: " << p << "\tbeta: " << beta
+                    << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
+                    << "\tbeta_beam: " << beta_beam << std::endl;
+          std::cout << "\t\t\tE_k: " << E_k << std::endl;
+          std::cout << "\t\t\t\tA1: " << A1 << std::endl;
+          std::cout << "\t\t\t\tA2: " << A2 << std::endl;
+          std::cout << "\t\t\t\tA3: " << A3 << std::endl;
+          std::cout << "\t\t\t\t\tz_bethe: " << z_bethe << std::endl;
+          std::cout << "\t\t\t\t\t\tz_TW: " << z_TW << std::endl;
+        }
       } else {
         continue;
       }
     }
-
-    /* // INIZIO ESERCIZI
-
-    // EX 1-2
-    for (Long64_t pentry = 0; pentry < (long long int)vt_clus_n->size();
-         pentry++) {
-      Long64_t clus_counter = 0;
-      for (Long64_t clentry = clus_counter;
-           clentry < (clus_counter + vt_clus_n->at(pentry)); clentry++)
-    { histo_xy_clus->Fill(vt_clus_x->at(clentry),
-    vt_clus_y->at(clentry));
-    histo_xyz_clus->Fill(vt_clus_x->at(clentry), vt_clus_y->at(clentry),
-    vt_clus_z->at(clentry));
-      }
-      clus_counter += vt_clus_n->at(pentry);
-    }
-
-    // EX 3
-    for (Long64_t ventry = 0; ventry < vertex_n; ventry++) {
-      Long64_t clus_counter = 0;
-      for (Long64_t track = 0; track < vt_trk_n->at(ventry); track++) {
-        for (Long64_t centry = clus_counter;
-             centry < (clus_counter + vt_trk_clus_n->at(track));
-    centry++) { if (vt_trk_n->at(ventry) == 1) {
-            histo_xyz_trk_clus->Fill(vt_trk_clus_x->at(centry),
-                                     vt_trk_clus_y->at(centry),
-                                     vt_trk_clus_z->at(centry));
-          }
-        }
-        clus_counter += vt_trk_clus_n->at(track);
-      }
-    }
-
-    // EX 4
-    for (Long64_t twentry = 0; twentry < TWPoints; twentry++) {
-      double distanceFromHit = 0.;
-      for (Long64_t ventry = 0; ventry < vertex_n; ventry++) {
-        Long64_t clus_counter = 0;
-        for (Long64_t tentry = 0; tentry < vt_trk_n->at(ventry);
-    tentry++) { for (Long64_t centry = clus_counter; centry <
-    (clus_counter + vt_trk_clus_n->at(tentry)); centry++) { if
-    (vt_trk_n->at(ventry) == 1
-    && (distanceFromHit = sqrt((TWXPoint->at(twentry) -
-                           vt_trk_projTW->at(ventry).X()) *
-                              (TWXPoint->at(twentry) -
-                               vt_trk_projTW->at(ventry).X()) +
-                          (TWYPoint->at(twentry) -
-                           vt_trk_projTW->at(ventry).Y()) *
-                              (TWYPoint->at(twentry) -
-                               vt_trk_projTW->at(ventry).Y())) <= 4)) {
-              histo_xyz_trk_clus_match->Fill(vt_trk_clus_x->at(centry),
-                                             vt_trk_clus_y->at(centry),
-                                             vt_trk_clus_z->at(centry));
-            }
-          }
-          clus_counter += vt_trk_clus_n->at(tentry);
-        }
-      }
-    }
-
-    // FINE ESERCIZI
-
-    // distribution of vtx points
-    // filliamo tutti i punti di vertice dell'esperimento FOOT. per ogni
-    // evento, pesco tutti i vertex point che ci sono e all'interno
-    dell'histo
-    // li mettiamo tutti. il loop è un for che agisce per ogni evento.
-    for (int i = 0; i < vertex_n; i++) {  // loop on every vtx point
-      histo_vtxpoint->Fill(vertex_x->at(i), vertex_y->at(i),
-    vertex_z->at(i));
-    }
-
-    // distribution of TW points
-    double distanceFromHit = 0.;
-    for (Long64_t twentry = 0; twentry < TWPoints;
-         twentry++)  // loop on twpoints
-    {
-      histo_tw->Fill(TWXPoint->at(twentry),
-                     TWYPoint->at(twentry));  // plot all TWPoints(X,Y)
-      histo_tw_3d->Fill(TWXPoint->at(twentry), TWYPoint->at(twentry),
-                        TWZPoint->at(twentry));
-      // rilascio di energia del primo strato di barre
-      histo_de_vs_tof->Fill(TWDe1Point->at(twentry),
-    TWTOF->at(twentry));
-
-      for (Long64_t vtxentry = 0; vtxentry < vertex_n;
-           vtxentry++) {  // loop on vtx points
-        for (Long64_t vtentry = 0; vtentry < vt_trk_n->at(vtxentry);
-             vtentry++)  // loop on tracks for every tw point
-        {
-          // distance from the projection of the vtx track to TW and
-    TWpoint distanceFromHit = sqrt( (TWXPoint->at(twentry) -
-    vt_trk_projTW->at(vtentry).X()) * (TWXPoint->at(twentry) -
-    vt_trk_projTW->at(vtentry).X()) + (TWYPoint->at(twentry) -
-    vt_trk_projTW->at(vtentry).Y()) * (TWYPoint->at(twentry) -
-    vt_trk_projTW->at(vtentry).Y()));
-
-          if (distanceFromHit <=
-              4.)  // conservative threshold to match a twpoint
-                   // to a vtx track for global tracking
-          {
-            histo_tw_matched->Fill(TWXPoint->at(twentry),
-                                   TWYPoint->at(twentry));
-          }
-        }
-      }
-    }
-    // DA OGNI TRACCIA, che è l'oggetto vertex track, prendo la sua
-    proiezione
-    // al tofwall e misuro la distanza. se la distanza è minore di 4,
-    allora
-    // riempio l'istogramma poi magari posso anche fare un test di chi
-    quadro
-    //
-
-    //------------------ print chi2 of vtx tracks, taking care on how
-    vector
-    // are
-    // filled
-    bool debug = true;
-    if (debug) {
-      std::cout << "event n: " << ev << std::endl;
-      std::cout << "total number of vtx point: " << vertex_n <<
-    std::endl; Long64_t track_counter = 0; for (int i = 0; i < vertex_n;
-    i++) {  // loop on every vtx point std::cout << "vertex point n: "
-    << i << std::endl; std::cout << "tracks n: " << vt_trk_n->at(i) <<
-    std::endl; for (int j = 0; j < vt_trk_n->at(i); j++) { std::cout <<
-    "track n: " << j << std::endl; std::cout
-              << "chi square: " << vt_trk_chi2->at(track_counter + j)
-              << std::endl;  // trackcounter is an offset to take out
-    track info
-                             // not from the beginning of the vector
-        }
-        track_counter += vt_trk_n->at(i);
-      }
-    } */
   }
 }
 
-// nella funzione qui sotto accade questo. ogni cluster è un blocco di
-// pixel accesi, ho più cluster per ogni piano. in questo caso il
-// ragionamento è questo: per ogni evento ho più piani del VTX che si
-// accendono. per ogni piano posso avere più cluster. con
-// vt_clus_n->size() trovo quanti piani ho per quell'evento. vt_clus_n è
-// un vettore proprio perché (n, m) n è il numero di cluster nel 1°
-// piano, m è il numero di cluster nel 2° piano e così via). quindi se
-// per esempio ho che un evento ha acceso 4 piani, avrò che la size del
-// vettore sopra citato sarà pari a 4. poi ogni piano è stato denominato
-// con pentry, quindi parleremo del piano p-esimo. nel piano p-esimo
-// potremmo trovare il numero di cluster. per ogni cluster posso trovare
-// il numero di hit. vt_clus_tot_hits è proprio il vettore che contiene
-// il numero di hit per ogni cluster. ad esempio, vt_clus_n=(2,1,3) sta
-// a significare che nel primo piano ho 2 cluster, nel secondo 1 cluster
-// e nel terzo 3 cluster. il vettore vt_clus_tot_hits potrebbe essere
-// vt_clus_tot_hits(11,2,  33,  12, 10, 7), ossia che il primo cluster
-// ha acceso 11 pixel, il secondo 2 pixel (e con questi due finiamo
-// l'elenco dei cluster nel primo piano), il terzo cluster (del secondo
-// piano) ha acceso 33 pixel e così via. allora, visto che il vettore
-// vt_clus_tot_hits possiede elementi che potrebbero far parte di piani
-// differenti, per fare in modo di selezionare solo gli elementi del
-// piano p-esimo, si implementa l'algoritmo in basso (vedi clus_counter)
-void myAnalysis::PrintVtTrackInfo(Long64_t init = -999,
-                                  Long64_t nentries = -999) {
-  if (fChain == 0) return;
-
-  Long64_t nbytes = 0, nb = 0;
-  PrepareLoop(init, nentries);
-
-  for (Long64_t jentry = init; jentry < nentries; jentry++) {
-    Long64_t ientry = LoadTree(jentry);
-    if (ientry < 0) break;
-    nb = fChain->GetEntry(jentry);
-    nbytes += nb;
-    // if (Cut(ientry) < 0) continue;
-
-    std::cout << "Event: " << ientry << std::endl;
-
-    std::cout << "	total n° of vtx points: " << vertex_n << std::endl;
-    for (Long64_t ventry = 0; ventry < vertex_n; ventry++) {
-      std::cout << "	VTX point n° " << ventry << std::endl;
-      std::cout << "	VTX point position: " << vertex_x->at(ventry) << " "
-                << vertex_y->at(ventry) << " " << vertex_z->at(ventry)
-                << std::endl;
-      std::cout << "		total n° of reconstructed tracks: "
-                << vt_trk_n->at(ventry) << std::endl;
-      // std::cout << "	total n° of clusters (of all tracks): " <<
-      // vt_trk_clus_x->size() << std::endl;
-      Long64_t clus_counter = 0;
-      for (Long64_t tentry = 0; tentry < vt_trk_n->at(ventry); tentry++) {
-        std::cout << "			track n° " << tentry << std::endl;
-        std::cout << "			origin position: "
-                  << vt_trk_origin->at(tentry).X() << " "
-                  << vt_trk_origin->at(tentry).Y() << " "
-                  << vt_trk_origin->at(tentry).Z() << std::endl;
-        std::cout << "			projection to TW: "
-                  << vt_trk_projTW->at(tentry).X() << " "
-                  << vt_trk_projTW->at(tentry).Y() << " "
-                  << vt_trk_projTW->at(tentry).Z() << std::endl;
-        std::cout << "			n° of clusters: "
-                  << vt_trk_clus_n->at(tentry) << std::endl;
-        for (Long64_t centry = clus_counter;
-             centry < (clus_counter + vt_trk_clus_n->at(tentry)); centry++) {
-          std::cout << "				cluster n° " << centry
-                    << std::endl;
-          std::cout << "					n° of hits "
-                    << vt_trk_clus_tot_hits->at(centry) << std::endl;
-          std::cout << "					position: "
-                    << vt_trk_clus_x->at(centry) << " "
-                    << vt_trk_clus_y->at(centry) << " "
-                    << vt_trk_clus_z->at(centry) << std::endl;
-        }
-        clus_counter += vt_trk_clus_n->at(tentry);
-      }
-    }
-  }
-}
-
-void myAnalysis::PrintVtClusInfo(Long64_t init = -999,
-                                 Long64_t nentries = -999) {
-  if (fChain == 0) return;
-
-  Long64_t nbytes = 0, nb = 0;
-  PrepareLoop(init, nentries);
-
-  for (Long64_t jentry = init; jentry < nentries; jentry++) {
-    Long64_t ientry = LoadTree(jentry);
-    if (ientry < 0) break;
-    nb = fChain->GetEntry(jentry);
-    nbytes += nb;
-    // if (Cut(ientry) < 0) continue;
-
-    // uso ientry (anche se secondo me in questo caso basta
-    // jentry visto che la chain corrisponde all'unico Tree che
-    // abbiamo a disposizione) per far riferimento all'evento del
-    // nostro Tree
-    std::cout << "Event: " << ientry << std::endl;
-    std::cout << " n° of VT planes: " << vt_clus_n->size() << std::endl;
-    Long64_t clus_counter = 0;  // è un numero inizializzato a 0
-    for (Long64_t pentry = 0; pentry < (long long int)vt_clus_n->size();
-         pentry++) {
-      std::cout << " VT plane: " << pentry << std::endl;
-      std::cout << "   n° of clusters: " << vt_clus_n->at(pentry) << std::endl;
-
-      // l'indice c è quello che viagga nel sottorange del piano p-esimo
-      for (Long64_t clentry = clus_counter;
-           clentry < (clus_counter + vt_clus_n->at(pentry)); clentry++) {
-        std::cout << "      clus n° " << clentry << std::endl;
-        std::cout << "      n° of hits: " << vt_clus_tot_hits->at(clentry);
-        std::cout << "		position: " << vt_clus_x->at(clentry) << " "
-                  << vt_clus_y->at(clentry) << " " << vt_clus_z->at(clentry)
-                  << std::endl;
-        std::cout << " MC ID: " << vt_clus_MC->at(clentry * 5)
-                  << " MC charge: " << vt_clus_MC->at(clentry * 5 + 1)
-                  << " MC MID: " << vt_clus_MC->at(clentry * 5 + 2)
-                  << " MC init pos (Z): " << vt_clus_MC->at(clentry * 5 + 3)
-                  << " MC init momentum: " << vt_clus_MC->at(clentry * 5 + 4)
-                  << std::endl;
-      }
-      // pentry sarebbe la posizione p-esima nel vettore vt_clus_n. il
-      // metodo vector::at restituisce una referenza all'elemento che si
-      // trova nella posizione p-esima (pentry) all'interno del vettore
-      // vt_clus_n. in questo modo, quando facciamo il loop sopra,
-      // stiamo selezionando solo le hit appartenenti al piano p-esimo
-
-      // NOTA: chiaramente si conta da 0
-
-      // variabile di offset
-      clus_counter += vt_clus_n->at(pentry);
-    }
-  }
-}
-
-void myAnalysis::PrintTwPointInfo(Long64_t init = -999,
-                                  Long64_t nentries = -999) {
-  if (fChain == 0) return;
-
-  Long64_t nbytes = 0, nb = 0;
-  PrepareLoop(init, nentries);
-
-  for (Long64_t jentry = init; jentry < nentries; jentry++) {
-    Long64_t ientry = LoadTree(jentry);
-    if (ientry < 0) break;
-    nb = fChain->GetEntry(jentry);
-    nbytes += nb;
-    // if (Cut(ientry) < 0) continue;
-
-    std::cout << "Event: " << ientry << std::endl;
-    std::cout << "n° of TWpoints: " << TWPoints << std::endl;
-
-    for (Long64_t twentry = 0; twentry < TWPoints; twentry++) {
-      std::cout << "   TWpoint n° " << twentry << std::endl;
-      std::cout << "      Charge: " << TWChargePoint->at(twentry) << std::endl;
-      std::cout << "      Position: " << TWXPoint->at(twentry) << " "
-                << TWYPoint->at(twentry) << " " << TWZPoint->at(twentry)
-                << std::endl;
-      std::cout << "      Energy loss1: " << TWDe1Point->at(twentry)
-                << std::endl;
-      std::cout << "      Energy loss2: " << TWDe2Point->at(twentry)
-                << std::endl;
-      std::cout << "      ToF: " << TWTOF->at(twentry) << std::endl;
-    }
-  }
-}
-
-// qui vengono inizializzati alcuni istogrammi
 void myAnalysis::BeforeLoop() {
   // creating total histos
   h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 1000, 0., 16.);
@@ -488,15 +189,22 @@ void myAnalysis::BeforeLoop() {
                             "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
                             "{}^{14}_{7}N", "{}^{16}_{8}O"};
 
-  for (int i{}; i != 8; i++) {
-    h_A1_r[i] = new TH1D(histname + i, element[i], 1000, 0., 16.);
-    h_A2_r[i] = new TH1D(histname + i + 8, element[i], 1000, 0., 16.);
-    h_A3_r[i] = new TH1D(histname + i + 16, element[i], 1000, 0., 16.);
+  const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
+  const Double_t xup[8] = {3., 9., 18., 20., 22., 24., 24., 24.};
+
+  for (int i{}; i != 6; i++) {
+    // defining offset variables
+    int j{i + 8};
+    int k{i + 16};
+
+    h_A1_r[i] = new TH1D(histname + i, element[i], 1000, xlow[i], xup[i]);
+    h_A2_r[i] = new TH1D(histname + j, element[i], 1000, xlow[i], xup[i]);
+    h_A3_r[i] = new TH1D(histname + k, element[i], 1000, xlow[i], xup[i]);
 
     // cosmetics
     h_A1_r[i]->SetMarkerStyle(20);
     h_A1_r[i]->SetMarkerSize(0.5);
-    h_A1_r[i]->SetLineColor(1);
+    h_A1_r[i]->SetLineColor(kBlue);
     h_A1_r[i]->GetYaxis()->SetTitleOffset(1.2);
     h_A1_r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A1_r[i]->GetYaxis()->SetTitleSize(0.04);
@@ -505,7 +213,7 @@ void myAnalysis::BeforeLoop() {
 
     h_A2_r[i]->SetMarkerStyle(20);
     h_A2_r[i]->SetMarkerSize(0.5);
-    h_A2_r[i]->SetLineColor(1);
+    h_A2_r[i]->SetLineColor(kBlue);
     h_A2_r[i]->GetYaxis()->SetTitleOffset(1.2);
     h_A2_r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A2_r[i]->GetYaxis()->SetTitleSize(0.04);
@@ -514,7 +222,7 @@ void myAnalysis::BeforeLoop() {
 
     h_A3_r[i]->SetMarkerStyle(20);
     h_A3_r[i]->SetMarkerSize(0.5);
-    h_A3_r[i]->SetLineColor(1);
+    h_A3_r[i]->SetLineColor(kBlue);
     h_A3_r[i]->GetYaxis()->SetTitleOffset(1.2);
     h_A3_r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A3_r[i]->GetYaxis()->SetTitleSize(0.04);
@@ -545,7 +253,6 @@ void myAnalysis::BeforeLoop() {
   -1, 1); */
 }
 
-// nell'afterloop vogliamo stampare gli istogrammi fillati nel loop
 void myAnalysis::AfterLoop() {
   // creating TFile
   TFile *file = new TFile("analisi/myAnalysis.root", "RECREATE");
@@ -559,14 +266,127 @@ void myAnalysis::AfterLoop() {
   TCanvas *c_A2_r = new TCanvas("c_A2_r", "A_2_r", 1000, 600);
   TCanvas *c_A3_r = new TCanvas("c_A3_r", "A_3_r", 1000, 600);
 
-  // defining fitting functions
-  TF1 *f1 = new TF1("f1", "gaus", 0., 1.5);
+  // dividing reconstruction canvas
+  c_A1_r->Divide(4, 2);
+  c_A2_r->Divide(4, 2);
+  c_A3_r->Divide(4, 2);
 
-  // setting parameters
-  f1->SetParNames("Constant", "Mean_value", "Sigma");
+  // defining fitting functions for total histos
+  TF1 *f_z_bethe[8];
 
-  // fitting
-  h_z_bethe->Fit(f1, "R");
+  // defining fitting functions for reconstruction histos
+  TF1 *f_A1_r[8];
+  TF1 *f_A2_r[8];
+  TF1 *f_A3_r[8];
+
+  // for bethe function
+  TString const funcname_bethe{"f_bethe"};
+  const Double_t xlow_bethe[8] = {0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5};
+  const Double_t xup_bethe[8] = {1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5};
+  const int mean_value_bethe[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+  const Double_t sigma_bethe[8] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+
+  // for reconstructed fragments
+  TString const funcname{"f"};
+  const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
+  const Double_t xup[8] = {3., 9., 18., 20., 22., 24., 24., 24.};
+  const int mean_value[8] = {1, 4, 7, 9, 11, 12, 14, 16};
+  const Double_t sigma[8] = {0.1, 0.1, 1., 1., 1., 1., 1., 1.};
+
+  for (int i{}; i != 6; i++) {
+    // defining offset variables
+    int j{i + 8};
+    int k{i + 16};
+
+    f_z_bethe[i] =
+        new TF1(funcname_bethe + i, "gaus", xlow_bethe[i], xup_bethe[i]);
+
+    f_A1_r[i] = new TF1(funcname + i, "gaus", xlow[i], xup[i]);
+    f_A2_r[i] = new TF1(funcname + j, "gaus", xlow[i], xup[i]);
+    f_A3_r[i] = new TF1(funcname + k, "gaus", xlow[i], xup[i]);
+
+    // cosmetics
+    f_z_bethe[i]->SetLineColor(kRed);
+    f_z_bethe[i]->SetLineWidth(3);
+    f_z_bethe[i]->SetLineStyle(2);
+
+    f_A1_r[i]->SetLineColor(kRed);
+    f_A1_r[i]->SetLineWidth(3);
+    f_A1_r[i]->SetLineStyle(2);
+
+    f_A2_r[i]->SetLineColor(kRed);
+    f_A2_r[i]->SetLineWidth(3);
+    f_A2_r[i]->SetLineStyle(2);
+
+    f_A3_r[i]->SetLineColor(kRed);
+    f_A3_r[i]->SetLineWidth(3);
+    f_A3_r[i]->SetLineStyle(2);
+
+    // setting parameters' name
+    f_z_bethe[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A1_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A2_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+    f_A3_r[i]->SetParNames("Amplitude", "Mean value", "Sigma");
+
+    // setting mean value and sigma
+    f_z_bethe[i]->SetParameter(1, mean_value_bethe[i]);
+    f_A1_r[i]->SetParameter(1, mean_value[i]);
+    f_A2_r[i]->SetParameter(1, mean_value[i]);
+    f_A3_r[i]->SetParameter(1, mean_value[i]);
+
+    f_z_bethe[i]->SetParameter(2, sigma_bethe[i]);
+    f_A1_r[i]->SetParameter(2, sigma[i]);
+    f_A2_r[i]->SetParameter(2, sigma[i]);
+    f_A3_r[i]->SetParameter(2, sigma[i]);
+
+    // fitting
+    h_z_bethe->Fit(f_z_bethe[i], "R+");
+    h_A1_r[i]->Fit(f_A1_r[i]);
+    h_A2_r[i]->Fit(f_A2_r[i]);
+    h_A3_r[i]->Fit(f_A3_r[i]);
+
+    // filling reconstruction canvas
+    c_A1_r->cd();
+    c_A1_r->cd(i + 1);
+    h_A1_r[i]->Draw();
+
+    c_A2_r->cd();
+    c_A2_r->cd(i + 1);
+    h_A2_r[i]->Draw();
+
+    c_A3_r->cd();
+    c_A3_r->cd(i + 1);
+    h_A3_r[i]->Draw();
+  }
+
+  // add for debugging
+  if (false) {
+    TCanvas *c_A1_rr[8];
+    TCanvas *c_A2_rr[8];
+    TCanvas *c_A3_rr[8];
+
+    TString const canvasname{"c"};
+    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
+    for (int i{}; i != 6; i++) {
+      int j{i + 8};
+      int k{i + 16};
+
+      c_A1_rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
+      c_A2_rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
+      c_A3_rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
+
+      c_A1_rr[i]->cd();
+      h_A1_r[i]->Draw();
+
+      c_A2_rr[i]->cd();
+      h_A2_r[i]->Draw();
+
+      c_A3_rr[i]->cd();
+      h_A3_r[i]->Draw();
+    }
+  }
 
   // drawing total histos on canvas
   c_A1->cd();
@@ -582,22 +402,6 @@ void myAnalysis::AfterLoop() {
   h_z_bethe->Draw();
   h_z_TW->Draw("SAME");
 
-  // dividing and filling reconstruction canvas
-  c_A1_r->Divide(4, 2);
-  c_A2_r->Divide(4, 2);
-  c_A3_r->Divide(4, 2);
-
-  for (int i{}; i != 8; i++) {
-    c_A1_r->cd(i + 1);
-    h_A1_r[i]->Draw();
-
-    c_A2_r->cd(i + 1);
-    h_A2_r[i]->Draw();
-
-    c_A3_r->cd(i + 1);
-    h_A3_r[i]->Draw();
-  }
-
   // writing on TFile
   file->cd();
   c_A1->Write();
@@ -609,38 +413,8 @@ void myAnalysis::AfterLoop() {
   c_A3_r->Write();
 
   file->Close();
-
-  /* TCanvas *c = new TCanvas("c", "Exercises", 2000, 1000);
-  c->Divide(2, 2);
-  c->cd(1);
-  histo_xy_clus->Draw("colz");
-  c->cd(2);
-  histo_xyz_clus->Draw();
-  c->cd(3);
-  histo_xyz_trk_clus->Draw();
-  c->cd(4);
-  histo_xyz_trk_clus_match->Draw();
-
-  TCanvas *c1 = new TCanvas("c1", "TW Analysis", 2000, 1000);
-  c1->Divide(2, 1);
-  c1->cd(1);
-  histo_tw->Draw();
-  c1->cd(2);
-  histo_tw_matched->Draw();
-
-  TCanvas *c2 = new TCanvas("c2", "TW 3d", 2000, 1000);
-  histo_tw_3d->Draw();
-
-  TCanvas *c3 = new TCanvas("c3", "vtxpoint", 2000, 1000);
-  histo_vtxpoint->Draw();
-
-  TCanvas *c4 = new TCanvas("c4", "TW dE vs TOF", 2000, 1000);
-  histo_de_vs_tof->Draw("colz"); */
-
-  // delete c1, histo_tw, histo_tw_matched;
 }
 
-// contiene beforeloop, loop e afterloop
 void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
   TBenchmark *b = new TBenchmark();
 
