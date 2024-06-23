@@ -36,3 +36,7 @@
 
 # ROOT files
 *.root
+
+# PDF files
+
+*.pdf
