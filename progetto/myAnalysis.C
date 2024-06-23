@@ -34,13 +34,13 @@ void myAnalysis::setStyle() {
   gStyle->SetTitleY(0.98);
   gStyle->SetTitleAlign(23);
   gStyle->SetTitleBorderSize(0);
+  gStyle->SetTitleXOffset(1.2f);
+  gStyle->SetTitleYOffset(0.8f);
   // gStyle->SetPadTopMargin(-9.);
   // gStyle->SetPadRightMargin(-9.);
   // gStyle->SetPadBottomMargin(-9.);
   // gStyle->SetPadLeftMargin(-9.);
   // gStyle->SetTitleW(0.5f);
-  // gStyle->SetTitleXOffset(1.2f);
-  // gStyle->SetTitleYOffset(0.8f);
 }
 
 void myAnalysis::PrepareLoop(Long64_t &init = default_value,
@@ -155,20 +155,20 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         }
 
         // add for debugging
-        if (false) {
+        if (true) {
           std::cout << "event n.: " << ientry << std::endl;
-          std::cout << "\ttrack lenght: " << trackLength
-                    << "\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
-                    << std::endl;
-          std::cout << "\t\tp: " << p << "\tbeta: " << beta
-                    << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
-                    << "\tbeta_beam: " << beta_beam << std::endl;
-          std::cout << "\t\t\tE_k: " << E_k << std::endl;
-          std::cout << "\t\t\t\tA1: " << A1 << std::endl;
-          std::cout << "\t\t\t\tA2: " << A2 << std::endl;
-          std::cout << "\t\t\t\tA3: " << A3 << std::endl;
-          std::cout << "\t\t\t\t\tz_bethe: " << z_bethe << std::endl;
-          std::cout << "\t\t\t\t\t\tz_TW: " << z_TW << std::endl;
+          // std::cout << "\ttrack lenght: " << trackLength
+          //           << "\tTOF: " << TWTOF->at(GLBtrackTWid->at(GLBtracks_i))
+          //           << std::endl;
+          // std::cout << "\t\tp: " << p << "\tbeta: " << beta
+          //           << "\tlorentzFactor: " << (1 / (sqrt(1. - beta * beta)))
+          //           << "\tbeta_beam: " << beta_beam << std::endl;
+          // std::cout << "\t\t\tE_k: " << E_k << std::endl;
+          // std::cout << "\t\t\t\tA1: " << A1 << std::endl;
+          // std::cout << "\t\t\t\tA2: " << A2 << std::endl;
+          // std::cout << "\t\t\t\tA3: " << A3 << std::endl;
+          // std::cout << "\t\t\t\t\tz_bethe: " << z_bethe << std::endl;
+          // std::cout << "\t\t\t\t\t\tz_TW: " << z_TW << std::endl;
         }
       } else {
         continue;
@@ -187,21 +187,23 @@ void myAnalysis::BeforeLoop() {
 
   // creating recostruction histos
   TString const histname{"h"};
-  const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-                            "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-                            "{}^{14}_{7}N", "{}^{16}_{8}O"};
+  const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+                             "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+  // const char *element1[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+  //                            "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+  //                            "{}^{14}_{7}N", "{}^{16}_{8}O"};
 
   const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
-  const Double_t xup[8] = {3., 9., 18., 20., 22., 24., 24., 24.};
+  const Double_t xup[8] = {8., 9., 18., 20., 22., 24., 24., 24.};
 
   for (int i{}; i != 6; i++) {
     // defining offset variables
     int j{i + 8};
     int k{i + 16};
 
-    h_A1r[i] = new TH1D(histname + i, element[i], 1000, xlow[i], xup[i]);
-    h_A2r[i] = new TH1D(histname + j, element[i], 1000, xlow[i], xup[i]);
-    h_A3r[i] = new TH1D(histname + k, element[i], 1000, xlow[i], xup[i]);
+    h_A1r[i] = new TH1D(histname + i, element0[i], 800, xlow[i], xup[i]);
+    h_A2r[i] = new TH1D(histname + j, element0[i], 300, xlow[i], xup[i]);
+    h_A3r[i] = new TH1D(histname + k, element0[i], 300, xlow[i], xup[i]);
 
     // cosmetics
     h_A1r[i]->SetMarkerStyle(20);
@@ -265,10 +267,10 @@ void myAnalysis::AfterLoop() {
 
   // for reconstructed fragments
   TString const funcname{"f"};
-  const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
-  const Double_t xup[8] = {3., 9., 18., 20., 22., 24., 24., 24.};
+  const Double_t xlow[8] = {0.5, 3.5, 6.5, 8.5, 10.5, 11., 4., 8.};
+  const Double_t xup[8] = {1.5, 5., 7.5, 9.5, 11.5, 13., 24., 24.};
   const int mean_value[8] = {1, 4, 7, 9, 11, 12, 14, 16};
-  const Double_t sigma[8] = {0.1, 0.1, 1., 1., 1., 1., 1., 1.};
+  const Double_t sigma[8] = {0.05, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1};
 
   // drawing total histos on canvas
   c_A1->cd();
@@ -291,16 +293,16 @@ void myAnalysis::AfterLoop() {
     TCanvas *c_A3rr[8];
 
     TString const canvasname{"c"};
-    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
+    const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+                               "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+
     for (int i{}; i != 6; i++) {
       // int j{i + 8};
       int k{i + 16};
 
-      // c_A1rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
-      // c_A2rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
-      c_A3rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
+      // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
+      // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
+      c_A3rr[i] = new TCanvas(canvasname + k, element0[i], 1000, 600);
 
       // c_A1rr[i]->cd();
       // h_A1r[i]->Draw();
@@ -396,16 +398,16 @@ void myAnalysis::AfterLoop() {
     TCanvas *c_A3rr[8];
 
     TString const canvasname{"c"};
-    const char *element[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-                              "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-                              "{}^{14}_{7}N", "{}^{16}_{8}O"};
+    const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+                               "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+
     for (int i{}; i != 6; i++) {
       // int j{i + 8};
       int k{i + 16};
 
-      // c_A1rr[i] = new TCanvas(canvasname + i, element[i], 1000, 600);
-      // c_A2rr[i] = new TCanvas(canvasname + j, element[i], 1000, 600);
-      c_A3rr[i] = new TCanvas(canvasname + k, element[i], 1000, 600);
+      // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
+      // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
+      c_A3rr[i] = new TCanvas(canvasname + k, element0[i], 1000, 600);
 
       // c_A1rr[i]->cd();
       // h_A1r[i]->Draw();
@@ -446,7 +448,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 100000);
+  m.Analysis(0, 1e3);
 
   return EXIT_SUCCESS;
 }
