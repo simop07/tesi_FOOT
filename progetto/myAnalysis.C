@@ -125,14 +125,15 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         A3 = (p * p - E_k * E_k) / (2 * E_k);
 
         // z_bethe reconstruction
-        z_bethe = sqrt(((TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
-                         TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i))) *
-                        1e6 * M_u * 4. * Pi() * m_e * epsilon_0 * epsilon_0 *
-                        beta * beta) /
-                       (dx *
-                        Log((2. * m_e * beta * beta) / (I * (1 - beta * beta)) -
-                            beta * beta) *
-                        q_e * q_e * N_a * rho * Z));
+        z_bethe =
+            sqrt(((TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                   TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i))) *
+                  1e6 * M_u * 4. * Pi() * m_e * epsilon_0 * epsilon_0 * beta *
+                  beta) /
+                 (dx *
+                  (Log((2. * m_e * beta * beta) / (I * (1 - beta * beta))) -
+                   beta * beta) *
+                  q_e * q_e * N_a * rho * Z));
 
         // z_TW reconstruction
         z_TW = TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i));
@@ -185,7 +186,7 @@ void myAnalysis::BeforeLoop() {
   h_z_bethe = new TH1D("h_z_bethe", "z bethe; z; Entries", 1000, 0., 12.);
   h_z_TW = new TH1D("h_z", "z TW reconstruction; z; Entries", 13, 0., 12.);
 
-  // creating recostruction histos
+  // creating recostruction histos variables
   TString const histname{"h"};
   const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
                              "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
@@ -268,9 +269,9 @@ void myAnalysis::AfterLoop() {
   // for reconstructed fragments
   TString const funcname{"f"};
   const Double_t xlow[8] = {0.5, 3.5, 6.5, 8.5, 10.5, 11., 4., 8.};
-  const Double_t xup[8] = {1.5, 5., 7.5, 9.5, 11.5, 13., 24., 24.};
+  const Double_t xup[8] = {1.5, 5., 8, 10.5, 11.5, 13., 24., 24.};
   const int mean_value[8] = {1, 4, 7, 9, 11, 12, 14, 16};
-  const Double_t sigma[8] = {0.05, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1};
+  const Double_t sigma[8] = {0.05, 0.1, 0.01, 0.01, 0.01, 0.1, 0.1, 0.1};
 
   // drawing total histos on canvas
   c_A1->cd();
@@ -392,33 +393,33 @@ void myAnalysis::AfterLoop() {
   }
 
   // add for debugging
-  if (false) {
-    TCanvas *c_A1rr[8];
-    TCanvas *c_A2rr[8];
-    TCanvas *c_A3rr[8];
+  // if (false) {
+  //   TCanvas *c_A1rr[8];
+  //   TCanvas *c_A2rr[8];
+  //   TCanvas *c_A3rr[8];
 
-    TString const canvasname{"c"};
-    const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-                               "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+  //   TString const canvasname{"c"};
+  //   const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+  //                              "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
 
-    for (int i{}; i != 6; i++) {
-      // int j{i + 8};
-      int k{i + 16};
+  //   for (int i{}; i != 6; i++) {
+  //     // int j{i + 8};
+  //     int k{i + 16};
 
-      // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
-      // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
-      c_A3rr[i] = new TCanvas(canvasname + k, element0[i], 1000, 600);
+  //     // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
+  //     // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
+  //     c_A3rr[i] = new TCanvas(canvasname + k, element0[i], 1000, 600);
 
-      // c_A1rr[i]->cd();
-      // h_A1r[i]->Draw();
+  //     // c_A1rr[i]->cd();
+  //     // h_A1r[i]->Draw();
 
-      // c_A2rr[i]->cd();
-      // h_A2r[i]->Draw();
+  //     // c_A2rr[i]->cd();
+  //     // h_A2r[i]->Draw();
 
-      c_A3rr[i]->cd();
-      h_A3r[i]->Draw();
-    }
-  }
+  //     c_A3rr[i]->cd();
+  //     h_A3r[i]->Draw();
+  //   }
+  // }
 
   // writing on TFile
   file->cd();
@@ -448,7 +449,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 1e3);
+  m.Analysis(0, 1e7);
 
   return EXIT_SUCCESS;
 }
