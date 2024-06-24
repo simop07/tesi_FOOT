@@ -200,12 +200,12 @@
 		Questo è l'inizio dell'introduzione. Inserire che l'adroterapia è un metodo del SSN (sistema già attivo nella sanità+Questo percorso ha portato alla marcatura CE del centro e nel 2017 l'adroterapia è stata inserita nei Livelli Essenziali di Assistenza.
 		(cita
 		%https://scienzapertutti.infn.it/4-adroterapia-dalla-fisica-alla-terapia
-		)
+		). Se nel capitolo 1 si danno le motivazioni applicative dello studio della fisica nucleare applicata alla medicina, nel capitolo 2 si spiegano i metodi, gli strumenti, i rivelatori che consentono di migliorare la qualità della vita e portare innovazione, mentre nel capitolo 3 si affronta uno studio più tecnico con l'identificazione dei frammenti secondari prodotti dalle interazioni nucleari.
 	\newpage
 	
 	\pagenumbering{arabic}
 	
-	\chapter{Terapie oncologiche e radiazioni ionizzanti}
+	\chapter{Terapie oncologiche e radiazioni ionizzanti}\label{cap:1}
 	\section{Incidenza tumorale nel mondo}\label{sec:1.1}
 	Tra le principali cause di morte della popolazione mondiale è possibile annoverare le neoplasie (o tumori) ovvero neoformazioni che, a causa di mutazioni genetiche che sfuggono ai meccanismi di controllo della proliferazione cellulare, iniziano a crescere, senza alcuna finalità, in maniera incontrollata e scoordinata rispetto al tessuto sano. \`E possibile distinguere due tipi di neoplasie: benigne e maligne. Mentre le prime si limitano alla sede di origine, le seconde generano metastasi, un processo in cui le cellule neoplastiche si spostano dalla sede originaria e danno origine a masse anomale che invadono altri tessuti dell'organismo, ostacolandone le funzioni vitali. In quest'ultimo caso si parla di tumore maligno o cancro.
 	
@@ -1155,7 +1155,7 @@
 		\label{fig:angular}
 	\end{figure}
 	
-	\subsection{Setup elettronico}
+	\subsection{Setup elettronico}\label{sec:setupElettronico}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.9\linewidth]{electronic_setup.png}
@@ -1234,7 +1234,7 @@
 	\end{equation}
 	dove $L$ è la lunghezza della regione di campo magnetico attraversata. La geometria della deflessione, grazie alla quale è possibile determinare la \hyperref[eq:momentum_deflession]{Eq. 2.5}, è schematizzata in \hyperref[fig:momentum_deflession]{Fig. 2.5}.
 	
-	Come già proposto nel progetto PLUME \cite{articleNomerotski}, nell'intercapedine dei due magneti si trova l'Inner Tracker (ITR), un rivelatore caratterizzato dalla medesima tecnologia e struttura del VTX (ciò semplifica il sistema di acquisizione DAQ) ma dotato di soli due piani di sensori (pixel al silicio) ortogonali alla direzione del fascio entrante. Ciascun piano è formato da $16$ sensori M$28$ (ciascuno dei quali copre una superficie di $2\times2\mbox{ cm}^2$) tenuti da un'impalcatura metallica che prevede un modulo ogni quattro sensori; questi ultimi sono legati assieme su una FPC (Flexible Printed Cable) in Kapton dotata di uno spessore complessivo di $100\mbox{ }\mu\mbox{m}$ (si veda \hyperref[fig:itr]{Fig. 2.4c}). L'ITR è utile a misurare sia la posizione che la direzione della traccia dopo la deviazione prodotta dal primo magnete permanente \cite{foot_cdr,ridolfiArticle}.
+	Come già proposto nel progetto PLUME \cite{articleNomerotski}, nell'intercapedine dei due magneti si trova l'Inner Tracker (ITR), un rivelatore caratterizzato dalla medesima tecnologia e struttura del VTX (ciò semplifica il sistema di acquisizione dati DAQ) ma dotato di soli due piani di sensori (pixel al silicio) ortogonali alla direzione del fascio entrante. Ciascun piano è formato da $16$ sensori M$28$ (ciascuno dei quali copre una superficie di $2\times2\mbox{ cm}^2$) tenuti da un'impalcatura metallica che prevede un modulo ogni quattro sensori; questi ultimi sono legati assieme su una FPC (Flexible Printed Cable) in Kapton dotata di uno spessore complessivo di $100\mbox{ }\mu\mbox{m}$ (si veda \hyperref[fig:itr]{Fig. 2.4c}). L'ITR è utile a misurare sia la posizione che la direzione della traccia dopo la deviazione prodotta dal primo magnete permanente \cite{foot_cdr,ridolfiArticle}.
 	\begin{figure}[H]
 		\centering
 		\subfloat[Foto del VTX \cite{foot_cdr}.]{\label{fig:vtx}\includegraphics[width=.49\linewidth]{vtx.jpg}}\hfill
@@ -1251,7 +1251,7 @@
 		\label{fig:momentum_deflession}
 	\end{figure}
 	
-	\subsubsection{Downstream region}
+	\subsubsection{Downstream region}\label{par:downstream_region}
 	Il TOF Wall (TW, \hyperref[fig:tw]{Fig. 2.6a}) è uno scintillatore (di area attiva $40\times40\mbox{ cm}^2$) formato da due strati ortogonali di $20$ barre ciascuno. Ogni barra è spessa $0.3\mbox{ cm}$ ed è accoppiata a ogni estremità con $4$ SiPM, grazie ai quali è possibile ricostruire l'energia depositata per unità di lunghezza $\left(\frac{dE}{dx}\right)$\footnote{Per misurare il $dE/dx$ dei frammenti, il TW assorbe una parte della loro energia $\Delta E$ che, in seguito, viene aggiunta al computo totale della loro energia cinetica.} con una precisione $\approx5\%$. Inoltre, quando i frammenti giungono al TW, viene fermato il TOF (il cui istante iniziale viene dato dallo SC). Grazie al TOF e alla traiettoria dei frammenti (ricostruita tramite VTX, ITR e MSD) si può ricavare la loro velocità $\beta$ che, unita al $\frac{dE}{dx}$, consente di ricostruire la carica dei frammenti ($z$) tramite la \hyperref[eq:bethe_bloch]{Eq. 1.35}.
 	\begin{figure}[H]
 		\centering
@@ -1261,7 +1261,7 @@
 		\subfloat[Calibrazione della posizione dei cristalli BGO del CALO.]{\label{fig:calo2}\includegraphics[width=.39\linewidth]{calo2.jpg}}
 		\caption{Schematizzazione della strumentazione della downstream region \cite{slide_spighi}.}
 	\end{figure}
-	Il Calorimetro (CALO) è uno scintillatore inorganico costituito da cristalli di BGO (bismuto \ce{Bi}, germanio \ce{Ge} e ossigeno \ce{O}, si vedano le \hyperref[fig:calo]{Fig. 2.6b} e \hyperref[fig:calo2go]{Fig. 2.6c}), oggetti caratterizzati da alta densità ed elevati numeri atomici, proprietà che rendono tale rivelatore molto pesante ($\approx330\mbox{ kg}$). Quando i frammenti penetrano nel CALO, data l'elevata densità atomica dei cristalli BGO, si producono principalmente interazioni elettromagnetiche che portano all'emissione di fotoni e alla perdita di tutta l'energia $E$ dei frammenti stessi. La quantità di luce prodotta all'interno del CALO, misurata tramite dei SiPM posti nella parte terminale dei cristalli BGO, è proporzionale all'energia cinetica $E_k$ dei frammenti (misurata con una risoluzione dell'$1$--$2\%$). All'interno del CALO i frammenti possono andare incontro anche a interazioni nucleari, la cui presenza influenza notevolmente la misura dell'energia $E$ rilasciata nello strumento. Infatti, nel $10$--$20\%$ degli eventi, le interazioni nucleari portano alla formazioni di neutroni, i quali fuoriescono dal CALO senza essere rivelati dai SiPM. Ciò genera una sottostima sistematica dell'energia totale rilasciata (a cui consegue una sottostima o una sovrastima della massa dei frammenti nel caso in cui quest'ultima venga ricavata rispettivamente dalla \hyperref[eq:a2]{Eq. 2.3b} o dalla \hyperref[eq:a3]{Eq. 2.3c}, uniche equazioni della massa in cui compare l'$E_k$ misurata dal CALO). Tale effetto, più pronunciato per i frammenti più leggeri, può essere limitato per mezzo di misurazioni multiple e indipendenti della massa dei frammenti prodotti \cite{foot_cdr}.
+	Il Calorimetro (CALO) è uno scintillatore inorganico costituito da cristalli di BGO (bismuto \ce{Bi}, germanio \ce{Ge} e ossigeno \ce{O}, si vedano le \hyperref[fig:calo]{Fig. 2.6b} e \hyperref[fig:calo2]{Fig. 2.6c}), oggetti caratterizzati da alta densità ed elevati numeri atomici, proprietà che rendono tale rivelatore molto pesante ($\approx330\mbox{ kg}$). Quando i frammenti penetrano nel CALO, data l'elevata densità atomica dei cristalli BGO, si producono principalmente interazioni elettromagnetiche che portano all'emissione di fotoni e alla perdita di tutta l'energia $E$ dei frammenti stessi. La quantità di luce prodotta all'interno del CALO, misurata tramite dei SiPM posti nella parte terminale dei cristalli BGO, è proporzionale all'energia cinetica $E_k$ dei frammenti (misurata con una risoluzione dell'$1$--$2\%$). All'interno del CALO i frammenti possono andare incontro anche a interazioni nucleari, la cui presenza influenza notevolmente la misura dell'energia $E$ rilasciata nello strumento. Infatti, nel $10$--$20\%$ degli eventi, le interazioni nucleari portano alla formazioni di neutroni, i quali fuoriescono dal CALO senza essere rivelati dai SiPM. Ciò genera una sottostima sistematica dell'energia totale rilasciata (a cui consegue una sottostima o una sovrastima della massa dei frammenti nel caso in cui quest'ultima venga ricavata rispettivamente dalla \hyperref[eq:a2]{Eq. 2.3b} o dalla \hyperref[eq:a3]{Eq. 2.3c}, uniche equazioni della massa in cui compare l'$E_k$ misurata dal CALO). Tale effetto, più pronunciato per i frammenti più leggeri, può essere limitato per mezzo di misurazioni multiple e indipendenti della massa dei frammenti prodotti \cite{foot_cdr}.
 	
 	\subsection{Camera a emulsione}
 	\begin{figure}[H]
@@ -1286,34 +1286,138 @@
 		\item regione di tracciamento: profonda $\approx4\mbox{ cm}$, è costituita da film a emulsione spessi $300\mbox{ }\mu{m}$ intervallati a strati di piombo (\ce{Pb}) di profondità $1\mbox{ mm}$. Misurando la lunghezza totale del range dei frammenti, è possibile determinare sia la loro energia cinetica che la loro quantità di moto.\footnote{Ciò avviene tramite una relazione tra range e quantità di moto prevista dal modello a Multiple Coulomb Scattering \cite{articleAgafonova,DESERIO2003539}.}
 	\end{itemize}
 	
-	\chapter{Terzo capitolo (TBD)}
+	\chapter{Terzo capitolo (TBD)}\label{cap:3}
+	Dopo aver esposto le principali caratteristiche strutturali e di funzionamento del setup sperimentale di FOOT nel \hyperref[cap:2]{Cap. 2}, nel \hyperref[cap:3]{Cap. 3} si propone un'analisi più tecnica delle attività di ricerca sviluppate nell'esperimento. Oltre allo sviluppo hardware accennato nel \hyperref[cap:2]{Cap. 2} (che prevede, tra i vari compiti, quello di impiegare sofisticati sistemi di DAQ con cui acquisire grandi quantità di dati con la maggiore accuratezza possibile), in FOOT si utilizza un software basato su ROOT \cite{rene_brun}, sviluppato per la prima volta durante il progetto FIRST \cite{foot_cdr}. Tale programma è dotato di algoritmi di ricostruzione e di identificazione della traccia (come il filtro Kalman, implementato nella libreria GENFIT \cite{Rauch_2015}, utile a trovare la miglior stima dello stato cinematico dei frammenti) con cui si possono analizzare sia eventi simulati (tramite simulazioni Monte Carlo fornite da FLUKA o ROOT) sia dati reali. Prima di ottenere il fit finale da cui estrarre i parametri della traccia (come energia, momento, direzione, etc.), si attuano varie strategie di ricostruzione della traccia sviluppate a partire dall'analisi combinata dei segnali raccolti nel setup sperimentale; naturalmente, tali tecniche tengono conto delle perdite di energia e dei processi di scattering che avvengono nei rivelatori e della deflessione delle particelle cariche dovuta alla regione dei campi magnetici \cite{ridolfiArticle}.
 	
-%	The
-%	1428 track reconstruction is based on a Kalman filter algorithm implemented in the external open source
-%	1429 GENFIT library [99]. The FOOT code is fully interfaced with GENFIT and provide two different
-%	1430 track reconstructions. A projectile reconstruction is performed using the Beam Monitor hits alone
-%	1431 for beam monitor purpose (4.1). A global track reconstruction of fragments is done combining hits
-%	1432 from Vertex, Inner Tracker and Micro Strip detectors detailed in Chapter 8.2. The matching with
-%	1433 the hits detected in the scintillation wall and the clusters in the calorimeter will be made on the
-%	1434 basis of the extrapolation performed using the track information at the exit point from the Micro
-%	1435 Strip detector. The information about the incoming beam direction will be instead provided by
-%	1436 the beam monitor detector and will be used for the inverse kinematic calculations.
-%	(pag 56 foot cdr)
+	\section{Identificazione dei frammenti}\label{sec:fragment_identification}
+	Prima di misurare la sezione d'urto dei frammenti secondari prodotti dalla frammentazione del target o del proiettile per interazioni nucleari delle particelle cariche, è necessario identificare suddetti frammenti. A tale scopo, occorre determinare il loro numero atomico $z$ e di massa $A$ a partire dalle grandezze fisiche misurate dai rivelatori, come già descritto in dettaglio nella \hyperref[sec:setupElettronico]{Sez. 2.2.1}. Riassumendo, tali grandezze derivano dalle misure di tempo di volo (TOF), di quantità di moto $p$, di rilascio di energia del frammento all'interno dei rivelatori $\Delta E$ e di energia cinetica $E_k$. Nello specifico, il TOF viene misurato sottraendo all'intervallo di tempo che intercorre tra i segnali di SC e TW il tempo necessario al fascio per percorrere la distanza tra lo SC e il target; si dimostra che la sua risoluzione è una funzione crescente di $z$, che per la serie di frammenti considerati nell'analisi (si veda \hyperref[tab:fragments]{Tab.3.1}) varia nell'intervallo $1.8$--$2.4\%$. La misura di $p$ avviene nella tracking region grazie alla deflessione subita dalle particelle nella regione di campi magnetici, e la sua risoluzione è pari al $4\%$. Il $\Delta E$ è dato dalla somma delle energie depositate nell'MSD $\Delta E_{MSD}$, nel TW $\Delta E_{TW}$ e nel CALO $\Delta E_{CALO}$:
+	\begin{equation}
+		\Delta E=\Delta E_{MSD}+\Delta E_{TW}+\Delta E_{CALO}
+		\label{eq:deposited_energy}
+	\end{equation}
+	In realtà la $\Delta E_{MSD}$ dell'\hyperref[eq:deposited_energy]{Eq. 3.1} rappresenta una piccola perturbazione alle energie $\Delta E_{TW}$ e $\Delta E_{CALO}$, pertanto nel prosieguo dell'analisi verrà trascurata. $\Delta E_{TW}$ e $\Delta E_{CALO}$ possiedono una risoluzione pari rispettivamente al $3$--$10\%$ e all'$1.5\%$. Infine, è possibile stimare $E_k$ (e la sua risoluzione) osservando che la sua miglior stima è data dalla somma di $\Delta E_{TW}$ e $\Delta E_{CALO}$.\footnote{Si noti che il contributo principale a $E_k$ è dato da $\Delta E_{CALO}$.}
 	
-%	pag 25
-	%	abbiamo vari picchi con i quali è possibile capire la carica delle particelle. non c'è troppa contaminazione (cioè le code non si intersecano troppo).
-	%	
-	%	NOTA BENE: pag 26 sono dati reali, non dati simulati come a pag 25. a pag. 26 abbiamo il tempo di volo sull'asse x, mentre sull'asse y abbiamo il deltaE. ci sono tantissimi ossigeni perché era una misura presa con l'ossigeno, e in pratica è come se l'ossigeno passasse indisturbato (dipende dallo spessore del target; in linea generale, questo esperimento ha "un'efficienza" del 5% circa, cioè 95 volte su 100 il fascio non interagisce e non produce frammenti).
-	%	INFO: la sorta di coda che si forma, era dovuta al fatto che, visto che nel vertex c'è una protezione fatta di alluminio. il fascio toccava questa protezione e dava dei dati sballati. una volta che lo si capsice si risolve il problema.
-	%	
-	%	ORA DOBBIAMO IDENTIFICARE LA MASSA: innanzitutto si parla di numero di massa, che non è altro che la massa divisa per l'uma.
-	%	la massa la otteniamo dalle formule relaitivistiche di pag 27. per esempio, la possiamo ricavare dall'impulso, oppure dall'energia cinetica, oppure dalla relazione fondamentale energia impulso. otteniamo tre modi DIPENDENTI per trovare la massa (non possiamo farne una media! perché la media si fa tramite misure indipendenti). possiamo calcolare la massa in uno solo di questi tre modi, il che è un po' limitante, perché escluderemmo uno dei tre oggetti costruiti. allora li utilizzuamo tutti e tre sapendo che sono correlati: si fa un bel fit cinematico. a pag 29 si riconosce un chi quadro, con matrice di correlazione. in questo modo utilizziamo tutte e tre le quantità, il che ci permette di effettuare delle misure anche più precise nel caso di singola formula. al momento ancora la misura della massa sui dati reali non è stata fatta perché l'apparato è stato completato solo di recente. valutando la massa con uno di questi metodi è attorno al 3/4%.
-	%	
-	%	
-	%	
-	%	SEPARAZIONE DEGLI ISOTOPI
-	%	misurare la sezione d'urto significa misurare che dato un certo proiettile e un certo bersaglio, ottengo un carbonio -> ottengo tutti gli isotopi del carbonio. se avessimo un apparato molto preciso, potremmo ottenere dei picchi molto separati delle sezioni d'urto (le entries stanno a significare: quanti carboni 10, 11, 12 ci sono?). è possibile fare anche un fit con più gaussiane con cui poter separare i due contributi (nel caso di destra), mentre nel caso di sinistra una minor precisione conseguirà in una peggiore separazione delle sezioni d'urto -> possiamo andare a contare i frammenti prodotti.
-			
+	La risoluzione di $z$ è $A$, oltre a essere dipendente dalle sopra citate risoluzioni (legate alla strumentazione dell'apparato sperimentale), è fortemente dipendente da due fattori:
+	\begin{itemize}
+		\item la perdita di energia subita dai frammenti negli eventuali processi di ionizzazione che avvengono prima della loro rivelazione nel CALO;
+		\item la perdita di energia subita dai frammenti all'interno del CALO a causa dell'emissione di neutroni, processo già descritto nell'analisi \hyperref[par:downstream_region]{downstream region} nella \hyperref[sec:setupElettronico]{Sez. 2.2.1}.
+	\end{itemize}
+	La presenza di tali problematiche supporta ulteriormente la necessità di possedere un apparato di rivelazione ridondante, con cui è possibile ricostruire le stesse grandezze fisiche in modalità differenti.
+	
+	Nei paragrafi successivi si analizzano dei dati simulati dal software FLUKA, in cui un fascio incidente di $\approx10$ milioni di ioni \ce{^{12}C} di energia cinetica $200\mbox{ MeV/u}$ collide con un target di \ce{C2H4}. L'analisi è incentrata sullo studio degli isotopi dei frammenti maggiormente prodotti, riassunti in \hyperref[tab:fragments]{Tab.3.1}.
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+				\hline
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				\hline
+				$z$ & $1$& $2$& $3$& $4$& $5$& $6$& $7$& $8$ \\
+				\hline
+				$A$ & $1$& $4$ &$7$ &$9$& $11$& $12$& $14$& $16$ \\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Lista degli isotopi dei frammenti secondari maggiormente prodotti con relativi numeri atomici $z$ e di massa $A$ \cite{foot_cdr}.}
+		\label{tab:fragments}
+	\end{table}
+	
+	\subsection{Identificazione del numero atomico}
+	Il numero atomico $z$ di ciascun frammento secondario viene calcolato invertendo la formula di Bethe-Bloch (\hyperref[eq:bethe_bloch]{Eq. 1.35}), dove vengono trascurati i termini correttivi $\delta$ e $C$, da cui si ottiene:
+	\begin{equation}
+		z=\sqrt{\frac{4\pi M_u\epsilon_0^2m_ec^2}{N_A\rho e^4}\left(\frac{Z}{A}\right)^{-1}\frac{dE}{dx}\frac{\beta^2}{\ln{\left[\frac{2m_ec^2\beta^2}{I\left(1-\beta^2\right)}\right]}-\beta^2}}
+		\label{eq:atomic_number}
+	\end{equation}
+	i cui parametri sono riassunti in \hyperref[tab:bethe_bloch]{Tab. 1.3} e $\frac{dE}{dx}$ ha segno positivo in quanto rappresenta l'energia rilasciata nei rivelatori (non l'energia persa dal frammento come in \hyperref[eq:bethe_bloch]{Eq. 1.35}). In particolare, $\beta$ si ricava dalla seguente espressione:
+	\begin{equation}
+		\beta=\frac{v}{c}=\frac{L}{TOF\cdot c}
+		\label{eq:beta_beam}
+	\end{equation}
+	dove $L$, $v$ e $TOF$ sono rispettivamente la distanza percorsa, la velocità e il TOF del frammento. $L$ viene ricostruita da un algoritmo che seleziona i segnali di posizione raccolti al passaggio dei frammenti a partire dal primo strato del VTX fino all'ultima barra di scintillatore del TW. I parametri $\rho$, $\frac{Z}{A}$ e $I$ sono relativi al poliviniltoluene (PVT), materiale plastico di cui sono composte le barre di scintillatore del TW \cite{pvt}. Inoltre, trascurando l'energia rilasciata nell'MSD, è possibile valutare il potere frenante $\frac{dE}{dx}$ utilizzando l'energia depositata nelle due barre di scintillatore del TW $\Delta E_{TW}$ e il loro spessore $\Delta x$, come riassunto nella \hyperref[eq:stopping_power]{Eq. 3.4}:
+	\begin{equation}
+		\frac{dE}{dx}=\frac{\Delta E_{TW}}{\Delta x}
+		\label{eq:stopping_power}
+	\end{equation}
+	Dalle \hyperref[eq:atomic_number]{Eq. 3.2}, \hyperref[eq:beta_beam]{Eq. 3.3} e \hyperref[eq:stopping_power]{Eq. 3.4} si ricavano sia la distribuzione di $z$, rappresentata in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sia la distribuzione di $\Delta E_{TW}$ in funzione del TOF, raffigurata in \hyperref[fig:atomic_numbersb]{Fig. 3.1b}.
+	\begin{figure}[H]
+		\centering
+		\subfloat[Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2}]{\label{fig:atomic_numbersa}\includegraphics[width=.49\linewidth]{}}\hfill
+		\subfloat[Distribuzione di $\Delta E_{TW}$ in funzione del TOF ]{\label{fig:atomic_numbersb}\includegraphics[width=.49\linewidth]{}}
+		\caption{Distribuzioni utilizzate per l'identificazione del numero atomico $z$ dei frammenti secondari considerati.}
+		\label{fig:atomic_numbers}
+	\end{figure}
+	In entrambe le \hyperref[fig:atomic_numbersa]{Fig. 3.1a} e \hyperref[fig:atomic_numbersb]{Fig. 3.1b} si distinguono $8$ picchi distinti che consentono una chiara identificazione della carica dei frammenti. Le migliori stime di $z$, ricavate dai fit gaussiani in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sono riassunte in \hyperref[tab:atomic_numbers]{Tab. 3.2}. Tali misure sono caratterizzate da una risoluzione che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{16}_8O} e presentano uno shift rispetto ai valori attesi. Una spiegazione plausibile dello shift potrebbe risiedere nelle già citate perdite di energia dovute ai processi di ionizzazione che precedono il TW e alla produzione di neutroni.
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+				\hline
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				\hline
+				$z$ & $1$& $2$& $3$& $4$& $5$& $6$& $7$& $8$ \\
+				\hline
+				$z$ ricostruito & $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Ricostruzione dei valori di aspettazione di $z$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati in \hyperref[fig:atomic_numbers]{Fig. 3.1}.}
+		\label{tab:atomic_numbers}
+	\end{table}
+	
+	\subsection{Identificazione del numero di massa}
+	La ridondanza del setup elettronico di FOOT consente di determinare il numero di massa $A$ in modi differenti. In particolare, le misure di TOF, di $p$ e di $E_k$ si possono combinare in tre modi differenti in modo da ottenere tre stime di $A$: $A_1$, $A_2$ e $A_3$. Tali stime si ottengono:
+	\begin{itemize}
+		\item attraverso la \hyperref[eq:a1]{Eq. 2.3a}, in cui si determinano $\beta$ e $p$ rispettivamente dal TOF e dalla tracking region;
+		\item attraverso la \hyperref[eq:a2]{Eq. 2.3b}, in cui si determinano $\beta$ e $E_k$ rispettivamente dal TOF e dal CALO;\footnote{Si ricorda che $E_k$ dipende anche dai contributi energetici del TW e dell'MSD, anche se in maniera molto minore rispetto al CALO.}
+		\item attraverso la \hyperref[eq:a3]{Eq. 2.3c}, in cui si determinano $p$ e $E_k$ rispettivamente dalla tracking region e dal CALO.
+	\end{itemize}
+	$A_1$, $A_2$ e $A_3$ non sono stime indipendenti poiché, prese a due a due, sono legate a grandezze fisiche misurate con il medesimo sub-detector. Nei paragrafi successivi, durante l'analisi delle incertezze da associare alla miglior stima di $A$, tale correlazione verrà analizzata più a fondo. Le distribuzioni dei numeri di massa $A_1$, $A_2$ e $A_3$ dei frammenti considerati nell'analisi sono rappresentate rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{}
+		\caption{Distribuzioni del numero di massa A attraverso il TOF e la tracking region.}
+		\label{fig:a1}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{}
+		\caption{Distribuzioni del numero di massa A attraverso il TOF e il CALO.}
+		\label{fig:a2}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\linewidth]{}
+		\caption{Distribuzioni del numero di massa A attraverso la tracking region e il CALO.}
+		\label{fig:a3}
+	\end{figure}
+	Le misure di $A_1$, $A_2$ e $A_3$, ricavate rispettivamente dai fit gaussiani in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, sono riassunte in \hyperref[tab:mass_numbers]{Tab. 3.3}. La larghezza delle distribuzioni gaussiane di $A_1$, $A_2$ e $A_3$ è dovuta alle differenti risoluzioni delle grandezze fisiche di TOF, $p$ ed $E_k$, discusse nell'introduzione della \hyperref[sec:fragment_identification]{Sez. 3.1}. In particolare, le risoluzioni di $A_1$, $A_2$ e $A_3$ sono rispettivamente pari al $\%$, $\%$ e $\%$. Inoltre, come si evince dalle \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, le distribuzioni di $A_2$ e $A_3$ presentano delle code che forniscono rispettivamente una sottostima e una sovrastima del numero di massa dei frammenti. La dipendenza funzionale delle \hyperref[eq:a1]{Eq. 2.3a} e \hyperref[eq:a2]{Eq. 2.3b} rispetto alla variabile $E_k$ suggerisce che tali shift sono dovuti a una sottostima della stessa $E_k$. Infatti, come discusso nel paragrafo della \hyperref[par:downstream_region]{downstream region}, nel CALO vengono emessi neutroni che sfuggono alle interazioni con i cristalli BGO del rivelatore, effetto che induce una diminuzione dei valori di $E_k$.
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+				\hline
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				\hline
+				$A_1$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				\hline
+				$A_2$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				\hline
+				$A_3$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Ricostruzione dei valori di aspettazione di $A_1$, $A_2$ e $A_3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.}
+		\label{tab:mass_numbers}
+	\end{table}
+
+	Per determinare la miglior stima per $A$, è possibile considerare due possibili procedure da applicare ai valori correlati di $A_1$, $A_2$ e $A_3$, che verranno analizzate nel prosieguo:
+	\begin{itemize}
+		\item metodo del minimo $\chi^2$;
+		\item Augmented Lagrangian Method (ALM).
+	\end{itemize}
+	
+	
+				
 	\addcontentsline{toc}{chapter}{Conclusioni (TBD)}
 	\chapter*{Conclusioni (TBD)}
 		PROVA
