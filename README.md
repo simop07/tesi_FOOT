@@ -5,6 +5,8 @@
 - Inserire ref alla correlazione delle equazioni sul numero di massa A nel capitolo 2-capitolo 3 in un'eventuale discussione della matrice di correlazione.
 - Nel cap 3 scrivi la formula inversa delle bethe bloch, scrivi il materiale usato (EJ-200) e le sue specifiche.
 - Inserire ref. sul pdf da cui hai ricavato il valore delle costanti
+- Scegliere in modo opportuno quali frammenti selezionare per i grafici, aggiungere per esempio che si sono scelti (tra tutti i frammenti) non solo i frammenti più abbondanti ma anche gli isotopi più abbondanti di quei frammenti.
+- Aggiungere sulle tabelle del terzo capitolo il numero atomico dei frammenti selezionati.
 
 ## CODICE:
 
