@@ -21,6 +21,9 @@
 - Fare un'analisi dell'efficienza del metodo di ricostruzione? quindi prendere gli istogrammi di generazione e fare un Divide con gli istogrammi di ricostruzione?
 - Io ho ricostruito i frammenti del CDR, ho visto che in una tesi vengono ricostruiti altri isotopi, li aggiungo?
 - Solo a titolo di curiosità, per quale motivo a ROOT non piacciono le ottimizzazioni sui for loop? Esempio della necessità di inserire un grafico inutile per fare in modo che le canvas tornassero.
+- La distanza tra Start Counter e target: io ho messo nel capitolo 2 che è di 20--30 cm, ma alla fine ho usato che è di 30 cm per calcolare il tempo tra SC e target. Va bene?
+- Il target è di C2H4?
+- Cosa è il Gaussian smearing? It's a mathematical technique used in data analysis and signal processing to smooth out noisy data. It involves convolving the data with a Gaussian function, which results in a smoother curve with a bell-shaped distribution. Gaussian smearing works by taking a noisy data set and applying a Gaussian function to it. This function has a bell-shaped curve that is used to smooth out the data points. The width of the Gaussian function determines the level of smoothing, with a wider function resulting in a more smooth curve. What are the benefits of using Gaussian Smearing? Gaussian smearing is beneficial because it helps to reduce the effects of noise in data sets. It can also be used to make data sets more visually appealing and easier to interpret. Additionally, Gaussian smearing can help to identify underlying trends in the data that may otherwise be obscured by noise.
 
 ## RISULTATI FIT:
 
