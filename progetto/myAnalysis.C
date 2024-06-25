@@ -144,6 +144,10 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         h_A3->Fill(A3);
         h_z_bethe->Fill(z_bethe);
         h_z_TW->Fill(z_TW);
+        h_E_TOF->Fill(
+            (TWTOF->at(GLBtrackTWid->at(GLBtracks_i))) - 1e-9 * t_SC_TGT,
+            TWDe1Point->at(GLBtrackTWid->at(GLBtracks_i)) +
+                TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)));
 
         // fill reconstruction histos
         int zz[8]{1, 2, 3, 4, 5, 6, 7, 8};
@@ -180,11 +184,19 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
 void myAnalysis::BeforeLoop() {
   // creating total histos
-  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 1000, 0., 16.);
-  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 1000, 0., 16.);
-  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 1000, 0., 16.);
-  h_z_bethe = new TH1D("h_z_bethe", "z bethe; z; Entries", 1000, 0., 12.);
+  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 300, 0., 16.);
+  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 300, 0., 16.);
+  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 300, 0., 16.);
+  h_z_bethe = new TH1D("h_z_bethe", "z bethe; z; Entries", 300, 0., 12.);
   h_z_TW = new TH1D("h_z", "z TW reconstruction; z; Entries", 13, 0., 12.);
+  h_E_TOF =
+      new TH2D("h_E_TOF", "#Delta E_{TW} vs TOF; TOF [ns]; Delta E_{TW} [MeV]",
+               300, 8., 20., 300, 0., 300.);
+
+  // cosmetics
+  h_E_TOF->GetYaxis()->SetTitleOffset(1.2);
+  h_E_TOF->GetXaxis()->SetTitleSize(0.04);
+  h_E_TOF->GetYaxis()->SetTitleSize(0.04);
 
   // creating recostruction histos variables
   TString const histname{"h"};
@@ -250,6 +262,7 @@ void myAnalysis::AfterLoop() {
   TCanvas *c_A1r = new TCanvas("c_A1r", "A_1r", 1000, 600);
   TCanvas *c_A2r = new TCanvas("c_A2r", "A_2r", 1000, 600);
   TCanvas *c_A3r = new TCanvas("c_A3r", "A_3r", 1000, 600);
+  TCanvas *c_E_TOF = new TCanvas("c_E_TOF", "#Delta E vs TOF", 1000, 600);
 
   // defining fitting functions for total histos
   TF1 *f_z_bethe[8];
@@ -286,6 +299,9 @@ void myAnalysis::AfterLoop() {
   c_z->cd();
   h_z_bethe->Draw();
   h_z_TW->Draw("SAME");
+
+  c_E_TOF->cd();
+  h_E_TOF->Draw("COL2Z");
 
   // add for debugging
   if (true) {
@@ -430,6 +446,7 @@ void myAnalysis::AfterLoop() {
   c_A1r->Write();
   c_A2r->Write();
   c_A3r->Write();
+  c_E_TOF->Write();
 
   file->Close();
 }
@@ -449,7 +466,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 1e7);
+  m.Analysis(0, 1e6);
 
   return EXIT_SUCCESS;
 }

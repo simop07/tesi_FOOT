@@ -238,6 +238,7 @@ class myAnalysis {
   TH1D *h_A3;       // A_3
   TH1D *h_z_bethe;  // z_bethe
   TH1D *h_z_TW;     // z_TW
+  TH2D *h_E_TOF;    // E_deposited vs TOF
 
   // histo declaration for A_i fragment reconstruction
   TH1D *h_A1r[8];  // A_1_r
