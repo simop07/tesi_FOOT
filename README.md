@@ -8,6 +8,7 @@
 - Scegliere in modo opportuno quali frammenti selezionare per i grafici, aggiungere per esempio che si sono scelti (tra tutti i frammenti) non solo i frammenti più abbondanti ma anche gli isotopi più abbondanti di quei frammenti.
 - Aggiungere sulle tabelle del terzo capitolo il numero atomico dei frammenti selezionati.
 - Controlla dalla citazione 149 esclusa in poi per la bibliografia.
+- Il secondo termine dell'ALM presenta un più o un meno?
 
 ## CODICE:
 
