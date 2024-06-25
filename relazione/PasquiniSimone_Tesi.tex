@@ -4,7 +4,7 @@
 \usepackage{color}
 \textwidth=450pt\oddsidemargin=0pt
 
-% INIZIO HEADER INSERITI DA ME, DA CUI HO TOLTO GLI HEADER CHE SI RIPETONO
+% INIZIO HEADER INSERITI DA ME
 
 %\documentclass[12pt,a4paper]{article}
 %\usepackage[utf8]{inputenc}
@@ -44,6 +44,9 @@
 \addbibresource{bibliography.bib} %Import the bibliography file
 %\setlength{\droptitle}{-2cm}% change title position
 \usepackage{amsmath}
+\newcommand{\matr}[1]{\boldsymbol{#1}}
+\newcommand{\transp}[1]{{#1}^{\mathsf{T}}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
 %\usepackage{amsfonts}
 \usepackage[style=american]{csquotes}
 \usepackage{amssymb}
@@ -708,7 +711,7 @@
 	\subsection{Sezione d'urto}\label{sec:sezione_urto}
 	I fenomeni di interazione radiazione-materia, in cui onde o particelle\footnote{A livello quantistico sia la materia che la radiazione possiedono una duplice natura ondulatoria e corpuscolare, regolata dal principio di complementarità di Niels Bohr ($1885$--$1962$).} variano la loro traiettoria a seguito di processi di interazione e collisione, vengono descritti dagli esperimenti di diffusione (o scattering). Senza perdita di generalità, si utilizzerà un approccio classico per esporre lo schema tipico di un esperimento di diffusione, trattando le particelle come oggetti puntiformi.
 	
-	In un esperimento di scattering un fascio collimato di particelle proiettile $a$ di velocità $\vec{v_a}$ e sezione trasversale $A$ viene inviato da un acceleratore contro un bersaglio (o target) costituito da oggetti $b$ tutti uguali tra loro e distribuiti all'interno del volume del bersaglio stesso. Si suppone che le densità volumetriche del fascio $n_a$ e del bersaglio $n_b$ siano uniformi e costanti, che il target si presenti macroscopicamente come una lastra di spessore costante $\Delta z$ e che tutte le particelle proiettile, procedendo verso il bersaglio parallelamente alla direzione dell'asse $z$, lo colpiscano ortogonalmente (su una faccia di superficie $A$), come mostrato in \hyperref[fig:scattering]{Fig. 1.24}. Tali condizioni consentono di ricavare il numero di particelle incidenti sul target nell'unità di tempo $\phi_a$:
+	In un esperimento di scattering un fascio collimato di particelle proiettile $a$ di velocità $\vect{v_a}$ e sezione trasversale $A$ viene inviato da un acceleratore contro un bersaglio (o target) costituito da oggetti $b$ tutti uguali tra loro e distribuiti all'interno del volume del bersaglio stesso. Si suppone che le densità volumetriche del fascio $n_a$ e del bersaglio $n_b$ siano uniformi e costanti, che il target si presenti macroscopicamente come una lastra di spessore costante $\Delta z$ e che tutte le particelle proiettile, procedendo verso il bersaglio parallelamente alla direzione dell'asse $z$, lo colpiscano ortogonalmente (su una faccia di superficie $A$), come mostrato in \hyperref[fig:scattering]{Fig. 1.24}. Tali condizioni consentono di ricavare il numero di particelle incidenti sul target nell'unità di tempo $\phi_a$:
 	\begin{equation}
 		\frac{dN_a}{dt}=\phi_a=n_av_aA
 		\label{eq:scattering1}
@@ -1218,13 +1221,13 @@
 	\subsubsection{Tracking region}
 	Il Vertex (VTX, \hyperref[fig:vtx]{Fig. 2.4a}) viene posizionato subito dopo il target per ricostruire non solo la traiettoria dei frammenti, ma anche per determinare il punto di origine della frammentazione (VTX Point). Il VTX è costituito da quattro piani (di area attiva $2\times2\mbox{ cm}^2$ ciascuno) formati da uno strato di sensori basati sulla tecnologia MAPS.\footnote{Monolithic Active Pixel Sensors, gamma ampiamente usata in imaging ottico, a raggi X e nella detezione di particelle cariche pesanti.} Ciascun pannello è composto da un chip M$28$\footnote{Tali chip riescono a minimizzare ulteriori eventi di \hyperref[par:scattering_Rutherford]{multiple scattering} e frammentazione nucleare dovuti all'interazione delle particelle con l'apparato di misura.} della famiglia dei CMOS formato da una matrice $928\times960$ di pixel al silicio, questi ultimi aventi un passo di $20.7\mbox{ }\mu\mbox{m}$. Ogni pixel prevede un sistema di amplificazione e un circuito CDS (Correlated Double Sampling) di acquisizione con cui è possibile ottenere una risoluzione spaziale del VTX dell'ordine di $5\mbox{ }\mu\mbox{m}$ \cite{foot_cdr,ridolfiArticle}.
 	
-	Dopo il VTX i frammenti prodotti nel target vengono deviati grazie a uno spettrometro magnetico con cui è possibile valutare la loro quantità di moto. Sebbene la grandezza dello spettrometro sia limitata, il suo potere di deflessione è elevato grazie all'impiego di due magneti dipoli permanenti di Samario-Cobalto (\ce{SmCO}) in configurazione Halbach\footnote{Tale configurazione permette di avere un campo magnetico nullo e uniforme rispettivamente all'esterno e all'interno (nella cavità attraversata dalla traccia) dello spettrometro magnetico.} a geometria cilindrica cava (illustrata in \hyperref[fig:magnetic_spectrometer]{Fig. 2.4b}), grazie alla quale è possibile raggiungere valori massimi di campo magnetico pari a $1.4\mbox{ T}$. Per determinare il momento $p$ dei frammenti, si sfrutta l'espressione della forza di Lorentz $\vec{F_L}$ (\hyperref[eq:lorentz_force]{Eq. 2.4a}) esercitata dal campo magnetico uniforme $\vec{B}$ presente all'interno dello spettrometro magnetico sui frammenti di carica $q$, velocità $\vec{v}$ e massa $m$. Essendo la $\vec{F_L}$ centripeta, è possibile esplicitare la \hyperref[eq:centripetal_force]{Eq. 2.4b}:
+	Dopo il VTX i frammenti prodotti nel target vengono deviati grazie a uno spettrometro magnetico con cui è possibile valutare la loro quantità di moto. Sebbene la grandezza dello spettrometro sia limitata, il suo potere di deflessione è elevato grazie all'impiego di due magneti dipoli permanenti di Samario-Cobalto (\ce{SmCO}) in configurazione Halbach\footnote{Tale configurazione permette di avere un campo magnetico nullo e uniforme rispettivamente all'esterno e all'interno (nella cavità attraversata dalla traccia) dello spettrometro magnetico.} a geometria cilindrica cava (illustrata in \hyperref[fig:magnetic_spectrometer]{Fig. 2.4b}), grazie alla quale è possibile raggiungere valori massimi di campo magnetico pari a $1.4\mbox{ T}$. Per determinare il momento $p$ dei frammenti, si sfrutta l'espressione della forza di Lorentz $\vect{F_L}$ (\hyperref[eq:lorentz_force]{Eq. 2.4a}) esercitata dal campo magnetico uniforme $\vect{B}$ presente all'interno dello spettrometro magnetico sui frammenti di carica $q$, velocità $\vect{v}$ e massa $m$. Essendo la $\vect{F_L}$ centripeta, è possibile esplicitare la \hyperref[eq:centripetal_force]{Eq. 2.4b}:
 	\begin{subequations}
 		\begin{align}
 			\label{eq:lorentz_force}
-			\vec{F_L}&=q\vec{v}\times\vec{B}\\
+			\vect{F_L}&=q\vect{v}\times\vect{B}\\
 			\label{eq:centripetal_force}
-			\left|\vec{F_L}\right|&=m\frac{v^2}{R}
+			\left|\vect{F_L}\right|&=m\frac{v^2}{R}
 		\end{align}
 	\end{subequations}
 	dove $R$ è il raggio di curvatura del frammento dovuto alla sua deflessione magnetica. Confrontando le \hyperref[eq:lorentz_force]{Eq. 2.4a} ed \hyperref[eq:centripetal_force]{Eq. 2.4b}, definendo il modulo dell'impulso $p=mv$ e l'angolo di deflessione delle particelle $\theta$ e sfruttando l'approssimazione valida per piccoli angoli $\sin{\theta}\approx\theta$, è possibile ricavare $p$ in funzione di $\theta$:
@@ -1365,7 +1368,7 @@
 	\end{table}
 	
 	\subsection{Identificazione del numero di massa}
-	La ridondanza del setup elettronico di FOOT consente di determinare il numero di massa $A$ in modi differenti. In particolare, le misure di TOF, di $p$ e di $E_k$ si possono combinare in tre modi differenti in modo da ottenere tre stime di $A$: $A_1$, $A_2$ e $A_3$. Tali stime si ottengono:
+	La ridondanza del \hyperref[sec:setupElettronico]{setup elettronico} di FOOT consente di determinare il numero di massa $A$ in modi differenti. In particolare, le misure di TOF, di $p$ e di $E_k$ si possono combinare in tre modi differenti in modo da ottenere tre stime di $A$: $A_1$, $A_2$ e $A_3$. Tali stime si ottengono:
 	\begin{itemize}
 		\item attraverso la \hyperref[eq:a1]{Eq. 2.3a}, in cui si determinano $\beta$ e $p$ rispettivamente dal TOF e dalla tracking region;
 		\item attraverso la \hyperref[eq:a2]{Eq. 2.3b}, in cui si determinano $\beta$ e $E_k$ rispettivamente dal TOF e dal CALO;\footnote{Si ricorda che $E_k$ dipende anche dai contributi energetici del TW e dell'MSD, anche se in maniera molto minore rispetto al CALO.}
@@ -1409,14 +1412,83 @@
 		\caption{Ricostruzione dei valori di aspettazione di $A_1$, $A_2$ e $A_3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.}
 		\label{tab:mass_numbers}
 	\end{table}
-
 	Per determinare la miglior stima per $A$, è possibile considerare due possibili procedure da applicare ai valori correlati di $A_1$, $A_2$ e $A_3$, che verranno analizzate nel prosieguo:
 	\begin{itemize}
 		\item metodo del minimo $\chi^2$;
-		\item Augmented Lagrangian Method (ALM).
+		\item Augmented Lagrangian Method.
 	\end{itemize}
 	
+	\subsection{Metodo del minimo $\chi^2$}
+	Il metodo del minimo $\chi^2$ si fonda sul test del $\chi^2$, un test probabilistico che fornisce dei criteri con cui è possibile verificare la consistenza di ipotesi teoriche con un set di dati sperimentali. Nello specifico, il test del $\chi^2$ si basa sulla valutazione della funzione $\chi^2$, espressa nella \hyperref[eq:chi_square_method]{Eq. 3.5}, che esprime la discrepanza tra la teoria e i dati sperimentali attraverso la somma dei quadrati delle differenze tra i valori misurati $y_k$ e la relazione funzionale dei valori attesi $f\left(x_k;\alpha_j\right)$ dipendente dalle misure $x_k$ e dai parametri $\alpha_j$:
+	\begin{equation}
+		\chi^2=\sum_k=1^N\left(\frac{y_k-f\left(x_k;\alpha_j\right)}{\sigma_k}\right)^2
+		\label{eq:chi_square_method}
+	\end{equation}
+	dove $\sigma_k$ è l'incertezza associata alle $N$ misure $y_k$ \cite{Fornasini2008}. Il metodo del minimo $\chi^2$ consiste nel ricavare i parametri\footnote{Da un punto di vista matematico i parametri sono dei vincoli al problema di minimizzazione.} $\alpha_j$ in modo da minimizzare la funzione $\chi^2$ della \hyperref[eq:chi_square_method]{Eq. 3.5}.
 	
+	Applicando tale metodo all'analisi in esame, si ottiene:
+	\begin{equation}
+		\chi^2=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}+\transp{\vect{A}}\matr{B}\vect{A}
+		\label{eq:chi_square}
+	\end{equation}
+	dove $TOF$, $p$ ed $E_k$ sono le misure delle grandezze fisiche ricostruite tramite l'apparato sperimentale di FOOT, $\sigma_{TOF}$, $\sigma_{p}$ e $\sigma_{E_k}$ le rispettive incertezze e $T$, $P$ ed $K$ sono tre dei quattro parametri di minimizzazione. La \hyperref[eq:chi_square]{Eq. 3.6} contiene anche il vettore $\vect{A}$ (e il suo trasposto $\transp{\vect{A}}$) dato dalla seguente espressione:
+	\begin{equation}
+		\begin{pmatrix}
+			A_1-\overline{A}\\
+			A_2-\overline{A} \\
+			A_3-\overline{A}\\
+		\end{pmatrix}
+		\label{eq:vector_A}
+	\end{equation}
+	dove $A_1$, $A_2$ e $A_3$ sono le misure dei numeri di massa dei frammenti ricostruiti tramite l'apparato sperimentale di FOOT e $A$ è il quarto parametro di minimizzazione. La matrice $\matr{B}$ contiene la valutazione delle incertezze associate ad $A_1$, $A_2$ e $A_3$ che, come già discusso, non sono indipendenti. Infatti, la correlazione tra le incertezze delle misure dei numeri di massa è esplicitata dalla matrice di correlazione $\matr{C}$, che è legata alla $\matr{B}$ nel modo seguente:
+	\begin{equation}
+		\matr{B}=\left(\matr{C}\transp{\matr{C}}\right)^{-1}
+		\label{eq:B_funct_C}
+	\end{equation}
+	dove i termini della matrice di correlazione $\matr{C}$ sono dati dalla \hyperref[eq:correlation_matrix]{Eq. 3.9} \cite{foot_cdr,valle2019design}.
+	\begin{equation}
+		\begin{pmatrix}
+			\frac{\partial A_1}{\partial T}dT&\frac{\partial A_1}{\partial p}dp&0\\
+			\frac{\partial A_2}{\partial T}dT&0&\frac{\partial A_2}{\partial K}dK\\
+			0&\frac{\partial A_3}{\partial p}dp&\frac{\partial A_3}{\partial K}dK\\
+		\end{pmatrix}
+		\label{eq:correlation_matrix}
+	\end{equation}
+	Se i parametri $\left(T,P,K,A\right)$ venissero pensati come variabili di uno spazio quadridimensionale, il problema della minimizzazione del $\chi^2$ è analogo a un problema di ricerca del minimo di una funzione a variabile vettoriale. Pertanto, per ricavare i valori dei parametri $\left(T,P,K,A\right)$ che si più avvicinano ai valori attesi ``veri'' delle grandezze fisiche associate ai parametri stessi è possibile procedere attraverso un fit di minimizzazione, in cui il punto dello spazio quadrimensionale in cui il $\chi^2$ assume il valore minimo corrisponde ai valori di $\left(T,P,K,A\right)$ che più si avvicinano ai valori attesi. Per la ricerca del minimo si utilizza Minuit, un algoritmo del framework ROOT grazie al quale è possibile variare opportunamente i parametri in modo che il minimo $\chi^2$ sia globale e non semplicemente locale, al fine di garantire che i parametri di output finali siano piuttosto accurati.
+	
+	\subsection{Augmented Lagrangian Method}
+	L'Augmented Lagrangian Method (ALM) è un algoritmo con cui è possibile affrontare un problema di minimizzazione vincolata di una funzione $f\left(\vect{x}\right)$ a più variabili in un problema di minimizzazione non vincolato, caratterizzato però da uno spazio dei parametri maggiore. L'ALM è un metodo dei moltiplicatori di Lagrange ``modificato'' in cui la minimizzazione della funzione lagrangiana $\mathcal{L}\left(\vect{x};\vect{\lambda}\right)$ rispetto alla variabile vettoriale $\vect{x}$ prevista dal metodo dei moltiplicatori di Lagrange viene sostituita dalla minimizzazione di una lagrangiana ``aumentata'' (augmented) $\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)$ definita come:
+	\begin{equation}
+		\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)=\mathcal{L}\left(\vect{x};\vect{\lambda}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)=f\left(\vect{x}\right)+\sum_{i=1}^{m}\lambda_ic_i\left(\vect{x}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)
+		\label{eq:augmented_lagrangian_funct}
+	\end{equation}
+	dove $f\left(\vect{x}\right)$ è la funzione originaria da minimizzare, $\vect{\lambda}$ è il vettore $m$-dimensionale che contiene i moltiplicatori di Lagrange $\lambda_i$ associati agli $m$ vincoli $c_i\left(\vect{x}\right)$ e $\mu$ è un parametro positivo. L'ultimo termine di somma della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10} è chiamato termine di penalità ed è una funzione dei vincoli del problema pesata con un parametro di penalità $\mu$; se i vincoli sono nulli, il termine di penalità si annulla mentre è grande se $c_i\ne0$ e $\mu\rightarrow0$. Nell'ALM si procede per minimizzazioni non vincolate successive della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10}: a partire da una soluzione $\left(\vect{x}^0,\vect{\lambda}^0\right)$ del problema di minimizzazione non vincolato di $f\left(\vect{x}\right)$, alla $k$-esima interazione si ottengono nuovi valori $\left(\vect{x}^k,\vect{\lambda}^k\right)$ e si modifica $\mu$ fino all'interazione in cui si ricava il vettore $\overline{\vect{x}}$, punto dello spazio dei parametri in cui la $\mathcal{L}\left(\vect{x};\vect{\lambda},\mu\right)$ raggiunge un valore minimo\footnote{In realtà il processo di ottimizzazione si interrompe nel momento in cui si raggiunge il grado di tolleranza fissato all'inizio dell'ALM.} \cite{Cho2016-st}.
+	
+	Applicando tale metodo all'analisi in esame, i cui parametri sono $\left(T,P,K,A\right)$, si ottiene che il primo termine della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10} è analogo a quello della \hyperref[eq:chi_square]{Eq. 3.6}:
+	\begin{equation}
+		f\left(T,P,K\right)=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}
+		\label{eq:first_term_ALM}
+	\end{equation}
+	mentre gli ultimi due sono dati da:
+	\begin{equation}
+		\sum_{i=1}^{3}\lambda_ic_i\left(A\right)+\frac{1}{2\mu}\sum_{i=1}^{3}c_i^2\left(A\right)
+		\label{eq:other_terms_ALM}
+	\end{equation}
+	dove $c_i\left(A\right)=A_i-A$ \cite{valle2019design}. Dunque, dalle \hyperref[eq:first_term_ALM]{Eq. 3.11} e \hyperref[eq:other_terms_ALM]{Eq. 3.12} si ottiene la seguente funzione $\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)$:
+	\begin{equation}
+		\begin{aligned}
+			\mathcal{L}_{ALM}\left(T,P,K,A;\vect{\lambda},\mu\right)&=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}+\\
+			&+\lambda_1\left(A_1-A\right)+\lambda_2\left(A_2-A\right)+\lambda_3\left(A_3-A\right)+\\
+			&+\frac{1}{2\mu}\left(\left(A_1-A\right)^2+\left(A_2-A\right)^2+\left(A_3-A\right)^2\right)
+		\end{aligned}
+		\label{eq:alm_analysis}
+	\end{equation}
+	
+	\subsection{Risultati ottenuti dai fit}
+	pag 110 PHD
+	pag 73 root cdr
+	
+	\section{Misure di sezione d'urto (TBD)}
 				
 	\addcontentsline{toc}{chapter}{Conclusioni (TBD)}
 	\chapter*{Conclusioni (TBD)}
