@@ -14,7 +14,7 @@
 
 - Per la formula bethe-bloch scritta meglio vedi: https://pdg.lbl.gov/2021/reviews/rpp2020-rev-passage-particles-matter.pdf
 - Per gli h_A1/2/3: scegi un range degli istogrammi migliore e più bin per gli istogrammi
-- PEr le z1/2/3 -> seleziona le caratteristiche di EJ-200 e non del target. Confronta il valore di z con la charge del TW.
+- Per le z1/2/3 -> seleziona le caratteristiche di EJ-200 e non del target. Confronta il valore di z con la charge del TW.
 - Prova a fare grafico E in funzione del TOF.
 - Inizia a fare grafici per ogni frammento, quindi imponendo la condizione di A==1, e così via.
 - fai assolutamente un TFILE nuovo per l'analisi
@@ -28,6 +28,7 @@
 - La distanza tra Start Counter e target: io ho messo nel capitolo 2 che è di 20--30 cm, ma alla fine ho usato che è di 30 cm per calcolare il tempo tra SC e target. Va bene?
 - Il target è di C2H4?
 - Cosa è il Gaussian smearing? It's a mathematical technique used in data analysis and signal processing to smooth out noisy data. It involves convolving the data with a Gaussian function, which results in a smoother curve with a bell-shaped distribution. Gaussian smearing works by taking a noisy data set and applying a Gaussian function to it. This function has a bell-shaped curve that is used to smooth out the data points. The width of the Gaussian function determines the level of smoothing, with a wider function resulting in a more smooth curve. What are the benefits of using Gaussian Smearing? Gaussian smearing is beneficial because it helps to reduce the effects of noise in data sets. It can also be used to make data sets more visually appealing and easier to interpret. Additionally, Gaussian smearing can help to identify underlying trends in the data that may otherwise be obscured by noise.
+- Va bene il materiale che ho inserito dello scintillatore?
 
 ## RISULTATI FIT:
 
