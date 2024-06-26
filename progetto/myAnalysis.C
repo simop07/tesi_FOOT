@@ -153,9 +153,99 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
         int zz[8]{1, 2, 3, 4, 5, 6, 7, 8};
         for (int i{}; i != 6; i++) {
           if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == zz[i]) {
-            h_A1r[i]->Fill(A1);
-            h_A2r[i]->Fill(A2);
-            h_A3r[i]->Fill(A3);
+            switch (i) {
+              case 0:
+                if (0. < A1 && A1 < 1.5) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (0. < A2 && A2 < 1.5) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (0. < A3 && A3 < 1.5) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 1:
+                if (3.2 < A1 && A1 < 4.8) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (3.2 < A2 && A2 < 9.) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (3.2 < A3 && A3 < 9.) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 2:
+                if (4.8 < A1 && A1 < 8.2) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (6.5 < A2 && A2 < 7.5) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (6. < A3 && A3 < 18.) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 3:
+                if (6.5 < A1 && A1 < 11.5) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (7. < A2 && A2 < 9.5) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (8. < A3 && A3 < 20.) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 4:
+                if (10. < A1 && A1 < 14.5) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (10. < A2 && A2 < 22.) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (6. < A3 && A3 < 22.) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 5:
+                if (10. < A1 && A1 < 16.) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (0. < A2 && A2 < 16.) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (6. < A3 && A3 < 24.) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 6:
+                if (0. < A1 && A1 < 1.5) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (0. < A2 && A2 < 1.5) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (0. < A3 && A3 < 1.5) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+              case 7:
+                if (0. < A1 && A1 < 1.5) {
+                  h_A1r[i]->Fill(A1);
+                }
+                if (0. < A2 && A2 < 1.5) {
+                  h_A2r[i]->Fill(A2);
+                }
+                if (0. < A3 && A3 < 1.5) {
+                  h_A3r[i]->Fill(A3);
+                }
+                break;
+
+              default:
+                break;
+            }
           }
         }
 
@@ -200,11 +290,11 @@ void myAnalysis::BeforeLoop() {
 
   // creating recostruction histos variables
   TString const histname{"h"};
-  const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-                             "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
-  // const char *element1[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-  //                            "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-  //                            "{}^{14}_{7}N", "{}^{16}_{8}O"};
+  // const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+  //                            "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+  const char *element0[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                             "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
+                             "{}^{14}_{7}N", "{}^{16}_{8}O"};
 
   const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
   const Double_t xup[8] = {8., 9., 18., 20., 22., 24., 24., 24.};
@@ -214,9 +304,9 @@ void myAnalysis::BeforeLoop() {
     int j{i + 8};
     int k{i + 16};
 
-    h_A1r[i] = new TH1D(histname + i, element0[i], 800, xlow[i], xup[i]);
-    h_A2r[i] = new TH1D(histname + j, element0[i], 300, xlow[i], xup[i]);
-    h_A3r[i] = new TH1D(histname + k, element0[i], 300, xlow[i], xup[i]);
+    h_A1r[i] = new TH1D(histname + i, element0[i], 50, xlow[i], xup[i]);
+    h_A2r[i] = new TH1D(histname + j, element0[i], 50, xlow[i], xup[i]);
+    h_A3r[i] = new TH1D(histname + k, element0[i], 50, xlow[i], xup[i]);
 
     // cosmetics
     h_A1r[i]->SetMarkerStyle(20);
@@ -466,7 +556,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 1e6);
+  m.Analysis(0, 1e7);
 
   return EXIT_SUCCESS;
 }
