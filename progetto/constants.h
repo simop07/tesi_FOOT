@@ -21,7 +21,7 @@ inline constexpr double c{299792458.};                // in m/s
 inline constexpr double u{0.93149410372};             // in GeV
 inline constexpr double M_u{1.00000000105e-3};        // in kg/mol
 inline constexpr double k_energy_u_beam{0.200};       // in GeV
-inline constexpr double d_SC_TGT{30.};                // in cm
+inline constexpr double d_SC_TGT{29.};                // in cm
 inline constexpr double dx{6e-3};                     // in m
 }  // namespace constants
 
