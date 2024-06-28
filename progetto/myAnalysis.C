@@ -150,102 +150,12 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
                 TWDe2Point->at(GLBtrackTWid->at(GLBtracks_i)));
 
         // fill reconstruction histos
-        int zz[8]{1, 2, 3, 4, 5, 6, 7, 8};
+        int zz[6]{1, 2, 3, 4, 5, 6};
         for (int i{}; i != 6; i++) {
           if ((int)TWChargePoint->at(GLBtrackTWid->at(GLBtracks_i)) == zz[i]) {
-            switch (i) {
-              case 0:
-                if (0. < A1 && A1 < 1.5) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (0. < A2 && A2 < 1.5) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (0. < A3 && A3 < 1.5) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 1:
-                if (3.2 < A1 && A1 < 4.8) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (3.2 < A2 && A2 < 9.) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (3.2 < A3 && A3 < 9.) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 2:
-                if (4.8 < A1 && A1 < 8.2) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (6.5 < A2 && A2 < 7.5) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (6. < A3 && A3 < 18.) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 3:
-                if (6.5 < A1 && A1 < 11.5) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (7. < A2 && A2 < 9.5) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (8. < A3 && A3 < 20.) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 4:
-                if (10. < A1 && A1 < 14.5) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (10. < A2 && A2 < 22.) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (6. < A3 && A3 < 22.) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 5:
-                if (10. < A1 && A1 < 16.) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (0. < A2 && A2 < 16.) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (6. < A3 && A3 < 24.) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 6:
-                if (0. < A1 && A1 < 1.5) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (0. < A2 && A2 < 1.5) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (0. < A3 && A3 < 1.5) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-              case 7:
-                if (0. < A1 && A1 < 1.5) {
-                  h_A1r[i]->Fill(A1);
-                }
-                if (0. < A2 && A2 < 1.5) {
-                  h_A2r[i]->Fill(A2);
-                }
-                if (0. < A3 && A3 < 1.5) {
-                  h_A3r[i]->Fill(A3);
-                }
-                break;
-
-              default:
-                break;
-            }
+            h_A1r[i]->Fill(A1);
+            h_A2r[i]->Fill(A2);
+            h_A3r[i]->Fill(A3);
           }
         }
 
@@ -290,19 +200,18 @@ void myAnalysis::BeforeLoop() {
 
   // creating recostruction histos variables
   TString const histname{"h"};
-  // const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-  //                            "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
-  const char *element0[8] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
-                             "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C",
-                             "{}^{14}_{7}N", "{}^{16}_{8}O"};
+  // const char *element0[6] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+  //                            "{}_{5}B", "{}_{6}C"};
+  const char *element0[6] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
+                             "{}^{9}_{4}Be", "{}^{11}_{5}B", "{}^{12}_{6}C"};
 
-  const Double_t xlow[8] = {0., 0., 2., 4., 4., 4., 4., 8.};
-  const Double_t xup[8] = {8., 9., 18., 20., 22., 24., 24., 24.};
+  const Double_t xlow[6] = {0., 0., 2., 4., 4., 4.};
+  const Double_t xup[6] = {8., 9., 18., 20., 22., 24.};
 
   for (int i{}; i != 6; i++) {
     // defining offset variables
-    int j{i + 8};
-    int k{i + 16};
+    int j{i + 6};
+    int k{i + 12};
 
     h_A1r[i] = new TH1D(histname + i, element0[i], 50, xlow[i], xup[i]);
     h_A2r[i] = new TH1D(histname + j, element0[i], 50, xlow[i], xup[i]);
@@ -355,26 +264,26 @@ void myAnalysis::AfterLoop() {
   TCanvas *c_E_TOF = new TCanvas("c_E_TOF", "#Delta E vs TOF", 1000, 600);
 
   // defining fitting functions for total histos
-  TF1 *f_z_bethe[8];
+  TF1 *f_z_bethe[6];
 
   // defining fitting functions for reconstruction histos
-  TF1 *f_A1r[8];
-  TF1 *f_A2r[8];
-  TF1 *f_A3r[8];
+  TF1 *f_A1r[6];
+  TF1 *f_A2r[6];
+  TF1 *f_A3r[6];
 
   // for bethe function
   TString const funcname_bethe{"f_bethe"};
-  const Double_t xlow_bethe[8] = {0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5};
-  const Double_t xup_bethe[8] = {1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5};
-  const int mean_value_bethe[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-  const Double_t sigma_bethe[8] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
+  const Double_t xlow_bethe[6] = {0.5, 1.5, 2.5, 3.5, 4.5, 5.5};
+  const Double_t xup_bethe[6] = {1.5, 2.5, 3.5, 4.5, 5.5};
+  const int mean_value_bethe[6] = {1, 2, 3, 4, 5, 6};
+  const Double_t sigma_bethe[6] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
 
   // for reconstructed fragments
   TString const funcname{"f"};
-  const Double_t xlow[8] = {0.5, 3.5, 6.5, 8.5, 10.5, 11., 4., 8.};
-  const Double_t xup[8] = {1.5, 5., 8, 10.5, 11.5, 13., 24., 24.};
-  const int mean_value[8] = {1, 4, 7, 9, 11, 12, 14, 16};
-  const Double_t sigma[8] = {0.05, 0.1, 0.01, 0.01, 0.01, 0.1, 0.1, 0.1};
+  const Double_t xlow[6] = {0.5, 3.5, 6.5, 8.5, 10.5, 11.};
+  const Double_t xup[6] = {1.5, 5., 8, 10.5, 11.5, 13.};
+  const int mean_value[6] = {1, 4, 7, 9, 11, 12};
+  const Double_t sigma[6] = {0.05, 0.1, 0.01, 0.01, 0.01, 0.1};
 
   // drawing total histos on canvas
   c_A1->cd();
@@ -395,17 +304,17 @@ void myAnalysis::AfterLoop() {
 
   // add for debugging
   if (true) {
-    TCanvas *c_A1rr[8];
-    TCanvas *c_A2rr[8];
-    TCanvas *c_A3rr[8];
+    TCanvas *c_A1rr[6];
+    TCanvas *c_A2rr[6];
+    TCanvas *c_A3rr[6];
 
     TString const canvasname{"c"};
-    const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-                               "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+    const char *element0[6] = {"{}_{1}H",  "{}_{2}He", "{}_{3}Li",
+                               "{}_{4}Be", "{}_{5}B",  "{}_{6}C"};
 
     for (int i{}; i != 6; i++) {
-      // int j{i + 8};
-      int k{i + 16};
+      // int j{i + 6};
+      int k{i + 12};
 
       // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
       // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
@@ -425,8 +334,8 @@ void myAnalysis::AfterLoop() {
   // drawing reconstruction histos on canvas and cosmetics
   for (int i{}; i != 6; i++) {
     // defining offset variables
-    int j{i + 8};
-    int k{i + 16};
+    int j{i + 6};
+    int k{i + 12};
 
     f_z_bethe[i] =
         new TF1(funcname_bethe + i, "gaus", xlow_bethe[i], xup_bethe[i]);
@@ -477,9 +386,9 @@ void myAnalysis::AfterLoop() {
   }
 
   // dividing reconstruction canvas
-  c_A1r->Divide(4, 2);
-  c_A2r->Divide(4, 2);
-  c_A3r->Divide(4, 2);
+  c_A1r->Divide(3, 2);
+  c_A2r->Divide(3, 2);
+  c_A3r->Divide(3, 2);
 
   // filling reconstruction canvas
   for (int i{}; i != 6; i++) {
@@ -500,17 +409,17 @@ void myAnalysis::AfterLoop() {
 
   // add for debugging
   // if (false) {
-  //   TCanvas *c_A1rr[8];
-  //   TCanvas *c_A2rr[8];
-  //   TCanvas *c_A3rr[8];
+  //   TCanvas *c_A1rr[6];
+  //   TCanvas *c_A2rr[6];
+  //   TCanvas *c_A3rr[6];
 
   //   TString const canvasname{"c"};
-  //   const char *element0[8] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-  //                              "{}_{5}B", "{}_{6}C",  "{}_{7}N",  "{}_{8}O"};
+  //   const char *element0[6] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
+  //                              "{}_{5}B", "{}_{6}C"};
 
   //   for (int i{}; i != 6; i++) {
-  //     // int j{i + 8};
-  //     int k{i + 16};
+  //     // int j{i + 6};
+  //     int k{i + 12};
 
   //     // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
   //     // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);

@@ -241,9 +241,9 @@ class myAnalysis {
   TH2D *h_E_TOF;    // E_deposited vs TOF
 
   // histo declaration for A_i fragment reconstruction
-  TH1D *h_A1r[8];  // A_1_r
-  TH1D *h_A2r[8];  // A_2_r
-  TH1D *h_A3r[8];  // A_3_r
+  TH1D *h_A1r[6];  // A_1_r
+  TH1D *h_A2r[6];  // A_2_r
+  TH1D *h_A3r[6];  // A_3_r
 
   // histo declaration for other methods
   TH2D *histo_xy_clus;             // XY cluster distribution
