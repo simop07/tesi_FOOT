@@ -57,6 +57,17 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newenvironment{dedication}{
+	\clearpage           % we want a new page
+	\thispagestyle{empty}% no header and footer
+	\vspace*{\stretch{1}}% some space at the top
+	\itshape             % the text is in italics
+	\raggedleft          % flush to the right margin
+}
+{\par % end the paragraph
+	\vspace{\stretch{3}} % space at bottom is three times that at the top
+	\clearpage           % finish off the page
+}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage[version=4]{mhchem}
@@ -192,7 +203,10 @@
 	\end{titlepage}
 	\newpage
 	\newgeometry{top=4cm,bottom=4cm,left=3cm,right=3cm}
-	\onehalfspacing % Also singlespacing, doublespacing 
+	\onehalfspacing % Also singlespacing, doublespacing
+	\begin{dedication}
+		PROVA
+	\end{dedication}
 	\chapter*{Sommario (TBD)}
 		Questo è l'inizio del sommario.
 	\newpage
