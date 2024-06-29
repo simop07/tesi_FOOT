@@ -156,6 +156,8 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
             h_A1r[i]->Fill(A1);
             h_A2r[i]->Fill(A2);
             h_A3r[i]->Fill(A3);
+
+            h_Acorr[i]->Fill(A1, A2, A3);
           }
         }
 
@@ -200,6 +202,8 @@ void myAnalysis::BeforeLoop() {
 
   // creating recostruction histos variables
   TString const histname{"h"};
+  TString const histnameCorr{"h_Acorr"};
+  TString const text{"Correlation between A_{i}: "};
   // const char *element0[6] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
   //                            "{}_{5}B", "{}_{6}C"};
   const char *element0[6] = {"{}^{1}_{1}H",  "{}^{4}_{2}He", "{}^{7}_{3}Li",
@@ -216,6 +220,10 @@ void myAnalysis::BeforeLoop() {
     h_A1r[i] = new TH1D(histname + i, element0[i], 50, xlow[i], xup[i]);
     h_A2r[i] = new TH1D(histname + j, element0[i], 50, xlow[i], xup[i]);
     h_A3r[i] = new TH1D(histname + k, element0[i], 50, xlow[i], xup[i]);
+
+    // correlation histo
+    h_Acorr[i] = new TH3D(histnameCorr + i, text + element0[i], 300, xlow[i],
+                          xup[i], 300, xlow[i], xup[i], 300, xlow[i], xup[i]);
 
     // cosmetics
     h_A1r[i]->SetMarkerStyle(20);
@@ -244,6 +252,17 @@ void myAnalysis::BeforeLoop() {
     h_A3r[i]->GetYaxis()->SetTitleSize(0.04);
     h_A3r[i]->GetXaxis()->SetTitle("A_{3}");
     h_A3r[i]->GetYaxis()->SetTitle("Entries");
+
+    h_Acorr[i]->SetMarkerStyle(20);
+    h_Acorr[i]->SetMarkerSize(0.5);
+    h_Acorr[i]->SetLineColor(kBlue);
+    h_Acorr[i]->GetYaxis()->SetTitleOffset(1.2);
+    h_Acorr[i]->GetZaxis()->SetTitleOffset(1.2);
+    h_Acorr[i]->GetXaxis()->SetTitleSize(0.04);
+    h_Acorr[i]->GetYaxis()->SetTitleSize(0.04);
+    h_Acorr[i]->GetXaxis()->SetTitle("A_{1}");
+    h_Acorr[i]->GetYaxis()->SetTitle("A_{2}");
+    h_Acorr[i]->GetZaxis()->SetTitle("A_{3}");
   }
 }
 
@@ -303,14 +322,13 @@ void myAnalysis::AfterLoop() {
   h_E_TOF->Draw("COL2Z");
 
   // add for debugging
+  TString const canvasname{"c"};
+  const char *element0[6] = {"{}_{1}H",  "{}_{2}He", "{}_{3}Li",
+                             "{}_{4}Be", "{}_{5}B",  "{}_{6}C"};
   if (true) {
     TCanvas *c_A1rr[6];
     TCanvas *c_A2rr[6];
     TCanvas *c_A3rr[6];
-
-    TString const canvasname{"c"};
-    const char *element0[6] = {"{}_{1}H",  "{}_{2}He", "{}_{3}Li",
-                               "{}_{4}Be", "{}_{5}B",  "{}_{6}C"};
 
     for (int i{}; i != 6; i++) {
       // int j{i + 6};
@@ -407,34 +425,47 @@ void myAnalysis::AfterLoop() {
     h_A3r[i]->Draw();
   }
 
-  // add for debugging
-  // if (false) {
-  //   TCanvas *c_A1rr[6];
-  //   TCanvas *c_A2rr[6];
-  //   TCanvas *c_A3rr[6];
+  // canvas for correlation histos
+  TCanvas *c_Acorr[6];
+  TCanvas *c_AcorrProjYX[6];
+  TCanvas *c_AcorrProjZX[6];
+  TCanvas *c_AcorrProjZY[6];
 
-  //   TString const canvasname{"c"};
-  //   const char *element0[6] = {"{}_{1}H", "{}_{2}He", "{}_{3}Li", "{}_{4}Be",
-  //                              "{}_{5}B", "{}_{6}C"};
+  TString const correlation{"Corr"};
+  TString const projectionYX{"ProjYX"};
+  TString const projectionZX{"ProjZX"};
+  TString const projectionZY{"ProjZY"};
+  for (int i{}; i != 6; i++) {
+    c_Acorr[i] =
+        new TCanvas(canvasname + correlation + i, element0[i], 1000, 600);
+    c_AcorrProjYX[i] = new TCanvas(canvasname + correlation + projectionYX + i,
+                                   element0[i], 1000, 600);
+    c_AcorrProjZX[i] = new TCanvas(canvasname + correlation + projectionZX + i,
+                                   element0[i], 1000, 600);
+    c_AcorrProjZY[i] = new TCanvas(canvasname + correlation + projectionZY + i,
+                                   element0[i], 1000, 600);
 
-  //   for (int i{}; i != 6; i++) {
-  //     // int j{i + 6};
-  //     int k{i + 12};
+    c_Acorr[i]->cd();
+    c_Acorr[i]->cd(i + 1);
+    h_Acorr[i]->Draw();
+  }
 
-  //     // c_A1rr[i] = new TCanvas(canvasname + i, element0[i], 1000, 600);
-  //     // c_A2rr[i] = new TCanvas(canvasname + j, element0[i], 1000, 600);
-  //     c_A3rr[i] = new TCanvas(canvasname + k, element0[i], 1000, 600);
-
-  //     // c_A1rr[i]->cd();
-  //     // h_A1r[i]->Draw();
-
-  //     // c_A2rr[i]->cd();
-  //     // h_A2r[i]->Draw();
-
-  //     c_A3rr[i]->cd();
-  //     h_A3r[i]->Draw();
-  //   }
-  // }
+  // filling correlation canvas
+  for (int i{}; i != 6; i++) {
+    c_AcorrProjYX[i]->cd();
+    c_AcorrProjYX[i]->cd(i + 1);
+    h_Acorr[i]->Project3D("yx")->Draw("COL2Z");
+  }
+  for (int i{}; i != 6; i++) {
+    c_AcorrProjZX[i]->cd();
+    c_AcorrProjZX[i]->cd(i + 1);
+    h_Acorr[i]->Project3D("zx")->Draw("COL2Z");
+  }
+  for (int i{}; i != 6; i++) {
+    c_AcorrProjZY[i]->cd();
+    c_AcorrProjZY[i]->cd(i + 1);
+    h_Acorr[i]->Project3D("zy")->Draw("COL2Z");
+  }
 
   // writing on TFile
   file->cd();
@@ -446,6 +477,12 @@ void myAnalysis::AfterLoop() {
   c_A2r->Write();
   c_A3r->Write();
   c_E_TOF->Write();
+  for (int i{}; i != 6; i++) {
+    c_Acorr[i]->Write();
+    c_AcorrProjYX[i]->Write();
+    c_AcorrProjZX[i]->Write();
+    c_AcorrProjZY[i]->Write();
+  }
 
   file->Close();
 }

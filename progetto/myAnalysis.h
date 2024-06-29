@@ -245,6 +245,9 @@ class myAnalysis {
   TH1D *h_A2r[6];  // A_2_r
   TH1D *h_A3r[6];  // A_3_r
 
+  // histo declaration for A_i correlation
+  TH3D *h_Acorr[6];
+
   // histo declaration for other methods
   TH2D *histo_xy_clus;             // XY cluster distribution
   TH3D *histo_xyz_clus;            // XYZ cluster distribution
