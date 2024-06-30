@@ -221,16 +221,16 @@ void myAnalysis::BeforeLoop() {
     int j{i + 6};
     int k{i + 12};
 
-    h_A1r[i] = new TH1D(histname + i, element0[i], 500, xlow[i], xup[i]);
-    h_A2r[i] = new TH1D(histname + j, element0[i], 500, xlow[i], xup[i]);
-    h_A3r[i] = new TH1D(histname + k, element0[i], 500, xlow[i], xup[i]);
+    h_A1r[i] = new TH1D(histname + i, element0[i], 250, xlow[i], xup[i]);
+    h_A2r[i] = new TH1D(histname + j, element0[i], 250, xlow[i], xup[i]);
+    h_A3r[i] = new TH1D(histname + k, element0[i], 250, xlow[i], xup[i]);
 
-    h_A21cor[i] = new TH2D(histnameCorr + i, element0[i], 500, xlow[i], xup[i],
-                           500, xlow[i], xup[i]);
-    h_A31cor[i] = new TH2D(histnameCorr + j, element0[i], 500, xlow[i], xup[i],
-                           500, xlow[i], xup[i]);
-    h_A32cor[i] = new TH2D(histnameCorr + k, element0[i], 500, xlow[i], xup[i],
-                           500, xlow[i], xup[i]);
+    h_A21cor[i] = new TH2D(histnameCorr + i, element0[i], 250, xlow[i], xup[i],
+                           250, xlow[i], xup[i]);
+    h_A31cor[i] = new TH2D(histnameCorr + j, element0[i], 250, xlow[i], xup[i],
+                           250, xlow[i], xup[i]);
+    h_A32cor[i] = new TH2D(histnameCorr + k, element0[i], 250, xlow[i], xup[i],
+                           250, xlow[i], xup[i]);
 
     // cosmetics
     h_A1r[i]->SetMarkerStyle(20);
