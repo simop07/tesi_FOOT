@@ -1,5 +1,3 @@
-// To compile in SHELL: "g++ myMacro.C `root-config --cflags --libs`"
-
 #include "TCanvas.h"
 #include "TCutG.h"
 #include "TF1.h"
@@ -347,6 +345,11 @@ void myMacro() {
   TF1 *f_cut0_tot = new TF1("f_cut0_tot", "gaus(0)+gaus(3)+gaus(6)", 0.5, 3.5);
   Double_t par0[9];
 
+  TF1 *f_cut1_1 = new TF1("f_cut1_1", "gaus", 2., 3.5);
+  TF1 *f_cut1_2 = new TF1("f_cut1_2", "gaus", 3.5, 5.);
+  TF1 *f_cut1_tot = new TF1("f_cut1_tot", "gaus(0)+gaus(3)", 2., 5.);
+  Double_t par1[6];
+
   // cosmetics
   f_cut0_1->SetLineColor(kRed);
   f_cut0_1->SetLineWidth(3);
@@ -364,6 +367,18 @@ void myMacro() {
   f_cut0_tot->SetLineWidth(3);
   f_cut0_tot->SetLineStyle(2);
 
+  f_cut1_1->SetLineColor(kRed);
+  f_cut1_1->SetLineWidth(3);
+  f_cut1_1->SetLineStyle(2);
+
+  f_cut1_2->SetLineColor(kRed);
+  f_cut1_2->SetLineWidth(3);
+  f_cut1_2->SetLineStyle(2);
+
+  f_cut1_tot->SetLineColor(kOrange);
+  f_cut1_tot->SetLineWidth(3);
+  f_cut1_tot->SetLineStyle(2);
+
   // setting parameters
   f_cut0_1->SetParameter(1, 1);
   f_cut0_2->SetParameter(1, 1);
@@ -372,6 +387,12 @@ void myMacro() {
   f_cut0_1->SetParameter(2, 0.5);
   f_cut0_2->SetParameter(2, 0.5);
   f_cut0_3->SetParameter(2, 0.5);
+
+  f_cut1_1->SetParameter(1, 3);
+  f_cut1_2->SetParameter(1, 4);
+
+  f_cut1_1->SetParameter(2, 0.5);
+  f_cut1_2->SetParameter(2, 0.5);
 
   // fitting
   h31_1_0->Fit(f_cut0_1, "R");
@@ -395,7 +416,25 @@ void myMacro() {
   h32_2_0->Fit(f_cut0_tot, "R+");
   h32_3_0->Fit(f_cut0_tot, "R+");
 
+  h31_1_1->Fit(f_cut1_1, "R");
+  h31_1_1->Fit(f_cut1_2, "R+");
+
+  h32_2_1->Fit(f_cut1_1, "R");
+  h32_2_1->Fit(f_cut1_2, "R+");
+
+  h32_3_1->Fit(f_cut1_1, "R");
+  h32_3_1->Fit(f_cut1_2, "R+");
+
+  f_cut1_1->GetParameters(&par1[0]);
+  f_cut1_2->GetParameters(&par1[3]);
+
+  f_cut1_tot->SetParameters(par1);
+  h31_1_1->Fit(f_cut1_tot, "R+");
+  h32_2_1->Fit(f_cut1_tot, "R+");
+  h32_3_1->Fit(f_cut1_tot, "R+");
+
   // drawing on canvas and cosmetics
+  // histo0
   h21_1_0->SetLineColor(kBlue);
   h31_1_0->SetLineColor(kBlack);
   c_cut0->cd();
@@ -414,6 +453,7 @@ void myMacro() {
   h31_3_0->Draw();
   h32_3_0->Draw("same");
 
+  // histo1
   h21_1_1->SetLineColor(kBlue);
   h31_1_1->SetLineColor(kBlack);
   c_cut3->cd();
