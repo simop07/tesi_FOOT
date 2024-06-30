@@ -21,3 +21,6 @@
 ## DOMANDE:
 
 - Gli istogrammi che vengono peggio sono l'A_3 del Litio, l'A1 e l'A_3 del Berillio e l'A_1 e l'A_3 del Boro (magari da rivedere il cut).
+- I fit dopo l'elio peggiorano e nessuno dei multifit funziona. Magari, dal Litio incluso in poi, è più opportuno fare i fit solo degli isotopi più abbondanti (anche perché le occorrenze degli isotopi meno abbondanti sono davvero poche).
+- I fit migliorano o peggiorano se si passa da 500 bin a 250 bin?
+- Fare i fit anche sugli istogrammi blu, magari con un divide della canvas.
