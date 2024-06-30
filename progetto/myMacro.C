@@ -34,6 +34,7 @@ void setFitStyle() {
 
 void myMacro() {
   setFitStyle();
+
   // Loading ROOT File
   TFile *file1 = new TFile("myAnalysis.root", "READ");
 
@@ -101,45 +102,73 @@ void myMacro() {
   TCanvas *c_cut17 = new TCanvas("c_cut17", "c_cut17", 1000, 600);
 
   // defining arrays for cuts
-  const Double_t x0[6] = {};
-  const Double_t y0[6] = {};
-  const Double_t x1[6] = {};
-  const Double_t y1[6] = {};
-  const Double_t x2[6] = {};
-  const Double_t y2[6] = {};
-  const Double_t x3[6] = {};
-  const Double_t y3[6] = {};
-  const Double_t x4[6] = {};
-  const Double_t y4[6] = {};
-  const Double_t x5[6] = {};
-  const Double_t y5[6] = {};
-  const Double_t x6[6] = {};
-  const Double_t y6[6] = {};
-  const Double_t x7[6] = {};
-  const Double_t y7[6] = {};
-  const Double_t x8[6] = {};
-  const Double_t y8[6] = {};
-  const Double_t x9[6] = {};
-  const Double_t y9[6] = {};
-  const Double_t x10[6] = {};
-  const Double_t y10[6] = {};
-  const Double_t x11[6] = {};
-  const Double_t y11[6] = {};
-  const Double_t x12[6] = {};
-  const Double_t y12[6] = {};
-  const Double_t x13[6] = {};
-  const Double_t y13[6] = {};
-  const Double_t x14[6] = {};
-  const Double_t y14[6] = {};
-  const Double_t x15[6] = {};
-  const Double_t y15[6] = {};
-  const Double_t x16[6] = {};
-  const Double_t y16[6] = {};
-  const Double_t x17[6] = {};
-  const Double_t y17[6] = {};
+  const Double_t x0[6] = {0.708395, 1.09131,  3.44772,
+                          3.10898,  0.752577, 0.708395};
+  const Double_t y0[6] = {0.751152, 0.797235, 3.08602,
+                          3.42396,  1.04301,  0.751152};
+
+  const Double_t x1[6] = {2.50176, 3.06514, 4.87852, 4.31514, 2.58979, 2.50176};
+  const Double_t y1[6] = {2.56548, 2.47024, 4.17262, 4.82738, 2.94643, 2.56548};
+
+  const Double_t x2[6] = {5.6338, 6.32238, 8.98279, 8.24726, 5.6025, 5.6338};
+  const Double_t y2[6] = {5.5873, 5.48148, 8, 8.74074, 5.94709, 5.5873};
+
+  const Double_t x3[6] = {6.74178, 7.5712, 11.2958, 10.2316, 6.58529, 6.74178};
+  const Double_t y3[6] = {6.44444, 6.40212, 10.254, 10.8466, 7.07937, 6.44444};
+
+  const Double_t x4[6] = {7.6831, 8.9331, 13.1761, 10.7113, 7.71831, 7.6831};
+  const Double_t y4[6] = {7.27381, 7.39286, 11.0833, 12.0833, 7.91667, 7.27381};
+
+  const Double_t x5[6] = {9.46166, 10.5767, 16.5626, 12.2394, 8.15102, 9.46166};
+  const Double_t y5[6] = {8.96032, 8.6164, 12.6111, 13.6958, 10.5476, 8.96032};
+
+  const Double_t x6[6] = {0.838811, 1.03443,  3.40532,
+                          3.1471,   0.838811, 0.838811};
+  const Double_t y6[6] = {0.797386, 0.699346, 2.98693,
+                          3.29194,  1.05882,  0.797386};
+
+  const Double_t x7[6] = {2.625, 2.9243, 4.79049, 4.38556, 2.79225, 2.625};
+  const Double_t y7[6] = {2.44643, 2.3631, 4.08929, 4.95833, 3.07738, 2.44643};
+
+  const Double_t x8[6] = {5.47731, 6.11894, 9.04538, 8.27856, 5.49296, 5.47731};
+  const Double_t y8[6] = {4.91005, 5.07937, 8.31746, 9.07937, 5.84127, 4.91005};
+
+  const Double_t x9[6] = {6.61659, 7.14867, 11.3897, 10.4977, 6.67919, 6.61659};
+  const Double_t y9[6] = {6.14815, 6.12698, 10.2116, 11.1429, 7.37566, 6.14815};
+
+  const Double_t x10[6] = {7.27817, 7.94718, 11.2042, 13, 8.01761, 7.27817};
+  const Double_t y10[6] = {7.84524, 7.22619, 8.08333,
+                           14.8214, 9.03571, 7.84524};
+
+  const Double_t x11[6] = {8.46401, 11.7308, 15.5649, 13.7261, 9.2856, 8.46401};
+  const Double_t y11[6] = {7.18783, 9.17196, 15.4683,
+                           16.5794, 8.88095, 7.18783};
+
+  const Double_t x12[6] = {0.791862, 0.964006, 3.42097,
+                           3.01408,  0.784038, 0.791862};
+  const Double_t y12[6] = {0.809524, 0.73545, 2.82011,
+                           3.2963,   1.02116, 0.809524};
+
+  const Double_t x13[6] = {2.53697, 3.10035, 4.72887, 3.92782, 2.625, 2.53697};
+  const Double_t y13[6] = {2.39881, 2.375, 3.83929, 4.93452, 3.22024, 2.39881};
+
+  const Double_t x14[6] = {5.44601, 6.02504, 8.6698, 7.84038, 5.41471, 5.44601};
+  const Double_t y14[6] = {5.14286, 4.95238, 7.7037, 8.7619, 6.37037, 5.14286};
+
+  const Double_t x15[6] = {6.3975, 7.24257, 11.1549, 9.80908, 6.25665, 6.3975};
+  const Double_t y15[6] = {6.2963, 6.10582, 9.83069, 11.4815, 7.60847, 6.2963};
+
+  const Double_t x16[6] = {7.11972, 8.07042, 12.6655,
+                           10.7993, 7.15493, 7.11972};
+  const Double_t y16[6] = {7.5119, 6.70238, 11.0357, 13.5357, 8.75, 7.5119};
+
+  const Double_t x17[6] = {8.83568, 11.6917, 15.1346,
+                           11.0266, 9.18779, 8.83568};
+  const Double_t y17[6] = {8.37831, 7.39947, 14.0926,
+                           18.2725, 9.83333, 8.37831};
 
   // defining cuts
-  TCutG *myCut0 = new TCutG("myCut1", 6, x0, y0);
+  TCutG *myCut0 = new TCutG("myCut0", 6, x0, y0);
   TCutG *myCut1 = new TCutG("myCut1", 6, x1, y1);
   TCutG *myCut2 = new TCutG("myCut2", 6, x2, y2);
   TCutG *myCut3 = new TCutG("myCut3", 6, x3, y3);
@@ -161,117 +190,117 @@ void myMacro() {
   // creating and filling 1D histos
   // histo0
   TH1D *h21_1_0 = new TH1D("h21_1_0", "{}_{1}H; A_{1}; Entries", 300, 0., 8.);
-  h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1);
+  h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1, "[myCut0]");
 
   TH1D *h21_2_0 = new TH1D("h21_2_0", "{}_{1}H; A_{2}; Entries", 300, 0., 8.);
-  h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1);
+  h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1, "[myCut0]");
 
   TH1D *h31_1_0 = new TH1D("h31_1_0", "{}_{1}H; A_{1}; Entries", 300, 0., 8.);
-  h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1);
+  h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1, "[myCut6]");
 
   TH1D *h31_3_0 = new TH1D("h31_3_0", "{}_{1}H; A_{3}; Entries", 300, 0., 8.);
-  h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1);
+  h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1, "[myCut6]");
 
   TH1D *h32_2_0 = new TH1D("h32_2_0", "{}_{1}H; A_{2}; Entries", 300, 0., 8.);
-  h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1);
+  h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1, "[myCut12]");
 
   TH1D *h32_3_0 = new TH1D("h32_3_0", "{}_{1}H; A_{3}; Entries", 300, 0., 8.);
-  h32_3_0 = h_Acor12->ProjectionY("h32_3_0", 0, -1);
+  h32_3_0 = h_Acor12->ProjectionY("h32_3_0", 0, -1, "[myCut12]");
 
   // histo1
   TH1D *h21_1_1 = new TH1D("h21_1_1", "{}_{2}He; A_{1}; Entries", 300, 0., 9.);
-  h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1);
+  h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1, "[myCut1]");
 
   TH1D *h21_2_1 = new TH1D("h21_2_1", "{}_{2}He; A_{2}; Entries", 300, 0., 9.);
-  h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1);
+  h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1, "[myCut1]");
 
   TH1D *h31_1_1 = new TH1D("h31_1_1", "{}_{2}He; A_{1}; Entries", 300, 0., 9.);
-  h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1);
+  h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1, "[myCut7]");
 
   TH1D *h31_3_1 = new TH1D("h31_3_1", "{}_{2}He; A_{3}; Entries", 300, 0., 9.);
-  h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1);
+  h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1, "[myCut7]");
 
   TH1D *h32_2_1 = new TH1D("h32_2_1", "{}_{2}He; A_{2}; Entries", 300, 0., 9.);
-  h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1);
+  h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1, "[myCut13]");
 
   TH1D *h32_3_1 = new TH1D("h32_3_1", "{}_{2}He; A_{3}; Entries", 300, 0., 9.);
-  h32_3_1 = h_Acor13->ProjectionY("h32_3_1", 0, -1);
+  h32_3_1 = h_Acor13->ProjectionY("h32_3_1", 0, -1, "[myCut13]");
 
   // histo2
   TH1D *h21_1_2 = new TH1D("h21_1_2", "{}_{3}Li; A_{1}; Entries", 300, 2., 18.);
-  h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1);
+  h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1, "[myCut2]");
 
   TH1D *h21_2_2 = new TH1D("h21_2_2", "{}_{3}Li; A_{2}; Entries", 300, 2., 18.);
-  h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1);
+  h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1, "[myCut2]");
 
   TH1D *h31_1_2 = new TH1D("h31_1_2", "{}_{3}Li; A_{1}; Entries", 300, 2., 18.);
-  h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1);
+  h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1, "[myCut8]");
 
   TH1D *h31_3_2 = new TH1D("h31_3_2", "{}_{3}Li; A_{3}; Entries", 300, 2., 18.);
-  h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1);
+  h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1, "[myCut8]");
 
   TH1D *h32_2_2 = new TH1D("h32_2_2", "{}_{3}Li; A_{2}; Entries", 300, 2., 18.);
-  h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1);
+  h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1, "[myCut14]");
 
   TH1D *h32_3_2 = new TH1D("h32_3_2", "{}_{3}Li; A_{3}; Entries", 300, 2., 18.);
-  h32_3_2 = h_Acor14->ProjectionY("h32_3_2", 0, -1);
+  h32_3_2 = h_Acor14->ProjectionY("h32_3_2", 0, -1, "[myCut14]");
 
   // histo3
   TH1D *h21_1_3 = new TH1D("h21_1_3", "{}_{4}Be; A_{1}; Entries", 300, 4., 20.);
-  h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1);
+  h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1, "[myCut3]");
 
   TH1D *h21_2_3 = new TH1D("h21_2_3", "{}_{4}Be; A_{2}; Entries", 300, 4., 20.);
-  h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1);
+  h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1, "[myCut3]");
 
   TH1D *h31_1_3 = new TH1D("h31_1_3", "{}_{4}Be; A_{1}; Entries", 300, 4., 20.);
-  h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1);
+  h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1, "[myCut9]");
 
   TH1D *h31_3_3 = new TH1D("h31_3_3", "{}_{4}Be; A_{3}; Entries", 300, 4., 20.);
-  h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1);
+  h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1, "[myCut9]");
 
   TH1D *h32_2_3 = new TH1D("h32_2_3", "{}_{4}Be; A_{2}; Entries", 300, 4., 20.);
-  h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1);
+  h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1, "[myCut15]");
 
   TH1D *h32_3_3 = new TH1D("h32_3_3", "{}_{4}Be; A_{3}; Entries", 300, 4., 20.);
-  h32_3_3 = h_Acor15->ProjectionY("h32_3_3", 0, -1);
+  h32_3_3 = h_Acor15->ProjectionY("h32_3_3", 0, -1, "[myCut15]");
 
   // histo4
   TH1D *h21_1_4 = new TH1D("h21_1_4", "{}_{5}B; A_{1}; Entries", 300, 4., 22.);
-  h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1);
+  h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1, "[myCut4]");
 
   TH1D *h21_2_4 = new TH1D("h21_2_4", "{}_{5}B; A_{2}; Entries", 300, 4., 22.);
-  h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1);
+  h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1, "[myCut4]");
 
   TH1D *h31_1_4 = new TH1D("h31_1_4", "{}_{5}B; A_{1}; Entries", 300, 4., 22.);
-  h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1);
+  h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1, "[myCut10]");
 
   TH1D *h31_3_4 = new TH1D("h31_3_4", "{}_{5}B; A_{3}; Entries", 300, 4., 22.);
-  h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1);
+  h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1, "[myCut10]");
 
   TH1D *h32_2_4 = new TH1D("h32_2_4", "{}_{5}B; A_{2}; Entries", 300, 4., 22.);
-  h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1);
+  h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1, "[myCut16]");
 
   TH1D *h32_3_4 = new TH1D("h32_3_4", "{}_{5}B; A_{3}; Entries", 300, 4., 22.);
-  h32_3_4 = h_Acor16->ProjectionY("h32_3_4", 0, -1);
+  h32_3_4 = h_Acor16->ProjectionY("h32_3_4", 0, -1, "[myCut16]");
 
   // histo5
   TH1D *h21_1_5 = new TH1D("h21_1_5", "{}_{6}C; A_{1}; Entries", 300, 4., 24.);
-  h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1);
+  h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1, "[myCut5]");
 
   TH1D *h21_2_5 = new TH1D("h21_2_5", "{}_{6}C; A_{2}; Entries", 300, 4., 24.);
-  h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1);
+  h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1, "[myCut5]");
 
   TH1D *h31_1_5 = new TH1D("h31_1_5", "{}_{6}C; A_{1}; Entries", 300, 4., 24.);
-  h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1);
+  h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1, "[myCut11]");
 
   TH1D *h31_3_5 = new TH1D("h31_3_5", "{}_{6}C; A_{3}; Entries", 300, 4., 24.);
-  h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1);
+  h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1, "[myCut11]");
 
   TH1D *h32_2_5 = new TH1D("h32_2_5", "{}_{6}C; A_{2}; Entries", 300, 4., 24.);
-  h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1);
+  h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1, "[myCut17]");
 
   TH1D *h32_3_5 = new TH1D("h32_3_5", "{}_{6}C; A_{3}; Entries", 300, 4., 24.);
-  h32_3_5 = h_Acor17->ProjectionY("h32_3_5", 0, -1);
+  h32_3_5 = h_Acor17->ProjectionY("h32_3_5", 0, -1, "[myCut17]");
 
   // drawing on canvas and cosmetics
   h21_1_0->SetLineColor(kBlue);
