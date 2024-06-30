@@ -63,6 +63,7 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "testList.C": "cpp"
+        "testList.C": "cpp",
+        "list": "cpp"
     }
 }
