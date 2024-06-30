@@ -64,6 +64,7 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "testList.C": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "myMacro.C": "cpp"
     }
 }
