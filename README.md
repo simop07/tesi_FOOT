@@ -25,3 +25,4 @@
 - I fit migliorano o peggiorano se si passa da 500 bin a 250 bin? -> dire che ho ridotto il numero dei bin perché i grafici sembravano piuttosto "frastagliati"
 - Fare i fit anche sugli istogrammi blu, magari con un divide della canvas.
 - Le barre di errore sul multigraph le lascio perdere? Bisognerebbe fare una propagazione degli errori sull'errore percentuale, attraverso gli errori dei parametri dati dal fit.
+- Rimuovere con SetOptFit i dati del fit (visto che lì appaiono i risultati di un unico fit, mentre andrebbero messi i risultati di più fit).
