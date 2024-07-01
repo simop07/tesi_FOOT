@@ -1358,8 +1358,19 @@
 	Dalle \hyperref[eq:atomic_number]{Eq. 3.2}, \hyperref[eq:beta_beam]{Eq. 3.3} e \hyperref[eq:stopping_power]{Eq. 3.4} si ricavano sia la distribuzione di $z$, rappresentata in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sia la distribuzione di $\Delta E_{TW}$ in funzione del TOF, raffigurata in \hyperref[fig:atomic_numbersb]{Fig. 3.1b}.
 	\begin{figure}[H]
 		\centering
-		\subfloat[Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2}]{\label{fig:atomic_numbersa}\includegraphics[width=.49\linewidth]{}}\hfill
-		\subfloat[Distribuzione di $\Delta E_{TW}$ in funzione del TOF ]{\label{fig:atomic_numbersb}\includegraphics[width=.49\linewidth]{}}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{msd.jpg}
+			\caption{Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2}.}
+			\label{fig:atomic_numbersa}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[t]{0.49\textwidth}
+			\centering
+			\includegraphics[width=\textwidth, scale=0.50]{msd.jpg}
+			\caption{Distribuzione di $\Delta E_{TW}$ in funzione del TOF.}
+			\label{fig:atomic_numbersb}
+		\end{subfigure}
 		\caption{Distribuzioni utilizzate per l'identificazione del numero atomico $z$ dei frammenti secondari considerati.}
 		\label{fig:atomic_numbers}
 	\end{figure}
@@ -1391,19 +1402,19 @@
 	$A_1$, $A_2$ e $A_3$ non sono stime indipendenti poiché, prese a due a due, sono legate a grandezze fisiche misurate con il medesimo sub-detector. Nei paragrafi successivi, durante l'analisi delle incertezze da associare alla miglior stima di $A$, tale correlazione verrà analizzata più a fondo. Le distribuzioni dei numeri di massa $A_1$, $A_2$ e $A_3$ dei frammenti considerati nell'analisi sono rappresentate rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{}
+		\includegraphics[width=0.9\linewidth]{msd.jpg}
 		\caption{Distribuzioni del numero di massa A attraverso il TOF e la tracking region.}
 		\label{fig:a1}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{}
+		\includegraphics[width=0.9\linewidth]{msd.jpg}
 		\caption{Distribuzioni del numero di massa A attraverso il TOF e il CALO.}
 		\label{fig:a2}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.9\linewidth]{}
+		\includegraphics[width=0.9\linewidth]{msd.jpg}
 		\caption{Distribuzioni del numero di massa A attraverso la tracking region e il CALO.}
 		\label{fig:a3}
 	\end{figure}
@@ -1432,7 +1443,7 @@
 		\item Augmented Lagrangian Method.
 	\end{itemize}
 	
-	\subsection{Metodo del minimo $\chi^2$}
+	\subsection{Metodo del minimo \texorpdfstring{$\chi^2$}{chi}}
 	Il metodo del minimo $\chi^2$ si fonda sul test del $\chi^2$, un test probabilistico che fornisce dei criteri con cui è possibile verificare la consistenza di ipotesi teoriche con un set di dati sperimentali. Nello specifico, il test del $\chi^2$ si basa sulla valutazione della funzione $\chi^2$, espressa nella \hyperref[eq:chi_square_method]{Eq. 3.5}, che esprime la discrepanza tra la teoria e i dati sperimentali attraverso la somma dei quadrati delle differenze tra i valori misurati $y_k$ e la relazione funzionale dei valori attesi $f\left(x_k;\alpha_j\right)$ dipendente dalle misure $x_k$ e dai parametri $\alpha_j$:
 	\begin{equation}
 		\chi^2=\sum_k=1^N\left(\frac{y_k-f\left(x_k;\alpha_j\right)}{\sigma_k}\right)^2
@@ -1442,15 +1453,15 @@
 	
 	Applicando tale metodo all'analisi in esame, si ottiene:
 	\begin{equation}
-		\chi^2=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}+\transp{\vect{A}}\matr{B}\vect{A}
+		\chi^2=\frac{\left(TOF-T\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-P\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-K\right)^2}{\sigma^2_{E_k}}+\transp{\vect{A}}\matr{B}\vect{A}
 		\label{eq:chi_square}
 	\end{equation}
 	dove $TOF$, $p$ ed $E_k$ sono le misure delle grandezze fisiche ricostruite tramite l'apparato sperimentale di FOOT, $\sigma_{TOF}$, $\sigma_{p}$ e $\sigma_{E_k}$ le rispettive incertezze e $T$, $P$ ed $K$ sono tre dei quattro parametri di minimizzazione. La \hyperref[eq:chi_square]{Eq. 3.6} contiene anche il vettore $\vect{A}$ (e il suo trasposto $\transp{\vect{A}}$) dato dalla seguente espressione:
 	\begin{equation}
 		\begin{pmatrix}
-			A_1-\overline{A}\\
-			A_2-\overline{A} \\
-			A_3-\overline{A}\\
+			A_1-A\\
+			A_2-A \\
+			A_3-A\\
 		\end{pmatrix}
 		\label{eq:vector_A}
 	\end{equation}
@@ -1462,9 +1473,9 @@
 	dove i termini della matrice di correlazione $\matr{C}$ sono dati dalla \hyperref[eq:correlation_matrix]{Eq. 3.9} \cite{foot_cdr,valle2019design}.
 	\begin{equation}
 		\begin{pmatrix}
-			\frac{\partial A_1}{\partial T}dT&\frac{\partial A_1}{\partial p}dp&0\\
+			\frac{\partial A_1}{\partial T}dT&\frac{\partial A_1}{\partial P}dP&0\\
 			\frac{\partial A_2}{\partial T}dT&0&\frac{\partial A_2}{\partial K}dK\\
-			0&\frac{\partial A_3}{\partial p}dp&\frac{\partial A_3}{\partial K}dK\\
+			0&\frac{\partial A_3}{\partial P}dP&\frac{\partial A_3}{\partial K}dK\\
 		\end{pmatrix}
 		\label{eq:correlation_matrix}
 	\end{equation}
@@ -1473,14 +1484,17 @@
 	\subsection{Augmented Lagrangian Method}
 	L'Augmented Lagrangian Method (ALM) è un algoritmo con cui è possibile affrontare un problema di minimizzazione vincolata di una funzione $f\left(\vect{x}\right)$ a più variabili in un problema di minimizzazione non vincolato, caratterizzato però da uno spazio dei parametri maggiore. L'ALM è un metodo dei moltiplicatori di Lagrange ``modificato'' in cui la minimizzazione della funzione lagrangiana $\mathcal{L}\left(\vect{x};\vect{\lambda}\right)$ rispetto alla variabile vettoriale $\vect{x}$ prevista dal metodo dei moltiplicatori di Lagrange viene sostituita dalla minimizzazione di una lagrangiana ``aumentata'' (augmented) $\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)$ definita come:
 	\begin{equation}
-		\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)=\mathcal{L}\left(\vect{x};\vect{\lambda}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)=f\left(\vect{x}\right)+\sum_{i=1}^{m}\lambda_ic_i\left(\vect{x}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)
+		\begin{aligned}
+			\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)&=\mathcal{L}\left(\vect{x};\vect{\lambda}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)=\\
+			&=f\left(\vect{x}\right)+\sum_{i=1}^{m}\lambda_ic_i\left(\vect{x}\right)+\frac{1}{2\mu}\sum_{i=1}^{m}c_i^2\left(\vect{x}\right)
+		\end{aligned}
 		\label{eq:augmented_lagrangian_funct}
 	\end{equation}
 	dove $f\left(\vect{x}\right)$ è la funzione originaria da minimizzare, $\vect{\lambda}$ è il vettore $m$-dimensionale che contiene i moltiplicatori di Lagrange $\lambda_i$ associati agli $m$ vincoli $c_i\left(\vect{x}\right)$ e $\mu$ è un parametro positivo. L'ultimo termine di somma della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10} è chiamato termine di penalità ed è una funzione dei vincoli del problema pesata con un parametro di penalità $\mu$; se i vincoli sono nulli, il termine di penalità si annulla mentre è grande se $c_i\ne0$ e $\mu\rightarrow0$. Nell'ALM si procede per minimizzazioni non vincolate successive della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10}: a partire da una soluzione $\left(\vect{x}^0,\vect{\lambda}^0\right)$ del problema di minimizzazione non vincolato di $f\left(\vect{x}\right)$, alla $k$-esima interazione si ottengono nuovi valori $\left(\vect{x}^k,\vect{\lambda}^k\right)$ e si modifica $\mu$ fino all'interazione in cui si ricava il vettore $\overline{\vect{x}}$, punto dello spazio dei parametri in cui la $\mathcal{L}\left(\vect{x};\vect{\lambda},\mu\right)$ raggiunge un valore minimo\footnote{In realtà il processo di ottimizzazione si interrompe nel momento in cui si raggiunge il grado di tolleranza fissato all'inizio dell'ALM.} \cite{Cho2016-st}.
 	
 	Applicando tale metodo all'analisi in esame, i cui parametri sono $\left(T,P,K,A\right)$, si ottiene che il primo termine della \hyperref[eq:augmented_lagrangian_funct]{Eq. 3.10} è analogo a quello della \hyperref[eq:chi_square]{Eq. 3.6}:
 	\begin{equation}
-		f\left(T,P,K\right)=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}
+		f\left(T,P,K\right)=\frac{\left(TOF-T\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-P\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-K\right)^2}{\sigma^2_{E_k}}
 		\label{eq:first_term_ALM}
 	\end{equation}
 	mentre gli ultimi due sono dati da:
@@ -1491,7 +1505,7 @@
 	dove $c_i\left(A\right)=A_i-A$ \cite{valle2019design}. Dunque, dalle \hyperref[eq:first_term_ALM]{Eq. 3.11} e \hyperref[eq:other_terms_ALM]{Eq. 3.12} si ottiene la seguente funzione $\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)$:
 	\begin{equation}
 		\begin{aligned}
-			\mathcal{L}_{ALM}\left(T,P,K,A;\vect{\lambda},\mu\right)&=\frac{\left(TOF-\overline{TOF}\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-\overline{p}\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-\overline{E_k}\right)^2}{\sigma^2_{E_k}}+\\
+			\mathcal{L}_{ALM}\left(T,P,K,A;\vect{\lambda},\mu\right)&=\frac{\left(TOF-T\right)^2}{\sigma^2_{TOF}}+\frac{\left(p-P\right)^2}{\sigma^2_{p}}+\frac{\left(E_k-K\right)^2}{\sigma^2_{E_k}}+\\
 			&+\lambda_1\left(A_1-A\right)+\lambda_2\left(A_2-A\right)+\lambda_3\left(A_3-A\right)+\\
 			&+\frac{1}{2\mu}\left(\left(A_1-A\right)^2+\left(A_2-A\right)^2+\left(A_3-A\right)^2\right)
 		\end{aligned}
