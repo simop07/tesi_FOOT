@@ -38,7 +38,7 @@ void setFitStyle() {
 
 void myMacro() {
   // Loading ROOT File
-  TFile *file1 = new TFile("myAnalysis.root", "READ");
+  TFile *file1 = new TFile("analisi/myAnalysis.root", "READ");
 
   // Creating ROOT File
   TFile *file2 = new TFile("analisi/myMacro.root", "RECREATE");
