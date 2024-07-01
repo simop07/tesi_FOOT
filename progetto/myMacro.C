@@ -791,7 +791,7 @@ void myMacro() {
   v_black_a1_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a1_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a1_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a1_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a1_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -802,7 +802,7 @@ void myMacro() {
   v_black_a2_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a2_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a2_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a2_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a2_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -813,7 +813,7 @@ void myMacro() {
   v_black_a3_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a3_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a3_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a3_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a3_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -1021,7 +1021,7 @@ void myMacro() {
   v_blue_a1_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                           (f_cut0_tot->GetParameter(4)));
   v_blue_a1_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_blue_a1_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_blue_a1_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                           (f_cut0_tot->GetParameter(7)));
   v_blue_a1_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -1032,7 +1032,7 @@ void myMacro() {
   v_blue_a2_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                           (f_cut0_tot->GetParameter(4)));
   v_blue_a2_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_blue_a2_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_blue_a2_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                           (f_cut0_tot->GetParameter(7)));
   v_blue_a2_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -1043,7 +1043,7 @@ void myMacro() {
   v_blue_a3_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                           (f_cut0_tot->GetParameter(4)));
   v_blue_a3_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_blue_a3_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
+  v_blue_a3_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
                           (f_cut0_tot->GetParameter(7)));
   v_blue_a3_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -1225,19 +1225,19 @@ void myMacro() {
   v_blue_a3_mean.push_back(f_cut5_tot->GetParameter(1));
 
   // creating TGrapherrors and cosmetics
-  TGraphErrors *a1_black =
-      new TGraphErrors(12, &v_black_a1_mean[0], &v_black_a1_err[0]);
-  TGraphErrors *a2_black =
-      new TGraphErrors(12, &v_black_a2_mean[0], &v_black_a2_err[0]);
-  TGraphErrors *a3_black =
-      new TGraphErrors(12, &v_black_a3_mean[0], &v_black_a3_err[0]);
+  TGraphErrors *a1_black = new TGraphErrors(
+      (int)v_black_a1_mean.size(), &v_black_a1_mean[0], &v_black_a1_err[0]);
+  TGraphErrors *a2_black = new TGraphErrors(
+      (int)v_black_a2_mean.size(), &v_black_a2_mean[0], &v_black_a2_err[0]);
+  TGraphErrors *a3_black = new TGraphErrors(
+      (int)v_black_a3_mean.size(), &v_black_a3_mean[0], &v_black_a3_err[0]);
 
-  TGraphErrors *a1_blue =
-      new TGraphErrors(12, &v_blue_a1_mean[0], &v_blue_a1_err[0]);
-  TGraphErrors *a2_blue =
-      new TGraphErrors(12, &v_blue_a2_mean[0], &v_blue_a2_err[0]);
-  TGraphErrors *a3_blue =
-      new TGraphErrors(12, &v_blue_a3_mean[0], &v_blue_a3_err[0]);
+  TGraphErrors *a1_blue = new TGraphErrors(
+      (int)v_blue_a1_mean.size(), &v_blue_a1_mean[0], &v_blue_a1_err[0]);
+  TGraphErrors *a2_blue = new TGraphErrors(
+      (int)v_blue_a2_mean.size(), &v_blue_a2_mean[0], &v_blue_a2_err[0]);
+  TGraphErrors *a3_blue = new TGraphErrors(
+      (int)v_blue_a3_mean.size(), &v_blue_a3_mean[0], &v_blue_a3_err[0]);
 
   // defining multigraph
   TMultiGraph *black = new TMultiGraph();
@@ -1275,8 +1275,8 @@ void myMacro() {
   a3_blue->SetMarkerStyle(20);
   a3_blue->SetMarkerSize(1.5);
 
-  black->SetTitle("Black result; Mean; \\U0025 error");
-  blue->SetTitle("Blue result; Mean; \\U0025 error");
+  black->SetTitle("Black result; Mean; \u0025 error");
+  blue->SetTitle("Blue result; Mean; \u0025 error");
 
   // canvas for multigraph
   TCanvas *c_multigr = new TCanvas("c_multigr", "c_multigr", 1000, 600);
