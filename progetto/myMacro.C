@@ -7,6 +7,7 @@
 #include "TGraphErrors.h"
 #include "TH2.h"
 #include "TLatex.h"
+#include "TLegend.h"
 #include "TMultiGraph.h"
 #include "TPad.h"
 #include "TROOT.h"
@@ -1179,23 +1180,23 @@ void myMacro() {
 
   // histo4
   h21_1_4->Fit(f_cut4_1, "R");
-  v_black_a1_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut4_1->GetParameter(1));
+  v_blue_a1_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
+                          (f_cut4_1->GetParameter(1)));
+  v_blue_a1_mean.push_back(f_cut4_1->GetParameter(1));
 
   h21_1_4->Fit(f_cut4_2, "R+");
 
   h21_2_4->Fit(f_cut4_1, "R");
-  v_black_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut4_1->GetParameter(1));
+  v_blue_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
+                          (f_cut4_1->GetParameter(1)));
+  v_blue_a2_mean.push_back(f_cut4_1->GetParameter(1));
 
   h21_2_4->Fit(f_cut4_2, "R+");
 
   h31_3_4->Fit(f_cut4_1, "R");
-  v_black_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut4_1->GetParameter(1));
+  v_blue_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
+                          (f_cut4_1->GetParameter(1)));
+  v_blue_a3_mean.push_back(f_cut4_1->GetParameter(1));
 
   h31_3_4->Fit(f_cut4_2, "R+");
 
@@ -1209,19 +1210,19 @@ void myMacro() {
 
   // histo5
   h21_1_5->Fit(f_cut5_tot, "R");
-  v_black_a1_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
-                           (f_cut5_tot->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut5_tot->GetParameter(1));
+  v_blue_a1_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
+                          (f_cut5_tot->GetParameter(1)));
+  v_blue_a1_mean.push_back(f_cut5_tot->GetParameter(1));
 
   h21_2_5->Fit(f_cut5_tot, "R");
-  v_black_a2_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
-                           (f_cut5_tot->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut5_tot->GetParameter(1));
+  v_blue_a2_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
+                          (f_cut5_tot->GetParameter(1)));
+  v_blue_a2_mean.push_back(f_cut5_tot->GetParameter(1));
 
   h31_3_5->Fit(f_cut5_tot, "R");
-  v_black_a3_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
-                           (f_cut5_tot->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut5_tot->GetParameter(1));
+  v_blue_a3_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
+                          (f_cut5_tot->GetParameter(1)));
+  v_blue_a3_mean.push_back(f_cut5_tot->GetParameter(1));
 
   // creating TGrapherrors and cosmetics
   TGraphErrors *a1_black =
@@ -1414,9 +1415,17 @@ void myMacro() {
   c_cut17->cd(2);
   h32_3_5->DrawCopy();
 
+  // define legend
+  TLegend *leg1 = new TLegend(.70, .7, .9, .9, "Legenda");
+  leg1->SetFillColor(0);
+  leg1->AddEntry(a1_black, "A_{1} ricostruito", "P");
+  leg1->AddEntry(a2_black, "A_{2} ricostruito", "P");
+  leg1->AddEntry(a3_black, "A_{3} ricostruito", "P");
+
   // draw multigraph
   c_multigr->cd(1);
   black->Draw("AP");
+  leg1->Draw("same");
   c_multigr->cd(2);
   blue->Draw("AP");
 
