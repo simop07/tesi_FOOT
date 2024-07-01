@@ -7,11 +7,8 @@
 - Inserire ref. sul pdf da cui hai ricavato il valore delle costanti
 - Scegliere in modo opportuno quali frammenti selezionare per i grafici, aggiungere per esempio che si sono scelti (tra tutti i frammenti) non solo i frammenti più abbondanti ma anche gli isotopi più abbondanti di quei frammenti.
 - Aggiungere sulle tabelle del terzo capitolo il numero atomico dei frammenti selezionati.
-- Controlla dalla citazione 149 esclusa in poi per la bibliografia.
-- Il secondo termine dell'ALM presenta un più o un meno?
+- Controlla dalla citazione 155 esclusa in poi per la bibliografia.
 - Decidi se mettere pagine bianche prima dell'inizio dei capitoli.
-- Il target è una targhetta di carbonio di 0.5 mm di spessore.
-- Il target si trova a una distanza di 29 cm dallo SC
 - Decidere se mettere una dedica
 
 ## CODICE:
@@ -27,3 +24,4 @@
 - Le barre di errore sul multigraph le lascio perdere? Bisognerebbe fare una propagazione degli errori sull'errore percentuale, attraverso gli errori dei parametri dati dal fit.
 - Rimuovere con SetOptFit i dati del fit (visto che lì appaiono i risultati di un unico fit, mentre andrebbero messi i risultati di più fit).
 - Cambiando alcuni bin nella simulazione alcuni fit a multi gaussiana sono diventati migliori.
+- Il secondo termine dell'ALM presenta un più o un meno?
