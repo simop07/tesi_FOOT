@@ -207,12 +207,13 @@
 	\begin{dedication}
 		PROVA
 	\end{dedication}
-	\chapter*{Sommario}
-	L'adroterapia è una tecnica utilizzata nelle cure oncologiche e consiste nell'irradiare una regione cancerosa con un fascio di particelle adroniche cariche, al fine di creare danni irreparabili al DNA delle cellule tumorali. Penetrando nel corpo umano, tali particelle rilasciano una dose di energia molto elevata nella regione del picco di Bragg, situata quasi al termine della profondità raggiunta nei tessuti, mentre il rilascio di dose nel canale di ingresso è piuttosto basso. Tali caratteristiche rendono l'adroterapia più adatta al trattamento di tumori profondi rispetto alle tecniche radioterapiche convenzionali, poiché il profilo di dose della prima massimizza i danni biologici nella zona tumorale e li limita negli organi sani adiacenti. Il problema principale dell'adroterapia risiede nei processi di frammentazione nucleare del target e del fascio incidente. Infatti, essendo molto complesso rivelare i frammenti secondari prodotti dalle interazioni nucleari, risulta altrettanto difficile determinare con accuratezza l'energia rilasciata dai frammenti stessi e, di conseguenza, i danni biologici che potrebbero provocare nel corpo umano. Per tali motivi, nel $2017$ è nato FOOT, un esperimento il cui scopo principale è quello di misurare le sezioni d'urto differenziali rispetto all'energia e all'angolo di emissione dei frammenti prodotti nelle interazioni nucleari che intercorrono tra il fascio adroterapico e la regione tissutale irradiata. In questo lavoro di tesi si analizzano dei dati ottenuti da simulazioni Monte Carlo in cui un bersaglio di \ce{C} viene irradiato da un fascio di \ce{C} dall'energia di $200 \mbox{ MeV}$. Attraverso un software di analisi si identificano gli isotopi dei frammenti maggiormente prodotti mediante la ricostruzione dei loro numeri atomici $z$ e di massa $A$. Si ottengono stime di $z$ con una precisione percentuale che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{12}_6C}, mentre le migliori risoluzioni di $A$ si attestano al $\%$ per l'\ce{^{16}_8C}.
+	\chapter*{Sommario (TBD)}
+	L'adroterapia è una tecnica utilizzata nelle cure oncologiche e consiste nell'irradiare una regione cancerosa con un fascio di particelle adroniche cariche, per creare danni irreparabili al DNA delle cellule tumorali. Penetrando nel corpo umano, tali particelle rilasciano una elevata quantità di energia nella regione del picco di Bragg, situata in prossimità della massima profondità raggiunta dalle particele nei tessuti, mentre il rilascio nel canale di ingresso è piuttosto basso. Tali caratteristiche rendono l'adroterapia più adatta per trattamento di tumori profondi rispetto alle tecniche radioterapiche convenzionali, poiché il profilo di dose dell'adroterapia massimizza i danni biologici nella zona tumorale e li limita negli organi sani adiacenti. Il problema principale dell'adroterapia risiede nei processi di frammentazione nucleare del target e del fascio incidente. Infatti, vista la complessità nel rivelare i frammenti secondari prodotti dalle interazioni nucleari, risulta altrettanto difficile determinare con accuratezza l'energia rilasciata dai frammenti stessi e, di conseguenza, i danni biologici che potrebbero provocare nel corpo umano. Per tali motivi, nel $2017$ è nato FOOT, un esperimento il cui scopo principale è quello di misurare le sezioni d'urto differenziali rispetto all'energia e all'angolo di emissione dei frammenti prodotti nelle interazioni nucleari che intercorrono tra il fascio adroterapico e la regione tissutale irradiata. In questo lavoro di tesi si analizzano i dati ottenuti da simulazioni Monte Carlo in cui un bersaglio di carbonio \ce{C} viene irradiato da un fascio di ioni \ce{C} dall'energia di $200 \mbox{ MeV}$. Attraverso un software di analisi si identificano gli isotopi dei frammenti maggiormente prodotti mediante la ricostruzione dei loro numeri atomici $z$ e di massa $A$. Si ottengono stime di $z$ con una precisione percentuale che va dal $5.3\%$ dell'idrogeno \ce{H} al $2.3\%$ del \ce{C}, mentre le migliori risoluzioni di $A$ si attestano al $\%$ per l'\ce{^{12}_6C}.
 	\newpage
 	\tableofcontents
 	\newpage
 	\addcontentsline{toc}{chapter}{Introduzione}
+	\markboth{INTRODUZIONE}{}
 	\chapter*{Introduzione}
 	La conoscenza scientifica e le tecniche sperimentali sviluppate nei progetti di ricerca della fisica fondamentale hanno permesso, nel corso del tempo, un crescente coinvolgimento della fisica in molteplici ambiti del sapere, dall'intelligenza artificiale alla medicina, dai beni culturali ai cambiamenti climatici. Ciò è stato possibile grazie alla naturale interdisciplinarità della scienza e dei suoi metodi, determinanti per il sistema sociale, economico e politico attuale. In questa tesi l'obiettivo è descrivere come i processi di frammentazione nucleare prodotti dall'interazione di adroni e nuclei con la materia siano interessanti non solo per la fisica fondamentale, ma anche nelle applicazioni mediche, dall'adroterapia alla radioprotezione spaziale. I frammenti prodotti dalle interazioni nucleari influenzano notevolmente lo spettro energetico e la diffusione nella materia delle particelle da cui hanno origine, pertanto è necessario misurare più accuratamente le sezioni d'urto delle frammentazioni. Riferendosi agli esempi sopra citati, misure più precise garantirebbero stime più accurate del rilascio di dose adroterapico, migliorando ulteriormente la definizione e la personalizzazione dei piani di trattamento a cui si sottopongono i pazienti affetti da neoplasie, e consentirebbero valutazioni più complete dei rischi a cui si espongono gli astronauti nella missioni spaziali.
 	
@@ -1053,7 +1054,7 @@
 		\end{subfigure}
 		\caption{Proprietà e applicazioni del picco di Bragg.}
 	\end{figure}
-	Tornando alla \hyperref[fig:photon]{Fig. 1.17}, è evidente che il rilascio energetico del fascio di atomi di carbonio (\ce{C}), a differenza del caso dei protoni (\ce{p}), prosegue anche dopo il BP.\footnote{Un rilascio energetico dopo il BP potrebbe ledere regioni sane situate dopo il volume tumorale, pertanto è necessario comprendere la sua cagione.} Osservando l'andamento quadratico $\propto\frac{z^2}{\beta^2}$ della \hyperref[eq:bethe_bloch]{Eq. 1.35}, pur essendo $z_p<z_C$, si ha che $\frac{dE_p}{dx}>\frac{dE_C}{dx}$ in quanto le energie cinetiche dei carboni sono maggiori di quelle dei protoni.\footnote{Solitamente le energie cinetiche $K$ sono $K_p=250 \mbox{ MeV}$ e $K_C=4800\mbox{ MeV}=12\mbox{ u}\cdot400\mbox{ MeV/u}$.} In effetti, il profilo di dose rilasciato dai fasci di carbonio è generalmente maggiore di quello dei protoni: ciò spiegherebbe i maggiori valori di \hyperref[par:let]{LET} e \hyperref[par:rbe]{RBE} per il carbonio della \hyperref[tab:let_rbe]{Tab. 1.2}, ma non il rilascio di energia dopo il BP da parte del carbonio. \'E possibile comprendere tale effetto solo analizzando le interazioni nucleari delle due particelle.
+	Tornando alla \hyperref[fig:photon]{Fig. 1.17}, è evidente che il rilascio energetico del fascio di atomi di carbonio \ce{C}, a differenza del caso dei protoni \ce{p}, prosegue anche dopo il BP.\footnote{Un rilascio energetico dopo il BP potrebbe ledere regioni sane situate dopo il volume tumorale, pertanto è necessario comprendere la sua cagione.} Osservando l'andamento quadratico $\propto\frac{z^2}{\beta^2}$ della \hyperref[eq:bethe_bloch]{Eq. 1.35}, pur essendo $z_p<z_C$, si ha che $\frac{dE_p}{dx}>\frac{dE_C}{dx}$ in quanto le energie cinetiche dei carboni sono maggiori di quelle dei protoni.\footnote{Solitamente le energie cinetiche $K$ sono $K_p=250 \mbox{ MeV}$ e $K_C=4800\mbox{ MeV}=12\mbox{ u}\cdot400\mbox{ MeV/u}$.} In effetti, il profilo di dose rilasciato dai fasci di carbonio è generalmente maggiore di quello dei protoni: ciò spiegherebbe i maggiori valori di \hyperref[par:let]{LET} e \hyperref[par:rbe]{RBE} per il carbonio della \hyperref[tab:let_rbe]{Tab. 1.2}, ma non il rilascio di energia dopo il BP da parte del carbonio. \'E possibile comprendere tale effetto solo analizzando le interazioni nucleari delle due particelle.
 	
 	\subsubsection{Interazioni nucleari}\label{par:interazioni_nucleari}
 	Pur essendo le interazioni elettromagnetiche più frequenti di quelle nucleari, gli effetti di queste ultime risultano fondamentali nelle applicazioni adroterapiche. Per interagire con i nuclei della materia, le particelle cariche devono possedere un'energia sufficientemente elevata da consentire un superamento della barriera di potenziale coulombiana dovuta alle cariche di elettroni e protoni, per fare in modo che i nuclei del proiettile e del bersaglio siano molto vicini tra di loro. Infatti, le forze nucleari (la forza forte che lega i nucleoni\footnote{Protoni e neutroni.} all'interno del nucleo atomico), a differenza della forza elettromagnetica, possiedono una natura a corto raggio d'azione dell'ordine del raggio dei nucleoni, pari a $\approx1\mbox{ fm}$. Tra i vari effetti delle interazioni nucleari si possono citare il grazing (in cui il nucleo proiettile effettua un ``passaggio radente'' al nucleo bersaglio generando, ad esempio, il trasferimento di più nucleoni), le collisioni anelastiche (dove vi è una grande dissipazione di energia e i nuclei possono restare sostanzialmente intatti o trasformarsi radicalmente) e le fusioni nucleari (in cui si genera un nucleo composto che decade dopo $10^{-18}$--$10^{-19}\mbox{ s}$ o emettendo raggi $\gamma$, protoni, neutroni, particele $\alpha$ o, per fissione, in frammenti più piccoli) \cite{treccani_ioni_pesanti}. Nei range energetici utilizzati in adroterapia ($\approx100\mbox{ MeV/u}$) l'interazione nucleare più comune è la frammentazione.
@@ -1361,14 +1362,14 @@
 	Dalle \hyperref[eq:atomic_number]{Eq. 3.2}, \hyperref[eq:beta_beam]{Eq. 3.3} e \hyperref[eq:stopping_power]{Eq. 3.4} si ricavano sia la distribuzione di $z$, rappresentata in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sia la distribuzione di $\Delta E_{TW}$ in funzione del TOF, raffigurata in \hyperref[fig:atomic_numbersb]{Fig. 3.1b}.
 	\begin{figure}[H]
 		\centering
-		\begin{subfigure}[t]{0.9\textwidth}
+		\begin{subfigure}[t]{0.78\textwidth}
 			\centering
 			\includegraphics[width=\textwidth, scale=0.50]{Bethe3.pdf}
 			\caption{Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2} e relativi fit. Dalla rappresentazione è esclusa la distribuzione centrata in $z=6$ del \ce{_{6}C}.}
 			\label{fig:atomic_numbersa}
 		\end{subfigure}
 		\par
-		\begin{subfigure}[t]{0.9\textwidth}
+		\begin{subfigure}[t]{0.78\textwidth}
 			\centering
 			\includegraphics[width=\textwidth, scale=0.50]{c_E_TOF.pdf}
 			\caption{Distribuzione di $\Delta E_{TW}$ in funzione del TOF.}
@@ -1377,17 +1378,17 @@
 		\caption{Distribuzioni utilizzate per l'identificazione del numero atomico $z$ dei frammenti secondari considerati.}
 		\label{fig:atomic_numbers}
 	\end{figure}
-	In entrambe le \hyperref[fig:atomic_numbersa]{Fig. 3.1a} e \hyperref[fig:atomic_numbersb]{Fig. 3.1b} si distinguono dei picchi distinti che consentono una chiara identificazione della carica dei frammenti. Le migliori stime di $z$, ricavate dai fit gaussiani in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sono riassunte in \hyperref[tab:atomic_numbers_a]{Tab. 3.2} e \hyperref[tab:atomic_numbers_b]{Tab. 3.3}. Tali misure sono caratterizzate da una risoluzione che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{12}_6O} e presentano uno shift rispetto ai valori attesi. Una spiegazione plausibile dello shift potrebbe risiedere nelle già citate perdite di energia dovute ai processi di ionizzazione che precedono il TW e alla produzione di neutroni.
+	In entrambe le \hyperref[fig:atomic_numbersa]{Fig. 3.1a} e \hyperref[fig:atomic_numbersb]{Fig. 3.1b} si distinguono dei picchi distinti che consentono una chiara identificazione della carica dei frammenti. Le migliori stime di $z$, ricavate dai fit gaussiani in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sono riassunte in \hyperref[tab:atomic_numbers_a]{Tab. 3.2} e \hyperref[tab:atomic_numbers_b]{Tab. 3.3}. Tali misure sono caratterizzate da una risoluzione che va dal $5.3\%$ dell'\ce{H} al $2.3\%$ del \ce{C} e presentano uno shift rispetto ai valori attesi. Una spiegazione plausibile dello shift potrebbe risiedere nelle già citate perdite di energia dovute ai processi di ionizzazione che precedono il TW e alla produzione di neutroni.
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
+			\begin{tabular}{ |M{3.5cm}||M{3.cm}|M{3.cm}|M{3.cm}| }
 				\hline
-				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}\\
+				Frammento &\ce{H}&\ce{He}&\ce{Li}\\
 				\hline
-				$z$ & $1$& $2$& $3$\\
+				$z$ atteso & $1$& $2$& $3$\\
 				\hline
-				$z$ ricostruito & $\pm$& $\pm$ &$\pm$\\
+				$z$ ricostruito & $1.001\pm0.053$& $2.017\pm0.077$ &$3.00\pm0.12$\\
 				\hline
 			\end{tabular}
 		\end{minipage}
@@ -1397,13 +1398,13 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
+			\begin{tabular}{ |M{3.5cm}||M{3.cm}|M{3.cm}|M{3.cm}| }
 				\hline
-				Frammento &\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}\\
+				Frammento &\ce{Be}&\ce{B}&\ce{C}\\
 				\hline
-				$z$ & $4$& $5$& $6$\\
+				$z$ atteso & $4$& $5$& $6$\\
 				\hline
-				$z$ ricostruito & $\pm$& $\pm$ &$\pm$ \\
+				$z$ ricostruito & $4.02\pm0.13$& $5.05\pm0.13$ &$6.08\pm0.14$ \\
 				\hline
 			\end{tabular}
 		\end{minipage}
@@ -1516,7 +1517,7 @@
 		\end{pmatrix}
 		\label{eq:correlation_matrix}
 	\end{equation}
-	Se i parametri $\left(T,P,K,A\right)$ venissero pensati come variabili di uno spazio quadridimensionale, il problema della minimizzazione del $\chi^2$ è analogo a un problema di ricerca del minimo di una funzione a variabile vettoriale. Pertanto, per ricavare i valori dei parametri $\left(T,P,K,A\right)$ che si più avvicinano ai valori attesi ``veri'' delle grandezze fisiche associate ai parametri stessi è possibile procedere attraverso un fit di minimizzazione, in cui il punto dello spazio quadrimensionale in cui il $\chi^2$ assume il valore minimo corrisponde ai valori di $\left(T,P,K,A\right)$ che più si avvicinano ai valori attesi. Per la ricerca del minimo si utilizza Minuit, un algoritmo del framework ROOT grazie al quale è possibile variare opportunamente i parametri in modo che il minimo $\chi^2$ sia globale e non semplicemente locale, al fine di garantire che i parametri di output finali siano piuttosto accurati.
+	Se i parametri $\left(T,P,K,A\right)$ venissero pensati come variabili di uno spazio quadridimensionale, il problema della minimizzazione del $\chi^2$ è analogo a un problema di ricerca del minimo di una funzione a variabile vettoriale. Pertanto, per ricavare i valori dei parametri $\left(T,P,K,A\right)$ che si più avvicinano ai valori attesi ``veri'' delle grandezze fisiche associate ai parametri stessi è possibile procedere attraverso un fit di minimizzazione, in cui il punto dello spazio quadrimensionale in cui il $\chi^2$ assume il valore minimo corrisponde ai valori di $\left(T,P,K,A\right)$ che più si avvicinano ai valori attesi. Per la ricerca del minimo si utilizza Minuit, un algoritmo del framework ROOT grazie al quale è possibile variare opportunamente i parametri in modo che il minimo $\chi^2$ sia globale e non semplicemente locale, per garantire che i parametri di output finali siano piuttosto accurati.
 	
 	\section{Augmented Lagrangian Method}
 	L'Augmented Lagrangian Method (ALM) è un algoritmo con cui è possibile affrontare un problema di minimizzazione vincolata di una funzione $f\left(\vect{x}\right)$ a più variabili in un problema di minimizzazione non vincolato, caratterizzato però da uno spazio dei parametri maggiore. L'ALM è un metodo dei moltiplicatori di Lagrange ``modificato'' in cui la minimizzazione della funzione lagrangiana $\mathcal{L}\left(\vect{x};\vect{\lambda}\right)$ rispetto alla variabile vettoriale $\vect{x}$ prevista dal metodo dei moltiplicatori di Lagrange viene sostituita dalla minimizzazione di una lagrangiana ``aumentata'' (augmented) $\mathcal{L}_{ALM}\left(\vect{x};\vect{\lambda},\mu\right)$ definita come:
@@ -1549,14 +1550,14 @@
 		\label{eq:alm_analysis}
 	\end{equation}
 	
-	\section{Risultati ottenuti dai fit (TBD))}
+	\section{Risultati ottenuti dai fit (TBD)}
 	pag 110 PHD
 	pag 73 root cdr
 					
 	\addcontentsline{toc}{chapter}{Conclusioni (TBD)}
 	\chapter*{Conclusioni (TBD)}
 		PROVA
-	\newpage	
+	\newpage
 	\printbibliography[
 		heading=bibintoc,
 		title={Bibliografia}
