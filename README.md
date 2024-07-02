@@ -22,3 +22,4 @@
 - Rimuovere con SetOptFit i dati del fit (visto che lì appaiono i risultati di un unico fit, mentre andrebbero messi i risultati di più fit).
 - Cambiando alcuni bin nella simulazione alcuni fit a multi gaussiana sono diventati migliori.
 - Il secondo termine dell'ALM presenta un più o un meno?
+- Visto che la parte di minimo chi quadro e di ALM non sarà supportata dai grafici, sto pensando: vogliamo mettere entrambe le parti all'interno di una sezione di appendice (o di una sorta di quarto capitolo (in caso da capire se numerato o non numerato)).
