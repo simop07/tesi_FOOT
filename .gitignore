@@ -37,6 +37,5 @@
 # ROOT files
 *.root
 
-# PDF files
-
-*.pdf
+# Directories
+prima_versione/
