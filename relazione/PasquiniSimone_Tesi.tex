@@ -208,21 +208,21 @@
 		PROVA
 	\end{dedication}
 	\chapter*{Sommario}
-	L'adroterapia è una tecnica utilizzata nelle cure oncologiche e consiste nell'irradiare una regione cancerosa con un fascio di particelle adroniche cariche, al fine di creare danni irreparabili al DNA delle cellule tumorali. Penetrando nel corpo umano, tali particelle rilasciano una dose di energia molto elevata nella regione del picco di Bragg, situata quasi al termine della profondità raggiunta nei tessuti, mentre il rilascio di dose nel canale di ingresso è piuttosto basso. Tali caratteristiche rendono l'adroterapia più adatta al trattamento di tumori profondi rispetto alle tecniche radioterapiche convenzionali, poiché il profilo di dose della prima massimizza i danni biologici nella zona tumorale e li limita negli organi sani adiacenti. Il problema principale dell'adroterapia risiede nei processi di frammentazione nucleare del target e del fascio incidente. Infatti, essendo molto complesso rivelare i frammenti secondari prodotti dalle interazioni nucleari, risulta altrettanto difficile determinare con accuratezza l'energia rilasciata dai frammenti stessi e, di conseguenza, i danni biologici che potrebbero provocare nel corpo umano. Per tali motivi, nel $2017$ è nato FOOT, un esperimento il cui scopo principale è quello di misurare le sezioni d'urto differenziali rispetto all'energia e all'angolo di emissione dei frammenti prodotti nelle interazioni nucleari che intercorrono tra il fascio adroterapico e la regione tissutale irradiata. In questo lavoro di tesi si analizzano dei dati ottenuti da simulazioni Monte Carlo in cui un bersaglio di \ce{C} viene irradiato da un fascio di \ce{C} dall'energia di $200 \mbox{ MeV}$. Attraverso un software di analisi si identificano gli isotopi dei frammenti maggiormente prodotti mediante la ricostruzione dei loro numeri atomici $z$ e di massa $A$. Si ottengono stime di $z$ con una precisione percentuale che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{16}_8C}, mentre le migliori risoluzioni di $A$ si attestano al $\%$ per l'\ce{^{16}_8C}.
+	L'adroterapia è una tecnica utilizzata nelle cure oncologiche e consiste nell'irradiare una regione cancerosa con un fascio di particelle adroniche cariche, al fine di creare danni irreparabili al DNA delle cellule tumorali. Penetrando nel corpo umano, tali particelle rilasciano una dose di energia molto elevata nella regione del picco di Bragg, situata quasi al termine della profondità raggiunta nei tessuti, mentre il rilascio di dose nel canale di ingresso è piuttosto basso. Tali caratteristiche rendono l'adroterapia più adatta al trattamento di tumori profondi rispetto alle tecniche radioterapiche convenzionali, poiché il profilo di dose della prima massimizza i danni biologici nella zona tumorale e li limita negli organi sani adiacenti. Il problema principale dell'adroterapia risiede nei processi di frammentazione nucleare del target e del fascio incidente. Infatti, essendo molto complesso rivelare i frammenti secondari prodotti dalle interazioni nucleari, risulta altrettanto difficile determinare con accuratezza l'energia rilasciata dai frammenti stessi e, di conseguenza, i danni biologici che potrebbero provocare nel corpo umano. Per tali motivi, nel $2017$ è nato FOOT, un esperimento il cui scopo principale è quello di misurare le sezioni d'urto differenziali rispetto all'energia e all'angolo di emissione dei frammenti prodotti nelle interazioni nucleari che intercorrono tra il fascio adroterapico e la regione tissutale irradiata. In questo lavoro di tesi si analizzano dei dati ottenuti da simulazioni Monte Carlo in cui un bersaglio di \ce{C} viene irradiato da un fascio di \ce{C} dall'energia di $200 \mbox{ MeV}$. Attraverso un software di analisi si identificano gli isotopi dei frammenti maggiormente prodotti mediante la ricostruzione dei loro numeri atomici $z$ e di massa $A$. Si ottengono stime di $z$ con una precisione percentuale che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{12}_6C}, mentre le migliori risoluzioni di $A$ si attestano al $\%$ per l'\ce{^{16}_8C}.
 	\newpage
 	\tableofcontents
 	\newpage
 	\addcontentsline{toc}{chapter}{Introduzione}
 	\chapter*{Introduzione}
-	La conoscenza scientifica e le tecniche sperimentali sviluppate nei progetti di ricerca della fisica fondamentale hanno permesso, nel corso del tempo, un crescente coinvolgimento della fisica nei più disparati ambiti del sapere, dall'intelligenza artificiale alla medicina, dai beni culturali ai cambiamenti climatici. Ciò è stato possibile grazie alla naturale interdisciplinarità della scienza e dei suoi metodi che, sempre di più, sono diventati determinanti per il sistema sociale, economico e politico dei Paesi. Tale progetto di tesi, facendosi carico della suddetta riflessione, ha lo scopo di esporre il modo in cui i processi di frammentazione nucleare prodotti dall'interazione di adroni e nuclei con la materia non sia interessante solo per la fisica fondamentale, ma anche nelle applicazioni mediche, come avviene nell'adroterapia, e nell'ambito della radioprotezione spaziale. Visto che i frammenti prodotti dalle interazioni nucleari influenzano notevolmente lo spettro energetico e la diffusione nella materia delle particelle da cui hanno origine, è necessario misurare più accuratamente le sezioni d'urto delle frammentazioni. Riferendosi agli esempi sopra citati, misure più precise garantirebbero stime più accurate del rilascio di dose adroterapico (ciò migliorerebbe ulteriormente la definizione e la personalizzazione dei piani di trattamento a cui si sottopongono i pazienti affetti da neoplasie) e consentirebbero valutazioni più complete dei rischi a cui si espongono gli astronauti nella missioni spaziali.
+	La conoscenza scientifica e le tecniche sperimentali sviluppate nei progetti di ricerca della fisica fondamentale hanno permesso, nel corso del tempo, un crescente coinvolgimento della fisica in molteplici ambiti del sapere, dall'intelligenza artificiale alla medicina, dai beni culturali ai cambiamenti climatici. Ciò è stato possibile grazie alla naturale interdisciplinarità della scienza e dei suoi metodi, determinanti per il sistema sociale, economico e politico attuale. In questa tesi l'obiettivo è descrivere come i processi di frammentazione nucleare prodotti dall'interazione di adroni e nuclei con la materia siano interessanti non solo per la fisica fondamentale, ma anche nelle applicazioni mediche, dall'adroterapia alla radioprotezione spaziale. I frammenti prodotti dalle interazioni nucleari influenzano notevolmente lo spettro energetico e la diffusione nella materia delle particelle da cui hanno origine, pertanto è necessario misurare più accuratamente le sezioni d'urto delle frammentazioni. Riferendosi agli esempi sopra citati, misure più precise garantirebbero stime più accurate del rilascio di dose adroterapico, migliorando ulteriormente la definizione e la personalizzazione dei piani di trattamento a cui si sottopongono i pazienti affetti da neoplasie, e consentirebbero valutazioni più complete dei rischi a cui si espongono gli astronauti nella missioni spaziali.
 	
-	L'argomento principale del lavoro di tesi è l'adroterapia, una tecnica che prevede l'impiego di fasci di particelle adroniche cariche, come protoni e ioni carbonio, in ambito oncologico per la cura di tumori. Rispetto alle tecniche di radioterapia convenzionali, l'adroterapia risulta più favorevole per il suo profilo di dose; quest'ultimo è caratterizzato da un intenso picco (di Bragg) collocato in una regione piuttosto limitata, è basso nell'area che precede il picco e diminuisce rapidamente a zero nella regione successiva al picco. Gli scienziati, riconoscendo le peculiarità del profilo di dose adroterapico, impiegano attualmente l'adroterapia non solo nella cura dei tumori più profondi, ma anche nei trattamenti oncologici più delicati in cui è necessario risparmiare gli organi vitali vicini alla sede tumorale. Tali vantaggi hanno permesso che nel $2017$ l'adroterapia entrasse a far parte dei livelli essenziali di assistenza previsti dal Servizio Sanitario Nazionale (SSN). Nonostante ciò, i processi di frammentazione nucleare sopra citati costituiscono un rischio per le terapie adroterapiche in quanto i frammenti secondari prodotti dalle interazioni nucleari incrementano il potere ionizzante delle particelle primarie del fascio irradiato; in altre parole, la frammentazione provoca danni biologici nocivi per il paziente che, se non opportunamente considerati all'interno dei piani di trattamento, renderebbero l'adroterapia una tecnica meno efficace rispetto alle sue potenzialità.
+	L'argomento principale del lavoro di tesi è l'adroterapia, una tecnica che prevede l'impiego di fasci di particelle adroniche cariche, come protoni e ioni carbonio, in ambito oncologico. Rispetto alle tecniche di radioterapia convenzionali, l'adroterapia risulta più favorevole per il suo profilo di dose; questo è caratterizzato da un intenso picco, detto di Bragg, collocato in una regione piuttosto limitata, è basso nell'area che precede il picco e diminuisce rapidamente a zero nella regione successiva al picco. Gli scienziati, riconoscendo le peculiarità del profilo di dose adroterapico, impiegano attualmente l'adroterapia non solo nella cura dei tumori più profondi, ma anche nei trattamenti oncologici più delicati in cui è necessario risparmiare gli organi vitali vicini alla sede tumorale. In Italia, i vantaggi dell'adroterapia nella cura delle neoplasie hanno permesso che nel $2017$ tale terapia entrasse a far parte dei livelli essenziali di assistenza previsti dal Servizio Sanitario Nazionale (SSN). Nonostante l'adroterapia rappresenti un terreno molto fertile nell'ambito delle cure oncologiche, i processi di frammentazione nucleare sopra citati costituiscono un rischio per le cure adroterapiche, in quanto i frammenti secondari prodotti dalle interazioni nucleari incrementano il potere ionizzante delle particelle primarie del fascio irradiato; in altre parole, la frammentazione provoca danni biologici nocivi per il paziente che, se non opportunamente considerati all'interno dei piani di trattamento, renderebbero l'adroterapia una tecnica molto meno efficace.
 	
-	Lo scopo della radioprotezione spaziale è quello di sviluppare materiali che possano schermare l'effetto nocivo delle radiazioni spaziali ionizzanti. Negli ultimi anni tale interesse è sicuramente aumentato, visto il fermento delle agenzie private e pubbliche di intraprendere missioni spaziali di lunga durata \cite{ubaldiArticle}. In questo caso, i processi di frammentazione nucleare non avvengono chiaramente nel corpo umano, ma nei materiali utilizzati per la schermatura. Dunque, la progettazione di dispositivi elettronici, così come di eventuali tute o navicelle per gli astronauti, deve necessariamente tenere conto della presenza di frammenti secondari che rendono il fascio primario più energetico e, conseguentemente, più penetrante.
+	Lo scopo della radioprotezione spaziale è quello di sviluppare materiali che possano schermare l'effetto nocivo delle radiazioni spaziali ionizzanti. Negli ultimi anni il tema della radioprotezione desta particolare attenzione, specialmente per l'interesse da parte delle agenzie spaziali private e pubbliche nell'intraprendere missioni di lunga durata \cite{ubaldiArticle}. A differenza dell'adroterapia, i processi di frammentazione nucleare non avvengono nel corpo umano, ma nei materiali utilizzati per la schermatura dalle radiazioni ionizzanti del cosmo. Dunque, la progettazione di dispositivi elettronici, così come di eventuali tute o navicelle per gli astronauti, deve necessariamente tenere conto della presenza di frammenti secondari, che rendono le radiazioni ionizzanti incidenti più energetiche e, conseguentemente, più penetranti.
 	
-	Le applicazioni sopra descritte motivano da tempo lo studio dei processi di frammentazione nucleare, sebbene sia molto complesso misurare le sezioni d'urto dei frammenti secondari sia per la rarità di tali eventi, sia per il fatto che i frammenti possiedono una mobilità pari al $\mu\mbox{m}$, che ostacola ulteriormente la loro rivelazione. In particolare, i processi di frammentazione nucleare tipici dei range energetici delle applicazioni adroterapiche ($50$--$250\mbox{ MeV}$ per i protoni e $50$--$400\mbox{ MeV/u}$ per gli ioni carbonio) presentano evidenti lacune sperimentali che, per tentare di modellizzare la frammentazione nucleare, vengono compensate dall'ingente impiego di simulazioni Monte Carlo, sebbene queste debbano essere sempre implementate sulla base di affidabili dati reali. L'impellente necessità di poter accedere a maggiori quantità di dati sperimentali ha portato l'Istituto Nazionale di Fisica Nucleare (INFN) ad approvare nel $2017$ l'esperimento FOOT (FragmentatiOn Of Target), il cui scopo principale è quello di misurare la sezione d'urto, l'energia e la direzione di produzione dei frammenti secondari generati dalle interazioni nucleari tra particelle cariche e corpo umano.
+	Le applicazioni sopra descritte motivano da tempo lo studio dei processi di frammentazione nucleare, sebbene fino al momento attuale sia stato molto complesso misurare le sezioni d'urto dei frammenti secondari, sia per la rarità di tali eventi sia per il fatto che i frammenti possiedono una mobilità pari al $\mu\mbox{m}$, che ostacola ulteriormente la loro rivelazione. In particolare, i processi di frammentazione nucleare tipici dei range energetici delle applicazioni adroterapiche ($50$--$250\mbox{ MeV}$ per i protoni e $50$--$400\mbox{ MeV/u}$ per gli ioni carbonio) presentano evidenti lacune sperimentali che, per tentare di modellizzare la frammentazione nucleare, vengono compensate dall'ingente impiego di simulazioni Monte Carlo, sebbene queste necessitino di una continua implementazione basata su affidabili dati reali. Dunque, l'impellente necessità di poter accedere a maggiori quantità di dati sperimentali ha portato l'Istituto Nazionale di Fisica Nucleare (INFN) ad approvare nel $2017$ l'esperimento FOOT (FragmentatiOn Of Target), il cui scopo principale è quello di misurare la sezione d'urto, l'energia e la direzione di produzione dei frammenti secondari generati dalle interazioni nucleari tra particelle cariche e corpo umano.
 	
-	Il lavoro di tesi viene strutturato in tre capitoli. Nel \hyperref[cap:1]{Cap. 1} si analizzano le principali caratteristiche delle interazioni ionizzanti con la materia e gli effetti biologici che inducono sul corpo umano, con una particolare attenzione alle differenze tra le tecniche di radioterapia convenzionale e adroterapia. Nel \hyperref[cap:2]{Cap. 2} si presenta l'apparato sperimentale di FOOT, il suo funzionamento e le modalità con cui avviene la rivelazione dei frammenti nucleari. Nel \hyperref[cap:3]{Cap. 3} si affronta una fase preliminare dell'analisi dati di FOOT, vale a dire l'identificazione univoca dei frammenti prodotti dalle interazioni nucleari, che avviene misurando i loro numeri atomici e di massa. Nello specifico, si crea un software con cui si analizzano dei dati ottenuti da simulazioni Monte Carlo che, combinando le grandezze fisiche di energia cinetica, momento e tempo di volo dei frammenti ottenute dai rivelatori, consentono di stimare i numeri atomici e di massa dei frammenti stessi.
+	Il lavoro di tesi è strutturato in tre capitoli. Nel \hyperref[cap:1]{Cap. 1} si analizzano le principali caratteristiche delle interazioni ionizzanti con la materia e gli effetti biologici che inducono sul corpo umano, con una particolare attenzione alle differenze tra le tecniche di radioterapia convenzionale e adroterapia. Nel \hyperref[cap:2]{Cap. 2} si presenta l'apparato sperimentale di FOOT, il suo funzionamento e le modalità con cui avviene la rivelazione dei frammenti nucleari. Nel \hyperref[cap:3]{Cap. 3} si affronta una fase preliminare dell'analisi dati di FOOT, vale a dire l'identificazione univoca dei frammenti prodotti dalle interazioni nucleari, che avviene misurando i loro numeri atomici e di massa. Nello specifico, si crea un software con cui si analizzano dei dati ottenuti da simulazioni Monte Carlo che, combinando le grandezze fisiche di energia cinetica, momento e tempo di volo dei frammenti ottenute dai rivelatori, consentono di stimare i numeri atomici e di massa dei frammenti stessi.
 	\newpage
 	\pagenumbering{arabic}
 	\chapter{Terapie oncologiche e radiazioni ionizzanti}\label{cap:1}
@@ -1328,13 +1328,13 @@
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+			\begin{tabular}{ |M{2.0cm}||M{1.5cm}|M{1.5cm}|M{1.5cm}|M{1.5cm}|M{1.5cm}|M{1.5cm}| }
 				\hline
-				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}\\
 				\hline
-				$z$ & $1$& $2$& $3$& $4$& $5$& $6$& $7$& $8$ \\
+				$z$ & $1$& $2$& $3$& $4$& $5$& $6$\\
 				\hline
-				$A$ & $1$& $4$ &$7$ &$9$& $11$& $12$& $14$& $16$ \\
+				$A$ & $1$& $4$ &$7$ &$9$& $11$& $12$\\
 				\hline
 			\end{tabular}
 		\end{minipage}
@@ -1361,38 +1361,54 @@
 	Dalle \hyperref[eq:atomic_number]{Eq. 3.2}, \hyperref[eq:beta_beam]{Eq. 3.3} e \hyperref[eq:stopping_power]{Eq. 3.4} si ricavano sia la distribuzione di $z$, rappresentata in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sia la distribuzione di $\Delta E_{TW}$ in funzione del TOF, raffigurata in \hyperref[fig:atomic_numbersb]{Fig. 3.1b}.
 	\begin{figure}[H]
 		\centering
-		\begin{subfigure}[t]{0.49\textwidth}
+		\begin{subfigure}[t]{0.9\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{msd.jpg}
-			\caption{Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2}.}
+			\includegraphics[width=\textwidth, scale=0.50]{Bethe3.pdf}
+			\caption{Distribuzione di $z$ determinata a partire dalla \hyperref[eq:atomic_number]{Eq. 3.2} e relativi fit. Dalla rappresentazione è esclusa la distribuzione centrata in $z=6$ del \ce{_{6}C}.}
 			\label{fig:atomic_numbersa}
 		\end{subfigure}
-		\hfill
-		\begin{subfigure}[t]{0.49\textwidth}
+		\par
+		\begin{subfigure}[t]{0.9\textwidth}
 			\centering
-			\includegraphics[width=\textwidth, scale=0.50]{msd.jpg}
+			\includegraphics[width=\textwidth, scale=0.50]{c_E_TOF.pdf}
 			\caption{Distribuzione di $\Delta E_{TW}$ in funzione del TOF.}
 			\label{fig:atomic_numbersb}
 		\end{subfigure}
 		\caption{Distribuzioni utilizzate per l'identificazione del numero atomico $z$ dei frammenti secondari considerati.}
 		\label{fig:atomic_numbers}
 	\end{figure}
-	In entrambe le \hyperref[fig:atomic_numbersa]{Fig. 3.1a} e \hyperref[fig:atomic_numbersb]{Fig. 3.1b} si distinguono $8$ picchi distinti che consentono una chiara identificazione della carica dei frammenti. Le migliori stime di $z$, ricavate dai fit gaussiani in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sono riassunte in \hyperref[tab:atomic_numbers]{Tab. 3.2}. Tali misure sono caratterizzate da una risoluzione che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{16}_8O} e presentano uno shift rispetto ai valori attesi. Una spiegazione plausibile dello shift potrebbe risiedere nelle già citate perdite di energia dovute ai processi di ionizzazione che precedono il TW e alla produzione di neutroni.
+	In entrambe le \hyperref[fig:atomic_numbersa]{Fig. 3.1a} e \hyperref[fig:atomic_numbersb]{Fig. 3.1b} si distinguono dei picchi distinti che consentono una chiara identificazione della carica dei frammenti. Le migliori stime di $z$, ricavate dai fit gaussiani in \hyperref[fig:atomic_numbersa]{Fig. 3.1a}, sono riassunte in \hyperref[tab:atomic_numbers_a]{Tab. 3.2} e \hyperref[tab:atomic_numbers_b]{Tab. 3.3}. Tali misure sono caratterizzate da una risoluzione che va dal $\%$ per l'\ce{^1_1H} al $\%$ per l'\ce{^{12}_6O} e presentano uno shift rispetto ai valori attesi. Una spiegazione plausibile dello shift potrebbe risiedere nelle già citate perdite di energia dovute ai processi di ionizzazione che precedono il TW e alla produzione di neutroni.
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
 				\hline
-				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}\\
 				\hline
-				$z$ & $1$& $2$& $3$& $4$& $5$& $6$& $7$& $8$ \\
+				$z$ & $1$& $2$& $3$\\
 				\hline
-				$z$ ricostruito & $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				$z$ ricostruito & $\pm$& $\pm$ &$\pm$\\
 				\hline
 			\end{tabular}
 		\end{minipage}
-		\caption{Ricostruzione dei valori di aspettazione di $z$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati in \hyperref[fig:atomic_numbers]{Fig. 3.1}.}
-		\label{tab:atomic_numbers}
+		\caption{Ricostruzione dei valori di aspettazione di $z\le3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati in \hyperref[fig:atomic_numbers]{Fig. 3.1}.}
+		\label{tab:atomic_numbers_a}
+	\end{table}
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
+				\hline
+				Frammento &\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}\\
+				\hline
+				$z$ & $4$& $5$& $6$\\
+				\hline
+				$z$ ricostruito & $\pm$& $\pm$ &$\pm$ \\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Ricostruzione dei valori di aspettazione di $z>3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati in \hyperref[fig:atomic_numbers]{Fig. 3.1}.}
+		\label{tab:atomic_numbers_b}
 	\end{table}
 	
 	\section{Identificazione del numero di massa}
@@ -1421,24 +1437,42 @@
 		\caption{Distribuzioni del numero di massa A attraverso la tracking region e il CALO.}
 		\label{fig:a3}
 	\end{figure}
-	Le misure di $A_1$, $A_2$ e $A_3$, ricavate rispettivamente dai fit gaussiani in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, sono riassunte in \hyperref[tab:mass_numbers]{Tab. 3.3}. La larghezza delle distribuzioni gaussiane di $A_1$, $A_2$ e $A_3$ è dovuta alle differenti risoluzioni delle grandezze fisiche di TOF, $p$ ed $E_k$, discusse nell'introduzione della \hyperref[sec:fragment_identification]{Sez. 3.1}. In particolare, le risoluzioni di $A_1$, $A_2$ e $A_3$ sono rispettivamente pari al $\%$, $\%$ e $\%$. Inoltre, come si evince dalle \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, le distribuzioni di $A_2$ e $A_3$ presentano delle code che forniscono rispettivamente una sottostima e una sovrastima del numero di massa dei frammenti. La dipendenza funzionale delle \hyperref[eq:a1]{Eq. 2.3a} e \hyperref[eq:a2]{Eq. 2.3b} rispetto alla variabile $E_k$ suggerisce che tali shift sono dovuti a una sottostima della stessa $E_k$. Infatti, come discusso nel paragrafo della \hyperref[par:downstream_region]{downstream region}, nel CALO vengono emessi neutroni che sfuggono alle interazioni con i cristalli BGO del rivelatore, effetto che induce una diminuzione dei valori di $E_k$.
+	Le misure di $A_1$, $A_2$ e $A_3$, ricavate rispettivamente dai fit gaussiani in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, sono riassunte in \hyperref[tab:mass_numbers_a]{Tab. 3.4} e \hyperref[tab:mass_numbers_b]{Tab. 3.5}. La larghezza delle distribuzioni gaussiane di $A_1$, $A_2$ e $A_3$ è dovuta alle differenti risoluzioni delle grandezze fisiche di TOF, $p$ ed $E_k$, discusse nell'introduzione della \hyperref[sec:fragment_identification]{Sez. 3.1}. In particolare, le risoluzioni di $A_1$, $A_2$ e $A_3$ sono rispettivamente pari al $\%$, $\%$ e $\%$. Inoltre, come si evince dalle \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}, le distribuzioni di $A_2$ e $A_3$ presentano delle code che forniscono rispettivamente una sottostima e una sovrastima del numero di massa dei frammenti. La dipendenza funzionale delle \hyperref[eq:a1]{Eq. 2.3a} e \hyperref[eq:a2]{Eq. 2.3b} rispetto alla variabile $E_k$ suggerisce che tali shift sono dovuti a una sottostima della stessa $E_k$. Infatti, come discusso nel paragrafo della \hyperref[par:downstream_region]{downstream region}, nel CALO vengono emessi neutroni che sfuggono alle interazioni con i cristalli BGO del rivelatore, effetto che induce una diminuzione dei valori di $E_k$.
 	\begin{table}[H]
 		\begin{minipage}{\textwidth}
 			\centering
-			\begin{tabular}{ |M{2.0cm}||M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}|M{2.0cm}| }
+			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
 				\hline
-				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}&\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}&\ce{^{14}N}&\ce{^{16}O}\\
+				Frammento &\ce{^{1}H}&\ce{^{4}He}&\ce{^{7}Li}\\
 				\hline
-				$A_1$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				$A_1$& $\pm$& $\pm$ &$\pm$\\
 				\hline
-				$A_2$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				$A_2$& $\pm$& $\pm$ &$\pm$\\
 				\hline
-				$A_3$& $\pm$& $\pm$ &$\pm$ &$\pm$& $\pm$& $\pm$& $\pm$& $\pm$ \\
+				$A_3$& $\pm$& $\pm$ &$\pm$\\
 				\hline
 			\end{tabular}
 		\end{minipage}
-		\caption{Ricostruzione dei valori di aspettazione di $A_1$, $A_2$ e $A_3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.}
-		\label{tab:mass_numbers}
+		\caption{Ricostruzione dei valori di aspettazione di $A_1$, $A_2$ e $A_3$ con $z\le3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.}
+		\label{tab:mass_numbers_a}
+	\end{table}
+	\begin{table}[H]
+		\begin{minipage}{\textwidth}
+			\centering
+			\begin{tabular}{ |M{2.0cm}||M{3.0cm}|M{3.0cm}|M{3.0cm}| }
+				\hline
+				Frammento &\ce{^{9}Be}&\ce{^{11}B}&\ce{^{12}C}\\
+				\hline
+				$A_1$& $\pm$& $\pm$ &$\pm$\\
+				\hline
+				$A_2$& $\pm$& $\pm$ &$\pm$\\
+				\hline
+				$A_3$& $\pm$& $\pm$ &$\pm$\\
+				\hline
+			\end{tabular}
+		\end{minipage}
+		\caption{Ricostruzione dei valori di aspettazione di $A_1$, $A_2$ e $A_3$ con $z>3$, i cui errori associati sono pari alla $\sigma$ dei fit gaussiani evidenziati rispettivamente in \hyperref[fig:a1]{Fig. 3.2}, \hyperref[fig:a2]{Fig. 3.3} e \hyperref[fig:a3]{Fig. 3.4}.}
+		\label{tab:mass_numbers_b}
 	\end{table}
 	Per determinare la miglior stima per $A$, è possibile considerare due possibili procedure da applicare ai valori correlati di $A_1$, $A_2$ e $A_3$, che verranno analizzate nel prosieguo:
 	\begin{itemize}
