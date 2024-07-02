@@ -194,11 +194,16 @@ void myAnalysis::BeforeLoop() {
   h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 300, 0., 16.);
   h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 300, 0., 16.);
   h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 300, 0., 16.);
-  h_z_bethe = new TH1D("h_z_bethe", "z bethe; z; Entries", 300, 0., 12.);
-  h_z_TW = new TH1D("h_z", "z TW reconstruction; z; Entries", 13, 0., 12.);
-  h_E_TOF =
-      new TH2D("h_E_TOF", "#Delta E_{TW} vs TOF; TOF [ns]; Delta E_{TW} [MeV]",
-               300, 8., 20., 300, 0., 300.);
+  // h_z_bethe = new TH1D("h_z_bethe", "z misurato dalla Bethe-Bloch; z;
+  // Entries",
+  //                      300, 0., 12.);
+  // h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Entries", 13,
+  // 0.,
+  //                   12.);
+  // h_E_TOF =
+  //     new TH2D("h_E_TOF",
+  //              "#DeltaE_{TW} in funzione del TOF; TOF [ns]; #DeltaE_{TW}
+  //              [MeV]", 400, 8., 20., 400, 0., 300.);
 
   // cosmetics
   h_E_TOF->GetYaxis()->SetTitleOffset(1.2);
@@ -319,7 +324,7 @@ void myAnalysis::AfterLoop() {
   // for bethe function
   TString const funcname_bethe{"f_bethe"};
   const Double_t xlow_bethe[6] = {0.5, 1.5, 2.5, 3.5, 4.5, 5.5};
-  const Double_t xup_bethe[6] = {1.5, 2.5, 3.5, 4.5, 5.5};
+  const Double_t xup_bethe[6] = {1.5, 2.5, 3.5, 4.5, 5.5, 7.};
   const int mean_value_bethe[6] = {1, 2, 3, 4, 5, 6};
   const Double_t sigma_bethe[6] = {0.5, 0.5, 0.5, 0.5, 0.5, 0.5};
 
@@ -423,7 +428,7 @@ void myAnalysis::AfterLoop() {
     // f_A3r[i]->SetParameter(2, sigma[i]);
 
     // fitting
-    // h_z_bethe->Fit(f_z_bethe[i], "R+");
+    h_z_bethe->Fit(f_z_bethe[i], "R+");
     // h_A1r[i]->Fit(f_A1r[i]);
     // h_A2r[i]->Fit(f_A2r[i]);
     // h_A3r[i]->Fit(f_A3r[i]);
@@ -511,7 +516,7 @@ void myAnalysis::Analysis(Long64_t init = -999, Long64_t nentries = -999) {
 
 int main() {
   myAnalysis m;
-  m.Analysis(0, 1e7);
+  m.Analysis(0, 1e5);
 
   return EXIT_SUCCESS;
 }
