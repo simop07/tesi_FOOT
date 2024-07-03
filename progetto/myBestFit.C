@@ -627,6 +627,8 @@ void myBestFit() {
   std::vector<Double_t> v_black_a1_mean{};
   std::vector<Double_t> v_black_a2_mean{};
   std::vector<Double_t> v_black_a3_mean{};
+  std::vector<Double_t> v_black_a1_err_err{};
+  std::vector<Double_t> v_black_a1_mean_err{};
 
   std::vector<Double_t> v_blue_a1_err{};
   std::vector<Double_t> v_blue_a2_err{};
@@ -788,10 +790,14 @@ void myBestFit() {
   v_black_a1_err.push_back(100. * (f_cut0_tot->GetParameter(2)) /
                            (f_cut0_tot->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut0_tot->GetParameter(1));
+  v_black_a1_err_err.push_back(
+      ((f_cut0_tot->GetParameter(2)) / (f_cut0_tot->GetParameter(1))) *
+      ((f_cut0_tot->GetParError(2)) / (f_cut0_tot->GetParameter(2)) +
+       (f_cut0_tot->GetParError(1)) / (f_cut0_tot->GetParameter(1))));
   v_black_a1_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a1_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a1_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a1_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a1_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -802,18 +808,23 @@ void myBestFit() {
   v_black_a2_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a2_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a2_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a2_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a2_mean.push_back(f_cut0_tot->GetParameter(7));
 
   h32_3_0->Fit(f_cut0_tot, "R+");
   v_black_a3_err.push_back(100. * (f_cut0_tot->GetParameter(2)) /
                            (f_cut0_tot->GetParameter(1)));
+  v_black_a1_err_err.push_back(
+      ((f_cut0_tot->GetParameter(2)) / (f_cut0_tot->GetParameter(1))) *
+      ((f_cut0_tot->GetParError(2)) / (f_cut0_tot->GetParameter(2)) +
+       (f_cut0_tot->GetParError(1)) / (f_cut0_tot->GetParameter(1))));
+
   v_black_a3_mean.push_back(f_cut0_tot->GetParameter(1));
   v_black_a3_err.push_back(100. * (f_cut0_tot->GetParameter(5)) /
                            (f_cut0_tot->GetParameter(4)));
   v_black_a3_mean.push_back(f_cut0_tot->GetParameter(4));
-  v_black_a3_err.push_back(-100. * (f_cut0_tot->GetParameter(8)) /
+  v_black_a3_err.push_back(100. * (f_cut0_tot->GetParameter(8)) /
                            (f_cut0_tot->GetParameter(7)));
   v_black_a3_mean.push_back(f_cut0_tot->GetParameter(7));
 
@@ -1226,7 +1237,8 @@ void myBestFit() {
 
   // creating TGrapherrors and cosmetics
   TGraphErrors *a1_black = new TGraphErrors(
-      (int)v_black_a1_mean.size(), &v_black_a1_mean[0], &v_black_a1_err[0]);
+      (int)v_black_a1_mean.size(), &v_black_a1_mean[0], &v_black_a1_err[0],
+      (const Double_t *)nullptr, &v_black_a1_err_err[0]);
   TGraphErrors *a2_black = new TGraphErrors(
       (int)v_black_a2_mean.size(), &v_black_a2_mean[0], &v_black_a2_err[0]);
   TGraphErrors *a3_black = new TGraphErrors(
@@ -1238,6 +1250,25 @@ void myBestFit() {
       (int)v_blue_a2_mean.size(), &v_blue_a2_mean[0], &v_blue_a2_err[0]);
   TGraphErrors *a3_blue = new TGraphErrors(
       (int)v_blue_a3_mean.size(), &v_blue_a3_mean[0], &v_blue_a3_err[0]);
+
+  // label points in graphs
+  TLatex *latex1_1 =
+      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{1}_{1}H");
+  a1_black->GetListOfFunctions()->Add(latex1_1);
+  latex1_1->SetTextSize(0.05);
+  latex1_1->SetTextAlign(12);
+
+  TLatex *latex2_1 =
+      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{2}_{1}H");
+  a1_black->GetListOfFunctions()->Add(latex2_1);
+  latex2_1->SetTextSize(0.05);
+  latex1_1->SetTextAlign(12);
+
+  TLatex *latex3_1 =
+      new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}^{3}_{1}H");
+  a1_black->GetListOfFunctions()->Add(latex3_1);
+  latex3_1->SetTextSize(0.05);
+  latex1_1->SetTextAlign(12);
 
   // defining multigraph
   TMultiGraph *black = new TMultiGraph();
@@ -1253,27 +1284,28 @@ void myBestFit() {
   // cosmetics
   a1_black->SetMarkerColor(kBlue);
   a1_black->SetMarkerStyle(20);
-  a1_black->SetMarkerSize(1.5);
+  a1_black->SetMarkerSize(1.3);
+  //   a1_black->SetLineWidth(2);
 
   a2_black->SetMarkerColor(kGreen);
   a2_black->SetMarkerStyle(20);
-  a2_black->SetMarkerSize(1.5);
+  a2_black->SetMarkerSize(1.3);
 
   a3_black->SetMarkerColor(kOrange);
   a3_black->SetMarkerStyle(20);
-  a3_black->SetMarkerSize(1.5);
+  a3_black->SetMarkerSize(1.3);
 
   a1_blue->SetMarkerColor(kBlue);
   a1_blue->SetMarkerStyle(20);
-  a1_blue->SetMarkerSize(1.5);
+  a1_blue->SetMarkerSize(1.3);
 
   a2_blue->SetMarkerColor(kGreen);
   a2_blue->SetMarkerStyle(20);
-  a2_blue->SetMarkerSize(1.5);
+  a2_blue->SetMarkerSize(1.3);
 
   a3_blue->SetMarkerColor(kOrange);
   a3_blue->SetMarkerStyle(20);
-  a3_blue->SetMarkerSize(1.5);
+  a3_blue->SetMarkerSize(1.3);
 
   black->SetTitle("Black result; Mean; \u0025 error");
   blue->SetTitle("Blue result; Mean; \u0025 error");
@@ -1424,10 +1456,10 @@ void myBestFit() {
 
   // draw multigraph
   c_multigr->cd(1);
-  black->Draw("AP");
+  black->Draw("APE");
   leg1->Draw("same");
   c_multigr->cd(2);
-  blue->Draw("AP");
+  blue->Draw("APE");
 
   setFitStyle();
 
