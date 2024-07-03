@@ -65,6 +65,7 @@
         "typeinfo": "cpp",
         "testList.C": "cpp",
         "list": "cpp",
-        "myMacro.C": "cpp"
+        "myMacro.C": "cpp",
+        "myBestFit.C": "cpp"
     }
 }
