@@ -7,6 +7,7 @@
 - Controlla dalla citazione 155 esclusa in poi per la bibliografia.
 - Decidi se mettere pagine bianche prima dell'inizio dei capitoli.
 - Decidere se mettere una dedica
+- Aggiungi il numero atomico ed eventualmente di massa a tutti gli elementi chimici che inserisci nella relazione.
 
 ## CODICE:
 
