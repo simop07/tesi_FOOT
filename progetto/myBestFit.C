@@ -250,14 +250,44 @@ void myBestFit() {
   TH1D *h21_1_0 = new TH1D("h21_1_0", "{}_{1}H; A_{1}; Entries", 300, 0., 8.);
   h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1, "[myCut0]");
 
+  TH1D *h0_1 = new TH1D("h0_1", "{}_{1}H; A_{1}; Entries", 300, 0., 8.);
+  h0_1 = h_Acor0->ProjectionX("h0_1", 0, -1);
+  h0_1->SetMarkerStyle(20);
+  h0_1->SetMarkerSize(0.5);
+  h0_1->SetLineColor(kBlue);
+  h0_1->SetLineWidth(2);
+  h0_1->GetYaxis()->SetTitleOffset(1.2);
+  h0_1->GetXaxis()->SetTitleSize(0.04);
+  h0_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_0 = new TH1D("h21_2_0", "{}_{1}H; A_{2}; Entries", 300, 0., 8.);
   h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1, "[myCut0]");
+
+  TH1D *h0_2 = new TH1D("h0_2", "{}_{1}H; A_{2}; Entries", 300, 0., 8.);
+  h0_2 = h_Acor0->ProjectionY("h0_2", 0, -1);
+  h0_2->SetMarkerStyle(20);
+  h0_2->SetMarkerSize(0.5);
+  h0_2->SetLineColor(kBlue);
+  h0_2->SetLineWidth(2);
+  h0_2->GetYaxis()->SetTitleOffset(1.2);
+  h0_2->GetXaxis()->SetTitleSize(0.04);
+  h0_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_0 = new TH1D("h31_1_0", "{}_{1}H; A_{1}; Entries", 300, 0., 8.);
   h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1, "[myCut6]");
 
   TH1D *h31_3_0 = new TH1D("h31_3_0", "{}_{1}H; A_{3}; Entries", 300, 0., 8.);
   h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1, "[myCut6]");
+
+  TH1D *h0_3 = new TH1D("h0_3", "{}_{1}H; A_{3}; Entries", 300, 0., 8.);
+  h0_3 = h_Acor6->ProjectionY("h0_3", 0, -1);
+  h0_3->SetMarkerStyle(20);
+  h0_3->SetMarkerSize(0.5);
+  h0_3->SetLineColor(kBlue);
+  h0_3->SetLineWidth(2);
+  h0_3->GetYaxis()->SetTitleOffset(1.2);
+  h0_3->GetXaxis()->SetTitleSize(0.04);
+  h0_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_0 = new TH1D("h32_2_0", "{}_{1}H; A_{2}; Entries", 300, 0., 8.);
   h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1, "[myCut12]");
@@ -269,14 +299,44 @@ void myBestFit() {
   TH1D *h21_1_1 = new TH1D("h21_1_1", "{}_{2}He; A_{1}; Entries", 300, 0., 9.);
   h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1, "[myCut1]");
 
+  TH1D *h1_1 = new TH1D("h1_1", "{}_{2}He; A_{1}; Entries", 300, 0., 8.);
+  h1_1 = h_Acor1->ProjectionX("h1_1", 0, -1);
+  h1_1->SetMarkerStyle(20);
+  h1_1->SetMarkerSize(0.5);
+  h1_1->SetLineColor(kBlue);
+  h1_1->SetLineWidth(2);
+  h1_1->GetYaxis()->SetTitleOffset(1.2);
+  h1_1->GetXaxis()->SetTitleSize(0.04);
+  h1_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_1 = new TH1D("h21_2_1", "{}_{2}He; A_{2}; Entries", 300, 0., 9.);
   h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1, "[myCut1]");
+
+  TH1D *h1_2 = new TH1D("h1_2", "{}_{2}He; A_{2}; Entries", 300, 0., 8.);
+  h1_2 = h_Acor1->ProjectionY("h1_2", 0, -1);
+  h1_2->SetMarkerStyle(20);
+  h1_2->SetMarkerSize(0.5);
+  h1_2->SetLineColor(kBlue);
+  h1_2->SetLineWidth(2);
+  h1_2->GetYaxis()->SetTitleOffset(1.2);
+  h1_2->GetXaxis()->SetTitleSize(0.04);
+  h1_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_1 = new TH1D("h31_1_1", "{}_{2}He; A_{1}; Entries", 300, 0., 9.);
   h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1, "[myCut7]");
 
   TH1D *h31_3_1 = new TH1D("h31_3_1", "{}_{2}He; A_{3}; Entries", 300, 0., 9.);
   h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1, "[myCut7]");
+
+  TH1D *h1_3 = new TH1D("h1_3", "{}_{2}He; A_{3}; Entries", 300, 0., 8.);
+  h1_3 = h_Acor7->ProjectionY("h1_3", 0, -1);
+  h1_3->SetMarkerStyle(20);
+  h1_3->SetMarkerSize(0.5);
+  h1_3->SetLineColor(kBlue);
+  h1_3->SetLineWidth(2);
+  h1_3->GetYaxis()->SetTitleOffset(1.2);
+  h1_3->GetXaxis()->SetTitleSize(0.04);
+  h1_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_1 = new TH1D("h32_2_1", "{}_{2}He; A_{2}; Entries", 300, 0., 9.);
   h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1, "[myCut13]");
@@ -288,14 +348,44 @@ void myBestFit() {
   TH1D *h21_1_2 = new TH1D("h21_1_2", "{}_{3}Li; A_{1}; Entries", 300, 2., 18.);
   h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1, "[myCut2]");
 
+  TH1D *h2_1 = new TH1D("h2_1", "{}_{3}Li; A_{1}; Entries", 300, 0., 8.);
+  h2_1 = h_Acor2->ProjectionX("h2_1", 0, -1);
+  h2_1->SetMarkerStyle(20);
+  h2_1->SetMarkerSize(0.5);
+  h2_1->SetLineColor(kBlue);
+  h2_1->SetLineWidth(2);
+  h2_1->GetYaxis()->SetTitleOffset(1.2);
+  h2_1->GetXaxis()->SetTitleSize(0.04);
+  h2_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_2 = new TH1D("h21_2_2", "{}_{3}Li; A_{2}; Entries", 300, 2., 18.);
   h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1, "[myCut2]");
+
+  TH1D *h2_2 = new TH1D("h2_2", "{}_{3}Li; A_{2}; Entries", 300, 0., 8.);
+  h2_2 = h_Acor2->ProjectionY("h2_2", 0, -1);
+  h2_2->SetMarkerStyle(20);
+  h2_2->SetMarkerSize(0.5);
+  h2_2->SetLineColor(kBlue);
+  h2_2->SetLineWidth(2);
+  h2_2->GetYaxis()->SetTitleOffset(1.2);
+  h2_2->GetXaxis()->SetTitleSize(0.04);
+  h2_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_2 = new TH1D("h31_1_2", "{}_{3}Li; A_{1}; Entries", 300, 2., 18.);
   h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1, "[myCut8]");
 
   TH1D *h31_3_2 = new TH1D("h31_3_2", "{}_{3}Li; A_{3}; Entries", 300, 2., 18.);
   h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1, "[myCut8]");
+
+  TH1D *h2_3 = new TH1D("h2_3", "{}_{3}Li; A_{3}; Entries", 300, 0., 8.);
+  h2_3 = h_Acor8->ProjectionY("h2_3", 0, -1);
+  h2_3->SetMarkerStyle(20);
+  h2_3->SetMarkerSize(0.5);
+  h2_3->SetLineColor(kBlue);
+  h2_3->SetLineWidth(2);
+  h2_3->GetYaxis()->SetTitleOffset(1.2);
+  h2_3->GetXaxis()->SetTitleSize(0.04);
+  h2_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_2 = new TH1D("h32_2_2", "{}_{3}Li; A_{2}; Entries", 300, 2., 18.);
   h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1, "[myCut14]");
@@ -307,14 +397,44 @@ void myBestFit() {
   TH1D *h21_1_3 = new TH1D("h21_1_3", "{}_{4}Be; A_{1}; Entries", 300, 4., 20.);
   h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1, "[myCut3]");
 
+  TH1D *h3_1 = new TH1D("h3_1", "{}_{4}Be; A_{1}; Entries", 300, 0., 8.);
+  h3_1 = h_Acor3->ProjectionX("h3_1", 0, -1);
+  h3_1->SetMarkerStyle(20);
+  h3_1->SetMarkerSize(0.5);
+  h3_1->SetLineColor(kBlue);
+  h3_1->SetLineWidth(2);
+  h3_1->GetYaxis()->SetTitleOffset(1.2);
+  h3_1->GetXaxis()->SetTitleSize(0.04);
+  h3_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_3 = new TH1D("h21_2_3", "{}_{4}Be; A_{2}; Entries", 300, 4., 20.);
   h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1, "[myCut3]");
+
+  TH1D *h3_2 = new TH1D("h3_2", "{}_{4}Be; A_{2}; Entries", 300, 0., 8.);
+  h3_2 = h_Acor3->ProjectionY("h3_2", 0, -1);
+  h3_2->SetMarkerStyle(20);
+  h3_2->SetMarkerSize(0.5);
+  h3_2->SetLineColor(kBlue);
+  h3_2->SetLineWidth(2);
+  h3_2->GetYaxis()->SetTitleOffset(1.2);
+  h3_2->GetXaxis()->SetTitleSize(0.04);
+  h3_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_3 = new TH1D("h31_1_3", "{}_{4}Be; A_{1}; Entries", 300, 4., 20.);
   h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1, "[myCut9]");
 
   TH1D *h31_3_3 = new TH1D("h31_3_3", "{}_{4}Be; A_{3}; Entries", 300, 4., 20.);
   h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1, "[myCut9]");
+
+  TH1D *h3_3 = new TH1D("h3_3", "{}_{4}Be; A_{3}; Entries", 300, 0., 8.);
+  h3_3 = h_Acor9->ProjectionY("h3_3", 0, -1);
+  h3_3->SetMarkerStyle(20);
+  h3_3->SetMarkerSize(0.5);
+  h3_3->SetLineColor(kBlue);
+  h3_3->SetLineWidth(2);
+  h3_3->GetYaxis()->SetTitleOffset(1.2);
+  h3_3->GetXaxis()->SetTitleSize(0.04);
+  h3_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_3 = new TH1D("h32_2_3", "{}_{4}Be; A_{2}; Entries", 300, 4., 20.);
   h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1, "[myCut15]");
@@ -326,14 +446,44 @@ void myBestFit() {
   TH1D *h21_1_4 = new TH1D("h21_1_4", "{}_{5}B; A_{1}; Entries", 300, 4., 22.);
   h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1, "[myCut4]");
 
+  TH1D *h4_1 = new TH1D("h4_1", "{}_{5}B; A_{1}; Entries", 300, 0., 8.);
+  h4_1 = h_Acor4->ProjectionX("h4_1", 0, -1);
+  h4_1->SetMarkerStyle(20);
+  h4_1->SetMarkerSize(0.5);
+  h4_1->SetLineColor(kBlue);
+  h4_1->SetLineWidth(2);
+  h4_1->GetYaxis()->SetTitleOffset(1.2);
+  h4_1->GetXaxis()->SetTitleSize(0.04);
+  h4_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_4 = new TH1D("h21_2_4", "{}_{5}B; A_{2}; Entries", 300, 4., 22.);
   h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1, "[myCut4]");
+
+  TH1D *h4_2 = new TH1D("h4_2", "{}_{5}B; A_{2}; Entries", 300, 0., 8.);
+  h4_2 = h_Acor4->ProjectionY("h4_2", 0, -1);
+  h4_2->SetMarkerStyle(20);
+  h4_2->SetMarkerSize(0.5);
+  h4_2->SetLineColor(kBlue);
+  h4_2->SetLineWidth(2);
+  h4_2->GetYaxis()->SetTitleOffset(1.2);
+  h4_2->GetXaxis()->SetTitleSize(0.04);
+  h4_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_4 = new TH1D("h31_1_4", "{}_{5}B; A_{1}; Entries", 300, 4., 22.);
   h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1, "[myCut10]");
 
   TH1D *h31_3_4 = new TH1D("h31_3_4", "{}_{5}B; A_{3}; Entries", 300, 4., 22.);
   h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1, "[myCut10]");
+
+  TH1D *h4_3 = new TH1D("h4_3", "{}_{5}B; A_{3}; Entries", 300, 0., 8.);
+  h4_3 = h_Acor10->ProjectionY("h4_3", 0, -1);
+  h4_3->SetMarkerStyle(20);
+  h4_3->SetMarkerSize(0.5);
+  h4_3->SetLineColor(kBlue);
+  h4_3->SetLineWidth(2);
+  h4_3->GetYaxis()->SetTitleOffset(1.2);
+  h4_3->GetXaxis()->SetTitleSize(0.04);
+  h4_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_4 = new TH1D("h32_2_4", "{}_{5}B; A_{2}; Entries", 300, 4., 22.);
   h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1, "[myCut16]");
@@ -345,14 +495,44 @@ void myBestFit() {
   TH1D *h21_1_5 = new TH1D("h21_1_5", "{}_{6}C; A_{1}; Entries", 300, 4., 24.);
   h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1, "[myCut5]");
 
+  TH1D *h5_1 = new TH1D("h5_1", "{}_{6}C; A_{1}; Entries", 300, 0., 8.);
+  h5_1 = h_Acor5->ProjectionX("h5_1", 0, -1);
+  h5_1->SetMarkerStyle(20);
+  h5_1->SetMarkerSize(0.5);
+  h5_1->SetLineColor(kBlue);
+  h5_1->SetLineWidth(2);
+  h5_1->GetYaxis()->SetTitleOffset(1.2);
+  h5_1->GetXaxis()->SetTitleSize(0.04);
+  h5_1->GetYaxis()->SetTitleSize(0.04);
+
   TH1D *h21_2_5 = new TH1D("h21_2_5", "{}_{6}C; A_{2}; Entries", 300, 4., 24.);
   h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1, "[myCut5]");
+
+  TH1D *h5_2 = new TH1D("h5_2", "{}_{6}C; A_{2}; Entries", 300, 0., 8.);
+  h5_2 = h_Acor5->ProjectionY("h5_2", 0, -1);
+  h5_2->SetMarkerStyle(20);
+  h5_2->SetMarkerSize(0.5);
+  h5_2->SetLineColor(kBlue);
+  h5_2->SetLineWidth(2);
+  h5_2->GetYaxis()->SetTitleOffset(1.2);
+  h5_2->GetXaxis()->SetTitleSize(0.04);
+  h5_2->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h31_1_5 = new TH1D("h31_1_5", "{}_{6}C; A_{1}; Entries", 300, 4., 24.);
   h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1, "[myCut11]");
 
   TH1D *h31_3_5 = new TH1D("h31_3_5", "{}_{6}C; A_{3}; Entries", 300, 4., 24.);
   h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1, "[myCut11]");
+
+  TH1D *h5_3 = new TH1D("h5_3", "{}_{6}C; A_{3}; Entries", 300, 0., 8.);
+  h5_3 = h_Acor5->ProjectionY("h5_3", 0, -1);
+  h5_3->SetMarkerStyle(20);
+  h5_3->SetMarkerSize(0.5);
+  h5_3->SetLineColor(kBlue);
+  h5_3->SetLineWidth(2);
+  h5_3->GetYaxis()->SetTitleOffset(1.2);
+  h5_3->GetXaxis()->SetTitleSize(0.04);
+  h5_3->GetYaxis()->SetTitleSize(0.04);
 
   TH1D *h32_2_5 = new TH1D("h32_2_5", "{}_{6}C; A_{2}; Entries", 300, 4., 24.);
   h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1, "[myCut17]");
@@ -582,6 +762,166 @@ void myBestFit() {
   h32_3_5->GetYaxis()->SetTitleOffset(1.2);
   h32_3_5->GetXaxis()->SetTitleSize(0.04);
   h32_3_5->GetYaxis()->SetTitleSize(0.04);
+
+  // drawing cut_nocut on canvas
+  TCanvas *c_cutDouble0 =
+      new TCanvas("c_cutDouble0", "c_cutDouble0", 1000, 600);
+  TCanvas *c_cutDouble1 =
+      new TCanvas("c_cutDouble1", "c_cutDouble1", 1000, 600);
+  TCanvas *c_cutDouble2 =
+      new TCanvas("c_cutDouble2", "c_cutDouble2", 1000, 600);
+  TCanvas *c_cutDouble3 =
+      new TCanvas("c_cutDouble3", "c_cutDouble3", 1000, 600);
+  TCanvas *c_cutDouble4 =
+      new TCanvas("c_cutDouble4", "c_cutDouble4", 1000, 600);
+  TCanvas *c_cutDouble5 =
+      new TCanvas("c_cutDouble5", "c_cutDouble5", 1000, 600);
+  TCanvas *c_cutDouble6 =
+      new TCanvas("c_cutDouble6", "c_cutDouble6", 1000, 600);
+  TCanvas *c_cutDouble7 =
+      new TCanvas("c_cutDouble7", "c_cutDouble7", 1000, 600);
+  TCanvas *c_cutDouble8 =
+      new TCanvas("c_cutDouble8", "c_cutDouble8", 1000, 600);
+  TCanvas *c_cutDouble9 =
+      new TCanvas("c_cutDouble9", "c_cutDouble9", 1000, 600);
+  TCanvas *c_cutDouble10 =
+      new TCanvas("c_cutDouble10", "c_cutDouble10", 1000, 600);
+  TCanvas *c_cutDouble11 =
+      new TCanvas("c_cutDouble11", "c_cutDouble11", 1000, 600);
+  TCanvas *c_cutDouble12 =
+      new TCanvas("c_cutDouble12", "c_cutDouble12", 1000, 600);
+  TCanvas *c_cutDouble13 =
+      new TCanvas("c_cutDouble13", "c_cutDouble13", 1000, 600);
+  TCanvas *c_cutDouble14 =
+      new TCanvas("c_cutDouble14", "c_cutDouble14", 1000, 600);
+  TCanvas *c_cutDouble15 =
+      new TCanvas("c_cutDouble15", "c_cutDouble15", 1000, 600);
+  TCanvas *c_cutDouble16 =
+      new TCanvas("c_cutDouble16", "c_cutDouble16", 1000, 600);
+  TCanvas *c_cutDouble17 =
+      new TCanvas("c_cutDouble17", "c_cutDouble17", 1000, 600);
+
+  // divide canvas
+  c_cutDouble0->Divide(2, 1);
+  c_cutDouble1->Divide(2, 1);
+  c_cutDouble2->Divide(2, 1);
+  c_cutDouble3->Divide(2, 1);
+  c_cutDouble4->Divide(2, 1);
+  c_cutDouble5->Divide(2, 1);
+  c_cutDouble6->Divide(2, 1);
+  c_cutDouble7->Divide(2, 1);
+  c_cutDouble8->Divide(2, 1);
+  c_cutDouble9->Divide(2, 1);
+  c_cutDouble10->Divide(2, 1);
+  c_cutDouble11->Divide(2, 1);
+  c_cutDouble12->Divide(2, 1);
+  c_cutDouble13->Divide(2, 1);
+  c_cutDouble14->Divide(2, 1);
+  c_cutDouble15->Divide(2, 1);
+  c_cutDouble16->Divide(2, 1);
+  c_cutDouble17->Divide(2, 1);
+
+  // histo0
+  c_cutDouble0->cd(1);
+  h0_1->Draw();
+  c_cutDouble0->cd(2);
+  h21_1_0->Draw();
+  h31_1_0->Draw("same");
+  c_cutDouble1->cd(1);
+  h0_2->Draw();
+  c_cutDouble1->cd(2);
+  h21_2_0->Draw();
+  h32_2_0->Draw("same");
+  c_cutDouble2->cd(1);
+  h0_3->Draw();
+  c_cutDouble2->cd(2);
+  h31_3_0->Draw();
+  h32_3_0->Draw("same");
+
+  // histo1
+  c_cutDouble3->cd(1);
+  h1_1->Draw();
+  c_cutDouble3->cd(2);
+  h21_1_1->Draw();
+  h31_1_1->Draw("same");
+  c_cutDouble4->cd(1);
+  h1_2->Draw();
+  c_cutDouble4->cd(2);
+  h21_2_1->Draw();
+  h32_2_1->Draw("same");
+  c_cutDouble5->cd(1);
+  h1_3->Draw();
+  c_cutDouble5->cd(2);
+  h31_3_1->Draw();
+  h32_3_1->Draw("same");
+
+  // histo2
+  c_cutDouble6->cd(1);
+  h2_1->Draw();
+  c_cutDouble6->cd(2);
+  h21_1_2->Draw();
+  h31_1_2->Draw("same");
+  c_cutDouble7->cd(1);
+  h2_2->Draw();
+  c_cutDouble7->cd(2);
+  h21_2_2->Draw();
+  h32_2_2->Draw("same");
+  c_cutDouble8->cd(1);
+  h2_3->Draw();
+  c_cutDouble8->cd(2);
+  h31_3_2->Draw();
+  h32_3_2->Draw("same");
+
+  // histo3
+  c_cutDouble9->cd(1);
+  h3_1->Draw();
+  c_cutDouble9->cd(2);
+  h21_1_3->Draw();
+  h31_1_3->Draw("same");
+  c_cutDouble10->cd(1);
+  h3_2->Draw();
+  c_cutDouble10->cd(2);
+  h21_2_3->Draw();
+  h32_2_3->Draw("same");
+  c_cutDouble11->cd(1);
+  h3_3->Draw();
+  c_cutDouble11->cd(2);
+  h31_3_3->Draw();
+  h32_3_3->Draw("same");
+
+  // histo4
+  c_cutDouble12->cd(1);
+  h4_1->Draw();
+  c_cutDouble12->cd(2);
+  h21_1_4->Draw();
+  h31_1_4->Draw("same");
+  c_cutDouble13->cd(1);
+  h4_2->Draw();
+  c_cutDouble13->cd(2);
+  h21_2_4->Draw();
+  h32_2_4->Draw("same");
+  c_cutDouble14->cd(1);
+  h4_3->Draw();
+  c_cutDouble14->cd(2);
+  h31_3_4->Draw();
+  h32_3_4->Draw("same");
+
+  // histo5
+  c_cutDouble15->cd(1);
+  h5_1->Draw();
+  c_cutDouble15->cd(2);
+  h21_1_5->Draw();
+  h31_1_5->Draw("same");
+  c_cutDouble16->cd(1);
+  h5_2->Draw();
+  c_cutDouble16->cd(2);
+  h21_2_5->Draw();
+  h32_2_5->Draw("same");
+  c_cutDouble17->cd(1);
+  h5_3->Draw();
+  c_cutDouble17->cd(2);
+  h31_3_5->Draw();
+  h32_3_5->Draw("same");
 
   // fit functions
   // histo0
@@ -1317,21 +1657,27 @@ void myBestFit() {
   // drawing on canvas and cosmetics
   // histo0
   h21_1_0->SetLineColor(kBlue);
+  h21_1_0->SetLineWidth(2);
   h31_1_0->SetLineColor(kBlack);
+  h31_1_0->SetLineWidth(2);
   c_cut0->cd(1);
   h21_1_0->DrawCopy();
   c_cut0->cd(2);
   h31_1_0->DrawCopy();
 
   h21_2_0->SetLineColor(kBlue);
+  h21_2_0->SetLineWidth(2);
   h32_2_0->SetLineColor(kBlack);
+  h32_2_0->SetLineWidth(2);
   c_cut1->cd(1);
   h21_2_0->DrawCopy();
   c_cut1->cd(2);
   h32_2_0->DrawCopy();
 
   h31_3_0->SetLineColor(kBlue);
+  h31_3_0->SetLineWidth(2);
   h32_3_0->SetLineColor(kBlack);
+  h32_3_0->SetLineWidth(2);
   c_cut2->cd(1);
   h31_3_0->DrawCopy();
   c_cut2->cd(2);
@@ -1339,21 +1685,27 @@ void myBestFit() {
 
   // histo1
   h21_1_1->SetLineColor(kBlue);
+  h21_1_1->SetLineWidth(2);
   h31_1_1->SetLineColor(kBlack);
+  h31_1_1->SetLineWidth(2);
   c_cut3->cd(1);
   h21_1_1->DrawCopy();
   c_cut3->cd(2);
   h31_1_1->DrawCopy();
 
   h21_2_1->SetLineColor(kBlue);
+  h21_2_1->SetLineWidth(2);
   h32_2_1->SetLineColor(kBlack);
+  h32_2_1->SetLineWidth(2);
   c_cut4->cd(1);
   h21_2_1->DrawCopy();
   c_cut4->cd(2);
   h32_2_1->DrawCopy();
 
   h31_3_1->SetLineColor(kBlue);
+  h31_3_1->SetLineWidth(2);
   h32_3_1->SetLineColor(kBlack);
+  h32_3_1->SetLineWidth(2);
   c_cut5->cd(1);
   h31_3_1->DrawCopy();
   c_cut5->cd(2);
@@ -1361,21 +1713,27 @@ void myBestFit() {
 
   // histo2
   h21_1_2->SetLineColor(kBlue);
+  h21_1_2->SetLineWidth(2);
   h31_1_2->SetLineColor(kBlack);
+  h31_1_2->SetLineWidth(2);
   c_cut6->cd(1);
   h21_1_2->DrawCopy();
   c_cut6->cd(2);
   h31_1_2->DrawCopy();
 
   h21_2_2->SetLineColor(kBlue);
+  h21_2_2->SetLineWidth(2);
   h32_2_2->SetLineColor(kBlack);
+  h32_2_2->SetLineWidth(2);
   c_cut7->cd(1);
   h21_2_2->DrawCopy();
   c_cut7->cd(2);
   h32_2_2->DrawCopy();
 
   h31_3_2->SetLineColor(kBlue);
+  h31_3_2->SetLineWidth(2);
   h32_3_2->SetLineColor(kBlack);
+  h32_3_2->SetLineWidth(2);
   c_cut8->cd(1);
   h31_3_2->DrawCopy();
   c_cut8->cd(2);
@@ -1383,21 +1741,27 @@ void myBestFit() {
 
   // histo3
   h21_1_3->SetLineColor(kBlue);
+  h21_1_3->SetLineWidth(2);
   h31_1_3->SetLineColor(kBlack);
+  h31_1_3->SetLineWidth(2);
   c_cut9->cd(1);
   h21_1_3->DrawCopy();
   c_cut9->cd(2);
   h31_1_3->DrawCopy();
 
   h21_2_3->SetLineColor(kBlue);
+  h21_2_3->SetLineWidth(2);
   h32_2_3->SetLineColor(kBlack);
+  h32_2_3->SetLineWidth(2);
   c_cut10->cd(1);
   h21_2_3->DrawCopy();
   c_cut10->cd(2);
   h32_2_3->DrawCopy();
 
   h31_3_3->SetLineColor(kBlue);
+  h31_3_3->SetLineWidth(2);
   h32_3_3->SetLineColor(kBlack);
+  h32_3_3->SetLineWidth(2);
   c_cut11->cd(1);
   h31_3_3->DrawCopy();
   c_cut11->cd(2);
@@ -1405,21 +1769,27 @@ void myBestFit() {
 
   // histo4
   h21_1_4->SetLineColor(kBlue);
+  h21_1_4->SetLineWidth(2);
   h31_1_4->SetLineColor(kBlack);
+  h31_1_4->SetLineWidth(2);
   c_cut12->cd(1);
   h21_1_4->DrawCopy();
   c_cut12->cd(2);
   h31_1_4->DrawCopy();
 
   h21_2_4->SetLineColor(kBlue);
+  h21_2_4->SetLineWidth(2);
   h32_2_4->SetLineColor(kBlack);
+  h32_2_4->SetLineWidth(2);
   c_cut13->cd(1);
   h21_2_4->DrawCopy();
   c_cut13->cd(2);
   h32_2_4->DrawCopy();
 
   h31_3_4->SetLineColor(kBlue);
+  h31_3_4->SetLineWidth(2);
   h32_3_4->SetLineColor(kBlack);
+  h32_3_4->SetLineWidth(2);
   c_cut14->cd(1);
   h31_3_4->DrawCopy();
   c_cut14->cd(2);
@@ -1427,21 +1797,27 @@ void myBestFit() {
 
   // histo5
   h21_1_5->SetLineColor(kBlue);
+  h21_1_5->SetLineWidth(2);
   h31_1_5->SetLineColor(kBlack);
+  h31_1_5->SetLineWidth(2);
   c_cut15->cd(1);
   h21_1_5->DrawCopy();
   c_cut15->cd(2);
   h31_1_5->DrawCopy();
 
   h21_2_5->SetLineColor(kBlue);
+  h21_2_5->SetLineWidth(2);
   h32_2_5->SetLineColor(kBlack);
+  h32_2_5->SetLineWidth(2);
   c_cut16->cd(1);
   h21_2_5->DrawCopy();
   c_cut16->cd(2);
   h32_2_5->DrawCopy();
 
   h31_3_5->SetLineColor(kBlue);
+  h31_3_5->SetLineWidth(2);
   h32_3_5->SetLineColor(kBlack);
+  h32_3_5->SetLineWidth(2);
   c_cut17->cd(1);
   h31_3_5->DrawCopy();
   c_cut17->cd(2);
@@ -1456,10 +1832,156 @@ void myBestFit() {
 
   // draw multigraph
   c_multigr->cd(1);
-  black->Draw("APE");
+  black->Draw("AP");
   leg1->Draw("same");
   c_multigr->cd(2);
-  blue->Draw("APE");
+  blue->Draw("AP");
+
+  // draw cut
+  TCanvas *c_Fcut0 = new TCanvas("c_Fcut0", "c_Fcut0", 1000, 600);
+  TCanvas *c_Fcut1 = new TCanvas("c_Fcut1", "c_Fcut1", 1000, 600);
+  TCanvas *c_Fcut2 = new TCanvas("c_Fcut2", "c_Fcut2", 1000, 600);
+  TCanvas *c_Fcut3 = new TCanvas("c_Fcut3", "c_Fcut3", 1000, 600);
+  TCanvas *c_Fcut4 = new TCanvas("c_Fcut4", "c_Fcut4", 1000, 600);
+  TCanvas *c_Fcut5 = new TCanvas("c_Fcut5", "c_Fcut5", 1000, 600);
+  TCanvas *c_Fcut6 = new TCanvas("c_Fcut6", "c_Fcut6", 1000, 600);
+  TCanvas *c_Fcut7 = new TCanvas("c_Fcut7", "c_Fcut7", 1000, 600);
+  TCanvas *c_Fcut8 = new TCanvas("c_Fcut8", "c_Fcut8", 1000, 600);
+  TCanvas *c_Fcut9 = new TCanvas("c_Fcut9", "c_Fcut9", 1000, 600);
+  TCanvas *c_Fcut10 = new TCanvas("c_Fcut10", "c_Fcut10", 1000, 600);
+  TCanvas *c_Fcut11 = new TCanvas("c_Fcut11", "c_Fcut11", 1000, 600);
+  TCanvas *c_Fcut12 = new TCanvas("c_Fcut12", "c_Fcut12", 1000, 600);
+  TCanvas *c_Fcut13 = new TCanvas("c_Fcut13", "c_Fcut13", 1000, 600);
+  TCanvas *c_Fcut14 = new TCanvas("c_Fcut14", "c_Fcut14", 1000, 600);
+  TCanvas *c_Fcut15 = new TCanvas("c_Fcut15", "c_Fcut15", 1000, 600);
+  TCanvas *c_Fcut16 = new TCanvas("c_Fcut16", "c_Fcut16", 1000, 600);
+  TCanvas *c_Fcut17 = new TCanvas("c_Fcut17", "c_Fcut17", 1000, 600);
+
+  c_Fcut0->cd();
+  h_Acor0->Draw("colz");
+  myCut0->Draw("same");
+  myCut0->SetLineColor(kRed);
+  myCut0->SetLineWidth(3);
+  myCut0->SetLineStyle(2);
+
+  c_Fcut1->cd();
+  h_Acor1->Draw("colz");
+  myCut1->Draw("same");
+  myCut1->SetLineColor(kRed);
+  myCut1->SetLineWidth(3);
+  myCut1->SetLineStyle(2);
+
+  c_Fcut2->cd();
+  h_Acor2->Draw("colz");
+  myCut2->Draw("same");
+  myCut2->SetLineColor(kRed);
+  myCut2->SetLineWidth(3);
+  myCut2->SetLineStyle(2);
+
+  c_Fcut3->cd();
+  h_Acor3->Draw("colz");
+  myCut3->Draw("same");
+  myCut3->SetLineColor(kRed);
+  myCut3->SetLineWidth(3);
+  myCut3->SetLineStyle(2);
+
+  c_Fcut4->cd();
+  h_Acor4->Draw("colz");
+  myCut4->Draw("same");
+  myCut4->SetLineColor(kRed);
+  myCut4->SetLineWidth(3);
+  myCut4->SetLineStyle(2);
+
+  c_Fcut5->cd();
+  h_Acor5->Draw("colz");
+  myCut5->Draw("same");
+  myCut5->SetLineColor(kRed);
+  myCut5->SetLineWidth(3);
+  myCut5->SetLineStyle(2);
+
+  c_Fcut6->cd();
+  h_Acor6->Draw("colz");
+  myCut6->Draw("same");
+  myCut6->SetLineColor(kRed);
+  myCut6->SetLineWidth(3);
+  myCut6->SetLineStyle(2);
+
+  c_Fcut7->cd();
+  h_Acor7->Draw("colz");
+  myCut7->Draw("same");
+  myCut7->SetLineColor(kRed);
+  myCut7->SetLineWidth(3);
+  myCut7->SetLineStyle(2);
+
+  c_Fcut8->cd();
+  h_Acor8->Draw("colz");
+  myCut8->Draw("same");
+  myCut8->SetLineColor(kRed);
+  myCut8->SetLineWidth(3);
+  myCut8->SetLineStyle(2);
+
+  c_Fcut9->cd();
+  h_Acor9->Draw("colz");
+  myCut9->Draw("same");
+  myCut9->SetLineColor(kRed);
+  myCut9->SetLineWidth(3);
+  myCut9->SetLineStyle(2);
+
+  c_Fcut10->cd();
+  h_Acor10->Draw("colz");
+  myCut10->Draw("same");
+  myCut10->SetLineColor(kRed);
+  h_Acor10->SetLineWidth(3);
+  h_Acor10->SetLineStyle(2);
+
+  c_Fcut11->cd();
+  h_Acor11->Draw("colz");
+  myCut11->Draw("same");
+  myCut11->SetLineColor(kRed);
+  myCut11->SetLineWidth(3);
+  myCut11->SetLineStyle(2);
+
+  c_Fcut12->cd();
+  h_Acor12->Draw("colz");
+  myCut12->Draw("same");
+  myCut12->SetLineColor(kRed);
+  myCut12->SetLineWidth(3);
+  myCut12->SetLineStyle(2);
+
+  c_Fcut13->cd();
+  h_Acor13->Draw("colz");
+  myCut13->Draw("same");
+  myCut13->SetLineColor(kRed);
+  myCut13->SetLineWidth(3);
+  myCut13->SetLineStyle(2);
+
+  c_Fcut14->cd();
+  h_Acor14->Draw("colz");
+  myCut14->Draw("same");
+  myCut14->SetLineColor(kRed);
+  myCut14->SetLineWidth(3);
+  myCut14->SetLineStyle(2);
+
+  c_Fcut15->cd();
+  h_Acor15->Draw("colz");
+  myCut15->Draw("same");
+  myCut15->SetLineColor(kRed);
+  myCut15->SetLineWidth(3);
+  myCut15->SetLineStyle(2);
+
+  c_Fcut16->cd();
+  h_Acor16->Draw("colz");
+  myCut16->Draw("same");
+  myCut16->SetLineColor(kRed);
+  myCut16->SetLineWidth(3);
+  myCut16->SetLineStyle(2);
+
+  c_Fcut17->cd();
+  h_Acor17->Draw("colz");
+  myCut17->Draw("same");
+  myCut17->SetLineColor(kRed);
+  myCut17->SetLineWidth(3);
+  myCut17->SetLineStyle(2);
 
   setFitStyle();
 
@@ -1484,6 +2006,42 @@ void myBestFit() {
   c_cut16->Write();
   c_cut17->Write();
   c_multigr->Write();
+  c_Fcut0->Write();
+  c_Fcut1->Write();
+  c_Fcut2->Write();
+  c_Fcut3->Write();
+  c_Fcut4->Write();
+  c_Fcut5->Write();
+  c_Fcut6->Write();
+  c_Fcut7->Write();
+  c_Fcut8->Write();
+  c_Fcut9->Write();
+  c_Fcut10->Write();
+  c_Fcut11->Write();
+  c_Fcut12->Write();
+  c_Fcut13->Write();
+  c_Fcut14->Write();
+  c_Fcut15->Write();
+  c_Fcut16->Write();
+  c_Fcut17->Write();
+  c_cutDouble0->Write();
+  c_cutDouble1->Write();
+  c_cutDouble2->Write();
+  c_cutDouble3->Write();
+  c_cutDouble4->Write();
+  c_cutDouble5->Write();
+  c_cutDouble6->Write();
+  c_cutDouble7->Write();
+  c_cutDouble8->Write();
+  c_cutDouble9->Write();
+  c_cutDouble10->Write();
+  c_cutDouble11->Write();
+  c_cutDouble12->Write();
+  c_cutDouble13->Write();
+  c_cutDouble14->Write();
+  c_cutDouble15->Write();
+  c_cutDouble16->Write();
+  c_cutDouble17->Write();
 
   file2->Close();
   file1->Close();
