@@ -256,7 +256,7 @@ void myBestFit() {
   h0_1->SetMarkerSize(0.5);
   h0_1->SetLineColor(kBlue);
   h0_1->SetLineWidth(2);
-  h0_1->GetYaxis()->SetTitleOffset(1.2);
+  h0_1->GetYaxis()->SetTitleOffset(1.7);
   h0_1->GetXaxis()->SetTitleSize(0.04);
   h0_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -269,7 +269,7 @@ void myBestFit() {
   h0_2->SetMarkerSize(0.5);
   h0_2->SetLineColor(kBlue);
   h0_2->SetLineWidth(2);
-  h0_2->GetYaxis()->SetTitleOffset(1.2);
+  h0_2->GetYaxis()->SetTitleOffset(1.7);
   h0_2->GetXaxis()->SetTitleSize(0.04);
   h0_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -285,7 +285,7 @@ void myBestFit() {
   h0_3->SetMarkerSize(0.5);
   h0_3->SetLineColor(kBlue);
   h0_3->SetLineWidth(2);
-  h0_3->GetYaxis()->SetTitleOffset(1.2);
+  h0_3->GetYaxis()->SetTitleOffset(1.7);
   h0_3->GetXaxis()->SetTitleSize(0.04);
   h0_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -305,7 +305,7 @@ void myBestFit() {
   h1_1->SetMarkerSize(0.5);
   h1_1->SetLineColor(kBlue);
   h1_1->SetLineWidth(2);
-  h1_1->GetYaxis()->SetTitleOffset(1.2);
+  h1_1->GetYaxis()->SetTitleOffset(1.7);
   h1_1->GetXaxis()->SetTitleSize(0.04);
   h1_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -318,7 +318,7 @@ void myBestFit() {
   h1_2->SetMarkerSize(0.5);
   h1_2->SetLineColor(kBlue);
   h1_2->SetLineWidth(2);
-  h1_2->GetYaxis()->SetTitleOffset(1.2);
+  h1_2->GetYaxis()->SetTitleOffset(1.7);
   h1_2->GetXaxis()->SetTitleSize(0.04);
   h1_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -334,7 +334,7 @@ void myBestFit() {
   h1_3->SetMarkerSize(0.5);
   h1_3->SetLineColor(kBlue);
   h1_3->SetLineWidth(2);
-  h1_3->GetYaxis()->SetTitleOffset(1.2);
+  h1_3->GetYaxis()->SetTitleOffset(1.7);
   h1_3->GetXaxis()->SetTitleSize(0.04);
   h1_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -354,7 +354,7 @@ void myBestFit() {
   h2_1->SetMarkerSize(0.5);
   h2_1->SetLineColor(kBlue);
   h2_1->SetLineWidth(2);
-  h2_1->GetYaxis()->SetTitleOffset(1.2);
+  h2_1->GetYaxis()->SetTitleOffset(1.7);
   h2_1->GetXaxis()->SetTitleSize(0.04);
   h2_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -367,7 +367,7 @@ void myBestFit() {
   h2_2->SetMarkerSize(0.5);
   h2_2->SetLineColor(kBlue);
   h2_2->SetLineWidth(2);
-  h2_2->GetYaxis()->SetTitleOffset(1.2);
+  h2_2->GetYaxis()->SetTitleOffset(1.7);
   h2_2->GetXaxis()->SetTitleSize(0.04);
   h2_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -383,7 +383,7 @@ void myBestFit() {
   h2_3->SetMarkerSize(0.5);
   h2_3->SetLineColor(kBlue);
   h2_3->SetLineWidth(2);
-  h2_3->GetYaxis()->SetTitleOffset(1.2);
+  h2_3->GetYaxis()->SetTitleOffset(1.7);
   h2_3->GetXaxis()->SetTitleSize(0.04);
   h2_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -403,7 +403,7 @@ void myBestFit() {
   h3_1->SetMarkerSize(0.5);
   h3_1->SetLineColor(kBlue);
   h3_1->SetLineWidth(2);
-  h3_1->GetYaxis()->SetTitleOffset(1.2);
+  h3_1->GetYaxis()->SetTitleOffset(1.7);
   h3_1->GetXaxis()->SetTitleSize(0.04);
   h3_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -416,7 +416,7 @@ void myBestFit() {
   h3_2->SetMarkerSize(0.5);
   h3_2->SetLineColor(kBlue);
   h3_2->SetLineWidth(2);
-  h3_2->GetYaxis()->SetTitleOffset(1.2);
+  h3_2->GetYaxis()->SetTitleOffset(1.7);
   h3_2->GetXaxis()->SetTitleSize(0.04);
   h3_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -432,7 +432,7 @@ void myBestFit() {
   h3_3->SetMarkerSize(0.5);
   h3_3->SetLineColor(kBlue);
   h3_3->SetLineWidth(2);
-  h3_3->GetYaxis()->SetTitleOffset(1.2);
+  h3_3->GetYaxis()->SetTitleOffset(1.7);
   h3_3->GetXaxis()->SetTitleSize(0.04);
   h3_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -452,7 +452,7 @@ void myBestFit() {
   h4_1->SetMarkerSize(0.5);
   h4_1->SetLineColor(kBlue);
   h4_1->SetLineWidth(2);
-  h4_1->GetYaxis()->SetTitleOffset(1.2);
+  h4_1->GetYaxis()->SetTitleOffset(1.7);
   h4_1->GetXaxis()->SetTitleSize(0.04);
   h4_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -465,7 +465,7 @@ void myBestFit() {
   h4_2->SetMarkerSize(0.5);
   h4_2->SetLineColor(kBlue);
   h4_2->SetLineWidth(2);
-  h4_2->GetYaxis()->SetTitleOffset(1.2);
+  h4_2->GetYaxis()->SetTitleOffset(1.7);
   h4_2->GetXaxis()->SetTitleSize(0.04);
   h4_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -481,7 +481,7 @@ void myBestFit() {
   h4_3->SetMarkerSize(0.5);
   h4_3->SetLineColor(kBlue);
   h4_3->SetLineWidth(2);
-  h4_3->GetYaxis()->SetTitleOffset(1.2);
+  h4_3->GetYaxis()->SetTitleOffset(1.7);
   h4_3->GetXaxis()->SetTitleSize(0.04);
   h4_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -501,7 +501,7 @@ void myBestFit() {
   h5_1->SetMarkerSize(0.5);
   h5_1->SetLineColor(kBlue);
   h5_1->SetLineWidth(2);
-  h5_1->GetYaxis()->SetTitleOffset(1.2);
+  h5_1->GetYaxis()->SetTitleOffset(1.7);
   h5_1->GetXaxis()->SetTitleSize(0.04);
   h5_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -514,7 +514,7 @@ void myBestFit() {
   h5_2->SetMarkerSize(0.5);
   h5_2->SetLineColor(kBlue);
   h5_2->SetLineWidth(2);
-  h5_2->GetYaxis()->SetTitleOffset(1.2);
+  h5_2->GetYaxis()->SetTitleOffset(1.7);
   h5_2->GetXaxis()->SetTitleSize(0.04);
   h5_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -530,7 +530,7 @@ void myBestFit() {
   h5_3->SetMarkerSize(0.5);
   h5_3->SetLineColor(kBlue);
   h5_3->SetLineWidth(2);
-  h5_3->GetYaxis()->SetTitleOffset(1.2);
+  h5_3->GetYaxis()->SetTitleOffset(1.7);
   h5_3->GetXaxis()->SetTitleSize(0.04);
   h5_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -544,222 +544,222 @@ void myBestFit() {
   // histo0
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.7);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.7);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_0->SetMarkerStyle(20);
   h31_1_0->SetMarkerSize(1.5);
-  h31_1_0->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_0->GetYaxis()->SetTitleOffset(1.7);
   h31_1_0->GetXaxis()->SetTitleSize(0.04);
   h31_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_0->SetMarkerStyle(20);
   h31_3_0->SetMarkerSize(1.5);
-  h31_3_0->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_0->GetYaxis()->SetTitleOffset(1.7);
   h31_3_0->GetXaxis()->SetTitleSize(0.04);
   h31_3_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_0->SetMarkerStyle(20);
   h32_2_0->SetMarkerSize(1.5);
-  h32_2_0->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_0->GetYaxis()->SetTitleOffset(1.7);
   h32_2_0->GetXaxis()->SetTitleSize(0.04);
   h32_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_0->SetMarkerStyle(20);
   h32_3_0->SetMarkerSize(1.5);
-  h32_3_0->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_0->GetYaxis()->SetTitleOffset(1.7);
   h32_3_0->GetXaxis()->SetTitleSize(0.04);
   h32_3_0->GetYaxis()->SetTitleSize(0.04);
 
   // histo1
   h21_1_1->SetMarkerStyle(20);
   h21_1_1->SetMarkerSize(1.5);
-  h21_1_1->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_1->GetYaxis()->SetTitleOffset(1.7);
   h21_1_1->GetXaxis()->SetTitleSize(0.04);
   h21_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_1->SetMarkerStyle(20);
   h21_2_1->SetMarkerSize(1.5);
-  h21_2_1->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_1->GetYaxis()->SetTitleOffset(1.7);
   h21_2_1->GetXaxis()->SetTitleSize(0.04);
   h21_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_1->SetMarkerStyle(20);
   h31_1_1->SetMarkerSize(1.5);
-  h31_1_1->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_1->GetYaxis()->SetTitleOffset(1.7);
   h31_1_1->GetXaxis()->SetTitleSize(0.04);
   h31_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_1->SetMarkerStyle(20);
   h31_3_1->SetMarkerSize(1.5);
-  h31_3_1->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_1->GetYaxis()->SetTitleOffset(1.7);
   h31_3_1->GetXaxis()->SetTitleSize(0.04);
   h31_3_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_1->SetMarkerStyle(20);
   h32_2_1->SetMarkerSize(1.5);
-  h32_2_1->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_1->GetYaxis()->SetTitleOffset(1.7);
   h32_2_1->GetXaxis()->SetTitleSize(0.04);
   h32_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_1->SetMarkerStyle(20);
   h32_3_1->SetMarkerSize(1.5);
-  h32_3_1->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_1->GetYaxis()->SetTitleOffset(1.7);
   h32_3_1->GetXaxis()->SetTitleSize(0.04);
   h32_3_1->GetYaxis()->SetTitleSize(0.04);
 
   // histo2
   h21_1_2->SetMarkerStyle(20);
   h21_1_2->SetMarkerSize(1.5);
-  h21_1_2->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_2->GetYaxis()->SetTitleOffset(1.7);
   h21_1_2->GetXaxis()->SetTitleSize(0.04);
   h21_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_2->SetMarkerStyle(20);
   h21_2_2->SetMarkerSize(1.5);
-  h21_2_2->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_2->GetYaxis()->SetTitleOffset(1.7);
   h21_2_2->GetXaxis()->SetTitleSize(0.04);
   h21_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_2->SetMarkerStyle(20);
   h31_1_2->SetMarkerSize(1.5);
-  h31_1_2->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_2->GetYaxis()->SetTitleOffset(1.7);
   h31_1_2->GetXaxis()->SetTitleSize(0.04);
   h31_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_2->SetMarkerStyle(20);
   h31_3_2->SetMarkerSize(1.5);
-  h31_3_2->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_2->GetYaxis()->SetTitleOffset(1.7);
   h31_3_2->GetXaxis()->SetTitleSize(0.04);
   h31_3_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_2->SetMarkerStyle(20);
   h32_2_2->SetMarkerSize(1.5);
-  h32_2_2->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_2->GetYaxis()->SetTitleOffset(1.7);
   h32_2_2->GetXaxis()->SetTitleSize(0.04);
   h32_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_2->SetMarkerStyle(20);
   h32_3_2->SetMarkerSize(1.5);
-  h32_3_2->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_2->GetYaxis()->SetTitleOffset(1.7);
   h32_3_2->GetXaxis()->SetTitleSize(0.04);
   h32_3_2->GetYaxis()->SetTitleSize(0.04);
 
   // histo3
   h21_1_3->SetMarkerStyle(20);
   h21_1_3->SetMarkerSize(1.5);
-  h21_1_3->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_3->GetYaxis()->SetTitleOffset(1.7);
   h21_1_3->GetXaxis()->SetTitleSize(0.04);
   h21_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_3->SetMarkerStyle(20);
   h21_2_3->SetMarkerSize(1.5);
-  h21_2_3->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_3->GetYaxis()->SetTitleOffset(1.7);
   h21_2_3->GetXaxis()->SetTitleSize(0.04);
   h21_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_3->SetMarkerStyle(20);
   h31_1_3->SetMarkerSize(1.5);
-  h31_1_3->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_3->GetYaxis()->SetTitleOffset(1.7);
   h31_1_3->GetXaxis()->SetTitleSize(0.04);
   h31_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_3->SetMarkerStyle(20);
   h31_3_3->SetMarkerSize(1.5);
-  h31_3_3->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_3->GetYaxis()->SetTitleOffset(1.7);
   h31_3_3->GetXaxis()->SetTitleSize(0.04);
   h31_3_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_3->SetMarkerStyle(20);
   h32_2_3->SetMarkerSize(1.5);
-  h32_2_3->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_3->GetYaxis()->SetTitleOffset(1.7);
   h32_2_3->GetXaxis()->SetTitleSize(0.04);
   h32_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_3->SetMarkerStyle(20);
   h32_3_3->SetMarkerSize(1.5);
-  h32_3_3->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_3->GetYaxis()->SetTitleOffset(1.7);
   h32_3_3->GetXaxis()->SetTitleSize(0.04);
   h32_3_3->GetYaxis()->SetTitleSize(0.04);
 
   // histo4
   h21_1_4->SetMarkerStyle(20);
   h21_1_4->SetMarkerSize(1.5);
-  h21_1_4->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_4->GetYaxis()->SetTitleOffset(1.7);
   h21_1_4->GetXaxis()->SetTitleSize(0.04);
   h21_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_4->SetMarkerStyle(20);
   h21_2_4->SetMarkerSize(1.5);
-  h21_2_4->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_4->GetYaxis()->SetTitleOffset(1.7);
   h21_2_4->GetXaxis()->SetTitleSize(0.04);
   h21_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_4->SetMarkerStyle(20);
   h31_1_4->SetMarkerSize(1.5);
-  h31_1_4->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_4->GetYaxis()->SetTitleOffset(1.7);
   h31_1_4->GetXaxis()->SetTitleSize(0.04);
   h31_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_4->SetMarkerStyle(20);
   h31_3_4->SetMarkerSize(1.5);
-  h31_3_4->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_4->GetYaxis()->SetTitleOffset(1.7);
   h31_3_4->GetXaxis()->SetTitleSize(0.04);
   h31_3_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_4->SetMarkerStyle(20);
   h32_2_4->SetMarkerSize(1.5);
-  h32_2_4->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_4->GetYaxis()->SetTitleOffset(1.7);
   h32_2_4->GetXaxis()->SetTitleSize(0.04);
   h32_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_4->SetMarkerStyle(20);
   h32_3_4->SetMarkerSize(1.5);
-  h32_3_4->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_4->GetYaxis()->SetTitleOffset(1.7);
   h32_3_4->GetXaxis()->SetTitleSize(0.04);
   h32_3_4->GetYaxis()->SetTitleSize(0.04);
 
   // histo5
   h21_1_5->SetMarkerStyle(20);
   h21_1_5->SetMarkerSize(1.5);
-  h21_1_5->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_5->GetYaxis()->SetTitleOffset(1.7);
   h21_1_5->GetXaxis()->SetTitleSize(0.04);
   h21_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_5->SetMarkerStyle(20);
   h21_2_5->SetMarkerSize(1.5);
-  h21_2_5->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_5->GetYaxis()->SetTitleOffset(1.7);
   h21_2_5->GetXaxis()->SetTitleSize(0.04);
   h21_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_5->SetMarkerStyle(20);
   h31_1_5->SetMarkerSize(1.5);
-  h31_1_5->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_5->GetYaxis()->SetTitleOffset(1.7);
   h31_1_5->GetXaxis()->SetTitleSize(0.04);
   h31_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_5->SetMarkerStyle(20);
   h31_3_5->SetMarkerSize(1.5);
-  h31_3_5->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_5->GetYaxis()->SetTitleOffset(1.7);
   h31_3_5->GetXaxis()->SetTitleSize(0.04);
   h31_3_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_5->SetMarkerStyle(20);
   h32_2_5->SetMarkerSize(1.5);
-  h32_2_5->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_5->GetYaxis()->SetTitleOffset(1.7);
   h32_2_5->GetXaxis()->SetTitleSize(0.04);
   h32_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_5->SetMarkerStyle(20);
   h32_3_5->SetMarkerSize(1.5);
-  h32_3_5->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_5->GetYaxis()->SetTitleOffset(1.7);
   h32_3_5->GetXaxis()->SetTitleSize(0.04);
   h32_3_5->GetYaxis()->SetTitleSize(0.04);
 
@@ -1346,6 +1346,26 @@ void myBestFit() {
   v_black_a3_mean.push_back(f_cut5_tot->GetParameter(1));
 
   // fitting on blue histos
+  // changing color fit function
+  f_cut0_1->SetLineColor(kGreen);
+  f_cut0_2->SetLineColor(kGreen);
+  f_cut0_3->SetLineColor(kGreen);
+  f_cut0_tot->SetLineColor(kCyan - 2);
+  f_cut1_1->SetLineColor(kGreen);
+  f_cut1_2->SetLineColor(kGreen);
+  f_cut1_tot->SetLineColor(kCyan - 2);
+  f_cut2_1->SetLineColor(kGreen);
+  f_cut2_2->SetLineColor(kGreen);
+  f_cut2_3->SetLineColor(kGreen);
+  f_cut2_tot->SetLineColor(kCyan - 2);
+  f_cut3_1->SetLineColor(kGreen);
+  f_cut3_2->SetLineColor(kGreen);
+  f_cut3_3->SetLineColor(kGreen);
+  f_cut3_tot->SetLineColor(kCyan - 2);
+  f_cut4_1->SetLineColor(kGreen);
+  f_cut4_2->SetLineColor(kGreen);
+  f_cut4_tot->SetLineColor(kCyan - 2);
+  f_cut5_tot->SetLineColor(kCyan - 2);
   // histo0
   h21_1_0->Fit(f_cut0_1, "R");
   h21_1_0->Fit(f_cut0_2, "R+");
