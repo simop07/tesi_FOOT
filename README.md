@@ -17,13 +17,3 @@
 
 ## DOMANDE:
 
-- Gli istogrammi che vengono peggio sono l'A_3 del Litio, l'A1 e l'A_3 del Berillio e l'A_1 e l'A_3 del Boro (magari da rivedere il cut).
-- I fit dopo l'elio peggiorano e nessuno dei multifit funziona. Magari, dal Litio incluso in poi, è più opportuno fare i fit solo degli isotopi più abbondanti (anche perché le occorrenze degli isotopi meno abbondanti sono davvero poche).
-- I fit migliorano o peggiorano se si passa da 500 bin a 250 bin? -> dire che ho ridotto il numero dei bin perché i grafici sembravano piuttosto "frastagliati"
-- Fare i fit anche sugli istogrammi blu, magari con un divide della canvas.
-- Le barre di errore sul multigraph le lascio perdere? Bisognerebbe fare una propagazione degli errori sull'errore percentuale, attraverso gli errori dei parametri dati dal fit.
-- Rimuovere con SetOptFit i dati del fit (visto che lì appaiono i risultati di un unico fit, mentre andrebbero messi i risultati di più fit).
-- Cambiando alcuni bin nella simulazione alcuni fit a multi gaussiana sono diventati migliori.
-- Il secondo termine dell'ALM presenta un più o un meno?
-- Visto che la parte di minimo chi quadro e di ALM non sarà supportata dai grafici, sto pensando: vogliamo mettere entrambe le parti all'interno di una sezione di appendice (o di una sorta di quarto capitolo (in caso da capire se numerato o non numerato)).
-- Inserire correlatore?
