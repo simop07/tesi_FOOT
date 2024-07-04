@@ -9,6 +9,7 @@
 - Decidere se mettere una dedica
 - Aggiungi il numero atomico ed eventualmente di massa a tutti gli elementi chimici che inserisci nella relazione.
 - La curvatura della traccia è data da p/z. p/z è come se fosse quella del fascio primario, perché è misurata dallacurvatura della traccia. p/z~a/z. ciò crea la sovrastima deiconteggi.
+- Aggiungi nome elementi sul grafico Delta E_TW vs TOF con pedice
 
 ## CODICE:
 
