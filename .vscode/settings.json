@@ -66,6 +66,7 @@
         "testList.C": "cpp",
         "list": "cpp",
         "myMacro.C": "cpp",
-        "myBestFit.C": "cpp"
+        "myBestFit.C": "cpp",
+        "myBestTriFit.C": "cpp"
     }
 }
