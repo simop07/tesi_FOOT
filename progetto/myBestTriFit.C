@@ -142,8 +142,8 @@ void myBestTriFit() {
   const Double_t x5[5] = {6.42958, 15.2911, 13.0219, 6.80125, 6.42958};
   const Double_t y5[5] = {5.57407, 12.7169, 14.3307, 6.39418, 5.57407};
 
-  const Double_t x6[5] = {0.729264, 3.67919, 3.28795, 0.697966, 0.729264};
-  const Double_t y6[5] = {0.470899, 3.21164, 3.61376, 0.809524, 0.470899};
+  const Double_t x6[6] = {5.83412, 11.7496, 9.01095, 8.41628, 6.11581, 5.83412};
+  const Double_t y6[6] = {5.1746, 10.4233, 10.4233, 7.60847, 7.31217, 5.1746};
 
   const Double_t x7[5] = {6.72711, 2.39613, 2.55458, 6.48944, 6.72711};
   const Double_t y7[5] = {5.82738, 2.01786, 3.27976, 6.50595, 5.82738};
@@ -151,8 +151,10 @@ void myBestTriFit() {
   const Double_t x8[5] = {3.92801, 10, 8.68545, 4.47574, 3.92801};
   const Double_t y8[5] = {3.74603, 8.95238, 8.91005, 4.7619, 3.74603};
 
-  const Double_t x9[5] = {6.00626, 10.9671, 10.5915, 6.41315, 6.00626};
-  const Double_t y9[5] = {5.30159, 10.1905, 11.2063, 6.69841, 5.30159};
+  const Double_t x9[8] = {6.05321, 11.2645, 10.8732, 8.87011,
+                          8.35368, 7.16432, 6.11581, 6.05321};
+  const Double_t y9[8] = {5.4709,  10.127,  11.4815, 9.21693,
+                          7.62963, 8.39153, 5.68254, 5.4709};
 
   const Double_t x10[5] = {6.50352, 13.2817, 12.4014, 6.96127, 6.50352};
   const Double_t y10[5] = {6.72619, 12.1071, 12.9167, 7.55952, 6.72619};
@@ -182,13 +184,13 @@ void myBestTriFit() {
   TCutG *myCut0 = new TCutG("myCut0", 4, x0, y0);
   TCutG *myCut1 = new TCutG("myCut1", 5, x1, y1);
   TCutG *myCut2 = new TCutG("myCut2", 5, x2, y2);
-  TCutG *myCut3 = new TCutG("myCut3", 5, x3, y3);
+  TCutG *myCut3 = new TCutG("myCut3", 6, x3, y3);
   TCutG *myCut4 = new TCutG("myCut4", 5, x4, y4);
   TCutG *myCut5 = new TCutG("myCut5", 5, x5, y5);
   TCutG *myCut6 = new TCutG("myCut6", 5, x6, y6);
   TCutG *myCut7 = new TCutG("myCut7", 5, x7, y7);
   TCutG *myCut8 = new TCutG("myCut8", 5, x8, y8);
-  TCutG *myCut9 = new TCutG("myCut9", 5, x9, y9);
+  TCutG *myCut9 = new TCutG("myCut9", 8, x9, y9);
   TCutG *myCut10 = new TCutG("myCut10", 5, x10, y10);
   TCutG *myCut11 = new TCutG("myCut11", 5, x11, y11);
   TCutG *myCut12 = new TCutG("myCut12", 5, x12, y12);
@@ -1783,8 +1785,8 @@ void myBestTriFit() {
   myCut2->SetLineWidth(3);
   myCut2->SetLineStyle(2);
 
-  TF1 *f3_1 = new TF1("f3_1", "0.933991*x - 0.273478", 4.5, 16.);
-  TF1 *f3_2 = new TF1("f3_2", "1.1299*x - 0.712557", 4.5, 16.);
+  TF1 *f3_1 = new TF1("f3_1", "0.887282*x - 0.00191072", 4.5, 16.);
+  TF1 *f3_2 = new TF1("f3_2", "1.0746*x + 0.740094", 4.5, 16.);
   f3_1->SetLineColor(kRed);
   f3_1->SetLineWidth(3);
   f3_1->SetLineStyle(2);
@@ -1885,8 +1887,8 @@ void myBestTriFit() {
   myCut8->SetLineWidth(3);
   myCut8->SetLineStyle(2);
 
-  TF1 *f9_1 = new TF1("f9_1", "0.9855*x - 0.617582", 4.5, 16);
-  TF1 *f9_2 = new TF1("f9_2", "1.07887*x - 0.220535", 4.5, 16);
+  TF1 *f9_1 = new TF1("f9_1", "0.893464*x + 0.0625748", 4.5, 16);
+  TF1 *f9_2 = new TF1("f9_2", "0.833128*x + 2.42274", 4.5, 16);
   f9_1->SetLineColor(kRed);
   f9_1->SetLineWidth(3);
   f9_1->SetLineStyle(2);
