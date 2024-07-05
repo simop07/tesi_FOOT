@@ -2042,11 +2042,11 @@ void myBestTriFit() {
 
   // drawing histos on multicanvas
   TCanvas *c_MultiCanvas1 =
-      new TCanvas("c_MultiCanvas1", "c_MultiCanvas1", 700, 900);
+      new TCanvas("c_MultiCanvas1", "c_MultiCanvas1", 900, 1100);
   TCanvas *c_MultiCanvas2 =
-      new TCanvas("c_MultiCanvas2", "c_MultiCanvas2", 700, 900);
+      new TCanvas("c_MultiCanvas2", "c_MultiCanvas2", 900, 1100);
   TCanvas *c_MultiCanvas3 =
-      new TCanvas("c_MultiCanvas3", "c_MultiCanvas3", 700, 900);
+      new TCanvas("c_MultiCanvas3", "c_MultiCanvas3", 900, 1100);
 
   c_MultiCanvas1->Divide(2, 3);
   c_MultiCanvas2->Divide(2, 3);
@@ -2095,11 +2095,11 @@ void myBestTriFit() {
   h_Acor17->Draw("colz");
 
   TCanvas *c_MultiCanvasCut1 =
-      new TCanvas("c_MultiCanvasCut1", "c_MultiCanvasCut1", 700, 900);
+      new TCanvas("c_MultiCanvasCut1", "c_MultiCanvasCut1", 900, 1100);
   TCanvas *c_MultiCanvasCut2 =
-      new TCanvas("c_MultiCanvasCut2", "c_MultiCanvasCut2", 700, 900);
+      new TCanvas("c_MultiCanvasCut2", "c_MultiCanvasCut2", 900, 1100);
   TCanvas *c_MultiCanvasCut3 =
-      new TCanvas("c_MultiCanvasCut3", "c_MultiCanvasCut3", 700, 900);
+      new TCanvas("c_MultiCanvasCut3", "c_MultiCanvasCut3", 900, 1100);
 
   c_MultiCanvasCut1->Divide(2, 3);
   c_MultiCanvasCut2->Divide(2, 3);
