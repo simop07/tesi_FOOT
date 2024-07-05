@@ -925,27 +925,27 @@ void myBestFit() {
 
   // fit functions
   // histo0
-  TF1 *f_cut0_1 = new TF1("f_cut0_1", "gaus", 0.5, 1.5);
-  TF1 *f_cut0_2 = new TF1("f_cut0_2", "gaus", 1.5, 2.5);
-  TF1 *f_cut0_3 = new TF1("f_cut0_3", "gaus", 2.5, 3.5);
+  TF1 *f_cut0_1 = new TF1("f_cut0_1", "gaus", 0., 8.);
+  TF1 *f_cut0_2 = new TF1("f_cut0_2", "gaus", 0., 8.);
+  TF1 *f_cut0_3 = new TF1("f_cut0_3", "gaus", 0., 8.);
 
   // histo1
-  TF1 *f_cut1_1 = new TF1("f_cut1_1", "gaus", 2., 3.5);
-  TF1 *f_cut1_2 = new TF1("f_cut1_2", "gaus", 3.5, 5.);
+  TF1 *f_cut1_1 = new TF1("f_cut1_1", "gaus", 0., 9.);
+  TF1 *f_cut1_2 = new TF1("f_cut1_2", "gaus", 0., 9.);
 
   // histo2
-  TF1 *f_cut2_1 = new TF1("f_cut2_1", "gaus", 5.5, 6.7);
-  TF1 *f_cut2_2 = new TF1("f_cut2_2", "gaus", 6.5, 7.7);
-  TF1 *f_cut2_3 = new TF1("f_cut2_3", "gaus", 7.5, 9.);
+  TF1 *f_cut2_1 = new TF1("f_cut2_1", "gaus", 2., 18.);
+  TF1 *f_cut2_2 = new TF1("f_cut2_2", "gaus", 2., 18.);
+  TF1 *f_cut2_3 = new TF1("f_cut2_3", "gaus", 2., 18.);
 
   // histo3
-  TF1 *f_cut3_1 = new TF1("f_cut3_1", "gaus", 6., 8.);
-  TF1 *f_cut3_2 = new TF1("f_cut3_2", "gaus", 8., 9.5);
-  TF1 *f_cut3_3 = new TF1("f_cut3_3", "gaus", 9.5, 12.);
+  TF1 *f_cut3_1 = new TF1("f_cut3_1", "gaus", 4., 20.);
+  TF1 *f_cut3_2 = new TF1("f_cut3_2", "gaus", 4., 20.);
+  TF1 *f_cut3_3 = new TF1("f_cut3_3", "gaus", 4., 20.);
 
   // histo4
-  TF1 *f_cut4_1 = new TF1("f_cut4_1", "gaus", 8., 11.);
-  TF1 *f_cut4_2 = new TF1("f_cut4_2", "gaus", 10.5, 13.);
+  TF1 *f_cut4_1 = new TF1("f_cut4_1", "gaus", 4., 24.);
+  TF1 *f_cut4_2 = new TF1("f_cut4_2", "gaus", 4., 24.);
 
   // histo5
   TF1 *f_cut5_tot = new TF1("f_cut5_tot", "gaus", 8., 18.);
@@ -1076,387 +1076,387 @@ void myBestFit() {
 
   // fitting on black histos
   // histo0
-  h31_1_0->Fit(f_cut0_1, "R");
+  h31_1_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_black_a1_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                            (f_cut0_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut0_1->GetParameter(1));
 
-  h31_1_0->Fit(f_cut0_2, "R+");
+  h31_1_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_black_a1_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                            (f_cut0_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h31_1_0->Fit(f_cut0_3, "R+");
+  h31_1_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_black_a1_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                            (f_cut0_3->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut0_3->GetParameter(1));
 
-  h32_2_0->Fit(f_cut0_1, "R");
+  h32_2_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_black_a2_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                            (f_cut0_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut0_1->GetParameter(1));
 
-  h32_2_0->Fit(f_cut0_2, "R+");
+  h32_2_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_black_a2_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                            (f_cut0_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h32_2_0->Fit(f_cut0_3, "R+");
+  h32_2_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_black_a2_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                            (f_cut0_3->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut0_3->GetParameter(1));
 
-  h32_3_0->Fit(f_cut0_1, "R");
+  h32_3_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_black_a3_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                            (f_cut0_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut0_1->GetParameter(1));
 
-  h32_3_0->Fit(f_cut0_2, "R+");
+  h32_3_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_black_a3_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                            (f_cut0_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h32_3_0->Fit(f_cut0_3, "R+");
+  h32_3_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_black_a3_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                            (f_cut0_3->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut0_3->GetParameter(1));
 
   // histo1
-  h31_1_1->Fit(f_cut1_1, "R");
+  h31_1_1->Fit(f_cut1_1, "", "", 2.5, 3.6);
   v_black_a1_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                            (f_cut1_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut1_1->GetParameter(1));
 
-  h31_1_1->Fit(f_cut1_2, "R+");
+  h31_1_1->Fit(f_cut1_2, "+", "", 3.5, 5);
   v_black_a1_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                            (f_cut1_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut1_2->GetParameter(1));
 
-  h32_2_1->Fit(f_cut1_1, "R");
+  h32_2_1->Fit(f_cut1_1, "", "", 2.5, 3.3);
   v_black_a2_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                            (f_cut1_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut1_1->GetParameter(1));
 
-  h32_2_1->Fit(f_cut1_2, "R+");
+  h32_2_1->Fit(f_cut1_2, "+", "", 3.3, 5.);
   v_black_a2_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                            (f_cut1_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut1_2->GetParameter(1));
 
-  h32_3_1->Fit(f_cut1_1, "R");
+  h32_3_1->Fit(f_cut1_1, "", "", 2., 3.5);
   v_black_a3_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                            (f_cut1_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut1_1->GetParameter(1));
 
-  h32_3_1->Fit(f_cut1_2, "R+");
+  h32_3_1->Fit(f_cut1_2, "+", "", 3.3, 5.);
   v_black_a3_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                            (f_cut1_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut1_2->GetParameter(1));
 
   // histo2
-  h31_1_2->Fit(f_cut2_1, "R");
+  h31_1_2->Fit(f_cut2_1, "", "", 5.5, 6.7);
   v_black_a1_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                            (f_cut2_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h31_1_2->Fit(f_cut2_2, "R+");
+  h31_1_2->Fit(f_cut2_2, "+", "", 6.5, 7.7);
   v_black_a1_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                            (f_cut2_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h31_1_2->Fit(f_cut2_3, "R+");
+  h31_1_2->Fit(f_cut2_3, "+", "", 7.6, 9.);
 
-  h32_2_2->Fit(f_cut2_1, "R");
+  h32_2_2->Fit(f_cut2_1, "", "", 5.5, 6.5);
   v_black_a2_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                            (f_cut2_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h32_2_2->Fit(f_cut2_2, "R+");
+  h32_2_2->Fit(f_cut2_2, "+", "", 6.5, 7.5);
   v_black_a2_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                            (f_cut2_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h32_2_2->Fit(f_cut2_3, "R+");
+  h32_2_2->Fit(f_cut2_3, "+", "", 7.5, 9.);
 
-  h32_3_2->Fit(f_cut2_1, "R");
+  h32_3_2->Fit(f_cut2_1, "", "", 4.5, 6.5);
   v_black_a3_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                            (f_cut2_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h32_3_2->Fit(f_cut2_2, "R+");
+  h32_3_2->Fit(f_cut2_2, "+", "", 6.4, 7.5);
   v_black_a3_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                            (f_cut2_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h32_3_2->Fit(f_cut2_3, "R+");
+  h32_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h31_1_3->Fit(f_cut3_1, "R");
+  h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
   v_black_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                            (f_cut3_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_2, "R+");
+  h31_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
   v_black_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                            (f_cut3_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_3, "R+");
+  h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h32_2_3->Fit(f_cut3_1, "R");
+  h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
   v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                            (f_cut3_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_2, "R+");
+  h32_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
   v_black_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                            (f_cut3_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_3, "R+");
+  h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h32_3_3->Fit(f_cut3_1, "R");
+  h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
   v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                            (f_cut3_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_2, "R+");
+  h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
   v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                            (f_cut3_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_3, "R+");
+  h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
-  h31_1_4->Fit(f_cut4_1, "R");
+  h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
   v_black_a1_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                            (f_cut4_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h31_1_4->Fit(f_cut4_2, "R+");
+  h31_1_4->Fit(f_cut4_2, "+", "", 10.7, 13.5);
 
-  h32_2_4->Fit(f_cut4_1, "R");
+  h32_2_4->Fit(f_cut4_1, "", "", 8., 10.5);
   v_black_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                            (f_cut4_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h32_2_4->Fit(f_cut4_2, "R+");
+  h32_2_4->Fit(f_cut4_2, "+", "", 10.4, 12.);
 
-  h32_3_4->Fit(f_cut4_1, "R");
+  h32_3_4->Fit(f_cut4_1, "", "", 8., 10.5);
   v_black_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                            (f_cut4_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h32_3_4->Fit(f_cut4_2, "R+");
+  h32_3_4->Fit(f_cut4_2, "+", "", 10.2, 14.);
 
   // histo5
-  h31_1_5->Fit(f_cut5_tot, "R");
+  h31_1_5->Fit(f_cut5_tot, "", "", 8., 16);
   v_black_a1_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                            (f_cut5_tot->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut5_tot->GetParameter(1));
 
-  h32_2_5->Fit(f_cut5_tot, "R");
+  h32_2_5->Fit(f_cut5_tot, "", "", 8., 16);
   v_black_a2_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                            (f_cut5_tot->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut5_tot->GetParameter(1));
 
-  h32_3_5->Fit(f_cut5_tot, "R");
+  h32_3_5->Fit(f_cut5_tot, "", "", 8., 18);
   v_black_a3_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                            (f_cut5_tot->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut5_tot->GetParameter(1));
 
   // fitting on blue histos
   // changing color fit function
-  f_cut0_1->SetLineColor(kOrange);
-  f_cut0_2->SetLineColor(kOrange);
-  f_cut0_3->SetLineColor(kOrange);
-  f_cut1_1->SetLineColor(kOrange);
-  f_cut1_2->SetLineColor(kOrange);
-  f_cut2_1->SetLineColor(kOrange);
-  f_cut2_2->SetLineColor(kOrange);
-  f_cut2_3->SetLineColor(kOrange);
-  f_cut3_1->SetLineColor(kOrange);
-  f_cut3_2->SetLineColor(kOrange);
-  f_cut3_3->SetLineColor(kOrange);
-  f_cut4_1->SetLineColor(kOrange);
-  f_cut4_2->SetLineColor(kOrange);
-  f_cut5_tot->SetLineColor(kOrange);
+  f_cut0_1->SetLineColor(kGreen);
+  f_cut0_2->SetLineColor(kGreen);
+  f_cut0_3->SetLineColor(kGreen);
+  f_cut1_1->SetLineColor(kGreen);
+  f_cut1_2->SetLineColor(kGreen);
+  f_cut2_1->SetLineColor(kGreen);
+  f_cut2_2->SetLineColor(kGreen);
+  f_cut2_3->SetLineColor(kGreen);
+  f_cut3_1->SetLineColor(kGreen);
+  f_cut3_2->SetLineColor(kGreen);
+  f_cut3_3->SetLineColor(kGreen);
+  f_cut4_1->SetLineColor(kGreen);
+  f_cut4_2->SetLineColor(kGreen);
+  f_cut5_tot->SetLineColor(kGreen);
 
   // histo0
-  h21_1_0->Fit(f_cut0_1, "R");
+  h21_1_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_blue_a1_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                           (f_cut0_1->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut0_1->GetParameter(1));
-  h21_1_0->Fit(f_cut0_2, "R+");
+  h21_1_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_blue_a1_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                           (f_cut0_2->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut0_2->GetParameter(1));
-  h21_1_0->Fit(f_cut0_3, "R+");
+  h21_1_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_blue_a1_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                           (f_cut0_3->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut0_3->GetParameter(1));
 
-  h21_2_0->Fit(f_cut0_1, "R");
+  h21_2_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_blue_a2_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                           (f_cut0_1->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut0_1->GetParameter(1));
-  h21_2_0->Fit(f_cut0_2, "R+");
+  h21_2_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_blue_a2_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                           (f_cut0_2->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut0_2->GetParameter(1));
-  h21_2_0->Fit(f_cut0_3, "R+");
+  h21_2_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_blue_a2_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                           (f_cut0_3->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut0_3->GetParameter(1));
 
-  h31_3_0->Fit(f_cut0_1, "R");
+  h31_3_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_blue_a3_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
                           (f_cut0_1->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut0_1->GetParameter(1));
-  h31_3_0->Fit(f_cut0_2, "R+");
+  h31_3_0->Fit(f_cut0_2, "+", "", 1.5, 2.5);
   v_blue_a3_err.push_back(100. * (f_cut0_2->GetParameter(2)) /
                           (f_cut0_2->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut0_2->GetParameter(1));
-  h31_3_0->Fit(f_cut0_3, "R+");
+  h31_3_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
   v_blue_a3_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
                           (f_cut0_3->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut0_3->GetParameter(1));
 
   // histo1
-  h21_1_1->Fit(f_cut1_1, "R");
+  h21_1_1->Fit(f_cut1_1, "", "", 2.5, 3.6);
   v_blue_a1_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                           (f_cut1_1->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut1_1->GetParameter(1));
-  h21_1_1->Fit(f_cut1_2, "R+");
+  h21_1_1->Fit(f_cut1_2, "+", "", 3.5, 5);
   v_blue_a1_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                           (f_cut1_2->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut1_2->GetParameter(1));
 
-  h21_2_1->Fit(f_cut1_1, "R");
+  h21_2_1->Fit(f_cut1_1, "", "", 2.5, 3.3);
   v_blue_a2_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                           (f_cut1_1->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut1_1->GetParameter(1));
-  h21_2_1->Fit(f_cut1_2, "R+");
+  h21_2_1->Fit(f_cut1_2, "+", "", 3.3, 5.);
   v_blue_a2_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                           (f_cut1_2->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut1_2->GetParameter(1));
 
-  h31_3_1->Fit(f_cut1_1, "R");
+  h31_3_1->Fit(f_cut1_1, "", "", 2., 3.5);
   v_blue_a3_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                           (f_cut1_1->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut1_1->GetParameter(1));
-  h31_3_1->Fit(f_cut1_2, "R+");
+  h31_3_1->Fit(f_cut1_2, "+", "", 3.3, 5.);
   v_blue_a3_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                           (f_cut1_2->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut1_2->GetParameter(1));
 
   // histo2
-  h21_1_2->Fit(f_cut2_1, "R");
+  h21_1_2->Fit(f_cut2_1, "", "", 5.5, 6.7);
   v_blue_a1_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                           (f_cut2_1->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h21_1_2->Fit(f_cut2_2, "R+");
+  h21_1_2->Fit(f_cut2_2, "+", "", 6.5, 7.7);
   v_blue_a1_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                           (f_cut2_2->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h21_1_2->Fit(f_cut2_3, "R+");
+  h21_1_2->Fit(f_cut2_3, "+", "", 7.6, 9.);
 
-  h21_2_2->Fit(f_cut2_1, "R");
+  h21_2_2->Fit(f_cut2_1, "", "", 5.5, 6.5);
   v_blue_a2_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                           (f_cut2_1->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h21_2_2->Fit(f_cut2_2, "R+");
+  h21_2_2->Fit(f_cut2_2, "+", "", 6.5, 7.5);
   v_blue_a2_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                           (f_cut2_2->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h21_2_2->Fit(f_cut2_3, "R+");
+  h21_2_2->Fit(f_cut2_3, "+", "", 7.5, 9.);
 
-  h31_3_2->Fit(f_cut2_1, "R");
+  h31_3_2->Fit(f_cut2_1, "", "", 4.5, 6.5);
   v_blue_a3_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
                           (f_cut2_1->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut2_1->GetParameter(1));
 
-  h31_3_2->Fit(f_cut2_2, "R+");
+  h31_3_2->Fit(f_cut2_2, "+", "", 6.4, 7.5);
   v_blue_a3_err.push_back(100. * (f_cut2_2->GetParameter(2)) /
                           (f_cut2_2->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h31_3_2->Fit(f_cut2_3, "R+");
+  h31_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h21_1_3->Fit(f_cut3_1, "R");
+  h21_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
   v_blue_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                           (f_cut3_1->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_2, "R+");
+  h21_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
   v_blue_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                           (f_cut3_2->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_3, "R+");
+  h21_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h21_2_3->Fit(f_cut3_1, "R");
+  h21_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
   v_blue_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                           (f_cut3_1->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_2, "R+");
+  h21_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
   v_blue_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                           (f_cut3_2->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_3, "R+");
+  h21_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h31_3_3->Fit(f_cut3_1, "R");
+  h31_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
   v_blue_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                           (f_cut3_1->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_2, "R+");
+  h31_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
   v_blue_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                           (f_cut3_2->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_3, "R+");
+  h31_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
-  h21_1_4->Fit(f_cut4_1, "R");
+  h21_1_4->Fit(f_cut4_1, "", "", 8., 11.);
   v_blue_a1_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                           (f_cut4_1->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h21_1_4->Fit(f_cut4_2, "R+");
+  h21_1_4->Fit(f_cut4_2, "+", "", 10.7, 13.5);
 
-  h21_2_4->Fit(f_cut4_1, "R");
+  h21_2_4->Fit(f_cut4_1, "", "", 8., 10.5);
   v_blue_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                           (f_cut4_1->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h21_2_4->Fit(f_cut4_2, "R+");
+  h21_2_4->Fit(f_cut4_2, "+", "", 10.4, 12.);
 
-  h31_3_4->Fit(f_cut4_1, "R");
+  h31_3_4->Fit(f_cut4_1, "", "", 8., 10.5);
   v_blue_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                           (f_cut4_1->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h31_3_4->Fit(f_cut4_2, "R+");
+  h31_3_4->Fit(f_cut4_2, "+", "", 10.2, 14.);
 
   // histo5
-  h21_1_5->Fit(f_cut5_tot, "R");
+  h21_1_5->Fit(f_cut5_tot, "", "", 8., 16);
   v_blue_a1_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                           (f_cut5_tot->GetParameter(1)));
   v_blue_a1_mean.push_back(f_cut5_tot->GetParameter(1));
 
-  h21_2_5->Fit(f_cut5_tot, "R");
+  h21_2_5->Fit(f_cut5_tot, "", "", 8., 16);
   v_blue_a2_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                           (f_cut5_tot->GetParameter(1)));
   v_blue_a2_mean.push_back(f_cut5_tot->GetParameter(1));
 
-  h31_3_5->Fit(f_cut5_tot, "R");
+  h31_3_5->Fit(f_cut5_tot, "", "", 8., 18);
   v_blue_a3_err.push_back(100. * (f_cut5_tot->GetParameter(2)) /
                           (f_cut5_tot->GetParameter(1)));
   v_blue_a3_mean.push_back(f_cut5_tot->GetParameter(1));
