@@ -124,126 +124,79 @@ void myBestTriFit() {
   c_cut17->Divide(2, 1);
 
   // defining arrays for cuts
-  const Double_t x0[6] = {0.708395, 1.09131,  3.44772,
-                          3.10898,  0.752577, 0.708395};
-  const Double_t y0[6] = {0.751152, 0.797235, 3.08602,
-                          3.42396,  1.04301,  0.751152};
+  const Double_t x0[4] = {0.267606, 3.55399, 2.99844, 0.267606};
+  const Double_t y0[4] = {0.227513, 3.17989, 3.50794, 0.227513};
 
-  const Double_t x1[6] = {2.50176, 3.06514, 4.87852, 4.31514, 2.58979, 2.50176};
-  const Double_t y1[6] = {2.56548, 2.47024, 4.17262, 4.82738, 2.94643, 2.56548};
+  const Double_t x1[5] = {1.94718, 7, 6.28697, 2.02641, 1.94718};
+  const Double_t y1[5] = {1.625, 5.83929, 6.8631, 2.27976, 1.625};
 
-  const Double_t x2[6] = {5.6338, 6.32238, 8.98279, 8.24726, 5.6025, 5.6338};
-  const Double_t y2[6] = {5.5873, 5.48148, 8, 8.74074, 5.94709, 5.5873};
+  const Double_t x2[5] = {3.77152, 8.98279, 7.94992, 3.61502, 3.77152};
+  const Double_t y2[5] = {3.36508, 8.25397, 8.2963, 3.83069, 3.36508};
 
-  const Double_t x3[13] = {6.64789, 7.55556, 8.05634, 7.8216,  8.79186,
-                           9.76213, 11.3114, 10.216,  8.93271, 8.68232,
-                           7.80595, 6.50704, 6.64789};
-  const Double_t y3[13] = {6.5098,  6.48802, 6.94553, 7.44662, 8.4488,
-                           8.86275, 10.2353, 10.6057, 9.42919, 8.53595,
-                           7.51198, 7.22876, 6.5098};
+  const Double_t x3[5] = {6.241, 11.2488, 9.66823, 6.05321, 6.241};
+  const Double_t y3[5] = {5.55556, 10.2328, 10.2116, 6.12698, 5.55556};
 
-  const Double_t x4[15] = {7.7007,  9.16197, 9.83099, 11.2042, 10.9754,
-                           12.4718, 12.3486, 10.7641, 10.7993, 9.65493,
-                           9.63732, 9.14437, 7.80634, 7.75352, 7.7007};
-  const Double_t y4[15] = {7.53571, 7.67857, 9.44048, 9.5119,  10.5119,
-                           10.75,   11.4881, 11.4881, 10.4643, 10.2024,
-                           9.44048, 8.25,    8.46429, 7.86905, 7.53571};
+  const Double_t x4[5] = {6.64437, 13.0704, 11.2746, 7.61268, 6.64437};
+  const Double_t y4[5] = {5.89286, 11.5119, 11.4405, 7.63095, 5.89286};
 
-  const Double_t x5[6] = {9.46166, 10.5767, 16.5626, 12.2394, 8.15102, 9.46166};
-  const Double_t y5[6] = {8.96032, 8.6164, 12.6111, 13.6958, 10.5476, 8.96032};
+  const Double_t x5[5] = {6.42958, 15.2911, 13.0219, 6.80125, 6.42958};
+  const Double_t y5[5] = {5.57407, 12.7169, 14.3307, 6.39418, 5.57407};
 
-  const Double_t x6[6] = {0.838811, 1.03443,  3.40532,
-                          3.1471,   0.838811, 0.838811};
-  const Double_t y6[6] = {0.797386, 0.699346, 2.98693,
-                          3.29194,  1.05882,  0.797386};
+  const Double_t x6[5] = {0.729264, 3.67919, 3.28795, 0.697966, 0.729264};
+  const Double_t y6[5] = {0.470899, 3.21164, 3.61376, 0.809524, 0.470899};
 
-  const Double_t x7[6] = {2.625, 2.9243, 4.79049, 4.38556, 2.79225, 2.625};
-  const Double_t y7[6] = {2.44643, 2.3631, 4.08929, 4.95833, 3.07738, 2.44643};
+  const Double_t x7[5] = {6.72711, 2.39613, 2.55458, 6.48944, 6.72711};
+  const Double_t y7[5] = {5.82738, 2.01786, 3.27976, 6.50595, 5.82738};
 
-  const Double_t x8[17] = {5.68075, 6.00939, 6.47887, 6.66667, 6.99531, 8.46635,
-                           8.5133,  8.16901, 7.63693, 7.37089, 7.0892,  6.90141,
-                           6.55712, 6.38498, 6.10329, 5.77465, 5.68075};
-  const Double_t y8[17] = {5.41799, 5.18519, 5.82011, 6.30688, 6.13757, 7.66138,
-                           8.2328,  8.35979, 7.53439, 8.02116, 7.32275, 6.73016,
-                           6.58201, 6.92063, 6.79365, 5.98942, 5.41799};
+  const Double_t x8[5] = {3.92801, 10, 8.68545, 4.47574, 3.92801};
+  const Double_t y8[5] = {3.74603, 8.95238, 8.91005, 4.7619, 3.74603};
 
-  const Double_t x9[17] = {6.55399, 7.13302, 7.83725, 7.99374, 8.69797, 8.94836,
-                           9.68388, 9.96557, 11.1549, 10.3255, 9.79343, 9.46479,
-                           8.61972, 7.99374, 7.55556, 6.41315, 6.55399};
-  const Double_t y9[17] = {6.46561, 6.16931, 7.65079, 8.22222, 8.34921, 8.20106,
-                           9.2381,  8.9418,  10.7196, 10.8466, 9.66138, 9.93651,
-                           8.51852, 8.30688, 8.47619, 7.16402, 6.46561};
+  const Double_t x9[5] = {6.00626, 10.9671, 10.5915, 6.41315, 6.00626};
+  const Double_t y9[5] = {5.30159, 10.1905, 11.2063, 6.69841, 5.30159};
 
-  const Double_t x10[18] = {8.07042, 7.80634, 7.98239, 9.07394, 9.61972,
-                            10.2359, 10.5528, 10.2359, 10.6937, 12.6655,
-                            12.1197, 11.1338, 11.081,  10.3239, 9.95423,
-                            8.9507,  8.17606, 8.07042};
-  const Double_t y10[18] = {8.15476, 7.4881,  7.36905, 9.36905, 8.63095,
-                            9.60714, 9.9881,  9.0119,  8.9881,  13.2262,
-                            13.4405, 11.1548, 11.7262, 11.5357, 9.75,
-                            10.1786, 8.55952, 8.15476};
+  const Double_t x10[5] = {6.50352, 13.2817, 12.4014, 6.96127, 6.50352};
+  const Double_t y10[5] = {6.72619, 12.1071, 12.9167, 7.55952, 6.72619};
 
-  const Double_t x11[6] = {8.46401, 11.7308, 15.5649, 13.7261, 9.2856, 8.46401};
-  const Double_t y11[6] = {7.18783, 9.17196, 15.4683,
-                           16.5794, 8.88095, 7.18783};
+  const Double_t x11[5] = {6.11659, 13.6283, 13.2958, 5.97966, 6.11659};
+  const Double_t y11[5] = {5.62698, 11.8968, 14.8598, 6.12963, 5.62698};
 
-  const Double_t x12[6] = {0.791862, 0.964006, 3.42097,
-                           3.01408,  0.784038, 0.791862};
-  const Double_t y12[6] = {0.809524, 0.73545, 2.82011,
-                           3.2963,   1.02116, 0.809524};
+  const Double_t x12[5] = {0.752739, 3.62441, 3.08451, 0.611894, 0.752739};
+  const Double_t y12[5] = {0.513227, 2.96825, 3.58201, 0.851852, 0.513227};
 
-  const Double_t x13[6] = {2.53697, 3.10035, 4.72887, 3.92782, 2.625, 2.53697};
-  const Double_t y13[6] = {2.39881, 2.375, 3.83929, 4.93452, 3.22024, 2.39881};
+  const Double_t x13[5] = {2.3257, 6.6831, 6.01408, 2.04401, 2.3257};
+  const Double_t y13[5] = {1.8869, 5.54167, 6.57738, 2.55357, 1.8869};
 
-  const Double_t x14[19] = {5.6025,  5.86854, 6.13459, 6.27543, 6.16588,
-                            6.68232, 6.90141, 7.26135, 7.2457,  8.10642,
-                            8.34116, 8.05947, 7.57433, 6.65102, 6.63537,
-                            5.43036, 5.759,   5.6651,  5.6025};
-  const Double_t y14[19] = {5.96825, 5.01587, 4.88889, 6.24339, 6.81481,
-                            6.73016, 6.28571, 6.1164,  7.06878, 7.15344,
-                            7.66138, 8.84656, 7.64021, 7.89418, 6.89947,
-                            7.04762, 6.87831, 6.58201, 5.96825};
+  const Double_t x14[5] = {4.25665, 9.64006, 8.09077, 4.1784, 4.25665};
+  const Double_t y14[5] = {3.59788, 8.71958, 8.88889, 4.61376, 3.59788};
 
-  const Double_t x15[14] = {6.49139, 7.16432, 7.58685, 8.29108, 9.0892,
-                            10.9358, 9.93427, 8.40063, 8.32238, 7.55556,
-                            6.94523, 6.31925, 6.41315, 6.49139};
-  const Double_t y15[14] = {6.38095, 6.25397, 7.82011, 8.4127,  7.96825,
-                            9.4709,  11.8413, 9.34392, 8.53968, 7.8836,
-                            8.56085, 7.16402, 6.7619,  6.38095};
+  const Double_t x15[5] = {6.02191, 10.9984, 9.88732, 5.84977, 6.02191};
+  const Double_t y15[5] = {5.72487, 9.85185, 11.1217, 6.67725, 5.72487};
 
-  const Double_t x16[20] = {7.61268, 7.85915, 8.45775, 8.35211, 9.39085,
-                            9.65493, 10.0423, 10.2711, 10.5352, 11.2042,
-                            11.9965, 10.8873, 9.95423, 10.6232, 10.5176,
-                            9.72535, 9.35563, 8.3169,  7.55986, 7.61268};
-  const Double_t y16[20] = {8.36905, 7.34524, 8.67857, 9.27381, 10.1071,
-                            8.79762, 8.86905, 9.65476, 10.0357, 9.77381,
-                            11.9167, 12.5119, 12.0595, 12.1786, 11.25,
-                            11.4881, 10.2262, 9.53571, 9.4881,  8.36905};
+  const Double_t x16[5] = {6.64437, 12.419, 11.2923, 6.73239, 6.64437};
+  const Double_t y16[5] = {7.13095, 11.4405, 12.4643, 8.22619, 7.13095};
 
-  const Double_t x17[6] = {8.83568, 11.6917, 15.1346,
-                           11.0266, 9.18779, 8.83568};
-  const Double_t y17[6] = {8.37831, 7.39947, 14.0926,
-                           18.2725, 9.83333, 8.37831};
+  const Double_t x17[5] = {5.97966, 13.6088, 11.8091, 6.07746, 5.97966};
+  const Double_t y17[5] = {5.36243, 11.5, 14.8598, 7.32011, 5.36243};
 
   // defining cuts
-  TCutG *myCut0 = new TCutG("myCut0", 6, x0, y0);
-  TCutG *myCut1 = new TCutG("myCut1", 6, x1, y1);
-  TCutG *myCut2 = new TCutG("myCut2", 6, x2, y2);
-  TCutG *myCut3 = new TCutG("myCut3", 13, x3, y3);
-  TCutG *myCut4 = new TCutG("myCut4", 15, x4, y4);
-  TCutG *myCut5 = new TCutG("myCut5", 6, x5, y5);
-  TCutG *myCut6 = new TCutG("myCut6", 6, x6, y6);
-  TCutG *myCut7 = new TCutG("myCut7", 6, x7, y7);
-  TCutG *myCut8 = new TCutG("myCut8", 17, x8, y8);
-  TCutG *myCut9 = new TCutG("myCut9", 17, x9, y9);
-  TCutG *myCut10 = new TCutG("myCut10", 18, x10, y10);
-  TCutG *myCut11 = new TCutG("myCut11", 6, x11, y11);
-  TCutG *myCut12 = new TCutG("myCut12", 6, x12, y12);
-  TCutG *myCut13 = new TCutG("myCut13", 6, x13, y13);
-  TCutG *myCut14 = new TCutG("myCut14", 19, x14, y14);
-  TCutG *myCut15 = new TCutG("myCut15", 14, x15, y15);
-  TCutG *myCut16 = new TCutG("myCut16", 20, x16, y16);
-  TCutG *myCut17 = new TCutG("myCut17", 6, x17, y17);
+  TCutG *myCut0 = new TCutG("myCut0", 4, x0, y0);
+  TCutG *myCut1 = new TCutG("myCut1", 5, x1, y1);
+  TCutG *myCut2 = new TCutG("myCut2", 5, x2, y2);
+  TCutG *myCut3 = new TCutG("myCut3", 5, x3, y3);
+  TCutG *myCut4 = new TCutG("myCut4", 5, x4, y4);
+  TCutG *myCut5 = new TCutG("myCut5", 5, x5, y5);
+  TCutG *myCut6 = new TCutG("myCut6", 5, x6, y6);
+  TCutG *myCut7 = new TCutG("myCut7", 5, x7, y7);
+  TCutG *myCut8 = new TCutG("myCut8", 5, x8, y8);
+  TCutG *myCut9 = new TCutG("myCut9", 5, x9, y9);
+  TCutG *myCut10 = new TCutG("myCut10", 5, x10, y10);
+  TCutG *myCut11 = new TCutG("myCut11", 5, x11, y11);
+  TCutG *myCut12 = new TCutG("myCut12", 5, x12, y12);
+  TCutG *myCut13 = new TCutG("myCut13", 5, x13, y13);
+  TCutG *myCut14 = new TCutG("myCut14", 5, x14, y14);
+  TCutG *myCut15 = new TCutG("myCut15", 5, x15, y15);
+  TCutG *myCut16 = new TCutG("myCut16", 5, x16, y16);
+  TCutG *myCut17 = new TCutG("myCut17", 5, x17, y17);
 
   // creating and filling 1D histos
   // histo0
@@ -1302,20 +1255,20 @@ void myBestTriFit() {
 
   // fitting on blue histos
   // changing color fit function
-  f_cut0_1->SetLineColor(kGreen);
-  f_cut0_2->SetLineColor(kGreen);
-  f_cut0_3->SetLineColor(kGreen);
-  f_cut1_1->SetLineColor(kGreen);
-  f_cut1_2->SetLineColor(kGreen);
-  f_cut2_1->SetLineColor(kGreen);
-  f_cut2_2->SetLineColor(kGreen);
-  f_cut2_3->SetLineColor(kGreen);
-  f_cut3_1->SetLineColor(kGreen);
-  f_cut3_2->SetLineColor(kGreen);
-  f_cut3_3->SetLineColor(kGreen);
-  f_cut4_1->SetLineColor(kGreen);
-  f_cut4_2->SetLineColor(kGreen);
-  f_cut5_tot->SetLineColor(kGreen);
+  f_cut0_1->SetLineColor(kOrange - 3);
+  f_cut0_2->SetLineColor(kOrange - 3);
+  f_cut0_3->SetLineColor(kOrange - 3);
+  f_cut1_1->SetLineColor(kOrange - 3);
+  f_cut1_2->SetLineColor(kOrange - 3);
+  f_cut2_1->SetLineColor(kOrange - 3);
+  f_cut2_2->SetLineColor(kOrange - 3);
+  f_cut2_3->SetLineColor(kOrange - 3);
+  f_cut3_1->SetLineColor(kOrange - 3);
+  f_cut3_2->SetLineColor(kOrange - 3);
+  f_cut3_3->SetLineColor(kOrange - 3);
+  f_cut4_1->SetLineColor(kOrange - 3);
+  f_cut4_2->SetLineColor(kOrange - 3);
+  f_cut5_tot->SetLineColor(kOrange - 3);
 
   // histo0
   h21_1_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
@@ -1552,7 +1505,7 @@ void myBestTriFit() {
   a2_black->SetMarkerStyle(20);
   a2_black->SetMarkerSize(1.3);
 
-  a3_black->SetMarkerColor(kOrange);
+  a3_black->SetMarkerColor(kOrange - 3);
   a3_black->SetMarkerStyle(20);
   a3_black->SetMarkerSize(1.3);
 
@@ -1564,7 +1517,7 @@ void myBestTriFit() {
   a2_blue->SetMarkerStyle(20);
   a2_blue->SetMarkerSize(1.3);
 
-  a3_blue->SetMarkerColor(kOrange);
+  a3_blue->SetMarkerColor(kOrange - 3);
   a3_blue->SetMarkerStyle(20);
   a3_blue->SetMarkerSize(1.3);
 
@@ -1778,128 +1731,309 @@ void myBestTriFit() {
   TCanvas *c_Fcut16 = new TCanvas("c_Fcut16", "c_Fcut16", 1000, 600);
   TCanvas *c_Fcut17 = new TCanvas("c_Fcut17", "c_Fcut17", 1000, 600);
 
-  c_Fcut0->cd();
-  h_Acor0->Draw("colz");
-  myCut0->Draw("same");
+  TF1 *f0_1 = new TF1("f0_1", "0.898366*x-0.0128952", 0.5, 5.);
+  TF1 *f0_2 = new TF1("f0_2", "1.20125*x-0.0939499", 0.5, 5.);
+  f0_1->SetLineColor(kRed);
+  f0_1->SetLineWidth(3);
+  f0_1->SetLineStyle(2);
+  f0_2->SetLineColor(kRed);
+  f0_2->SetLineWidth(3);
+  f0_2->SetLineStyle(2);
   myCut0->SetLineColor(kRed);
   myCut0->SetLineWidth(3);
   myCut0->SetLineStyle(2);
+  // myCut0->SetFillStyle(3944);
+  c_Fcut0->cd();
+  h_Acor0->Draw("colz");
+  // myCut0->Draw("same");
+  f0_1->Draw("same");
+  f0_2->Draw("same");
 
+  TF1 *f1_1 = new TF1("f1_1", "0.834047*x + 0.000960117", 1., 8.);
+  TF1 *f1_2 = new TF1("f1_2", "1.07576*x + 0.0998292", 1., 8.);
+  f1_1->SetLineColor(kRed);
+  f1_1->SetLineWidth(3);
+  f1_1->SetLineStyle(2);
+  f1_2->SetLineColor(kRed);
+  f1_2->SetLineWidth(3);
+  f1_2->SetLineStyle(2);
   c_Fcut1->cd();
   h_Acor1->Draw("colz");
-  myCut1->Draw("same");
+  f1_1->Draw("same");
+  f1_2->Draw("same");
+  // myCut1->Draw("same");
   myCut1->SetLineColor(kRed);
   myCut1->SetLineWidth(3);
   myCut1->SetLineStyle(2);
 
+  TF1 *f2_1 = new TF1("f2_1", "0.938138*x - 0.173126", 3., 14.);
+  TF1 *f2_2 = new TF1("f2_2", "1.03015*x + 0.106667", 3., 14.);
+  f2_1->SetLineColor(kRed);
+  f2_1->SetLineWidth(3);
+  f2_1->SetLineStyle(2);
+  f2_2->SetLineColor(kRed);
+  f2_2->SetLineWidth(3);
+  f2_2->SetLineStyle(2);
   c_Fcut2->cd();
   h_Acor2->Draw("colz");
-  myCut2->Draw("same");
+  f2_1->Draw("same");
+  f2_2->Draw("same");
+  //   myCut2->Draw("same");
   myCut2->SetLineColor(kRed);
   myCut2->SetLineWidth(3);
   myCut2->SetLineStyle(2);
 
+  TF1 *f3_1 = new TF1("f3_1", "0.933991*x - 0.273478", 4.5, 16.);
+  TF1 *f3_2 = new TF1("f3_2", "1.1299*x - 0.712557", 4.5, 16.);
+  f3_1->SetLineColor(kRed);
+  f3_1->SetLineWidth(3);
+  f3_1->SetLineStyle(2);
+  f3_2->SetLineColor(kRed);
+  f3_2->SetLineWidth(3);
+  f3_2->SetLineStyle(2);
   c_Fcut3->cd();
   h_Acor3->Draw("colz");
-  myCut3->Draw("same");
+  f3_1->Draw("same");
+  f3_2->Draw("same");
+  //   myCut3->Draw("same");
   myCut3->SetLineColor(kRed);
   myCut3->SetLineWidth(3);
   myCut3->SetLineStyle(2);
 
+  TF1 *f4_1 = new TF1("f4_1", "0.874419*x + 0.0828994", 5., 18.);
+  TF1 *f4_2 = new TF1("f4_2", "1.04031*x - 0.288635", 5., 18.);
+  f4_1->SetLineColor(kRed);
+  f4_1->SetLineWidth(3);
+  f4_1->SetLineStyle(2);
+  f4_2->SetLineColor(kRed);
+  f4_2->SetLineWidth(3);
+  f4_2->SetLineStyle(2);
   c_Fcut4->cd();
   h_Acor4->Draw("colz");
-  myCut4->Draw("same");
+  f4_1->Draw("same");
+  f4_2->Draw("same");
+  // myCut4->Draw("same");
   myCut4->SetLineColor(kRed);
   myCut4->SetLineWidth(3);
   myCut4->SetLineStyle(2);
 
+  TF1 *f5_1 = new TF1("f5_1", "0.80605*x + 0.391506", 6., 18.);
+  TF1 *f5_2 = new TF1("f5_2", "1.27583*x - 2.28309", 6., 18.);
+  f5_1->SetLineColor(kRed);
+  f5_1->SetLineWidth(3);
+  f5_1->SetLineStyle(2);
+  f5_2->SetLineColor(kRed);
+  f5_2->SetLineWidth(3);
+  f5_2->SetLineStyle(2);
   c_Fcut5->cd();
   h_Acor5->Draw("colz");
-  myCut5->Draw("same");
+  f5_1->Draw("same");
+  f5_2->Draw("same");
+  // myCut5->Draw("same");
   myCut5->SetLineColor(kRed);
   myCut5->SetLineWidth(3);
   myCut5->SetLineStyle(2);
 
+  TF1 *f6_1 = new TF1("f6_1", "0.929088*x - 0.206651", 0.5, 5.);
+  TF1 *f6_2 = new TF1("f6_2", "1.08272*x + 0.05382", 0.5, 5.);
+  f6_1->SetLineColor(kRed);
+  f6_1->SetLineWidth(3);
+  f6_1->SetLineStyle(2);
+  f6_2->SetLineColor(kRed);
+  f6_2->SetLineWidth(3);
+  f6_2->SetLineStyle(2);
   c_Fcut6->cd();
   h_Acor6->Draw("colz");
-  myCut6->Draw("same");
+  // myCut6->Draw("same");
+  f6_1->Draw("same");
+  f6_2->Draw("same");
   myCut6->SetLineColor(kRed);
   myCut6->SetLineWidth(3);
   myCut6->SetLineStyle(2);
 
+  TF1 *f7_1 = new TF1("f7_1", "0.879598*x - 0.0897704", 1., 8.);
+  TF1 *f7_2 = new TF1("f7_2", "0.8199*x + 1.18526", 1., 8.);
+  f7_1->SetLineColor(kRed);
+  f7_1->SetLineWidth(3);
+  f7_1->SetLineStyle(2);
+  f7_2->SetLineColor(kRed);
+  f7_2->SetLineWidth(3);
+  f7_2->SetLineStyle(2);
   c_Fcut7->cd();
   h_Acor7->Draw("colz");
-  myCut7->Draw("same");
+  f7_1->Draw("same");
+  f7_2->Draw("same");
+  //   myCut7->Draw("same");
   myCut7->SetLineColor(kRed);
   myCut7->SetLineWidth(3);
   myCut7->SetLineStyle(2);
 
+  TF1 *f8_1 = new TF1("f8_1", "0.857437*x + 0.378008", 3., 14.);
+  TF1 *f8_2 = new TF1("f8_2", "0.985377*x + 0.35161", 3., 14.);
+  f8_1->SetLineColor(kRed);
+  f8_1->SetLineWidth(3);
+  f8_1->SetLineStyle(2);
+  f8_2->SetLineColor(kRed);
+  f8_2->SetLineWidth(3);
+  f8_2->SetLineStyle(2);
   c_Fcut8->cd();
   h_Acor8->Draw("colz");
-  myCut8->Draw("same");
+  f8_1->Draw("same");
+  f8_2->Draw("same");
+  //   myCut8->Draw("same");
   myCut8->SetLineColor(kRed);
   myCut8->SetLineWidth(3);
   myCut8->SetLineStyle(2);
 
+  TF1 *f9_1 = new TF1("f9_1", "0.9855*x - 0.617582", 4.5, 16);
+  TF1 *f9_2 = new TF1("f9_2", "1.07887*x - 0.220535", 4.5, 16);
+  f9_1->SetLineColor(kRed);
+  f9_1->SetLineWidth(3);
+  f9_1->SetLineStyle(2);
+  f9_2->SetLineColor(kRed);
+  f9_2->SetLineWidth(3);
+  f9_2->SetLineStyle(2);
   c_Fcut9->cd();
   h_Acor9->Draw("colz");
-  myCut9->Draw("same");
+  f9_1->Draw("same");
+  f9_2->Draw("same");
+  //   myCut9->Draw("same");
   myCut9->SetLineColor(kRed);
   myCut9->SetLineWidth(3);
   myCut9->SetLineStyle(2);
 
+  TF1 *f10_1 = new TF1("f10_1", "0.793858*x + 1.56332", 5., 18.);
+  TF1 *f10_2 = new TF1("f10_2", "0.984752*x + 0.704394", 5., 18.);
+  f10_1->SetLineColor(kRed);
+  f10_1->SetLineWidth(3);
+  f10_1->SetLineStyle(2);
+  f10_2->SetLineColor(kRed);
+  f10_2->SetLineWidth(3);
+  f10_2->SetLineStyle(2);
   c_Fcut10->cd();
   h_Acor10->Draw("colz");
-  myCut10->Draw("same");
+  f10_1->Draw("same");
+  f10_2->Draw("same");
+  //   myCut10->Draw("same");
   myCut10->SetLineColor(kRed);
   h_Acor10->SetLineWidth(3);
   h_Acor10->SetLineStyle(2);
 
+  TF1 *f11_1 = new TF1("f11_1", "0.834673*x + 0.521629", 6., 18.);
+  TF1 *f11_2 = new TF1("f11_2", "1.19328*x - 1.00575", 6., 18.);
+  f11_1->SetLineColor(kRed);
+  f11_1->SetLineWidth(3);
+  f11_1->SetLineStyle(2);
+  f11_2->SetLineColor(kRed);
+  f11_2->SetLineWidth(3);
+  f11_2->SetLineStyle(2);
   c_Fcut11->cd();
   h_Acor11->Draw("colz");
-  myCut11->Draw("same");
+  f11_1->Draw("same");
+  f11_2->Draw("same");
+  //   myCut11->Draw("same");
   myCut11->SetLineColor(kRed);
   myCut11->SetLineWidth(3);
   myCut11->SetLineStyle(2);
 
+  TF1 *f12_1 = new TF1("f12_1", "0.854911*x - 0.130298", 0.5, 5.);
+  TF1 *f12_2 = new TF1("f12_2", "1.10416*x + 0.176225", 0.5, 5.);
+  f12_1->SetLineColor(kRed);
+  f12_1->SetLineWidth(3);
+  f12_1->SetLineStyle(2);
+  f12_2->SetLineColor(kRed);
+  f12_2->SetLineWidth(3);
+  f12_2->SetLineStyle(2);
   c_Fcut12->cd();
   h_Acor12->Draw("colz");
-  myCut12->Draw("same");
+  f12_1->Draw("same");
+  f12_2->Draw("same");
+  //   myCut12->Draw("same");
   myCut12->SetLineColor(kRed);
   myCut12->SetLineWidth(3);
   myCut12->SetLineStyle(2);
 
+  TF1 *f13_1 = new TF1("f13_1", "0.83875*x - 0.0637813", 1., 8.);
+  TF1 *f13_2 = new TF1("f13_2", "1.01354*x + 0.481892", 1., 8.);
+  f13_1->SetLineColor(kRed);
+  f13_1->SetLineWidth(3);
+  f13_1->SetLineStyle(2);
+  f13_2->SetLineColor(kRed);
+  f13_2->SetLineWidth(3);
+  f13_2->SetLineStyle(2);
   c_Fcut13->cd();
   h_Acor13->Draw("colz");
-  myCut13->Draw("same");
+  f13_1->Draw("same");
+  f13_2->Draw("same");
+  //   myCut13->Draw("same");
   myCut13->SetLineColor(kRed);
   myCut13->SetLineWidth(3);
   myCut13->SetLineStyle(2);
 
+  TF1 *f14_1 = new TF1("f14_1", "0.951386*x - 0.451837", 3., 14.);
+  TF1 *f14_2 = new TF1("f14_2", "1.09272*x + 0.0479334", 3., 14.);
+  f14_1->SetLineColor(kRed);
+  f14_1->SetLineWidth(3);
+  f14_1->SetLineStyle(2);
+  f14_2->SetLineColor(kRed);
+  f14_2->SetLineWidth(3);
+  f14_2->SetLineStyle(2);
   c_Fcut14->cd();
   h_Acor14->Draw("colz");
-  myCut14->Draw("same");
+  f14_1->Draw("same");
+  f14_2->Draw("same");
+  //   myCut14->Draw("same");
   myCut14->SetLineColor(kRed);
   myCut14->SetLineWidth(3);
   myCut14->SetLineStyle(2);
 
+  TF1 *f15_1 = new TF1("f15_1", "0.829295*x + 0.730928", 4.5, 16.);
+  TF1 *f15_2 = new TF1("f15_2", "1.10078*x + 0.237946", 4.5, 16.);
+  f15_1->SetLineColor(kRed);
+  f15_1->SetLineWidth(3);
+  f15_1->SetLineStyle(2);
+  f15_2->SetLineColor(kRed);
+  f15_2->SetLineWidth(3);
+  f15_2->SetLineStyle(2);
   c_Fcut15->cd();
   h_Acor15->Draw("colz");
-  myCut15->Draw("same");
+  f15_1->Draw("same");
+  f15_2->Draw("same");
+  //   myCut15->Draw("same");
   myCut15->SetLineColor(kRed);
   myCut15->SetLineWidth(3);
   myCut15->SetLineStyle(2);
 
+  TF1 *f16_1 = new TF1("f16_1", "0.74629*x + 2.17232", 5., 18.);
+  TF1 *f16_2 = new TF1("f16_2", "0.929428*x + 1.96892", 5., 18.);
+  f16_1->SetLineColor(kRed);
+  f16_1->SetLineWidth(3);
+  f16_1->SetLineStyle(2);
+  f16_2->SetLineColor(kRed);
+  f16_2->SetLineWidth(3);
+  f16_2->SetLineStyle(2);
   c_Fcut16->cd();
   h_Acor16->Draw("colz");
-  myCut16->Draw("same");
+  f16_1->Draw("same");
+  f16_2->Draw("same");
+  //   myCut16->Draw("same");
   myCut16->SetLineColor(kRed);
   myCut16->SetLineWidth(3);
   myCut16->SetLineStyle(2);
 
+  TF1 *f17_1 = new TF1("f17_1", "0.80449*x + 0.551851", 6., 18.);
+  TF1 *f17_2 = new TF1("f17_2", "1.31545*x - 0.674489", 6., 18.);
+  f17_1->SetLineColor(kRed);
+  f17_1->SetLineWidth(3);
+  f17_1->SetLineStyle(2);
+  f17_2->SetLineColor(kRed);
+  f17_2->SetLineWidth(3);
+  f17_2->SetLineStyle(2);
   c_Fcut17->cd();
   h_Acor17->Draw("colz");
-  myCut17->Draw("same");
+  f17_1->Draw("same");
+  f17_2->Draw("same");
+  //   myCut17->Draw("same");
   myCut17->SetLineColor(kRed);
   myCut17->SetLineWidth(3);
   myCut17->SetLineStyle(2);
