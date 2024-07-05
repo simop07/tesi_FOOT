@@ -15,10 +15,11 @@
 
 void setFitStyle() {
   gROOT->SetStyle("Plain");
-  gStyle->SetOptStat(10);
+  gStyle->SetOptStat(0);
   gStyle->SetOptFit(1111);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
+  gStyle->SetTitleBorderSize(0);
   gStyle->SetStatY(0.9);
   gStyle->SetStatX(0.9);
   gStyle->SetStatW(0.2);
@@ -82,6 +83,8 @@ void myBestTriFit() {
   TH2D *h_Acor15 = (TH2D *)c15->GetPrimitive("h_Acor15");
   TH2D *h_Acor16 = (TH2D *)c16->GetPrimitive("h_Acor16");
   TH2D *h_Acor17 = (TH2D *)c17->GetPrimitive("h_Acor17");
+
+  setFitStyle();
 
   // Defining canvas for cutted 1D histo
   TCanvas *c_cut0 = new TCanvas("c_cut0", "c_cut0", 1000, 600);
@@ -2204,8 +2207,6 @@ void myBestTriFit() {
   f17_1->Draw("same");
   f17_2->Draw("same");
   leg2->Draw("same");
-
-  setFitStyle();
 
   // writing on TFile
   file2->cd();
