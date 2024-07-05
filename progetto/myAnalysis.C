@@ -193,13 +193,13 @@ void myAnalysis::Loop(Long64_t init = -999, Long64_t nentries = -999) {
 
 void myAnalysis::BeforeLoop() {
   // creating total histos
-  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 300, 0., 16.);
-  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 300, 0., 16.);
-  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 300, 0., 16.);
-  h_z_bethe = new TH1D("h_z_bethe", "z misurato dalla Bethe-Bloch; z; Entries",
-                       300, 0., 12.);
-  h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Entries", 13, 0.,
-                    12.);
+  h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Occorrenze", 300, 0., 16.);
+  h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Occorrenze", 300, 0., 16.);
+  h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Occorrenze", 300, 0., 16.);
+  h_z_bethe = new TH1D(
+      "h_z_bethe", "z misurato dalla Bethe-Bloch; z; Occorrenze", 300, 0., 12.);
+  h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Occorrenze", 13,
+                    0., 12.);
   h_E_TOF =
       new TH2D("h_E_TOF",
                "#DeltaE_{TW} in funzione del TOF; TOF [ns]; #DeltaE_{TW} [MeV]",
@@ -245,7 +245,7 @@ void myAnalysis::BeforeLoop() {
     h_A1r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A1r[i]->GetYaxis()->SetTitleSize(0.04);
     h_A1r[i]->GetXaxis()->SetTitle("A_{1}");
-    h_A1r[i]->GetYaxis()->SetTitle("Entries");
+    h_A1r[i]->GetYaxis()->SetTitle("Occorrenze");
 
     h_A2r[i]->SetMarkerStyle(20);
     h_A2r[i]->SetMarkerSize(0.5);
@@ -254,7 +254,7 @@ void myAnalysis::BeforeLoop() {
     h_A2r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A2r[i]->GetYaxis()->SetTitleSize(0.04);
     h_A2r[i]->GetXaxis()->SetTitle("A_{2}");
-    h_A2r[i]->GetYaxis()->SetTitle("Entries");
+    h_A2r[i]->GetYaxis()->SetTitle("Occorrenze");
 
     h_A3r[i]->SetMarkerStyle(20);
     h_A3r[i]->SetMarkerSize(0.5);
@@ -263,7 +263,7 @@ void myAnalysis::BeforeLoop() {
     h_A3r[i]->GetXaxis()->SetTitleSize(0.04);
     h_A3r[i]->GetYaxis()->SetTitleSize(0.04);
     h_A3r[i]->GetXaxis()->SetTitle("A_{3}");
-    h_A3r[i]->GetYaxis()->SetTitle("Entries");
+    h_A3r[i]->GetYaxis()->SetTitle("Occorrenze");
 
     h_A21cor[i]->SetMarkerStyle(20);
     h_A21cor[i]->SetMarkerSize(0.5);
