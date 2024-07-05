@@ -1868,6 +1868,153 @@ void myBestFit() {
   myCut17->SetLineWidth(3);
   myCut17->SetLineStyle(2);
 
+  // drawing histos on multicanvas
+  TCanvas *c_MultiCanvas1 =
+      new TCanvas("c_MultiCanvas1", "c_MultiCanvas1", 700, 900);
+  TCanvas *c_MultiCanvas2 =
+      new TCanvas("c_MultiCanvas2", "c_MultiCanvas2", 700, 900);
+  TCanvas *c_MultiCanvas3 =
+      new TCanvas("c_MultiCanvas3", "c_MultiCanvas3", 700, 900);
+
+  c_MultiCanvas1->Divide(2, 3);
+  c_MultiCanvas2->Divide(2, 3);
+  c_MultiCanvas3->Divide(2, 3);
+
+  c_MultiCanvas1->cd(1);
+  h_Acor0->Draw("colz");
+  c_MultiCanvas2->cd(1);
+  h_Acor6->Draw("colz");
+  c_MultiCanvas3->cd(1);
+  h_Acor12->Draw("colz");
+
+  c_MultiCanvas1->cd(2);
+  h_Acor1->Draw("colz");
+  c_MultiCanvas2->cd(2);
+  h_Acor7->Draw("colz");
+  c_MultiCanvas3->cd(2);
+  h_Acor13->Draw("colz");
+
+  c_MultiCanvas1->cd(3);
+  h_Acor2->Draw("colz");
+  c_MultiCanvas2->cd(3);
+  h_Acor8->Draw("colz");
+  c_MultiCanvas3->cd(3);
+  h_Acor14->Draw("colz");
+
+  c_MultiCanvas1->cd(4);
+  h_Acor3->Draw("colz");
+  c_MultiCanvas2->cd(4);
+  h_Acor9->Draw("colz");
+  c_MultiCanvas3->cd(4);
+  h_Acor15->Draw("colz");
+
+  c_MultiCanvas1->cd(5);
+  h_Acor4->Draw("colz");
+  c_MultiCanvas2->cd(5);
+  h_Acor10->Draw("colz");
+  c_MultiCanvas3->cd(5);
+  h_Acor16->Draw("colz");
+
+  c_MultiCanvas1->cd(6);
+  h_Acor5->Draw("colz");
+  c_MultiCanvas2->cd(6);
+  h_Acor11->Draw("colz");
+  c_MultiCanvas3->cd(6);
+  h_Acor17->Draw("colz");
+
+  TCanvas *c_MultiCanvasCut1 =
+      new TCanvas("c_MultiCanvasCut1", "c_MultiCanvasCut1", 700, 900);
+  TCanvas *c_MultiCanvasCut2 =
+      new TCanvas("c_MultiCanvasCut2", "c_MultiCanvasCut2", 700, 900);
+  TCanvas *c_MultiCanvasCut3 =
+      new TCanvas("c_MultiCanvasCut3", "c_MultiCanvasCut3", 700, 900);
+
+  c_MultiCanvasCut1->Divide(2, 3);
+  c_MultiCanvasCut2->Divide(2, 3);
+  c_MultiCanvasCut3->Divide(2, 3);
+
+  TLegend *leg2 = new TLegend(.70, .8, .9, .9, "Legenda");
+  leg2->SetFillColor(0);
+  leg2->AddEntry(myCut0, "Taglio", "L");
+
+  c_MultiCanvasCut1->cd(1);
+  h_Acor0->Draw("colz");
+  myCut0->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(1);
+  h_Acor6->Draw("colz");
+  myCut6->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(1);
+  h_Acor12->Draw("colz");
+  myCut12->Draw("same");
+  leg2->Draw("same");
+
+  c_MultiCanvasCut1->cd(2);
+  h_Acor1->Draw("colz");
+  myCut1->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(2);
+  h_Acor7->Draw("colz");
+  myCut7->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(2);
+  h_Acor13->Draw("colz");
+  myCut13->Draw("same");
+  leg2->Draw("same");
+
+  c_MultiCanvasCut1->cd(3);
+  h_Acor2->Draw("colz");
+  myCut2->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(3);
+  h_Acor8->Draw("colz");
+  myCut8->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(3);
+  h_Acor14->Draw("colz");
+  myCut14->Draw("same");
+  leg2->Draw("same");
+
+  c_MultiCanvasCut1->cd(4);
+  h_Acor3->Draw("colz");
+  myCut3->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(4);
+  h_Acor9->Draw("colz");
+  myCut9->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(4);
+  h_Acor15->Draw("colz");
+  myCut15->Draw("same");
+  leg2->Draw("same");
+
+  c_MultiCanvasCut1->cd(5);
+  h_Acor4->Draw("colz");
+  myCut4->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(5);
+  h_Acor10->Draw("colz");
+  myCut10->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(5);
+  h_Acor16->Draw("colz");
+  myCut16->Draw("same");
+  leg2->Draw("same");
+
+  c_MultiCanvasCut1->cd(6);
+  h_Acor5->Draw("colz");
+  myCut5->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut2->cd(6);
+  h_Acor11->Draw("colz");
+  myCut11->Draw("same");
+  leg2->Draw("same");
+  c_MultiCanvasCut3->cd(6);
+  h_Acor17->Draw("colz");
+  myCut17->Draw("same");
+  leg2->Draw("same");
+
   setFitStyle();
 
   // writing on TFile
@@ -1927,6 +2074,12 @@ void myBestFit() {
   c_cutDouble15->Write();
   c_cutDouble16->Write();
   c_cutDouble17->Write();
+  c_MultiCanvas1->Write();
+  c_MultiCanvas2->Write();
+  c_MultiCanvas3->Write();
+  c_MultiCanvasCut1->Write();
+  c_MultiCanvasCut2->Write();
+  c_MultiCanvasCut3->Write();
 
   file2->Close();
   file1->Close();
