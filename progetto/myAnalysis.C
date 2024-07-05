@@ -11,8 +11,10 @@
 #include "TF1.h"
 #include "TH2.h"
 #include "TLatex.h"
+#include "TLegend.h"
 #include "TMath.h"
 #include "TPad.h"
+#include "TPaveText.h"
 #include "TROOT.h"
 #include "TString.h"
 #include "TStyle.h"
@@ -24,7 +26,7 @@ static Long64_t default_value = -999;
 void myAnalysis::setStyle() {
   gROOT->SetStyle("Plain");
   gStyle->SetOptStat(10);
-  gStyle->SetOptFit(1111);
+  gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
   gStyle->SetStatY(0.9);
@@ -194,16 +196,14 @@ void myAnalysis::BeforeLoop() {
   h_A1 = new TH1D("h_A1", "A_1 reconstruction; A_1; Entries", 300, 0., 16.);
   h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Entries", 300, 0., 16.);
   h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Entries", 300, 0., 16.);
-  // h_z_bethe = new TH1D("h_z_bethe", "z misurato dalla Bethe-Bloch; z;
-  // Entries",
-  //                      300, 0., 12.);
-  // h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Entries", 13,
-  // 0.,
-  //                   12.);
-  // h_E_TOF =
-  //     new TH2D("h_E_TOF",
-  //              "#DeltaE_{TW} in funzione del TOF; TOF [ns]; #DeltaE_{TW}
-  //              [MeV]", 400, 8., 20., 400, 0., 300.);
+  h_z_bethe = new TH1D("h_z_bethe", "z misurato dalla Bethe-Bloch; z; Entries",
+                       300, 0., 12.);
+  h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Entries", 13, 0.,
+                    12.);
+  h_E_TOF =
+      new TH2D("h_E_TOF",
+               "#DeltaE_{TW} in funzione del TOF; TOF [ns]; #DeltaE_{TW} [MeV]",
+               400, 8., 20., 400, 0., 300.);
 
   // cosmetics
   h_E_TOF->GetYaxis()->SetTitleOffset(1.2);
@@ -296,7 +296,7 @@ void myAnalysis::BeforeLoop() {
 
 void myAnalysis::AfterLoop() {
   // creating TFile
-  TFile *file = new TFile("analisi/myAnalysis.root", "RECREATE");
+  TFile *file = new TFile("analisi/myAnalysisTofBethe.root", "RECREATE");
 
   setStyle();
 
@@ -345,12 +345,46 @@ void myAnalysis::AfterLoop() {
   c_A3->cd();
   // h_A3->Draw();
 
-  c_z->cd();
-  // h_z_bethe->Draw();
-  // h_z_TW->Draw("SAME");
+  h_z_bethe->SetLineColor(kBlue);
+  h_z_bethe->SetLineWidth(2);
+  h_z_bethe->GetYaxis()->SetTitleOffset(1.2);
+  h_z_bethe->GetXaxis()->SetTitleSize(0.04);
+  h_z_bethe->GetYaxis()->SetTitleSize(0.04);
+
+  // Draw label TOF
+  TPaveText *latex0_TOF = new TPaveText(10., 10., 10.5, 30);
+  latex0_TOF->AddText("_{1}H");
+  latex0_TOF->SetTextSize(0.04);
+  latex0_TOF->SetFillColor(kWhite);
+  TPaveText *latex1_TOF = new TPaveText(10., 50., 10.5, 70);
+  latex1_TOF->AddText("_{2}He");
+  latex1_TOF->SetTextSize(0.04);
+  latex1_TOF->SetFillColor(kWhite);
+  TPaveText *latex2_TOF = new TPaveText(10., 100., 10.5, 120);
+  latex2_TOF->AddText("_{3}Li");
+  latex2_TOF->SetTextSize(0.04);
+  latex2_TOF->SetFillColor(kWhite);
+  TPaveText *latex3_TOF = new TPaveText(10., 200., 10.5, 220);
+  latex3_TOF->AddText("_{4}Be");
+  latex3_TOF->SetTextSize(0.04);
+  latex3_TOF->SetFillColor(kWhite);
+  TPaveText *latex4_TOF = new TPaveText(10., 250., 10.5, 270);
+  latex4_TOF->AddText("_{5}B");
+  latex4_TOF->SetTextSize(0.04);
+  latex4_TOF->SetFillColor(kWhite);
+  TPaveText *latex5_TOF = new TPaveText(10., 290., 10.5, 310);
+  latex5_TOF->AddText("_{6}C");
+  latex5_TOF->SetTextSize(0.04);
+  latex5_TOF->SetFillColor(kWhite);
 
   c_E_TOF->cd();
-  // h_E_TOF->Draw("colz");
+  h_E_TOF->Draw("colz");
+  latex0_TOF->Draw("same");
+  latex1_TOF->Draw("same");
+  latex2_TOF->Draw("same");
+  latex3_TOF->Draw("same");
+  latex4_TOF->Draw("same");
+  latex5_TOF->Draw("same");
 
   // add for debugging
   TString const canvasname{"c_"};
@@ -434,6 +468,16 @@ void myAnalysis::AfterLoop() {
     // h_A3r[i]->Fit(f_A3r[i]);
   }
 
+  TLegend *leg1 = new TLegend(.70, .7, .9, .9, "Legenda");
+  leg1->SetFillColor(0);
+  leg1->AddEntry(h_z_bethe, "Distribuzione di z", "L");
+  leg1->AddEntry(f_z_bethe[5], "Fit", "L");
+
+  c_z->cd();
+  h_z_bethe->Draw();
+  leg1->Draw("same");
+  // h_z_TW->Draw("SAME");
+
   // dividing reconstruction canvas
   c_A1r->Divide(3, 2);
   c_A2r->Divide(3, 2);
@@ -461,26 +505,26 @@ void myAnalysis::AfterLoop() {
   TString const num31{"31"};
   TString const num32{"32"};
   TString const cor{"cor"};
-  for (int i{}; i != 6; i++) {
-    // defining offset variables
-    int j{i + 6};
-    int k{i + 12};
-    c_A21cor[i] =
-        new TCanvas(canvasname + num21 + cor + i, element0[i], 1000, 600);
-    c_A31cor[i] =
-        new TCanvas(canvasname + num31 + cor + j, element0[i], 1000, 600);
-    c_A32cor[i] =
-        new TCanvas(canvasname + num32 + cor + k, element0[i], 1000, 600);
+  // for (int i{}; i != 6; i++) {
+  //   // defining offset variables
+  //   int j{i + 6};
+  //   int k{i + 12};
+  //   c_A21cor[i] =
+  //       new TCanvas(canvasname + num21 + cor + i, element0[i], 1000, 600);
+  //   c_A31cor[i] =
+  //       new TCanvas(canvasname + num31 + cor + j, element0[i], 1000, 600);
+  //   c_A32cor[i] =
+  //       new TCanvas(canvasname + num32 + cor + k, element0[i], 1000, 600);
 
-    c_A21cor[i]->cd();
-    h_A21cor[i]->Draw("colz");
+  //   c_A21cor[i]->cd();
+  //   h_A21cor[i]->Draw("colz");
 
-    c_A31cor[i]->cd();
-    h_A31cor[i]->Draw("colz");
+  //   c_A31cor[i]->cd();
+  //   h_A31cor[i]->Draw("colz");
 
-    c_A32cor[i]->cd();
-    h_A32cor[i]->Draw("colz");
-  }
+  //   c_A32cor[i]->cd();
+  //   h_A32cor[i]->Draw("colz");
+  // }
 
   // writing on TFile
   file->cd();
@@ -492,11 +536,11 @@ void myAnalysis::AfterLoop() {
   c_A2r->Write();
   c_A3r->Write();
   c_E_TOF->Write();
-  for (int i{}; i != 6; i++) {
-    c_A21cor[i]->Write();
-    c_A31cor[i]->Write();
-    c_A32cor[i]->Write();
-  }
+  // for (int i{}; i != 6; i++) {
+  //   c_A21cor[i]->Write();
+  //   c_A31cor[i]->Write();
+  //   c_A32cor[i]->Write();
+  // }
 
   file->Close();
 }
