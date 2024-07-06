@@ -1789,7 +1789,7 @@ void myBestTriFit() {
   myCut2->SetLineStyle(2);
 
   TF1 *f3_1 = new TF1("f3_1", "0.887282*x - 0.00191072", 4.5, 16.);
-  TF1 *f3_2 = new TF1("f3_2", "1.0746*x + 0.740094", 4.5, 16.);
+  TF1 *f3_2 = new TF1("f3_2", "1.125*x - 0.57", 4.5, 16.);
   f3_1->SetLineColor(kRed);
   f3_1->SetLineWidth(3);
   f3_1->SetLineStyle(2);
