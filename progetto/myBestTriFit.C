@@ -380,7 +380,7 @@ void myBestTriFit() {
   h3_1->SetMarkerSize(0.5);
   h3_1->SetLineColor(kBlue);
   h3_1->SetLineWidth(2);
-  h3_1->GetYaxis()->SetTitleOffset(1.5);
+  h3_1->GetYaxis()->SetTitleOffset(1.2);
   h3_1->GetXaxis()->SetTitleSize(0.04);
   h3_1->GetYaxis()->SetTitleSize(0.04);
 
@@ -394,7 +394,7 @@ void myBestTriFit() {
   h3_2->SetMarkerSize(0.5);
   h3_2->SetLineColor(kBlue);
   h3_2->SetLineWidth(2);
-  h3_2->GetYaxis()->SetTitleOffset(1.5);
+  h3_2->GetYaxis()->SetTitleOffset(1.2);
   h3_2->GetXaxis()->SetTitleSize(0.04);
   h3_2->GetYaxis()->SetTitleSize(0.04);
 
@@ -412,7 +412,7 @@ void myBestTriFit() {
   h3_3->SetMarkerSize(0.5);
   h3_3->SetLineColor(kBlue);
   h3_3->SetLineWidth(2);
-  h3_3->GetYaxis()->SetTitleOffset(1.5);
+  h3_3->GetYaxis()->SetTitleOffset(1.2);
   h3_3->GetXaxis()->SetTitleSize(0.04);
   h3_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -538,148 +538,148 @@ void myBestTriFit() {
   // histo0
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_0->SetMarkerStyle(20);
   h31_1_0->SetMarkerSize(1.5);
-  h31_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_0->GetYaxis()->SetTitleOffset(1.2);
   h31_1_0->GetXaxis()->SetTitleSize(0.04);
   h31_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_0->SetMarkerStyle(20);
   h31_3_0->SetMarkerSize(1.5);
-  h31_3_0->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_0->GetYaxis()->SetTitleOffset(1.2);
   h31_3_0->GetXaxis()->SetTitleSize(0.04);
   h31_3_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_0->SetMarkerStyle(20);
   h32_2_0->SetMarkerSize(1.5);
-  h32_2_0->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_0->GetYaxis()->SetTitleOffset(1.2);
   h32_2_0->GetXaxis()->SetTitleSize(0.04);
   h32_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_0->SetMarkerStyle(20);
   h32_3_0->SetMarkerSize(1.5);
-  h32_3_0->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_0->GetYaxis()->SetTitleOffset(1.2);
   h32_3_0->GetXaxis()->SetTitleSize(0.04);
   h32_3_0->GetYaxis()->SetTitleSize(0.04);
 
   // histo1
   h21_1_1->SetMarkerStyle(20);
   h21_1_1->SetMarkerSize(1.5);
-  h21_1_1->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_1->GetYaxis()->SetTitleOffset(1.2);
   h21_1_1->GetXaxis()->SetTitleSize(0.04);
   h21_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_1->SetMarkerStyle(20);
   h21_2_1->SetMarkerSize(1.5);
-  h21_2_1->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_1->GetYaxis()->SetTitleOffset(1.2);
   h21_2_1->GetXaxis()->SetTitleSize(0.04);
   h21_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_1->SetMarkerStyle(20);
   h31_1_1->SetMarkerSize(1.5);
-  h31_1_1->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_1->GetYaxis()->SetTitleOffset(1.2);
   h31_1_1->GetXaxis()->SetTitleSize(0.04);
   h31_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_1->SetMarkerStyle(20);
   h31_3_1->SetMarkerSize(1.5);
-  h31_3_1->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_1->GetYaxis()->SetTitleOffset(1.2);
   h31_3_1->GetXaxis()->SetTitleSize(0.04);
   h31_3_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_1->SetMarkerStyle(20);
   h32_2_1->SetMarkerSize(1.5);
-  h32_2_1->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_1->GetYaxis()->SetTitleOffset(1.2);
   h32_2_1->GetXaxis()->SetTitleSize(0.04);
   h32_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_1->SetMarkerStyle(20);
   h32_3_1->SetMarkerSize(1.5);
-  h32_3_1->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_1->GetYaxis()->SetTitleOffset(1.2);
   h32_3_1->GetXaxis()->SetTitleSize(0.04);
   h32_3_1->GetYaxis()->SetTitleSize(0.04);
 
   // histo2
   h21_1_2->SetMarkerStyle(20);
   h21_1_2->SetMarkerSize(1.5);
-  h21_1_2->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_2->GetYaxis()->SetTitleOffset(1.2);
   h21_1_2->GetXaxis()->SetTitleSize(0.04);
   h21_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_2->SetMarkerStyle(20);
   h21_2_2->SetMarkerSize(1.5);
-  h21_2_2->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_2->GetYaxis()->SetTitleOffset(1.2);
   h21_2_2->GetXaxis()->SetTitleSize(0.04);
   h21_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_2->SetMarkerStyle(20);
   h31_1_2->SetMarkerSize(1.5);
-  h31_1_2->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_2->GetYaxis()->SetTitleOffset(1.2);
   h31_1_2->GetXaxis()->SetTitleSize(0.04);
   h31_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_2->SetMarkerStyle(20);
   h31_3_2->SetMarkerSize(1.5);
-  h31_3_2->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_2->GetYaxis()->SetTitleOffset(1.2);
   h31_3_2->GetXaxis()->SetTitleSize(0.04);
   h31_3_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_2->SetMarkerStyle(20);
   h32_2_2->SetMarkerSize(1.5);
-  h32_2_2->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_2->GetYaxis()->SetTitleOffset(1.2);
   h32_2_2->GetXaxis()->SetTitleSize(0.04);
   h32_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_2->SetMarkerStyle(20);
   h32_3_2->SetMarkerSize(1.5);
-  h32_3_2->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_2->GetYaxis()->SetTitleOffset(1.2);
   h32_3_2->GetXaxis()->SetTitleSize(0.04);
   h32_3_2->GetYaxis()->SetTitleSize(0.04);
 
   // histo3
   h21_1_3->SetMarkerStyle(20);
   h21_1_3->SetMarkerSize(1.5);
-  h21_1_3->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_3->GetYaxis()->SetTitleOffset(1.2);
   h21_1_3->GetXaxis()->SetTitleSize(0.04);
   h21_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_3->SetMarkerStyle(20);
   h21_2_3->SetMarkerSize(1.5);
-  h21_2_3->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_3->GetYaxis()->SetTitleOffset(1.2);
   h21_2_3->GetXaxis()->SetTitleSize(0.04);
   h21_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_3->SetMarkerStyle(20);
   h31_1_3->SetMarkerSize(1.5);
-  h31_1_3->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_3->GetYaxis()->SetTitleOffset(1.2);
   h31_1_3->GetXaxis()->SetTitleSize(0.04);
   h31_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_3->SetMarkerStyle(20);
   h31_3_3->SetMarkerSize(1.5);
-  h31_3_3->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_3->GetYaxis()->SetTitleOffset(1.2);
   h31_3_3->GetXaxis()->SetTitleSize(0.04);
   h31_3_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_3->SetMarkerStyle(20);
   h32_2_3->SetMarkerSize(1.5);
-  h32_2_3->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_3->GetYaxis()->SetTitleOffset(1.2);
   h32_2_3->GetXaxis()->SetTitleSize(0.04);
   h32_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_3->SetMarkerStyle(20);
   h32_3_3->SetMarkerSize(1.5);
-  h32_3_3->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_3->GetYaxis()->SetTitleOffset(1.2);
   h32_3_3->GetXaxis()->SetTitleSize(0.04);
   h32_3_3->GetYaxis()->SetTitleSize(0.04);
 
@@ -1184,41 +1184,41 @@ void myBestTriFit() {
   h32_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
-  v_black_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
+  //   v_black_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
-  v_black_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h31_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
+  //   v_black_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
+  //   h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
-  v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
+  //   v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
-  v_black_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h32_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
+  //   v_black_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
+  //   h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
-  v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
+  //   v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
-  v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
+  //   v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
+  //   h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
   h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
@@ -1381,41 +1381,41 @@ void myBestTriFit() {
   h31_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h21_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
-  v_blue_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a1_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h21_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
+  //   v_blue_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
-  v_blue_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a1_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h21_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
+  //   v_blue_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
+  //   h21_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h21_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
-  v_blue_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a2_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h21_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
+  //   v_blue_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
-  v_blue_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a2_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h21_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
+  //   v_blue_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
+  //   h21_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h31_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
-  v_blue_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a3_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h31_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
+  //   v_blue_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
-  v_blue_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a3_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h31_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
+  //   v_blue_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
+  //   h31_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
   h21_1_4->Fit(f_cut4_1, "", "", 8., 11.);
@@ -2208,6 +2208,41 @@ void myBestTriFit() {
   f17_2->Draw("same");
   leg2->Draw("same");
 
+  // Berillium canvas
+  TCanvas *c_Berillum = new TCanvas("c_Berillum", "c_Berillum", 900, 1100);
+  TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
+  leg3->SetFillColor(0);
+  leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  leg3->AddEntry(h21_1_3, "Taglio di tipo 2", "L");
+
+  TLegend *leg4 = new TLegend(.55, .82, .9, .9, "Legenda");
+  leg4->SetFillColor(0);
+  leg4->AddEntry(h3_1, "Distribuzione pre taglio", "L");
+
+  c_Berillum->Divide(2, 3);
+
+  c_Berillum->cd(1);
+  h3_1->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum->cd(2);
+  h31_1_3->DrawCopy();
+  h21_1_3->DrawCopy("same");
+  leg3->Draw("same");
+  c_Berillum->cd(3);
+  h3_2->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum->cd(4);
+  h21_2_3->DrawCopy();
+  h32_2_3->DrawCopy("same");
+  leg3->Draw("same");
+  c_Berillum->cd(5);
+  h3_3->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum->cd(6);
+  h31_3_3->DrawCopy();
+  h32_3_3->DrawCopy("same");
+  leg3->Draw("same");
+
   // writing on TFile
   file2->cd();
   c_cut0->Write();
@@ -2271,6 +2306,7 @@ void myBestTriFit() {
   c_MultiCanvasCut1->Write();
   c_MultiCanvasCut2->Write();
   c_MultiCanvasCut3->Write();
+  c_Berillum->Write();
 
   file2->Close();
   file1->Close();
