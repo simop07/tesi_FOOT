@@ -15,8 +15,8 @@
 
 void setFitStyle() {
   gROOT->SetStyle("Plain");
-  gStyle->SetOptStat(10);
-  gStyle->SetOptFit(1111);
+  gStyle->SetOptStat(0);
+  gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
   gStyle->SetStatY(0.9);
@@ -37,6 +37,8 @@ void setFitStyle() {
 }
 
 void myBestFit() {
+  setFitStyle();
+
   // Loading ROOT File
   TFile *file1 = new TFile("analisi/myAnalysis.root", "READ");
 
@@ -570,222 +572,222 @@ void myBestFit() {
   // histo0
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_0->SetMarkerStyle(20);
   h31_1_0->SetMarkerSize(1.5);
-  h31_1_0->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_0->GetYaxis()->SetTitleOffset(1.2);
   h31_1_0->GetXaxis()->SetTitleSize(0.04);
   h31_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_0->SetMarkerStyle(20);
   h31_3_0->SetMarkerSize(1.5);
-  h31_3_0->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_0->GetYaxis()->SetTitleOffset(1.2);
   h31_3_0->GetXaxis()->SetTitleSize(0.04);
   h31_3_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_0->SetMarkerStyle(20);
   h32_2_0->SetMarkerSize(1.5);
-  h32_2_0->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_0->GetYaxis()->SetTitleOffset(1.2);
   h32_2_0->GetXaxis()->SetTitleSize(0.04);
   h32_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_0->SetMarkerStyle(20);
   h32_3_0->SetMarkerSize(1.5);
-  h32_3_0->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_0->GetYaxis()->SetTitleOffset(1.2);
   h32_3_0->GetXaxis()->SetTitleSize(0.04);
   h32_3_0->GetYaxis()->SetTitleSize(0.04);
 
   // histo1
   h21_1_1->SetMarkerStyle(20);
   h21_1_1->SetMarkerSize(1.5);
-  h21_1_1->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_1->GetYaxis()->SetTitleOffset(1.2);
   h21_1_1->GetXaxis()->SetTitleSize(0.04);
   h21_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_1->SetMarkerStyle(20);
   h21_2_1->SetMarkerSize(1.5);
-  h21_2_1->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_1->GetYaxis()->SetTitleOffset(1.2);
   h21_2_1->GetXaxis()->SetTitleSize(0.04);
   h21_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_1->SetMarkerStyle(20);
   h31_1_1->SetMarkerSize(1.5);
-  h31_1_1->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_1->GetYaxis()->SetTitleOffset(1.2);
   h31_1_1->GetXaxis()->SetTitleSize(0.04);
   h31_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_1->SetMarkerStyle(20);
   h31_3_1->SetMarkerSize(1.5);
-  h31_3_1->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_1->GetYaxis()->SetTitleOffset(1.2);
   h31_3_1->GetXaxis()->SetTitleSize(0.04);
   h31_3_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_1->SetMarkerStyle(20);
   h32_2_1->SetMarkerSize(1.5);
-  h32_2_1->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_1->GetYaxis()->SetTitleOffset(1.2);
   h32_2_1->GetXaxis()->SetTitleSize(0.04);
   h32_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_1->SetMarkerStyle(20);
   h32_3_1->SetMarkerSize(1.5);
-  h32_3_1->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_1->GetYaxis()->SetTitleOffset(1.2);
   h32_3_1->GetXaxis()->SetTitleSize(0.04);
   h32_3_1->GetYaxis()->SetTitleSize(0.04);
 
   // histo2
   h21_1_2->SetMarkerStyle(20);
   h21_1_2->SetMarkerSize(1.5);
-  h21_1_2->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_2->GetYaxis()->SetTitleOffset(1.2);
   h21_1_2->GetXaxis()->SetTitleSize(0.04);
   h21_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_2->SetMarkerStyle(20);
   h21_2_2->SetMarkerSize(1.5);
-  h21_2_2->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_2->GetYaxis()->SetTitleOffset(1.2);
   h21_2_2->GetXaxis()->SetTitleSize(0.04);
   h21_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_2->SetMarkerStyle(20);
   h31_1_2->SetMarkerSize(1.5);
-  h31_1_2->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_2->GetYaxis()->SetTitleOffset(1.2);
   h31_1_2->GetXaxis()->SetTitleSize(0.04);
   h31_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_2->SetMarkerStyle(20);
   h31_3_2->SetMarkerSize(1.5);
-  h31_3_2->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_2->GetYaxis()->SetTitleOffset(1.2);
   h31_3_2->GetXaxis()->SetTitleSize(0.04);
   h31_3_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_2->SetMarkerStyle(20);
   h32_2_2->SetMarkerSize(1.5);
-  h32_2_2->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_2->GetYaxis()->SetTitleOffset(1.2);
   h32_2_2->GetXaxis()->SetTitleSize(0.04);
   h32_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_2->SetMarkerStyle(20);
   h32_3_2->SetMarkerSize(1.5);
-  h32_3_2->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_2->GetYaxis()->SetTitleOffset(1.2);
   h32_3_2->GetXaxis()->SetTitleSize(0.04);
   h32_3_2->GetYaxis()->SetTitleSize(0.04);
 
   // histo3
   h21_1_3->SetMarkerStyle(20);
   h21_1_3->SetMarkerSize(1.5);
-  h21_1_3->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_3->GetYaxis()->SetTitleOffset(1.2);
   h21_1_3->GetXaxis()->SetTitleSize(0.04);
   h21_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_3->SetMarkerStyle(20);
   h21_2_3->SetMarkerSize(1.5);
-  h21_2_3->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_3->GetYaxis()->SetTitleOffset(1.2);
   h21_2_3->GetXaxis()->SetTitleSize(0.04);
   h21_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_3->SetMarkerStyle(20);
   h31_1_3->SetMarkerSize(1.5);
-  h31_1_3->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_3->GetYaxis()->SetTitleOffset(1.2);
   h31_1_3->GetXaxis()->SetTitleSize(0.04);
   h31_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_3->SetMarkerStyle(20);
   h31_3_3->SetMarkerSize(1.5);
-  h31_3_3->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_3->GetYaxis()->SetTitleOffset(1.2);
   h31_3_3->GetXaxis()->SetTitleSize(0.04);
   h31_3_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_3->SetMarkerStyle(20);
   h32_2_3->SetMarkerSize(1.5);
-  h32_2_3->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_3->GetYaxis()->SetTitleOffset(1.2);
   h32_2_3->GetXaxis()->SetTitleSize(0.04);
   h32_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_3->SetMarkerStyle(20);
   h32_3_3->SetMarkerSize(1.5);
-  h32_3_3->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_3->GetYaxis()->SetTitleOffset(1.2);
   h32_3_3->GetXaxis()->SetTitleSize(0.04);
   h32_3_3->GetYaxis()->SetTitleSize(0.04);
 
   // histo4
   h21_1_4->SetMarkerStyle(20);
   h21_1_4->SetMarkerSize(1.5);
-  h21_1_4->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_4->GetYaxis()->SetTitleOffset(1.2);
   h21_1_4->GetXaxis()->SetTitleSize(0.04);
   h21_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_4->SetMarkerStyle(20);
   h21_2_4->SetMarkerSize(1.5);
-  h21_2_4->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_4->GetYaxis()->SetTitleOffset(1.2);
   h21_2_4->GetXaxis()->SetTitleSize(0.04);
   h21_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_4->SetMarkerStyle(20);
   h31_1_4->SetMarkerSize(1.5);
-  h31_1_4->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_4->GetYaxis()->SetTitleOffset(1.2);
   h31_1_4->GetXaxis()->SetTitleSize(0.04);
   h31_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_4->SetMarkerStyle(20);
   h31_3_4->SetMarkerSize(1.5);
-  h31_3_4->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_4->GetYaxis()->SetTitleOffset(1.2);
   h31_3_4->GetXaxis()->SetTitleSize(0.04);
   h31_3_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_4->SetMarkerStyle(20);
   h32_2_4->SetMarkerSize(1.5);
-  h32_2_4->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_4->GetYaxis()->SetTitleOffset(1.2);
   h32_2_4->GetXaxis()->SetTitleSize(0.04);
   h32_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_4->SetMarkerStyle(20);
   h32_3_4->SetMarkerSize(1.5);
-  h32_3_4->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_4->GetYaxis()->SetTitleOffset(1.2);
   h32_3_4->GetXaxis()->SetTitleSize(0.04);
   h32_3_4->GetYaxis()->SetTitleSize(0.04);
 
   // histo5
   h21_1_5->SetMarkerStyle(20);
   h21_1_5->SetMarkerSize(1.5);
-  h21_1_5->GetYaxis()->SetTitleOffset(1.5);
+  h21_1_5->GetYaxis()->SetTitleOffset(1.2);
   h21_1_5->GetXaxis()->SetTitleSize(0.04);
   h21_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_5->SetMarkerStyle(20);
   h21_2_5->SetMarkerSize(1.5);
-  h21_2_5->GetYaxis()->SetTitleOffset(1.5);
+  h21_2_5->GetYaxis()->SetTitleOffset(1.2);
   h21_2_5->GetXaxis()->SetTitleSize(0.04);
   h21_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_5->SetMarkerStyle(20);
   h31_1_5->SetMarkerSize(1.5);
-  h31_1_5->GetYaxis()->SetTitleOffset(1.5);
+  h31_1_5->GetYaxis()->SetTitleOffset(1.2);
   h31_1_5->GetXaxis()->SetTitleSize(0.04);
   h31_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_5->SetMarkerStyle(20);
   h31_3_5->SetMarkerSize(1.5);
-  h31_3_5->GetYaxis()->SetTitleOffset(1.5);
+  h31_3_5->GetYaxis()->SetTitleOffset(1.2);
   h31_3_5->GetXaxis()->SetTitleSize(0.04);
   h31_3_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_5->SetMarkerStyle(20);
   h32_2_5->SetMarkerSize(1.5);
-  h32_2_5->GetYaxis()->SetTitleOffset(1.5);
+  h32_2_5->GetYaxis()->SetTitleOffset(1.2);
   h32_2_5->GetXaxis()->SetTitleSize(0.04);
   h32_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_5->SetMarkerStyle(20);
   h32_3_5->SetMarkerSize(1.5);
-  h32_3_5->GetYaxis()->SetTitleOffset(1.5);
+  h32_3_5->GetYaxis()->SetTitleOffset(1.2);
   h32_3_5->GetXaxis()->SetTitleSize(0.04);
   h32_3_5->GetYaxis()->SetTitleSize(0.04);
 
@@ -1050,7 +1052,7 @@ void myBestFit() {
   f_cut4_2->SetLineStyle(2);
 
   // histo5
-  f_cut5_tot->SetLineColor(kOrange);
+  f_cut5_tot->SetLineColor(kRed);
   f_cut5_tot->SetLineWidth(3);
   f_cut5_tot->SetLineStyle(2);
 
@@ -1112,10 +1114,10 @@ void myBestFit() {
                            (f_cut0_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h31_1_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
-  v_black_a1_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
-                           (f_cut0_3->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut0_3->GetParameter(1));
+  //   h31_1_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
+  //   v_black_a1_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
+  //                            (f_cut0_3->GetParameter(1)));
+  //   v_black_a1_mean.push_back(f_cut0_3->GetParameter(1));
 
   h32_2_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_black_a2_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
@@ -1127,10 +1129,10 @@ void myBestFit() {
                            (f_cut0_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h32_2_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
-  v_black_a2_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
-                           (f_cut0_3->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut0_3->GetParameter(1));
+  //   h32_2_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
+  //   v_black_a2_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
+  //                            (f_cut0_3->GetParameter(1)));
+  //   v_black_a2_mean.push_back(f_cut0_3->GetParameter(1));
 
   h32_3_0->Fit(f_cut0_1, "", "", 0.5, 1.5);
   v_black_a3_err.push_back(100. * (f_cut0_1->GetParameter(2)) /
@@ -1142,10 +1144,10 @@ void myBestFit() {
                            (f_cut0_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut0_2->GetParameter(1));
 
-  h32_3_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
-  v_black_a3_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
-                           (f_cut0_3->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut0_3->GetParameter(1));
+  //   h32_3_0->Fit(f_cut0_3, "+", "", 2.5, 3.5);
+  //   v_black_a3_err.push_back(100. * (f_cut0_3->GetParameter(2)) /
+  //                            (f_cut0_3->GetParameter(1)));
+  //   v_black_a3_mean.push_back(f_cut0_3->GetParameter(1));
 
   // histo1
   h31_1_1->Fit(f_cut1_1, "", "", 2.5, 3.6);
@@ -1189,7 +1191,7 @@ void myBestFit() {
                            (f_cut2_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h31_1_2->Fit(f_cut2_3, "+", "", 7.6, 9.);
+  //   h31_1_2->Fit(f_cut2_3, "+", "", 7.6, 9.);
 
   h32_2_2->Fit(f_cut2_1, "", "", 5.5, 6.5);
   v_black_a2_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
@@ -1201,7 +1203,7 @@ void myBestFit() {
                            (f_cut2_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h32_2_2->Fit(f_cut2_3, "+", "", 7.5, 9.);
+  //   h32_2_2->Fit(f_cut2_3, "+", "", 7.5, 9.);
 
   h32_3_2->Fit(f_cut2_1, "", "", 4.5, 6.5);
   v_black_a3_err.push_back(100. * (f_cut2_1->GetParameter(2)) /
@@ -1213,7 +1215,7 @@ void myBestFit() {
                            (f_cut2_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut2_2->GetParameter(1));
 
-  h32_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
+  //   h32_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
   h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
@@ -1226,7 +1228,7 @@ void myBestFit() {
                            (f_cut3_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
+  //   h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
   h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
   v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
@@ -1238,19 +1240,19 @@ void myBestFit() {
                            (f_cut3_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
+  //   h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
   h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
   v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
                            (f_cut3_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
+  h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 12.);
   v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
                            (f_cut3_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
+  //   h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
   h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
@@ -1258,21 +1260,21 @@ void myBestFit() {
                            (f_cut4_1->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h31_1_4->Fit(f_cut4_2, "+", "", 10.7, 13.5);
+  //   h31_1_4->Fit(f_cut4_2, "+", "", 10.7, 13.5);
 
   h32_2_4->Fit(f_cut4_1, "", "", 8., 10.5);
   v_black_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                            (f_cut4_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h32_2_4->Fit(f_cut4_2, "+", "", 10.4, 12.);
+  //   h32_2_4->Fit(f_cut4_2, "+", "", 10.4, 12.);
 
-  h32_3_4->Fit(f_cut4_1, "", "", 8., 10.5);
+  h32_3_4->Fit(f_cut4_1, "", "", 8., 12.5);
   v_black_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
                            (f_cut4_1->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h32_3_4->Fit(f_cut4_2, "+", "", 10.2, 14.);
+  //   h32_3_4->Fit(f_cut4_2, "+", "", 10.2, 14.);
 
   // histo5
   h31_1_5->Fit(f_cut5_tot, "", "", 8., 16);
@@ -1503,23 +1505,41 @@ void myBestFit() {
                                &v_blue_a3_err[0]);
 
   // label points in graphs
-  TLatex *latex1_1 =
-      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{1}_{1}H");
-  a1_black->GetListOfFunctions()->Add(latex1_1);
-  latex1_1->SetTextSize(0.05);
-  latex1_1->SetTextAlign(12);
+  TLatex *latex1 =
+      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{7}_{3}Li");
+  a1_black->GetListOfFunctions()->Add(latex1);
+  latex1->SetTextSize(0.05);
+  latex1->SetTextAlign(12);
 
-  TLatex *latex2_1 =
-      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{2}_{1}H");
-  a1_black->GetListOfFunctions()->Add(latex2_1);
-  latex2_1->SetTextSize(0.05);
-  latex1_1->SetTextAlign(12);
+  TLatex *latex2 =
+      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{7}_{4}Be");
+  a1_black->GetListOfFunctions()->Add(latex2);
+  latex2->SetTextSize(0.05);
+  latex2->SetTextAlign(12);
 
-  TLatex *latex3_1 =
-      new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}^{3}_{1}H");
-  a1_black->GetListOfFunctions()->Add(latex3_1);
-  latex3_1->SetTextSize(0.05);
-  latex1_1->SetTextAlign(12);
+  //   TLatex *latex3 =
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{3}Li");
+  //   a1_black->GetListOfFunctions()->Add(latex3);
+  //   latex3->SetTextSize(0.05);
+  //   latex3->SetTextAlign(12);
+
+  //   TLatex *latex4 =
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{4}Be");
+  //   a1_black->GetListOfFunctions()->Add(latex4);
+  //   latex4->SetTextSize(0.05);
+  //   latex4->SetTextAlign(12);
+
+  //   TLatex *latex5 =
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{5}B");
+  //   a1_black->GetListOfFunctions()->Add(latex5);
+  //   latex5->SetTextSize(0.05);
+  //   latex5->SetTextAlign(12);
+
+  //   TLatex *latex6 =
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{6}C");
+  //   a1_black->GetListOfFunctions()->Add(latex6);
+  //   latex6->SetTextSize(0.05);
+  //   latex6->SetTextAlign(12);
 
   // defining multigraph
   TMultiGraph *black = new TMultiGraph();
@@ -1558,8 +1578,9 @@ void myBestFit() {
   a3_blue->SetMarkerStyle(20);
   a3_blue->SetMarkerSize(1.3);
 
-  black->SetTitle("Black result; Mean; \u0025 error");
-  blue->SetTitle("Blue result; Mean; \u0025 error");
+  black->SetTitle(
+      "Errori percentuali ricostruzione di tipo 1; Media; errore \u0025");
+  blue->SetTitle("Blue result; Media; errore \u0025");
 
   // canvas for multigraph
   TCanvas *c_multigr = new TCanvas("c_multigr", "c_multigr", 1000, 600);
@@ -1747,6 +1768,13 @@ void myBestFit() {
   leg1->Draw("same");
   c_multigr->cd(2);
   blue->Draw("AP");
+
+  // final recosntruction
+  TCanvas *c_multigr_final =
+      new TCanvas("c_multigr_final", "c_multigr_final", 1000, 600);
+  c_multigr_final->cd(1);
+  black->Draw("AP");
+  leg1->Draw("same");
 
   // draw cut
   TCanvas *c_Fcut0 = new TCanvas("c_Fcut0", "c_Fcut0", 1000, 600);
@@ -2041,7 +2069,79 @@ void myBestFit() {
   myCut17->Draw("same");
   leg2->Draw("same");
 
-  setFitStyle();
+  // canvas black reconstructed fragments
+  TCanvas *c_Total_black1 =
+      new TCanvas("c_Total_black1", "c_Total_black1", 900, 1100);
+  TCanvas *c_Total_black2 =
+      new TCanvas("c_Total_black2", "c_Total_black2", 900, 1100);
+  TCanvas *c_Total_black3 =
+      new TCanvas("c_Total_black3", "c_Total_black3", 900, 1100);
+  TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
+  leg3->SetFillColor(0);
+  leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  f_cut0_1->SetLineColor(kRed);
+  leg3->AddEntry(f_cut0_1, "Fit", "L");
+
+  c_Total_black1->Divide(2, 3);
+  c_Total_black2->Divide(2, 3);
+  c_Total_black3->Divide(2, 3);
+
+  c_Total_black1->cd(1);
+  h31_1_0->Draw();
+  leg3->Draw("same");
+  c_Total_black1->cd(2);
+  h31_1_1->Draw();
+  leg3->Draw("same");
+  c_Total_black1->cd(3);
+  h31_1_2->Draw();
+  leg3->Draw("same");
+  c_Total_black1->cd(4);
+  h31_1_3->Draw();
+  leg3->Draw("same");
+  c_Total_black1->cd(5);
+  h31_1_4->Draw();
+  leg3->Draw("same");
+  c_Total_black1->cd(6);
+  h31_1_5->Draw();
+  leg3->Draw("same");
+
+  c_Total_black2->cd(1);
+  h32_2_0->Draw();
+  leg3->Draw("same");
+  c_Total_black2->cd(2);
+  h32_2_1->Draw();
+  leg3->Draw("same");
+  c_Total_black2->cd(3);
+  h32_2_2->Draw();
+  leg3->Draw("same");
+  c_Total_black2->cd(4);
+  h32_2_3->Draw();
+  leg3->Draw("same");
+  c_Total_black2->cd(5);
+  h32_2_4->Draw();
+  leg3->Draw("same");
+  c_Total_black2->cd(6);
+  h32_2_5->Draw();
+  leg3->Draw("same");
+
+  c_Total_black3->cd(1);
+  h32_3_0->Draw();
+  leg3->Draw("same");
+  c_Total_black3->cd(2);
+  h32_3_1->Draw();
+  leg3->Draw("same");
+  c_Total_black3->cd(3);
+  h32_3_2->Draw();
+  leg3->Draw("same");
+  c_Total_black3->cd(4);
+  h32_3_3->Draw();
+  leg3->Draw("same");
+  c_Total_black3->cd(5);
+  h32_3_4->Draw();
+  leg3->Draw("same");
+  c_Total_black3->cd(6);
+  h32_3_5->Draw();
+  leg3->Draw("same");
 
   // writing on TFile
   file2->cd();
@@ -2064,6 +2164,7 @@ void myBestFit() {
   c_cut16->Write();
   c_cut17->Write();
   c_multigr->Write();
+  c_multigr_final->Write();
   c_Fcut0->Write();
   c_Fcut1->Write();
   c_Fcut2->Write();
@@ -2106,6 +2207,9 @@ void myBestFit() {
   c_MultiCanvasCut1->Write();
   c_MultiCanvasCut2->Write();
   c_MultiCanvasCut3->Write();
+  c_Total_black1->Write();
+  c_Total_black2->Write();
+  c_Total_black3->Write();
 
   file2->Close();
   file1->Close();
