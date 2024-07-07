@@ -2153,6 +2153,7 @@ void myBestFit() {
   TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
   leg3->SetFillColor(0);
   leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  leg3->AddEntry(h21_1_3, "Taglio di tipo 2", "L");
   f_cut0_1->SetLineColor(kRed);
   leg3->AddEntry(f_cut0_1, "Fit", "L");
 
