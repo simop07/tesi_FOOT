@@ -7,7 +7,6 @@
 - Controlla dalla citazione 155 esclusa in poi per la bibliografia.
 - Decidi se mettere pagine bianche prima dell'inizio dei capitoli.
 - Decidere se mettere una dedica
-- Sistema pagine capitolo 3
 
 ## CODICE:
 - Vedi se funziona istogramma blu sui fit del terzo capitolo
@@ -15,3 +14,4 @@
 ## DOMANDE:
 - Ce la mettiamo appendice?
 - Correlatore?
+- Titolo?
