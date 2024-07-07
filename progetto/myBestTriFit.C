@@ -2225,8 +2225,8 @@ void myBestTriFit() {
   h3_1->DrawCopy();
   leg4->Draw("same");
   c_Berillum->cd(2);
-  h31_1_3->DrawCopy();
-  h21_1_3->DrawCopy("same");
+  h21_1_3->DrawCopy();
+  h31_1_3->DrawCopy("same");
   leg3->Draw("same");
   c_Berillum->cd(3);
   h3_2->DrawCopy();
