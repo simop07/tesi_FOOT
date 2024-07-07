@@ -609,37 +609,37 @@ void myBestFit() {
   // histo1
   h21_1_1->SetMarkerStyle(20);
   h21_1_1->SetMarkerSize(1.5);
-  h21_1_1->GetYaxis()->SetTitleOffset(1.2);
+  h21_1_1->GetYaxis()->SetTitleOffset(1.5);
   h21_1_1->GetXaxis()->SetTitleSize(0.04);
   h21_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_1->SetMarkerStyle(20);
   h21_2_1->SetMarkerSize(1.5);
-  h21_2_1->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_1->GetYaxis()->SetTitleOffset(1.5);
   h21_2_1->GetXaxis()->SetTitleSize(0.04);
   h21_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_1->SetMarkerStyle(20);
   h31_1_1->SetMarkerSize(1.5);
-  h31_1_1->GetYaxis()->SetTitleOffset(1.2);
+  h31_1_1->GetYaxis()->SetTitleOffset(1.5);
   h31_1_1->GetXaxis()->SetTitleSize(0.04);
   h31_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_1->SetMarkerStyle(20);
   h31_3_1->SetMarkerSize(1.5);
-  h31_3_1->GetYaxis()->SetTitleOffset(1.2);
+  h31_3_1->GetYaxis()->SetTitleOffset(1.5);
   h31_3_1->GetXaxis()->SetTitleSize(0.04);
   h31_3_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_1->SetMarkerStyle(20);
   h32_2_1->SetMarkerSize(1.5);
-  h32_2_1->GetYaxis()->SetTitleOffset(1.2);
+  h32_2_1->GetYaxis()->SetTitleOffset(1.5);
   h32_2_1->GetXaxis()->SetTitleSize(0.04);
   h32_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_1->SetMarkerStyle(20);
   h32_3_1->SetMarkerSize(1.5);
-  h32_3_1->GetYaxis()->SetTitleOffset(1.2);
+  h32_3_1->GetYaxis()->SetTitleOffset(1.5);
   h32_3_1->GetXaxis()->SetTitleSize(0.04);
   h32_3_1->GetYaxis()->SetTitleSize(0.04);
 
