@@ -1255,26 +1255,23 @@ void myBestFit() {
   //   h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
-  h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
-  v_black_a1_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut4_1->GetParameter(1));
+  //   h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
+  h31_1_4->Fit(f_cut4_2, "", "", 10.7, 13.5);
+  v_black_a1_err.push_back(100. * (f_cut4_2->GetParameter(2)) /
+                           (f_cut4_2->GetParameter(1)));
+  v_black_a1_mean.push_back(f_cut4_2->GetParameter(1));
 
-  //   h31_1_4->Fit(f_cut4_2, "+", "", 10.7, 13.5);
+  //   h32_2_4->Fit(f_cut4_1, "", "", 8., 10.5);
+  h32_2_4->Fit(f_cut4_2, "", "", 10.4, 12.);
+  v_black_a2_err.push_back(100. * (f_cut4_2->GetParameter(2)) /
+                           (f_cut4_2->GetParameter(1)));
+  v_black_a2_mean.push_back(f_cut4_2->GetParameter(1));
 
-  h32_2_4->Fit(f_cut4_1, "", "", 8., 10.5);
-  v_black_a2_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut4_1->GetParameter(1));
-
-  //   h32_2_4->Fit(f_cut4_2, "+", "", 10.4, 12.);
-
-  h32_3_4->Fit(f_cut4_1, "", "", 8., 12.5);
-  v_black_a3_err.push_back(100. * (f_cut4_1->GetParameter(2)) /
-                           (f_cut4_1->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut4_1->GetParameter(1));
-
-  //   h32_3_4->Fit(f_cut4_2, "+", "", 10.2, 14.);
+  //   h32_3_4->Fit(f_cut4_1, "", "", 8., 12.5);
+  h32_3_4->Fit(f_cut4_2, "", "", 9.3, 14.);
+  v_black_a3_err.push_back(100. * (f_cut4_2->GetParameter(2)) /
+                           (f_cut4_2->GetParameter(1)));
+  v_black_a3_mean.push_back(f_cut4_2->GetParameter(1));
 
   // histo5
   h31_1_5->Fit(f_cut5_tot, "", "", 8., 16);
@@ -2150,7 +2147,7 @@ void myBestFit() {
       new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 900, 1100);
   TCanvas *c_Total_black_blue3 =
       new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 900, 1100);
-  TLegend *leg4 = new TLegend(.6, .78, .9, .9, "Legenda");
+  TLegend *leg4 = new TLegend(.6, .7, .9, .9, "Legenda");
   leg4->SetFillColor(0);
   leg4->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
   leg4->AddEntry(h21_1_3, "Taglio di tipo 2", "L");
