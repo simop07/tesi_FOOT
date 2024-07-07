@@ -2142,11 +2142,11 @@ void myBestFit() {
 
   // canvas black/blue reconstructed fragments
   TCanvas *c_Total_black_blue1 =
-      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 900, 1100);
+      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 900, 2500);
   TCanvas *c_Total_black_blue2 =
-      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 900, 1100);
+      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 900, 2500);
   TCanvas *c_Total_black_blue3 =
-      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 900, 1100);
+      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 900, 2500);
   TLegend *leg4 = new TLegend(.6, .7, .9, .9, "Legenda");
   leg4->SetFillColor(0);
   leg4->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
