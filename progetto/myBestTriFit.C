@@ -16,7 +16,7 @@
 void setFitStyle() {
   gROOT->SetStyle("Plain");
   gStyle->SetOptStat(0);
-  gStyle->SetOptFit(1111);
+  gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
   gStyle->SetTitleBorderSize(0);
@@ -1184,41 +1184,41 @@ void myBestTriFit() {
   h32_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
-  v_black_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h31_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
+  //   v_black_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
-  v_black_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h31_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
+  //   v_black_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
+  //   h31_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
-  v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h32_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
+  //   v_black_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
-  v_black_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h32_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
+  //   v_black_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
+  //   h32_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
-  v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                           (f_cut3_1->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h32_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
+  //   v_black_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                            (f_cut3_1->GetParameter(1)));
+  //   v_black_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
-  v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                           (f_cut3_2->GetParameter(1)));
-  v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h32_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
+  //   v_black_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                            (f_cut3_2->GetParameter(1)));
+  //   v_black_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
+  //   h32_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
   h31_1_4->Fit(f_cut4_1, "", "", 8., 11.);
@@ -1381,41 +1381,41 @@ void myBestTriFit() {
   h31_3_2->Fit(f_cut2_3, "+", "", 7.4, 9.);
 
   // histo3
-  h21_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
-  v_blue_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a1_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h21_1_3->Fit(f_cut3_1, "", "", 6.5, 8.5);
+  //   v_blue_a1_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a1_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
-  v_blue_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a1_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h21_1_3->Fit(f_cut3_2, "+", "", 8.5, 9.8);
+  //   v_blue_a1_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a1_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
+  //   h21_1_3->Fit(f_cut3_3, "+", "", 9.8, 11.5);
 
-  h21_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
-  v_blue_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a2_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h21_2_3->Fit(f_cut3_1, "", "", 6.5, 8);
+  //   v_blue_a2_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a2_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
-  v_blue_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a2_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h21_2_3->Fit(f_cut3_2, "+", "", 8., 9.4);
+  //   v_blue_a2_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a2_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h21_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
+  //   h21_2_3->Fit(f_cut3_3, "+", "", 9.4, 11.);
 
-  h31_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
-  v_blue_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
-                          (f_cut3_1->GetParameter(1)));
-  v_blue_a3_mean.push_back(f_cut3_1->GetParameter(1));
+  //   h31_3_3->Fit(f_cut3_1, "", "", 6., 8.4);
+  //   v_blue_a3_err.push_back(100. * (f_cut3_1->GetParameter(2)) /
+  //                           (f_cut3_1->GetParameter(1)));
+  //   v_blue_a3_mean.push_back(f_cut3_1->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
-  v_blue_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
-                          (f_cut3_2->GetParameter(1)));
-  v_blue_a3_mean.push_back(f_cut3_2->GetParameter(1));
+  //   h31_3_3->Fit(f_cut3_2, "+", "", 8.2, 10.);
+  //   v_blue_a3_err.push_back(100. * (f_cut3_2->GetParameter(2)) /
+  //                           (f_cut3_2->GetParameter(1)));
+  //   v_blue_a3_mean.push_back(f_cut3_2->GetParameter(1));
 
-  h31_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
+  //   h31_3_3->Fit(f_cut3_3, "+", "", 9.4, 12.);
 
   // histo4
   h21_1_4->Fit(f_cut4_1, "", "", 8., 11.);
