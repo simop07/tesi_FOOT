@@ -576,11 +576,11 @@ void myBestFit() {
   h21_1_0->GetXaxis()->SetTitleSize(0.04);
   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
-  h21_1_0->SetMarkerStyle(20);
-  h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_0->GetXaxis()->SetTitleSize(0.04);
-  h21_1_0->GetYaxis()->SetTitleSize(0.04);
+  h21_2_0->SetMarkerStyle(20);
+  h21_2_0->SetMarkerSize(1.5);
+  h21_2_0->GetYaxis()->SetTitleOffset(1.2);
+  h21_2_0->GetXaxis()->SetTitleSize(0.04);
+  h21_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_0->SetMarkerStyle(20);
   h31_1_0->SetMarkerSize(1.5);
@@ -2143,6 +2143,98 @@ void myBestFit() {
   h32_3_5->Draw();
   leg3->Draw("same");
 
+  // canvas black/blue reconstructed fragments
+  TCanvas *c_Total_black_blue1 =
+      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 900, 1100);
+  TCanvas *c_Total_black_blue2 =
+      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 900, 1100);
+  TCanvas *c_Total_black_blue3 =
+      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 900, 1100);
+  TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
+  leg3->SetFillColor(0);
+  leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  f_cut0_1->SetLineColor(kRed);
+  leg3->AddEntry(f_cut0_1, "Fit", "L");
+
+  c_Total_black_blue1->Divide(2, 3);
+  c_Total_black_blue2->Divide(2, 3);
+  c_Total_black_blue3->Divide(2, 3);
+
+  c_Total_black_blue1->cd(1);
+  h21_1_0->Draw();
+  h31_1_0->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue1->cd(2);
+  h21_1_1->Draw();
+  h31_1_1->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue1->cd(3);
+  h21_1_2->Draw();
+  h31_1_2->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue1->cd(4);
+  h21_1_3->Draw();
+  h31_1_3->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue1->cd(5);
+  h21_1_4->Draw();
+  h31_1_4->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue1->cd(6);
+  h21_1_5->Draw();
+  h31_1_5->Draw("same");
+  leg3->Draw("same");
+
+  c_Total_black_blue2->cd(1);
+  h21_2_0->Draw();
+  h32_2_0->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue2->cd(2);
+  h21_2_1->Draw();
+  h32_2_1->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue2->cd(3);
+  h21_2_2->Draw();
+  h32_2_2->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue2->cd(4);
+  h21_2_3->Draw();
+  h32_2_3->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue2->cd(5);
+  h21_2_4->Draw();
+  h32_2_4->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue2->cd(6);
+  h21_2_5->Draw();
+  h32_2_5->Draw("same");
+  leg3->Draw("same");
+
+  c_Total_black_blue3->cd(1);
+  h31_3_0->Draw();
+  h32_3_0->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue3->cd(2);
+  h31_3_1->Draw();
+  h32_3_1->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue3->cd(3);
+  h31_3_2->Draw();
+  h32_3_2->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue3->cd(4);
+  h31_3_3->Draw();
+  h32_3_3->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue3->cd(5);
+  h31_3_4->Draw();
+  h32_3_4->Draw("same");
+  leg3->Draw("same");
+  c_Total_black_blue3->cd(6);
+  h31_3_5->Draw();
+  h32_3_5->Draw("same");
+  leg3->Draw("same");
+
   // writing on TFile
   file2->cd();
   c_cut0->Write();
@@ -2210,6 +2302,9 @@ void myBestFit() {
   c_Total_black1->Write();
   c_Total_black2->Write();
   c_Total_black3->Write();
+  c_Total_black_blue1->Write();
+  c_Total_black_blue2->Write();
+  c_Total_black_blue3->Write();
 
   file2->Close();
   file1->Close();
