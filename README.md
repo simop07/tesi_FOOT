@@ -5,7 +5,7 @@
 
 - Decidi se mettere pagine bianche prima dell'inizio dei capitoli.
 - Decidere se mettere una dedica
-- Se hai tempo, togli pedice dagli elementi chimici
+- Se hai tempo, togli pedice dagli elementi chimici -> occhio che qunado lo farai devi togliere i pedici pure sui titoli dei grafici e pure nei grafici in cui devi sistemare i nomi a mano!
 
 ## CODICE:
 
