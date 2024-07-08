@@ -2229,6 +2229,10 @@ void myBestTriFit() {
 
   // Berillium canvas
   TCanvas *c_Berillum = new TCanvas("c_Berillum", "c_Berillum", 900, 1100);
+  TCanvas *c_Berillum1 = new TCanvas("c_Berillum1", "c_Berillum1", 900, 367);
+  TCanvas *c_Berillum2 = new TCanvas("c_Berillum2", "c_Berillum2", 900, 367);
+  TCanvas *c_Berillum3 = new TCanvas("c_Berillum3", "c_Berillum3", 900, 367);
+
   TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
   leg3->SetFillColor(0);
   leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
@@ -2239,6 +2243,9 @@ void myBestTriFit() {
   leg4->AddEntry(h3_1, "Distribuzione pre taglio", "L");
 
   c_Berillum->Divide(2, 3);
+  c_Berillum1->Divide(2, 1);
+  c_Berillum2->Divide(2, 1);
+  c_Berillum3->Divide(2, 1);
 
   h3_1->GetXaxis()->SetRangeUser(4., 14.);
   h3_2->GetXaxis()->SetRangeUser(4., 14.);
@@ -2268,6 +2275,30 @@ void myBestTriFit() {
   h3_3->DrawCopy();
   leg4->Draw("same");
   c_Berillum->cd(6);
+  h31_3_3->DrawCopy();
+  h32_3_3->DrawCopy("same");
+  leg3->Draw("same");
+
+  c_Berillum1->cd(1);
+  h3_1->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum1->cd(2);
+  h21_1_3->DrawCopy();
+  h31_1_3->DrawCopy("same");
+  leg3->Draw("same");
+
+  c_Berillum2->cd(1);
+  h3_2->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum2->cd(2);
+  h21_2_3->DrawCopy();
+  h32_2_3->DrawCopy("same");
+  leg3->Draw("same");
+
+  c_Berillum3->cd(1);
+  h3_3->DrawCopy();
+  leg4->Draw("same");
+  c_Berillum3->cd(2);
   h31_3_3->DrawCopy();
   h32_3_3->DrawCopy("same");
   leg3->Draw("same");
@@ -2336,6 +2367,9 @@ void myBestTriFit() {
   c_MultiCanvasCut2->Write();
   c_MultiCanvasCut3->Write();
   c_Berillum->Write();
+  c_Berillum1->Write();
+  c_Berillum2->Write();
+  c_Berillum3->Write();
 
   file2->Close();
   file1->Close();
