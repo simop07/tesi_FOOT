@@ -1736,8 +1736,8 @@ void myBestTriFit() {
   TCanvas *c_Fcut16 = new TCanvas("c_Fcut16", "c_Fcut16", 1000, 600);
   TCanvas *c_Fcut17 = new TCanvas("c_Fcut17", "c_Fcut17", 1000, 600);
 
-  TF1 *f0_1 = new TF1("f0_1", "0.898366*x-0.0128952", 0.5, 5.);
-  TF1 *f0_2 = new TF1("f0_2", "1.20125*x-0.0939499", 0.5, 5.);
+  TF1 *f0_1 = new TF1("f0_1", "0.898366*x-0.0128952", 0.5, 4.);
+  TF1 *f0_2 = new TF1("f0_2", "1.20125*x-0.0939499", 0.5, 4.);
   f0_1->SetLineColor(kRed);
   f0_1->SetLineWidth(3);
   f0_1->SetLineStyle(2);
@@ -1754,8 +1754,8 @@ void myBestTriFit() {
   f0_1->Draw("same");
   f0_2->Draw("same");
 
-  TF1 *f1_1 = new TF1("f1_1", "0.834047*x + 0.000960117", 1., 8.);
-  TF1 *f1_2 = new TF1("f1_2", "1.07576*x + 0.0998292", 1., 8.);
+  TF1 *f1_1 = new TF1("f1_1", "0.834047*x + 0.000960117", 1., 7.);
+  TF1 *f1_2 = new TF1("f1_2", "1.07576*x + 0.0998292", 1., 7.);
   f1_1->SetLineColor(kRed);
   f1_1->SetLineWidth(3);
   f1_1->SetLineStyle(2);
@@ -1771,8 +1771,8 @@ void myBestTriFit() {
   myCut1->SetLineWidth(3);
   myCut1->SetLineStyle(2);
 
-  TF1 *f2_1 = new TF1("f2_1", "0.938138*x - 0.173126", 3., 14.);
-  TF1 *f2_2 = new TF1("f2_2", "1.03015*x + 0.106667", 3., 14.);
+  TF1 *f2_1 = new TF1("f2_1", "0.938138*x - 0.173126", 3., 10.);
+  TF1 *f2_2 = new TF1("f2_2", "1.03015*x + 0.106667", 3., 10.);
   f2_1->SetLineColor(kRed);
   f2_1->SetLineWidth(3);
   f2_1->SetLineStyle(2);
@@ -1788,8 +1788,8 @@ void myBestTriFit() {
   myCut2->SetLineWidth(3);
   myCut2->SetLineStyle(2);
 
-  TF1 *f3_1 = new TF1("f3_1", "0.887282*x - 0.00191072", 4.5, 16.);
-  TF1 *f3_2 = new TF1("f3_2", "1.125*x - 0.57", 4.5, 16.);
+  TF1 *f3_1 = new TF1("f3_1", "0.887282*x - 0.00191072", 4.5, 11.5);
+  TF1 *f3_2 = new TF1("f3_2", "1.125*x - 0.57", 4.5, 11.5);
   f3_1->SetLineColor(kRed);
   f3_1->SetLineWidth(3);
   f3_1->SetLineStyle(2);
@@ -1805,8 +1805,8 @@ void myBestTriFit() {
   myCut3->SetLineWidth(3);
   myCut3->SetLineStyle(2);
 
-  TF1 *f4_1 = new TF1("f4_1", "0.874419*x + 0.0828994", 5., 18.);
-  TF1 *f4_2 = new TF1("f4_2", "1.04031*x - 0.288635", 5., 18.);
+  TF1 *f4_1 = new TF1("f4_1", "0.874419*x + 0.0828994", 7., 15.);
+  TF1 *f4_2 = new TF1("f4_2", "1.04031*x - 0.288635", 7., 15.);
   f4_1->SetLineColor(kRed);
   f4_1->SetLineWidth(3);
   f4_1->SetLineStyle(2);
@@ -1822,8 +1822,8 @@ void myBestTriFit() {
   myCut4->SetLineWidth(3);
   myCut4->SetLineStyle(2);
 
-  TF1 *f5_1 = new TF1("f5_1", "0.80605*x + 0.391506", 6., 18.);
-  TF1 *f5_2 = new TF1("f5_2", "1.27583*x - 2.28309", 6., 18.);
+  TF1 *f5_1 = new TF1("f5_1", "0.80605*x + 0.391506", 8.5, 15.);
+  TF1 *f5_2 = new TF1("f5_2", "1.27583*x - 2.28309", 8.5, 15.);
   f5_1->SetLineColor(kRed);
   f5_1->SetLineWidth(3);
   f5_1->SetLineStyle(2);
@@ -1839,8 +1839,8 @@ void myBestTriFit() {
   myCut5->SetLineWidth(3);
   myCut5->SetLineStyle(2);
 
-  TF1 *f6_1 = new TF1("f6_1", "0.929088*x - 0.206651", 0.5, 5.);
-  TF1 *f6_2 = new TF1("f6_2", "1.08272*x + 0.05382", 0.5, 5.);
+  TF1 *f6_1 = new TF1("f6_1", "0.929088*x - 0.206651", 0.5, 4.);
+  TF1 *f6_2 = new TF1("f6_2", "1.08272*x + 0.05382", 0.5, 4.);
   f6_1->SetLineColor(kRed);
   f6_1->SetLineWidth(3);
   f6_1->SetLineStyle(2);
@@ -1856,8 +1856,8 @@ void myBestTriFit() {
   myCut6->SetLineWidth(3);
   myCut6->SetLineStyle(2);
 
-  TF1 *f7_1 = new TF1("f7_1", "0.879598*x - 0.0897704", 1., 8.);
-  TF1 *f7_2 = new TF1("f7_2", "0.8199*x + 1.18526", 1., 8.);
+  TF1 *f7_1 = new TF1("f7_1", "0.879598*x - 0.0897704", 1., 7.);
+  TF1 *f7_2 = new TF1("f7_2", "0.8199*x + 1.18526", 1., 7.);
   f7_1->SetLineColor(kRed);
   f7_1->SetLineWidth(3);
   f7_1->SetLineStyle(2);
@@ -1873,8 +1873,8 @@ void myBestTriFit() {
   myCut7->SetLineWidth(3);
   myCut7->SetLineStyle(2);
 
-  TF1 *f8_1 = new TF1("f8_1", "0.857437*x + 0.378008", 3., 14.);
-  TF1 *f8_2 = new TF1("f8_2", "0.985377*x + 0.35161", 3., 14.);
+  TF1 *f8_1 = new TF1("f8_1", "0.857437*x + 0.378008", 3., 10.);
+  TF1 *f8_2 = new TF1("f8_2", "0.985377*x + 0.35161", 3., 10.);
   f8_1->SetLineColor(kRed);
   f8_1->SetLineWidth(3);
   f8_1->SetLineStyle(2);
@@ -1890,8 +1890,8 @@ void myBestTriFit() {
   myCut8->SetLineWidth(3);
   myCut8->SetLineStyle(2);
 
-  TF1 *f9_1 = new TF1("f9_1", "0.893464*x + 0.0625748", 4.5, 16);
-  TF1 *f9_2 = new TF1("f9_2", "0.833128*x + 2.42274", 4.5, 16);
+  TF1 *f9_1 = new TF1("f9_1", "0.893464*x + 0.0625748", 4.5, 11.5);
+  TF1 *f9_2 = new TF1("f9_2", "0.833128*x + 2.42274", 4.5, 11.5);
   f9_1->SetLineColor(kRed);
   f9_1->SetLineWidth(3);
   f9_1->SetLineStyle(2);
@@ -1907,8 +1907,8 @@ void myBestTriFit() {
   myCut9->SetLineWidth(3);
   myCut9->SetLineStyle(2);
 
-  TF1 *f10_1 = new TF1("f10_1", "0.793858*x + 1.56332", 5., 18.);
-  TF1 *f10_2 = new TF1("f10_2", "0.984752*x + 0.704394", 5., 18.);
+  TF1 *f10_1 = new TF1("f10_1", "0.793858*x + 1.56332", 7., 15.);
+  TF1 *f10_2 = new TF1("f10_2", "0.984752*x + 0.704394", 7., 15.);
   f10_1->SetLineColor(kRed);
   f10_1->SetLineWidth(3);
   f10_1->SetLineStyle(2);
@@ -1924,8 +1924,8 @@ void myBestTriFit() {
   h_Acor10->SetLineWidth(3);
   h_Acor10->SetLineStyle(2);
 
-  TF1 *f11_1 = new TF1("f11_1", "0.834673*x + 0.521629", 6., 18.);
-  TF1 *f11_2 = new TF1("f11_2", "1.19328*x - 1.00575", 6., 18.);
+  TF1 *f11_1 = new TF1("f11_1", "0.834673*x + 0.521629", 8.5, 15.);
+  TF1 *f11_2 = new TF1("f11_2", "1.19328*x - 1.00575", 8.5, 15.);
   f11_1->SetLineColor(kRed);
   f11_1->SetLineWidth(3);
   f11_1->SetLineStyle(2);
@@ -1941,8 +1941,8 @@ void myBestTriFit() {
   myCut11->SetLineWidth(3);
   myCut11->SetLineStyle(2);
 
-  TF1 *f12_1 = new TF1("f12_1", "0.854911*x - 0.130298", 0.5, 5.);
-  TF1 *f12_2 = new TF1("f12_2", "1.10416*x + 0.176225", 0.5, 5.);
+  TF1 *f12_1 = new TF1("f12_1", "0.854911*x - 0.130298", 0.5, 4.);
+  TF1 *f12_2 = new TF1("f12_2", "1.10416*x + 0.176225", 0.5, 4.);
   f12_1->SetLineColor(kRed);
   f12_1->SetLineWidth(3);
   f12_1->SetLineStyle(2);
@@ -1958,8 +1958,8 @@ void myBestTriFit() {
   myCut12->SetLineWidth(3);
   myCut12->SetLineStyle(2);
 
-  TF1 *f13_1 = new TF1("f13_1", "0.83875*x - 0.0637813", 1., 8.);
-  TF1 *f13_2 = new TF1("f13_2", "1.01354*x + 0.481892", 1., 8.);
+  TF1 *f13_1 = new TF1("f13_1", "0.83875*x - 0.0637813", 1., 7.);
+  TF1 *f13_2 = new TF1("f13_2", "1.01354*x + 0.481892", 1., 7.);
   f13_1->SetLineColor(kRed);
   f13_1->SetLineWidth(3);
   f13_1->SetLineStyle(2);
@@ -1975,8 +1975,8 @@ void myBestTriFit() {
   myCut13->SetLineWidth(3);
   myCut13->SetLineStyle(2);
 
-  TF1 *f14_1 = new TF1("f14_1", "0.951386*x - 0.451837", 3., 14.);
-  TF1 *f14_2 = new TF1("f14_2", "1.09272*x + 0.0479334", 3., 14.);
+  TF1 *f14_1 = new TF1("f14_1", "0.951386*x - 0.451837", 3., 10.);
+  TF1 *f14_2 = new TF1("f14_2", "1.09272*x + 0.0479334", 3., 10.);
   f14_1->SetLineColor(kRed);
   f14_1->SetLineWidth(3);
   f14_1->SetLineStyle(2);
@@ -1992,8 +1992,8 @@ void myBestTriFit() {
   myCut14->SetLineWidth(3);
   myCut14->SetLineStyle(2);
 
-  TF1 *f15_1 = new TF1("f15_1", "0.829295*x + 0.730928", 4.5, 16.);
-  TF1 *f15_2 = new TF1("f15_2", "1.10078*x + 0.237946", 4.5, 16.);
+  TF1 *f15_1 = new TF1("f15_1", "0.829295*x + 0.730928", 4.5, 11.5);
+  TF1 *f15_2 = new TF1("f15_2", "1.10078*x + 0.237946", 4.5, 11.5);
   f15_1->SetLineColor(kRed);
   f15_1->SetLineWidth(3);
   f15_1->SetLineStyle(2);
@@ -2009,8 +2009,8 @@ void myBestTriFit() {
   myCut15->SetLineWidth(3);
   myCut15->SetLineStyle(2);
 
-  TF1 *f16_1 = new TF1("f16_1", "0.74629*x + 2.17232", 5., 18.);
-  TF1 *f16_2 = new TF1("f16_2", "0.929428*x + 1.96892", 5., 18.);
+  TF1 *f16_1 = new TF1("f16_1", "0.74629*x + 2.17232", 7., 15.);
+  TF1 *f16_2 = new TF1("f16_2", "0.929428*x + 1.96892", 7., 15.);
   f16_1->SetLineColor(kRed);
   f16_1->SetLineWidth(3);
   f16_1->SetLineStyle(2);
@@ -2026,8 +2026,8 @@ void myBestTriFit() {
   myCut16->SetLineWidth(3);
   myCut16->SetLineStyle(2);
 
-  TF1 *f17_1 = new TF1("f17_1", "0.80449*x + 0.551851", 6., 18.);
-  TF1 *f17_2 = new TF1("f17_2", "1.31545*x - 0.674489", 6., 18.);
+  TF1 *f17_1 = new TF1("f17_1", "0.80449*x + 0.551851", 8.5, 15.);
+  TF1 *f17_2 = new TF1("f17_2", "1.31545*x - 0.674489", 8.5, 15.);
   f17_1->SetLineColor(kRed);
   f17_1->SetLineWidth(3);
   f17_1->SetLineStyle(2);
@@ -2042,6 +2042,25 @@ void myBestTriFit() {
   myCut17->SetLineColor(kRed);
   myCut17->SetLineWidth(3);
   myCut17->SetLineStyle(2);
+
+  h_Acor0->GetXaxis()->SetRangeUser(0., 5.);
+  h_Acor1->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor2->GetXaxis()->SetRangeUser(2., 11.);
+  h_Acor3->GetXaxis()->SetRangeUser(4., 12.);
+  h_Acor4->GetXaxis()->SetRangeUser(6., 16.);
+  h_Acor5->GetXaxis()->SetRangeUser(8., 16.5);
+  h_Acor6->GetXaxis()->SetRangeUser(0., 5.);
+  h_Acor7->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor8->GetXaxis()->SetRangeUser(2., 11.);
+  h_Acor9->GetXaxis()->SetRangeUser(4., 12.);
+  h_Acor10->GetXaxis()->SetRangeUser(6., 16.);
+  h_Acor11->GetXaxis()->SetRangeUser(8., 16.5);
+  h_Acor12->GetXaxis()->SetRangeUser(0., 5.);
+  h_Acor13->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor14->GetXaxis()->SetRangeUser(2., 11.);
+  h_Acor15->GetXaxis()->SetRangeUser(4., 12.);
+  h_Acor16->GetXaxis()->SetRangeUser(6., 16.);
+  h_Acor17->GetXaxis()->SetRangeUser(8., 16.5);
 
   // drawing histos on multicanvas
   TCanvas *c_MultiCanvas1 =
@@ -2220,6 +2239,16 @@ void myBestTriFit() {
   leg4->AddEntry(h3_1, "Distribuzione pre taglio", "L");
 
   c_Berillum->Divide(2, 3);
+
+  h3_1->GetXaxis()->SetRangeUser(4., 14.);
+  h3_2->GetXaxis()->SetRangeUser(4., 14.);
+  h3_3->GetXaxis()->SetRangeUser(4., 14.);
+  h31_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_3_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h31_3_3->GetXaxis()->SetRangeUser(4., 14.);
 
   c_Berillum->cd(1);
   h3_1->DrawCopy();
