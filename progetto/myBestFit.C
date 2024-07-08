@@ -2140,6 +2140,48 @@ void myBestFit() {
   h32_3_5->Draw();
   leg3->Draw("same");
 
+  h31_1_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h32_2_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h32_3_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h21_1_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h21_2_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h31_3_0->GetXaxis()->SetRangeUser(0., 4.5);
+
+  h31_1_1->GetXaxis()->SetRangeUser(0., 8.);
+  h32_2_1->GetXaxis()->SetRangeUser(0., 8.);
+  h32_3_1->GetXaxis()->SetRangeUser(0., 8.);
+  h21_1_1->GetXaxis()->SetRangeUser(0., 8.);
+  h21_2_1->GetXaxis()->SetRangeUser(0., 8.);
+  h31_3_1->GetXaxis()->SetRangeUser(0., 8.);
+
+  h31_1_2->GetXaxis()->SetRangeUser(2., 12.);
+  h32_2_2->GetXaxis()->SetRangeUser(2., 12.);
+  h32_3_2->GetXaxis()->SetRangeUser(2., 12.);
+  h21_1_2->GetXaxis()->SetRangeUser(2., 12.);
+  h21_2_2->GetXaxis()->SetRangeUser(2., 12.);
+  h31_3_2->GetXaxis()->SetRangeUser(2., 12.);
+
+  h31_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_3_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h31_3_3->GetXaxis()->SetRangeUser(4., 14.);
+
+  h31_1_4->GetXaxis()->SetRangeUser(4., 17.);
+  h32_2_4->GetXaxis()->SetRangeUser(4., 17.);
+  h32_3_4->GetXaxis()->SetRangeUser(4., 17.);
+  h21_1_4->GetXaxis()->SetRangeUser(4., 17.);
+  h21_2_4->GetXaxis()->SetRangeUser(4., 17.);
+  h31_3_4->GetXaxis()->SetRangeUser(4., 17.);
+
+  h31_1_5->GetXaxis()->SetRangeUser(6., 19.);
+  h32_2_5->GetXaxis()->SetRangeUser(6., 19.);
+  h32_3_5->GetXaxis()->SetRangeUser(6., 19.);
+  h21_1_5->GetXaxis()->SetRangeUser(6., 19.);
+  h21_2_5->GetXaxis()->SetRangeUser(6., 19.);
+  h31_3_5->GetXaxis()->SetRangeUser(6., 19.);
+
   // canvas black/blue reconstructed fragments
   TCanvas *c_Total_black_blue1 =
       new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 900, 2500);
