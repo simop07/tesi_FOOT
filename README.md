@@ -20,7 +20,7 @@
 
 - Numero atomico in 'z' minuscolo, normalmente andrebbe in maiuscolo (lho fatto per uniformità con la z della Bethe-Bloch, mi conferma che lo cambio dappertutto?).
 - Tolgo il pedice dagli elementi chimici?
-- Non ho capito la correzione nella parte superiore della pagina viii
+- Non ho capito la correzione nella parte superiore della pagina viii (io ho scritto "e nuclei del corpo umano (in caso di studi di adroterapia) o di materiali vari (per la protezione spaziale).")
 - Ci rivediamo prima del 26?
 - La relazione va in latex o powerpoint?
 
