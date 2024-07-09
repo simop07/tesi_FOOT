@@ -1264,12 +1264,12 @@ void myBestFit() {
                            (f_cut4_1->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut4_1->GetParameter(1));
 
-  h32_2_4->Fit(f_cut4_2, "+", "", 9.5, 10.8);
+  h32_2_4->Fit(f_cut4_2, "+", "", 9.5, 10.4);
   v_black_a2_err.push_back(100. * (f_cut4_2->GetParameter(2)) /
                            (f_cut4_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut4_2->GetParameter(1));
 
-  h32_2_4->Fit(f_cut4_3, "+", "", 9.3, 12.);
+  h32_2_4->Fit(f_cut4_3, "+", "", 10.4, 12.);
   v_black_a2_err.push_back(100. * (f_cut4_3->GetParameter(2)) /
                            (f_cut4_3->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut4_3->GetParameter(1));
