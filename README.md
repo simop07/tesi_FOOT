@@ -3,22 +3,9 @@
 
 ## COMPILAZIONE PDF:
 
+- Controlla valori ultima tabella e completa discussione dei numeri di massa (aggiungi il fatto che A_3 è problematica vista la sua forte dipendenza da E_k che è una variabile fortemente condizionata dalle perdite di energia, quindi soprattutto per i frammenti più pesanti che percentualmente perdono più energia ci possiamo attendere che la sua ricostruzione sia peggiore delle altre)
+
+## POST CONSEGNA
+
+- Scegliere dove stampare
 - Decidere se mettere una dedica
-- Devi cambiare la z in Z sui grafici!
-- Sul grafico degli errori percentuali bisogna riscrivere la didascalia. Bisogna dire che se ci sono più punti in corrispondenza di uno stesso A è perché ci sono più isotopi con stesso numero numero atomico di elementi chimici differenti. Abbiamo questa ripetizione per A=7.
-
-## CODICE:
-
-## DOMANDE:
-
-## CORREZIONI
-
-### PROF
-
-- Numero atomico in 'z' minuscolo, normalmente andrebbe in maiuscolo (lho fatto per uniformità con la z della Bethe-Bloch, mi conferma che lo cambio dappertutto?).
-- Tolgo il pedice dagli elementi chimici?
-- Non ho capito la correzione nella parte superiore della pagina viii (io ho scritto "e nuclei del corpo umano (in caso di studi di adroterapia) o di materiali vari (per la protezione spaziale).")
-
-### TUTOR
-
-- Tolgo il pedice dagli elementi chimici?
