@@ -21,6 +21,7 @@
 - Numero atomico in 'z' minuscolo, normalmente andrebbe in maiuscolo (lho fatto per uniformità con la z della Bethe-Bloch, mi conferma che lo cambio dappertutto?).
 - Lo scopo della radioprotezione spaziale è quello di sviluppare materiali che possano schermare l'effetto nocivo che le radiazioni ionizzanti prodotte soprattutto dai raggi cosmici inducono sull'uomo.
 - Tolgo il pedice dagli elementi chimici?
+- Ci rivediamo prima del 26?
 
 ### TUTOR
 
