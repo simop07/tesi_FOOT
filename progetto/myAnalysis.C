@@ -197,8 +197,8 @@ void myAnalysis::BeforeLoop() {
   h_A2 = new TH1D("h_A2", "A_2 reconstruction; A_2; Occorrenze", 300, 0., 16.);
   h_A3 = new TH1D("h_A3", "A_3 reconstruction; A_3; Occorrenze", 300, 0., 16.);
   h_z_bethe = new TH1D(
-      "h_z_bethe", "z misurato dalla Bethe-Bloch; z; Occorrenze", 300, 0., 12.);
-  h_z_TW = new TH1D("h_z", "z ricostruito a partire dal TW; z; Occorrenze", 13,
+      "h_z_bethe", "Z misurato dalla Bethe-Bloch; Z; Occorrenze", 300, 0., 12.);
+  h_z_TW = new TH1D("h_z", "Z ricostruito a partire dal TW; Z; Occorrenze", 13,
                     0., 12.);
   h_E_TOF =
       new TH2D("h_E_TOF",
@@ -353,27 +353,27 @@ void myAnalysis::AfterLoop() {
 
   // Draw label TOF
   TPaveText *latex0_TOF = new TPaveText(10., 10., 10.5, 30);
-  latex0_TOF->AddText("_{1}H");
+  latex0_TOF->AddText("H");
   latex0_TOF->SetTextSize(0.04);
   latex0_TOF->SetFillColor(kWhite);
   TPaveText *latex1_TOF = new TPaveText(10., 50., 10.5, 70);
-  latex1_TOF->AddText("_{2}He");
+  latex1_TOF->AddText("He");
   latex1_TOF->SetTextSize(0.04);
   latex1_TOF->SetFillColor(kWhite);
   TPaveText *latex2_TOF = new TPaveText(10., 100., 10.5, 120);
-  latex2_TOF->AddText("_{3}Li");
+  latex2_TOF->AddText("Li");
   latex2_TOF->SetTextSize(0.04);
   latex2_TOF->SetFillColor(kWhite);
   TPaveText *latex3_TOF = new TPaveText(10., 200., 10.5, 220);
-  latex3_TOF->AddText("_{4}Be");
+  latex3_TOF->AddText("Be");
   latex3_TOF->SetTextSize(0.04);
   latex3_TOF->SetFillColor(kWhite);
   TPaveText *latex4_TOF = new TPaveText(10., 250., 10.5, 270);
-  latex4_TOF->AddText("_{5}B");
+  latex4_TOF->AddText("B");
   latex4_TOF->SetTextSize(0.04);
   latex4_TOF->SetFillColor(kWhite);
   TPaveText *latex5_TOF = new TPaveText(10., 290., 10.5, 310);
-  latex5_TOF->AddText("_{6}C");
+  latex5_TOF->AddText("C");
   latex5_TOF->SetTextSize(0.04);
   latex5_TOF->SetFillColor(kWhite);
 
@@ -470,7 +470,7 @@ void myAnalysis::AfterLoop() {
 
   TLegend *leg1 = new TLegend(.70, .7, .9, .9, "Legenda");
   leg1->SetFillColor(0);
-  leg1->AddEntry(h_z_bethe, "Distribuzione di z", "L");
+  leg1->AddEntry(h_z_bethe, "Distribuzione di Z", "L");
   leg1->AddEntry(f_z_bethe[5], "Fit", "L");
 
   c_z->cd();
