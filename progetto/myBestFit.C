@@ -1577,7 +1577,7 @@ void myBestFit() {
   a2_black->SetMarkerStyle(20);
   a2_black->SetMarkerSize(1.3);
 
-  a3_black->SetMarkerColor(kOrange);
+  a3_black->SetMarkerColor(kOrange - 3);
   a3_black->SetMarkerStyle(20);
   a3_black->SetMarkerSize(1.3);
 
@@ -1589,7 +1589,7 @@ void myBestFit() {
   a2_blue->SetMarkerStyle(20);
   a2_blue->SetMarkerSize(1.3);
 
-  a3_blue->SetMarkerColor(kOrange);
+  a3_blue->SetMarkerColor(kOrange - 3);
   a3_blue->SetMarkerStyle(20);
   a3_blue->SetMarkerSize(1.3);
 
