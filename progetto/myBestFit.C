@@ -239,11 +239,10 @@ void myBestFit() {
 
   // creating and filling 1D histos
   // histo0
-  TH1D *h21_1_0 =
-      new TH1D("h21_1_0", "{}_{1}H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_1_0 = new TH1D("h21_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
   h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_1 = new TH1D("h0_1", "{}_{1}H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_1 = new TH1D("h0_1", "H; A_{1}; Occorrenze", 300, 0., 8.);
   h0_1 = h_Acor0->ProjectionX("h0_1", 0, -1);
   h0_1->SetMarkerStyle(20);
   h0_1->SetMarkerSize(0.5);
@@ -253,11 +252,10 @@ void myBestFit() {
   h0_1->GetXaxis()->SetTitleSize(0.04);
   h0_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_0 =
-      new TH1D("h21_2_0", "{}_{1}H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_2_0 = new TH1D("h21_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
   h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_2 = new TH1D("h0_2", "{}_{1}H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_2 = new TH1D("h0_2", "H; A_{2}; Occorrenze", 300, 0., 8.);
   h0_2 = h_Acor0->ProjectionY("h0_2", 0, -1);
   h0_2->SetMarkerStyle(20);
   h0_2->SetMarkerSize(0.5);
@@ -267,15 +265,13 @@ void myBestFit() {
   h0_2->GetXaxis()->SetTitleSize(0.04);
   h0_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_0 =
-      new TH1D("h31_1_0", "{}_{1}H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_1_0 = new TH1D("h31_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
   h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1, "[myCut6]");
 
-  TH1D *h31_3_0 =
-      new TH1D("h31_3_0", "{}_{1}H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_3_0 = new TH1D("h31_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
   h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1, "[myCut6]");
 
-  TH1D *h0_3 = new TH1D("h0_3", "{}_{1}H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_3 = new TH1D("h0_3", "H; A_{3}; Occorrenze", 300, 0., 8.);
   h0_3 = h_Acor6->ProjectionY("h0_3", 0, -1);
   h0_3->SetMarkerStyle(20);
   h0_3->SetMarkerSize(0.5);
@@ -285,20 +281,17 @@ void myBestFit() {
   h0_3->GetXaxis()->SetTitleSize(0.04);
   h0_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_0 =
-      new TH1D("h32_2_0", "{}_{1}H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_2_0 = new TH1D("h32_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
   h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1, "[myCut12]");
 
-  TH1D *h32_3_0 =
-      new TH1D("h32_3_0", "{}_{1}H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_3_0 = new TH1D("h32_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
   h32_3_0 = h_Acor12->ProjectionY("h32_3_0", 0, -1, "[myCut12]");
 
   // histo1
-  TH1D *h21_1_1 =
-      new TH1D("h21_1_1", "{}_{2}He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_1_1 = new TH1D("h21_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
   h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_1 = new TH1D("h1_1", "{}_{2}He; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_1 = new TH1D("h1_1", "He; A_{1}; Occorrenze", 300, 0., 8.);
   h1_1 = h_Acor1->ProjectionX("h1_1", 0, -1);
   h1_1->SetMarkerStyle(20);
   h1_1->SetMarkerSize(0.5);
@@ -308,11 +301,10 @@ void myBestFit() {
   h1_1->GetXaxis()->SetTitleSize(0.04);
   h1_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_1 =
-      new TH1D("h21_2_1", "{}_{2}He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_2_1 = new TH1D("h21_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
   h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_2 = new TH1D("h1_2", "{}_{2}He; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_2 = new TH1D("h1_2", "He; A_{2}; Occorrenze", 300, 0., 8.);
   h1_2 = h_Acor1->ProjectionY("h1_2", 0, -1);
   h1_2->SetMarkerStyle(20);
   h1_2->SetMarkerSize(0.5);
@@ -322,15 +314,13 @@ void myBestFit() {
   h1_2->GetXaxis()->SetTitleSize(0.04);
   h1_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_1 =
-      new TH1D("h31_1_1", "{}_{2}He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_1_1 = new TH1D("h31_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
   h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1, "[myCut7]");
 
-  TH1D *h31_3_1 =
-      new TH1D("h31_3_1", "{}_{2}He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_3_1 = new TH1D("h31_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
   h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1, "[myCut7]");
 
-  TH1D *h1_3 = new TH1D("h1_3", "{}_{2}He; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_3 = new TH1D("h1_3", "He; A_{3}; Occorrenze", 300, 0., 8.);
   h1_3 = h_Acor7->ProjectionY("h1_3", 0, -1);
   h1_3->SetMarkerStyle(20);
   h1_3->SetMarkerSize(0.5);
@@ -340,20 +330,17 @@ void myBestFit() {
   h1_3->GetXaxis()->SetTitleSize(0.04);
   h1_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_1 =
-      new TH1D("h32_2_1", "{}_{2}He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_2_1 = new TH1D("h32_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
   h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1, "[myCut13]");
 
-  TH1D *h32_3_1 =
-      new TH1D("h32_3_1", "{}_{2}He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_3_1 = new TH1D("h32_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
   h32_3_1 = h_Acor13->ProjectionY("h32_3_1", 0, -1, "[myCut13]");
 
   // histo2
-  TH1D *h21_1_2 =
-      new TH1D("h21_1_2", "{}_{3}Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_1_2 = new TH1D("h21_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
   h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_1 = new TH1D("h2_1", "{}_{3}Li; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_1 = new TH1D("h2_1", "Li; A_{1}; Occorrenze", 300, 0., 8.);
   h2_1 = h_Acor2->ProjectionX("h2_1", 0, -1);
   h2_1->SetMarkerStyle(20);
   h2_1->SetMarkerSize(0.5);
@@ -363,11 +350,10 @@ void myBestFit() {
   h2_1->GetXaxis()->SetTitleSize(0.04);
   h2_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_2 =
-      new TH1D("h21_2_2", "{}_{3}Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_2_2 = new TH1D("h21_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
   h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_2 = new TH1D("h2_2", "{}_{3}Li; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_2 = new TH1D("h2_2", "Li; A_{2}; Occorrenze", 300, 0., 8.);
   h2_2 = h_Acor2->ProjectionY("h2_2", 0, -1);
   h2_2->SetMarkerStyle(20);
   h2_2->SetMarkerSize(0.5);
@@ -377,15 +363,13 @@ void myBestFit() {
   h2_2->GetXaxis()->SetTitleSize(0.04);
   h2_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_2 =
-      new TH1D("h31_1_2", "{}_{3}Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_1_2 = new TH1D("h31_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
   h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1, "[myCut8]");
 
-  TH1D *h31_3_2 =
-      new TH1D("h31_3_2", "{}_{3}Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_3_2 = new TH1D("h31_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
   h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1, "[myCut8]");
 
-  TH1D *h2_3 = new TH1D("h2_3", "{}_{3}Li; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_3 = new TH1D("h2_3", "Li; A_{3}; Occorrenze", 300, 0., 8.);
   h2_3 = h_Acor8->ProjectionY("h2_3", 0, -1);
   h2_3->SetMarkerStyle(20);
   h2_3->SetMarkerSize(0.5);
@@ -395,20 +379,17 @@ void myBestFit() {
   h2_3->GetXaxis()->SetTitleSize(0.04);
   h2_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_2 =
-      new TH1D("h32_2_2", "{}_{3}Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_2_2 = new TH1D("h32_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
   h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1, "[myCut14]");
 
-  TH1D *h32_3_2 =
-      new TH1D("h32_3_2", "{}_{3}Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_3_2 = new TH1D("h32_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
   h32_3_2 = h_Acor14->ProjectionY("h32_3_2", 0, -1, "[myCut14]");
 
   // histo3
-  TH1D *h21_1_3 =
-      new TH1D("h21_1_3", "{}_{4}Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_1_3 = new TH1D("h21_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
   h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_1 = new TH1D("h3_1", "{}_{4}Be; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_1 = new TH1D("h3_1", "Be; A_{1}; Occorrenze", 300, 0., 8.);
   h3_1 = h_Acor3->ProjectionX("h3_1", 0, -1);
   h3_1->SetMarkerStyle(20);
   h3_1->SetMarkerSize(0.5);
@@ -418,11 +399,10 @@ void myBestFit() {
   h3_1->GetXaxis()->SetTitleSize(0.04);
   h3_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_3 =
-      new TH1D("h21_2_3", "{}_{4}Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_2_3 = new TH1D("h21_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
   h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_2 = new TH1D("h3_2", "{}_{4}Be; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_2 = new TH1D("h3_2", "Be; A_{2}; Occorrenze", 300, 0., 8.);
   h3_2 = h_Acor3->ProjectionY("h3_2", 0, -1);
   h3_2->SetMarkerStyle(20);
   h3_2->SetMarkerSize(0.5);
@@ -432,15 +412,13 @@ void myBestFit() {
   h3_2->GetXaxis()->SetTitleSize(0.04);
   h3_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_3 =
-      new TH1D("h31_1_3", "{}_{4}Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_1_3 = new TH1D("h31_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
   h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1, "[myCut9]");
 
-  TH1D *h31_3_3 =
-      new TH1D("h31_3_3", "{}_{4}Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_3_3 = new TH1D("h31_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
   h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1, "[myCut9]");
 
-  TH1D *h3_3 = new TH1D("h3_3", "{}_{4}Be; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_3 = new TH1D("h3_3", "Be; A_{3}; Occorrenze", 300, 0., 8.);
   h3_3 = h_Acor9->ProjectionY("h3_3", 0, -1);
   h3_3->SetMarkerStyle(20);
   h3_3->SetMarkerSize(0.5);
@@ -450,20 +428,17 @@ void myBestFit() {
   h3_3->GetXaxis()->SetTitleSize(0.04);
   h3_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_3 =
-      new TH1D("h32_2_3", "{}_{4}Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_2_3 = new TH1D("h32_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
   h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1, "[myCut15]");
 
-  TH1D *h32_3_3 =
-      new TH1D("h32_3_3", "{}_{4}Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_3_3 = new TH1D("h32_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
   h32_3_3 = h_Acor15->ProjectionY("h32_3_3", 0, -1, "[myCut15]");
 
   // histo4
-  TH1D *h21_1_4 =
-      new TH1D("h21_1_4", "{}_{5}B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_1_4 = new TH1D("h21_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
   h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_1 = new TH1D("h4_1", "{}_{5}B; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_1 = new TH1D("h4_1", "B; A_{1}; Occorrenze", 300, 0., 8.);
   h4_1 = h_Acor4->ProjectionX("h4_1", 0, -1);
   h4_1->SetMarkerStyle(20);
   h4_1->SetMarkerSize(0.5);
@@ -473,11 +448,10 @@ void myBestFit() {
   h4_1->GetXaxis()->SetTitleSize(0.04);
   h4_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_4 =
-      new TH1D("h21_2_4", "{}_{5}B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_2_4 = new TH1D("h21_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
   h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_2 = new TH1D("h4_2", "{}_{5}B; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_2 = new TH1D("h4_2", "B; A_{2}; Occorrenze", 300, 0., 8.);
   h4_2 = h_Acor4->ProjectionY("h4_2", 0, -1);
   h4_2->SetMarkerStyle(20);
   h4_2->SetMarkerSize(0.5);
@@ -487,15 +461,13 @@ void myBestFit() {
   h4_2->GetXaxis()->SetTitleSize(0.04);
   h4_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_4 =
-      new TH1D("h31_1_4", "{}_{5}B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_1_4 = new TH1D("h31_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
   h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1, "[myCut10]");
 
-  TH1D *h31_3_4 =
-      new TH1D("h31_3_4", "{}_{5}B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_3_4 = new TH1D("h31_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
   h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1, "[myCut10]");
 
-  TH1D *h4_3 = new TH1D("h4_3", "{}_{5}B; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_3 = new TH1D("h4_3", "B; A_{3}; Occorrenze", 300, 0., 8.);
   h4_3 = h_Acor10->ProjectionY("h4_3", 0, -1);
   h4_3->SetMarkerStyle(20);
   h4_3->SetMarkerSize(0.5);
@@ -505,20 +477,17 @@ void myBestFit() {
   h4_3->GetXaxis()->SetTitleSize(0.04);
   h4_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_4 =
-      new TH1D("h32_2_4", "{}_{5}B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_2_4 = new TH1D("h32_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
   h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1, "[myCut16]");
 
-  TH1D *h32_3_4 =
-      new TH1D("h32_3_4", "{}_{5}B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_3_4 = new TH1D("h32_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
   h32_3_4 = h_Acor16->ProjectionY("h32_3_4", 0, -1, "[myCut16]");
 
   // histo5
-  TH1D *h21_1_5 =
-      new TH1D("h21_1_5", "{}_{6}C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_1_5 = new TH1D("h21_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
   h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_1 = new TH1D("h5_1", "{}_{6}C; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_1 = new TH1D("h5_1", "C; A_{1}; Occorrenze", 300, 0., 8.);
   h5_1 = h_Acor5->ProjectionX("h5_1", 0, -1);
   h5_1->SetMarkerStyle(20);
   h5_1->SetMarkerSize(0.5);
@@ -528,11 +497,10 @@ void myBestFit() {
   h5_1->GetXaxis()->SetTitleSize(0.04);
   h5_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_5 =
-      new TH1D("h21_2_5", "{}_{6}C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_2_5 = new TH1D("h21_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
   h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_2 = new TH1D("h5_2", "{}_{6}C; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_2 = new TH1D("h5_2", "C; A_{2}; Occorrenze", 300, 0., 8.);
   h5_2 = h_Acor5->ProjectionY("h5_2", 0, -1);
   h5_2->SetMarkerStyle(20);
   h5_2->SetMarkerSize(0.5);
@@ -542,15 +510,13 @@ void myBestFit() {
   h5_2->GetXaxis()->SetTitleSize(0.04);
   h5_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_5 =
-      new TH1D("h31_1_5", "{}_{6}C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_1_5 = new TH1D("h31_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
   h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1, "[myCut11]");
 
-  TH1D *h31_3_5 =
-      new TH1D("h31_3_5", "{}_{6}C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_3_5 = new TH1D("h31_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
   h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1, "[myCut11]");
 
-  TH1D *h5_3 = new TH1D("h5_3", "{}_{6}C; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_3 = new TH1D("h5_3", "C; A_{3}; Occorrenze", 300, 0., 8.);
   h5_3 = h_Acor5->ProjectionY("h5_3", 0, -1);
   h5_3->SetMarkerStyle(20);
   h5_3->SetMarkerSize(0.5);
@@ -560,12 +526,10 @@ void myBestFit() {
   h5_3->GetXaxis()->SetTitleSize(0.04);
   h5_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_5 =
-      new TH1D("h32_2_5", "{}_{6}C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_2_5 = new TH1D("h32_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
   h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1, "[myCut17]");
 
-  TH1D *h32_3_5 =
-      new TH1D("h32_3_5", "{}_{6}C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_3_5 = new TH1D("h32_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
   h32_3_5 = h_Acor17->ProjectionY("h32_3_5", 0, -1, "[myCut17]");
 
   // histo cosmetics
@@ -1502,38 +1466,40 @@ void myBestFit() {
                                &v_blue_a3_err[0]);
 
   // label points in graphs
-  TLatex *latex1 =
-      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{7}_{3}Li");
-  a1_black->GetListOfFunctions()->Add(latex1);
-  latex1->SetTextSize(0.05);
-  latex1->SetTextAlign(12);
+  //   TLatex *latex1 =
+  //       new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "
+  //       {}^{7}_{3}Li");
+  //   a1_black->GetListOfFunctions()->Add(latex1);
+  //   latex1->SetTextSize(0.05);
+  //   latex1->SetTextAlign(12);
 
-  TLatex *latex2 =
-      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{7}_{4}Be");
-  a1_black->GetListOfFunctions()->Add(latex2);
-  latex2->SetTextSize(0.05);
-  latex2->SetTextAlign(12);
+  //   TLatex *latex2 =
+  //       new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "
+  //       {}^{7}_{4}Be");
+  //   a1_black->GetListOfFunctions()->Add(latex2);
+  //   latex2->SetTextSize(0.05);
+  //   latex2->SetTextAlign(12);
 
   //   TLatex *latex3 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{3}Li");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Li");
   //   a1_black->GetListOfFunctions()->Add(latex3);
   //   latex3->SetTextSize(0.05);
   //   latex3->SetTextAlign(12);
 
   //   TLatex *latex4 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{4}Be");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Be");
   //   a1_black->GetListOfFunctions()->Add(latex4);
   //   latex4->SetTextSize(0.05);
   //   latex4->SetTextAlign(12);
 
   //   TLatex *latex5 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{5}B");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  B");
   //   a1_black->GetListOfFunctions()->Add(latex5);
   //   latex5->SetTextSize(0.05);
   //   latex5->SetTextAlign(12);
 
   //   TLatex *latex6 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}_{6}C");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  C");
   //   a1_black->GetListOfFunctions()->Add(latex6);
   //   latex6->SetTextSize(0.05);
   //   latex6->SetTextAlign(12);
