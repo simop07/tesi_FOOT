@@ -1701,8 +1701,8 @@ void myBestTriFit() {
   TCanvas *c_Fcut16 = new TCanvas("c_Fcut16", "c_Fcut16", 1000, 600);
   TCanvas *c_Fcut17 = new TCanvas("c_Fcut17", "c_Fcut17", 1000, 600);
 
-  TF1 *f0_1 = new TF1("f0_1", "0.898366*x-0.0128952", 0.5, 4.);
-  TF1 *f0_2 = new TF1("f0_2", "1.20125*x-0.0939499", 0.5, 4.);
+  TF1 *f0_1 = new TF1("f0_1", "0.898366*x-0.0128952", 0.75, 3.75);
+  TF1 *f0_2 = new TF1("f0_2", "1.20125*x-0.0939499", 0.75, 3.75);
   f0_1->SetLineColor(kRed);
   f0_1->SetLineWidth(3);
   f0_1->SetLineStyle(2);
@@ -1719,8 +1719,8 @@ void myBestTriFit() {
   f0_1->Draw("same");
   f0_2->Draw("same");
 
-  TF1 *f1_1 = new TF1("f1_1", "0.834047*x + 0.000960117", 1., 7.);
-  TF1 *f1_2 = new TF1("f1_2", "1.07576*x + 0.0998292", 1., 7.);
+  TF1 *f1_1 = new TF1("f1_1", "0.834047*x + 0.000960117", 2., 6.5);
+  TF1 *f1_2 = new TF1("f1_2", "1.07576*x + 0.0998292", 2., 6.5);
   f1_1->SetLineColor(kRed);
   f1_1->SetLineWidth(3);
   f1_1->SetLineStyle(2);
@@ -1804,8 +1804,8 @@ void myBestTriFit() {
   myCut5->SetLineWidth(3);
   myCut5->SetLineStyle(2);
 
-  TF1 *f6_1 = new TF1("f6_1", "0.929088*x - 0.206651", 0.5, 4.);
-  TF1 *f6_2 = new TF1("f6_2", "1.08272*x + 0.05382", 0.5, 4.);
+  TF1 *f6_1 = new TF1("f6_1", "0.929088*x - 0.206651", 0.75, 3.75);
+  TF1 *f6_2 = new TF1("f6_2", "1.08272*x + 0.05382", 0.75, 3.75);
   f6_1->SetLineColor(kRed);
   f6_1->SetLineWidth(3);
   f6_1->SetLineStyle(2);
@@ -1821,8 +1821,8 @@ void myBestTriFit() {
   myCut6->SetLineWidth(3);
   myCut6->SetLineStyle(2);
 
-  TF1 *f7_1 = new TF1("f7_1", "0.879598*x - 0.0897704", 1., 7.);
-  TF1 *f7_2 = new TF1("f7_2", "0.8199*x + 1.18526", 1., 7.);
+  TF1 *f7_1 = new TF1("f7_1", "0.879598*x - 0.0897704", 2., 6.5);
+  TF1 *f7_2 = new TF1("f7_2", "0.8199*x + 1.18526", 2., 6.5);
   f7_1->SetLineColor(kRed);
   f7_1->SetLineWidth(3);
   f7_1->SetLineStyle(2);
@@ -1906,8 +1906,8 @@ void myBestTriFit() {
   myCut11->SetLineWidth(3);
   myCut11->SetLineStyle(2);
 
-  TF1 *f12_1 = new TF1("f12_1", "0.854911*x - 0.130298", 0.5, 4.);
-  TF1 *f12_2 = new TF1("f12_2", "1.10416*x + 0.176225", 0.5, 4.);
+  TF1 *f12_1 = new TF1("f12_1", "0.854911*x - 0.130298", 0.75, 3.75);
+  TF1 *f12_2 = new TF1("f12_2", "1.10416*x + 0.176225", 0.75, 3.75);
   f12_1->SetLineColor(kRed);
   f12_1->SetLineWidth(3);
   f12_1->SetLineStyle(2);
@@ -1923,8 +1923,8 @@ void myBestTriFit() {
   myCut12->SetLineWidth(3);
   myCut12->SetLineStyle(2);
 
-  TF1 *f13_1 = new TF1("f13_1", "0.83875*x - 0.0637813", 1., 7.);
-  TF1 *f13_2 = new TF1("f13_2", "1.01354*x + 0.481892", 1., 7.);
+  TF1 *f13_1 = new TF1("f13_1", "0.83875*x - 0.0637813", 2., 6.5);
+  TF1 *f13_2 = new TF1("f13_2", "1.01354*x + 0.481892", 2., 6.5);
   f13_1->SetLineColor(kRed);
   f13_1->SetLineWidth(3);
   f13_1->SetLineStyle(2);
@@ -2008,20 +2008,20 @@ void myBestTriFit() {
   myCut17->SetLineWidth(3);
   myCut17->SetLineStyle(2);
 
-  h_Acor0->GetXaxis()->SetRangeUser(0., 5.);
-  h_Acor1->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor0->GetXaxis()->SetRangeUser(0.5, 4.);
+  h_Acor1->GetXaxis()->SetRangeUser(1.75, 7.);
   h_Acor2->GetXaxis()->SetRangeUser(2., 11.);
   h_Acor3->GetXaxis()->SetRangeUser(4., 12.);
   h_Acor4->GetXaxis()->SetRangeUser(6., 16.);
   h_Acor5->GetXaxis()->SetRangeUser(8., 16.5);
-  h_Acor6->GetXaxis()->SetRangeUser(0., 5.);
-  h_Acor7->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor6->GetXaxis()->SetRangeUser(0.5, 4.);
+  h_Acor7->GetXaxis()->SetRangeUser(1.75, 7.);
   h_Acor8->GetXaxis()->SetRangeUser(2., 11.);
   h_Acor9->GetXaxis()->SetRangeUser(4., 12.);
   h_Acor10->GetXaxis()->SetRangeUser(6., 16.);
   h_Acor11->GetXaxis()->SetRangeUser(8., 16.5);
-  h_Acor12->GetXaxis()->SetRangeUser(0., 5.);
-  h_Acor13->GetXaxis()->SetRangeUser(0., 9.);
+  h_Acor12->GetXaxis()->SetRangeUser(0.5, 4.);
+  h_Acor13->GetXaxis()->SetRangeUser(1.75, 7.);
   h_Acor14->GetXaxis()->SetRangeUser(2., 11.);
   h_Acor15->GetXaxis()->SetRangeUser(4., 12.);
   h_Acor16->GetXaxis()->SetRangeUser(6., 16.);
@@ -2059,45 +2059,63 @@ void myBestTriFit() {
   c_MultiCanvas3->Divide(2, 3);
 
   c_MultiCanvas1->cd(1);
+  gPad->SetLogz();
   h_Acor0->Draw("colz");
   c_MultiCanvas2->cd(1);
+  gPad->SetLogz();
   h_Acor6->Draw("colz");
   c_MultiCanvas3->cd(1);
+  gPad->SetLogz();
   h_Acor12->Draw("colz");
 
   c_MultiCanvas1->cd(2);
+  gPad->SetLogz();
   h_Acor1->Draw("colz");
   c_MultiCanvas2->cd(2);
+  gPad->SetLogz();
   h_Acor7->Draw("colz");
   c_MultiCanvas3->cd(2);
+  gPad->SetLogz();
   h_Acor13->Draw("colz");
 
   c_MultiCanvas1->cd(3);
+  gPad->SetLogz();
   h_Acor2->Draw("colz");
   c_MultiCanvas2->cd(3);
+  gPad->SetLogz();
   h_Acor8->Draw("colz");
   c_MultiCanvas3->cd(3);
+  gPad->SetLogz();
   h_Acor14->Draw("colz");
 
   c_MultiCanvas1->cd(4);
+  gPad->SetLogz();
   h_Acor3->Draw("colz");
   c_MultiCanvas2->cd(4);
+  gPad->SetLogz();
   h_Acor9->Draw("colz");
   c_MultiCanvas3->cd(4);
+  gPad->SetLogz();
   h_Acor15->Draw("colz");
 
   c_MultiCanvas1->cd(5);
+  gPad->SetLogz();
   h_Acor4->Draw("colz");
   c_MultiCanvas2->cd(5);
+  gPad->SetLogz();
   h_Acor10->Draw("colz");
   c_MultiCanvas3->cd(5);
+  gPad->SetLogz();
   h_Acor16->Draw("colz");
 
   c_MultiCanvas1->cd(6);
+  gPad->SetLogz();
   h_Acor5->Draw("colz");
   c_MultiCanvas2->cd(6);
+  gPad->SetLogz();
   h_Acor11->Draw("colz");
   c_MultiCanvas3->cd(6);
+  gPad->SetLogz();
   h_Acor17->Draw("colz");
 
   TCanvas *c_MultiCanvasCut1 =
@@ -2116,96 +2134,114 @@ void myBestTriFit() {
   leg2->AddEntry(myCut0, "Taglio", "L");
 
   c_MultiCanvasCut1->cd(1);
+  gPad->SetLogz();
   h_Acor0->Draw("colz");
   f0_1->Draw("same");
   f0_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(1);
+  gPad->SetLogz();
   h_Acor6->Draw("colz");
   f6_1->Draw("same");
   f6_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(1);
+  gPad->SetLogz();
   h_Acor12->Draw("colz");
   f12_1->Draw("same");
   f12_2->Draw("same");
   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(2);
+  gPad->SetLogz();
   h_Acor1->Draw("colz");
   f1_1->Draw("same");
   f1_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(2);
+  gPad->SetLogz();
   h_Acor7->Draw("colz");
   f7_1->Draw("same");
   f7_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(2);
+  gPad->SetLogz();
   h_Acor13->Draw("colz");
   f13_1->Draw("same");
   f13_2->Draw("same");
   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(3);
+  gPad->SetLogz();
   h_Acor2->Draw("colz");
   f2_1->Draw("same");
   f2_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(3);
+  gPad->SetLogz();
   h_Acor8->Draw("colz");
   f8_1->Draw("same");
   f8_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(3);
+  gPad->SetLogz();
   h_Acor14->Draw("colz");
   f14_1->Draw("same");
   f14_2->Draw("same");
   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(4);
+  gPad->SetLogz();
   h_Acor3->Draw("colz");
   f3_1->Draw("same");
   f3_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(4);
+  gPad->SetLogz();
   h_Acor9->Draw("colz");
   f9_1->Draw("same");
   f9_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(4);
+  gPad->SetLogz();
   h_Acor15->Draw("colz");
   f15_1->Draw("same");
   f15_2->Draw("same");
   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(5);
+  gPad->SetLogz();
   h_Acor4->Draw("colz");
   f4_1->Draw("same");
   f4_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(5);
+  gPad->SetLogz();
   h_Acor10->Draw("colz");
   f10_1->Draw("same");
   f10_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(5);
+  gPad->SetLogz();
   h_Acor16->Draw("colz");
   f16_1->Draw("same");
   f16_2->Draw("same");
   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(6);
+  gPad->SetLogz();
   h_Acor5->Draw("colz");
   f5_1->Draw("same");
   f5_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut2->cd(6);
+  gPad->SetLogz();
   h_Acor11->Draw("colz");
   f11_1->Draw("same");
   f11_2->Draw("same");
   leg2->Draw("same");
   c_MultiCanvasCut3->cd(6);
+  gPad->SetLogz();
   h_Acor17->Draw("colz");
   f17_1->Draw("same");
   f17_2->Draw("same");
