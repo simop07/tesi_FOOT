@@ -12,6 +12,7 @@
 #include "TPad.h"
 #include "TROOT.h"
 #include "TStyle.h"
+#include "myAnalysis.h"
 
 void setFitStyle() {
   gROOT->SetStyle("Plain");
