@@ -378,6 +378,7 @@ void myAnalysis::AfterLoop() {
   latex5_TOF->SetFillColor(kWhite);
 
   c_E_TOF->cd();
+  gPad->SetLogz();
   h_E_TOF->Draw("colz");
   latex0_TOF->Draw("same");
   latex1_TOF->Draw("same");
