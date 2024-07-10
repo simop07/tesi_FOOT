@@ -2293,6 +2293,34 @@ void myBestFit() {
   h32_3_5->Draw("same");
   leg4->Draw("same");
 
+  // some cout for % error
+  auto it1_max = std::max_element(v_black_a1_err.begin(), v_black_a1_err.end());
+  auto it1_min = std::min_element(v_black_a1_err.begin(), v_black_a1_err.end());
+  std::cout << "Max A_1 found at index "
+            << std::distance(v_black_a1_err.begin(), it1_max) << " of value "
+            << *it1_max << std::endl;
+  std::cout << "Min A_1 found at index "
+            << std::distance(v_black_a1_err.begin(), it1_min) << " of value "
+            << *it1_min << std::endl;
+
+  auto it2_max = std::max_element(v_black_a2_err.begin(), v_black_a2_err.end());
+  auto it2_min = std::min_element(v_black_a2_err.begin(), v_black_a2_err.end());
+  std::cout << "Max A_2 found at index "
+            << std::distance(v_black_a2_err.begin(), it2_max) << " of value "
+            << *it2_max << std::endl;
+  std::cout << "Min A_2 found at index "
+            << std::distance(v_black_a2_err.begin(), it2_min) << " of value "
+            << *it2_min << std::endl;
+
+  auto it3_max = std::max_element(v_black_a3_err.begin(), v_black_a3_err.end());
+  auto it3_min = std::min_element(v_black_a3_err.begin(), v_black_a3_err.end());
+  std::cout << "Max A_3 found at index "
+            << std::distance(v_black_a3_err.begin(), it3_max) << " of value "
+            << *it3_max << std::endl;
+  std::cout << "Min A_3 found at index "
+            << std::distance(v_black_a3_err.begin(), it3_min) << " of value "
+            << *it3_min << std::endl;
+
   // writing on TFile
   file2->cd();
   c_cut0->Write();
