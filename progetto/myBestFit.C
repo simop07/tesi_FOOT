@@ -962,68 +962,68 @@ void myBestFit() {
   // fit functions cosmetics
   // histo0
   f_cut0_1->SetLineColor(kRed);
-  f_cut0_1->SetLineWidth(3);
+  f_cut0_1->SetLineWidth(2);
   f_cut0_1->SetLineStyle(2);
 
   f_cut0_2->SetLineColor(kRed);
-  f_cut0_2->SetLineWidth(3);
+  f_cut0_2->SetLineWidth(2);
   f_cut0_2->SetLineStyle(2);
 
   f_cut0_3->SetLineColor(kRed);
-  f_cut0_3->SetLineWidth(3);
+  f_cut0_3->SetLineWidth(2);
   f_cut0_3->SetLineStyle(2);
 
   // histo1
   f_cut1_1->SetLineColor(kRed);
-  f_cut1_1->SetLineWidth(3);
+  f_cut1_1->SetLineWidth(2);
   f_cut1_1->SetLineStyle(2);
 
   f_cut1_2->SetLineColor(kRed);
-  f_cut1_2->SetLineWidth(3);
+  f_cut1_2->SetLineWidth(2);
   f_cut1_2->SetLineStyle(2);
 
   // histo2
   f_cut2_1->SetLineColor(kRed);
-  f_cut2_1->SetLineWidth(3);
+  f_cut2_1->SetLineWidth(2);
   f_cut2_1->SetLineStyle(2);
 
   f_cut2_2->SetLineColor(kRed);
-  f_cut2_2->SetLineWidth(3);
+  f_cut2_2->SetLineWidth(2);
   f_cut2_2->SetLineStyle(2);
 
   f_cut2_3->SetLineColor(kRed);
-  f_cut2_3->SetLineWidth(3);
+  f_cut2_3->SetLineWidth(2);
   f_cut2_3->SetLineStyle(2);
 
   // histo3
   f_cut3_1->SetLineColor(kRed);
-  f_cut3_1->SetLineWidth(3);
+  f_cut3_1->SetLineWidth(2);
   f_cut3_1->SetLineStyle(2);
 
   f_cut3_2->SetLineColor(kRed);
-  f_cut3_2->SetLineWidth(3);
+  f_cut3_2->SetLineWidth(2);
   f_cut3_2->SetLineStyle(2);
 
   f_cut3_3->SetLineColor(kRed);
-  f_cut3_3->SetLineWidth(3);
+  f_cut3_3->SetLineWidth(2);
   f_cut3_3->SetLineStyle(2);
 
   // histo4
   f_cut4_1->SetLineColor(kRed);
-  f_cut4_1->SetLineWidth(3);
+  f_cut4_1->SetLineWidth(2);
   f_cut4_1->SetLineStyle(2);
 
   f_cut4_2->SetLineColor(kRed);
-  f_cut4_2->SetLineWidth(3);
+  f_cut4_2->SetLineWidth(2);
   f_cut4_2->SetLineStyle(2);
 
   f_cut4_3->SetLineColor(kRed);
-  f_cut4_3->SetLineWidth(3);
+  f_cut4_3->SetLineWidth(2);
   f_cut4_3->SetLineStyle(2);
 
   // histo5
   f_cut5_tot->SetLineColor(kRed);
-  f_cut5_tot->SetLineWidth(3);
+  f_cut5_tot->SetLineWidth(2);
   f_cut5_tot->SetLineStyle(2);
 
   // setting parameters
@@ -1785,6 +1785,9 @@ void myBestFit() {
   c_multigr->cd(2);
   blue->Draw("AP");
 
+  black->GetXaxis()->SetRangeUser(0., 13.);
+  black->GetYaxis()->SetRangeUser(0., 11.);
+
   // final recosntruction
   TCanvas *c_multigr_final =
       new TCanvas("c_multigr_final", "c_multigr_final", 1000, 600);
@@ -2203,11 +2206,11 @@ void myBestFit() {
 
   // canvas black/blue reconstructed fragments
   TCanvas *c_Total_black_blue1 =
-      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 900, 2500);
+      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 2500, 1200);
   TCanvas *c_Total_black_blue2 =
-      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 900, 2500);
+      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 2500, 1200);
   TCanvas *c_Total_black_blue3 =
-      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 900, 2500);
+      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 2500, 1200);
   TLegend *leg4 = new TLegend(.6, .7, .9, .9, "Legenda");
   leg4->SetFillColor(0);
   leg4->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
@@ -2215,9 +2218,9 @@ void myBestFit() {
   f_cut0_1->SetLineColor(kRed);
   leg4->AddEntry(f_cut0_1, "Fit", "L");
 
-  c_Total_black_blue1->Divide(2, 3);
-  c_Total_black_blue2->Divide(2, 3);
-  c_Total_black_blue3->Divide(2, 3);
+  c_Total_black_blue1->Divide(3, 2);
+  c_Total_black_blue2->Divide(3, 2);
+  c_Total_black_blue3->Divide(3, 2);
 
   c_Total_black_blue1->cd(1);
   h21_1_0->Draw();
