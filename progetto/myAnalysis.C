@@ -7,6 +7,7 @@
 
 #include "TBenchmark.h"
 #include "TCanvas.h"
+#include "TColor.h"
 #include "TCutG.h"
 #include "TF1.h"
 #include "TH2.h"
@@ -29,16 +30,19 @@ void myAnalysis::setStyle() {
   gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
+  gStyle->SetTitleFontSize(0.075f);
   gStyle->SetStatY(0.9);
   gStyle->SetStatX(0.9);
   gStyle->SetStatW(0.2);
   gStyle->SetStatH(0.2);
   gStyle->SetTitleX(0.5);
-  gStyle->SetTitleY(0.98);
+  gStyle->SetTitleY(1.);
   gStyle->SetTitleAlign(23);
   gStyle->SetTitleBorderSize(0);
+  gStyle->SetTitleStyle(0);
   gStyle->SetTitleXOffset(1.2f);
   gStyle->SetTitleYOffset(0.8f);
+  gStyle->SetPalette(kRainBow);
   // gStyle->SetPadTopMargin(-9.);
   // gStyle->SetPadRightMargin(-9.);
   // gStyle->SetPadBottomMargin(-9.);
@@ -206,9 +210,10 @@ void myAnalysis::BeforeLoop() {
                400, 8., 20., 400, 0., 300.);
 
   // cosmetics
-  h_E_TOF->GetYaxis()->SetTitleOffset(1.2);
-  h_E_TOF->GetXaxis()->SetTitleSize(0.04);
-  h_E_TOF->GetYaxis()->SetTitleSize(0.04);
+  h_E_TOF->GetXaxis()->SetTitleSize(0.05);
+  h_E_TOF->GetYaxis()->SetTitleSize(0.05);
+  h_E_TOF->GetXaxis()->SetTitleOffset(0.85);
+  h_E_TOF->GetYaxis()->SetTitleOffset(0.75);
 
   // creating recostruction histos variables
   TString const histname{"h"};
@@ -347,34 +352,35 @@ void myAnalysis::AfterLoop() {
 
   h_z_bethe->SetLineColor(kBlue);
   h_z_bethe->SetLineWidth(2);
-  h_z_bethe->GetYaxis()->SetTitleOffset(1.2);
-  h_z_bethe->GetXaxis()->SetTitleSize(0.04);
-  h_z_bethe->GetYaxis()->SetTitleSize(0.04);
+  h_z_bethe->GetXaxis()->SetTitleSize(0.05);
+  h_z_bethe->GetYaxis()->SetTitleSize(0.05);
+  h_z_bethe->GetXaxis()->SetTitleOffset(0.85);
+  h_z_bethe->GetYaxis()->SetTitleOffset(0.6);
 
   // Draw label TOF
   TPaveText *latex0_TOF = new TPaveText(10., 10., 10.5, 30);
   latex0_TOF->AddText("H");
-  latex0_TOF->SetTextSize(0.04);
+  latex0_TOF->SetTextSize(0.06);
   latex0_TOF->SetFillColor(kWhite);
   TPaveText *latex1_TOF = new TPaveText(10., 50., 10.5, 70);
   latex1_TOF->AddText("He");
-  latex1_TOF->SetTextSize(0.04);
+  latex1_TOF->SetTextSize(0.06);
   latex1_TOF->SetFillColor(kWhite);
   TPaveText *latex2_TOF = new TPaveText(10., 100., 10.5, 120);
   latex2_TOF->AddText("Li");
-  latex2_TOF->SetTextSize(0.04);
+  latex2_TOF->SetTextSize(0.06);
   latex2_TOF->SetFillColor(kWhite);
   TPaveText *latex3_TOF = new TPaveText(10., 200., 10.5, 220);
   latex3_TOF->AddText("Be");
-  latex3_TOF->SetTextSize(0.04);
+  latex3_TOF->SetTextSize(0.06);
   latex3_TOF->SetFillColor(kWhite);
   TPaveText *latex4_TOF = new TPaveText(10., 250., 10.5, 270);
   latex4_TOF->AddText("B");
-  latex4_TOF->SetTextSize(0.04);
+  latex4_TOF->SetTextSize(0.06);
   latex4_TOF->SetFillColor(kWhite);
   TPaveText *latex5_TOF = new TPaveText(10., 290., 10.5, 310);
   latex5_TOF->AddText("C");
-  latex5_TOF->SetTextSize(0.04);
+  latex5_TOF->SetTextSize(0.06);
   latex5_TOF->SetFillColor(kWhite);
 
   c_E_TOF->cd();
@@ -474,9 +480,40 @@ void myAnalysis::AfterLoop() {
   leg1->AddEntry(h_z_bethe, "Distribuzione di Z", "L");
   leg1->AddEntry(f_z_bethe[5], "Fit", "L");
 
+  // Draw label bethe
+  TPaveText *latex0_bethe = new TPaveText(4., 5., 4.5, 7.);
+  latex0_bethe->AddText("H");
+  latex0_bethe->SetTextSize(0.08);
+  latex0_bethe->SetFillColor(kWhite);
+  TPaveText *latex1_bethe = new TPaveText(4., 6., 4.5, 8.);
+  latex1_bethe->AddText("He");
+  latex1_bethe->SetTextSize(0.08);
+  latex1_bethe->SetFillColor(kWhite);
+  TPaveText *latex2_bethe = new TPaveText(4., 7., 4.5, 9.);
+  latex2_bethe->AddText("Li");
+  latex2_bethe->SetTextSize(0.08);
+  latex2_bethe->SetFillColor(kWhite);
+  TPaveText *latex3_bethe = new TPaveText(4., 8., 4.5, 10.);
+  latex3_bethe->AddText("Be");
+  latex3_bethe->SetTextSize(0.08);
+  latex3_bethe->SetFillColor(kWhite);
+  TPaveText *latex4_bethe = new TPaveText(4., 9., 4.5, 11.);
+  latex4_bethe->AddText("B");
+  latex4_bethe->SetTextSize(0.08);
+  latex4_bethe->SetFillColor(kWhite);
+  // TPaveText *latex5_bethe = new TPaveText(4., 10., 4.5, 12.);
+  // latex5_bethe->AddText("C");
+  // latex5_bethe->SetTextSize(0.06);
+  // latex5_bethe->SetFillColor(kWhite);
+
   c_z->cd();
   h_z_bethe->Draw();
   leg1->Draw("same");
+  latex0_bethe->Draw("same");
+  latex1_bethe->Draw("same");
+  latex2_bethe->Draw("same");
+  latex3_bethe->Draw("same");
+  latex4_bethe->Draw("same");
   // h_z_TW->Draw("SAME");
 
   // dividing reconstruction canvas

@@ -1,6 +1,7 @@
 #include <vector>
 
 #include "TCanvas.h"
+#include "TColor.h"
 #include "TCutG.h"
 #include "TF1.h"
 #include "TFile.h"
@@ -10,6 +11,7 @@
 #include "TLegend.h"
 #include "TMultiGraph.h"
 #include "TPad.h"
+#include "TPaveText.h"
 #include "TROOT.h"
 #include "TStyle.h"
 #include "myAnalysis.h"
@@ -20,16 +22,19 @@ void setFitStyle() {
   gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
+  gStyle->SetTitleFontSize(0.091f);
   gStyle->SetStatY(0.9);
   gStyle->SetStatX(0.9);
   gStyle->SetStatW(0.2);
   gStyle->SetStatH(0.2);
   gStyle->SetTitleX(0.5);
-  gStyle->SetTitleY(0.98);
+  gStyle->SetTitleY(1.);
   gStyle->SetTitleAlign(23);
   gStyle->SetTitleBorderSize(0);
+  gStyle->SetTitleStyle(0);
   gStyle->SetTitleXOffset(1.2f);
   gStyle->SetTitleYOffset(0.8f);
+  gStyle->SetPalette(kRainBow);
   // gStyle->SetPadTopMargin(-9.);
   // gStyle->SetPadRightMargin(-9.);
   // gStyle->SetPadBottomMargin(-9.);
@@ -240,10 +245,10 @@ void myBestFit() {
 
   // creating and filling 1D histos
   // histo0
-  TH1D *h21_1_0 = new TH1D("h21_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_1_0 = new TH1D("h21_1_0", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_1 = new TH1D("h0_1", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_1 = new TH1D("h0_1", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h0_1 = h_Acor0->ProjectionX("h0_1", 0, -1);
   h0_1->SetMarkerStyle(20);
   h0_1->SetMarkerSize(0.5);
@@ -253,10 +258,10 @@ void myBestFit() {
   h0_1->GetXaxis()->SetTitleSize(0.04);
   h0_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_0 = new TH1D("h21_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_2_0 = new TH1D("h21_2_0", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_2 = new TH1D("h0_2", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_2 = new TH1D("h0_2", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h0_2 = h_Acor0->ProjectionY("h0_2", 0, -1);
   h0_2->SetMarkerStyle(20);
   h0_2->SetMarkerSize(0.5);
@@ -266,13 +271,13 @@ void myBestFit() {
   h0_2->GetXaxis()->SetTitleSize(0.04);
   h0_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_0 = new TH1D("h31_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_1_0 = new TH1D("h31_1_0", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1, "[myCut6]");
 
-  TH1D *h31_3_0 = new TH1D("h31_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_3_0 = new TH1D("h31_3_0", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1, "[myCut6]");
 
-  TH1D *h0_3 = new TH1D("h0_3", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_3 = new TH1D("h0_3", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h0_3 = h_Acor6->ProjectionY("h0_3", 0, -1);
   h0_3->SetMarkerStyle(20);
   h0_3->SetMarkerSize(0.5);
@@ -282,17 +287,17 @@ void myBestFit() {
   h0_3->GetXaxis()->SetTitleSize(0.04);
   h0_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_0 = new TH1D("h32_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_2_0 = new TH1D("h32_2_0", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1, "[myCut12]");
 
-  TH1D *h32_3_0 = new TH1D("h32_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_3_0 = new TH1D("h32_3_0", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h32_3_0 = h_Acor12->ProjectionY("h32_3_0", 0, -1, "[myCut12]");
 
   // histo1
-  TH1D *h21_1_1 = new TH1D("h21_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_1_1 = new TH1D("h21_1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 9.);
   h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_1 = new TH1D("h1_1", "He; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_1 = new TH1D("h1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 8.);
   h1_1 = h_Acor1->ProjectionX("h1_1", 0, -1);
   h1_1->SetMarkerStyle(20);
   h1_1->SetMarkerSize(0.5);
@@ -302,10 +307,10 @@ void myBestFit() {
   h1_1->GetXaxis()->SetTitleSize(0.04);
   h1_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_1 = new TH1D("h21_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_2_1 = new TH1D("h21_2_1", "Z=2; A_{2}; Occorrenze", 300, 0., 9.);
   h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_2 = new TH1D("h1_2", "He; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_2 = new TH1D("h1_2", "Z=2; A_{2}; Occorrenze", 300, 0., 8.);
   h1_2 = h_Acor1->ProjectionY("h1_2", 0, -1);
   h1_2->SetMarkerStyle(20);
   h1_2->SetMarkerSize(0.5);
@@ -315,13 +320,13 @@ void myBestFit() {
   h1_2->GetXaxis()->SetTitleSize(0.04);
   h1_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_1 = new TH1D("h31_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_1_1 = new TH1D("h31_1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 9.);
   h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1, "[myCut7]");
 
-  TH1D *h31_3_1 = new TH1D("h31_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_3_1 = new TH1D("h31_3_1", "Z=2; A_{3}; Occorrenze", 300, 0., 9.);
   h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1, "[myCut7]");
 
-  TH1D *h1_3 = new TH1D("h1_3", "He; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_3 = new TH1D("h1_3", "Z=2; A_{3}; Occorrenze", 300, 0., 8.);
   h1_3 = h_Acor7->ProjectionY("h1_3", 0, -1);
   h1_3->SetMarkerStyle(20);
   h1_3->SetMarkerSize(0.5);
@@ -331,17 +336,17 @@ void myBestFit() {
   h1_3->GetXaxis()->SetTitleSize(0.04);
   h1_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_1 = new TH1D("h32_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_2_1 = new TH1D("h32_2_1", "Z=2; A_{2}; Occorrenze", 300, 0., 9.);
   h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1, "[myCut13]");
 
-  TH1D *h32_3_1 = new TH1D("h32_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_3_1 = new TH1D("h32_3_1", "Z=2; A_{3}; Occorrenze", 300, 0., 9.);
   h32_3_1 = h_Acor13->ProjectionY("h32_3_1", 0, -1, "[myCut13]");
 
   // histo2
-  TH1D *h21_1_2 = new TH1D("h21_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_1_2 = new TH1D("h21_1_2", "Z=3; A_{1}; Occorrenze", 300, 2., 18.);
   h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_1 = new TH1D("h2_1", "Li; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_1 = new TH1D("h2_1", "Z=3; A_{1}; Occorrenze", 300, 0., 8.);
   h2_1 = h_Acor2->ProjectionX("h2_1", 0, -1);
   h2_1->SetMarkerStyle(20);
   h2_1->SetMarkerSize(0.5);
@@ -351,10 +356,10 @@ void myBestFit() {
   h2_1->GetXaxis()->SetTitleSize(0.04);
   h2_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_2 = new TH1D("h21_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_2_2 = new TH1D("h21_2_2", "Z=3; A_{2}; Occorrenze", 300, 2., 18.);
   h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_2 = new TH1D("h2_2", "Li; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_2 = new TH1D("h2_2", "Z=3; A_{2}; Occorrenze", 300, 0., 8.);
   h2_2 = h_Acor2->ProjectionY("h2_2", 0, -1);
   h2_2->SetMarkerStyle(20);
   h2_2->SetMarkerSize(0.5);
@@ -364,13 +369,13 @@ void myBestFit() {
   h2_2->GetXaxis()->SetTitleSize(0.04);
   h2_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_2 = new TH1D("h31_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_1_2 = new TH1D("h31_1_2", "Z=3; A_{1}; Occorrenze", 300, 2., 18.);
   h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1, "[myCut8]");
 
-  TH1D *h31_3_2 = new TH1D("h31_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_3_2 = new TH1D("h31_3_2", "Z=3; A_{3}; Occorrenze", 300, 2., 18.);
   h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1, "[myCut8]");
 
-  TH1D *h2_3 = new TH1D("h2_3", "Li; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_3 = new TH1D("h2_3", "Z=3; A_{3}; Occorrenze", 300, 0., 8.);
   h2_3 = h_Acor8->ProjectionY("h2_3", 0, -1);
   h2_3->SetMarkerStyle(20);
   h2_3->SetMarkerSize(0.5);
@@ -380,17 +385,17 @@ void myBestFit() {
   h2_3->GetXaxis()->SetTitleSize(0.04);
   h2_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_2 = new TH1D("h32_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_2_2 = new TH1D("h32_2_2", "Z=3; A_{2}; Occorrenze", 300, 2., 18.);
   h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1, "[myCut14]");
 
-  TH1D *h32_3_2 = new TH1D("h32_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_3_2 = new TH1D("h32_3_2", "Z=3; A_{3}; Occorrenze", 300, 2., 18.);
   h32_3_2 = h_Acor14->ProjectionY("h32_3_2", 0, -1, "[myCut14]");
 
   // histo3
-  TH1D *h21_1_3 = new TH1D("h21_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_1_3 = new TH1D("h21_1_3", "Z=4; A_{1}; Occorrenze", 300, 4., 20.);
   h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_1 = new TH1D("h3_1", "Be; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_1 = new TH1D("h3_1", "Z=4; A_{1}; Occorrenze", 300, 0., 8.);
   h3_1 = h_Acor3->ProjectionX("h3_1", 0, -1);
   h3_1->SetMarkerStyle(20);
   h3_1->SetMarkerSize(0.5);
@@ -400,10 +405,10 @@ void myBestFit() {
   h3_1->GetXaxis()->SetTitleSize(0.04);
   h3_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_3 = new TH1D("h21_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_2_3 = new TH1D("h21_2_3", "Z=4; A_{2}; Occorrenze", 300, 4., 20.);
   h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_2 = new TH1D("h3_2", "Be; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_2 = new TH1D("h3_2", "Z=4; A_{2}; Occorrenze", 300, 0., 8.);
   h3_2 = h_Acor3->ProjectionY("h3_2", 0, -1);
   h3_2->SetMarkerStyle(20);
   h3_2->SetMarkerSize(0.5);
@@ -413,13 +418,13 @@ void myBestFit() {
   h3_2->GetXaxis()->SetTitleSize(0.04);
   h3_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_3 = new TH1D("h31_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_1_3 = new TH1D("h31_1_3", "Z=4; A_{1}; Occorrenze", 300, 4., 20.);
   h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1, "[myCut9]");
 
-  TH1D *h31_3_3 = new TH1D("h31_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_3_3 = new TH1D("h31_3_3", "Z=4; A_{3}; Occorrenze", 300, 4., 20.);
   h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1, "[myCut9]");
 
-  TH1D *h3_3 = new TH1D("h3_3", "Be; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_3 = new TH1D("h3_3", "Z=4; A_{3}; Occorrenze", 300, 0., 8.);
   h3_3 = h_Acor9->ProjectionY("h3_3", 0, -1);
   h3_3->SetMarkerStyle(20);
   h3_3->SetMarkerSize(0.5);
@@ -429,17 +434,17 @@ void myBestFit() {
   h3_3->GetXaxis()->SetTitleSize(0.04);
   h3_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_3 = new TH1D("h32_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_2_3 = new TH1D("h32_2_3", "Z=4; A_{2}; Occorrenze", 300, 4., 20.);
   h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1, "[myCut15]");
 
-  TH1D *h32_3_3 = new TH1D("h32_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_3_3 = new TH1D("h32_3_3", "Z=4; A_{3}; Occorrenze", 300, 4., 20.);
   h32_3_3 = h_Acor15->ProjectionY("h32_3_3", 0, -1, "[myCut15]");
 
   // histo4
-  TH1D *h21_1_4 = new TH1D("h21_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_1_4 = new TH1D("h21_1_4", "Z=5; A_{1}; Occorrenze", 300, 4., 22.);
   h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_1 = new TH1D("h4_1", "B; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_1 = new TH1D("h4_1", "Z=5; A_{1}; Occorrenze", 300, 0., 8.);
   h4_1 = h_Acor4->ProjectionX("h4_1", 0, -1);
   h4_1->SetMarkerStyle(20);
   h4_1->SetMarkerSize(0.5);
@@ -449,10 +454,10 @@ void myBestFit() {
   h4_1->GetXaxis()->SetTitleSize(0.04);
   h4_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_4 = new TH1D("h21_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_2_4 = new TH1D("h21_2_4", "Z=5; A_{2}; Occorrenze", 300, 4., 22.);
   h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_2 = new TH1D("h4_2", "B; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_2 = new TH1D("h4_2", "Z=5; A_{2}; Occorrenze", 300, 0., 8.);
   h4_2 = h_Acor4->ProjectionY("h4_2", 0, -1);
   h4_2->SetMarkerStyle(20);
   h4_2->SetMarkerSize(0.5);
@@ -462,13 +467,13 @@ void myBestFit() {
   h4_2->GetXaxis()->SetTitleSize(0.04);
   h4_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_4 = new TH1D("h31_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_1_4 = new TH1D("h31_1_4", "Z=5; A_{1}; Occorrenze", 300, 4., 22.);
   h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1, "[myCut10]");
 
-  TH1D *h31_3_4 = new TH1D("h31_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_3_4 = new TH1D("h31_3_4", "Z=5; A_{3}; Occorrenze", 300, 4., 22.);
   h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1, "[myCut10]");
 
-  TH1D *h4_3 = new TH1D("h4_3", "B; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_3 = new TH1D("h4_3", "Z=5; A_{3}; Occorrenze", 300, 0., 8.);
   h4_3 = h_Acor10->ProjectionY("h4_3", 0, -1);
   h4_3->SetMarkerStyle(20);
   h4_3->SetMarkerSize(0.5);
@@ -478,17 +483,17 @@ void myBestFit() {
   h4_3->GetXaxis()->SetTitleSize(0.04);
   h4_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_4 = new TH1D("h32_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_2_4 = new TH1D("h32_2_4", "Z=5; A_{2}; Occorrenze", 300, 4., 22.);
   h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1, "[myCut16]");
 
-  TH1D *h32_3_4 = new TH1D("h32_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_3_4 = new TH1D("h32_3_4", "Z=5; A_{3}; Occorrenze", 300, 4., 22.);
   h32_3_4 = h_Acor16->ProjectionY("h32_3_4", 0, -1, "[myCut16]");
 
   // histo5
-  TH1D *h21_1_5 = new TH1D("h21_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_1_5 = new TH1D("h21_1_5", "Z=6; A_{1}; Occorrenze", 300, 4., 24.);
   h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_1 = new TH1D("h5_1", "C; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_1 = new TH1D("h5_1", "Z=6; A_{1}; Occorrenze", 300, 0., 8.);
   h5_1 = h_Acor5->ProjectionX("h5_1", 0, -1);
   h5_1->SetMarkerStyle(20);
   h5_1->SetMarkerSize(0.5);
@@ -498,10 +503,10 @@ void myBestFit() {
   h5_1->GetXaxis()->SetTitleSize(0.04);
   h5_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_5 = new TH1D("h21_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_2_5 = new TH1D("h21_2_5", "Z=6; A_{2}; Occorrenze", 300, 4., 24.);
   h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_2 = new TH1D("h5_2", "C; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_2 = new TH1D("h5_2", "Z=6; A_{2}; Occorrenze", 300, 0., 8.);
   h5_2 = h_Acor5->ProjectionY("h5_2", 0, -1);
   h5_2->SetMarkerStyle(20);
   h5_2->SetMarkerSize(0.5);
@@ -511,13 +516,13 @@ void myBestFit() {
   h5_2->GetXaxis()->SetTitleSize(0.04);
   h5_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_5 = new TH1D("h31_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_1_5 = new TH1D("h31_1_5", "Z=6; A_{1}; Occorrenze", 300, 4., 24.);
   h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1, "[myCut11]");
 
-  TH1D *h31_3_5 = new TH1D("h31_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_3_5 = new TH1D("h31_3_5", "Z=6; A_{3}; Occorrenze", 300, 4., 24.);
   h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1, "[myCut11]");
 
-  TH1D *h5_3 = new TH1D("h5_3", "C; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_3 = new TH1D("h5_3", "Z=6; A_{3}; Occorrenze", 300, 0., 8.);
   h5_3 = h_Acor5->ProjectionY("h5_3", 0, -1);
   h5_3->SetMarkerStyle(20);
   h5_3->SetMarkerSize(0.5);
@@ -527,234 +532,234 @@ void myBestFit() {
   h5_3->GetXaxis()->SetTitleSize(0.04);
   h5_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_5 = new TH1D("h32_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_2_5 = new TH1D("h32_2_5", "Z=6; A_{2}; Occorrenze", 300, 4., 24.);
   h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1, "[myCut17]");
 
-  TH1D *h32_3_5 = new TH1D("h32_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_3_5 = new TH1D("h32_3_5", "Z=6; A_{3}; Occorrenze", 300, 4., 24.);
   h32_3_5 = h_Acor17->ProjectionY("h32_3_5", 0, -1, "[myCut17]");
 
   // histo cosmetics
   // histo0
   h21_1_0->SetMarkerStyle(20);
   h21_1_0->SetMarkerSize(1.5);
-  h21_1_0->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_0->GetXaxis()->SetTitleSize(0.04);
-  h21_1_0->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_0->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_0->SetMarkerStyle(20);
   h21_2_0->SetMarkerSize(1.5);
-  h21_2_0->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_0->GetXaxis()->SetTitleSize(0.04);
-  h21_2_0->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_0->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_0->SetMarkerStyle(20);
   h31_1_0->SetMarkerSize(1.5);
-  h31_1_0->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_0->GetXaxis()->SetTitleSize(0.04);
-  h31_1_0->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_0->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_0->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_0->SetMarkerStyle(20);
   h31_3_0->SetMarkerSize(1.5);
-  h31_3_0->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_0->GetXaxis()->SetTitleSize(0.04);
-  h31_3_0->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_0->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_0->SetMarkerStyle(20);
   h32_2_0->SetMarkerSize(1.5);
-  h32_2_0->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_0->GetXaxis()->SetTitleSize(0.04);
-  h32_2_0->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_0->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_0->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_0->SetMarkerStyle(20);
   h32_3_0->SetMarkerSize(1.5);
-  h32_3_0->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_0->GetXaxis()->SetTitleSize(0.04);
-  h32_3_0->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_0->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_0->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_0->GetYaxis()->SetTitleSize(0.04);
 
   // histo1
   h21_1_1->SetMarkerStyle(20);
   h21_1_1->SetMarkerSize(1.5);
-  h21_1_1->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_1->GetXaxis()->SetTitleSize(0.04);
-  h21_1_1->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_1->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_1->SetMarkerStyle(20);
   h21_2_1->SetMarkerSize(1.5);
-  h21_2_1->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_1->GetXaxis()->SetTitleSize(0.04);
-  h21_2_1->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_1->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_1->SetMarkerStyle(20);
   h31_1_1->SetMarkerSize(1.5);
-  h31_1_1->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_1->GetXaxis()->SetTitleSize(0.04);
-  h31_1_1->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_1->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_1->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_1->SetMarkerStyle(20);
   h31_3_1->SetMarkerSize(1.5);
-  h31_3_1->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_1->GetXaxis()->SetTitleSize(0.04);
-  h31_3_1->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_1->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_1->SetMarkerStyle(20);
   h32_2_1->SetMarkerSize(1.5);
-  h32_2_1->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_1->GetXaxis()->SetTitleSize(0.04);
-  h32_2_1->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_1->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_1->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_1->SetMarkerStyle(20);
   h32_3_1->SetMarkerSize(1.5);
-  h32_3_1->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_1->GetXaxis()->SetTitleSize(0.04);
-  h32_3_1->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_1->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_1->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_1->GetYaxis()->SetTitleSize(0.04);
 
   // histo2
   h21_1_2->SetMarkerStyle(20);
   h21_1_2->SetMarkerSize(1.5);
-  h21_1_2->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_2->GetXaxis()->SetTitleSize(0.04);
-  h21_1_2->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_2->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_2->SetMarkerStyle(20);
   h21_2_2->SetMarkerSize(1.5);
-  h21_2_2->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_2->GetXaxis()->SetTitleSize(0.04);
-  h21_2_2->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_2->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_2->SetMarkerStyle(20);
   h31_1_2->SetMarkerSize(1.5);
-  h31_1_2->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_2->GetXaxis()->SetTitleSize(0.04);
-  h31_1_2->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_2->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_2->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_2->SetMarkerStyle(20);
   h31_3_2->SetMarkerSize(1.5);
-  h31_3_2->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_2->GetXaxis()->SetTitleSize(0.04);
-  h31_3_2->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_2->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_2->SetMarkerStyle(20);
   h32_2_2->SetMarkerSize(1.5);
-  h32_2_2->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_2->GetXaxis()->SetTitleSize(0.04);
-  h32_2_2->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_2->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_2->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_2->SetMarkerStyle(20);
   h32_3_2->SetMarkerSize(1.5);
-  h32_3_2->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_2->GetXaxis()->SetTitleSize(0.04);
-  h32_3_2->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_2->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_2->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_2->GetYaxis()->SetTitleSize(0.04);
 
   // histo3
   h21_1_3->SetMarkerStyle(20);
   h21_1_3->SetMarkerSize(1.5);
-  h21_1_3->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_3->GetXaxis()->SetTitleSize(0.04);
-  h21_1_3->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_3->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_3->SetMarkerStyle(20);
   h21_2_3->SetMarkerSize(1.5);
-  h21_2_3->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_3->GetXaxis()->SetTitleSize(0.04);
-  h21_2_3->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_3->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_3->SetMarkerStyle(20);
   h31_1_3->SetMarkerSize(1.5);
-  h31_1_3->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_3->GetXaxis()->SetTitleSize(0.04);
-  h31_1_3->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_3->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_3->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_3->SetMarkerStyle(20);
   h31_3_3->SetMarkerSize(1.5);
-  h31_3_3->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_3->GetXaxis()->SetTitleSize(0.04);
-  h31_3_3->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_3->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_3->SetMarkerStyle(20);
   h32_2_3->SetMarkerSize(1.5);
-  h32_2_3->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_3->GetXaxis()->SetTitleSize(0.04);
-  h32_2_3->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_3->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_3->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_3->SetMarkerStyle(20);
   h32_3_3->SetMarkerSize(1.5);
-  h32_3_3->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_3->GetXaxis()->SetTitleSize(0.04);
-  h32_3_3->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_3->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_3->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_3->GetYaxis()->SetTitleSize(0.04);
 
   // histo4
   h21_1_4->SetMarkerStyle(20);
   h21_1_4->SetMarkerSize(1.5);
-  h21_1_4->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_4->GetXaxis()->SetTitleSize(0.04);
-  h21_1_4->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_4->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_4->SetMarkerStyle(20);
   h21_2_4->SetMarkerSize(1.5);
-  h21_2_4->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_4->GetXaxis()->SetTitleSize(0.04);
-  h21_2_4->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_4->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_4->SetMarkerStyle(20);
   h31_1_4->SetMarkerSize(1.5);
-  h31_1_4->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_4->GetXaxis()->SetTitleSize(0.04);
-  h31_1_4->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_4->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_4->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_4->SetMarkerStyle(20);
   h31_3_4->SetMarkerSize(1.5);
-  h31_3_4->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_4->GetXaxis()->SetTitleSize(0.04);
-  h31_3_4->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_4->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_4->SetMarkerStyle(20);
   h32_2_4->SetMarkerSize(1.5);
-  h32_2_4->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_4->GetXaxis()->SetTitleSize(0.04);
-  h32_2_4->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_4->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_4->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_4->SetMarkerStyle(20);
   h32_3_4->SetMarkerSize(1.5);
-  h32_3_4->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_4->GetXaxis()->SetTitleSize(0.04);
-  h32_3_4->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_4->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_4->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_4->GetYaxis()->SetTitleSize(0.04);
 
   // histo5
   h21_1_5->SetMarkerStyle(20);
   h21_1_5->SetMarkerSize(1.5);
-  h21_1_5->GetYaxis()->SetTitleOffset(1.2);
-  h21_1_5->GetXaxis()->SetTitleSize(0.04);
-  h21_1_5->GetYaxis()->SetTitleSize(0.04);
+  //   h21_1_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_1_5->GetXaxis()->SetTitleSize(0.04);
+  //   h21_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h21_2_5->SetMarkerStyle(20);
   h21_2_5->SetMarkerSize(1.5);
-  h21_2_5->GetYaxis()->SetTitleOffset(1.2);
-  h21_2_5->GetXaxis()->SetTitleSize(0.04);
-  h21_2_5->GetYaxis()->SetTitleSize(0.04);
+  //   h21_2_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h21_2_5->GetXaxis()->SetTitleSize(0.04);
+  //   h21_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_1_5->SetMarkerStyle(20);
   h31_1_5->SetMarkerSize(1.5);
-  h31_1_5->GetYaxis()->SetTitleOffset(1.2);
-  h31_1_5->GetXaxis()->SetTitleSize(0.04);
-  h31_1_5->GetYaxis()->SetTitleSize(0.04);
+  //   h31_1_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_1_5->GetXaxis()->SetTitleSize(0.04);
+  //   h31_1_5->GetYaxis()->SetTitleSize(0.04);
 
   h31_3_5->SetMarkerStyle(20);
   h31_3_5->SetMarkerSize(1.5);
-  h31_3_5->GetYaxis()->SetTitleOffset(1.2);
-  h31_3_5->GetXaxis()->SetTitleSize(0.04);
-  h31_3_5->GetYaxis()->SetTitleSize(0.04);
+  //   h31_3_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h31_3_5->GetXaxis()->SetTitleSize(0.04);
+  //   h31_3_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_2_5->SetMarkerStyle(20);
   h32_2_5->SetMarkerSize(1.5);
-  h32_2_5->GetYaxis()->SetTitleOffset(1.2);
-  h32_2_5->GetXaxis()->SetTitleSize(0.04);
-  h32_2_5->GetYaxis()->SetTitleSize(0.04);
+  //   h32_2_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_2_5->GetXaxis()->SetTitleSize(0.04);
+  //   h32_2_5->GetYaxis()->SetTitleSize(0.04);
 
   h32_3_5->SetMarkerStyle(20);
   h32_3_5->SetMarkerSize(1.5);
-  h32_3_5->GetYaxis()->SetTitleOffset(1.2);
-  h32_3_5->GetXaxis()->SetTitleSize(0.04);
-  h32_3_5->GetYaxis()->SetTitleSize(0.04);
+  //   h32_3_5->GetYaxis()->SetTitleOffset(1.2);
+  //   h32_3_5->GetXaxis()->SetTitleSize(0.04);
+  //   h32_3_5->GetYaxis()->SetTitleSize(0.04);
 
   // drawing cut_nocut on canvas
   TCanvas *c_cutDouble0 =
@@ -814,107 +819,107 @@ void myBestFit() {
   c_cutDouble16->Divide(2, 1);
   c_cutDouble17->Divide(2, 1);
 
-  // histo0
-  c_cutDouble0->cd(1);
-  h0_1->Draw();
-  c_cutDouble0->cd(2);
-  h21_1_0->Draw();
-  h31_1_0->Draw("same");
-  c_cutDouble1->cd(1);
-  h0_2->Draw();
-  c_cutDouble1->cd(2);
-  h21_2_0->Draw();
-  h32_2_0->Draw("same");
-  c_cutDouble2->cd(1);
-  h0_3->Draw();
-  c_cutDouble2->cd(2);
-  h31_3_0->Draw();
-  h32_3_0->Draw("same");
+  //   // histo0
+  //   c_cutDouble0->cd(1);
+  //   h0_1->Draw();
+  //   c_cutDouble0->cd(2);
+  //   h21_1_0->Draw();
+  //   h31_1_0->Draw("same");
+  //   c_cutDouble1->cd(1);
+  //   h0_2->Draw();
+  //   c_cutDouble1->cd(2);
+  //   h21_2_0->Draw();
+  //   h32_2_0->Draw("same");
+  //   c_cutDouble2->cd(1);
+  //   h0_3->Draw();
+  //   c_cutDouble2->cd(2);
+  //   h31_3_0->Draw();
+  //   h32_3_0->Draw("same");
 
-  // histo1
-  c_cutDouble3->cd(1);
-  h1_1->Draw();
-  c_cutDouble3->cd(2);
-  h21_1_1->Draw();
-  h31_1_1->Draw("same");
-  c_cutDouble4->cd(1);
-  h1_2->Draw();
-  c_cutDouble4->cd(2);
-  h21_2_1->Draw();
-  h32_2_1->Draw("same");
-  c_cutDouble5->cd(1);
-  h1_3->Draw();
-  c_cutDouble5->cd(2);
-  h31_3_1->Draw();
-  h32_3_1->Draw("same");
+  //   // histo1
+  //   c_cutDouble3->cd(1);
+  //   h1_1->Draw();
+  //   c_cutDouble3->cd(2);
+  //   h21_1_1->Draw();
+  //   h31_1_1->Draw("same");
+  //   c_cutDouble4->cd(1);
+  //   h1_2->Draw();
+  //   c_cutDouble4->cd(2);
+  //   h21_2_1->Draw();
+  //   h32_2_1->Draw("same");
+  //   c_cutDouble5->cd(1);
+  //   h1_3->Draw();
+  //   c_cutDouble5->cd(2);
+  //   h31_3_1->Draw();
+  //   h32_3_1->Draw("same");
 
-  // histo2
-  c_cutDouble6->cd(1);
-  h2_1->Draw();
-  c_cutDouble6->cd(2);
-  h21_1_2->Draw();
-  h31_1_2->Draw("same");
-  c_cutDouble7->cd(1);
-  h2_2->Draw();
-  c_cutDouble7->cd(2);
-  h21_2_2->Draw();
-  h32_2_2->Draw("same");
-  c_cutDouble8->cd(1);
-  h2_3->Draw();
-  c_cutDouble8->cd(2);
-  h31_3_2->Draw();
-  h32_3_2->Draw("same");
+  //   // histo2
+  //   c_cutDouble6->cd(1);
+  //   h2_1->Draw();
+  //   c_cutDouble6->cd(2);
+  //   h21_1_2->Draw();
+  //   h31_1_2->Draw("same");
+  //   c_cutDouble7->cd(1);
+  //   h2_2->Draw();
+  //   c_cutDouble7->cd(2);
+  //   h21_2_2->Draw();
+  //   h32_2_2->Draw("same");
+  //   c_cutDouble8->cd(1);
+  //   h2_3->Draw();
+  //   c_cutDouble8->cd(2);
+  //   h31_3_2->Draw();
+  //   h32_3_2->Draw("same");
 
-  // histo3
-  c_cutDouble9->cd(1);
-  h3_1->Draw();
-  c_cutDouble9->cd(2);
-  h21_1_3->Draw();
-  h31_1_3->Draw("same");
-  c_cutDouble10->cd(1);
-  h3_2->Draw();
-  c_cutDouble10->cd(2);
-  h21_2_3->Draw();
-  h32_2_3->Draw("same");
-  c_cutDouble11->cd(1);
-  h3_3->Draw();
-  c_cutDouble11->cd(2);
-  h31_3_3->Draw();
-  h32_3_3->Draw("same");
+  //   // histo3
+  //   c_cutDouble9->cd(1);
+  //   h3_1->Draw();
+  //   c_cutDouble9->cd(2);
+  //   h21_1_3->Draw();
+  //   h31_1_3->Draw("same");
+  //   c_cutDouble10->cd(1);
+  //   h3_2->Draw();
+  //   c_cutDouble10->cd(2);
+  //   h21_2_3->Draw();
+  //   h32_2_3->Draw("same");
+  //   c_cutDouble11->cd(1);
+  //   h3_3->Draw();
+  //   c_cutDouble11->cd(2);
+  //   h31_3_3->Draw();
+  //   h32_3_3->Draw("same");
 
-  // histo4
-  c_cutDouble12->cd(1);
-  h4_1->Draw();
-  c_cutDouble12->cd(2);
-  h21_1_4->Draw();
-  h31_1_4->Draw("same");
-  c_cutDouble13->cd(1);
-  h4_2->Draw();
-  c_cutDouble13->cd(2);
-  h21_2_4->Draw();
-  h32_2_4->Draw("same");
-  c_cutDouble14->cd(1);
-  h4_3->Draw();
-  c_cutDouble14->cd(2);
-  h31_3_4->Draw();
-  h32_3_4->Draw("same");
+  //   // histo4
+  //   c_cutDouble12->cd(1);
+  //   h4_1->Draw();
+  //   c_cutDouble12->cd(2);
+  //   h21_1_4->Draw();
+  //   h31_1_4->Draw("same");
+  //   c_cutDouble13->cd(1);
+  //   h4_2->Draw();
+  //   c_cutDouble13->cd(2);
+  //   h21_2_4->Draw();
+  //   h32_2_4->Draw("same");
+  //   c_cutDouble14->cd(1);
+  //   h4_3->Draw();
+  //   c_cutDouble14->cd(2);
+  //   h31_3_4->Draw();
+  //   h32_3_4->Draw("same");
 
-  // histo5
-  c_cutDouble15->cd(1);
-  h5_1->Draw();
-  c_cutDouble15->cd(2);
-  h21_1_5->Draw();
-  h31_1_5->Draw("same");
-  c_cutDouble16->cd(1);
-  h5_2->Draw();
-  c_cutDouble16->cd(2);
-  h21_2_5->Draw();
-  h32_2_5->Draw("same");
-  c_cutDouble17->cd(1);
-  h5_3->Draw();
-  c_cutDouble17->cd(2);
-  h31_3_5->Draw();
-  h32_3_5->Draw("same");
+  //   // histo5
+  //   c_cutDouble15->cd(1);
+  //   h5_1->Draw();
+  //   c_cutDouble15->cd(2);
+  //   h21_1_5->Draw();
+  //   h31_1_5->Draw("same");
+  //   c_cutDouble16->cd(1);
+  //   h5_2->Draw();
+  //   c_cutDouble16->cd(2);
+  //   h21_2_5->Draw();
+  //   h32_2_5->Draw("same");
+  //   c_cutDouble17->cd(1);
+  //   h5_3->Draw();
+  //   c_cutDouble17->cd(2);
+  //   h31_3_5->Draw();
+  //   h32_3_5->Draw("same");
 
   // fit functions
   // histo0
@@ -1521,38 +1526,38 @@ void myBestFit() {
   // label points in graphs
   //   TLatex *latex1 =
   //       new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "
-  //       {}^{7}_{3}Li");
+  //       {}^{7}_{3}Z=3");
   //   a1_black->GetListOfFunctions()->Add(latex1);
   //   latex1->SetTextSize(0.05);
   //   latex1->SetTextAlign(12);
 
   //   TLatex *latex2 =
   //       new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "
-  //       {}^{7}_{4}Be");
+  //       {}^{7}_{4}Z=4");
   //   a1_black->GetListOfFunctions()->Add(latex2);
   //   latex2->SetTextSize(0.05);
   //   latex2->SetTextAlign(12);
 
   //   TLatex *latex3 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Li");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Z=3");
   //   a1_black->GetListOfFunctions()->Add(latex3);
   //   latex3->SetTextSize(0.05);
   //   latex3->SetTextAlign(12);
 
   //   TLatex *latex4 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Be");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Z=4");
   //   a1_black->GetListOfFunctions()->Add(latex4);
   //   latex4->SetTextSize(0.05);
   //   latex4->SetTextAlign(12);
 
   //   TLatex *latex5 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  B");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Z=5");
   //   a1_black->GetListOfFunctions()->Add(latex5);
   //   latex5->SetTextSize(0.05);
   //   latex5->SetTextAlign(12);
 
   //   TLatex *latex6 =
-  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  C");
+  //       new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  Z=6");
   //   a1_black->GetListOfFunctions()->Add(latex6);
   //   latex6->SetTextSize(0.05);
   //   latex6->SetTextAlign(12);
@@ -1609,27 +1614,27 @@ void myBestFit() {
   h31_1_0->SetLineColor(kBlack);
   h31_1_0->SetLineWidth(2);
   c_cut0->cd(1);
-  h21_1_0->DrawCopy();
-  c_cut0->cd(2);
-  h31_1_0->DrawCopy();
+  //   h21_1_0->DrawCopy();
+  //   c_cut0->cd(2);
+  //   h31_1_0->DrawCopy();
 
   h21_2_0->SetLineColor(kBlue);
   h21_2_0->SetLineWidth(2);
   h32_2_0->SetLineColor(kBlack);
   h32_2_0->SetLineWidth(2);
   c_cut1->cd(1);
-  h21_2_0->DrawCopy();
-  c_cut1->cd(2);
-  h32_2_0->DrawCopy();
+  //   h21_2_0->DrawCopy();
+  //   c_cut1->cd(2);
+  //   h32_2_0->DrawCopy();
 
   h31_3_0->SetLineColor(kBlue);
   h31_3_0->SetLineWidth(2);
   h32_3_0->SetLineColor(kBlack);
   h32_3_0->SetLineWidth(2);
   c_cut2->cd(1);
-  h31_3_0->DrawCopy();
-  c_cut2->cd(2);
-  h32_3_0->DrawCopy();
+  //   h31_3_0->DrawCopy();
+  //   c_cut2->cd(2);
+  //   h32_3_0->DrawCopy();
 
   // histo1
   h21_1_1->SetLineColor(kBlue);
@@ -1637,27 +1642,27 @@ void myBestFit() {
   h31_1_1->SetLineColor(kBlack);
   h31_1_1->SetLineWidth(2);
   c_cut3->cd(1);
-  h21_1_1->DrawCopy();
-  c_cut3->cd(2);
-  h31_1_1->DrawCopy();
+  //   h21_1_1->DrawCopy();
+  //   c_cut3->cd(2);
+  //   h31_1_1->DrawCopy();
 
   h21_2_1->SetLineColor(kBlue);
   h21_2_1->SetLineWidth(2);
   h32_2_1->SetLineColor(kBlack);
   h32_2_1->SetLineWidth(2);
   c_cut4->cd(1);
-  h21_2_1->DrawCopy();
-  c_cut4->cd(2);
-  h32_2_1->DrawCopy();
+  //   h21_2_1->DrawCopy();
+  //   c_cut4->cd(2);
+  //   h32_2_1->DrawCopy();
 
   h31_3_1->SetLineColor(kBlue);
   h31_3_1->SetLineWidth(2);
   h32_3_1->SetLineColor(kBlack);
   h32_3_1->SetLineWidth(2);
   c_cut5->cd(1);
-  h31_3_1->DrawCopy();
-  c_cut5->cd(2);
-  h32_3_1->DrawCopy();
+  //   h31_3_1->DrawCopy();
+  //   c_cut5->cd(2);
+  //   h32_3_1->DrawCopy();
 
   // histo2
   h21_1_2->SetLineColor(kBlue);
@@ -1665,27 +1670,27 @@ void myBestFit() {
   h31_1_2->SetLineColor(kBlack);
   h31_1_2->SetLineWidth(2);
   c_cut6->cd(1);
-  h21_1_2->DrawCopy();
-  c_cut6->cd(2);
-  h31_1_2->DrawCopy();
+  //   h21_1_2->DrawCopy();
+  //   c_cut6->cd(2);
+  //   h31_1_2->DrawCopy();
 
   h21_2_2->SetLineColor(kBlue);
   h21_2_2->SetLineWidth(2);
   h32_2_2->SetLineColor(kBlack);
   h32_2_2->SetLineWidth(2);
   c_cut7->cd(1);
-  h21_2_2->DrawCopy();
-  c_cut7->cd(2);
-  h32_2_2->DrawCopy();
+  //   h21_2_2->DrawCopy();
+  //   c_cut7->cd(2);
+  //   h32_2_2->DrawCopy();
 
   h31_3_2->SetLineColor(kBlue);
   h31_3_2->SetLineWidth(2);
   h32_3_2->SetLineColor(kBlack);
   h32_3_2->SetLineWidth(2);
   c_cut8->cd(1);
-  h31_3_2->DrawCopy();
-  c_cut8->cd(2);
-  h32_3_2->DrawCopy();
+  //   h31_3_2->DrawCopy();
+  //   c_cut8->cd(2);
+  //   h32_3_2->DrawCopy();
 
   // histo3
   h21_1_3->SetLineColor(kBlue);
@@ -1693,27 +1698,27 @@ void myBestFit() {
   h31_1_3->SetLineColor(kBlack);
   h31_1_3->SetLineWidth(2);
   c_cut9->cd(1);
-  h21_1_3->DrawCopy();
-  c_cut9->cd(2);
-  h31_1_3->DrawCopy();
+  //   h21_1_3->DrawCopy();
+  //   c_cut9->cd(2);
+  //   h31_1_3->DrawCopy();
 
   h21_2_3->SetLineColor(kBlue);
   h21_2_3->SetLineWidth(2);
   h32_2_3->SetLineColor(kBlack);
   h32_2_3->SetLineWidth(2);
   c_cut10->cd(1);
-  h21_2_3->DrawCopy();
-  c_cut10->cd(2);
-  h32_2_3->DrawCopy();
+  //   h21_2_3->DrawCopy();
+  //   c_cut10->cd(2);
+  //   h32_2_3->DrawCopy();
 
   h31_3_3->SetLineColor(kBlue);
   h31_3_3->SetLineWidth(2);
   h32_3_3->SetLineColor(kBlack);
   h32_3_3->SetLineWidth(2);
   c_cut11->cd(1);
-  h31_3_3->DrawCopy();
-  c_cut11->cd(2);
-  h32_3_3->DrawCopy();
+  //   h31_3_3->DrawCopy();
+  //   c_cut11->cd(2);
+  //   h32_3_3->DrawCopy();
 
   // histo4
   h21_1_4->SetLineColor(kBlue);
@@ -1721,27 +1726,27 @@ void myBestFit() {
   h31_1_4->SetLineColor(kBlack);
   h31_1_4->SetLineWidth(2);
   c_cut12->cd(1);
-  h21_1_4->DrawCopy();
-  c_cut12->cd(2);
-  h31_1_4->DrawCopy();
+  //   h21_1_4->DrawCopy();
+  //   c_cut12->cd(2);
+  //   h31_1_4->DrawCopy();
 
   h21_2_4->SetLineColor(kBlue);
   h21_2_4->SetLineWidth(2);
   h32_2_4->SetLineColor(kBlack);
   h32_2_4->SetLineWidth(2);
   c_cut13->cd(1);
-  h21_2_4->DrawCopy();
-  c_cut13->cd(2);
-  h32_2_4->DrawCopy();
+  //   h21_2_4->DrawCopy();
+  //   c_cut13->cd(2);
+  //   h32_2_4->DrawCopy();
 
   h31_3_4->SetLineColor(kBlue);
   h31_3_4->SetLineWidth(2);
   h32_3_4->SetLineColor(kBlack);
   h32_3_4->SetLineWidth(2);
   c_cut14->cd(1);
-  h31_3_4->DrawCopy();
-  c_cut14->cd(2);
-  h32_3_4->DrawCopy();
+  //   h31_3_4->DrawCopy();
+  //   c_cut14->cd(2);
+  //   h32_3_4->DrawCopy();
 
   // histo5
   h21_1_5->SetLineColor(kBlue);
@@ -1749,27 +1754,27 @@ void myBestFit() {
   h31_1_5->SetLineColor(kBlack);
   h31_1_5->SetLineWidth(2);
   c_cut15->cd(1);
-  h21_1_5->DrawCopy();
-  c_cut15->cd(2);
-  h31_1_5->DrawCopy();
+  //   h21_1_5->DrawCopy();
+  //   c_cut15->cd(2);
+  //   h31_1_5->DrawCopy();
 
   h21_2_5->SetLineColor(kBlue);
   h21_2_5->SetLineWidth(2);
   h32_2_5->SetLineColor(kBlack);
   h32_2_5->SetLineWidth(2);
   c_cut16->cd(1);
-  h21_2_5->DrawCopy();
-  c_cut16->cd(2);
-  h32_2_5->DrawCopy();
+  //   h21_2_5->DrawCopy();
+  //   c_cut16->cd(2);
+  //   h32_2_5->DrawCopy();
 
   h31_3_5->SetLineColor(kBlue);
   h31_3_5->SetLineWidth(2);
   h32_3_5->SetLineColor(kBlack);
   h32_3_5->SetLineWidth(2);
   c_cut17->cd(1);
-  h31_3_5->DrawCopy();
-  c_cut17->cd(2);
-  h32_3_5->DrawCopy();
+  //   h31_3_5->DrawCopy();
+  //   c_cut17->cd(2);
+  //   h32_3_5->DrawCopy();
 
   // define legend
   TLegend *leg1 = new TLegend(.70, .7, .9, .9, "Legenda");
@@ -1787,6 +1792,10 @@ void myBestFit() {
 
   black->GetXaxis()->SetRangeUser(0., 13.);
   black->GetYaxis()->SetRangeUser(0., 11.);
+  black->GetXaxis()->SetTitleSize(0.05);
+  black->GetYaxis()->SetTitleSize(0.05);
+  black->GetXaxis()->SetTitleOffset(0.85);
+  black->GetYaxis()->SetTitleOffset(0.6);
 
   // final recosntruction
   TCanvas *c_multigr_final =
@@ -1941,6 +1950,572 @@ void myBestFit() {
   myCut17->SetLineWidth(3);
   myCut17->SetLineStyle(2);
 
+  // canvas black reconstructed fragments
+  //   TCanvas *c_Total_black1 =
+  //       new TCanvas("c_Total_black1", "c_Total_black1", 900, 1100);
+  //   TCanvas *c_Total_black2 =
+  //       new TCanvas("c_Total_black2", "c_Total_black2", 900, 1100);
+  //   TCanvas *c_Total_black3 =
+  //       new TCanvas("c_Total_black3", "c_Total_black3", 900, 1100);
+  //   TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
+  //   leg3->SetFillColor(0);
+  //   leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  //   f_cut0_1->SetLineColor(kRed);
+  //   leg3->AddEntry(f_cut0_1, "Fit", "L");
+
+  //   c_Total_black1->Divide(2, 3);
+  //   c_Total_black2->Divide(2, 3);
+  //   c_Total_black3->Divide(2, 3);
+
+  //   c_Total_black1->cd(1);
+  //   h31_1_0->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black1->cd(2);
+  //   h31_1_1->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black1->cd(3);
+  //   h31_1_2->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black1->cd(4);
+  //   h31_1_3->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black1->cd(5);
+  //   h31_1_4->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black1->cd(6);
+  //   h31_1_5->Draw();
+  //   leg3->Draw("same");
+
+  //   c_Total_black2->cd(1);
+  //   h32_2_0->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black2->cd(2);
+  //   h32_2_1->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black2->cd(3);
+  //   h32_2_2->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black2->cd(4);
+  //   h32_2_3->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black2->cd(5);
+  //   h32_2_4->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black2->cd(6);
+  //   h32_2_5->Draw();
+  //   leg3->Draw("same");
+
+  //   c_Total_black3->cd(1);
+  //   h32_3_0->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black3->cd(2);
+  //   h32_3_1->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black3->cd(3);
+  //   h32_3_2->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black3->cd(4);
+  //   h32_3_3->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black3->cd(5);
+  //   h32_3_4->Draw();
+  //   leg3->Draw("same");
+  //   c_Total_black3->cd(6);
+  //   h32_3_5->Draw();
+  //   leg3->Draw("same");
+
+  h31_1_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h32_2_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h32_3_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h21_1_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h21_2_0->GetXaxis()->SetRangeUser(0., 4.5);
+  h31_3_0->GetXaxis()->SetRangeUser(0., 4.5);
+
+  h31_1_1->GetXaxis()->SetRangeUser(0., 8.);
+  h32_2_1->GetXaxis()->SetRangeUser(0., 8.);
+  h32_3_1->GetXaxis()->SetRangeUser(0., 8.);
+  h21_1_1->GetXaxis()->SetRangeUser(0., 8.);
+  h21_2_1->GetXaxis()->SetRangeUser(0., 8.);
+  h31_3_1->GetXaxis()->SetRangeUser(0., 8.);
+
+  h31_1_2->GetXaxis()->SetRangeUser(2., 12.);
+  h32_2_2->GetXaxis()->SetRangeUser(2., 12.);
+  h32_3_2->GetXaxis()->SetRangeUser(2., 12.);
+  h21_1_2->GetXaxis()->SetRangeUser(2., 12.);
+  h21_2_2->GetXaxis()->SetRangeUser(2., 12.);
+  h31_3_2->GetXaxis()->SetRangeUser(2., 12.);
+
+  h31_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h32_3_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_1_3->GetXaxis()->SetRangeUser(4., 14.);
+  h21_2_3->GetXaxis()->SetRangeUser(4., 14.);
+  h31_3_3->GetXaxis()->SetRangeUser(4., 14.);
+
+  h31_1_4->GetXaxis()->SetRangeUser(4., 17.);
+  h32_2_4->GetXaxis()->SetRangeUser(4., 17.);
+  h32_3_4->GetXaxis()->SetRangeUser(4., 17.);
+  h21_1_4->GetXaxis()->SetRangeUser(4., 17.);
+  h21_2_4->GetXaxis()->SetRangeUser(4., 17.);
+  h31_3_4->GetXaxis()->SetRangeUser(4., 17.);
+
+  h31_1_5->GetXaxis()->SetRangeUser(6., 19.);
+  h32_2_5->GetXaxis()->SetRangeUser(6., 19.);
+  h32_3_5->GetXaxis()->SetRangeUser(6., 19.);
+  h21_1_5->GetXaxis()->SetRangeUser(6., 19.);
+  h21_2_5->GetXaxis()->SetRangeUser(6., 19.);
+  h31_3_5->GetXaxis()->SetRangeUser(6., 19.);
+
+  //   h31_1_0->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_0->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_0->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_0->GetYaxis()->SetTitleOffset(0.53);
+  //   h31_1_1->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_1->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_1->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_1->GetYaxis()->SetTitleOffset(0.53);
+  //   h31_1_2->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_2->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_2->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_2->GetYaxis()->SetTitleOffset(0.53);
+  //   h31_1_3->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_3->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_3->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_3->GetYaxis()->SetTitleOffset(0.53);
+  //   h31_1_4->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_4->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_4->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_4->GetYaxis()->SetTitleOffset(0.53);
+  //   h31_1_5->GetXaxis()->SetTitleSize(0.19);
+  //   h31_1_5->GetYaxis()->SetTitleSize(0.19);
+  //   h31_1_5->GetXaxis()->SetTitleOffset(0.56);
+  //   h31_1_5->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_0->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_0->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_0->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_0->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_1->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_1->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_1->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_1->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_2->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_2->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_2->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_2->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_3->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_3->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_3->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_3->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_4->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_4->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_4->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_4->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_2_5->GetXaxis()->SetTitleSize(0.19);
+  //   h32_2_5->GetYaxis()->SetTitleSize(0.19);
+  //   h32_2_5->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_2_5->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_0->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_0->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_0->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_0->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_1->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_1->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_1->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_1->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_2->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_2->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_2->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_2->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_3->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_3->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_3->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_3->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_4->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_4->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_4->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_4->GetYaxis()->SetTitleOffset(0.53);
+  //   h32_3_5->GetXaxis()->SetTitleSize(0.19);
+  //   h32_3_5->GetYaxis()->SetTitleSize(0.19);
+  //   h32_3_5->GetXaxis()->SetTitleOffset(0.56);
+  //   h32_3_5->GetYaxis()->SetTitleOffset(0.53);
+
+  // canvas black/blue reconstructed fragments
+  TCanvas *c_Total_black_blue1 =
+      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 2500, 1200);
+  TCanvas *c_Total_black_blue2 =
+      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 2500, 1200);
+  TCanvas *c_Total_black_blue3 =
+      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 2500, 1200);
+  TLegend *leg4 = new TLegend(.6, .7, .9, .9, "Legenda");
+  leg4->SetFillColor(0);
+  leg4->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
+  leg4->AddEntry(h21_1_3, "Taglio di tipo 2", "L");
+  f_cut0_1->SetLineColor(kRed);
+  leg4->AddEntry(f_cut0_1, "Fit", "L");
+
+  c_Total_black_blue1->Divide(3, 2);
+  c_Total_black_blue2->Divide(3, 2);
+  c_Total_black_blue3->Divide(3, 2);
+
+  // Draw label isotopes
+  TPaveText *latex0 = new TPaveText(1., 300., 1.5, 400.);
+  latex0->AddText("{}^{1}H");
+  latex0->SetTextSize(0.06);
+  latex0->SetFillColor(kWhite);
+  TPaveText *latex1 = new TPaveText(1., 300., 1.5, 400.);
+  latex1->AddText("{}^{2}H");
+  latex1->SetTextSize(0.06);
+  latex1->SetFillColor(kWhite);
+  TPaveText *latex2 = new TPaveText(1., 300., 1.5, 400.);
+  latex2->AddText("{}^{3}H");
+  latex2->SetTextSize(0.06);
+  latex2->SetFillColor(kWhite);
+  TPaveText *latex3 = new TPaveText(1., 500., 1.5, 750.);
+  latex3->AddText("{}^{3}He");
+  latex3->SetTextSize(0.06);
+  latex3->SetFillColor(kWhite);
+  TPaveText *latex4 = new TPaveText(1., 500., 1.5, 750.);
+  latex4->AddText("{}^{4}He");
+  latex4->SetTextSize(0.06);
+  latex4->SetFillColor(kWhite);
+  TPaveText *latex5 = new TPaveText(3., 100., 4., 150.);
+  latex5->AddText("{}^{6}Li");
+  latex5->SetTextSize(0.06);
+  latex5->SetFillColor(kWhite);
+  TPaveText *latex6 = new TPaveText(3., 100., 4., 150.);
+  latex6->AddText("{}^{7}Li");
+  latex6->SetTextSize(0.06);
+  latex6->SetFillColor(kWhite);
+  TPaveText *latex7 = new TPaveText(3., 100., 4., 150.);
+  latex7->AddText("{}^{8}Li");
+  latex7->SetTextSize(0.06);
+  latex7->SetFillColor(kWhite);
+  TPaveText *latex8 = new TPaveText(6., 40., 7., 70.);
+  latex8->AddText("{}^{7}Be");
+  latex8->SetTextSize(0.06);
+  latex8->SetFillColor(kWhite);
+  TPaveText *latex9 = new TPaveText(6., 40., 7., 70.);
+  latex9->AddText("{}^{9}Be");
+  latex9->SetTextSize(0.06);
+  latex9->SetFillColor(kWhite);
+  TPaveText *latex10 = new TPaveText(6., 40., 7., 70.);
+  latex10->AddText("{}^{10}Be");
+  latex10->SetTextSize(0.06);
+  latex10->SetFillColor(kWhite);
+  TPaveText *latex11 = new TPaveText(6., 300., 7., 400.);
+  latex11->AddText("{}^{8}B");
+  latex11->SetTextSize(0.06);
+  latex11->SetFillColor(kWhite);
+  TPaveText *latex12 = new TPaveText(6., 300., 7., 400.);
+  latex12->AddText("{}^{10}B");
+  latex12->SetTextSize(0.06);
+  latex12->SetFillColor(kWhite);
+  TPaveText *latex13 = new TPaveText(6., 300., 7., 400.);
+  latex13->AddText("{}^{11}B");
+  latex13->SetTextSize(0.06);
+  latex13->SetFillColor(kWhite);
+  TPaveText *latex14 = new TPaveText(8., 50., 9., 100.);
+  latex14->AddText("{}^{12}C");
+  latex14->SetTextSize(0.06);
+  latex14->SetFillColor(kWhite);
+
+  h21_1_0->GetXaxis()->SetTitle("A_{1}");
+  h21_1_0->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_0->GetXaxis()->SetTitleSize(0.07);
+  h21_1_0->GetYaxis()->SetTitleSize(0.07);
+  h21_1_0->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_0->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_0->Draw();
+  h31_1_0->Draw("same");
+  leg4->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
+
+  h21_1_1->GetXaxis()->SetTitle("A_{1}");
+  h21_1_1->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_1->GetXaxis()->SetTitleSize(0.07);
+  h21_1_1->GetYaxis()->SetTitleSize(0.07);
+  h21_1_1->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_1->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_1->Draw();
+  h31_1_1->Draw("same");
+  leg4->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
+
+  h21_1_2->GetXaxis()->SetTitle("A_{1}");
+  h21_1_2->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_2->GetXaxis()->SetTitleSize(0.07);
+  h21_1_2->GetYaxis()->SetTitleSize(0.07);
+  h21_1_2->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_2->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(3);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_2->Draw();
+  h31_1_2->Draw("same");
+  leg4->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
+
+  h21_1_3->GetXaxis()->SetTitle("A_{1}");
+  h21_1_3->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_3->GetXaxis()->SetTitleSize(0.07);
+  h21_1_3->GetYaxis()->SetTitleSize(0.07);
+  h21_1_3->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_3->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(4);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_3->Draw();
+  h31_1_3->Draw("same");
+  leg4->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
+
+  h21_1_4->GetXaxis()->SetTitle("A_{1}");
+  h21_1_4->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_4->GetXaxis()->SetTitleSize(0.07);
+  h21_1_4->GetYaxis()->SetTitleSize(0.07);
+  h21_1_4->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_4->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(5);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_4->Draw();
+  h31_1_4->Draw("same");
+  leg4->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
+
+  h21_1_5->GetXaxis()->SetTitle("A_{1}");
+  h21_1_5->GetYaxis()->SetTitle("Occorrenze");
+  h21_1_5->GetXaxis()->SetTitleSize(0.07);
+  h21_1_5->GetYaxis()->SetTitleSize(0.07);
+  h21_1_5->GetXaxis()->SetTitleOffset(0.64);
+  h21_1_5->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue1->cd(6);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_1_5->Draw();
+  h31_1_5->Draw("same");
+  leg4->Draw("same");
+  latex14->Draw("same");
+
+  h21_2_0->GetXaxis()->SetTitle("A_{2}");
+  h21_2_0->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_0->GetXaxis()->SetTitleSize(0.07);
+  h21_2_0->GetYaxis()->SetTitleSize(0.07);
+  h21_2_0->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_0->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_0->Draw();
+  h32_2_0->Draw("same");
+  leg4->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
+
+  h21_2_1->GetXaxis()->SetTitle("A_{2}");
+  h21_2_1->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_1->GetXaxis()->SetTitleSize(0.07);
+  h21_2_1->GetYaxis()->SetTitleSize(0.07);
+  h21_2_1->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_1->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_1->Draw();
+  h32_2_1->Draw("same");
+  leg4->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
+
+  h21_2_2->GetXaxis()->SetTitle("A_{2}");
+  h21_2_2->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_2->GetXaxis()->SetTitleSize(0.07);
+  h21_2_2->GetYaxis()->SetTitleSize(0.07);
+  h21_2_2->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_2->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(3);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_2->Draw();
+  h32_2_2->Draw("same");
+  leg4->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
+
+  h21_2_3->GetXaxis()->SetTitle("A_{2}");
+  h21_2_3->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_3->GetXaxis()->SetTitleSize(0.07);
+  h21_2_3->GetYaxis()->SetTitleSize(0.07);
+  h21_2_3->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_3->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(4);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_3->Draw();
+  h32_2_3->Draw("same");
+  leg4->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
+
+  h21_2_4->GetXaxis()->SetTitle("A_{2}");
+  h21_2_4->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_4->GetXaxis()->SetTitleSize(0.07);
+  h21_2_4->GetYaxis()->SetTitleSize(0.07);
+  h21_2_4->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_4->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(5);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_4->Draw();
+  h32_2_4->Draw("same");
+  leg4->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
+
+  h21_2_5->GetXaxis()->SetTitle("A_{2}");
+  h21_2_5->GetYaxis()->SetTitle("Occorrenze");
+  h21_2_5->GetXaxis()->SetTitleSize(0.07);
+  h21_2_5->GetYaxis()->SetTitleSize(0.07);
+  h21_2_5->GetXaxis()->SetTitleOffset(0.64);
+  h21_2_5->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue2->cd(6);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h21_2_5->Draw();
+  h32_2_5->Draw("same");
+  leg4->Draw("same");
+  latex14->Draw("same");
+
+  h31_3_0->GetXaxis()->SetTitle("A_{3}");
+  h31_3_0->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_0->GetXaxis()->SetTitleSize(0.07);
+  h31_3_0->GetYaxis()->SetTitleSize(0.07);
+  h31_3_0->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_0->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_0->Draw();
+  h32_3_0->Draw("same");
+  leg4->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
+
+  h31_3_1->GetXaxis()->SetTitle("A_{3}");
+  h31_3_1->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_1->GetXaxis()->SetTitleSize(0.07);
+  h31_3_1->GetYaxis()->SetTitleSize(0.07);
+  h31_3_1->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_1->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_1->Draw();
+  h32_3_1->Draw("same");
+  leg4->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
+
+  h31_3_2->GetXaxis()->SetTitle("A_{3}");
+  h31_3_2->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_2->GetXaxis()->SetTitleSize(0.07);
+  h31_3_2->GetYaxis()->SetTitleSize(0.07);
+  h31_3_2->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_2->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(3);
+  gPad->SetLeftMargin(0.9);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_2->Draw();
+  h32_3_2->Draw("same");
+  leg4->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
+
+  h31_3_3->GetXaxis()->SetTitle("A_{3}");
+  h31_3_3->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_3->GetXaxis()->SetTitleSize(0.07);
+  h31_3_3->GetYaxis()->SetTitleSize(0.07);
+  h31_3_3->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_3->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(4);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_3->Draw();
+  h32_3_3->Draw("same");
+  leg4->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
+
+  h31_3_4->GetXaxis()->SetTitle("A_{3}");
+  h31_3_4->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_4->GetXaxis()->SetTitleSize(0.07);
+  h31_3_4->GetYaxis()->SetTitleSize(0.07);
+  h31_3_4->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_4->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(5);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_4->Draw();
+  h32_3_4->Draw("same");
+  leg4->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
+
+  h31_3_5->GetXaxis()->SetTitle("A_{3}");
+  h31_3_5->GetYaxis()->SetTitle("Occorrenze");
+  h31_3_5->GetXaxis()->SetTitleSize(0.07);
+  h31_3_5->GetYaxis()->SetTitleSize(0.07);
+  h31_3_5->GetXaxis()->SetTitleOffset(0.64);
+  h31_3_5->GetYaxis()->SetTitleOffset(0.7);
+  c_Total_black_blue3->cd(6);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  h31_3_5->Draw();
+  h32_3_5->Draw("same");
+  leg4->Draw("same");
+  latex14->Draw("same");
+
   // drawing histos on multicanvas
   TCanvas *c_MultiCanvas1 =
       new TCanvas("c_MultiCanvas1", "c_MultiCanvas1", 700, 900);
@@ -2088,215 +2663,6 @@ void myBestFit() {
   myCut17->Draw("same");
   leg2->Draw("same");
 
-  // canvas black reconstructed fragments
-  TCanvas *c_Total_black1 =
-      new TCanvas("c_Total_black1", "c_Total_black1", 900, 1100);
-  TCanvas *c_Total_black2 =
-      new TCanvas("c_Total_black2", "c_Total_black2", 900, 1100);
-  TCanvas *c_Total_black3 =
-      new TCanvas("c_Total_black3", "c_Total_black3", 900, 1100);
-  TLegend *leg3 = new TLegend(.6, .78, .9, .9, "Legenda");
-  leg3->SetFillColor(0);
-  leg3->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
-  f_cut0_1->SetLineColor(kRed);
-  leg3->AddEntry(f_cut0_1, "Fit", "L");
-
-  c_Total_black1->Divide(2, 3);
-  c_Total_black2->Divide(2, 3);
-  c_Total_black3->Divide(2, 3);
-
-  c_Total_black1->cd(1);
-  h31_1_0->Draw();
-  leg3->Draw("same");
-  c_Total_black1->cd(2);
-  h31_1_1->Draw();
-  leg3->Draw("same");
-  c_Total_black1->cd(3);
-  h31_1_2->Draw();
-  leg3->Draw("same");
-  c_Total_black1->cd(4);
-  h31_1_3->Draw();
-  leg3->Draw("same");
-  c_Total_black1->cd(5);
-  h31_1_4->Draw();
-  leg3->Draw("same");
-  c_Total_black1->cd(6);
-  h31_1_5->Draw();
-  leg3->Draw("same");
-
-  c_Total_black2->cd(1);
-  h32_2_0->Draw();
-  leg3->Draw("same");
-  c_Total_black2->cd(2);
-  h32_2_1->Draw();
-  leg3->Draw("same");
-  c_Total_black2->cd(3);
-  h32_2_2->Draw();
-  leg3->Draw("same");
-  c_Total_black2->cd(4);
-  h32_2_3->Draw();
-  leg3->Draw("same");
-  c_Total_black2->cd(5);
-  h32_2_4->Draw();
-  leg3->Draw("same");
-  c_Total_black2->cd(6);
-  h32_2_5->Draw();
-  leg3->Draw("same");
-
-  c_Total_black3->cd(1);
-  h32_3_0->Draw();
-  leg3->Draw("same");
-  c_Total_black3->cd(2);
-  h32_3_1->Draw();
-  leg3->Draw("same");
-  c_Total_black3->cd(3);
-  h32_3_2->Draw();
-  leg3->Draw("same");
-  c_Total_black3->cd(4);
-  h32_3_3->Draw();
-  leg3->Draw("same");
-  c_Total_black3->cd(5);
-  h32_3_4->Draw();
-  leg3->Draw("same");
-  c_Total_black3->cd(6);
-  h32_3_5->Draw();
-  leg3->Draw("same");
-
-  h31_1_0->GetXaxis()->SetRangeUser(0., 4.5);
-  h32_2_0->GetXaxis()->SetRangeUser(0., 4.5);
-  h32_3_0->GetXaxis()->SetRangeUser(0., 4.5);
-  h21_1_0->GetXaxis()->SetRangeUser(0., 4.5);
-  h21_2_0->GetXaxis()->SetRangeUser(0., 4.5);
-  h31_3_0->GetXaxis()->SetRangeUser(0., 4.5);
-
-  h31_1_1->GetXaxis()->SetRangeUser(0., 8.);
-  h32_2_1->GetXaxis()->SetRangeUser(0., 8.);
-  h32_3_1->GetXaxis()->SetRangeUser(0., 8.);
-  h21_1_1->GetXaxis()->SetRangeUser(0., 8.);
-  h21_2_1->GetXaxis()->SetRangeUser(0., 8.);
-  h31_3_1->GetXaxis()->SetRangeUser(0., 8.);
-
-  h31_1_2->GetXaxis()->SetRangeUser(2., 12.);
-  h32_2_2->GetXaxis()->SetRangeUser(2., 12.);
-  h32_3_2->GetXaxis()->SetRangeUser(2., 12.);
-  h21_1_2->GetXaxis()->SetRangeUser(2., 12.);
-  h21_2_2->GetXaxis()->SetRangeUser(2., 12.);
-  h31_3_2->GetXaxis()->SetRangeUser(2., 12.);
-
-  h31_1_3->GetXaxis()->SetRangeUser(4., 14.);
-  h32_2_3->GetXaxis()->SetRangeUser(4., 14.);
-  h32_3_3->GetXaxis()->SetRangeUser(4., 14.);
-  h21_1_3->GetXaxis()->SetRangeUser(4., 14.);
-  h21_2_3->GetXaxis()->SetRangeUser(4., 14.);
-  h31_3_3->GetXaxis()->SetRangeUser(4., 14.);
-
-  h31_1_4->GetXaxis()->SetRangeUser(4., 17.);
-  h32_2_4->GetXaxis()->SetRangeUser(4., 17.);
-  h32_3_4->GetXaxis()->SetRangeUser(4., 17.);
-  h21_1_4->GetXaxis()->SetRangeUser(4., 17.);
-  h21_2_4->GetXaxis()->SetRangeUser(4., 17.);
-  h31_3_4->GetXaxis()->SetRangeUser(4., 17.);
-
-  h31_1_5->GetXaxis()->SetRangeUser(6., 19.);
-  h32_2_5->GetXaxis()->SetRangeUser(6., 19.);
-  h32_3_5->GetXaxis()->SetRangeUser(6., 19.);
-  h21_1_5->GetXaxis()->SetRangeUser(6., 19.);
-  h21_2_5->GetXaxis()->SetRangeUser(6., 19.);
-  h31_3_5->GetXaxis()->SetRangeUser(6., 19.);
-
-  // canvas black/blue reconstructed fragments
-  TCanvas *c_Total_black_blue1 =
-      new TCanvas("c_Total_black_blue1", "c_Total_black_blue1", 2500, 1200);
-  TCanvas *c_Total_black_blue2 =
-      new TCanvas("c_Total_black_blue2", "c_Total_black_blue2", 2500, 1200);
-  TCanvas *c_Total_black_blue3 =
-      new TCanvas("c_Total_black_blue3", "c_Total_black_blue3", 2500, 1200);
-  TLegend *leg4 = new TLegend(.6, .7, .9, .9, "Legenda");
-  leg4->SetFillColor(0);
-  leg4->AddEntry(h31_1_3, "Taglio di tipo 1", "L");
-  leg4->AddEntry(h21_1_3, "Taglio di tipo 2", "L");
-  f_cut0_1->SetLineColor(kRed);
-  leg4->AddEntry(f_cut0_1, "Fit", "L");
-
-  c_Total_black_blue1->Divide(3, 2);
-  c_Total_black_blue2->Divide(3, 2);
-  c_Total_black_blue3->Divide(3, 2);
-
-  c_Total_black_blue1->cd(1);
-  h21_1_0->Draw();
-  h31_1_0->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue1->cd(2);
-  h21_1_1->Draw();
-  h31_1_1->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue1->cd(3);
-  h21_1_2->Draw();
-  h31_1_2->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue1->cd(4);
-  h21_1_3->Draw();
-  h31_1_3->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue1->cd(5);
-  h21_1_4->Draw();
-  h31_1_4->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue1->cd(6);
-  h21_1_5->Draw();
-  h31_1_5->Draw("same");
-  leg4->Draw("same");
-
-  c_Total_black_blue2->cd(1);
-  h21_2_0->Draw();
-  h32_2_0->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue2->cd(2);
-  h21_2_1->Draw();
-  h32_2_1->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue2->cd(3);
-  h21_2_2->Draw();
-  h32_2_2->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue2->cd(4);
-  h21_2_3->Draw();
-  h32_2_3->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue2->cd(5);
-  h21_2_4->Draw();
-  h32_2_4->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue2->cd(6);
-  h21_2_5->Draw();
-  h32_2_5->Draw("same");
-  leg4->Draw("same");
-
-  c_Total_black_blue3->cd(1);
-  h31_3_0->Draw();
-  h32_3_0->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue3->cd(2);
-  h31_3_1->Draw();
-  h32_3_1->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue3->cd(3);
-  h31_3_2->Draw();
-  h32_3_2->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue3->cd(4);
-  h31_3_3->Draw();
-  h32_3_3->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue3->cd(5);
-  h31_3_4->Draw();
-  h32_3_4->Draw("same");
-  leg4->Draw("same");
-  c_Total_black_blue3->cd(6);
-  h31_3_5->Draw();
-  h32_3_5->Draw("same");
-  leg4->Draw("same");
-
   // some cout for % error
   auto it1_max = std::max_element(v_black_a1_err.begin(), v_black_a1_err.end());
   auto it1_min = std::min_element(v_black_a1_err.begin(), v_black_a1_err.end());
@@ -2383,18 +2749,18 @@ void myBestFit() {
   c_cutDouble15->Write();
   c_cutDouble16->Write();
   c_cutDouble17->Write();
+  //   c_Total_black1->Write();
+  //   c_Total_black2->Write();
+  //   c_Total_black3->Write();
+  c_Total_black_blue1->Write();
+  c_Total_black_blue2->Write();
+  c_Total_black_blue3->Write();
   c_MultiCanvas1->Write();
   c_MultiCanvas2->Write();
   c_MultiCanvas3->Write();
   c_MultiCanvasCut1->Write();
   c_MultiCanvasCut2->Write();
   c_MultiCanvasCut3->Write();
-  c_Total_black1->Write();
-  c_Total_black2->Write();
-  c_Total_black3->Write();
-  c_Total_black_blue1->Write();
-  c_Total_black_blue2->Write();
-  c_Total_black_blue3->Write();
 
   file2->Close();
   file1->Close();

@@ -1,6 +1,7 @@
 #include <vector>
 
 #include "TCanvas.h"
+#include "TColor.h"
 #include "TCutG.h"
 #include "TF1.h"
 #include "TFile.h"
@@ -10,6 +11,7 @@
 #include "TLegend.h"
 #include "TMultiGraph.h"
 #include "TPad.h"
+#include "TPaveText.h"
 #include "TROOT.h"
 #include "TStyle.h"
 #include "myAnalysis.h"
@@ -20,17 +22,20 @@ void setFitStyle() {
   gStyle->SetOptFit(0);
   gStyle->SetPalette(57);
   gStyle->SetOptTitle(1);
+  gStyle->SetTitleFontSize(0.091f);
   gStyle->SetTitleBorderSize(0);
+  gStyle->SetTitleStyle(0);
   gStyle->SetStatY(0.9);
   gStyle->SetStatX(0.9);
   gStyle->SetStatW(0.2);
   gStyle->SetStatH(0.2);
   gStyle->SetTitleX(0.5);
-  gStyle->SetTitleY(0.98);
+  gStyle->SetTitleY(1.);
   gStyle->SetTitleAlign(23);
   gStyle->SetTitleBorderSize(0);
   gStyle->SetTitleXOffset(1.2f);
   gStyle->SetTitleYOffset(0.8f);
+  gStyle->SetPalette(kRainBow);
   // gStyle->SetPadTopMargin(-9.);
   // gStyle->SetPadRightMargin(-9.);
   // gStyle->SetPadBottomMargin(-9.);
@@ -206,10 +211,10 @@ void myBestTriFit() {
 
   // creating and filling 1D histos
   // histo0
-  TH1D *h21_1_0 = new TH1D("h21_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_1_0 = new TH1D("h21_1_0", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h21_1_0 = h_Acor0->ProjectionX("h21_1_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_1 = new TH1D("h0_1", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_1 = new TH1D("h0_1", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h0_1 = h_Acor0->ProjectionX("h0_1", 0, -1);
   h0_1->SetMarkerStyle(20);
   h0_1->SetMarkerSize(0.5);
@@ -219,10 +224,10 @@ void myBestTriFit() {
   h0_1->GetXaxis()->SetTitleSize(0.04);
   h0_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_0 = new TH1D("h21_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h21_2_0 = new TH1D("h21_2_0", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h21_2_0 = h_Acor0->ProjectionY("h21_2_0", 0, -1, "[myCut0]");
 
-  TH1D *h0_2 = new TH1D("h0_2", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_2 = new TH1D("h0_2", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h0_2 = h_Acor0->ProjectionY("h0_2", 0, -1);
   h0_2->SetMarkerStyle(20);
   h0_2->SetMarkerSize(0.5);
@@ -232,13 +237,13 @@ void myBestTriFit() {
   h0_2->GetXaxis()->SetTitleSize(0.04);
   h0_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_0 = new TH1D("h31_1_0", "H; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_1_0 = new TH1D("h31_1_0", "Z=1; A_{1}; Occorrenze", 300, 0., 8.);
   h31_1_0 = h_Acor6->ProjectionX("h31_1_0", 0, -1, "[myCut6]");
 
-  TH1D *h31_3_0 = new TH1D("h31_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h31_3_0 = new TH1D("h31_3_0", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h31_3_0 = h_Acor6->ProjectionY("h31_3_0", 0, -1, "[myCut6]");
 
-  TH1D *h0_3 = new TH1D("h0_3", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h0_3 = new TH1D("h0_3", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h0_3 = h_Acor6->ProjectionY("h0_3", 0, -1);
   h0_3->SetMarkerStyle(20);
   h0_3->SetMarkerSize(0.5);
@@ -248,17 +253,17 @@ void myBestTriFit() {
   h0_3->GetXaxis()->SetTitleSize(0.04);
   h0_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_0 = new TH1D("h32_2_0", "H; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_2_0 = new TH1D("h32_2_0", "Z=1; A_{2}; Occorrenze", 300, 0., 8.);
   h32_2_0 = h_Acor12->ProjectionX("h32_2_0", 0, -1, "[myCut12]");
 
-  TH1D *h32_3_0 = new TH1D("h32_3_0", "H; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h32_3_0 = new TH1D("h32_3_0", "Z=1; A_{3}; Occorrenze", 300, 0., 8.);
   h32_3_0 = h_Acor12->ProjectionY("h32_3_0", 0, -1, "[myCut12]");
 
   // histo1
-  TH1D *h21_1_1 = new TH1D("h21_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_1_1 = new TH1D("h21_1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 9.);
   h21_1_1 = h_Acor1->ProjectionX("h21_1_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_1 = new TH1D("h1_1", "He; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_1 = new TH1D("h1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 8.);
   h1_1 = h_Acor1->ProjectionX("h1_1", 0, -1);
   h1_1->SetMarkerStyle(20);
   h1_1->SetMarkerSize(0.5);
@@ -268,10 +273,10 @@ void myBestTriFit() {
   h1_1->GetXaxis()->SetTitleSize(0.04);
   h1_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_1 = new TH1D("h21_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h21_2_1 = new TH1D("h21_2_1", "Z=2; A_{2}; Occorrenze", 300, 0., 9.);
   h21_2_1 = h_Acor1->ProjectionY("h21_2_1", 0, -1, "[myCut1]");
 
-  TH1D *h1_2 = new TH1D("h1_2", "He; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_2 = new TH1D("h1_2", "Z=2; A_{2}; Occorrenze", 300, 0., 8.);
   h1_2 = h_Acor1->ProjectionY("h1_2", 0, -1);
   h1_2->SetMarkerStyle(20);
   h1_2->SetMarkerSize(0.5);
@@ -281,13 +286,13 @@ void myBestTriFit() {
   h1_2->GetXaxis()->SetTitleSize(0.04);
   h1_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_1 = new TH1D("h31_1_1", "He; A_{1}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_1_1 = new TH1D("h31_1_1", "Z=2; A_{1}; Occorrenze", 300, 0., 9.);
   h31_1_1 = h_Acor7->ProjectionX("h31_1_1", 0, -1, "[myCut7]");
 
-  TH1D *h31_3_1 = new TH1D("h31_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h31_3_1 = new TH1D("h31_3_1", "Z=2; A_{3}; Occorrenze", 300, 0., 9.);
   h31_3_1 = h_Acor7->ProjectionY("h31_3_1", 0, -1, "[myCut7]");
 
-  TH1D *h1_3 = new TH1D("h1_3", "He; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h1_3 = new TH1D("h1_3", "Z=2; A_{3}; Occorrenze", 300, 0., 8.);
   h1_3 = h_Acor7->ProjectionY("h1_3", 0, -1);
   h1_3->SetMarkerStyle(20);
   h1_3->SetMarkerSize(0.5);
@@ -297,17 +302,17 @@ void myBestTriFit() {
   h1_3->GetXaxis()->SetTitleSize(0.04);
   h1_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_1 = new TH1D("h32_2_1", "He; A_{2}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_2_1 = new TH1D("h32_2_1", "Z=2; A_{2}; Occorrenze", 300, 0., 9.);
   h32_2_1 = h_Acor13->ProjectionX("h32_2_1", 0, -1, "[myCut13]");
 
-  TH1D *h32_3_1 = new TH1D("h32_3_1", "He; A_{3}; Occorrenze", 300, 0., 9.);
+  TH1D *h32_3_1 = new TH1D("h32_3_1", "Z=2; A_{3}; Occorrenze", 300, 0., 9.);
   h32_3_1 = h_Acor13->ProjectionY("h32_3_1", 0, -1, "[myCut13]");
 
   // histo2
-  TH1D *h21_1_2 = new TH1D("h21_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_1_2 = new TH1D("h21_1_2", "Z=3; A_{1}; Occorrenze", 300, 2., 18.);
   h21_1_2 = h_Acor2->ProjectionX("h21_1_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_1 = new TH1D("h2_1", "Li; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_1 = new TH1D("h2_1", "Z=3; A_{1}; Occorrenze", 300, 0., 8.);
   h2_1 = h_Acor2->ProjectionX("h2_1", 0, -1);
   h2_1->SetMarkerStyle(20);
   h2_1->SetMarkerSize(0.5);
@@ -317,10 +322,10 @@ void myBestTriFit() {
   h2_1->GetXaxis()->SetTitleSize(0.04);
   h2_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_2 = new TH1D("h21_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h21_2_2 = new TH1D("h21_2_2", "Z=3; A_{2}; Occorrenze", 300, 2., 18.);
   h21_2_2 = h_Acor2->ProjectionY("h21_2_2", 0, -1, "[myCut2]");
 
-  TH1D *h2_2 = new TH1D("h2_2", "Li; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_2 = new TH1D("h2_2", "Z=3; A_{2}; Occorrenze", 300, 0., 8.);
   h2_2 = h_Acor2->ProjectionY("h2_2", 0, -1);
   h2_2->SetMarkerStyle(20);
   h2_2->SetMarkerSize(0.5);
@@ -330,13 +335,13 @@ void myBestTriFit() {
   h2_2->GetXaxis()->SetTitleSize(0.04);
   h2_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_2 = new TH1D("h31_1_2", "Li; A_{1}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_1_2 = new TH1D("h31_1_2", "Z=3; A_{1}; Occorrenze", 300, 2., 18.);
   h31_1_2 = h_Acor8->ProjectionX("h31_1_2", 0, -1, "[myCut8]");
 
-  TH1D *h31_3_2 = new TH1D("h31_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h31_3_2 = new TH1D("h31_3_2", "Z=3; A_{3}; Occorrenze", 300, 2., 18.);
   h31_3_2 = h_Acor8->ProjectionY("h31_3_2", 0, -1, "[myCut8]");
 
-  TH1D *h2_3 = new TH1D("h2_3", "Li; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h2_3 = new TH1D("h2_3", "Z=3; A_{3}; Occorrenze", 300, 0., 8.);
   h2_3 = h_Acor8->ProjectionY("h2_3", 0, -1);
   h2_3->SetMarkerStyle(20);
   h2_3->SetMarkerSize(0.5);
@@ -346,17 +351,17 @@ void myBestTriFit() {
   h2_3->GetXaxis()->SetTitleSize(0.04);
   h2_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_2 = new TH1D("h32_2_2", "Li; A_{2}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_2_2 = new TH1D("h32_2_2", "Z=3; A_{2}; Occorrenze", 300, 2., 18.);
   h32_2_2 = h_Acor14->ProjectionX("h32_2_2", 0, -1, "[myCut14]");
 
-  TH1D *h32_3_2 = new TH1D("h32_3_2", "Li; A_{3}; Occorrenze", 300, 2., 18.);
+  TH1D *h32_3_2 = new TH1D("h32_3_2", "Z=3; A_{3}; Occorrenze", 300, 2., 18.);
   h32_3_2 = h_Acor14->ProjectionY("h32_3_2", 0, -1, "[myCut14]");
 
   // histo3
-  TH1D *h21_1_3 = new TH1D("h21_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_1_3 = new TH1D("h21_1_3", "Z=4; A_{1}; Occorrenze", 300, 4., 20.);
   h21_1_3 = h_Acor3->ProjectionX("h21_1_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_1 = new TH1D("h3_1", "Be; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_1 = new TH1D("h3_1", "Z=4; A_{1}; Occorrenze", 300, 0., 8.);
   h3_1 = h_Acor3->ProjectionX("h3_1", 0, -1);
   h3_1->SetMarkerStyle(20);
   h3_1->SetMarkerSize(0.5);
@@ -366,10 +371,10 @@ void myBestTriFit() {
   h3_1->GetXaxis()->SetTitleSize(0.04);
   h3_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_3 = new TH1D("h21_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h21_2_3 = new TH1D("h21_2_3", "Z=4; A_{2}; Occorrenze", 300, 4., 20.);
   h21_2_3 = h_Acor3->ProjectionY("h21_2_3", 0, -1, "[myCut3]");
 
-  TH1D *h3_2 = new TH1D("h3_2", "Be; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_2 = new TH1D("h3_2", "Z=4; A_{2}; Occorrenze", 300, 0., 8.);
   h3_2 = h_Acor3->ProjectionY("h3_2", 0, -1);
   h3_2->SetMarkerStyle(20);
   h3_2->SetMarkerSize(0.5);
@@ -379,13 +384,13 @@ void myBestTriFit() {
   h3_2->GetXaxis()->SetTitleSize(0.04);
   h3_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_3 = new TH1D("h31_1_3", "Be; A_{1}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_1_3 = new TH1D("h31_1_3", "Z=4; A_{1}; Occorrenze", 300, 4., 20.);
   h31_1_3 = h_Acor9->ProjectionX("h31_1_3", 0, -1, "[myCut9]");
 
-  TH1D *h31_3_3 = new TH1D("h31_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h31_3_3 = new TH1D("h31_3_3", "Z=4; A_{3}; Occorrenze", 300, 4., 20.);
   h31_3_3 = h_Acor9->ProjectionY("h31_3_3", 0, -1, "[myCut9]");
 
-  TH1D *h3_3 = new TH1D("h3_3", "Be; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h3_3 = new TH1D("h3_3", "Z=4; A_{3}; Occorrenze", 300, 0., 8.);
   h3_3 = h_Acor9->ProjectionY("h3_3", 0, -1);
   h3_3->SetMarkerStyle(20);
   h3_3->SetMarkerSize(0.5);
@@ -395,17 +400,17 @@ void myBestTriFit() {
   h3_3->GetXaxis()->SetTitleSize(0.04);
   h3_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_3 = new TH1D("h32_2_3", "Be; A_{2}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_2_3 = new TH1D("h32_2_3", "Z=4; A_{2}; Occorrenze", 300, 4., 20.);
   h32_2_3 = h_Acor15->ProjectionX("h32_2_3", 0, -1, "[myCut15]");
 
-  TH1D *h32_3_3 = new TH1D("h32_3_3", "Be; A_{3}; Occorrenze", 300, 4., 20.);
+  TH1D *h32_3_3 = new TH1D("h32_3_3", "Z=4; A_{3}; Occorrenze", 300, 4., 20.);
   h32_3_3 = h_Acor15->ProjectionY("h32_3_3", 0, -1, "[myCut15]");
 
   // histo4
-  TH1D *h21_1_4 = new TH1D("h21_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_1_4 = new TH1D("h21_1_4", "Z=5; A_{1}; Occorrenze", 300, 4., 22.);
   h21_1_4 = h_Acor4->ProjectionX("h21_1_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_1 = new TH1D("h4_1", "B; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_1 = new TH1D("h4_1", "Z=5; A_{1}; Occorrenze", 300, 0., 8.);
   h4_1 = h_Acor4->ProjectionX("h4_1", 0, -1);
   h4_1->SetMarkerStyle(20);
   h4_1->SetMarkerSize(0.5);
@@ -415,10 +420,10 @@ void myBestTriFit() {
   h4_1->GetXaxis()->SetTitleSize(0.04);
   h4_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_4 = new TH1D("h21_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h21_2_4 = new TH1D("h21_2_4", "Z=5; A_{2}; Occorrenze", 300, 4., 22.);
   h21_2_4 = h_Acor4->ProjectionY("h21_2_4", 0, -1, "[myCut4]");
 
-  TH1D *h4_2 = new TH1D("h4_2", "B; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_2 = new TH1D("h4_2", "Z=5; A_{2}; Occorrenze", 300, 0., 8.);
   h4_2 = h_Acor4->ProjectionY("h4_2", 0, -1);
   h4_2->SetMarkerStyle(20);
   h4_2->SetMarkerSize(0.5);
@@ -428,13 +433,13 @@ void myBestTriFit() {
   h4_2->GetXaxis()->SetTitleSize(0.04);
   h4_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_4 = new TH1D("h31_1_4", "B; A_{1}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_1_4 = new TH1D("h31_1_4", "Z=5; A_{1}; Occorrenze", 300, 4., 22.);
   h31_1_4 = h_Acor10->ProjectionX("h31_1_4", 0, -1, "[myCut10]");
 
-  TH1D *h31_3_4 = new TH1D("h31_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h31_3_4 = new TH1D("h31_3_4", "Z=5; A_{3}; Occorrenze", 300, 4., 22.);
   h31_3_4 = h_Acor10->ProjectionY("h31_3_4", 0, -1, "[myCut10]");
 
-  TH1D *h4_3 = new TH1D("h4_3", "B; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h4_3 = new TH1D("h4_3", "Z=5; A_{3}; Occorrenze", 300, 0., 8.);
   h4_3 = h_Acor10->ProjectionY("h4_3", 0, -1);
   h4_3->SetMarkerStyle(20);
   h4_3->SetMarkerSize(0.5);
@@ -444,17 +449,17 @@ void myBestTriFit() {
   h4_3->GetXaxis()->SetTitleSize(0.04);
   h4_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_4 = new TH1D("h32_2_4", "B; A_{2}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_2_4 = new TH1D("h32_2_4", "Z=5; A_{2}; Occorrenze", 300, 4., 22.);
   h32_2_4 = h_Acor16->ProjectionX("h32_2_4", 0, -1, "[myCut16]");
 
-  TH1D *h32_3_4 = new TH1D("h32_3_4", "B; A_{3}; Occorrenze", 300, 4., 22.);
+  TH1D *h32_3_4 = new TH1D("h32_3_4", "Z=5; A_{3}; Occorrenze", 300, 4., 22.);
   h32_3_4 = h_Acor16->ProjectionY("h32_3_4", 0, -1, "[myCut16]");
 
   // histo5
-  TH1D *h21_1_5 = new TH1D("h21_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_1_5 = new TH1D("h21_1_5", "Z=6; A_{1}; Occorrenze", 300, 4., 24.);
   h21_1_5 = h_Acor5->ProjectionX("h21_1_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_1 = new TH1D("h5_1", "C; A_{1}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_1 = new TH1D("h5_1", "Z=6; A_{1}; Occorrenze", 300, 0., 8.);
   h5_1 = h_Acor5->ProjectionX("h5_1", 0, -1);
   h5_1->SetMarkerStyle(20);
   h5_1->SetMarkerSize(0.5);
@@ -464,10 +469,10 @@ void myBestTriFit() {
   h5_1->GetXaxis()->SetTitleSize(0.04);
   h5_1->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h21_2_5 = new TH1D("h21_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h21_2_5 = new TH1D("h21_2_5", "Z=6; A_{2}; Occorrenze", 300, 4., 24.);
   h21_2_5 = h_Acor5->ProjectionY("h21_2_5", 0, -1, "[myCut5]");
 
-  TH1D *h5_2 = new TH1D("h5_2", "C; A_{2}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_2 = new TH1D("h5_2", "Z=6; A_{2}; Occorrenze", 300, 0., 8.);
   h5_2 = h_Acor5->ProjectionY("h5_2", 0, -1);
   h5_2->SetMarkerStyle(20);
   h5_2->SetMarkerSize(0.5);
@@ -477,13 +482,13 @@ void myBestTriFit() {
   h5_2->GetXaxis()->SetTitleSize(0.04);
   h5_2->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h31_1_5 = new TH1D("h31_1_5", "C; A_{1}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_1_5 = new TH1D("h31_1_5", "Z=6; A_{1}; Occorrenze", 300, 4., 24.);
   h31_1_5 = h_Acor11->ProjectionX("h31_1_5", 0, -1, "[myCut11]");
 
-  TH1D *h31_3_5 = new TH1D("h31_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h31_3_5 = new TH1D("h31_3_5", "Z=6; A_{3}; Occorrenze", 300, 4., 24.);
   h31_3_5 = h_Acor11->ProjectionY("h31_3_5", 0, -1, "[myCut11]");
 
-  TH1D *h5_3 = new TH1D("h5_3", "C; A_{3}; Occorrenze", 300, 0., 8.);
+  TH1D *h5_3 = new TH1D("h5_3", "Z=6; A_{3}; Occorrenze", 300, 0., 8.);
   h5_3 = h_Acor5->ProjectionY("h5_3", 0, -1);
   h5_3->SetMarkerStyle(20);
   h5_3->SetMarkerSize(0.5);
@@ -493,10 +498,10 @@ void myBestTriFit() {
   h5_3->GetXaxis()->SetTitleSize(0.04);
   h5_3->GetYaxis()->SetTitleSize(0.04);
 
-  TH1D *h32_2_5 = new TH1D("h32_2_5", "C; A_{2}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_2_5 = new TH1D("h32_2_5", "Z=6; A_{2}; Occorrenze", 300, 4., 24.);
   h32_2_5 = h_Acor17->ProjectionX("h32_2_5", 0, -1, "[myCut17]");
 
-  TH1D *h32_3_5 = new TH1D("h32_3_5", "C; A_{3}; Occorrenze", 300, 4., 24.);
+  TH1D *h32_3_5 = new TH1D("h32_3_5", "Z=6; A_{3}; Occorrenze", 300, 4., 24.);
   h32_3_5 = h_Acor17->ProjectionY("h32_3_5", 0, -1, "[myCut17]");
 
   // histo cosmetics
@@ -1448,19 +1453,19 @@ void myBestTriFit() {
 
   // label points in graphs
   TLatex *latex1_1 =
-      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{1}_{1}H");
+      new TLatex(a1_black->GetX()[0], a1_black->GetY()[0], "  {}^{1}_{1}Z=1");
   a1_black->GetListOfFunctions()->Add(latex1_1);
   latex1_1->SetTextSize(0.05);
   latex1_1->SetTextAlign(12);
 
   TLatex *latex2_1 =
-      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{2}_{1}H");
+      new TLatex(a1_black->GetX()[1], a1_black->GetY()[1], "  {}^{2}_{1}Z=1");
   a1_black->GetListOfFunctions()->Add(latex2_1);
   latex2_1->SetTextSize(0.05);
   latex1_1->SetTextAlign(12);
 
   TLatex *latex3_1 =
-      new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}^{3}_{1}H");
+      new TLatex(a1_black->GetX()[2], a1_black->GetY()[2], "  {}^{3}_{1}Z=1");
   a1_black->GetListOfFunctions()->Add(latex3_1);
   latex3_1->SetTextSize(0.05);
   latex1_1->SetTextAlign(12);
@@ -1518,6 +1523,10 @@ void myBestTriFit() {
 
   z_error->GetXaxis()->SetRangeUser(0., 7.);
   z_error->GetYaxis()->SetRangeUser(0., 5.6);
+  z_error->GetXaxis()->SetTitleSize(0.05);
+  z_error->GetYaxis()->SetTitleSize(0.05);
+  z_error->GetXaxis()->SetTitleOffset(0.85);
+  z_error->GetYaxis()->SetTitleOffset(0.6);
 
   // final recosntruction
   TCanvas *c_z_error = new TCanvas("c_z_error", "c_z_error", 1000, 600);
@@ -2058,24 +2067,233 @@ void myBestTriFit() {
   h_Acor16->GetXaxis()->SetRangeUser(6., 16.);
   h_Acor17->GetXaxis()->SetRangeUser(8., 16.5);
 
-  h_Acor0->SetTitle("H");
-  h_Acor1->SetTitle("He");
-  h_Acor2->SetTitle("Li");
-  h_Acor3->SetTitle("Be");
-  h_Acor4->SetTitle("B");
-  h_Acor5->SetTitle("C");
-  h_Acor6->SetTitle("H");
-  h_Acor7->SetTitle("He");
-  h_Acor8->SetTitle("Li");
-  h_Acor9->SetTitle("Be");
-  h_Acor10->SetTitle("B");
-  h_Acor11->SetTitle("C");
-  h_Acor12->SetTitle("H");
-  h_Acor13->SetTitle("He");
-  h_Acor14->SetTitle("Li");
-  h_Acor15->SetTitle("Be");
-  h_Acor16->SetTitle("B");
-  h_Acor17->SetTitle("C");
+  h_Acor0->SetTitle("Z=1");
+  h_Acor0->GetXaxis()->SetTitleSize(0.091);
+  h_Acor0->GetYaxis()->SetTitleSize(0.091);
+  h_Acor0->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor0->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor1->SetTitle("Z=2");
+  h_Acor1->GetXaxis()->SetTitleSize(0.091);
+  h_Acor1->GetYaxis()->SetTitleSize(0.091);
+  h_Acor1->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor1->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor2->SetTitle("Z=3");
+  h_Acor2->GetXaxis()->SetTitleSize(0.091);
+  h_Acor2->GetYaxis()->SetTitleSize(0.091);
+  h_Acor2->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor2->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor3->SetTitle("Z=4");
+  h_Acor3->GetXaxis()->SetTitleSize(0.091);
+  h_Acor3->GetYaxis()->SetTitleSize(0.091);
+  h_Acor3->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor3->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor4->SetTitle("Z=5");
+  h_Acor4->GetXaxis()->SetTitleSize(0.091);
+  h_Acor4->GetYaxis()->SetTitleSize(0.091);
+  h_Acor4->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor4->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor5->SetTitle("Z=6");
+  h_Acor5->GetXaxis()->SetTitleSize(0.091);
+  h_Acor5->GetYaxis()->SetTitleSize(0.091);
+  h_Acor5->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor5->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor6->SetTitle("Z=1");
+  h_Acor6->GetXaxis()->SetTitleSize(0.091);
+  h_Acor6->GetYaxis()->SetTitleSize(0.091);
+  h_Acor6->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor6->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor7->SetTitle("Z=2");
+  h_Acor7->GetXaxis()->SetTitleSize(0.091);
+  h_Acor7->GetYaxis()->SetTitleSize(0.091);
+  h_Acor7->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor7->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor8->SetTitle("Z=3");
+  h_Acor8->GetXaxis()->SetTitleSize(0.091);
+  h_Acor8->GetYaxis()->SetTitleSize(0.091);
+  h_Acor8->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor8->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor9->SetTitle("Z=4");
+  h_Acor9->GetXaxis()->SetTitleSize(0.091);
+  h_Acor9->GetYaxis()->SetTitleSize(0.091);
+  h_Acor9->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor9->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor10->SetTitle("Z=5");
+  h_Acor10->GetXaxis()->SetTitleSize(0.091);
+  h_Acor10->GetYaxis()->SetTitleSize(0.091);
+  h_Acor10->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor10->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor11->SetTitle("Z=6");
+  h_Acor11->GetXaxis()->SetTitleSize(0.091);
+  h_Acor11->GetYaxis()->SetTitleSize(0.091);
+  h_Acor11->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor11->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor12->SetTitle("Z=1");
+  h_Acor12->GetXaxis()->SetTitleSize(0.091);
+  h_Acor12->GetYaxis()->SetTitleSize(0.091);
+  h_Acor12->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor12->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor13->SetTitle("Z=2");
+  h_Acor13->GetXaxis()->SetTitleSize(0.091);
+  h_Acor13->GetYaxis()->SetTitleSize(0.091);
+  h_Acor13->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor13->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor14->SetTitle("Z=3");
+  h_Acor14->GetXaxis()->SetTitleSize(0.091);
+  h_Acor14->GetYaxis()->SetTitleSize(0.091);
+  h_Acor14->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor14->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor15->SetTitle("Z=4");
+  h_Acor15->GetXaxis()->SetTitleSize(0.091);
+  h_Acor15->GetYaxis()->SetTitleSize(0.091);
+  h_Acor15->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor15->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor16->SetTitle("Z=5");
+  h_Acor16->GetXaxis()->SetTitleSize(0.091);
+  h_Acor16->GetYaxis()->SetTitleSize(0.091);
+  h_Acor16->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor16->GetYaxis()->SetTitleOffset(0.53);
+  h_Acor17->SetTitle("Z=6");
+  h_Acor17->GetXaxis()->SetTitleSize(0.091);
+  h_Acor17->GetYaxis()->SetTitleSize(0.091);
+  h_Acor17->GetXaxis()->SetTitleOffset(0.56);
+  h_Acor17->GetYaxis()->SetTitleOffset(0.53);
+
+  // Draw label isotopes
+  TPaveText *latex0 = new TPaveText(1., 1., 1.5, 2.);
+  latex0->AddText("{}^{1}H");
+  latex0->SetTextSize(0.06);
+  latex0->SetFillColor(kWhite);
+  latex0->SetLineStyle(1);
+  latex0->SetLineWidth(2);
+  latex0->SetBorderSize(1);
+  //   latex0->SetFillStyle(0);
+  latex0->SetLineColor(kRed + 1);
+  TPaveText *latex1 = new TPaveText(1., 1., 1.5, 2.);
+  latex1->AddText("{}^{2}H");
+  latex1->SetTextSize(0.06);
+  latex1->SetFillColor(kWhite);
+  latex1->SetLineStyle(1);
+  latex1->SetLineWidth(2);
+  latex1->SetBorderSize(1);
+  //   latex1->SetFillStyle(0);
+  latex1->SetLineColor(kRed + 1);
+  TPaveText *latex2 = new TPaveText(1., 1., 1.5, 2.);
+  latex2->AddText("{}^{3}H");
+  latex2->SetTextSize(0.06);
+  latex2->SetFillColor(kWhite);
+  latex2->SetLineStyle(1);
+  latex2->SetLineWidth(2);
+  latex2->SetBorderSize(1);
+  //   latex2->SetFillStyle(0);
+  latex2->SetLineColor(kRed + 1);
+  TPaveText *latex3 = new TPaveText(2., 3., 3., 3.5);
+  latex3->AddText("{}^{3}He");
+  latex3->SetTextSize(0.06);
+  latex3->SetFillColor(kWhite);
+  latex3->SetLineStyle(1);
+  latex3->SetLineWidth(2);
+  latex3->SetBorderSize(1);
+  //   latex3->SetFillStyle(0);
+  latex3->SetLineColor(kRed + 1);
+  TPaveText *latex4 = new TPaveText(2., 3., 3., 3.5);
+  latex4->AddText("{}^{4}He");
+  latex4->SetTextSize(0.06);
+  latex4->SetFillColor(kWhite);
+  latex4->SetLineStyle(1);
+  latex4->SetLineWidth(2);
+  latex4->SetBorderSize(1);
+  //   latex4->SetFillStyle(0);
+  latex4->SetLineColor(kRed + 1);
+  TPaveText *latex5 = new TPaveText(4., 4., 5., 6.);
+  latex5->AddText("{}^{6}Li");
+  latex5->SetTextSize(0.06);
+  latex5->SetFillColor(kWhite);
+  latex5->SetLineStyle(1);
+  latex5->SetLineWidth(2);
+  latex5->SetBorderSize(1);
+  //   latex5->SetFillStyle(0);
+  latex5->SetLineColor(kRed + 1);
+  TPaveText *latex6 = new TPaveText(4., 4., 5., 6.);
+  latex6->AddText("{}^{7}Li");
+  latex6->SetTextSize(0.06);
+  latex6->SetFillColor(kWhite);
+  latex6->SetLineStyle(1);
+  latex6->SetLineWidth(2);
+  latex6->SetBorderSize(1);
+  //   latex6->SetFillStyle(0);
+  latex6->SetLineColor(kRed + 1);
+  TPaveText *latex7 = new TPaveText(4., 4., 5., 6.);
+  latex7->AddText("{}^{8}Li");
+  latex7->SetTextSize(0.06);
+  latex7->SetFillColor(kWhite);
+  latex7->SetLineStyle(1);
+  latex7->SetLineWidth(2);
+  latex7->SetBorderSize(1);
+  //   latex7->SetFillStyle(0);
+  latex7->SetLineColor(kRed + 1);
+  TPaveText *latex8 = new TPaveText(5., 6., 6., 8.);
+  latex8->AddText("{}^{7}Be");
+  latex8->SetTextSize(0.06);
+  latex8->SetFillColor(kWhite);
+  latex8->SetLineStyle(1);
+  latex8->SetLineWidth(2);
+  latex8->SetBorderSize(1);
+  //   latex8->SetFillStyle(0);
+  latex8->SetLineColor(kRed + 1);
+  TPaveText *latex9 = new TPaveText(5., 6., 6., 8.);
+  latex9->AddText("{}^{9}Be");
+  latex9->SetTextSize(0.06);
+  latex9->SetFillColor(kWhite);
+  latex9->SetLineStyle(1);
+  latex9->SetLineWidth(2);
+  latex9->SetBorderSize(1);
+  //   latex9->SetFillStyle(0);
+  latex9->SetLineColor(kRed + 1);
+  TPaveText *latex10 = new TPaveText(5., 6., 6., 8.);
+  latex10->AddText("{}^{10}Be");
+  latex10->SetTextSize(0.06);
+  latex10->SetFillColor(kWhite);
+  latex10->SetLineStyle(1);
+  latex10->SetLineWidth(2);
+  latex10->SetBorderSize(1);
+  //   latex10->SetFillStyle(0);
+  latex10->SetLineColor(kRed + 1);
+  TPaveText *latex11 = new TPaveText(8., 6., 9., 8.);
+  latex11->AddText("{}^{8}B");
+  latex11->SetTextSize(0.06);
+  latex11->SetFillColor(kWhite);
+  latex11->SetLineStyle(1);
+  latex11->SetLineWidth(2);
+  latex11->SetBorderSize(1);
+  //   latex11->SetFillStyle(0);
+  latex11->SetLineColor(kRed + 1);
+  TPaveText *latex12 = new TPaveText(8., 6., 9., 8.);
+  latex12->AddText("{}^{10}B");
+  latex12->SetTextSize(0.06);
+  latex12->SetFillColor(kWhite);
+  latex12->SetLineStyle(1);
+  latex12->SetLineWidth(2);
+  latex12->SetBorderSize(1);
+  //   latex12->SetFillStyle(0);
+  latex12->SetLineColor(kRed + 1);
+  TPaveText *latex13 = new TPaveText(8., 6., 9., 8.);
+  latex13->AddText("{}^{11}B");
+  latex13->SetTextSize(0.06);
+  latex13->SetFillColor(kWhite);
+  latex13->SetLineStyle(1);
+  latex13->SetLineWidth(2);
+  latex13->SetBorderSize(1);
+  //   latex13->SetFillStyle(0);
+  latex13->SetLineColor(kRed + 1);
+  TPaveText *latex14 = new TPaveText(9., 6., 10., 8.);
+  latex14->AddText("{}^{12}C");
+  latex14->SetTextSize(0.06);
+  latex14->SetFillColor(kWhite);
+  latex14->SetLineStyle(1);
+  latex14->SetLineWidth(2);
+  latex14->SetBorderSize(1);
+  //   latex14->SetFillStyle(0);
+  latex14->SetLineColor(kRed + 1);
 
   // drawing histos on multicanvas
   TCanvas *c_MultiCanvas1 =
@@ -2091,63 +2309,180 @@ void myBestTriFit() {
 
   c_MultiCanvas1->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor0->Draw("colz");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
   c_MultiCanvas2->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor6->Draw("colz");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
   c_MultiCanvas3->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor12->Draw("colz");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
 
   c_MultiCanvas1->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor1->Draw("colz");
+  latex3->Draw("same");
+  latex4->Draw("same");
   c_MultiCanvas2->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor7->Draw("colz");
+  latex3->Draw("same");
+  latex4->Draw("same");
   c_MultiCanvas3->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor13->Draw("colz");
+  latex3->Draw("same");
+  latex4->Draw("same");
 
   c_MultiCanvas1->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor2->Draw("colz");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
   c_MultiCanvas2->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor8->Draw("colz");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
   c_MultiCanvas3->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor14->Draw("colz");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
 
   c_MultiCanvas1->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor3->Draw("colz");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
   c_MultiCanvas2->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor9->Draw("colz");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
   c_MultiCanvas3->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor15->Draw("colz");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
 
   c_MultiCanvas1->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor4->Draw("colz");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
   c_MultiCanvas2->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor10->Draw("colz");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
   c_MultiCanvas3->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor16->Draw("colz");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
 
   c_MultiCanvas1->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor5->Draw("colz");
+  latex14->Draw("same");
   c_MultiCanvas2->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor11->Draw("colz");
+  latex14->Draw("same");
   c_MultiCanvas3->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor17->Draw("colz");
+  latex14->Draw("same");
 
   TCanvas *c_MultiCanvasCut1 =
       new TCanvas("c_MultiCanvasCut1", "c_MultiCanvasCut1", 1400, 710);
@@ -2166,116 +2501,233 @@ void myBestTriFit() {
 
   c_MultiCanvasCut1->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor0->Draw("colz");
   f0_1->Draw("same");
   f0_2->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor6->Draw("colz");
   f6_1->Draw("same");
   f6_2->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(1);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor12->Draw("colz");
   f12_1->Draw("same");
   f12_2->Draw("same");
+  latex0->Draw("same");
+  latex1->Draw("same");
+  latex2->Draw("same");
   //   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor1->Draw("colz");
   f1_1->Draw("same");
   f1_2->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor7->Draw("colz");
   f7_1->Draw("same");
   f7_2->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(2);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor13->Draw("colz");
   f13_1->Draw("same");
   f13_2->Draw("same");
+  latex3->Draw("same");
+  latex4->Draw("same");
   //   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor2->Draw("colz");
   f2_1->Draw("same");
   f2_2->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor8->Draw("colz");
   f8_1->Draw("same");
   f8_2->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(3);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor14->Draw("colz");
   f14_1->Draw("same");
   f14_2->Draw("same");
+  latex5->Draw("same");
+  latex6->Draw("same");
+  latex7->Draw("same");
   //   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor3->Draw("colz");
   f3_1->Draw("same");
   f3_2->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor9->Draw("colz");
   f9_1->Draw("same");
   f9_2->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(4);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor15->Draw("colz");
   f15_1->Draw("same");
   f15_2->Draw("same");
+  latex8->Draw("same");
+  latex9->Draw("same");
+  latex10->Draw("same");
   //   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor4->Draw("colz");
   f4_1->Draw("same");
   f4_2->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor10->Draw("colz");
   f10_1->Draw("same");
   f10_2->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(5);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor16->Draw("colz");
   f16_1->Draw("same");
   f16_2->Draw("same");
+  latex11->Draw("same");
+  latex12->Draw("same");
+  latex13->Draw("same");
   //   leg2->Draw("same");
 
   c_MultiCanvasCut1->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor5->Draw("colz");
   f5_1->Draw("same");
   f5_2->Draw("same");
+  latex14->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut2->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor11->Draw("colz");
   f11_1->Draw("same");
   f11_2->Draw("same");
+  latex14->Draw("same");
   //   leg2->Draw("same");
   c_MultiCanvasCut3->cd(6);
   gPad->SetLogz();
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
+  //   gPad->SetRightMargin(0.18);
   h_Acor17->Draw("colz");
   f17_1->Draw("same");
   f17_2->Draw("same");
+  latex14->Draw("same");
   //   leg2->Draw("same");
 
   // Berillium canvas
@@ -2308,48 +2760,121 @@ void myBestTriFit() {
   h21_2_3->GetXaxis()->SetRangeUser(4., 14.);
   h31_3_3->GetXaxis()->SetRangeUser(4., 14.);
 
+  h3_1->GetXaxis()->SetTitleSize(0.06);
+  h3_1->GetYaxis()->SetTitleSize(0.06);
+  h3_1->GetXaxis()->SetTitleOffset(0.78);
+  h3_1->GetYaxis()->SetTitleOffset(1.);
+  h3_2->GetXaxis()->SetTitleSize(0.06);
+  h3_2->GetYaxis()->SetTitleSize(0.06);
+  h3_2->GetXaxis()->SetTitleOffset(0.78);
+  h3_2->GetYaxis()->SetTitleOffset(1.);
+  h3_3->GetXaxis()->SetTitleSize(0.06);
+  h3_3->GetYaxis()->SetTitleSize(0.06);
+  h3_3->GetXaxis()->SetTitleOffset(0.78);
+  h3_3->GetYaxis()->SetTitleOffset(1.);
+  h31_1_3->GetXaxis()->SetTitleSize(0.06);
+  h31_1_3->GetYaxis()->SetTitleSize(0.06);
+  h31_1_3->GetXaxis()->SetTitleOffset(0.78);
+  h31_1_3->GetYaxis()->SetTitleOffset(1.);
+  h32_2_3->GetXaxis()->SetTitleSize(0.06);
+  h32_2_3->GetYaxis()->SetTitleSize(0.06);
+  h32_2_3->GetXaxis()->SetTitleOffset(0.78);
+  h32_2_3->GetYaxis()->SetTitleOffset(1.);
+  h32_3_3->GetXaxis()->SetTitleSize(0.06);
+  h32_3_3->GetYaxis()->SetTitleSize(0.06);
+  h32_3_3->GetXaxis()->SetTitleOffset(0.78);
+  h32_3_3->GetYaxis()->SetTitleOffset(1.);
+  h21_1_3->GetXaxis()->SetTitleSize(0.06);
+  h21_1_3->GetYaxis()->SetTitleSize(0.06);
+  h21_1_3->GetXaxis()->SetTitleOffset(0.78);
+  h21_1_3->GetYaxis()->SetTitleOffset(1.);
+  h21_2_3->GetXaxis()->SetTitleSize(0.06);
+  h21_2_3->GetYaxis()->SetTitleSize(0.06);
+  h21_2_3->GetXaxis()->SetTitleOffset(0.78);
+  h21_2_3->GetYaxis()->SetTitleOffset(1.);
+  h31_3_3->GetXaxis()->SetTitleSize(0.06);
+  h31_3_3->GetYaxis()->SetTitleSize(0.06);
+  h31_3_3->GetXaxis()->SetTitleOffset(0.78);
+  h31_3_3->GetYaxis()->SetTitleOffset(1.);
+
   c_Berillum->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_1->DrawCopy();
   leg4->Draw("same");
   c_Berillum->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h21_1_3->DrawCopy();
   h31_1_3->DrawCopy("same");
   leg3->Draw("same");
   c_Berillum->cd(3);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_2->DrawCopy();
   leg4->Draw("same");
   c_Berillum->cd(4);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h21_2_3->DrawCopy();
   h32_2_3->DrawCopy("same");
   leg3->Draw("same");
   c_Berillum->cd(5);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_3->DrawCopy();
   leg4->Draw("same");
   c_Berillum->cd(6);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h31_3_3->DrawCopy();
   h32_3_3->DrawCopy("same");
   leg3->Draw("same");
 
   c_Berillum1->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_1->DrawCopy();
   leg4->Draw("same");
   c_Berillum1->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h21_1_3->DrawCopy();
   h31_1_3->DrawCopy("same");
   leg3->Draw("same");
 
   c_Berillum2->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_2->DrawCopy();
   leg4->Draw("same");
   c_Berillum2->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h21_2_3->DrawCopy();
   h32_2_3->DrawCopy("same");
   leg3->Draw("same");
 
   c_Berillum3->cd(1);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h3_3->DrawCopy();
   leg4->Draw("same");
   c_Berillum3->cd(2);
+  gPad->SetLeftMargin(0.12);
+  gPad->SetBottomMargin(0.13);
+  gPad->Update();
   h31_3_3->DrawCopy();
   h32_3_3->DrawCopy("same");
   leg3->Draw("same");
