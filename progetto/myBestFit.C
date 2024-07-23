@@ -2214,7 +2214,7 @@ void myBestFit() {
   latex13->AddText("{}^{11}B");
   latex13->SetTextSize(0.06);
   latex13->SetFillColor(kWhite);
-  TPaveText *latex14 = new TPaveText(8., 50., 9., 100.);
+  TPaveText *latex14 = new TPaveText(8., 50e3, 9., 100e3);
   latex14->AddText("{}^{12}C");
   latex14->SetTextSize(0.06);
   latex14->SetFillColor(kWhite);

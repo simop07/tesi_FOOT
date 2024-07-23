@@ -2159,7 +2159,7 @@ void myBestTriFit() {
   h_Acor17->GetYaxis()->SetTitleOffset(0.53);
 
   // Draw label isotopes
-  TPaveText *latex0 = new TPaveText(1., 1., 1.5, 2.);
+  TPaveText *latex0 = new TPaveText(0.64, 1.42, 1.0, 2.44);
   latex0->AddText("{}^{1}H");
   latex0->SetTextSize(0.06);
   latex0->SetFillColor(kWhite);
@@ -2168,7 +2168,7 @@ void myBestTriFit() {
   latex0->SetBorderSize(1);
   //   latex0->SetFillStyle(0);
   latex0->SetLineColor(kRed + 1);
-  TPaveText *latex1 = new TPaveText(1., 1., 1.5, 2.);
+  TPaveText *latex1 = new TPaveText(1.62, 2.60, 1.98, 3.61);
   latex1->AddText("{}^{2}H");
   latex1->SetTextSize(0.06);
   latex1->SetFillColor(kWhite);
@@ -2177,7 +2177,7 @@ void myBestTriFit() {
   latex1->SetBorderSize(1);
   //   latex1->SetFillStyle(0);
   latex1->SetLineColor(kRed + 1);
-  TPaveText *latex2 = new TPaveText(1., 1., 1.5, 2.);
+  TPaveText *latex2 = new TPaveText(2.60, 3.51, 2.98, 4.51);
   latex2->AddText("{}^{3}H");
   latex2->SetTextSize(0.06);
   latex2->SetFillColor(kWhite);
@@ -2186,7 +2186,7 @@ void myBestTriFit() {
   latex2->SetBorderSize(1);
   //   latex2->SetFillStyle(0);
   latex2->SetLineColor(kRed + 1);
-  TPaveText *latex3 = new TPaveText(2., 3., 3., 3.5);
+  TPaveText *latex3 = new TPaveText(2.03, 3.28, 2.67, 4.41);
   latex3->AddText("{}^{3}He");
   latex3->SetTextSize(0.06);
   latex3->SetFillColor(kWhite);
@@ -2195,7 +2195,7 @@ void myBestTriFit() {
   latex3->SetBorderSize(1);
   //   latex3->SetFillStyle(0);
   latex3->SetLineColor(kRed + 1);
-  TPaveText *latex4 = new TPaveText(2., 3., 3., 3.5);
+  TPaveText *latex4 = new TPaveText(2.96, 4.41, 3.61, 5.55);
   latex4->AddText("{}^{4}He");
   latex4->SetTextSize(0.06);
   latex4->SetFillColor(kWhite);
@@ -2204,7 +2204,7 @@ void myBestTriFit() {
   latex4->SetBorderSize(1);
   //   latex4->SetFillStyle(0);
   latex4->SetLineColor(kRed + 1);
-  TPaveText *latex5 = new TPaveText(4., 4., 5., 6.);
+  TPaveText *latex5 = new TPaveText(4.35, 5.93, 5.33, 7.95);
   latex5->AddText("{}^{6}Li");
   latex5->SetTextSize(0.06);
   latex5->SetFillColor(kWhite);
@@ -2213,7 +2213,7 @@ void myBestTriFit() {
   latex5->SetBorderSize(1);
   //   latex5->SetFillStyle(0);
   latex5->SetLineColor(kRed + 1);
-  TPaveText *latex6 = new TPaveText(4., 4., 5., 6.);
+  TPaveText *latex6 = new TPaveText(5.66, 7.57, 6.64, 9.59);
   latex6->AddText("{}^{7}Li");
   latex6->SetTextSize(0.06);
   latex6->SetFillColor(kWhite);
@@ -2222,7 +2222,7 @@ void myBestTriFit() {
   latex6->SetBorderSize(1);
   //   latex6->SetFillStyle(0);
   latex6->SetLineColor(kRed + 1);
-  TPaveText *latex7 = new TPaveText(4., 4., 5., 6.);
+  TPaveText *latex7 = new TPaveText(6.96, 9.02, 7.93, 11.04);
   latex7->AddText("{}^{8}Li");
   latex7->SetTextSize(0.06);
   latex7->SetFillColor(kWhite);
@@ -2231,7 +2231,7 @@ void myBestTriFit() {
   latex7->SetBorderSize(1);
   //   latex7->SetFillStyle(0);
   latex7->SetLineColor(kRed + 1);
-  TPaveText *latex8 = new TPaveText(5., 6., 6., 8.);
+  TPaveText *latex8 = new TPaveText(5.88, 7.74, 6.87, 9.76);
   latex8->AddText("{}^{7}Be");
   latex8->SetTextSize(0.06);
   latex8->SetFillColor(kWhite);
@@ -2240,7 +2240,7 @@ void myBestTriFit() {
   latex8->SetBorderSize(1);
   //   latex8->SetFillStyle(0);
   latex8->SetLineColor(kRed + 1);
-  TPaveText *latex9 = new TPaveText(5., 6., 6., 8.);
+  TPaveText *latex9 = new TPaveText(7.69, 9.38, 8.67, 11.4);
   latex9->AddText("{}^{9}Be");
   latex9->SetTextSize(0.06);
   latex9->SetFillColor(kWhite);
@@ -2249,7 +2249,7 @@ void myBestTriFit() {
   latex9->SetBorderSize(1);
   //   latex9->SetFillStyle(0);
   latex9->SetLineColor(kRed + 1);
-  TPaveText *latex10 = new TPaveText(5., 6., 6., 8.);
+  TPaveText *latex10 = new TPaveText(9.07, 11.02, 10.05, 13.04);
   latex10->AddText("{}^{10}Be");
   latex10->SetTextSize(0.06);
   latex10->SetFillColor(kWhite);
@@ -2258,7 +2258,7 @@ void myBestTriFit() {
   latex10->SetBorderSize(1);
   //   latex10->SetFillStyle(0);
   latex10->SetLineColor(kRed + 1);
-  TPaveText *latex11 = new TPaveText(8., 6., 9., 8.);
+  TPaveText *latex11 = new TPaveText(6.61, 8.07, 7.59, 10.13);
   latex11->AddText("{}^{8}B");
   latex11->SetTextSize(0.06);
   latex11->SetFillColor(kWhite);
@@ -2267,7 +2267,7 @@ void myBestTriFit() {
   latex11->SetBorderSize(1);
   //   latex11->SetFillStyle(0);
   latex11->SetLineColor(kRed + 1);
-  TPaveText *latex12 = new TPaveText(8., 6., 9., 8.);
+  TPaveText *latex12 = new TPaveText(7.79, 10.41, 8.77, 12.47);
   latex12->AddText("{}^{10}B");
   latex12->SetTextSize(0.06);
   latex12->SetFillColor(kWhite);
@@ -2276,7 +2276,7 @@ void myBestTriFit() {
   latex12->SetBorderSize(1);
   //   latex12->SetFillStyle(0);
   latex12->SetLineColor(kRed + 1);
-  TPaveText *latex13 = new TPaveText(8., 6., 9., 8.);
+  TPaveText *latex13 = new TPaveText(9.30, 12., 10., 14.06);
   latex13->AddText("{}^{11}B");
   latex13->SetTextSize(0.06);
   latex13->SetFillColor(kWhite);
@@ -2285,7 +2285,7 @@ void myBestTriFit() {
   latex13->SetBorderSize(1);
   //   latex13->SetFillStyle(0);
   latex13->SetLineColor(kRed + 1);
-  TPaveText *latex14 = new TPaveText(9., 6., 10., 8.);
+  TPaveText *latex14 = new TPaveText(11.94, 14.12, 12.94, 16.10);
   latex14->AddText("{}^{12}C");
   latex14->SetTextSize(0.06);
   latex14->SetFillColor(kWhite);
