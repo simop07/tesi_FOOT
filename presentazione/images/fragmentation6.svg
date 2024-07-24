@@ -28,9 +28,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1"
-     inkscape:cx="334.99999"
-     inkscape:cy="49.499999"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="315.36962"
+     inkscape:cy="196.92924"
      inkscape:window-width="1280"
      inkscape:window-height="971"
      inkscape:window-x="1358"
@@ -1132,7 +1132,7 @@
          x="94.867561"
          y="1063.5427"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:RomanSerif;-inkscape-font-specification:'RomanSerif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:#000000;stroke-opacity:1"
-         id="tspan13">200 Mev/u</tspan></text>
+         id="tspan13">200 MeV/u</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:21.3333px;font-family:RomanSerif;-inkscape-font-specification:'RomanSerif, Normal';display:inline;fill:#ffffff;stroke:#ff1515;stroke-width:1.794;paint-order:fill markers stroke"
@@ -1143,7 +1143,9 @@
          x="551.63812"
          y="1011.4836"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:RomanSerif;-inkscape-font-specification:'RomanSerif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke:#000000;stroke-opacity:1"
-         id="tspan3">C</tspan></text>
+         id="tspan3"><tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan1">12</tspan>C</tspan></text>
     <path
        d="m 422.29479,888.98887 32.47375,26.20692 -31.45898,23.29509"
        id="path4188"
@@ -1206,11 +1208,11 @@
     <text
        xml:space="preserve"
        style="font-size:27.8321px;font-family:RomanSerif;-inkscape-font-specification:'RomanSerif, Normal';display:inline;fill:#ffffff;stroke:#ff1515;stroke-width:1.56033;paint-order:fill markers stroke"
-       x="556.93433"
+       x="553.99506"
        y="923.80719"
        id="text1-6-3-0-6"><tspan
          sodipodi:role="line"
-         x="556.93433"
+         x="553.99506"
          y="923.80719"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.8321px;font-family:RomanSerif;-inkscape-font-specification:RomanSerif;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.56033;stroke-opacity:1"
          id="tspan6-2-4-8">Grafite</tspan></text>
