@@ -137,8 +137,8 @@ void myBestFit() {
   const Double_t y0[6] = {0.751152, 0.797235, 3.08602,
                           3.42396,  1.04301,  0.751152};
 
-  const Double_t x1[6] = {2.50176, 3.06514, 4.87852, 4.31514, 2.58979, 2.50176};
-  const Double_t y1[6] = {2.56548, 2.47024, 4.17262, 4.82738, 2.94643, 2.56548};
+  const Double_t x1[6] = {2.50176, 3.06514, 6.74324, 6.28106, 2.58979, 2.50176};
+  const Double_t y1[6] = {2.56548, 2.47024, 6.17969, 6.72656, 2.94643, 2.56548};
 
   const Double_t x2[6] = {5.6338, 6.32238, 8.98279, 8.24726, 5.6025, 5.6338};
   const Double_t y2[6] = {5.5873, 5.48148, 8, 8.74074, 5.94709, 5.5873};
@@ -161,8 +161,8 @@ void myBestFit() {
   const Double_t y6[6] = {0.797386, 0.699346, 2.98693,
                           3.29194,  1.05882,  0.797386};
 
-  const Double_t x7[6] = {2.625, 2.9243, 4.79049, 4.38556, 2.79225, 2.625};
-  const Double_t y7[6] = {2.44643, 2.3631, 4.08929, 4.95833, 3.07738, 2.44643};
+  const Double_t x7[6] = {2.625, 2.9243, 6.59669, 6.66433, 2.79225, 2.625};
+  const Double_t y7[6] = {2.44643, 2.3631, 5.67188, 7.05859, 3.07738, 2.44643};
 
   const Double_t x8[17] = {5.68075, 6.00939, 6.47887, 6.66667, 6.99531, 8.46635,
                            8.5133,  8.16901, 7.63693, 7.37089, 7.0892,  6.90141,
@@ -194,8 +194,8 @@ void myBestFit() {
   const Double_t y12[6] = {0.809524, 0.73545, 2.82011,
                            3.2963,   1.02116, 0.809524};
 
-  const Double_t x13[6] = {2.53697, 3.10035, 4.72887, 3.92782, 2.625, 2.53697};
-  const Double_t y13[6] = {2.39881, 2.375, 3.83929, 4.93452, 3.22024, 2.39881};
+  const Double_t x13[6] = {2.53697, 3.10035, 6.51779, 6.40506, 2.625, 2.53697};
+  const Double_t y13[6] = {2.39881, 2.375, 5.26172, 7.19531, 3.22024, 2.39881};
 
   const Double_t x14[19] = {5.6025,  5.86854, 6.13459, 6.27543, 6.16588,
                             6.68232, 6.90141, 7.26135, 7.2457,  8.10642,
@@ -930,6 +930,7 @@ void myBestFit() {
   // histo1
   TF1 *f_cut1_1 = new TF1("f_cut1_1", "gaus", 0., 9.);
   TF1 *f_cut1_2 = new TF1("f_cut1_2", "gaus", 0., 9.);
+  TF1 *f_cut1_3 = new TF1("f_cut1_3", "gaus", 0., 9.);
 
   // histo2
   TF1 *f_cut2_1 = new TF1("f_cut2_1", "gaus", 2., 18.);
@@ -967,68 +968,72 @@ void myBestFit() {
   // fit functions cosmetics
   // histo0
   f_cut0_1->SetLineColor(kRed);
-  f_cut0_1->SetLineWidth(2);
+  f_cut0_1->SetLineWidth(1);
   f_cut0_1->SetLineStyle(2);
 
   f_cut0_2->SetLineColor(kRed);
-  f_cut0_2->SetLineWidth(2);
+  f_cut0_2->SetLineWidth(1);
   f_cut0_2->SetLineStyle(2);
 
   f_cut0_3->SetLineColor(kRed);
-  f_cut0_3->SetLineWidth(2);
+  f_cut0_3->SetLineWidth(1);
   f_cut0_3->SetLineStyle(2);
 
   // histo1
   f_cut1_1->SetLineColor(kRed);
-  f_cut1_1->SetLineWidth(2);
+  f_cut1_1->SetLineWidth(1);
   f_cut1_1->SetLineStyle(2);
 
   f_cut1_2->SetLineColor(kRed);
-  f_cut1_2->SetLineWidth(2);
+  f_cut1_2->SetLineWidth(1);
   f_cut1_2->SetLineStyle(2);
+
+  f_cut1_3->SetLineColor(kRed);
+  f_cut1_3->SetLineWidth(1);
+  f_cut1_3->SetLineStyle(2);
 
   // histo2
   f_cut2_1->SetLineColor(kRed);
-  f_cut2_1->SetLineWidth(2);
+  f_cut2_1->SetLineWidth(1);
   f_cut2_1->SetLineStyle(2);
 
   f_cut2_2->SetLineColor(kRed);
-  f_cut2_2->SetLineWidth(2);
+  f_cut2_2->SetLineWidth(1);
   f_cut2_2->SetLineStyle(2);
 
   f_cut2_3->SetLineColor(kRed);
-  f_cut2_3->SetLineWidth(2);
+  f_cut2_3->SetLineWidth(1);
   f_cut2_3->SetLineStyle(2);
 
   // histo3
   f_cut3_1->SetLineColor(kRed);
-  f_cut3_1->SetLineWidth(2);
+  f_cut3_1->SetLineWidth(1);
   f_cut3_1->SetLineStyle(2);
 
   f_cut3_2->SetLineColor(kRed);
-  f_cut3_2->SetLineWidth(2);
+  f_cut3_2->SetLineWidth(1);
   f_cut3_2->SetLineStyle(2);
 
   f_cut3_3->SetLineColor(kRed);
-  f_cut3_3->SetLineWidth(2);
+  f_cut3_3->SetLineWidth(1);
   f_cut3_3->SetLineStyle(2);
 
   // histo4
   f_cut4_1->SetLineColor(kRed);
-  f_cut4_1->SetLineWidth(2);
+  f_cut4_1->SetLineWidth(1);
   f_cut4_1->SetLineStyle(2);
 
   f_cut4_2->SetLineColor(kRed);
-  f_cut4_2->SetLineWidth(2);
+  f_cut4_2->SetLineWidth(1);
   f_cut4_2->SetLineStyle(2);
 
   f_cut4_3->SetLineColor(kRed);
-  f_cut4_3->SetLineWidth(2);
+  f_cut4_3->SetLineWidth(1);
   f_cut4_3->SetLineStyle(2);
 
   // histo5
   f_cut5_tot->SetLineColor(kRed);
-  f_cut5_tot->SetLineWidth(2);
+  f_cut5_tot->SetLineWidth(1);
   f_cut5_tot->SetLineStyle(2);
 
   // setting parameters
@@ -1044,9 +1049,11 @@ void myBestFit() {
   // histo1
   f_cut1_1->SetParameter(1, 3);
   f_cut1_2->SetParameter(1, 4);
+  f_cut1_3->SetParameter(1, 6);
 
   f_cut1_1->SetParameter(2, 0.5);
   f_cut1_2->SetParameter(2, 0.5);
+  f_cut1_3->SetParameter(2, 0.5);
 
   // histo2
   f_cut2_1->SetParameter(1, 6);
@@ -1137,6 +1144,11 @@ void myBestFit() {
                            (f_cut1_2->GetParameter(1)));
   v_black_a1_mean.push_back(f_cut1_2->GetParameter(1));
 
+  h31_1_1->Fit(f_cut1_3, "+", "", 5.5, 6.8);
+  v_black_a1_err.push_back(100. * (f_cut1_3->GetParameter(2)) /
+                           (f_cut1_3->GetParameter(1)));
+  v_black_a1_mean.push_back(f_cut1_3->GetParameter(1));
+
   h32_2_1->Fit(f_cut1_1, "", "", 2.5, 3.3);
   v_black_a2_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                            (f_cut1_1->GetParameter(1)));
@@ -1147,6 +1159,11 @@ void myBestFit() {
                            (f_cut1_2->GetParameter(1)));
   v_black_a2_mean.push_back(f_cut1_2->GetParameter(1));
 
+  h32_2_1->Fit(f_cut1_3, "+", "", 5.5, 6.8);
+  v_black_a2_err.push_back(100. * (f_cut1_3->GetParameter(2)) /
+                           (f_cut1_3->GetParameter(1)));
+  v_black_a2_mean.push_back(f_cut1_3->GetParameter(1));
+
   h32_3_1->Fit(f_cut1_1, "", "", 2., 3.5);
   v_black_a3_err.push_back(100. * (f_cut1_1->GetParameter(2)) /
                            (f_cut1_1->GetParameter(1)));
@@ -1156,6 +1173,11 @@ void myBestFit() {
   v_black_a3_err.push_back(100. * (f_cut1_2->GetParameter(2)) /
                            (f_cut1_2->GetParameter(1)));
   v_black_a3_mean.push_back(f_cut1_2->GetParameter(1));
+
+  h32_3_1->Fit(f_cut1_3, "+", "", 5.2, 6.8);
+  v_black_a3_err.push_back(100. * (f_cut1_3->GetParameter(2)) /
+                           (f_cut1_3->GetParameter(1)));
+  v_black_a3_mean.push_back(f_cut1_3->GetParameter(1));
 
   // histo2
   h31_1_2->Fit(f_cut2_1, "", "", 5.5, 6.7);
@@ -2160,69 +2182,73 @@ void myBestFit() {
   // Draw label isotopes
   TPaveText *latex0 = new TPaveText(1., 300., 1.5, 400.);
   latex0->AddText("{}^{1}H");
-  latex0->SetTextSize(0.06);
+  latex0->SetTextSize(0.09);
   latex0->SetFillColor(kWhite);
   TPaveText *latex1 = new TPaveText(1., 300., 1.5, 400.);
   latex1->AddText("{}^{2}H");
-  latex1->SetTextSize(0.06);
+  latex1->SetTextSize(0.09);
   latex1->SetFillColor(kWhite);
   TPaveText *latex2 = new TPaveText(1., 300., 1.5, 400.);
   latex2->AddText("{}^{3}H");
-  latex2->SetTextSize(0.06);
+  latex2->SetTextSize(0.09);
   latex2->SetFillColor(kWhite);
   TPaveText *latex3 = new TPaveText(1., 500., 1.5, 750.);
   latex3->AddText("{}^{3}He");
-  latex3->SetTextSize(0.06);
+  latex3->SetTextSize(0.09);
   latex3->SetFillColor(kWhite);
   TPaveText *latex4 = new TPaveText(1., 500., 1.5, 750.);
   latex4->AddText("{}^{4}He");
-  latex4->SetTextSize(0.06);
+  latex4->SetTextSize(0.09);
   latex4->SetFillColor(kWhite);
+  TPaveText *latex15 = new TPaveText(1., 500., 1.5, 750.);
+  latex15->AddText("{}^{6}He");
+  latex15->SetTextSize(0.09);
+  latex15->SetFillColor(kWhite);
   TPaveText *latex5 = new TPaveText(3., 100., 4., 150.);
   latex5->AddText("{}^{6}Li");
-  latex5->SetTextSize(0.06);
+  latex5->SetTextSize(0.09);
   latex5->SetFillColor(kWhite);
   TPaveText *latex6 = new TPaveText(3., 100., 4., 150.);
   latex6->AddText("{}^{7}Li");
-  latex6->SetTextSize(0.06);
+  latex6->SetTextSize(0.09);
   latex6->SetFillColor(kWhite);
   TPaveText *latex7 = new TPaveText(3., 100., 4., 150.);
   latex7->AddText("{}^{8}Li");
-  latex7->SetTextSize(0.06);
+  latex7->SetTextSize(0.09);
   latex7->SetFillColor(kWhite);
   TPaveText *latex8 = new TPaveText(6., 40., 7., 70.);
   latex8->AddText("{}^{7}Be");
-  latex8->SetTextSize(0.06);
+  latex8->SetTextSize(0.09);
   latex8->SetFillColor(kWhite);
   TPaveText *latex9 = new TPaveText(6., 40., 7., 70.);
   latex9->AddText("{}^{9}Be");
-  latex9->SetTextSize(0.06);
+  latex9->SetTextSize(0.09);
   latex9->SetFillColor(kWhite);
   TPaveText *latex10 = new TPaveText(6., 40., 7., 70.);
   latex10->AddText("{}^{10}Be");
-  latex10->SetTextSize(0.06);
+  latex10->SetTextSize(0.09);
   latex10->SetFillColor(kWhite);
   TPaveText *latex11 = new TPaveText(6., 300., 7., 400.);
   latex11->AddText("{}^{8}B");
-  latex11->SetTextSize(0.06);
+  latex11->SetTextSize(0.09);
   latex11->SetFillColor(kWhite);
   TPaveText *latex12 = new TPaveText(6., 300., 7., 400.);
   latex12->AddText("{}^{10}B");
-  latex12->SetTextSize(0.06);
+  latex12->SetTextSize(0.09);
   latex12->SetFillColor(kWhite);
   TPaveText *latex13 = new TPaveText(6., 300., 7., 400.);
   latex13->AddText("{}^{11}B");
-  latex13->SetTextSize(0.06);
+  latex13->SetTextSize(0.09);
   latex13->SetFillColor(kWhite);
   TPaveText *latex14 = new TPaveText(8., 50e3, 9., 100e3);
   latex14->AddText("{}^{12}C");
-  latex14->SetTextSize(0.06);
+  latex14->SetTextSize(0.09);
   latex14->SetFillColor(kWhite);
 
   h21_1_0->GetXaxis()->SetTitle("A_{1}");
   h21_1_0->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_0->GetXaxis()->SetTitleSize(0.07);
-  h21_1_0->GetYaxis()->SetTitleSize(0.07);
+  h21_1_0->GetXaxis()->SetTitleSize(0.09);
+  h21_1_0->GetYaxis()->SetTitleSize(0.09);
   h21_1_0->GetXaxis()->SetTitleOffset(0.64);
   h21_1_0->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(1);
@@ -2238,8 +2264,8 @@ void myBestFit() {
 
   h21_1_1->GetXaxis()->SetTitle("A_{1}");
   h21_1_1->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_1->GetXaxis()->SetTitleSize(0.07);
-  h21_1_1->GetYaxis()->SetTitleSize(0.07);
+  h21_1_1->GetXaxis()->SetTitleSize(0.09);
+  h21_1_1->GetYaxis()->SetTitleSize(0.09);
   h21_1_1->GetXaxis()->SetTitleOffset(0.64);
   h21_1_1->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(2);
@@ -2251,11 +2277,12 @@ void myBestFit() {
   leg4->Draw("same");
   latex3->Draw("same");
   latex4->Draw("same");
+  latex15->Draw("same");
 
   h21_1_2->GetXaxis()->SetTitle("A_{1}");
   h21_1_2->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_2->GetXaxis()->SetTitleSize(0.07);
-  h21_1_2->GetYaxis()->SetTitleSize(0.07);
+  h21_1_2->GetXaxis()->SetTitleSize(0.09);
+  h21_1_2->GetYaxis()->SetTitleSize(0.09);
   h21_1_2->GetXaxis()->SetTitleOffset(0.64);
   h21_1_2->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(3);
@@ -2271,8 +2298,8 @@ void myBestFit() {
 
   h21_1_3->GetXaxis()->SetTitle("A_{1}");
   h21_1_3->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_3->GetXaxis()->SetTitleSize(0.07);
-  h21_1_3->GetYaxis()->SetTitleSize(0.07);
+  h21_1_3->GetXaxis()->SetTitleSize(0.09);
+  h21_1_3->GetYaxis()->SetTitleSize(0.09);
   h21_1_3->GetXaxis()->SetTitleOffset(0.64);
   h21_1_3->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(4);
@@ -2288,8 +2315,8 @@ void myBestFit() {
 
   h21_1_4->GetXaxis()->SetTitle("A_{1}");
   h21_1_4->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_4->GetXaxis()->SetTitleSize(0.07);
-  h21_1_4->GetYaxis()->SetTitleSize(0.07);
+  h21_1_4->GetXaxis()->SetTitleSize(0.09);
+  h21_1_4->GetYaxis()->SetTitleSize(0.09);
   h21_1_4->GetXaxis()->SetTitleOffset(0.64);
   h21_1_4->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(5);
@@ -2305,8 +2332,8 @@ void myBestFit() {
 
   h21_1_5->GetXaxis()->SetTitle("A_{1}");
   h21_1_5->GetYaxis()->SetTitle("Occorrenze");
-  h21_1_5->GetXaxis()->SetTitleSize(0.07);
-  h21_1_5->GetYaxis()->SetTitleSize(0.07);
+  h21_1_5->GetXaxis()->SetTitleSize(0.09);
+  h21_1_5->GetYaxis()->SetTitleSize(0.09);
   h21_1_5->GetXaxis()->SetTitleOffset(0.64);
   h21_1_5->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue1->cd(6);
@@ -2320,8 +2347,8 @@ void myBestFit() {
 
   h21_2_0->GetXaxis()->SetTitle("A_{2}");
   h21_2_0->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_0->GetXaxis()->SetTitleSize(0.07);
-  h21_2_0->GetYaxis()->SetTitleSize(0.07);
+  h21_2_0->GetXaxis()->SetTitleSize(0.08);
+  h21_2_0->GetYaxis()->SetTitleSize(0.08);
   h21_2_0->GetXaxis()->SetTitleOffset(0.64);
   h21_2_0->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(1);
@@ -2337,8 +2364,8 @@ void myBestFit() {
 
   h21_2_1->GetXaxis()->SetTitle("A_{2}");
   h21_2_1->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_1->GetXaxis()->SetTitleSize(0.07);
-  h21_2_1->GetYaxis()->SetTitleSize(0.07);
+  h21_2_1->GetXaxis()->SetTitleSize(0.08);
+  h21_2_1->GetYaxis()->SetTitleSize(0.08);
   h21_2_1->GetXaxis()->SetTitleOffset(0.64);
   h21_2_1->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(2);
@@ -2350,11 +2377,12 @@ void myBestFit() {
   leg4->Draw("same");
   latex3->Draw("same");
   latex4->Draw("same");
+  latex15->Draw("same");
 
   h21_2_2->GetXaxis()->SetTitle("A_{2}");
   h21_2_2->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_2->GetXaxis()->SetTitleSize(0.07);
-  h21_2_2->GetYaxis()->SetTitleSize(0.07);
+  h21_2_2->GetXaxis()->SetTitleSize(0.08);
+  h21_2_2->GetYaxis()->SetTitleSize(0.08);
   h21_2_2->GetXaxis()->SetTitleOffset(0.64);
   h21_2_2->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(3);
@@ -2370,8 +2398,8 @@ void myBestFit() {
 
   h21_2_3->GetXaxis()->SetTitle("A_{2}");
   h21_2_3->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_3->GetXaxis()->SetTitleSize(0.07);
-  h21_2_3->GetYaxis()->SetTitleSize(0.07);
+  h21_2_3->GetXaxis()->SetTitleSize(0.08);
+  h21_2_3->GetYaxis()->SetTitleSize(0.08);
   h21_2_3->GetXaxis()->SetTitleOffset(0.64);
   h21_2_3->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(4);
@@ -2387,8 +2415,8 @@ void myBestFit() {
 
   h21_2_4->GetXaxis()->SetTitle("A_{2}");
   h21_2_4->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_4->GetXaxis()->SetTitleSize(0.07);
-  h21_2_4->GetYaxis()->SetTitleSize(0.07);
+  h21_2_4->GetXaxis()->SetTitleSize(0.08);
+  h21_2_4->GetYaxis()->SetTitleSize(0.08);
   h21_2_4->GetXaxis()->SetTitleOffset(0.64);
   h21_2_4->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(5);
@@ -2404,8 +2432,8 @@ void myBestFit() {
 
   h21_2_5->GetXaxis()->SetTitle("A_{2}");
   h21_2_5->GetYaxis()->SetTitle("Occorrenze");
-  h21_2_5->GetXaxis()->SetTitleSize(0.07);
-  h21_2_5->GetYaxis()->SetTitleSize(0.07);
+  h21_2_5->GetXaxis()->SetTitleSize(0.08);
+  h21_2_5->GetYaxis()->SetTitleSize(0.08);
   h21_2_5->GetXaxis()->SetTitleOffset(0.64);
   h21_2_5->GetYaxis()->SetTitleOffset(0.7);
   c_Total_black_blue2->cd(6);
@@ -2449,6 +2477,7 @@ void myBestFit() {
   leg4->Draw("same");
   latex3->Draw("same");
   latex4->Draw("same");
+  latex15->Draw("same");
 
   h31_3_2->GetXaxis()->SetTitle("A_{3}");
   h31_3_2->GetYaxis()->SetTitle("Occorrenze");
