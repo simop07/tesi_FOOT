@@ -38,8 +38,9 @@
 *.root
 
 # Directories
-prima_versione/
 graphs/
 presentation_graphs/
 older versions/
-graphs_presentation/
+analisi/
+lezioni/
+relazione/

@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "myAnalysis.C": "cpp"
+        "myAnalysis.C": "cpp",
+        "myBestFit.C": "cpp",
+        "myMacro.C": "cpp",
+        "myBestTriFit.C": "cpp"
     }
 }
