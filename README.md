@@ -1,4 +1,4 @@
-<p align="center"> <img src="./progetto/foot.jpg"> </p>
+<p align="center"> <img src="./progetto/foot.jpg" width="20%"> </p>
 
 # Tesi FOOT
 
