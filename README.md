@@ -2,7 +2,7 @@
 
 # Tesi FOOT
 
- [![DOI](https://zenodo.org/badge/755180838.svg)](https://doi.org/10.5281/zenodo.16323694) [![GitHub 
+[![DOI](https://zenodo.org/badge/755180838.svg)](https://doi.org/10.5281/zenodo.16323694) [![GitHub 
 license](https://img.shields.io/github/license/simop07/tesi_FOOT)](https://github.com/simop07/tesi_FOOT/blob/main/LICENSE)
 
 ## Abstract
